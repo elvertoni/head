@@ -21,7 +21,8 @@ desktop.ini
 __pycache__/
 *.pyc
 
-# Mídia bruta no lake — pesada, não versionar (só os .md transcritos entram)
+# Conteúdo bruto no lake — pesado, não versionar (só os .md tratados entram)
+# Vídeo/áudio
 lake/**/*.mp4
 lake/**/*.mkv
 lake/**/*.mov
@@ -29,3 +30,13 @@ lake/**/*.avi
 lake/**/*.mp3
 lake/**/*.wav
 lake/**/*.m4a
+# Documentos/binários de origem (livros, slides, notas)
+lake/**/*.pdf
+lake/**/*.docx
+lake/**/*.doc
+lake/**/*.pptx
+lake/**/*.ppt
+lake/**/*.xlsx
+lake/**/*.xls
+lake/**/*.epub
+lake/**/*.zip
