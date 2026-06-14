@@ -1,0 +1,17 @@
+# Derivados regeneráveis — nunca versionar (regenerados a partir da canonica.md)
+**/saidas/
+
+# Temporários e backups
+*.tmp
+*.bak
+*.swp
+*~
+
+# Lixo de SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.idea/
+*.code-workspace

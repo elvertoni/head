@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Aula 01 · Formulários que não recarregam · Prof Toni Coimbra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   APOSTILA · PROFESSORDASH
+   Herda os tokens de static/css/app.css (shell-bg, shell-primary, etc.)
+   Adiciona layout editorial, hero, sumário, callouts e print em A4.
+   ========================================================================== */
+
+:root {
+  /* === Tokens importados do app (mantidos fiéis) === */
+  --shell-bg: #040405;
+  --shell-bg-2: #09090b;
+  --shell-surface: rgba(17, 17, 20, 0.92);
+  --shell-surface-strong: rgba(23, 23, 28, 0.96);
+  --shell-surface-soft: rgba(14, 14, 17, 0.82);
+  --shell-surface-elev: #111114;
+  --shell-border: rgba(255, 255, 255, 0.08);
+  --shell-border-strong: rgba(255, 255, 255, 0.14);
+  --shell-text: #ece8e7;
+  --shell-text-muted: #b0adb5;
+  --shell-text-soft: #84808c;
+
+  --shell-primary: #10b981;
+  --shell-primary-200: #6ee7b7;
+  --shell-primary-100: #d1fae5;
+  --shell-secondary: #8b5cf6;
+  --shell-secondary-200: #c4b5fd;
+  --shell-tertiary: #06b6d4;
+  --shell-tertiary-200: #67e8f9;
+  --shell-danger: #f87171;
+  --shell-warning: #fbbf24;
+
+  --shell-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --shell-shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.22);
+  --shell-radius-xl: 1.35rem;
+  --shell-radius-lg: 1rem;
+  --shell-radius-md: 0.875rem;
+
+  /* === Tokens locais da apostila === */
+  --font-body: 'Geist', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --max-width: 980px;
+  --content-gap: 28px;
+}
+
+[data-theme="light"] {
+  --shell-bg: #f3f5f9;
+  --shell-bg-2: #e9ecf3;
+  --shell-surface: rgba(255, 255, 255, 0.94);
+  --shell-surface-strong: rgba(255, 255, 255, 0.98);
+  --shell-surface-soft: rgba(250, 251, 253, 0.88);
+  --shell-surface-elev: #ffffff;
+  --shell-border: rgba(15, 23, 42, 0.08);
+  --shell-border-strong: rgba(15, 23, 42, 0.14);
+  --shell-text: #0f172a;
+  --shell-text-muted: #475569;
+  --shell-text-soft: #64748b;
+  --shell-shadow: 0 22px 60px rgba(15, 23, 42, 0.10);
+  --shell-shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ================= BASE ================= */
+* { box-sizing: border-box; }
+html {
+  background: var(--shell-bg);
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+[data-theme="light"] { color-scheme: light; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--shell-text);
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 26%),
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.06), transparent 24%),
+    linear-gradient(180deg, var(--shell-bg) 0%, var(--shell-bg-2) 100%);
+  background-attachment: fixed;
+}
+[data-theme="light"] body {
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.10), transparent 30%),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 26%),
+    radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.05), transparent 24%),
+    linear-gradient(180deg, var(--shell-bg) 0%, var(--shell-bg-2) 100%);
+}
+
+.apostila-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 60%, transparent 100%);
+}
+[data-theme="light"] .apostila-shell::before {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+::selection { background: rgba(16, 185, 129, 0.24); color: #ffffff; }
+[data-theme="light"] ::selection { background: rgba(16, 185, 129, 0.22); color: #052e1a; }
+
+a {
+  color: var(--shell-primary-200);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+[data-theme="light"] a { color: #047857; }
+
+code, pre, .mono { font-family: var(--font-mono); }
+
+/* ================= TOPBAR ================= */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: color-mix(in srgb, var(--shell-bg) 72%, transparent);
+  border-bottom: 1px solid var(--shell-border);
+}
+.topbar-inner {
+  max-width: calc(var(--max-width) + 80px);
+  margin: 0 auto;
+  min-height: 68px;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--shell-text);
+  min-width: 0;
+}
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+}
+.brand-mark svg,
+.brand-mark img { width: 40px; height: 40px; display: block; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.brand-text strong {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 0.98rem;
+}
+.brand-text small {
+  color: var(--shell-text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill, .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0.6rem 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid var(--shell-border);
+  background: var(--shell-surface-soft);
+  color: var(--shell-text-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.pill:hover, .btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--shell-border-strong);
+  color: var(--shell-text);
+}
+.btn .ic { width: 16px; height: 16px; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--shell-primary) 0%, var(--shell-tertiary) 130%);
+  border-color: transparent;
+  color: #08110d;
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.22);
+}
+.btn-primary:hover {
+  color: #08110d;
+  box-shadow: 0 16px 38px rgba(16, 185, 129, 0.28);
+}
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--shell-text);
+}
+[data-theme="light"] .btn-secondary { background: rgba(15, 23, 42, 0.04); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.07); }
+[data-theme="light"] .btn-secondary:hover { background: rgba(15, 23, 42, 0.07); }
+
+/* ================= SHELL ================= */
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 34px 20px 72px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: var(--shell-surface);
+  border: 1px solid var(--shell-border);
+  box-shadow: var(--shell-shadow);
+  margin-bottom: var(--content-gap);
+  backdrop-filter: blur(14px);
+}
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.14), transparent 36%),
+    radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.10), transparent 40%);
+}
+.hero-inner {
+  position: relative;
+  padding: 44px 38px 38px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--shell-primary-200);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+[data-theme="light"] .eyebrow { color: #059669; }
+.eyebrow-line {
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--shell-primary), transparent);
+}
+
+.hero-title {
+  margin: 0 0 18px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 4.4vw, 3.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--shell-text);
+  text-wrap: balance;
+  max-width: 16ch;
+}
+.hero-title .accent {
+  color: var(--shell-secondary);
+  background: linear-gradient(120deg, var(--shell-secondary) 0%, var(--shell-tertiary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-lead {
+  margin: 0;
+  max-width: 64ch;
+  font-size: 1.02rem;
+  color: var(--shell-text-muted);
+  text-wrap: pretty;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 26px 0 0;
+  padding: 0;
+}
+.meta-card {
+  padding: 14px 16px;
+  border-radius: 1rem;
+  background: var(--shell-surface-soft);
+  border: 1px solid var(--shell-border);
+  margin: 0;
+}
+.meta-card dt {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--shell-text-soft);
+  margin-bottom: 6px;
+}
+.meta-card dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--shell-text);
+  font-size: 0.95rem;
+}
+
+/* ================= SUMÁRIO ================= */
+.sumario {
+  margin-bottom: var(--content-gap);
+  padding: 22px 26px;
+  border-radius: 1.35rem;
+  border: 1px solid var(--shell-border);
+  background: var(--shell-surface-soft);
+  backdrop-filter: blur(10px);
+}
+.sumario-title {
+  margin: 0 0 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--shell-text-soft);
+}
+.sumario-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px 20px;
+  counter-reset: sec;
+}
+.sumario-list a {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--shell-text);
+  font-weight: 500;
+  transition: background .15s ease, color .15s ease;
+}
+.sumario-list a:hover { background: rgba(255,255,255,0.04); color: var(--shell-primary-200); }
+[data-theme="light"] .sumario-list a:hover { background: rgba(15,23,42,0.04); color: #047857; }
+.sumario-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--shell-text-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ================= SEÇÕES ================= */
+.section {
+  padding: 34px 32px;
+  margin-bottom: var(--content-gap);
+  border-radius: 1.35rem;
+  background: var(--shell-surface);
+  border: 1px solid var(--shell-border);
+  box-shadow: var(--shell-shadow-soft);
+  backdrop-filter: blur(14px);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.section-head {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--shell-text-soft);
+}
+.section h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.3vw, 1.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--shell-text);
+  text-wrap: balance;
+}
+.section h3 {
+  margin: 28px 0 10px;
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: -0.015em;
+  color: var(--shell-text);
+}
+.section p,
+.section li {
+  color: var(--shell-text-muted);
+  text-wrap: pretty;
+}
+.section p { margin: 0 0 1rem; }
+.section p:last-child { margin-bottom: 0; }
+.section strong { color: var(--shell-text); }
+.section code {
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--shell-primary-100);
+  border: 1px solid var(--shell-border);
+}
+[data-theme="light"] .section code {
+  background: rgba(15, 23, 42, 0.05);
+  color: #0f766e;
+}
+.section ul, .section ol {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+.section li { margin-bottom: 0.35rem; }
+
+/* ================= CALLOUTS ================= */
+.callout {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  margin: 22px 0;
+  padding: 18px 20px;
+  border-radius: 1rem;
+  border: 1px solid var(--shell-border);
+  background: var(--shell-surface-soft);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.callout-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--shell-border);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+[data-theme="light"] .callout-mark { background: rgba(15,23,42,0.05); }
+.callout-body { min-width: 0; }
+.callout-title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+.callout-text { margin: 0; color: var(--shell-text-muted); }
+
+.c-primary {
+  background: color-mix(in srgb, var(--shell-primary) 9%, var(--shell-surface-soft));
+  border-color: color-mix(in srgb, var(--shell-primary) 28%, var(--shell-border));
+}
+.c-primary .callout-mark {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: var(--shell-primary-200);
+}
+[data-theme="light"] .c-primary .callout-mark { color: #047857; }
+.c-primary .callout-title { color: var(--shell-primary-200); }
+[data-theme="light"] .c-primary .callout-title { color: #047857; }
+
+.c-secondary {
+  background: color-mix(in srgb, var(--shell-secondary) 9%, var(--shell-surface-soft));
+  border-color: color-mix(in srgb, var(--shell-secondary) 28%, var(--shell-border));
+}
+.c-secondary .callout-mark {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.25);
+  color: var(--shell-secondary-200);
+}
+[data-theme="light"] .c-secondary .callout-mark { color: #6d28d9; }
+.c-secondary .callout-title { color: var(--shell-secondary-200); }
+[data-theme="light"] .c-secondary .callout-title { color: #6d28d9; }
+
+.c-tertiary {
+  background: color-mix(in srgb, var(--shell-tertiary) 9%, var(--shell-surface-soft));
+  border-color: color-mix(in srgb, var(--shell-tertiary) 28%, var(--shell-border));
+}
+.c-tertiary .callout-mark {
+  background: rgba(6, 182, 212, 0.12);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: var(--shell-tertiary-200);
+}
+[data-theme="light"] .c-tertiary .callout-mark { color: #0e7490; }
+.c-tertiary .callout-title { color: var(--shell-tertiary-200); }
+[data-theme="light"] .c-tertiary .callout-title { color: #0e7490; }
+
+.c-warning {
+  background: color-mix(in srgb, var(--shell-warning) 9%, var(--shell-surface-soft));
+  border-color: color-mix(in srgb, var(--shell-warning) 28%, var(--shell-border));
+}
+.c-warning .callout-mark {
+  background: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.28);
+  color: var(--shell-warning);
+}
+.c-warning .callout-title { color: var(--shell-warning); }
+[data-theme="light"] .c-warning .callout-title { color: #b45309; }
+[data-theme="light"] .c-warning .callout-mark { color: #b45309; }
+
+.c-error {
+  background: color-mix(in srgb, var(--shell-danger) 9%, var(--shell-surface-soft));
+  border-color: color-mix(in srgb, var(--shell-danger) 28%, var(--shell-border));
+}
+.c-error .callout-mark {
+  background: rgba(248, 113, 113, 0.12);
+  border-color: rgba(248, 113, 113, 0.28);
+  color: var(--shell-danger);
+}
+.c-error .callout-title { color: var(--shell-danger); }
+[data-theme="light"] .c-error .callout-title { color: #b91c1c; }
+[data-theme="light"] .c-error .callout-mark { color: #b91c1c; }
+
+/* ================= TAGS ================= */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0 !important;
+  margin: 18px 0 !important;
+}
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--shell-border);
+  color: var(--shell-text-muted);
+  margin: 0 !important;
+}
+[data-theme="light"] .tags li { background: rgba(15, 23, 42, 0.04); }
+
+/* ================= CÓDIGO ================= */
+.code-shell {
+  margin: 22px 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--shell-border);
+  background: #0b0b0e;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+[data-theme="light"] .code-shell { background: #0f1419; border-color: rgba(15,23,42,0.14); }
+.code-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-red { background: rgba(248, 113, 113, 0.7); }
+.dot-yellow { background: rgba(251, 191, 36, 0.7); }
+.dot-green { background: rgba(16, 185, 129, 0.7); }
+.code-lang {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 232, 231, 0.55);
+}
+.code-shell pre {
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  color: #e4e2e0;
+  line-height: 1.7;
+  font-size: 0.88rem;
+  font-family: var(--font-mono);
+  white-space: pre;
+}
+.code-shell pre,
+.code-shell pre code {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+/* Syntax highlighting leve (apenas classes semânticas) */
+.code-shell .tag      { color: #c4b5fd; }
+.code-shell .attr     { color: #67e8f9; }
+.code-shell .str      { color: #6ee7b7; }
+.code-shell .com      { color: rgba(236, 232, 231, 0.38); font-style: italic; }
+.code-shell .prop     { color: #67e8f9; }
+.code-shell .num      { color: #fbbf24; }
+
+/* ================= DEMO ================= */
+.demo-wrap {
+  margin: 22px 0;
+  border-radius: 1rem;
+  border: 1px solid var(--shell-border);
+  background: var(--shell-surface-soft);
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.demo-label {
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--shell-text-soft);
+  border-bottom: 1px solid var(--shell-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+.demo-body {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* Tabela demo que se encaixa no shell-prose */
+table.demo {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--shell-border);
+  font-size: 0.92rem;
+}
+table.demo th, table.demo td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--shell-border);
+  text-align: left;
+}
+table.demo thead th {
+  background: rgba(139, 92, 246, 0.10);
+  color: var(--shell-text);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+table.demo tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.025); }
+[data-theme="light"] table.demo tbody tr:nth-child(even) { background: rgba(15, 23, 42, 0.03); }
+table.demo tbody th { color: var(--shell-text); font-weight: 600; }
+table.demo tfoot td {
+  background: rgba(16, 185, 129, 0.10);
+  color: var(--shell-primary-200);
+  font-weight: 700;
+}
+[data-theme="light"] table.demo tfoot td { color: #047857; }
+table.demo tr:last-child td,
+table.demo tr:last-child th { border-bottom: 0; }
+
+/* ================= ROTEIRO ================= */
+.roteiro {
+  margin: 22px 0;
+  padding: 18px 20px;
+  border-radius: 1rem;
+  border: 1px dashed color-mix(in srgb, var(--shell-tertiary) 40%, var(--shell-border));
+  background: color-mix(in srgb, var(--shell-tertiary) 7%, var(--shell-surface-soft));
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.roteiro-head { margin-bottom: 10px; }
+.roteiro-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--shell-tertiary-200);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+[data-theme="light"] .roteiro-chip { color: #0e7490; }
+.roteiro p { margin: 0; color: var(--shell-text-muted); }
+
+/* ================= CHECKLIST ================= */
+.checklist {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 6px 0 16px !important;
+  display: grid;
+  gap: 10px;
+}
+.checklist li {
+  position: relative;
+  padding-left: 28px !important;
+  color: var(--shell-text-muted);
+}
+.checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+.checklist li::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: calc(0.55em + 3px);
+  width: 6px;
+  height: 9px;
+  border-right: 2px solid var(--shell-primary-200);
+  border-bottom: 2px solid var(--shell-primary-200);
+  transform: rotate(45deg);
+}
+[data-theme="light"] .checklist li::after {
+  border-color: #047857;
+}
+
+/* ================= FECHAMENTO ================= */
+.section-close {
+  background: linear-gradient(180deg, var(--shell-surface) 0%, color-mix(in srgb, var(--shell-primary) 6%, var(--shell-surface)) 100%);
+  border-color: color-mix(in srgb, var(--shell-primary) 18%, var(--shell-border));
+}
+.footer-note {
+  margin: 18px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--shell-border);
+  font-size: 0.82rem;
+  color: var(--shell-text-soft);
+}
+.footer-note .mono { color: var(--shell-text-muted); }
+
+/* ================= PAGE FOOT ================= */
+.page-foot {
+  position: relative;
+  z-index: 1;
+  padding: 20px 24px 32px;
+  color: var(--shell-text-soft);
+  font-size: 0.8rem;
+  text-align: center;
+}
+.page-foot-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.7;
+}
+.dotsep { color: var(--shell-text-soft); opacity: 0.6; }
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 720px) {
+  .topbar-inner { padding: 10px 16px; min-height: 60px; }
+  .shell { padding: 22px 14px 52px; }
+  .hero-inner { padding: 28px 22px 26px; }
+  .section { padding: 24px 20px; }
+  .sumario { padding: 18px 20px; }
+  .hero-title { font-size: clamp(1.9rem, 7vw, 2.5rem); }
+  .brand-text small { display: none; }
+  .pill[href="#sumario"] { display: none; }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ================= PRINT (A4) ================= */
+@media print {
+  @page { size: A4; margin: 14mm; }
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .apostila-shell::before { display: none; }
+  .topbar { position: static; border-bottom: 1px solid #e5e7eb; background: #fff !important; backdrop-filter: none; }
+  .toolbar .btn, .toolbar .pill { display: none !important; }
+  .brand-text strong { color: #0f172a !important; }
+  .brand-text small { color: #475569 !important; }
+  .brand-mark { border-color: transparent !important; background: transparent !important; }
+  .shell, .page-foot { padding: 0; max-width: none; }
+
+  .hero, .section, .sumario, .meta-card, .callout, .code-shell, .demo-wrap, .roteiro {
+    background: #ffffff !important;
+    border-color: #e5e7eb !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+    backdrop-filter: none !important;
+  }
+  .hero-gradient { display: none; }
+  .hero { border-radius: 0; border-left: 0; border-right: 0; border-top: 0; margin-bottom: 18px; }
+  .hero-title, .section h2, .section h3, .section strong { color: #0f172a !important; }
+  .hero-title .accent { -webkit-text-fill-color: #7c3aed !important; color: #7c3aed !important; }
+  .hero-lead, .section p, .section li, .footer-note, .meta-card dd, .callout-text, .roteiro p {
+    color: #334155 !important;
+  }
+  .meta-card dt, .section-index, .eyebrow, .code-lang, .demo-label, .sumario-title {
+    color: #64748b !important;
+  }
+  .section code {
+    background: #f1f5f9 !important;
+    color: #0f766e !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .code-shell { background: #0f172a !important; border-color: #0f172a !important; }
+  .code-top { background: #1e293b !important; border-color: #334155 !important; }
+  .code-shell pre { color: #f1f5f9 !important; }
+  .code-shell .tag { color: #c4b5fd !important; }
+  .code-shell .attr { color: #7dd3fc !important; }
+  .code-shell .str { color: #86efac !important; }
+  .code-shell .com { color: #94a3b8 !important; }
+
+  table.demo thead th {
+    background: #f5f3ff !important;
+    color: #0f172a !important;
+  }
+  table.demo tbody tr:nth-child(even) { background: #f8fafc !important; }
+  table.demo tfoot td { background: #ecfdf5 !important; color: #047857 !important; }
+  table.demo th, table.demo td { border-color: #e2e8f0 !important; }
+
+  .c-primary  { background: #ecfdf5 !important; border-color: #a7f3d0 !important; }
+  .c-secondary{ background: #f5f3ff !important; border-color: #ddd6fe !important; }
+  .c-tertiary { background: #ecfeff !important; border-color: #a5f3fc !important; }
+  .c-warning  { background: #fffbeb !important; border-color: #fde68a !important; }
+  .c-error    { background: #fef2f2 !important; border-color: #fecaca !important; }
+  .c-primary .callout-title, .c-primary .callout-mark { color: #047857 !important; background: #d1fae5 !important; }
+  .c-secondary .callout-title, .c-secondary .callout-mark { color: #6d28d9 !important; background: #ede9fe !important; }
+  .c-tertiary .callout-title, .c-tertiary .callout-mark { color: #0e7490 !important; background: #cffafe !important; }
+  .c-warning .callout-title, .c-warning .callout-mark { color: #b45309 !important; background: #fef3c7 !important; }
+  .c-error .callout-title, .c-error .callout-mark { color: #b91c1c !important; background: #fee2e2 !important; }
+
+  .roteiro { background: #ecfeff !important; border-color: #a5f3fc !important; border-style: dashed; }
+  .roteiro-chip { background: #cffafe !important; color: #0e7490 !important; border-color: #a5f3fc !important; }
+
+  .checklist li::before { background: #d1fae5 !important; border-color: #6ee7b7 !important; }
+  .checklist li::after { border-color: #047857 !important; }
+
+  .tags li { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #475569 !important; }
+
+  a { color: #047857 !important; }
+  .section { page-break-inside: avoid; break-inside: avoid; }
+  .page-foot { text-align: left; padding: 16px 0 0; border-top: 1px solid #e5e7eb; margin-top: 18px; }
+  .page-foot-inner { justify-content: flex-start; }
+}
+
+.brand-mark svg { display: block; }
+</style>
+</head>
+<body class="apostila-shell">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10298.8 10298.8" style="shape-rendering:geometricPrecision;fill-rule:evenodd;clip-rule:evenodd">
+            <path fill="#00B4D8" d="M6910.79 8527.19c327.48,-170.98 731.56,-44.11 902.54,283.36 170.98,327.47 44.11,731.56 -283.36,902.54 -362.73,189.57 -750.08,337.25 -1155.64,436.54 -398.1,97.46 -808.57,149.17 -1224.95,149.17 -1421.88,0 -2709.23,-576.4 -3641.12,-1508.28 -931.9,-931.88 -1508.28,-2219.23 -1508.28,-3641.12 0,-1421.88 576.38,-2709.23 1508.28,-3641.12 931.88,-931.9 2219.23,-1508.28 3641.12,-1508.28 416.38,0 826.84,51.71 1224.95,149.17 405.55,99.29 792.91,246.97 1155.64,436.54 327.47,170.98 454.34,575.07 283.36,902.54 -170.98,327.47 -575.06,454.34 -902.54,283.36 -266.08,-139.05 -551.42,-247.69 -851.28,-321.1 -286.06,-70.02 -590.68,-107.19 -910.11,-107.19 -1051.09,0 -2002.64,425.99 -2691.36,1114.72 -688.73,688.72 -1114.72,1640.27 -1114.72,2691.36 0,1051.09 425.99,2002.64 1114.72,2691.36 688.72,688.72 1640.27,1114.72 2691.36,1114.72 319.43,0 624.06,-37.17 910.11,-107.19 299.87,-73.41 585.2,-182.05 851.28,-321.1z"/>
+            <path fill="#023E8A" d="M8898.22 5821.06l-5539.91 0c-370.95,0 -671.66,-300.71 -671.66,-671.66 0,-370.95 300.71,-671.66 671.66,-671.66l5539.91 0c-14.14,-80.85 -30.81,-160.39 -49.94,-238.54 -73.4,-299.86 -182.02,-585.14 -321.09,-851.19 -170.98,-327.48 -44.11,-731.56 283.36,-902.54 327.47,-170.98 731.56,-44.11 902.54,283.36 189.58,362.66 337.25,749.99 436.53,1155.54 97.48,398.14 149.18,808.63 149.18,1225.05 0,416.42 -51.7,826.9 -149.18,1225.05 -99.28,405.54 -246.95,792.88 -436.53,1155.54 -170.98,327.47 -575.07,454.34 -902.54,283.36 -327.47,-170.98 -454.34,-575.06 -283.36,-902.54 139.07,-266.05 247.69,-551.33 321.09,-851.19 19.14,-78.15 35.81,-157.69 49.94,-238.54z"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Prof Toni Coimbra</strong>
+          <small>Apostila · Desenvolvimento de Sistemas</small>
+        </span>
+      </a>
+      <nav class="toolbar">
+        <a class="pill" href="#sumario">Sumário</a>
+        <button class="btn btn-secondary" id="theme-toggle" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <span id="theme-label">Tema claro</span>
+        </button>
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          Salvar PDF
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <section class="hero">
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          Aula 01 · Formulários sem recarregar
+        </div>
+        <h1 class="hero-title">
+          O segredo dos <span class="accent">formulários</span> que não recarregam
+        </h1>
+        <p class="hero-lead">
+          O Instagram valida seu email antes mesmo do clique. O WhatsApp Web envia mensagens sem a página piscar. Por trás de tudo isso há um segredo de três linhas de JavaScript — e hoje você vai escrevê-las.
+        </p>
+
+        <dl class="meta-grid">
+          <div class="meta-card"><dt>Disciplina</dt><dd>Programação Web</dd></div>
+          <div class="meta-card"><dt>Nível</dt><dd>Ensino Técnico</dd></div>
+          <div class="meta-card"><dt>Duração</dt><dd>50 minutos</dd></div>
+          <div class="meta-card"><dt>Entrega</dt><dd>App Caderno de Estudos</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
+      <p class="sumario-title">Nesta aula</p>
+      <ol class="sumario-list">
+        <li><a href="#sec-1"><span class="sumario-num">01</span><span>O que vamos construir</span></a></li>
+        <li><a href="#sec-2"><span class="sumario-num">02</span><span>A analogia do garçom</span></a></li>
+        <li><a href="#sec-3"><span class="sumario-num">03</span><span>Passo a passo</span></a></li>
+        <li><a href="#sec-4"><span class="sumario-num">04</span><span>Validando e depurando</span></a></li>
+        <li><a href="#sec-5"><span class="sumario-num">05</span><span>Aprofundando</span></a></li>
+        <li><a href="#sec-6"><span class="sumario-num">06</span><span>Código completo</span></a></li>
+        <li><a href="#sec-7"><span class="sumario-num">07</span><span>Fechamento</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         CONTEÚDO DA AULA — substitua este bloco pelas seções reais
+         Consulte BLOCOS.md para snippets prontos de cada componente
+         ═══════════════════════════════════════════════════════════════════ -->
+
+    <section class="section" id="sec-1">
+      <header class="section-head">
+        <span class="section-index">Seção 01</span>
+        <h2>O que vamos construir</h2>
+      </header>
+
+      <p>Quando você manda mensagem no WhatsApp Web, ela voa pro outro lado do mundo sem a página recarregar uma única vez. O Spotify troca de música, o Twitter atualiza o feed, o iFood recalcula o frete — tudo sem o navegador respirar. Quando acabar esta aula, você nunca mais vai olhar pra um formulário web do mesmo jeito.</p>
+
+      <p>Hoje começa um projeto que vai te acompanhar pelas próximas oito aulas — e que, se você quiser, vira seu primeiro item de portfólio sério: o <strong>Caderno de Estudos</strong>. Um app pessoal onde você registra suas sessões de estudo (matéria, tempo, anotação), acompanha sua evolução e, até o final da trilha, estará publicado online com login, gráficos e dados privados por usuário. Hospedado, com URL pública, pronto pra postar no LinkedIn.</p>
+
+      <p>No primeiro dia, você constrói a peça mais fundamental: o formulário inteligente que recebe a sessão e a exibe em tela como mágica, sem nunca recarregar a página.</p>
+
+      <aside class="callout c-primary">
+        <div class="callout-mark" aria-hidden="true">✓</div>
+        <div class="callout-body">
+          <p class="callout-title">Resultado final</p>
+          <p class="callout-text">Um formulário que captura matéria, tempo em minutos e anotação. Ao clicar em <strong>Salvar sessão</strong>, a página NÃO recarrega. Um card verde aparece animado acima do formulário com os dados preenchidos, e o formulário se limpa sozinho, pronto para a próxima sessão. Quanto mais sessões você adiciona, mais cards empilham — o mais novo no topo.</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Para esta aula você precisa de</p>
+          <p class="callout-text">VS Code aberto na pasta <code>caderno-de-estudos</code> vazia no Desktop, um navegador moderno com DevTools (F12), e o Live Server instalado no VS Code para recarregar automaticamente. Você já programa em JS, então vamos direto ao ponto — sem revisar o que é <code>addEventListener</code>.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-2">
+      <header class="section-head">
+        <span class="section-index">Seção 02</span>
+        <h2>A analogia do garçom</h2>
+      </header>
+
+      <p>Imagina que você está num restaurante e pede um suco de laranja. O garçom anota e, antes que você consiga dizer "espera, sem açúcar", ele já saiu correndo pra cozinha. Resultado: chega um suco doce que você não queria, e agora é tarde.</p>
+
+      <p>Formulários HTML funcionam exatamente assim por padrão. O usuário clica em Enviar e o navegador IMEDIATAMENTE empacota os dados, dispara uma requisição HTTP para o endereço do atributo <code>action</code> e recarrega a página inteira. Tudo que você queria fazer antes — validar, transformar, mostrar em tela, salvar em algum lugar — virou pó.</p>
+
+      <p>A função <code>preventDefault()</code> é você segurando o braço do garçom: "espera aí, deixa eu falar com você primeiro". O navegador para. O JavaScript assume o controle. E a partir dali, <strong>você</strong> decide o que fazer com aqueles dados.</p>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">O ciclo padrão de um formulário HTML</p>
+          <p class="callout-text">Sem JavaScript interceptando, o navegador faz quatro coisas em sequência quando você clica em Enviar: empacota os campos do formulário, dispara uma requisição HTTP para o endereço do atributo <code>action</code>, espera a resposta do servidor e recarrega a página inteira.<br>Tudo que estava na memória do JavaScript se perde no caminho. O <code>preventDefault</code> interrompe esse ciclo logo no início. A partir daí, o JS assume e você manda em tudo.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-3">
+      <header class="section-head">
+        <span class="section-index">Seção 03</span>
+        <h2>Passo a passo</h2>
+      </header>
+
+      <h3>1. A estrutura HTML</h3>
+      <p>Na pasta <code>caderno-de-estudos</code>, crie o <code>index.html</code>:</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">html</span>
+        </header>
+<pre><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="str">"pt-BR"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="str">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Caderno de Estudos<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"style.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;header&gt;</span>
+      <span class="tag">&lt;h1&gt;</span>📚 Caderno de Estudos<span class="tag">&lt;/h1&gt;</span>
+      <span class="tag">&lt;p&gt;</span>Registre suas sessões e veja sua evolução<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+
+    <span class="tag">&lt;form</span> <span class="attr">id</span>=<span class="str">"form-sessao"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label&gt;</span>
+        Matéria
+        <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"text"</span> <span class="attr">name</span>=<span class="str">"materia"</span> <span class="attr">placeholder</span>=<span class="str">"Ex.: Matemática"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/label&gt;</span>
+
+      <span class="tag">&lt;label&gt;</span>
+        Tempo (minutos)
+        <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"number"</span> <span class="attr">name</span>=<span class="str">"tempo"</span> <span class="attr">min</span>=<span class="str">"1"</span> <span class="attr">max</span>=<span class="str">"600"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/label&gt;</span>
+
+      <span class="tag">&lt;label&gt;</span>
+        Anotação
+        <span class="tag">&lt;textarea</span> <span class="attr">name</span>=<span class="str">"anotacao"</span> <span class="attr">rows</span>=<span class="str">"3"</span> <span class="attr">placeholder</span>=<span class="str">"O que você estudou?"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+      <span class="tag">&lt;/label&gt;</span>
+
+      <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="str">"submit"</span><span class="tag">&gt;</span>Salvar sessão<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;/form&gt;</span>
+
+    <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="str">"lista-sessoes"</span><span class="tag">&gt;&lt;/section&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+      </div>
+
+      <p>Repare em dois detalhes que parecem bobos mas são fundamentais: o <code>id="form-sessao"</code> no formulário (vamos selecionar por ele) e o atributo <code>name</code> em cada campo (o <code>FormData</code> lê isso, não o <code>id</code>).</p>
+
+      <h3>2. Um CSS pra não doer nos olhos</h3>
+      <p>Crie o <code>style.css</code>:</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">css</span>
+        </header>
+<pre><code><span class="tag">*</span> { <span class="prop">box-sizing</span>: border-box; }
+
+<span class="tag">body</span> {
+  <span class="prop">font-family</span>: system-ui, -apple-system, sans-serif;
+  <span class="prop">background</span>: <span class="str">#0f172a</span>;
+  <span class="prop">color</span>: <span class="str">#f1f5f9</span>;
+  <span class="prop">margin</span>: <span class="num">0</span>;
+  <span class="prop">padding</span>: <span class="num">2rem</span>;
+  <span class="prop">min-height</span>: <span class="num">100vh</span>;
+}
+
+<span class="tag">main</span> { <span class="prop">max-width</span>: <span class="num">600px</span>; <span class="prop">margin</span>: <span class="num">0</span> auto; }
+<span class="tag">h1</span> { <span class="prop">font-size</span>: <span class="num">2rem</span>; <span class="prop">margin-bottom</span>: <span class="num">0.25rem</span>; }
+<span class="tag">header p</span> { <span class="prop">color</span>: <span class="str">#94a3b8</span>; <span class="prop">margin-top</span>: <span class="num">0</span>; }
+
+<span class="tag">form</span> {
+  <span class="prop">background</span>: <span class="str">#1e293b</span>;
+  <span class="prop">padding</span>: <span class="num">1.5rem</span>;
+  <span class="prop">border-radius</span>: <span class="num">12px</span>;
+  <span class="prop">display</span>: flex;
+  <span class="prop">flex-direction</span>: column;
+  <span class="prop">gap</span>: <span class="num">1rem</span>;
+  <span class="prop">margin</span>: <span class="num">2rem</span> <span class="num">0</span>;
+}
+
+<span class="tag">label</span> {
+  <span class="prop">display</span>: flex;
+  <span class="prop">flex-direction</span>: column;
+  <span class="prop">gap</span>: <span class="num">0.4rem</span>;
+  <span class="prop">font-size</span>: <span class="num">0.9rem</span>;
+  <span class="prop">color</span>: <span class="str">#cbd5e1</span>;
+}
+
+<span class="tag">input, textarea</span> {
+  <span class="prop">padding</span>: <span class="num">0.7rem</span>;
+  <span class="prop">border</span>: <span class="num">1px</span> solid <span class="str">#334155</span>;
+  <span class="prop">border-radius</span>: <span class="num">8px</span>;
+  <span class="prop">background</span>: <span class="str">#0f172a</span>;
+  <span class="prop">color</span>: <span class="str">#f1f5f9</span>;
+  <span class="prop">font</span>: inherit;
+}
+
+<span class="tag">button</span> {
+  <span class="prop">background</span>: <span class="str">#10b981</span>;
+  <span class="prop">color</span>: white;
+  <span class="prop">border</span>: none;
+  <span class="prop">padding</span>: <span class="num">0.85rem</span>;
+  <span class="prop">border-radius</span>: <span class="num">8px</span>;
+  <span class="prop">font-weight</span>: <span class="num">600</span>;
+  <span class="prop">font-size</span>: <span class="num">1rem</span>;
+  <span class="prop">cursor</span>: pointer;
+}
+
+<span class="tag">button:hover</span> { <span class="prop">background</span>: <span class="str">#059669</span>; }
+
+<span class="tag">.sessao-card</span> {
+  <span class="prop">background</span>: <span class="str">#1e293b</span>;
+  <span class="prop">border-left</span>: <span class="num">4px</span> solid <span class="str">#10b981</span>;
+  <span class="prop">padding</span>: <span class="num">1rem</span> <span class="num">1.25rem</span>;
+  <span class="prop">border-radius</span>: <span class="num">8px</span>;
+  <span class="prop">margin-bottom</span>: <span class="num">0.75rem</span>;
+  <span class="prop">animation</span>: surgir <span class="num">0.3s</span> ease;
+}
+
+<span class="tag">.sessao-card h3</span> { <span class="prop">margin</span>: <span class="num">0</span> <span class="num">0</span> <span class="num">0.25rem</span> <span class="num">0</span>; <span class="prop">font-size</span>: <span class="num">1.1rem</span>; }
+<span class="tag">.sessao-card .tempo</span> { <span class="prop">color</span>: <span class="str">#10b981</span>; <span class="prop">font-weight</span>: <span class="num">600</span>; <span class="prop">font-size</span>: <span class="num">0.9rem</span>; }
+<span class="tag">.sessao-card .anotacao</span> { <span class="prop">color</span>: <span class="str">#cbd5e1</span>; <span class="prop">margin-top</span>: <span class="num">0.5rem</span>; }
+
+<span class="tag">@keyframes surgir</span> {
+  <span class="tag">from</span> { <span class="prop">opacity</span>: <span class="num">0</span>; <span class="prop">transform</span>: translateY(<span class="num">-10px</span>); }
+  <span class="tag">to</span> { <span class="prop">opacity</span>: <span class="num">1</span>; <span class="prop">transform</span>: translateY(<span class="num">0</span>); }
+}</code></pre>
+      </div>
+
+      <h3>3. As três linhas que mudam tudo</h3>
+      <p>Agora a parte que importa. Crie o <code>app.js</code>:</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">javascript</span>
+        </header>
+<pre><code><span class="tag">const</span> form = document.getElementById(<span class="str">'form-sessao'</span>);
+
+form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(evento) {
+  evento.preventDefault();
+
+  <span class="tag">const</span> dados = <span class="tag">new</span> FormData(form);
+  <span class="tag">const</span> sessao = Object.fromEntries(dados);
+
+  console.log(sessao);
+});</code></pre>
+      </div>
+
+      <p>Abra o <code>index.html</code> com Live Server, abra o DevTools (F12) na aba Console, preencha o formulário e clique em Salvar sessão. Você vai ver no console:</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">txt</span>
+        </header>
+<pre><code>{ materia: <span class="str">"Matemática"</span>, tempo: <span class="str">"45"</span>, anotacao: <span class="str">"Função quadrática"</span> }</code></pre>
+      </div>
+
+      <p>Olha o que aconteceu. Você capturou os dados de um formulário inteiro em três linhas: pegou o <code>FormData</code>, converteu em objeto com <code>Object.fromEntries</code>, e o <code>preventDefault</code> impediu o navegador de recarregar tudo. Esse padrão está em praticamente todo formulário moderno da web.</p>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">+</div>
+        <div class="callout-body">
+          <p class="callout-title">O detalhe que vai te morder depois</p>
+          <p class="callout-text">Repare que o tempo veio como string <code>"45"</code>, não como número <code>45</code>. O <code>FormData</code> SEMPRE retorna strings, não importa o tipo do input.<br>Se você tentar somar tempos depois para mostrar "total de horas estudadas", <code>"45" + "30"</code> vira <code>"4530"</code> em vez de <code>75</code>. Esse erro é tão comum que tem nome em inglês: <em>type coercion bug</em>. Vamos resolver no próximo passo.</p>
+        </div>
+      </aside>
+
+      <h3>4. Renderizando em tela</h3>
+      <p>Console é pra desenvolvedor. Aluno quer ver no caderno. Atualize o <code>app.js</code>:</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">javascript</span>
+        </header>
+<pre><code><span class="tag">const</span> form = document.getElementById(<span class="str">'form-sessao'</span>);
+<span class="tag">const</span> lista = document.getElementById(<span class="str">'lista-sessoes'</span>);
+
+form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(evento) {
+  evento.preventDefault();
+
+  <span class="tag">const</span> dados = <span class="tag">new</span> FormData(form);
+  <span class="tag">const</span> sessao = Object.fromEntries(dados);
+  sessao.tempo = Number(sessao.tempo);
+
+  renderizarSessao(sessao);
+  form.reset();
+});
+
+<span class="tag">function</span> renderizarSessao(sessao) {
+  <span class="tag">const</span> card = document.createElement(<span class="str">'article'</span>);
+  card.className = <span class="str">'sessao-card'</span>;
+  card.innerHTML = <span class="str">`
+    &lt;h3&gt;${sessao.materia}&lt;/h3&gt;
+    &lt;span class="tempo"&gt;${sessao.tempo} min&lt;/span&gt;
+    &lt;p class="anotacao"&gt;${sessao.anotacao || '&lt;em&gt;(sem anotação)&lt;/em&gt;'}&lt;/p&gt;
+  `</span>;
+  lista.prepend(card);
+}</code></pre>
+      </div>
+
+      <p>Quatro mudanças importantes nesse trecho. A linha <code>sessao.tempo = Number(sessao.tempo)</code> converte a string em número de verdade — vamos precisar disso lá na aula de gráficos. O <code>form.reset()</code> limpa os campos depois de salvar. O <code>lista.prepend(card)</code> coloca a sessão nova no topo, em vez de empilhar no fim. E o uso de <em>template string</em> com crase permite injetar variáveis no HTML sem concatenar manualmente.</p>
+
+      <p>Recarregue, preencha "Matemática, 45 min, Função quadrática", clique em Salvar. Card aparece animado, formulário se limpa. Preenche "Física, 30 min, Cinemática", salva. Outro card no topo. <strong>Funciona.</strong></p>
+    </section>
+
+    <section class="section" id="sec-4">
+      <header class="section-head">
+        <span class="section-index">Seção 04</span>
+        <h2>Validando e depurando</h2>
+      </header>
+
+      <aside class="callout c-primary">
+        <div class="callout-mark" aria-hidden="true">✓</div>
+        <div class="callout-body">
+          <p class="callout-title">Você está no caminho certo se</p>
+          <p class="callout-text">Preencheu uma sessão de matemática com 45 minutos, clicou em Salvar sessão, a página NÃO recarregou, e um card verde apareceu animado acima do formulário com matéria, tempo e anotação visíveis. Os campos voltaram a ficar vazios. Você consegue adicionar várias sessões e elas se acumulam empilhadas, com a mais nova no topo.</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">!</div>
+        <div class="callout-body">
+          <p class="callout-title">A página recarrega e some tudo</p>
+          <p class="callout-text"><strong>Sintoma:</strong> você clica em Salvar e a página pisca, perdendo tudo.<br><strong>Solução:</strong> esqueceu o <code>preventDefault</code>, ou ele está depois de um erro de sintaxe que interrompeu a execução. Abra o console antes de clicar e veja se aparece erro vermelho — conserte o que estiver acima do <code>preventDefault</code>. Esse erro vai acontecer com você pelo menos uma vez por semana nos próximos seis meses. Faz parte.</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">!</div>
+        <div class="callout-body">
+          <p class="callout-title">Card não aparece, mas o console mostra o objeto certo</p>
+          <p class="callout-text"><strong>Sintoma:</strong> o objeto sai no console, mas nenhum card surge na tela.<br><strong>Solução:</strong> você está fazendo <code>console.log</code> mas esqueceu de chamar <code>renderizarSessao</code>, ou definiu a função em lugar errado. Confirme que a chamada está exatamente <code>renderizarSessao(sessao)</code> e que o <code>id</code> da section é exatamente <code>lista-sessoes</code>, sem espaço, sem typo.</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">!</div>
+        <div class="callout-body">
+          <p class="callout-title">Aparece a palavra Object entre colchetes</p>
+          <p class="callout-text"><strong>Sintoma:</strong> o card mostra <code>[object Object]</code> em vez dos dados.<br><strong>Solução:</strong> você passou o objeto inteiro pro <code>innerHTML</code> em vez de acessar as propriedades. Garanta que está usando <code>sessao.materia</code>, <code>sessao.tempo</code> e <code>sessao.anotacao</code> no template — não a variável <code>sessao</code> crua.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-5">
+      <header class="section-head">
+        <span class="section-index">Seção 05</span>
+        <h2>Aprofundando</h2>
+      </header>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">★</div>
+        <div class="callout-body">
+          <p class="callout-title">Desafio extra</p>
+          <p class="callout-text">Para quem terminou e quer mais: adicione um campo Data com <code>input type="date"</code>, preenchido automaticamente com o dia de hoje via JavaScript no carregamento da página. Mostre a data formatada no card como <em>23 de maio</em>, não <code>2026-05-23</code>.<br>Dica: pesquise <code>Intl.DateTimeFormat</code>. É a API nativa do navegador pra formatar datas em qualquer idioma, e vai te economizar bibliotecas inteiras no futuro.</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">✦</div>
+        <div class="callout-body">
+          <p class="callout-title">Onde você acabou de usar tecnologia profissional</p>
+          <p class="callout-text"><code>FormData</code> não é didática — é o que roda o Facebook, o iFood, o Mercado Livre. Toda vez que você preenche endereço de entrega e o site não pisca, é exatamente esse padrão rodando por baixo. A diferença entre o seu código de hoje e o do iFood são camadas, não conceitos.<br>Em entrevistas de estágio front-end, explicar a diferença entre o submit padrão e o controlado por JavaScript é pergunta de primeira eliminatória. Você acabou de saber responder isso na prática, não na decoreba.</p>
+        </div>
+      </aside>
+
+      <h3>Questão de fixação</h3>
+      <p>Antes de responder, considere o código abaixo (atenção à <strong>ORDEM</strong> das linhas):</p>
+
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">javascript</span>
+        </header>
+<pre><code><span class="tag">const</span> form = document.getElementById(<span class="str">'form-sessao'</span>);
+
+form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(e) {
+  <span class="tag">const</span> dados = <span class="tag">new</span> FormData(form);
+  console.log(Object.fromEntries(dados));
+  e.preventDefault();
+});</code></pre>
+      </div>
+
+      <p>O usuário preenche e clica em Salvar. <strong>O que acontece, na ordem real?</strong></p>
+      <ol type="a">
+        <li>O objeto aparece no console, a página fica intacta — código funciona perfeitamente.</li>
+        <li>O objeto aparece no console por uma fração de segundo, depois a página recarrega. <strong>(correta)</strong></li>
+        <li>Um erro é lançado porque <code>preventDefault</code> deve ser obrigatoriamente a primeira linha.</li>
+        <li>Nada aparece no console porque o navegador recarrega antes do <code>console.log</code> executar.</li>
+      </ol>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">A chave é a ordem das linhas. O <code>console.log</code> é executado SIM (não há erro de sintaxe, e o JS roda linha por linha), então o objeto aparece no console. Mas como o <code>preventDefault</code> foi chamado APÓS o <code>console.log</code>, o navegador continua com o ciclo padrão logo na sequência: empacota a requisição e recarrega a página. Resultado prático: você vê o objeto piscar e some tudo.<br>Por isso a regra profissional é colocar o <code>preventDefault</code> como primeira linha executável do listener. A alternativa C está errada porque ele pode tecnicamente ser chamado em qualquer ponto antes do final do callback — só não convém. A D está errada porque o JS é síncrono dentro do listener: o <code>console.log</code> roda ANTES de o navegador continuar o ciclo padrão.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-6">
+      <header class="section-head">
+        <span class="section-index">Seção 06</span>
+        <h2>Código completo</h2>
+      </header>
+
+      <p>Mantenha esses dois arquivos na pasta <code>caderno-de-estudos</code>. Vamos evoluí-los nas próximas aulas.</p>
+
+      <h3>index.html</h3>
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">html</span>
+        </header>
+<pre><code><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="str">"pt-BR"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="str">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Caderno de Estudos<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"style.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;header&gt;</span>
+      <span class="tag">&lt;h1&gt;</span>📚 Caderno de Estudos<span class="tag">&lt;/h1&gt;</span>
+      <span class="tag">&lt;p&gt;</span>Registre suas sessões e veja sua evolução<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/header&gt;</span>
+    <span class="tag">&lt;form</span> <span class="attr">id</span>=<span class="str">"form-sessao"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label&gt;</span>Matéria <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"text"</span> <span class="attr">name</span>=<span class="str">"materia"</span> <span class="attr">required</span><span class="tag">&gt;&lt;/label&gt;</span>
+      <span class="tag">&lt;label&gt;</span>Tempo (minutos) <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"number"</span> <span class="attr">name</span>=<span class="str">"tempo"</span> <span class="attr">min</span>=<span class="str">"1"</span> <span class="attr">max</span>=<span class="str">"600"</span> <span class="attr">required</span><span class="tag">&gt;&lt;/label&gt;</span>
+      <span class="tag">&lt;label&gt;</span>Anotação <span class="tag">&lt;textarea</span> <span class="attr">name</span>=<span class="str">"anotacao"</span> <span class="attr">rows</span>=<span class="str">"3"</span><span class="tag">&gt;&lt;/textarea&gt;&lt;/label&gt;</span>
+      <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="str">"submit"</span><span class="tag">&gt;</span>Salvar sessão<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;/form&gt;</span>
+    <span class="tag">&lt;section</span> <span class="attr">id</span>=<span class="str">"lista-sessoes"</span><span class="tag">&gt;&lt;/section&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="str">"app.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+      </div>
+
+      <h3>app.js</h3>
+      <div class="code-shell">
+        <header class="code-top">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-lang">javascript</span>
+        </header>
+<pre><code><span class="tag">const</span> form = document.getElementById(<span class="str">'form-sessao'</span>);
+<span class="tag">const</span> lista = document.getElementById(<span class="str">'lista-sessoes'</span>);
+
+form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(evento) {
+  evento.preventDefault();
+
+  <span class="tag">const</span> dados = <span class="tag">new</span> FormData(form);
+  <span class="tag">const</span> sessao = Object.fromEntries(dados);
+  sessao.tempo = Number(sessao.tempo);
+
+  renderizarSessao(sessao);
+  form.reset();
+});
+
+<span class="tag">function</span> renderizarSessao(sessao) {
+  <span class="tag">const</span> card = document.createElement(<span class="str">'article'</span>);
+  card.className = <span class="str">'sessao-card'</span>;
+  card.innerHTML = <span class="str">`
+    &lt;h3&gt;${sessao.materia}&lt;/h3&gt;
+    &lt;span class="tempo"&gt;${sessao.tempo} min&lt;/span&gt;
+    &lt;p class="anotacao"&gt;${sessao.anotacao || '&lt;em&gt;(sem anotação)&lt;/em&gt;'}&lt;/p&gt;
+  `</span>;
+  lista.prepend(card);
+}</code></pre>
+      </div>
+
+      <aside class="roteiro">
+        <header class="roteiro-head">
+          <span class="roteiro-chip">Roteiro do professor</span>
+        </header>
+        <p>Pessoal, parem tudo um segundo. Olhem pra esse projeto que vocês acabaram de construir. Vocês não estão fazendo exercício de aula — estão construindo a primeira camada do que pode virar um produto de verdade. Eu uso uma versão desse caderno pra preparar essas aulas pra vocês. Vocês podem usar pra estudar pro ENEM.</p>
+        <p>Daqui a sete aulas, esse projeto vai estar no ar, com login, com gráficos, hospedado, num banco de dados real. Vocês vão poder mandar o link pro perfil de vocês. Lembrem disso quando alguém perguntar pra que serve isso aí que tu tá fazendo: serve pra mostrar pro mundo do que vocês são capazes.</p>
+      </aside>
+    </section>
+
+    <section class="section section-close" id="sec-7">
+      <header class="section-head">
+        <span class="section-index">Fechamento</span>
+        <h2>O que levamos desta aula</h2>
+      </header>
+      <ul class="checklist">
+        <li><code>FormData</code> captura todos os campos do formulário que tenham atributo <code>name</code>, num objeto iterável.</li>
+        <li><code>Object.fromEntries</code> converte o <code>FormData</code> em objeto JavaScript manipulável — pronto pra ser salvo, exibido ou enviado.</li>
+        <li><code>preventDefault</code> no submit interrompe o ciclo padrão do navegador e devolve o controle pro JavaScript.</li>
+        <li><code>Number</code> converte string em número, porque o <code>FormData</code> sempre retorna strings, mesmo de campos numéricos.</li>
+        <li>Na próxima aula vamos <strong>resolver a persistência</strong>: feche o navegador agora e tudo desaparece. Vamos usar a memória secreta que todo navegador tem e quase ninguém conhece direito.</li>
+      </ul>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">★</div>
+        <div class="callout-body">
+          <p class="callout-title">Sugestão de post pro LinkedIn ou Instagram</p>
+          <p class="callout-text">"Comecei meu Caderno de Estudos — projeto pessoal pra acompanhar minhas sessões de estudo do ENEM. Primeira camada no ar: formulário inteligente em vanilla JS, sem framework, capturando dados sem recarregar a página. Próximo passo: persistência local. Vou compartilhando a evolução aula a aula. #DesenvolvimentoTécnico #SEEDPR #VanillaJS"</p>
+        </div>
+      </aside>
+
+      <p class="footer-note">
+        Material produzido pelo Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="page-foot">
+    <div class="page-foot-inner">
+      <span>© <span id="year"></span> Prof Toni Coimbra</span>
+      <span class="dotsep">·</span>
+      <span>Apostila estática · Aula 01 — Formulários</span>
+      <span class="dotsep">·</span>
+      <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var label = document.getElementById('theme-label');
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  var stored = null;
+  try { stored = localStorage.getItem('apostila-theme'); } catch (e) {}
+  var initial = stored || root.getAttribute('data-theme') || 'dark';
+  root.setAttribute('data-theme', initial);
+  syncLabel();
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('apostila-theme', next); } catch (e) {}
+      syncLabel();
+    });
+  }
+
+  function syncLabel() {
+    if (!label) return;
+    label.textContent = root.getAttribute('data-theme') === 'dark' ? 'Tema claro' : 'Tema escuro';
+  }
+})();
+
+</script>
+</body>
+</html>
