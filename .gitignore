@@ -15,3 +15,17 @@ desktop.ini
 # Editores
 .idea/
 *.code-workspace
+
+# Python / venv (ferramentas)
+.venv/
+__pycache__/
+*.pyc
+
+# Mídia bruta no lake — pesada, não versionar (só os .md transcritos entram)
+lake/**/*.mp4
+lake/**/*.mkv
+lake/**/*.mov
+lake/**/*.avi
+lake/**/*.mp3
+lake/**/*.wav
+lake/**/*.m4a
