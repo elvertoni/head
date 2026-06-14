@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "vault": "PROF-TONI",
+  "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
+  "atualizado_em": "2026-06-14",
+  "arquitetura": {
+    "lake": "lake/{disciplina}",
+    "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
+    "fonte_de_verdade": "canonica.md"
+  },
+  "series": [
+    { "slug": "1a-serie", "label": "1a Serie" },
+    { "slug": "2a-serie", "label": "2a Serie" },
+    { "slug": "3a-serie", "label": "3a Serie" },
+    { "slug": "disciplinas-extras", "label": "Disciplinas Extras" }
+  ],
+  "disciplinas": [
+    {
+      "slug": "analise-e-metodos-para-sistemas",
+      "label": "Analise e Metodos para Sistemas",
+      "serie": "1a-serie",
+      "lake": "lake/analise-e-metodos-para-sistemas",
+      "warehouse": "aulas/analise-e-metodos-para-sistemas",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "introducao-a-computacao",
+      "label": "Introducao a Computacao",
+      "serie": "1a-serie",
+      "lake": "lake/introducao-a-computacao",
+      "warehouse": "aulas/introducao-a-computacao",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "inovacao-tecnologia-e-empreendedorismo",
+      "label": "Inovacao, Tecnologia e Empreendedorismo",
+      "serie": "2a-serie",
+      "lake": "lake/inovacao-tecnologia-e-empreendedorismo",
+      "warehouse": "aulas/inovacao-tecnologia-e-empreendedorismo",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "programacao-front-end",
+      "label": "Programacao Front-End",
+      "serie": "2a-serie",
+      "lake": "lake/programacao-front-end",
+      "warehouse": "aulas/programacao-front-end",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "analise-e-projeto-de-sistemas",
+      "label": "Analise e Projeto de Sistemas",
+      "serie": "3a-serie",
+      "lake": "lake/analise-e-projeto-de-sistemas",
+      "warehouse": "aulas/analise-e-projeto-de-sistemas",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "programacao-no-desenvolvimento-de-sistemas",
+      "label": "Programacao no Desenvolvimento de Sistemas",
+      "serie": "3a-serie",
+      "lake": "lake/programacao-no-desenvolvimento-de-sistemas",
+      "warehouse": "aulas/programacao-no-desenvolvimento-de-sistemas",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    },
+    {
+      "slug": "inteligencia-artificial",
+      "label": "Inteligencia Artificial",
+      "serie": "disciplinas-extras",
+      "lake": "lake/inteligencia-artificial",
+      "warehouse": "aulas/inteligencia-artificial",
+      "trilhas": [],
+      "total_aulas": 0,
+      "status": "planejada"
+    }
+  ],
+  "lessons": []
+}

@@ -1,6 +1,19 @@
-# Acervo de Aulas — Prof. Toni Coimbra
+# Acervo de Conhecimento — Prof. Toni Coimbra
 
-Este repositório é o **acervo de Aulas Canônicas** do Curso Técnico em Desenvolvimento de Sistemas (SEED-PR). Cada aula é um documento Markdown rico e neutro de plataforma — a **fonte única de verdade** de onde se derivam todos os formatos (site ProfessorDash, apostila HTML, PDF).
+Segundo cérebro (vault Obsidian) do Curso Técnico em Desenvolvimento de Sistemas (SEED-PR). Arquitetura **data lake → data warehouse**:
+
+```
+   LAKE  ──curadoria (skill prof-toni + rubrica)──►  WAREHOUSE  ──►  saídas
+ (bruto)                                            (impecável)      (HTML / ProfessorDash)
+ lake/                                              aulas/.../canonica.md
+ livros, PDFs, transcrições, vídeos                 Canônica = fonte única de verdade
+```
+
+- **`lake/{disciplina}/`** — conteúdo cru, sem curadoria: livros, PDFs, transcrições, vídeo-aulas, anotações. Insumo.
+- **`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`** — warehouse: Aulas Canônicas ricas, auditadas, neutras de plataforma. **Fonte única de verdade.**
+- **`manifesto.json`** — índice máquina do acervo (disciplinas, séries, trilhas, aulas, status).
+
+Cada Canônica é a fonte única de onde se derivam todos os formatos (apostila HTML standalone, ProfessorDash, PDF).
 
 ## Onde vivem as aulas
 
