@@ -44,6 +44,19 @@ Todo `canonica.md` abre com o frontmatter YAML do `spec/01-CANONICA.md §2`: `ti
 - **Editar uma aula existente = nova versão**: incremente `versao`, atualize `atualizado_em`. Nunca sobrescreva silenciosamente o histórico conceitual.
 - Esta skill termina na Canônica. Se o Toni pedir o site ou a apostila, isso é outra ferramenta (ProfessorDash / skill `aula-estatica`) lendo este mesmo arquivo.
 
+### Imagens — brief por aula (padrão obrigatório)
+Toda aula gerada acompanha um **brief de imagem**: o arquivo `imagens.md` na pasta da aula, neutro de plataforma. Isso **não cria bloco novo na Canônica** — imagem entra no corpo como Markdown `![alt](img/nome.png)`, sempre com justificativa pedagógica (vale o teste anti-decoração; sem justificativa, sai).
+
+Para cada visual sugerido, `imagens.md` traz:
+- **secao** — onde entra na aula (ex.: "Desenvolvimento › Anatomia do Harness").
+- **objetivo** — o que o visual ensina (por que não é decoração).
+- **alt** — texto alternativo (acessibilidade + fallback quando o renderer não suporta imagem).
+- **prompt** — prompt pronto pra colar num gerador (Gemini Nano Banana / GPT) e produzir a imagem.
+
+Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → Toni pega o `prompt`, gera, salva em `img/`. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
+
+Lembrete de renderer: o standalone (`aula-estatica`) **não tem componente de imagem de conteúdo** (o design system proíbe imagem externa obrigatória) — lá a imagem degrada com marcação explícita; ela brilha no ProfessorDash. Isso não altera a Canônica: o brief existe sempre.
+
 ## Limites desta skill
 
 - ❌ Não renderiza HTML/site/apostila — só Canônica.

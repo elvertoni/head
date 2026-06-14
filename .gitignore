@@ -40,3 +40,9 @@ lake/**/*.xlsx
 lake/**/*.xls
 lake/**/*.epub
 lake/**/*.zip
+# Imagens brutas no lake (originais pesados). As versões web finais vivem em aulas/.../img/
+lake/**/*.png
+lake/**/*.jpg
+lake/**/*.jpeg
+lake/**/*.webp
+lake/**/*.gif
