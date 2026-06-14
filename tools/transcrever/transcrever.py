@@ -29,25 +29,43 @@ def slugify(texto: str) -> str:
     return re.sub(r"[\s_-]+", "-", texto) or "transcricao"
 
 
-def add_cuda_dlls() -> None:
-    """No Windows, expoe as DLLs CUDA instaladas via pip (nvidia-*-cu12) ao loader."""
+def add_cuda_dlls() -> list[str]:
+    """No Windows, expoe as DLLs CUDA instaladas via pip (nvidia-*-cu12) ao loader.
+
+    Varre todos os site-packages do ambiente atual (inclui o do venv via sys.path
+    e sysconfig) procurando nvidia/<lib>/bin com cublas64_12.dll, cudnn*.dll etc.
+    """
     if os.name != "nt":
-        return
-    import site
-    dirs = list(site.getsitepackages())
+        return []
+    import sysconfig
+
+    raizes: set[str] = set(p for p in sys.path if p)
+    for chave in ("purelib", "platlib"):
+        try:
+            raizes.add(sysconfig.get_paths()[chave])
+        except Exception:
+            pass
     try:
-        dirs.append(site.getusersitepackages())
+        import site
+        raizes.update(site.getsitepackages())
     except Exception:
         pass
-    dirs.append(str(Path(sys.executable).parent / "Lib" / "site-packages"))
-    for sp in dirs:
-        nv = Path(sp) / "nvidia"
-        if nv.exists():
+
+    adicionados: list[str] = []
+    for raiz in raizes:
+        nv = Path(raiz) / "nvidia"
+        if nv.is_dir():
             for binp in nv.glob("*/bin"):
                 try:
                     os.add_dll_directory(str(binp))
+                    # tambem no PATH como reforco (alguns loaders ignoram add_dll_directory)
+                    os.environ["PATH"] = str(binp) + os.pathsep + os.environ.get("PATH", "")
+                    adicionados.append(str(binp))
                 except Exception:
                     pass
+    if not adicionados:
+        print("[aviso] nenhuma pasta nvidia/*/bin encontrada — GPU pode falhar.", flush=True)
+    return adicionados
 
 
 def fmt_ts(segundos: float) -> str:
