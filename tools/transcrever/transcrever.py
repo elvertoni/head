@@ -98,6 +98,7 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Transcreve video/audio em PT-BR -> lake/{disciplina}/")
     p.add_argument("arquivo", help="caminho do video ou audio (mp4, mkv, mp3, wav, m4a, ...)")
     p.add_argument("--disciplina", required=True, help="slug da disciplina (pasta em lake/)")
+    p.add_argument("--fonte", default=None, help="subpasta da fonte dentro da disciplina (ex: ia-coders, ufpr)")
     p.add_argument("--titulo", default=None, help="titulo legivel; default = nome do arquivo")
     p.add_argument("--modelo", default="large-v3", help="modelo whisper (default: large-v3)")
     p.add_argument("--device", default="auto", choices=["auto", "cuda", "cpu"], help="default: auto")
@@ -110,13 +111,16 @@ def main() -> None:
     if not entrada.is_file():
         raise SystemExit(f"[erro] arquivo nao encontrado: {entrada}")
 
-    destino_dir = LAKE / args.disciplina
-    if not destino_dir.is_dir():
+    disc_dir = LAKE / args.disciplina
+    if not disc_dir.is_dir():
         existentes = ", ".join(sorted(d.name for d in LAKE.iterdir() if d.is_dir()))
         raise SystemExit(
             f"[erro] disciplina '{args.disciplina}' nao existe em lake/.\n"
             f"        disponiveis: {existentes}"
         )
+    # subpasta da fonte (ex: ia-coders). Criada se nao existir.
+    destino_dir = disc_dir / args.fonte if args.fonte else disc_dir
+    destino_dir.mkdir(parents=True, exist_ok=True)
 
     titulo = args.titulo or entrada.stem
     slug = slugify(titulo)
@@ -158,7 +162,8 @@ def main() -> None:
         "---\n"
         f"titulo: {titulo}\n"
         f"disciplina: {args.disciplina}\n"
-        "tipo: transcricao\n"
+        + (f"fonte_curso: {args.fonte}\n" if args.fonte else "")
+        + "tipo: transcricao\n"
         f"fonte: {entrada.name}\n"
         f"modelo: {args.modelo}\n"
         f"device: {dev}/{ct}\n"

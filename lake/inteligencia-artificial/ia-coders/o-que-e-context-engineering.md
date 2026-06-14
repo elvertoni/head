@@ -1,6 +1,7 @@
 ---
 titulo: O que e Context Engineering
 disciplina: inteligencia-artificial
+fonte_curso: ia-coders
 tipo: transcricao
 fonte: Aula_01_O_que_e_Context_Engineering.mp4
 modelo: large-v3

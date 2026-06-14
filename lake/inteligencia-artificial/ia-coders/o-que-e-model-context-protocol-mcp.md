@@ -1,6 +1,7 @@
 ---
 titulo: O que e Model Context Protocol MCP
 disciplina: inteligencia-artificial
+fonte_curso: ia-coders
 tipo: transcricao
 fonte: Aula_03_O_que_e_Model_Context_Protocol_MCP.mp4
 modelo: large-v3

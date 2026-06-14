@@ -1,6 +1,7 @@
 ---
 titulo: Desenvolvimento AI First vs AI Enabled
 disciplina: inteligencia-artificial
+fonte_curso: ia-coders
 tipo: transcricao
 fonte: Aula_04_Desenvolvimento_AI_First_vs_AI_Enabled.mp4
 modelo: large-v3

@@ -1,6 +1,7 @@
 ---
 titulo: O que e Harness Engineering
 disciplina: inteligencia-artificial
+fonte_curso: ia-coders
 tipo: transcricao
 fonte: Aula_02_O_que_e_Harness_Engineering.mp4
 modelo: large-v3

@@ -18,19 +18,22 @@ Roda na **GPU NVIDIA** (RTX 3050 detectada, `float16`). Sem GPU, cai automático
 
 ```powershell
 # forma simples (wrapper)
-.\transcrever.ps1 "C:\videos\aula-mcp.mp4" --disciplina inteligencia-artificial
+.\transcrever.ps1 "C:\videos\aula-mcp.mp4" --disciplina inteligencia-artificial --fonte ia-coders
 
 # com título legível e marcação de tempo
-.\transcrever.ps1 "C:\videos\aula-mcp.mp4" --disciplina inteligencia-artificial --titulo "MCP na prática" --timestamps
+.\transcrever.ps1 "C:\videos\aula-mcp.mp4" --disciplina inteligencia-artificial --fonte ia-coders --titulo "MCP na prática" --timestamps
 ```
 
-Saída: `lake/inteligencia-artificial/mcp-na-pratica.md` (frontmatter + transcrição, `status: bruto`).
+Saída: `lake/inteligencia-artificial/ia-coders/mcp-na-pratica.md` (frontmatter + transcrição, `status: bruto`).
+
+O `--fonte` organiza por origem do conteúdo (curso/instituição) dentro da disciplina — ex.: `ia-coders`, `ia-master`, `ufpr`. A subpasta é criada se não existir.
 
 ### Opções
 
 | Flag | Default | Pra quê |
 |---|---|---|
 | `--disciplina` | (obrigatório) | slug da pasta em `lake/` (valida se existe) |
+| `--fonte` | (nenhuma) | subpasta da origem dentro da disciplina (`ia-coders`, `ufpr`…); criada se faltar |
 | `--titulo` | nome do arquivo | título legível; vira o slug do `.md` |
 | `--modelo` | `large-v3` | qualidade máxima PT-BR. Use `medium`/`small` se quiser mais velocidade |
 | `--device` | `auto` | `cuda`, `cpu` ou `auto` (GPU com fallback) |
