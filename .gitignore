@@ -15,6 +15,7 @@ desktop.ini
 # Editores
 .idea/
 *.code-workspace
+.obsidian/
 
 # Python / venv (ferramentas)
 .venv/
