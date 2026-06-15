@@ -25,9 +25,11 @@
 - [[fine-tuning]] — ajuste direcionado após o pré-treino; molda comportamento/estilo · vivo · aulas [12]
 - [[cutoff]] — data em que o conhecimento do modelo congela · vivo · aulas [12]
 - [[multimodalidade]] — IA que lida com texto, imagem, áudio e vídeo · vivo · aulas [13]
+- [[prompt-engineering]] — a arte de pedir bem: como formular a instrução · vivo · aulas [14]
+- [[context-engineering]] — o que colocar junto da pergunta; "contexto é o novo código" · vivo · aulas [15]
 - [[rag]] — buscar trechos do acervo e entregá-los ao LLM junto com a pergunta · vivo · aulas [16,17]
 - [[chunking]] — cortar documentos em pedaços do tamanho certo antes de vetorizar · vivo · aulas [17]
 - [[embeddings]] — texto vira vetor onde proximidade numérica = proximidade de significado · vivo · aulas [10,17]
-- [[vector-store]] — banco que guarda embeddings e busca por similaridade · rascunho · aulas [17]
+- [[vector-store]] — banco que guarda embeddings e busca por similaridade · vivo · aulas [17]
 
 <!-- stubs pendentes (linkados mas sem página): [[llm]], [[cutoff]], [[context-engineering]], [[alucinacoes]], [[tokens]] -->
