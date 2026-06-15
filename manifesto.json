@@ -21,9 +21,9 @@
       "serie": "1a-serie",
       "lake": "lake/analise-e-metodos-para-sistemas",
       "warehouse": "aulas/analise-e-metodos-para-sistemas",
-      "trilhas": [],
-      "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": ["metodologias-ageis"],
+      "total_aulas": 9,
+      "status": "em-construcao"
     },
     {
       "slug": "introducao-a-computacao",
@@ -61,9 +61,9 @@
       "serie": "3a-serie",
       "lake": "lake/analise-e-projeto-de-sistemas",
       "warehouse": "aulas/analise-e-projeto-de-sistemas",
-      "trilhas": [],
-      "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": ["marketing-digital"],
+      "total_aulas": 6,
+      "status": "em-construcao"
     },
     {
       "slug": "programacao-no-desenvolvimento-de-sistemas",
@@ -87,6 +87,21 @@
     }
   ],
   "lessons": [
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 33, "titulo": "Fundamentos da Agilidade", "slug": "fundamentos-da-agilidade", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA NIV1_ ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 34, "titulo": "Introducao ao Scrum", "slug": "introducao-ao-scrum", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 34_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 35, "titulo": "Cerimonias e Artefatos do Scrum", "slug": "cerimonias-e-artefatos", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 35_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 36, "titulo": "Elaboracao dos Epicos", "slug": "epicos", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 36_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 37, "titulo": "Priorizacao do Backlog", "slug": "priorizacao-do-backlog", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 37_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 38, "titulo": "Planejamento de Releases", "slug": "planejamento-de-releases", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 38_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 39, "titulo": "Planejamento em Scrum - visao integrada", "slug": "planejamento-em-scrum", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 39_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 40, "titulo": "Historias de Usuario", "slug": "historias-de-usuario", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 40_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 41, "titulo": "Estimativa e Planning Poker", "slug": "estimativa-e-planning-poker", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 41_ANALISE E METODO PARA SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 25, "titulo": "O que e Marketing Digital", "slug": "o-que-e-marketing-digital", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 25_ANALISE E PROJETO DE SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 26, "titulo": "Marketing e trafego organico", "slug": "trafego-organico", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 26_ANALISE E PROJETO DE SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 27, "titulo": "Marketing e trafego pago", "slug": "trafego-pago", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 27_ANALISE E PROJETO DE SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 28, "titulo": "Planejamento de Marketing", "slug": "planejamento-de-marketing", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 28_ANALISE E PROJETO DE SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 29, "titulo": "Analise de resultados", "slug": "analise-de-resultados", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 29_ANALISE E PROJETO DE SISTEMAS.pptx"] },
+    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 30, "titulo": "Storytelling no desenvolvimento pessoal", "slug": "storytelling", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 30_ANALISE E PROJETO DE SISTEMAS.pptx"] },
     { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 1, "titulo": "O que e Inteligencia Artificial", "slug": "o-que-e-inteligencia-artificial", "status": "planejada", "fontes": [] },
     { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 2, "titulo": "Historia da IA e os invernos", "slug": "historia-da-ia-e-os-invernos", "status": "planejada", "fontes": [] },
     { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 3, "titulo": "IA, ML, Deep Learning e IA Generativa", "slug": "ia-ml-deep-learning-e-ia-generativa", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ufpr"] },
