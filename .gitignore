@@ -20,6 +20,10 @@ desktop.ini
 .venv/
 __pycache__/
 *.pyc
+_inspecionar.py
+
+# Referência externa de terceiros (ex.: wiki de curso pago) — local-only, não republicar
+lake/**/elite-wiki/
 
 # Conteúdo bruto no lake — pesado, não versionar (só os .md tratados entram)
 # Vídeo/áudio
