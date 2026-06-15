@@ -81,10 +81,36 @@
       "serie": "disciplinas-extras",
       "lake": "lake/inteligencia-artificial",
       "warehouse": "aulas/inteligencia-artificial",
-      "trilhas": [],
-      "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": ["fundamentos-de-ia"],
+      "total_aulas": 25,
+      "status": "em-construcao"
     }
   ],
-  "lessons": []
+  "lessons": [
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 1, "titulo": "O que e Inteligencia Artificial", "slug": "o-que-e-inteligencia-artificial", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 2, "titulo": "Historia da IA e os invernos", "slug": "historia-da-ia-e-os-invernos", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 3, "titulo": "IA, ML, Deep Learning e IA Generativa", "slug": "ia-ml-deep-learning-e-ia-generativa", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ufpr"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 4, "titulo": "Como a maquina aprende", "slug": "como-a-maquina-aprende", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 5, "titulo": "Tipos de aprendizado de maquina", "slug": "tipos-de-aprendizado-de-maquina", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 6, "titulo": "Aprendizado supervisionado na pratica", "slug": "aprendizado-supervisionado-na-pratica", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 7, "titulo": "Aprendizado nao-supervisionado", "slug": "aprendizado-nao-supervisionado", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 8, "titulo": "Redes neurais e deep learning", "slug": "redes-neurais-e-deep-learning", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 9, "titulo": "O que e um LLM", "slug": "o-que-e-um-llm", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 10, "titulo": "Tokens, embeddings e vetores", "slug": "tokens-embeddings-e-vetores", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 11, "titulo": "Transformers e atencao", "slug": "transformers-e-atencao", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 12, "titulo": "Treino, fine-tuning e cutoff", "slug": "treino-fine-tuning-e-cutoff", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 13, "titulo": "IA que ve e ouve - multimodalidade", "slug": "ia-que-ve-e-ouve-multimodalidade", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 14, "titulo": "Prompt Engineering", "slug": "prompt-engineering", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 15, "titulo": "Context Engineering", "slug": "context-engineering", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-context-engineering.md"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 16, "titulo": "RAG - recuperacao com geracao aumentada", "slug": "rag-recuperacao-com-geracao-aumentada", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-master"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 17, "titulo": "Chunking, embeddings e vector stores", "slug": "chunking-embeddings-e-vector-stores", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-master"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 18, "titulo": "Agentes e subagentes", "slug": "agentes-e-subagentes", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 19, "titulo": "Tool use e function calling", "slug": "tool-use-e-function-calling", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 20, "titulo": "MCP - Model Context Protocol", "slug": "mcp-model-context-protocol", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-model-context-protocol-mcp.md"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 21, "titulo": "Harness Engineering", "slug": "harness-engineering", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-harness-engineering.md"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 22, "titulo": "Desenvolvimento AI-First vs AI-Enabled", "slug": "desenvolvimento-ai-first-vs-ai-enabled", "status": "planejada", "fontes": ["lake/inteligencia-artificial/ia-coders/desenvolvimento-ai-first-vs-ai-enabled.md", "lake/inteligencia-artificial/ia-master"] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 23, "titulo": "Alucinacoes - causas, tipos e mitigacao", "slug": "alucinacoes-causas-tipos-e-mitigacao", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 24, "titulo": "Evals e economia de tokens", "slug": "evals-e-economia-de-tokens", "status": "planejada", "fontes": [] },
+    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 25, "titulo": "Etica, responsabilidade e IA no Brasil", "slug": "etica-responsabilidade-e-ia-no-brasil", "status": "planejada", "fontes": [] }
+  ]
 }
