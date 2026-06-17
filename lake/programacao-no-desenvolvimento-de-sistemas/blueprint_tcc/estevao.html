@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blueprint de Software — Alpha Fit</title>
+  <style>
+    :root {
+      --bg: #f3ede3;
+      --surface: #fffdfa;
+      --surface2: #f8f2e8;
+      --border: rgba(37, 46, 61, 0.12);
+      --border-s: rgba(37, 46, 61, 0.18);
+      --text: #202634;
+      --muted: #566173;
+      --soft: #7c8797;
+      --primary: #8c5c23;
+      --primary-s: #aa7540;
+      --cyan: #395b7a;
+      --green: #2f6d55;
+      --amber: #8d6223;
+      --rose: #8f4f52;
+      --radius: 12px;
+      --radius-lg: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 15px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: A4;
+      margin: 16mm 14mm 16mm 14mm;
+    }
+
+    body {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      line-height: 1.74;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .book {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 28px 22px 64px;
+    }
+
+    .page-break { page-break-before: always; break-before: page; }
+    .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+
+    /* ===== COVER ===== */
+    .cover {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0 0 10px;
+    }
+
+    .cover-box {
+      background: linear-gradient(180deg, rgba(255,253,250,0.98), rgba(248,242,232,0.95));
+      border: 1px solid var(--border-s);
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 36px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-box::after {
+      content: "";
+      position: absolute;
+      right: 34px;
+      top: 34px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      border: 1px solid rgba(140,92,35,0.10);
+      background: radial-gradient(circle, rgba(140,92,35,0.06), transparent 68%);
+      pointer-events: none;
+    }
+
+    .cover-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-kicker::before {
+      content: "";
+      width: 42px; height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+      position: relative; z-index: 1;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      background: rgba(37,46,61,0.04);
+      border: 1px solid rgba(37,46,61,0.10);
+      color: var(--muted);
+    }
+
+    .tag-v { color: var(--primary); background: rgba(140,92,35,0.08); border-color: rgba(140,92,35,0.18); }
+
+    h1.cover-title {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 3.65rem;
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-title span { color: var(--primary); }
+
+    .cover-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 64ch;
+      line-height: 1.76;
+      position: relative; z-index: 1;
+      margin-bottom: 28px;
+    }
+
+    .cover-divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(37,46,61,0.16), transparent 78%);
+      margin: 22px 0;
+      position: relative; z-index: 1;
+    }
+
+    .cover-info {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px 24px;
+      position: relative; z-index: 1;
+    }
+
+    .cover-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cover-info-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .cover-info-value {
+      font-size: 0.94rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ===== LESSON SHELL ===== */
+    .lesson {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lesson-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lesson-num {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .lesson h2 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.65rem;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+      color: var(--text);
+    }
+
+    .lesson-chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(140,92,35,0.06);
+      border: 1px solid rgba(140,92,35,0.12);
+      color: var(--primary);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+
+    .lesson p { margin-bottom: 12px; color: var(--muted); font-size: 0.98rem; }
+    .lesson h3 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.18rem;
+      color: var(--text);
+      margin: 22px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .lesson h3::before {
+      content: "";
+      width: 24px; height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    strong { color: var(--text); }
+
+    /* ===== CALLOUTS ===== */
+    .callout {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin: 1rem 0;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-s);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .callout-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: rgba(37,46,61,0.05);
+      font-size: 1.1rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .callout-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .callout-text {
+      color: var(--text);
+      font-size: 0.94rem;
+      line-height: 1.72;
+    }
+
+    .c-v { border-left: 4px solid var(--primary-s); }
+    .c-v .callout-title, .c-v .callout-icon { color: var(--primary); }
+    .c-c { border-left: 4px solid var(--cyan); }
+    .c-c .callout-title, .c-c .callout-icon { color: var(--cyan); }
+    .c-g { border-left: 4px solid var(--green); }
+    .c-g .callout-title, .c-g .callout-icon { color: var(--green); }
+    .c-a { border-left: 4px solid var(--amber); }
+    .c-a .callout-title, .c-a .callout-icon { color: var(--amber); }
+
+    /* ===== STEPS ===== */
+    .steps { display: flex; flex-direction: column; gap: 0; margin: 1rem 0; }
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(140,92,35,0.08);
+      border: 1px solid rgba(140,92,35,0.18);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-content { flex: 1; }
+    .step-title { color: var(--text); font-weight: 700; font-size: 0.97rem; margin-bottom: 4px; }
+    .step-text { color: var(--muted); font-size: 0.92rem; }
+
+    /* ===== TEMPLATE OFICIAL ===== */
+    .template-oficial {
+      background: var(--surface2);
+      border: 1px solid rgba(140,92,35,0.16);
+      border-radius: var(--radius-lg);
+      padding: 28px 26px;
+      margin: 1.2rem 0;
+    }
+
+    .template-title {
+      text-align: center;
+      margin-bottom: 28px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid rgba(140,92,35,0.18);
+    }
+
+    .template-title .t-pre {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .template-title h3 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.4rem;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+
+    .t-section {
+      margin-bottom: 22px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+    .t-section:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .t-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .t-label span {
+      width: 22px; height: 22px;
+      border-radius: 8px;
+      background: rgba(140,92,35,0.08);
+      border: 1px solid rgba(140,92,35,0.16);
+      display: inline-grid;
+      place-items: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* ===== CONTEÚDO PREENCHIDO ===== */
+    .filled-area {
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(140,92,35,0.14);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.76;
+    }
+
+    .filled-area p { margin-bottom: 8px; color: var(--text); font-size: 0.95rem; }
+    .filled-area p:last-child { margin-bottom: 0; }
+
+    .req-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .req-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(37,46,61,0.12);
+      font-size: 0.93rem;
+      color: var(--text);
+    }
+
+    .req-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .req-badge {
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .badge-rf {
+      background: rgba(57,91,122,0.10);
+      color: var(--cyan);
+      border: 1px solid rgba(57,91,122,0.20);
+    }
+
+    .badge-rnf {
+      background: rgba(141,98,35,0.10);
+      color: var(--amber);
+      border: 1px solid rgba(141,98,35,0.22);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .tech-card {
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(140,92,35,0.14);
+      border-radius: 10px;
+      padding: 13px 14px;
+    }
+
+    .tech-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .tech-role {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .tech-why {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .profile-card {
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(140,92,35,0.14);
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .profile-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .profile-name {
+      font-weight: 700;
+      font-size: 0.93rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .profile-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .section-card h2 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.48rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-card h2::before {
+      content: "";
+      width: 28px; height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    .note-footer {
+      margin-top: 24px;
+      font-size: 0.80rem;
+      color: var(--soft);
+      text-align: center;
+    }
+
+    .autoav-box {
+      background: rgba(47,109,85,0.06);
+      border: 1px solid rgba(47,109,85,0.18);
+      border-left: 4px solid var(--green);
+      border-radius: 10px;
+      padding: 16px 18px;
+      font-size: 0.94rem;
+      color: var(--text);
+      line-height: 1.76;
+    }
+
+    @media screen and (max-width: 760px) {
+      html { font-size: 14px; }
+      .book { padding: 14px 12px 36px; }
+      .cover-box, .lesson, .section-card, .template-oficial { padding: 20px 18px; }
+      h1.cover-title { font-size: 2.7rem; }
+      .cover-info { grid-template-columns: 1fr; }
+      .tech-grid, .profile-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body { background: #ffffff; }
+      .book { max-width: none; padding: 0; }
+      .page-break { break-before: page; }
+    }
+  </style>
+</head>
+<body>
+<div class="book">
+
+  <!-- CAPA -->
+  <section class="cover">
+    <div class="cover-box">
+      <div class="cover-kicker">Curso Técnico em Desenvolvimento de Sistemas · TCC</div>
+      <div class="cover-tags">
+        <span class="tag tag-v">Blueprint Oficial</span>
+        <span class="tag">Aplicativo Mobile</span>
+        <span class="tag">Fitness &amp; Performance</span>
+      </div>
+      <h1 class="cover-title">Alpha<br><span>Fit</span></h1>
+      <p class="cover-subtitle">
+        Blueprint de Software completo para o TCC. O Alpha Fit é um ecossistema mobile de 
+        alta performance voltado à otimização de treinos, eliminando o "achismo" e 
+        substituindo-o por decisões baseadas em dados reais de performance e biologia.
+      </p>
+      <div class="cover-divider"></div>
+      <div class="cover-info">
+        <div class="cover-info-item">
+          <span class="cover-info-label">Projeto</span>
+          <span class="cover-info-value">Alpha Fit – Inteligência em Performance</span>
+        </div>
+        <div class="cover-info-item">
+          <span class="cover-info-label">Tipo de Sistema</span>
+          <span class="cover-info-value">Aplicativo Mobile (Android/iOS)</span>
+        </div>
+        <div class="cover-info-item">
+          <span class="cover-info-label">Documento</span>
+          <span class="cover-info-value">Blueprint de Software — TCC</span>
+        </div>
+        <div class="cover-info-item">
+          <span class="cover-info-label">Data</span>
+          <span class="cover-info-value">Maio de 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE PREENCHIDO -->
+  <section class="lesson page-break">
+    <div class="lesson-head">
+      <div>
+        <div class="lesson-num">Template Oficial — Preenchido</div>
+        <h2>Blueprint de Software — Alpha Fit</h2>
+      </div>
+      <div class="lesson-chip">Para entregar</div>
+    </div>
+
+    <div class="template-oficial">
+      <div class="template-title">
+        <span class="t-pre">Curso Técnico em Desenvolvimento de Sistemas · TCC</span>
+        <h3>Blueprint de Software — Alpha Fit: Inteligência em Performance</h3>
+      </div>
+
+      <!-- SEÇÃO 1: PROBLEMA -->
+      <div class="t-section">
+        <div class="t-label"><span>1</span> Problema e Contexto</div>
+
+        <div class="filled-area">
+          <p>
+            Praticantes de musculação e atividades físicas — desde iniciantes até atletas amadores —
+            não possuem, na maioria dos casos, ferramentas acessíveis que transformem seus dados de
+            treino em decisões inteligentes de performance. O acompanhamento é feito de forma improvisada:
+            cadernos em papel, planilhas genéricas ou diários simples que registram apenas o que foi feito,
+            sem qualquer análise dos dados coletados.
+          </p>
+          <p>
+            Essa ausência de inteligência aplicada ao treino gera três problemas centrais e mensuráveis:
+            (1) <strong>platô de resultados</strong> — o atleta estagna porque não há orientação sobre quando
+            aumentar carga, repetições ou reduzir o descanso; (2) <strong>assimetrias musculares e lesões</strong>
+            — sem visibilidade sobre o equilíbrio entre grupos musculares treinados, o atleta sobrecarrega
+            certos grupos e negligencia outros; e (3) <strong>treinos inadequados à recuperação</strong> —
+            o usuário treina com intensidade máxima mesmo com sono ruim ou estresse elevado, aumentando
+            o risco de overtraining e lesão.
+          </p>
+          <p>
+            Estima-se que mais de 70% dos praticantes de academia abandonem os treinos em menos de 6 meses
+            por falta de resultados visíveis — problema diretamente relacionado à ausência de progressão
+            estruturada e inteligente. O Alpha Fit resolve esse problema oferecendo um parceiro técnico
+            baseado em dados reais, acessível no smartphone de qualquer usuário.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 2: PÚBLICO-ALVO -->
+      <div class="t-section">
+        <div class="t-label"><span>2</span> Público-alvo</div>
+
+        <div class="profile-grid">
+          <div class="profile-card">
+            <div class="profile-icon">🏋️</div>
+            <div class="profile-name">Atleta Amador / Praticante Avançado</div>
+            <div class="profile-desc">
+              Usa o app para registrar séries com métricas avançadas (RPE, RIR, tonelagem),
+              acompanhar recordes pessoais e visualizar o dashboard analítico com gráficos
+              de fadiga e predição de PR.
+            </div>
+          </div>
+          <div class="profile-card">
+            <div class="profile-icon">🌱</div>
+            <div class="profile-name">Iniciante em Musculação</div>
+            <div class="profile-desc">
+              Passa pelo onboarding inteligente, recebe uma ficha de treino adaptada ao
+              seu contexto (Home vs. Gym, dias disponíveis, restrições), e aprende
+              biomecânica através das "Dicas Alpha" em cada exercício.
+            </div>
+          </div>
+          <div class="profile-card">
+            <div class="profile-icon">👥</div>
+            <div class="profile-name">Usuário Social / Grupo de Treino</div>
+            <div class="profile-desc">
+              Participa de grupos privados com amigos para visualizar o ranking de volume
+              semanal e estimular engajamento coletivo sem exposição pública de dados pessoais.
+            </div>
+          </div>
+          <div class="profile-card">
+            <div class="profile-icon">📊</div>
+            <div class="profile-name">Atleta Orientado por Personal Trainer</div>
+            <div class="profile-desc">
+              Exporta o histórico completo em PDF/Excel para enviar ao treinador ou
+              nutricionista, facilitando a prescrição remota e o acompanhamento profissional.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 3: SOLUÇÃO -->
+      <div class="t-section">
+        <div class="t-label"><span>3</span> Solução Proposta</div>
+
+        <div class="filled-area">
+          <p>
+            O Alpha Fit é um aplicativo mobile multiplataforma (Android e iOS) que atua como 
+            parceiro técnico do atleta, transformando cada sessão de treino em dados estruturados 
+            e convertendo esses dados em decisões inteligentes de progressão. A solução central do 
+            sistema é um <strong>engine de sobrecarga progressiva</strong> que analisa as últimas 4 semanas 
+            de treino do usuário e sugere automaticamente quando e como evoluir — seja aumentando 
+            a carga, o volume ou reduzindo o tempo de descanso — eliminando o "achismo" da prescrição 
+            manual e substituindo-o por recomendações baseadas em evidências de performance real.
+          </p>
+          <p>
+            Além do registro e análise de treinos, o sistema integra um módulo de recuperação 
+            (sono, estresse, dor muscular) que ajusta dinamicamente a intensidade sugerida para 
+            o dia, um atlas de movimentos com filtros biomecânicos e substituições inteligentes, 
+            e um dashboard analítico com visualizações de equilíbrio muscular, fadiga sistêmica 
+            e histórico de recordes. O app opera 100% offline durante o treino e sincroniza com 
+            a nuvem apenas ao final da sessão.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 4: REQUISITOS FUNCIONAIS -->
+      <div class="t-section">
+        <div class="t-label"><span>4</span> Requisitos Funcionais</div>
+
+        <div class="filled-area" style="padding: 6px 10px;">
+          <ul class="req-list">
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF01</span>
+              <span>O sistema deve realizar um onboarding inteligente no primeiro acesso, coletando restrições médicas, disponibilidade semanal de dias, equipamentos disponíveis (Home ou Academia) e preferência de estilo de treino (Powerlifting, Bodybuilding, Funcional).</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF02</span>
+              <span>O sistema deve permitir o registro de séries com suporte a métricas avançadas: número de repetições, carga utilizada, índice RPE (Rate of Perceived Exertion), RIR (Reps in Reserve) e cálculo automático de tonelagem total da sessão (carga × séries × repetições).</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF03</span>
+              <span>O sistema deve analisar o histórico das últimas 4 semanas de treino do usuário e gerar sugestões automáticas de sobrecarga progressiva, indicando quando aumentar carga, repetições ou reduzir o tempo de descanso para evitar platô.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF04</span>
+              <span>O sistema deve disponibilizar um atlas de exercícios com filtros por grupo muscular, biomecânica (foco em encurtamento ou alongamento) e tipo de equipamento, além de oferecer substituições inteligentes de exercícios com base em disponibilidade de máquinas.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF05</span>
+              <span>O sistema deve exibir um dashboard analítico contendo: gráfico de fadiga sistêmica acumulada, mapa de equilíbrio entre grupos musculares antagonistas (ex: peito vs. costas), histórico de recordes pessoais (PR) e predição de quando o usuário estará apto a bater um novo recorde.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF06</span>
+              <span>O sistema deve permitir o registro diário de dados de recuperação — qualidade do sono (escala 1–5), nível de estresse percebido e intensidade de dor muscular tardia (DOMS) — e ajustar automaticamente a intensidade sugerida para o treino do dia com base nesses dados.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF07</span>
+              <span>O sistema deve detectar quando o usuário bate um recorde pessoal (PR) em qualquer exercício e exibir uma animação de celebração com a porcentagem de evolução em relação ao treino anterior daquele exercício.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF08</span>
+              <span>O sistema deve disponibilizar timer de descanso dinâmico entre séries, com sugestões de tempo adaptadas ao tipo de exercício: descansos maiores para exercícios compostos multiarticulares (ex: agachamento, supino) e menores para isolados (ex: rosca direta, extensão de tríceps).</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF09</span>
+              <span>O sistema deve permitir que o usuário crie e participe de Grupos de Treino privados, onde os membros possam visualizar o volume total semanal (tonelagem) uns dos outros em um ranking de esforço coletivo.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rf">RF10</span>
+              <span>O sistema deve permitir a exportação do histórico completo de treinos, medidas corporais e evolução de cargas nos formatos PDF e Excel, possibilitando o envio para personal trainers e nutricionistas.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 5: REQUISITOS NÃO FUNCIONAIS -->
+      <div class="t-section">
+        <div class="t-label"><span>5</span> Requisitos Não Funcionais</div>
+
+        <div class="filled-area" style="padding: 6px 10px;">
+          <ul class="req-list">
+            <li class="req-item">
+              <span class="req-badge badge-rnf">RNF01</span>
+              <span><strong>Disponibilidade Offline:</strong> O sistema deve funcionar 100% sem conexão com a internet durante toda a sessão de treino, armazenando os dados localmente e realizando sincronização com a nuvem apenas quando conectividade for restabelecida.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rnf">RNF02</span>
+              <span><strong>Desempenho e Economia de Bateria:</strong> O aplicativo deve manter consumo de bateria reduzido durante sessões ativas de treino (tela ligada), com uso de renderização otimizada, evitando processos em background desnecessários. O carregamento de qualquer tela principal não deve ultrapassar 1,5 segundos em dispositivos com 3 anos de lançamento.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rnf">RNF03</span>
+              <span><strong>Usabilidade e Atrito Zero:</strong> O registro de uma série completa (exercício, carga, repetições, RPE) deve ser concluído com no máximo 4 toques na tela. O sistema deve salvar automaticamente cada série sem necessidade de confirmação explícita do usuário, prevenindo perda de dados em caso de interrupção.</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rnf">RNF04</span>
+              <span><strong>Segurança e Privacidade dos Dados:</strong> Os dados de saúde e performance do usuário (sono, estresse, medidas corporais) devem ser armazenados com criptografia em trânsito (HTTPS/TLS) e em repouso. O sistema não deve compartilhar dados individuais de saúde com outros usuários, mesmo dentro de grupos de treino — apenas métricas de volume agregado (tonelagem semanal).</span>
+            </li>
+            <li class="req-item">
+              <span class="req-badge badge-rnf">RNF05</span>
+              <span><strong>Compatibilidade Multiplataforma:</strong> O sistema deve ser compatível com dispositivos Android (versão 9.0 ou superior) e iOS (versão 14 ou superior), mantendo interface e funcionalidades consistentes nas duas plataformas.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 6: ARQUITETURA E TECNOLOGIAS -->
+      <div class="t-section">
+        <div class="t-label"><span>6</span> Arquitetura e Tecnologias</div>
+
+        <div class="callout c-c avoid-break" style="margin-bottom:14px;">
+          <div class="callout-icon">🏗</div>
+          <div>
+            <p class="callout-title">Padrão arquitetural: Clean Architecture + BLoC (Business Logic Component)</p>
+            <p class="callout-text">
+              A separação em camadas (Presentation → Domain → Data) garante que a lógica de negócio 
+              (cálculo de tonelagem, algoritmo de sobrecarga progressiva, ajuste por recuperação) seja 
+              completamente independente do framework de UI e do banco de dados. O padrão BLoC gerencia 
+              o estado da interface de forma reativa e testável, essencial para um app com múltiplas 
+              fontes de dados (local + nuvem) e regras de negócio complexas.
+            </p>
+          </div>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-role">Front-end / Interface</div>
+            <div class="tech-name">Flutter (Dart)</div>
+            <div class="tech-why">
+              Framework multiplataforma que gera código nativo para Android e iOS a partir de 
+              uma única base de código. Permite alto desempenho de renderização (60fps), 
+              economia de tempo de desenvolvimento e UI consistente entre plataformas — 
+              essencial para um projeto de TCC com prazo e equipe reduzidos.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Banco de Dados Local</div>
+            <div class="tech-name">SQLite via Drift (Flutter)</div>
+            <div class="tech-why">
+              Banco de dados relacional embutido no dispositivo, que permite funcionamento 
+              100% offline. O Drift (anteriormente Moor) adiciona tipagem segura em Dart, 
+              facilitando queries complexas (ex: histórico das últimas 4 semanas por grupo 
+              muscular) de forma segura e legível.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Back-end / API</div>
+            <div class="tech-name">Node.js + Express</div>
+            <div class="tech-why">
+              Ecossistema JavaScript amplamente conhecido, ideal para construir uma API REST 
+              leve responsável por sincronização de dados, autenticação e gestão dos 
+              grupos sociais de treino. A familiaridade da linguagem facilita a manutenção 
+              e desenvolvimento no contexto acadêmico.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Banco de Dados em Nuvem</div>
+            <div class="tech-name">PostgreSQL</div>
+            <div class="tech-why">
+              Banco relacional robusto para persistência dos dados sincronizados na nuvem 
+              (histórico de treinos, perfil, grupos). A consistência relacional é importante 
+              para manter integridade dos dados de performance ao longo do tempo, 
+              especialmente para o cálculo de tendências e recordes históricos.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Autenticação</div>
+            <div class="tech-name">Firebase Authentication</div>
+            <div class="tech-why">
+              Solução pronta e segura para gerenciamento de login via e-mail/senha e 
+              provedores OAuth (Google, Apple). Elimina a necessidade de implementar 
+              autenticação do zero, reduzindo riscos de segurança e tempo de desenvolvimento.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Hospedagem / Deploy</div>
+            <div class="tech-name">Railway (Back-end) + Google Play / App Store</div>
+            <div class="tech-why">
+              Railway oferece deploy simplificado do servidor Node.js com suporte a PostgreSQL 
+              integrado, plano gratuito para desenvolvimento e CI/CD automático via Git — 
+              ideal para o contexto de TCC. A distribuição do app ocorre pelas lojas 
+              oficiais de cada plataforma.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Exportação de Dados</div>
+            <div class="tech-name">pdf e excel (packages Flutter)</div>
+            <div class="tech-why">
+              Bibliotecas nativas do ecossistema Flutter para geração de arquivos PDF e 
+              XLSX diretamente no dispositivo, sem dependência de servidor externo. 
+              Permite exportação offline do histórico para envio ao treinador ou nutricionista.
+            </div>
+          </div>
+          <div class="tech-card">
+            <div class="tech-role">Gerenciamento de Estado</div>
+            <div class="tech-name">Flutter BLoC</div>
+            <div class="tech-why">
+              Padrão BLoC (Business Logic Component) separa a lógica de negócio da camada 
+              de apresentação de forma reativa. Facilita testes unitários das regras de 
+              progressão e recuperação sem depender da interface gráfica.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 7: FLUXO PRINCIPAL -->
+      <div class="t-section">
+        <div class="t-label"><span>7</span> Fluxo Principal do Usuário</div>
+
+        <div class="steps">
+          <div class="step avoid-break">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-title">Cadastro e Onboarding Inteligente</div>
+              <div class="step-text">
+                O usuário cria sua conta (e-mail ou Google). É guiado por um questionário de 
+                onboarding que coleta: restrições médicas (lesões, limitações articulares), 
+                dias disponíveis por semana, local de treino (home/academia), equipamentos 
+                disponíveis e estilo preferido (Powerlifting, Bodybuilding, Funcional). 
+                Com base nas respostas, o sistema gera automaticamente uma ficha de treino 
+                personalizada como ponto de partida.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-title">Preenchimento do Check-in de Recuperação</div>
+              <div class="step-text">
+                Antes de iniciar o treino do dia, o usuário responde rapidamente ao check-in 
+                de recuperação: qualidade do sono da noite anterior (1–5), nível de estresse 
+                atual (1–5) e dor muscular nos grupos treinados (1–5). O algoritmo de 
+                recuperação processa esses dados e ajusta a intensidade sugerida para a 
+                sessão — podendo recomendar redução de carga ou descanso ativo caso os 
+                índices indiquem recuperação insuficiente.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">Início da Sessão e Seleção de Exercícios</div>
+              <div class="step-text">
+                O usuário inicia a sessão do dia. O app carrega a ficha programada com os 
+                exercícios sugeridos pelo algoritmo de sobrecarga progressiva, mostrando 
+                as cargas recomendadas para cada exercício com base no histórico das últimas 
+                4 semanas. Caso algum equipamento esteja indisponível, o usuário pode 
+                acessar o Atlas de Movimento para consultar substituições inteligentes 
+                com biomecânica equivalente.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <div class="step-title">Registro de Séries com Métricas em Tempo Real</div>
+              <div class="step-text">
+                Para cada série executada, o usuário registra: carga (kg), repetições, 
+                RPE e/ou RIR. O app calcula instantaneamente a tonelagem da série e 
+                acumula o total da sessão. A "Dica Alpha" do exercício fica disponível 
+                com um toque, exibindo orientação biomecânica para maximizar o estímulo 
+                muscular correto. Ao concluir a série, o timer de descanso dinâmico 
+                é iniciado automaticamente com o tempo sugerido para aquele exercício.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <div class="step-title">Detecção e Celebração de Recorde Pessoal (PR)</div>
+              <div class="step-text">
+                Se o sistema detecta que o usuário superou seu recorde anterior em qualquer 
+                exercício (seja em carga máxima, volume total ou tonelagem de sessão), uma 
+                animação de celebração é exibida com a porcentagem exata de evolução em 
+                relação ao treino anterior daquele exercício. O recorde é salvo no histórico 
+                e aparecerá no dashboard analítico como marco de progressão.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">6</div>
+            <div class="step-content">
+              <div class="step-title">Encerramento da Sessão e Análise Pós-Treino</div>
+              <div class="step-text">
+                Ao finalizar o treino, o app exibe o resumo da sessão: tonelagem total, 
+                volume por grupo muscular, recordes batidos e comparativo com a última 
+                sessão equivalente. O sistema atualiza o mapa de fadiga sistêmica e o 
+                gráfico de equilíbrio muscular no dashboard analítico. Os dados são 
+                persistidos localmente no SQLite.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">7</div>
+            <div class="step-content">
+              <div class="step-title">Sincronização com a Nuvem</div>
+              <div class="step-text">
+                Quando conectividade com a internet é detectada (ao sair da academia 
+                ou conectar ao Wi-Fi), o app sincroniza silenciosamente os dados da 
+                sessão com o servidor em nuvem (Node.js + PostgreSQL), atualizando o 
+                histórico global do usuário, o ranking dos grupos de treino e garantindo 
+                backup dos dados para acesso em múltiplos dispositivos.
+              </div>
+            </div>
+          </div>
+          <div class="step avoid-break">
+            <div class="step-num">8</div>
+            <div class="step-content">
+              <div class="step-title">Consulta ao Dashboard e Exportação</div>
+              <div class="step-text">
+                A qualquer momento fora do treino, o usuário pode acessar o dashboard 
+                analítico para visualizar gráficos de fadiga acumulada, equilíbrio 
+                muscular, histórico de recordes e predição de quando estará pronto 
+                para bater o próximo PR. Se desejar compartilhar dados com um 
+                profissional, exporta o relatório em PDF ou Excel diretamente 
+                do dispositivo, sem necessidade de conexão.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEÇÃO 8: AUTOAVALIAÇÃO -->
+      <div class="t-section">
+        <div class="t-label"><span>8</span> Autoavaliação do Escopo</div>
+
+        <div class="autoav-box">
+          <p style="margin-bottom: 10px; color: var(--text); font-size: 0.95rem;">
+            O projeto Alpha Fit é viável dentro do prazo do TCC por quatro razões técnicas objetivas:
+          </p>
+          <p style="margin-bottom: 8px; color: var(--text); font-size: 0.94rem;">
+            <strong>1. Stack com curva de aprendizado controlada:</strong> Flutter é um framework com 
+            documentação ampla e comunidade ativa, e o padrão BLoC possui guias oficiais detalhados. 
+            O uso de SQLite via Drift elimina a complexidade de configurar um banco de dados 
+            distribuído para a funcionalidade core do app (operação offline).
+          </p>
+          <p style="margin-bottom: 8px; color: var(--text); font-size: 0.94rem;">
+            <strong>2. Módulos independentes e priorizáveis:</strong> O sistema foi projetado em módulos 
+            desacoplados (Onboarding, Engine de Treino, Recuperação, Dashboard, Social). Em caso de 
+            restrição de tempo, o MVP pode ser entregue com os módulos de maior impacto 
+            (Onboarding + Engine de Treino + Registro de Séries) e os demais implementados 
+            progressivamente.
+          </p>
+          <p style="margin-bottom: 8px; color: var(--text); font-size: 0.94rem;">
+            <strong>3. Firebase Authentication e Railway reduzem o tempo de infra:</strong> 
+            A adoção de serviços gerenciados para autenticação e hospedagem elimina 
+            semanas de configuração de servidor, concentrando o esforço de desenvolvimento 
+            na lógica de negócio diferenciadora do projeto.
+          </p>
+          <p style="color: var(--text); font-size: 0.94rem;">
+            <strong>4. Escopo delimitado com critérios verificáveis:</strong> Cada requisito funcional 
+            possui um critério de aceite claro e mensurável (ex: "registro em no máximo 4 toques", 
+            "análise das últimas 4 semanas"), o que facilita tanto o desenvolvimento quanto 
+            a avaliação da banca. O escopo total é compatível com 4 a 6 meses de desenvolvimento 
+            individual com dedicação parcial.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;padding-top:14px;border-top:1px dashed rgba(140,92,35,0.20);font-size:0.80rem;color:var(--soft);text-align:center;">
+        Blueprint do TCC — Alpha Fit: Inteligência em Performance · Documento vivo — atualizar conforme o desenvolvimento evoluir.
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTA DE RODAPÉ -->
+  <section class="section-card page-break">
+    <h2>Resumo Executivo do Blueprint</h2>
+    <div class="callout c-v avoid-break">
+      <div class="callout-icon">🎯</div>
+      <div>
+        <p class="callout-title">O que este blueprint cobre</p>
+        <p class="callout-text">
+          <strong>Problema:</strong> Praticantes de atividades físicas não têm ferramentas acessíveis 
+          que transformem dados de treino em decisões de performance, causando platôs, assimetrias 
+          musculares e overtraining.<br><br>
+          <strong>Solução:</strong> App mobile (Flutter) com engine de sobrecarga progressiva, 
+          módulo de recuperação, atlas de movimentos, dashboard analítico e social privado.<br><br>
+          <strong>Tecnologias:</strong> Flutter + Dart · SQLite/Drift · Node.js + Express · PostgreSQL · 
+          Firebase Auth · Railway · Clean Architecture + BLoC.<br><br>
+          <strong>Fluxo central:</strong> Onboarding → Check-in Recuperação → Sessão de Treino → 
+          Registro com Métricas → Detecção de PR → Análise Pós-Treino → Sincronização → Dashboard.<br><br>
+          <strong>Requisitos:</strong> 10 funcionais + 5 não funcionais, todos mensuráveis e verificáveis.
+        </p>
+      </div>
+    </div>
+    <p class="note-footer" style="margin-top:20px;">
+      Blueprint de Software — Alpha Fit · TCC · Curso Técnico em Desenvolvimento de Sistemas
+    </p>
+  </section>
+
+</div>
+</body>
+</html>

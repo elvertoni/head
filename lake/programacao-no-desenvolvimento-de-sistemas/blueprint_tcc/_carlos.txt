@@ -1,0 +1,177 @@
+CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
+Trabalho de Conclusão de Curso
+
+BLUEPRINT DE SOFTWARE
+Plataforma de Delivery
+de Comida Online
+Sistema web para pedidos, gerenciamento de restaurantes e acompanhamento de entregas em tempo real.
+Aluno(a): ___________________________________
+Turma: _________________   Data: _______________
+
+Rubrica de Avaliação
+Este blueprint foi elaborado conforme os critérios de avaliação da disciplina. Cada seção responde a um critério da rubrica oficial:
+Critério
+Descrição
+Pts
+
+Problema e Contexto
+Problema específico, real e mensurável. Contexto claro sem o sistema.
+0,5
+
+Público-alvo
+Perfis de usuários identificados com o que cada um faz no sistema.
+0,5
+
+Solução Proposta
+Solução coerente com o problema. Descreve a ideia central do sistema.
+0,5
+
+Requisitos Funcionais
+Mínimo 5 no formato "O sistema deve...". Específicos e verificáveis.
+1,0
+
+Requisitos Não Funcionais
+Mínimo 3 requisitos de qualidade (desempenho, segurança, usabilidade).
+0,5
+
+Arquitetura e Tecnologias
+Todas as tecnologias com justificativa técnica para cada escolha.
+1,0
+
+Fluxo do Sistema
+Fluxo principal com mínimo 6 etapas numeradas, lógico e sem lacunas.
+1,0
+
+Coerência Geral
+Todas as seções se conectam. Problema, solução, requisitos e fluxo são consistentes.
+0,5
+
+Viabilidade
+Escopo compatível com o tempo e recursos disponíveis para o TCC.
+0,5
+
+Total
+
+6,0
+
+1. Problema e Contexto
+O setor de alimentação fora do lar cresceu significativamente nos últimos anos, especialmente com a popularização de plataformas de delivery. No entanto, restaurantes de pequeno e médio porte ainda dependem de anotações manuais, aplicativos de mensagens (WhatsApp) ou sistemas proprietários caros para receber e gerenciar pedidos. Isso gera três problemas concretos:
+Pedidos perdidos ou com erros de anotação, causando retrabalho, devoluções e insatisfação do cliente;
+Ausência de rastreabilidade — o cliente não sabe em que etapa está seu pedido, gerando ligações desnecessárias para o restaurante;
+Falta de dados de vendas consolidados — o gestor não tem visão do cardápio mais vendido, horários de pico ou ticket médio para tomar decisões estratégicas.
+
+Sem um sistema centralizado, estima-se que um restaurante de médio porte perde de 10% a 15% dos pedidos por erros operacionais, além de gastar em média 2 horas diárias em controles manuais de vendas — tempo que poderia ser direcionado ao atendimento e produção.
+2. Público-Alvo
+O sistema atende a três perfis distintos de usuário, cada um com necessidades e permissões específicas:
+
+2.1 Cliente Final
+Busca restaurantes e pratos por nome, tipo de culinária ou localização;
+Adiciona itens ao carrinho, informa endereço de entrega e realiza o pagamento;
+Acompanha o status do pedido em tempo real (recebido → em preparo → a caminho → entregue);
+Avalia restaurantes e pratos após a entrega.
+
+2.2 Gestor de Restaurante
+Cadastra e gerencia o cardápio (pratos, categorias, preços, imagens, disponibilidade);
+Recebe notificações de novos pedidos e atualiza o status de cada um;
+Acessa relatórios de vendas por período, produto e horário;
+Define área de entrega e taxa de entrega.
+
+2.3 Administrador da Plataforma
+Aprova e gerencia o cadastro de restaurantes parceiros;
+Monitora métricas globais da plataforma (pedidos, restaurantes ativos, usuários);
+Gerencia usuários, conteúdo e configurações gerais do sistema.
+3. Solução Proposta
+Uma plataforma web de delivery de comida que conecta clientes a restaurantes cadastrados, centralizando todo o ciclo de um pedido — da descoberta do restaurante ao rastreamento da entrega — em uma interface única e responsiva.
+O cliente acessa o sistema pelo navegador, escolhe o restaurante, monta seu pedido e paga online. O restaurante recebe o pedido instantaneamente no painel administrativo, gerencia a fila de produção e atualiza o status em tempo real. O cliente acompanha cada etapa do pedido sem precisar ligar para o estabelecimento.
+O sistema também oferece ao gestor do restaurante relatórios de desempenho automáticos, eliminando o controle manual em planilhas e fornecendo dados para decisões de cardápio e operação.
+
+4. Requisitos Funcionais
+O sistema deve atender aos seguintes requisitos funcionais, organizados por módulo:
+
+Módulo do Cliente
+RF01 — O sistema deve permitir o cadastro de clientes com nome, e-mail, senha e endereço, com validação de e-mail por link de confirmação.
+RF02 — O sistema deve permitir login com e-mail e senha, bloqueando a conta após 5 tentativas incorretas consecutivas.
+RF03 — O sistema deve exibir listagem de restaurantes com filtros por nome, tipo de culinária, avaliação e tempo estimado de entrega.
+RF04 — O sistema deve exibir o cardápio completo de cada restaurante, com nome, descrição, preço e imagem de cada prato.
+RF05 — O sistema deve permitir adicionar, remover e ajustar a quantidade de itens no carrinho antes de finalizar o pedido.
+RF06 — O sistema deve permitir ao cliente selecionar o endereço de entrega e o método de pagamento (cartão, Pix ou dinheiro) ao finalizar o pedido.
+RF07 — O sistema deve exibir o status do pedido em tempo real, atualizado pelo restaurante (recebido, em preparo, pronto para entrega, a caminho, entregue).
+RF08 — O sistema deve permitir ao cliente avaliar o restaurante e os pratos com nota de 1 a 5 e comentário opcional, após a confirmação de entrega.
+RF09 — O sistema deve exibir o histórico completo de pedidos anteriores do cliente, com data, itens e valores.
+
+Módulo do Restaurante
+RF10 — O sistema deve permitir ao gestor cadastrar e editar pratos com nome, descrição, preço, categoria, imagem e status de disponibilidade.
+RF11 — O sistema deve notificar o restaurante de novos pedidos em tempo real, com alerta sonoro e visual no painel administrativo.
+RF12 — O sistema deve permitir ao restaurante aceitar ou recusar pedidos e atualizar o status de cada pedido ao longo do ciclo de produção e entrega.
+RF13 — O sistema deve gerar relatórios de vendas por período, exibindo total de pedidos, receita, pratos mais vendidos e ticket médio.
+
+Módulo Administrativo
+RF14 — O sistema deve permitir ao administrador aprovar ou reprovar o cadastro de novos restaurantes parceiros.
+RF15 — O sistema deve exibir ao administrador um painel com métricas globais: total de pedidos, receita da plataforma, restaurantes ativos e clientes cadastrados.
+
+5. Requisitos Não Funcionais
+RNF01 — O sistema deve responder a consultas de busca e carregamento de cardápio em menos de 2 segundos em condições normais de uso (até 100 usuários simultâneos).
+RNF02 — O sistema deve ser acessível por qualquer navegador moderno (Chrome, Firefox, Edge, Safari) em dispositivos desktop e mobile, sem necessidade de instalação de aplicativos.
+RNF03 — O sistema deve proteger senhas utilizando hashing com bcrypt e armazenar dados de pagamento exclusivamente no gateway externo (Mercado Pago), sem salvar dados de cartão localmente.
+RNF04 — O sistema deve garantir que apenas usuários autenticados e com o perfil correto acessem as funcionalidades de cada módulo (cliente, gestor, administrador).
+RNF05 — A interface deve ser legível, responsiva e utilizável sem treinamento formal, com textos claros, feedbacks visuais de ação e mensagens de erro descritivas.
+RNF06 — O sistema deve manter disponibilidade mínima de 99% em horário de pico (almoço e jantar), implementando tratamento de erros para evitar interrupção total em caso de falha parcial.
+RNF07 — O código deve ser modular, comentado e organizado segundo o padrão MVT do Django, de modo que novos módulos possam ser adicionados sem refatoração extensiva.
+
+6. Arquitetura e Tecnologias
+O sistema adota o padrão arquitetural MVT (Model-View-Template) nativo do Django, estruturado como uma aplicação monolítica com separação clara de responsabilidades. A comunicação com serviços externos (gateway de pagamento, mapas e armazenamento de arquivos) é feita via APIs REST. Abaixo estão as tecnologias escolhidas com suas respectivas justificativas:
+
+Tecnologia / Componente
+Justificativa técnica
+
+Linguagem: Python
+A equipe possui domínio prévio da linguagem, e o ecossistema Python oferece bibliotecas maduras para autenticação, ORM e APIs REST.
+
+Framework back-end: Django 4.x
+Inclui sistema de autenticação nativo, painel administrativo embutido e ORM integrado, acelerando o desenvolvimento sem comprometer a segurança.
+
+Banco de dados: PostgreSQL
+Banco relacional robusto com suporte a transações ACID, essencial para garantir integridade dos dados de pedidos e pagamentos.
+
+Front-end: HTML + Bootstrap 5
+Agilidade de prototipação com responsividade nativa; não exige build complexo, compatível com o prazo do TCC.
+
+API de mapas: Google Maps API
+Solução consolidada para cálculo de rotas de entrega e exibição do rastreamento em tempo real para o cliente.
+
+Pagamentos: Mercado Pago SDK
+Principal gateway de pagamento no Brasil, com SDK Python oficial, suporte a Pix, cartão e boleto, e ambiente de testes sandbox.
+
+Armazenamento: AWS S3 (ou local)
+Armazenamento escalável de imagens de pratos e perfis de restaurantes; versão local (FileSystemStorage) pode ser usada no ambiente de desenvolvimento.
+
+Hospedagem: VPS Ubuntu / Render.com
+Ambiente Linux compatível com Django e PostgreSQL; Render.com oferece deploy gratuito para protótipos de TCC.
+
+Padrão arquitetural: MVT (Model-View-Template)
+Padrão nativo do Django — separa responsabilidades entre dados, lógica de negócio e apresentação, facilitando manutenção e testes.
+
+7. Fluxo Principal do Usuário
+O fluxo abaixo descreve o caminho completo do usuário principal (cliente) — do acesso ao sistema até a conclusão do pedido e avaliação:
+
+Fluxo: Realizar um Pedido de Delivery
+1.  Acesso e autenticação — O cliente acessa o site pelo navegador e realiza login com e-mail e senha. Caso seja o primeiro acesso, realiza o cadastro informando nome, e-mail, senha e endereço principal.
+2.  Busca de restaurantes — O cliente visualiza a listagem de restaurantes disponíveis na sua região. Pode filtrar por tipo de culinária, avaliação ou tempo estimado de entrega.
+3.  Seleção do restaurante e montagem do pedido — O cliente acessa o cardápio do restaurante escolhido, seleciona os pratos desejados, ajusta quantidades e adiciona os itens ao carrinho.
+4.  Revisão do carrinho — O cliente revisa os itens selecionados, verifica o subtotal, a taxa de entrega e o total do pedido. Pode remover itens ou alterar quantidades antes de prosseguir.
+5.  Informações de entrega e pagamento — O cliente confirma o endereço de entrega (ou informa um novo) e escolhe o método de pagamento: cartão de crédito/débito, Pix ou dinheiro na entrega.
+6.  Confirmação do pedido — O cliente finaliza o pedido. O sistema processa o pagamento via Mercado Pago (quando online), exibe o número do pedido e envia confirmação por e-mail.
+7.  Acompanhamento em tempo real — O cliente visualiza o status atualizado do pedido: "Recebido pelo restaurante" → "Em preparo" → "Pronto para entrega" → "A caminho" → "Entregue".
+8.  Confirmação de entrega e avaliação — Após a entrega, o sistema exibe a tela de avaliação. O cliente atribui nota de 1 a 5 ao restaurante e aos pratos, com campo opcional para comentário.
+9.  Histórico registrado — O pedido é salvo no histórico do cliente, disponível para consulta posterior com todos os detalhes (itens, valores, data e avaliação).
+
+8. Autoavaliação do Escopo e Viabilidade
+O escopo deste blueprint foi delimitado de forma intencional para ser realizável dentro do prazo do TCC, considerando os seguintes fatores:
+Equipe e prazo: projeto individual (ou dupla), com período de desenvolvimento estimado em 4 a 6 meses. Os módulos de Cliente, Restaurante e Administração foram priorizados; funcionalidades avançadas (sistema de entregadores próprio, chat em tempo real) foram excluídas do escopo inicial.
+Domínio técnico: Python e Django são tecnologias já estudadas na disciplina de Desenvolvimento Web, reduzindo a curva de aprendizado. O Bootstrap 5 elimina a necessidade de um front-end complexo separado.
+Infraestrutura: o sistema pode ser desenvolvido e testado localmente com SQLite e implantado em serviços gratuitos (Render.com ou PythonAnywhere) para apresentação à banca, sem custo de infraestrutura.
+Funcionalidades priorizadas para entrega: RF01 a RF13 constituem o núcleo viável do sistema. RF14 e RF15 (módulo administrativo) são de implementação mais simples e podem ser adicionados em sprint final.
+
+Nota: Este blueprint é um documento vivo. Ele deve ser atualizado sempre que houver mudanças de escopo, revisão de requisitos ou decisões técnicas ao longo do desenvolvimento do TCC.
+
+Blueprint de Software — Plataforma de Delivery de Comida Online  |  Curso Técnico em Desenvolvimento de Sistemas  |  TCC

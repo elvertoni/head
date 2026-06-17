@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blueprint de Software — Template do TCC</title>
+  <style>
+    :root {
+      --bg: #f3ede3;
+      --surface: #fffdfa;
+      --surface2: #f8f2e8;
+      --border: rgba(37, 46, 61, 0.12);
+      --border-s: rgba(37, 46, 61, 0.18);
+      --text: #202634;
+      --muted: #566173;
+      --soft: #7c8797;
+      --primary: #8c5c23;
+      --primary-s: #aa7540;
+      --cyan: #395b7a;
+      --green: #2f6d55;
+      --amber: #8d6223;
+      --rose: #8f4f52;
+      --radius: 12px;
+      --radius-lg: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 15px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      scroll-behavior: smooth;
+    }
+
+    @page { size: A4; margin: 16mm 14mm 16mm 14mm; }
+
+    body {
+      font-family: "Aptos", "Segoe UI", "Helvetica Neue", sans-serif;
+      line-height: 1.74;
+      color: var(--text);
+      background: var(--bg);
+      padding-top: 64px;
+    }
+
+    .book {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 28px 22px 80px;
+    }
+
+    .page-break { page-break-before: always; break-before: page; }
+    .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+
+    /* ===== TOOLBAR (tela) ===== */
+    .toolbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(32,38,52,0.97);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 18px;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.18);
+    }
+    .toolbar .tb-brand {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #e9cda6;
+      white-space: nowrap;
+    }
+    .toolbar .tb-progress {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 120px;
+    }
+    .tb-bar {
+      flex: 1;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      overflow: hidden;
+      min-width: 80px;
+    }
+    .tb-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-s), #d8a55f);
+      transition: width 0.35s ease;
+    }
+    .tb-pct { font-size: 12px; font-weight: 800; white-space: nowrap; min-width: 38px; }
+    .tb-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tb-btn {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+    .tb-btn:hover { background: rgba(255,255,255,0.22); }
+    .tb-btn.primary { background: var(--primary-s); border-color: var(--primary-s); }
+    .tb-btn.primary:hover { background: #c08b4d; }
+    .tb-save-state { font-size: 11px; color: #9fb0a6; white-space: nowrap; min-width: 70px; }
+
+    @media (max-width: 760px) {
+      .toolbar { flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
+      .tb-progress { order: 3; flex-basis: 100%; }
+      body { padding-top: 92px; }
+    }
+
+    /* ===== CAPA ===== */
+    .cover-box {
+      background: linear-gradient(180deg, rgba(255,253,250,0.98), rgba(248,242,232,0.95));
+      border: 1px solid var(--border-s);
+      border-top: 4px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 36px 34px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+    .cover-kicker::before {
+      content: "";
+      width: 42px; height: 1px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+    .cover-title {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 2.6rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .cover-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 26px;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .cover-info-item { display: flex; flex-direction: column; gap: 3px; }
+    .cover-info-label {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+    .cover-info-value {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ===== SHELL DAS SEÇÕES ===== */
+    .lesson-head {
+      margin: 34px 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lesson-num {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .lesson-head h2 {
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 1.5rem;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    .sec {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 22px 20px;
+      margin-bottom: 20px;
+      position: relative;
+      transition: border-color 0.25s ease;
+    }
+    .sec.done { border-color: rgba(47,109,85,0.45); }
+
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .sec-label .sec-num {
+      width: 26px; height: 26px;
+      border-radius: 8px;
+      background: rgba(140,92,35,0.08);
+      border: 1px solid rgba(140,92,35,0.16);
+      display: inline-grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .sec.done .sec-num {
+      background: rgba(47,109,85,0.12);
+      border-color: rgba(47,109,85,0.30);
+      color: var(--green);
+    }
+    .sec-check-tag {
+      margin-left: auto;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(37,46,61,0.05);
+      color: var(--soft);
+    }
+    .sec.done .sec-check-tag {
+      background: rgba(47,109,85,0.12);
+      color: var(--green);
+    }
+
+    /* ===== GUIA ===== */
+    .guide {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 0 0 14px;
+      padding: 13px 15px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(57,91,122,0.20);
+      border-left: 4px solid var(--cyan);
+      background: rgba(57,91,122,0.05);
+    }
+    .guide-icon {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: rgba(57,91,122,0.10);
+      color: var(--cyan);
+      font-size: 1rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .guide-title {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .guide-text { color: var(--text); font-size: 0.9rem; line-height: 1.66; }
+    .guide-text em { color: var(--cyan); font-style: normal; font-weight: 700; }
+
+    /* ===== ÁREA EDITÁVEL ===== */
+    .field-label {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+      margin-bottom: 6px;
+      display: block;
+    }
+    textarea.field {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(140,92,35,0.18);
+      border-radius: 10px;
+      padding: 13px 15px;
+      font-family: inherit;
+      font-size: 0.96rem;
+      line-height: 1.74;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    textarea.field:focus {
+      border-color: var(--primary-s);
+      box-shadow: 0 0 0 3px rgba(140,92,35,0.10);
+    }
+    textarea.field::placeholder { color: var(--soft); opacity: 0.7; }
+
+    /* ===== CHECKLIST ===== */
+    .checklist {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(37,46,61,0.14);
+    }
+    .checklist-title {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .check input {
+      width: 17px; height: 17px;
+      margin-top: 2px;
+      accent-color: var(--green);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .check input:checked + span { color: var(--soft); text-decoration: line-through; }
+    .check span { line-height: 1.5; }
+
+    /* ===== RODAPÉ ===== */
+    .note-footer {
+      margin-top: 28px;
+      font-size: 0.80rem;
+      color: var(--soft);
+      text-align: center;
+    }
+    .help-box {
+      background: var(--surface2);
+      border: 1px solid rgba(140,92,35,0.16);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .help-box strong { color: var(--text); }
+    .help-box ul { margin: 8px 0 0 18px; }
+    .help-box li { margin-bottom: 4px; }
+
+    @media (max-width: 760px) {
+      html { font-size: 14px; }
+      .book { padding: 16px 12px 48px; }
+      .cover-box, .sec { padding: 18px 16px; }
+      .cover-info { grid-template-columns: 1fr; }
+      .cover-title { font-size: 2rem; }
+    }
+
+    @media print {
+      body { background: #fff; padding-top: 0; }
+      .book { max-width: none; padding: 0; }
+      .toolbar, .help-box, .guide, .no-print { display: none !important; }
+      .sec { border: none; padding: 0; margin-bottom: 18px; break-inside: avoid; }
+      .checklist { border-top: 1px solid var(--border); }
+      textarea.field {
+        border: none;
+        background: transparent;
+        padding: 0;
+        resize: none;
+        overflow: hidden;
+        min-height: 0;
+      }
+      .page-break { break-before: page; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOOLBAR ===== -->
+  <div class="toolbar no-print">
+    <span class="tb-brand">Blueprint TCC</span>
+    <div class="tb-progress">
+      <div class="tb-bar"><div class="tb-bar-fill" id="barFill"></div></div>
+      <span class="tb-pct" id="barPct">0%</span>
+    </div>
+    <span class="tb-save-state" id="saveState">—</span>
+    <div class="tb-actions">
+      <button class="tb-btn" onclick="exportJSON()" title="Baixa um arquivo .json com tudo que você preencheu — para backup ou entregar ao professor">💾 Salvar arquivo</button>
+      <button class="tb-btn" onclick="document.getElementById('importFile').click()" title="Carrega um arquivo .json salvo antes">📂 Abrir</button>
+      <button class="tb-btn primary" onclick="window.print()" title="Gera o PDF para entregar">🖨️ Exportar PDF</button>
+      <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="importJSON(event)" />
+    </div>
+  </div>
+
+<div class="book">
+
+  <!-- ===== CAPA ===== -->
+  <section class="cover-box avoid-break">
+    <div class="cover-kicker">Curso Técnico em Desenvolvimento de Sistemas · TCC</div>
+    <h1 class="cover-title field-edit" data-key="capa_titulo" contenteditable="true" data-placeholder="Nome do seu projeto">Nome do seu projeto</h1>
+    <div class="cover-info">
+      <div class="cover-info-item">
+        <span class="cover-info-label">Aluno(a)</span>
+        <textarea class="field" data-key="capa_aluno" rows="1" style="min-height:0;height:auto" placeholder="Seu nome completo"></textarea>
+      </div>
+      <div class="cover-info-item">
+        <span class="cover-info-label">Tipo de Sistema</span>
+        <textarea class="field" data-key="capa_tipo" rows="1" style="min-height:0;height:auto" placeholder="Web / Mobile / Desktop / API…"></textarea>
+      </div>
+      <div class="cover-info-item">
+        <span class="cover-info-label">Documento</span>
+        <span class="cover-info-value">Blueprint de Software — TCC</span>
+      </div>
+      <div class="cover-info-item">
+        <span class="cover-info-label">Última edição</span>
+        <span class="cover-info-value" id="lastEdit">—</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AJUDA (some no PDF) ===== -->
+  <div class="help-box no-print">
+    <strong>Como usar este documento</strong>
+    <ul>
+      <li>Preencha cada uma das 8 seções no seu ritmo. <strong>Tudo salva sozinho</strong> neste navegador, neste computador.</li>
+      <li>Marque os <strong>itens da checklist</strong> (verdes) conforme cada parte fica pronta. A barra no topo mostra seu progresso.</li>
+      <li>Use <strong>💾 Salvar arquivo</strong> para baixar um <code>.json</code> com tudo — é seu backup e o que você entrega ao professor. Use <strong>📂 Abrir</strong> para voltar de onde parou em outro computador.</li>
+      <li>Quando estiver pronto, use <strong>🖨️ Exportar PDF</strong> (a barra e estas dicas somem no PDF).</li>
+    </ul>
+  </div>
+
+  <div class="lesson-head">
+    <div class="lesson-num">Template Oficial</div>
+    <h2>Blueprint de Software — Documento vivo</h2>
+  </div>
+
+  <!-- Seções injetadas via JS -->
+  <div id="sections"></div>
+
+  <p class="note-footer">
+    Blueprint de Software · TCC · Curso Técnico em Desenvolvimento de Sistemas ·
+    Documento vivo — atualize conforme o projeto evoluir.
+  </p>
+
+</div>
+
+<script>
+/* ===================================================================
+   DEFINIÇÃO DAS 8 SEÇÕES — guia + critérios de aceite (checklist)
+   =================================================================== */
+const SECTIONS = [
+  {
+    n: 1, title: "Problema e Contexto",
+    guide: "Que <em>dor real</em> seu sistema resolve? Quem sofre com ela? Como esse problema é resolvido hoje — e por que essa forma falha? Traga ao menos <em>um dado ou número</em> que mostre o tamanho do problema.",
+    placeholder: "Descreva o problema: a dor, quem sofre, como é resolvido hoje e por que isso falha. Feche com o que o seu sistema vai resolver.",
+    checks: [
+      "Descrevi a dor concreta (não genérica)",
+      "Disse quem sofre com o problema",
+      "Mostrei como é resolvido hoje e por que falha",
+      "Incluí pelo menos 1 dado, número ou fato",
+      "Fechei dizendo o que o sistema resolve"
+    ]
+  },
+  {
+    n: 2, title: "Público-alvo",
+    guide: "Quem vai <em>usar</em> o sistema? Defina de 2 a 4 perfis de usuário diferentes. Para cada um, diga o que ele faz dentro do sistema.",
+    placeholder: "Perfil 1 — quem é e o que faz no sistema.\nPerfil 2 — …\nPerfil 3 — …",
+    checks: [
+      "Defini de 2 a 4 perfis de usuário",
+      "Cada perfil diz o que faz no sistema",
+      "Os perfis são distintos entre si"
+    ]
+  },
+  {
+    n: 3, title: "Solução Proposta",
+    guide: "Em <em>uma frase</em>, o que o sistema é. Qual o <em>tipo</em> (web, mobile, desktop, API). Quais os <em>módulos/funções principais</em>. Qual o diferencial.",
+    placeholder: "Em uma frase: o sistema é…\nTipo: …\nMódulos principais: …\nDiferencial: o que ele faz que as soluções de hoje não fazem.",
+    checks: [
+      "Tenho uma frase única que define o sistema",
+      "Defini o tipo de sistema",
+      "Listei os módulos/funções principais",
+      "Deixei claro o diferencial"
+    ]
+  },
+  {
+    n: 4, title: "Requisitos Funcionais (o que o sistema FAZ)",
+    guide: "Liste o que o sistema <em>deve fazer</em>. Cada requisito começa com verbo (\"O sistema deve…\") e tem um <em>critério de aceite mensurável</em>. Mínimo de 8. Devem cobrir os módulos da Seção 3.",
+    placeholder: "RF01 — O sistema deve permitir… (critério: …)\nRF02 — O sistema deve… (critério: …)\nRF03 — …",
+    checks: [
+      "Listei pelo menos 8 requisitos funcionais",
+      "Cada RF começa com verbo (\"o sistema deve…\")",
+      "Cada RF tem critério mensurável/verificável",
+      "Os RF cobrem os módulos da Seção 3"
+    ]
+  },
+  {
+    n: 5, title: "Requisitos Não Funcionais (COMO o sistema se comporta)",
+    guide: "Qualidades do sistema: <em>desempenho, segurança, usabilidade, disponibilidade</em>. Mínimo de 4. Devem ser mensuráveis (ter número ou limite).",
+    placeholder: "RNF01 — Desempenho: … (ex.: responder em até 2s)\nRNF02 — Segurança: …\nRNF03 — Usabilidade: …\nRNF04 — …",
+    checks: [
+      "Listei pelo menos 4 requisitos não funcionais",
+      "Cobri ao menos desempenho e segurança",
+      "São mensuráveis (têm número ou limite)",
+      "Não repetem os requisitos funcionais"
+    ]
+  },
+  {
+    n: 6, title: "Arquitetura e Tecnologias",
+    guide: "Qual a <em>stack</em>: front-end, back-end, banco de dados, infra/autenticação. Qual o <em>padrão arquitetural</em>. <em>Justifique cada escolha</em> — por que essa tecnologia. A stack precisa caber no prazo do TCC.",
+    placeholder: "Front-end: … (por quê?)\nBack-end: … (por quê?)\nBanco de dados: … (por quê?)\nInfra/Auth: … (por quê?)\nPadrão arquitetural: …",
+    checks: [
+      "Defini o front-end",
+      "Defini back-end e/ou banco de dados",
+      "Citei o padrão arquitetural",
+      "Cada tecnologia tem justificativa",
+      "A stack é viável para o prazo do TCC"
+    ]
+  },
+  {
+    n: 7, title: "Fluxo Principal de Uso",
+    guide: "Conte o <em>passo a passo</em> do uso central do sistema, do início ao fim, numerado. Mostra a jornada do usuário: começa na entrada e termina num resultado entregue.",
+    placeholder: "1. O usuário faz login / onboarding…\n2. …\n3. …\n…\nN. O sistema entrega o resultado X.",
+    checks: [
+      "O fluxo está numerado, passo a passo",
+      "Começa na entrada (login/onboarding/abertura)",
+      "Termina num resultado ou valor entregue",
+      "Cada passo é uma ação clara",
+      "Cobre o caso de uso central do sistema"
+    ]
+  },
+  {
+    n: 8, title: "Autoavaliação do Escopo",
+    guide: "O projeto <em>cabe no prazo</em> do TCC? Por quê? O que é <em>MVP</em> (essencial) e o que é extra? Quais os <em>riscos</em> e como mitigá-los?",
+    placeholder: "Viabilidade: o projeto cabe no prazo porque…\nMVP (essencial): …\nExtras (se sobrar tempo): …\nRiscos e mitigação: …",
+    checks: [
+      "Justifiquei a viabilidade no prazo",
+      "Separei o MVP do que é opcional",
+      "Citei ao menos 1 risco e como mitigar",
+      "Os critérios de avaliação são verificáveis"
+    ]
+  }
+];
+
+const STORAGE_KEY = "blueprint_tcc_v1";
+
+/* ===== Render das seções ===== */
+const sectionsEl = document.getElementById("sections");
+SECTIONS.forEach(s => {
+  const sec = document.createElement("section");
+  sec.className = "sec avoid-break";
+  sec.id = "sec" + s.n;
+  sec.innerHTML = `
+    <div class="sec-label">
+      <span class="sec-num">${s.n}</span> ${s.title}
+      <span class="sec-check-tag" id="tag${s.n}">0/${s.checks.length}</span>
+    </div>
+    <div class="guide no-print">
+      <div class="guide-icon">💡</div>
+      <div>
+        <div class="guide-title">O que escrever aqui</div>
+        <div class="guide-text">${s.guide}</div>
+      </div>
+    </div>
+    <span class="field-label">Sua resposta</span>
+    <textarea class="field" data-key="sec${s.n}_texto" placeholder="${s.placeholder.replace(/"/g, '&quot;')}"></textarea>
+    <div class="checklist">
+      <div class="checklist-title">✓ Critérios de aceite — marque o que já está pronto</div>
+      ${s.checks.map((c, i) => `
+        <label class="check">
+          <input type="checkbox" data-key="sec${s.n}_chk${i}" data-sec="${s.n}" />
+          <span>${c}</span>
+        </label>`).join("")}
+    </div>
+  `;
+  sectionsEl.appendChild(sec);
+});
+
+/* ===== Estado / persistência ===== */
+function collectState() {
+  const state = {};
+  document.querySelectorAll("[data-key]").forEach(el => {
+    if (el.type === "checkbox") state[el.dataset.key] = el.checked;
+    else if (el.isContentEditable) state[el.dataset.key] = el.innerText;
+    else state[el.dataset.key] = el.value;
+  });
+  state._savedAt = new Date().toISOString();
+  return state;
+}
+
+function applyState(state) {
+  if (!state) return;
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const v = state[el.dataset.key];
+    if (v === undefined) return;
+    if (el.type === "checkbox") el.checked = !!v;
+    else if (el.isContentEditable) el.innerText = v;
+    else el.value = v;
+  });
+  autoGrowAll();
+  updateProgress();
+  if (state._savedAt) showLastEdit(state._savedAt);
+}
+
+function save() {
+  const state = collectState();
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    flashSaved();
+  } catch (e) {
+    document.getElementById("saveState").textContent = "⚠️ erro ao salvar";
+  }
+  showLastEdit(state._savedAt);
+  updateProgress();
+}
+
+let saveTimer;
+function debouncedSave() {
+  clearTimeout(saveTimer);
+  document.getElementById("saveState").textContent = "salvando…";
+  saveTimer = setTimeout(save, 600);
+}
+
+function flashSaved() {
+  const el = document.getElementById("saveState");
+  el.textContent = "✓ salvo";
+  el.style.color = "#9fd0b8";
+  setTimeout(() => { el.style.color = ""; }, 1500);
+}
+
+function showLastEdit(iso) {
+  if (!iso) return;
+  const d = new Date(iso);
+  const txt = d.toLocaleDateString("pt-BR") + " " + d.toLocaleTimeString("pt-BR", {hour:"2-digit", minute:"2-digit"});
+  document.getElementById("lastEdit").textContent = txt;
+}
+
+/* ===== Progresso ===== */
+function updateProgress() {
+  const boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
+  let done = 0;
+  boxes.forEach(b => { if (b.checked) done++; });
+  const pct = boxes.length ? Math.round((done / boxes.length) * 100) : 0;
+  document.getElementById("barFill").style.width = pct + "%";
+  document.getElementById("barPct").textContent = pct + "%";
+
+  SECTIONS.forEach(s => {
+    const secBoxes = document.querySelectorAll(`input[data-sec="${s.n}"]`);
+    let d = 0;
+    secBoxes.forEach(b => { if (b.checked) d++; });
+    document.getElementById("tag" + s.n).textContent = `${d}/${secBoxes.length}`;
+    document.getElementById("sec" + s.n).classList.toggle("done", d === secBoxes.length && secBoxes.length > 0);
+  });
+}
+
+/* ===== Auto-crescer textareas ===== */
+function autoGrow(el) {
+  if (el.tagName !== "TEXTAREA") return;
+  el.style.height = "auto";
+  el.style.height = (el.scrollHeight + 2) + "px";
+}
+function autoGrowAll() {
+  document.querySelectorAll("textarea.field").forEach(autoGrow);
+}
+
+/* ===== Export / Import ===== */
+function slug(s) {
+  return (s || "blueprint").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40) || "blueprint";
+}
+function exportJSON() {
+  const state = collectState();
+  const aluno = slug(state.capa_aluno);
+  const proj = slug(state.capa_titulo);
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type: "application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `blueprint-${aluno}-${proj}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function importJSON(ev) {
+  const file = ev.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const state = JSON.parse(e.target.result);
+      applyState(state);
+      save();
+      alert("Progresso carregado.");
+    } catch (err) {
+      alert("Arquivo inválido. Use um .json salvo por este template.");
+    }
+    ev.target.value = "";
+  };
+  reader.readAsText(file);
+}
+
+/* ===== Listeners ===== */
+document.addEventListener("input", e => {
+  if (e.target.matches("[data-key]")) {
+    if (e.target.tagName === "TEXTAREA") autoGrow(e.target);
+    debouncedSave();
+  }
+});
+document.addEventListener("change", e => {
+  if (e.target.matches('input[type="checkbox"][data-key]')) { updateProgress(); debouncedSave(); }
+});
+// contenteditable da capa
+document.querySelectorAll('[contenteditable][data-key]').forEach(el => {
+  el.addEventListener("input", debouncedSave);
+});
+
+/* ===== Boot ===== */
+(function init() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) {}
+  if (saved) applyState(saved);
+  else { autoGrowAll(); updateProgress(); }
+})();
+</script>
+</body>
+</html>

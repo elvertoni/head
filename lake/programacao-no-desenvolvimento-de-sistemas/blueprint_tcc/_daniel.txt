@@ -1,0 +1,148 @@
+BrVPN
+Blueprint do Projeto
+Trabalho de Conclusao de Curso — Seguranca de Redes
+
+Projeto
+BrVPN — Rede Privada Virtual Brasileira
+
+Tipo
+Infraestrutura de Rede / Seguranca da Informacao
+
+Protocolo
+WireGuard (modulo kernel Linux)
+
+Status
+Beta funcional — servidor ativo na nuvem
+
+1. Visao Geral do Projeto
+O BrVPN e uma Rede Privada Virtual (VPN) desenvolvida do zero como projeto de TCC, com foco em baixa latencia para usuarios brasileiros e maxima seguranca. Diferente de solucoes comerciais que funcionam como caixas-pretas, o BrVPN e totalmente transparente, auditavel e open source.
+
+O projeto demonstra na pratica como VPNs comerciais funcionam por baixo, utilizando o protocolo WireGuard — o mesmo adotado por grandes provedores como NordVPN e ExpressVPN — configurado e operado de forma independente.
+
+2. Problema e Motivacao
+VPNs comerciais disponiveis no Brasil apresentam tres problemas principais:
+
+Alta latencia — servidores localizados fora do Brasil aumentam o ping desnecessariamente
+Falta de transparencia — usuarios nao sabem quais dados sao coletados ou como o trafego e tratado
+Custo elevado — planos mensais entre R$ 30 e R$ 80 para funcionalidades replicaveis com hardware simples
+
+3. Objetivos
+3.1 Objetivo Geral
+Projetar, implementar e documentar uma VPN funcional baseada em WireGuard, demonstrando viabilidade tecnica com recursos minimos e evidenciando conceitos de seguranca de redes aplicados na pratica.
+3.2 Objetivos Especificos
+Configurar servidor VPN com WireGuard em ambiente Linux (Ubuntu Server)
+Implementar criptografia de ponta a ponta com ChaCha20-Poly1305
+Hospedar servidor em infraestrutura de nuvem com IP publico fixo
+Criar interface web para distribuicao do cliente
+Documentar arquitetura para replicacao e expansao futura
+
+4. Arquitetura do Sistema
+4.1 Componentes Principais
+
+Componente
+Tecnologia
+Funcao
+
+Servidor VPN
+Ubuntu Server + WireGuard
+Ponto central da VPN, roteia e criptografa trafego
+
+Infraestrutura
+Google Cloud (e2-micro)
+VM na nuvem com IP publico fixo
+
+Cliente
+App WireGuard (Android/iOS/Windows)
+Dispositivo do usuario final
+
+Interface Web
+HTML / CSS / JavaScript
+Pagina de distribuicao do cliente VPN
+
+4.2 Fluxo de Conexao
+O dispositivo instala o arquivo .conf com as chaves criptograficas
+Ao ativar a VPN, o cliente realiza handshake com o servidor usando Curve25519
+O trafego e encapsulado em pacotes UDP na porta 51820 e criptografado com ChaCha20-Poly1305
+O servidor recebe, decifra e encaminha para a internet usando NAT (MASQUERADE)
+O handshake e renovado a cada 3 minutos (Perfect Forward Secrecy)
+
+5. Modelo de Seguranca
+5.1 Pilha Criptografica
+
+Algoritmo
+Uso
+Caracteristica
+
+ChaCha20-Poly1305
+Criptografia de dados
+Usado pelo Google no TLS
+
+Curve25519
+Troca de chaves (ECDH)
+Curva eliptica de alta seguranca
+
+BLAKE2s
+Hash / Autenticacao
+Mais rapido que SHA-256
+
+5.2 Politicas de Privacidade
+Zero logs — nenhum dado de navegacao e armazenado no servidor
+Chaves geradas localmente — a chave privada nunca sai do dispositivo
+Perfect Forward Secrecy — handshake renovado a cada 3 minutos
+Codigo aberto — qualquer pessoa pode auditar a configuracao
+
+6. Infraestrutura Atual
+
+Provedor
+Google Cloud Platform
+
+Instancia
+e2-micro (1 vCPU, 1GB RAM)
+
+Sistema Operacional
+Ubuntu Server 26.04 LTS
+
+IP Publico
+35.185.72.193
+
+Porta VPN
+51820/UDP
+
+Custo Mensal
+Gratuito (Google Cloud Free Tier)
+
+7. Fases de Desenvolvimento
+
+Fase
+Descricao
+Entregavel
+Status
+
+Beta
+Servidor local em VM
+WireGuard funcionando em rede local
+Concluido
+
+Nuvem
+Servidor no Google Cloud
+VPN acessivel de qualquer rede do mundo
+Concluido
+
+Interface
+Pagina web do BrVPN
+Site para distribuicao do cliente
+Concluido
+
+App
+Aplicativo mobile proprio
+App Android/iOS com WireGuard embutido
+Futuro
+
+8. Trabalhos Futuros
+Migrar servidor para datacenter no Brasil para minimizar latencia
+Desenvolver aplicativo mobile com WireGuard embutido (React Native)
+Implementar multiplos nos de servidor para distribuicao de carga
+Adicionar sistema de autenticacao de usuarios
+Realizar benchmarks comparativos de latencia com VPNs comerciais
+
+BrVPN — Projeto de TCC — Seguranca de Redes e Privacidade Digital
