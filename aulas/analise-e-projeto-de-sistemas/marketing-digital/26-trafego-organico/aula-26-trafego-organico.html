@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Blueprint de Software · Template do TCC · Prof Toni Coimbra</title>
+  <title>Aula 26 · Tráfego Orgânico · Prof Toni Coimbra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -670,6 +670,7 @@ table.demo th, table.demo td {
   padding: 11px 14px;
   border-bottom: 1px solid var(--shell-border);
   text-align: left;
+  color: var(--shell-text-muted);
 }
 table.demo thead th {
   background: rgba(139, 92, 246, 0.10);
@@ -860,6 +861,7 @@ table.demo tr:last-child th { border-bottom: 0; }
     background: #f5f3ff !important;
     color: #0f172a !important;
   }
+  table.demo th, table.demo td { color: #334155 !important; }
   table.demo tbody tr:nth-child(even) { background: #f8fafc !important; }
   table.demo tfoot td { background: #ecfdf5 !important; color: #047857 !important; }
   table.demo th, table.demo td { border-color: #e2e8f0 !important; }
@@ -890,83 +892,6 @@ table.demo tr:last-child th { border-bottom: 0; }
 }
 
 .brand-mark svg { display: block; }
-
-/* ===================== EDITOR DE BLUEPRINT (TCC) ===================== */
-.topbar-inner { gap: 14px; flex-wrap: wrap; }
-.tb-progress { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 130px; }
-.tb-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--shell-border-strong); overflow: hidden; min-width: 70px; }
-.tb-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--shell-primary), var(--shell-tertiary)); transition: width .35s ease; }
-.tb-pct { font-size: 12px; font-weight: 800; color: var(--shell-text); min-width: 38px; }
-.tb-save-state { font-size: 11px; color: var(--shell-text-soft); min-width: 64px; white-space: nowrap; }
-@media (max-width: 760px) { .tb-progress { order: 5; flex-basis: 100%; } }
-
-/* capa editavel (hero) */
-.hero-title.field-edit { outline: none; }
-.hero-title.field-edit:empty::before { content: attr(data-placeholder); color: var(--shell-text-soft); -webkit-text-fill-color: var(--shell-text-soft); }
-.hero-title.field-edit:focus { box-shadow: inset 0 -2px 0 var(--shell-tertiary); }
-.meta-card textarea {
-  width: 100%; border: 0; background: transparent; resize: none; overflow: hidden;
-  font-family: inherit; font-size: .98rem; font-weight: 600; line-height: 1.5;
-  color: var(--shell-text); outline: none; padding: 0; min-height: 0;
-}
-.meta-card textarea::placeholder { color: var(--shell-text-soft); font-weight: 500; }
-.meta-card:focus-within { border-color: var(--shell-tertiary); }
-
-/* guia (o que escrever aqui) */
-.bp-guide {
-  display: flex; gap: 12px; align-items: flex-start; margin: 2px 0 16px;
-  padding: 13px 15px; border-radius: var(--shell-radius-md);
-  border: 1px solid color-mix(in srgb, var(--shell-tertiary) 32%, transparent);
-  border-left: 4px solid var(--shell-tertiary);
-  background: color-mix(in srgb, var(--shell-tertiary) 9%, transparent);
-}
-.bp-guide-icon {
-  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; display: grid; place-items: center;
-  background: color-mix(in srgb, var(--shell-tertiary) 16%, transparent); color: var(--shell-tertiary-200); font-size: 1rem;
-}
-.bp-guide-title { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-tertiary-200); margin-bottom: 4px; }
-.bp-guide-text { color: var(--shell-text-muted); font-size: .9rem; line-height: 1.66; }
-.bp-guide-text em { color: var(--shell-tertiary-200); font-style: normal; font-weight: 700; }
-
-/* campo de resposta */
-.bp-field-label { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-text-soft); margin-bottom: 6px; display: block; }
-textarea.bp-field {
-  width: 100%; min-height: 120px; resize: vertical;
-  background: var(--shell-surface-soft); border: 1px solid var(--shell-border-strong);
-  border-radius: var(--shell-radius-md); padding: 13px 15px;
-  font-family: inherit; font-size: .96rem; line-height: 1.74; color: var(--shell-text); outline: none;
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
-textarea.bp-field:focus { border-color: var(--shell-tertiary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--shell-tertiary) 18%, transparent); }
-textarea.bp-field::placeholder { color: var(--shell-text-soft); }
-
-/* checklist (criterios de aceite) */
-.bp-checklist { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--shell-border-strong); }
-.bp-checklist-title { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-primary-200); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
-.bp-check { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: .9rem; color: var(--shell-text-muted); cursor: pointer; }
-.bp-check input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--shell-primary); cursor: pointer; flex-shrink: 0; }
-.bp-check input:checked + span { color: var(--shell-text-soft); text-decoration: line-through; }
-
-/* tag de progresso por secao + estado done */
-.sec-tag { margin-left: auto; font-size: 9px; font-weight: 800; letter-spacing: .06em; padding: 3px 9px; border-radius: 999px; background: var(--shell-border); color: var(--shell-text-soft); }
-.section.done { border-color: color-mix(in srgb, var(--shell-primary) 45%, transparent); }
-.section.done .section-index { color: var(--shell-primary-200); }
-.section.done .sec-tag { background: color-mix(in srgb, var(--shell-primary) 16%, transparent); color: var(--shell-primary-200); }
-.section-head { display: flex; align-items: center; gap: 12px; }
-
-/* caixa de ajuda */
-.bp-help { background: var(--shell-surface-soft); border: 1px solid var(--shell-border); border-radius: var(--shell-radius-lg); padding: 18px 20px; margin-bottom: 22px; font-size: .9rem; color: var(--shell-text-muted); line-height: 1.7; }
-.bp-help strong { color: var(--shell-text); }
-.bp-help ul { margin: 8px 0 0 18px; }
-.bp-help li { margin-bottom: 4px; }
-.bp-help code { font-size: .85em; padding: 1px 5px; border-radius: 5px; background: var(--shell-border); }
-
-@media print {
-  .topbar, .bp-guide, .bp-help, .no-print { display: none !important; }
-  textarea.bp-field, .meta-card textarea { border: 0 !important; background: transparent !important; padding: 0 !important; resize: none; overflow: hidden; min-height: 0; box-shadow: none !important; }
-  .bp-checklist { border-top: 1px solid var(--shell-border); }
-}
-
 </style>
 </head>
 <body class="apostila-shell">
@@ -982,23 +907,19 @@ textarea.bp-field::placeholder { color: var(--shell-text-soft); }
         </span>
         <span class="brand-text">
           <strong>Prof Toni Coimbra</strong>
-          <small>Blueprint de Software · TCC</small>
+          <small>Apostila · Análise e Projeto de Sistemas</small>
         </span>
       </a>
-      <div class="tb-progress">
-        <div class="tb-bar"><div class="tb-bar-fill" id="barFill"></div></div>
-        <span class="tb-pct" id="barPct">0%</span>
-        <span class="tb-save-state" id="saveState">—</span>
-      </div>
       <nav class="toolbar">
-        <button class="btn btn-secondary" type="button" onclick="exportJSON()" title="Baixa um .json com tudo que você preencheu — backup / entrega ao professor">💾 Salvar</button>
-        <button class="btn btn-secondary" type="button" onclick="document.getElementById('importFile').click()" title="Carrega um .json salvo antes">📂 Abrir</button>
+        <a class="pill" href="#sumario">Sumário</a>
         <button class="btn btn-secondary" id="theme-toggle" type="button">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <span id="theme-label">Tema claro</span>
         </button>
-        <button class="btn btn-primary" type="button" onclick="window.print()">🖨️ PDF</button>
-        <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="importJSON(event)" />
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          Salvar PDF
+        </button>
       </nav>
     </div>
   </header>
@@ -1010,190 +931,222 @@ textarea.bp-field::placeholder { color: var(--shell-text-soft); }
       <div class="hero-inner">
         <div class="eyebrow">
           <span class="eyebrow-line"></span>
-          Curso Técnico em Desenvolvimento de Sistemas · TCC
+          Aula 26 · Marketing Digital
         </div>
-        <h1 class="hero-title field-edit accent" data-key="capa_titulo" contenteditable="true" data-placeholder="Nome do seu projeto"></h1>
-        <p class="hero-lead">Blueprint de Software — documento vivo. Preencha as 8 seções no seu ritmo; tudo salva sozinho neste navegador.</p>
+        <h1 class="hero-title">
+          Marketing e Tráfego <span class="accent">Orgânico</span>
+        </h1>
+        <p class="hero-lead">
+          Na aula passada você descobriu que dá pra aparecer no topo do Google sem pagar nada. Soa bom demais, né? E aqui mora a pegadinha que separa quem entende de marketing de quem só acha que entende: "de graça" não é "fácil". Quando você clica no primeiro resultado de "melhor tênis de corrida", alguém trabalhou meses para aquele link estar ali — sem ter pago um centavo de anúncio. Hoje você vai aprender como.
+        </p>
+
         <dl class="meta-grid">
-          <div class="meta-card"><dt>Aluno(a)</dt><dd><textarea data-key="capa_aluno" rows="1" placeholder="Seu nome completo"></textarea></dd></div>
-          <div class="meta-card"><dt>Tipo de sistema</dt><dd><textarea data-key="capa_tipo" rows="1" placeholder="Web / Mobile / Desktop / API…"></textarea></dd></div>
-          <div class="meta-card"><dt>Documento</dt><dd>Blueprint de TCC</dd></div>
-          <div class="meta-card"><dt>Última edição</dt><dd id="lastEdit">—</dd></div>
+          <div class="meta-card"><dt>Disciplina</dt><dd>Análise e Projeto de Sistemas</dd></div>
+          <div class="meta-card"><dt>Nível</dt><dd>Ensino Técnico · 3ª série</dd></div>
+          <div class="meta-card"><dt>Duração</dt><dd>50 minutos</dd></div>
+          <div class="meta-card"><dt>Pré-requisito</dt><dd>Aula 25</dd></div>
         </dl>
       </div>
     </section>
 
-    <div class="bp-help no-print">
-      <strong>Como usar este documento</strong>
+    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
+      <p class="sumario-title">Nesta aula</p>
+      <ol class="sumario-list">
+        <li><a href="#sec-1"><span class="sumario-num">01</span><span>O que é tráfego orgânico</span></a></li>
+        <li><a href="#sec-2"><span class="sumario-num">02</span><span>Os tipos de conteúdo que atraem</span></a></li>
+        <li><a href="#sec-3"><span class="sumario-num">03</span><span>As estratégias para crescer</span></a></li>
+        <li><a href="#sec-4"><span class="sumario-num">04</span><span>Prática: plano de ataque orgânico</span></a></li>
+        <li><a href="#sec-5"><span class="sumario-num">05</span><span>Avaliação</span></a></li>
+        <li><a href="#sec-6"><span class="sumario-num">06</span><span>Fechamento</span></a></li>
+      </ol>
+    </nav>
+
+    <section class="section" id="sec-1">
+      <header class="section-head">
+        <span class="section-index">Seção 01</span>
+        <h2>O que é tráfego orgânico</h2>
+      </header>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Tráfego orgânico</p>
+          <p class="callout-text">São os visitantes que chegam ao seu site através de <strong>resultados de busca não pagos</strong> — quando você pesquisa algo no Google, Bing ou YouTube e clica num link que <strong>não</strong> é anúncio. É "orgânico" porque cresce naturalmente, conquistado pelo conteúdo, e não comprado.</p>
+        </div>
+      </aside>
+
+      <p>A grande vantagem: além de gratuito, o tráfego orgânico costuma trazer gente <strong>genuinamente interessada</strong>. Quem buscou "como consertar bicicleta" e achou seu artigo realmente quer aquilo — é um público muito mais quente do que quem só passou por um anúncio sem querer.</p>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">!</div>
+        <div class="callout-body">
+          <p class="callout-title">Erro comum</p>
+          <p class="callout-text">"Tráfego orgânico é grátis, então é fácil." É o contrário. Você não paga ao Google, mas paga em <strong>tempo, esforço e paciência</strong>: produzir conteúdo bom, publicar com regularidade e esperar meses até o buscador confiar no seu site. O tráfego pago (Aula 27) é rápido e custa dinheiro; o orgânico é lento e custa trabalho. Não existe almoço grátis — existe almoço que você cozinha você mesmo.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-2">
+      <header class="section-head">
+        <span class="section-index">Seção 02</span>
+        <h2>Os tipos de conteúdo que atraem</h2>
+      </header>
+
+      <p>O tráfego orgânico não cai do céu: ele é puxado por <strong>conteúdo que as pessoas estão procurando</strong>. Os formatos mais usados:</p>
+
       <ul>
-        <li>Preencha cada uma das 8 seções no seu ritmo. <strong>Tudo salva sozinho</strong> neste navegador, neste computador.</li>
-        <li>Marque os <strong>critérios de aceite</strong> conforme cada parte fica pronta — a barra no topo mostra seu progresso.</li>
-        <li><strong>💾 Salvar</strong> baixa um <code>.json</code> com tudo (backup / entrega). <strong>📂 Abrir</strong> retoma de onde parou em outro computador.</li>
-        <li>No fim, <strong>🖨️ PDF</strong> exporta em A4 (barra, dicas e guias somem no PDF).</li>
+        <li><strong>Artigos de blog</strong> — textos que respondem perguntas frequentes do público ("como escolher um notebook para programar"). São a espinha dorsal do orgânico.</li>
+        <li><strong>Vídeos</strong> — YouTube é o segundo maior buscador do mundo. Tutoriais e explicações trazem tráfego por anos.</li>
+        <li><strong>Infográficos</strong> — transformam informação complexa em imagem fácil de entender e de compartilhar.</li>
+        <li><strong>Posts em redes sociais</strong> — distribuem o conteúdo e trazem visitantes de volta ao site.</li>
       </ul>
-    </div>
 
-    <div id="sections"></div>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">✦</div>
+        <div class="callout-body">
+          <p class="callout-title">O que isso tem a ver com quem programa</p>
+          <p class="callout-text">Aqui o desenvolvedor entra em campo de verdade. Um site lindo mas <strong>lento</strong> ou com HTML bagunçado é punido pelo Google — performance e estrutura são fatores de ranqueamento. Quando você usa tags semânticas (<code>&lt;h1&gt;</code>, <code>&lt;title&gt;</code>, <code>&lt;meta&gt;</code>), otimiza imagens e deixa a página rápida, você está fazendo <strong>SEO técnico</strong>: o trabalho de SEO que só o programador consegue fazer. O redator escreve o texto; você constrói a casa onde o Google entra com facilidade.</p>
+        </div>
+      </aside>
+    </section>
 
-    <p class="footer-note" style="text-align:center;margin-top:24px">
-      Blueprint de Software · TCC · Curso Técnico em Desenvolvimento de Sistemas · documento vivo — atualize conforme o projeto evoluir.
-    </p>
+    <section class="section" id="sec-3">
+      <header class="section-head">
+        <span class="section-index">Seção 03</span>
+        <h2>As estratégias para crescer</h2>
+      </header>
+
+      <p>Quatro alavancas aumentam seu tráfego orgânico. Repare que elas se reforçam.</p>
+
+      <h3>Como um artigo chega ao topo do Google</h3>
+      <ol>
+        <li><strong>SEO — fala a língua do buscador</strong>. Você usa as palavras-chave que as pessoas realmente pesquisam, com títulos e descrições claros e imagens otimizadas. Assim o Google entende sobre o que é a página.</li>
+        <li><strong>Qualidade — merece o clique</strong>. O conteúdo responde de verdade à dúvida do leitor, melhor que os concorrentes. Conteúdo raso até aparece, mas ninguém fica — e o Google percebe.</li>
+        <li><strong>Regularidade — mostra que está vivo</strong>. Publicar com frequência sinaliza ao buscador que o site é ativo e atualizado. Um blog abandonado perde posição com o tempo.</li>
+        <li><strong>Engajamento — ganha alcance extra</strong>. Promover nas redes sociais e incentivar o compartilhamento traz mais visitantes e mais sinais de que o conteúdo é bom, realimentando o ciclo.</li>
+      </ol>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">+</div>
+        <div class="callout-body">
+          <p class="callout-title">A regra que sustenta tudo</p>
+          <p class="callout-text">Nenhuma das quatro funciona sozinha. SEO sem qualidade atrai clique que vai embora na hora. Qualidade sem regularidade vira um único bom artigo esquecido. O tráfego orgânico é um <strong>efeito composto</strong>: pequenas ações repetidas por meses que, somadas, viram uma avalanche de visitantes gratuitos.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-4">
+      <header class="section-head">
+        <span class="section-index">Seção 04</span>
+        <h2>Prática: plano de ataque orgânico</h2>
+      </header>
+
+      <p>Em duplas, sem computador obrigatório, ~15 min. Imaginem que vocês têm um canal/blog sobre um assunto que dominam (games, skate, maquiagem, programação — escolham). No caderno:</p>
+
+      <ol>
+        <li><strong>Palavra-chave</strong> — escrevam <strong>uma pergunta real</strong> que o público desse tema digitaria no Google (ex.: "como começar a programar do zero").</li>
+        <li><strong>Conteúdo</strong> — que formato responderia melhor essa pergunta: artigo, vídeo, infográfico? Por quê?</li>
+        <li><strong>Título</strong> — escrevam um título que (a) contenha a palavra-chave e (b) dê vontade de clicar. Os dois ao mesmo tempo — esse é o desafio do SEO.</li>
+        <li><strong>Plano de regularidade</strong> — quantos conteúdos por mês vocês conseguiriam manter <strong>de verdade</strong>, sem abandonar em duas semanas?</li>
+      </ol>
+
+      <p>Cada dupla lê seu título em voz alta. A turma vota: qual título equilibra melhor "achável pelo Google" e "clicável pela pessoa"?</p>
+    </section>
+
+    <section class="section" id="sec-5">
+      <header class="section-head">
+        <span class="section-index">Seção 05</span>
+        <h2>Avaliação</h2>
+      </header>
+
+      <h3>Questão 1</h3>
+      <p><strong>O que caracteriza o tráfego orgânico?</strong></p>
+      <ol type="a">
+        <li>Visitantes que chegam por anúncios pagos.</li>
+        <li>Visitantes que chegam por resultados de busca não pagos. <strong>(correta)</strong></li>
+        <li>Visitantes que chegam só por links patrocinados.</li>
+        <li>Visitantes que pagam para acessar o site.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">Orgânico = não pago. A pessoa pesquisou, encontrou seu link nos resultados naturais (não nos anúncios) e clicou por interesse próprio.</p>
+        </div>
+      </aside>
+
+      <h3>Questão 2</h3>
+      <p><strong>Por que dizer que "tráfego orgânico é grátis, então é fácil" está errado?</strong></p>
+      <ol type="a">
+        <li>Porque na verdade o Google cobra uma taxa mensal.</li>
+        <li>Porque ele não custa dinheiro, mas custa tempo, esforço e regularidade por meses. <strong>(correta)</strong></li>
+        <li>Porque tráfego orgânico não existe mais.</li>
+        <li>Porque só funciona para grandes empresas.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">Você troca dinheiro por trabalho e paciência. O resultado é lento e composto — o oposto da velocidade do tráfego pago.</p>
+        </div>
+      </aside>
+
+      <h3>Questão 3</h3>
+      <p><strong>Uma dupla escreveu um ótimo artigo, mas nunca mais publicou nada no blog. Qual estratégia ela deixou de aplicar?</strong></p>
+      <ol type="a">
+        <li>SEO.</li>
+        <li>Qualidade do conteúdo.</li>
+        <li>Regularidade. <strong>(correta)</strong></li>
+        <li>Uso de palavras-chave.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">Qualidade ela teve. Faltou regularidade: um blog parado sinaliza ao Google que o site não está ativo, e a posição cai com o tempo.</p>
+        </div>
+      </aside>
+
+      <aside class="roteiro">
+        <header class="roteiro-head">
+          <span class="roteiro-chip">Roteiro do professor</span>
+        </header>
+        <p>Emendar direto na deixa da Aula 25 ("vimos que dá pra aparecer de graça — mas como?"). O erro comum ("grátis = fácil") é o coração da aula: provoque antes de revelar ("quem aqui acha que é só escrever um post e pronto?"). Na progressão das estratégias, vá revelando passo por passo e pergunte a cada um "e se faltar essa?" — o ponto é que as quatro se sustentam mutuamente.</p>
+        <p>Na prática, o passo 3 (título que é achável E clicável) costuma travar — é proposital, mostra a tensão real do SEO; circule ajudando. A atividade da Alura ("O que é tráfego orgânico") fica como extensão opcional extraclasse. Guardar 8 min para o quiz coletivo.</p>
+      </aside>
+    </section>
+
+    <section class="section section-close" id="sec-6">
+      <header class="section-head">
+        <span class="section-index">Fechamento</span>
+        <h2>O que levamos desta aula</h2>
+      </header>
+
+      <ul class="checklist">
+        <li><strong>Tráfego orgânico</strong> são os visitantes que chegam pela busca não paga — gratuito em dinheiro, <strong>caro em tempo e consistência</strong>.</li>
+        <li>Ele é puxado por <strong>conteúdo procurado</strong>: artigos, vídeos, infográficos e posts.</li>
+        <li>Quatro estratégias o fazem crescer — <strong>SEO, qualidade, regularidade e engajamento</strong> — e elas só funcionam <strong>juntas</strong>, como efeito composto.</li>
+        <li>O <strong>desenvolvedor</strong> sustenta o SEO técnico: site rápido, HTML semântico, imagens otimizadas.</li>
+        <li><strong>Próxima aula:</strong> e quando você não tem meses para esperar? Na Aula 27 a gente vê o atalho que custa dinheiro mas entrega resultado na hora — o <strong>tráfego pago</strong>.</li>
+      </ul>
+
+      <p class="footer-note">
+        Material produzido pelo Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
+      </p>
+    </section>
 
   </main>
 
-  <footer class="page-foot no-print">
+  <footer class="page-foot">
     <div class="page-foot-inner">
       <span>© <span id="year"></span> Prof Toni Coimbra</span>
+      <span class="dotsep">·</span>
+      <span>Apostila estática · Aula 26 — Tráfego Orgânico</span>
       <span class="dotsep">·</span>
       <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
     </div>
   </footer>
 
-  <script>
-
-/* ===== 8 seções: guia + critérios de aceite ===== */
-const SECTIONS = [
-  { n:1, title:"Problema e Contexto",
-    guide:"Que <em>dor real</em> seu sistema resolve? Quem sofre com ela? Como é resolvido hoje — e por que essa forma falha? Traga ao menos <em>um dado ou número</em> que mostre o tamanho do problema.",
-    placeholder:"Descreva o problema: a dor, quem sofre, como é resolvido hoje e por que isso falha. Feche com o que o seu sistema vai resolver.",
-    checks:["Descrevi a dor concreta (não genérica)","Disse quem sofre com o problema","Mostrei como é resolvido hoje e por que falha","Incluí pelo menos 1 dado, número ou fato","Fechei dizendo o que o sistema resolve"] },
-  { n:2, title:"Público-alvo",
-    guide:"Quem vai <em>usar</em> o sistema? Defina de 2 a 4 perfis de usuário diferentes. Para cada um, diga o que ele faz dentro do sistema.",
-    placeholder:"Perfil 1 — quem é e o que faz no sistema.\nPerfil 2 — …\nPerfil 3 — …",
-    checks:["Defini de 2 a 4 perfis de usuário","Cada perfil diz o que faz no sistema","Os perfis são distintos entre si"] },
-  { n:3, title:"Solução Proposta",
-    guide:"Em <em>uma frase</em>, o que o sistema é. Qual o <em>tipo</em> (web, mobile, desktop, API). Quais os <em>módulos/funções principais</em>. Qual o diferencial.",
-    placeholder:"Em uma frase: o sistema é…\nTipo: …\nMódulos principais: …\nDiferencial: o que ele faz que as soluções de hoje não fazem.",
-    checks:["Tenho uma frase única que define o sistema","Defini o tipo de sistema","Listei os módulos/funções principais","Deixei claro o diferencial"] },
-  { n:4, title:"Requisitos Funcionais (o que o sistema FAZ)",
-    guide:"Liste o que o sistema <em>deve fazer</em>. Cada requisito começa com verbo (\"O sistema deve…\") e tem um <em>critério de aceite mensurável</em>. Mínimo de 8. Devem cobrir os módulos da Seção 3.",
-    placeholder:"RF01 — O sistema deve permitir… (critério: …)\nRF02 — O sistema deve… (critério: …)\nRF03 — …",
-    checks:["Listei pelo menos 8 requisitos funcionais","Cada RF começa com verbo (\"o sistema deve…\")","Cada RF tem critério mensurável/verificável","Os RF cobrem os módulos da Seção 3"] },
-  { n:5, title:"Requisitos Não Funcionais (COMO o sistema se comporta)",
-    guide:"Qualidades do sistema: <em>desempenho, segurança, usabilidade, disponibilidade</em>. Mínimo de 4. Devem ser mensuráveis (ter número ou limite).",
-    placeholder:"RNF01 — Desempenho: … (ex.: responder em até 2s)\nRNF02 — Segurança: …\nRNF03 — Usabilidade: …\nRNF04 — …",
-    checks:["Listei pelo menos 4 requisitos não funcionais","Cobri ao menos desempenho e segurança","São mensuráveis (têm número ou limite)","Não repetem os requisitos funcionais"] },
-  { n:6, title:"Arquitetura e Tecnologias",
-    guide:"Qual a <em>stack</em>: front-end, back-end, banco de dados, infra/autenticação. Qual o <em>padrão arquitetural</em>. <em>Justifique cada escolha</em>. A stack precisa caber no prazo do TCC.",
-    placeholder:"Front-end: … (por quê?)\nBack-end: … (por quê?)\nBanco de dados: … (por quê?)\nInfra/Auth: … (por quê?)\nPadrão arquitetural: …",
-    checks:["Defini o front-end","Defini back-end e/ou banco de dados","Citei o padrão arquitetural","Cada tecnologia tem justificativa","A stack é viável para o prazo do TCC"] },
-  { n:7, title:"Fluxo Principal de Uso",
-    guide:"Conte o <em>passo a passo</em> do uso central do sistema, do início ao fim, numerado. Começa na entrada e termina num resultado entregue.",
-    placeholder:"1. O usuário faz login / onboarding…\n2. …\n3. …\nN. O sistema entrega o resultado X.",
-    checks:["O fluxo está numerado, passo a passo","Começa na entrada (login/onboarding/abertura)","Termina num resultado ou valor entregue","Cada passo é uma ação clara","Cobre o caso de uso central do sistema"] },
-  { n:8, title:"Autoavaliação do Escopo",
-    guide:"O projeto <em>cabe no prazo</em> do TCC? Por quê? O que é <em>MVP</em> (essencial) e o que é extra? Quais os <em>riscos</em> e como mitigá-los?",
-    placeholder:"Viabilidade: o projeto cabe no prazo porque…\nMVP (essencial): …\nExtras (se sobrar tempo): …\nRiscos e mitigação: …",
-    checks:["Justifiquei a viabilidade no prazo","Separei o MVP do que é opcional","Citei ao menos 1 risco e como mitigar","Os critérios de avaliação são verificáveis"] }
-];
-
-const STORAGE_KEY = "blueprint_tcc_v1";
-const sectionsEl = document.getElementById("sections");
-SECTIONS.forEach(s => {
-  const sec = document.createElement("section");
-  sec.className = "section";
-  sec.id = "sec" + s.n;
-  sec.innerHTML = `
-    <header class="section-head">
-      <span class="section-index">Seção ${String(s.n).padStart(2,"0")}</span>
-      <h2>${s.title}</h2>
-      <span class="sec-tag" id="tag${s.n}">0/${s.checks.length}</span>
-    </header>
-    <div class="bp-guide no-print">
-      <div class="bp-guide-icon">💡</div>
-      <div><div class="bp-guide-title">O que escrever aqui</div><div class="bp-guide-text">${s.guide}</div></div>
-    </div>
-    <span class="bp-field-label">Sua resposta</span>
-    <textarea class="bp-field" data-key="sec${s.n}_texto" placeholder="${s.placeholder.replace(/"/g,'&quot;')}"></textarea>
-    <div class="bp-checklist">
-      <div class="bp-checklist-title">✓ Critérios de aceite — marque o que já está pronto</div>
-      ${s.checks.map((c,i)=>`<label class="bp-check"><input type="checkbox" data-key="sec${s.n}_chk${i}" data-sec="${s.n}" /><span>${c}</span></label>`).join("")}
-    </div>`;
-  sectionsEl.appendChild(sec);
-});
-
-/* ===== estado / persistência ===== */
-function collectState(){
-  const st={};
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    if(el.type==="checkbox") st[el.dataset.key]=el.checked;
-    else if(el.isContentEditable) st[el.dataset.key]=el.innerText;
-    else st[el.dataset.key]=el.value;
-  });
-  st._savedAt=new Date().toISOString();
-  return st;
-}
-function applyState(st){
-  if(!st) return;
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    const v=st[el.dataset.key]; if(v===undefined) return;
-    if(el.type==="checkbox") el.checked=!!v;
-    else if(el.isContentEditable) el.innerText=v;
-    else el.value=v;
-  });
-  autoGrowAll(); updateProgress();
-  if(st._savedAt) showLastEdit(st._savedAt);
-}
-function save(){
-  const st=collectState();
-  try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(st)); flashSaved(); }
-  catch(e){ document.getElementById("saveState").textContent="⚠️ erro ao salvar"; }
-  showLastEdit(st._savedAt); updateProgress();
-}
-let saveTimer;
-function debouncedSave(){ clearTimeout(saveTimer); document.getElementById("saveState").textContent="salvando…"; saveTimer=setTimeout(save,600); }
-function flashSaved(){ const el=document.getElementById("saveState"); el.textContent="✓ salvo"; el.style.color="var(--shell-primary-200)"; setTimeout(()=>{el.style.color="";},1500); }
-function showLastEdit(iso){ if(!iso) return; const d=new Date(iso); document.getElementById("lastEdit").textContent=d.toLocaleDateString("pt-BR")+" "+d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}); }
-
-/* ===== progresso ===== */
-function updateProgress(){
-  const boxes=document.querySelectorAll('input[type="checkbox"][data-key]');
-  let done=0; boxes.forEach(b=>{ if(b.checked) done++; });
-  const pct=boxes.length?Math.round(done/boxes.length*100):0;
-  document.getElementById("barFill").style.width=pct+"%";
-  document.getElementById("barPct").textContent=pct+"%";
-  SECTIONS.forEach(s=>{
-    const sb=document.querySelectorAll(`input[data-sec="${s.n}"]`); let d=0; sb.forEach(b=>{ if(b.checked) d++; });
-    document.getElementById("tag"+s.n).textContent=`${d}/${sb.length}`;
-    document.getElementById("sec"+s.n).classList.toggle("done", d===sb.length && sb.length>0);
-  });
-}
-
-/* ===== auto-crescer textareas ===== */
-function autoGrow(el){ if(el.tagName!=="TEXTAREA") return; el.style.height="auto"; el.style.height=(el.scrollHeight+2)+"px"; }
-function autoGrowAll(){ document.querySelectorAll("textarea").forEach(autoGrow); }
-
-/* ===== export / import ===== */
-function slug(s){ return (s||"blueprint").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40)||"blueprint"; }
-function exportJSON(){
-  const st=collectState();
-  const blob=new Blob([JSON.stringify(st,null,2)],{type:"application/json"});
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download=`blueprint-${slug(st.capa_aluno)}-${slug(st.capa_titulo)}.json`;
-  a.click(); URL.revokeObjectURL(a.href);
-}
-function importJSON(ev){
-  const file=ev.target.files[0]; if(!file) return;
-  const r=new FileReader();
-  r.onload=e=>{ try{ applyState(JSON.parse(e.target.result)); save(); alert("Progresso carregado."); }
-    catch(err){ alert("Arquivo inválido. Use um .json salvo por este template."); }
-    ev.target.value=""; };
-  r.readAsText(file);
-}
-
-/* ===== listeners ===== */
-document.addEventListener("input", e=>{ if(e.target.matches("[data-key]")){ if(e.target.tagName==="TEXTAREA") autoGrow(e.target); debouncedSave(); } });
-document.addEventListener("change", e=>{ if(e.target.matches('input[type="checkbox"][data-key]')){ updateProgress(); debouncedSave(); } });
-document.querySelectorAll('[contenteditable][data-key]').forEach(el=>el.addEventListener("input",debouncedSave));
-
-/* ===== boot ===== */
-(function init(){
-  let saved=null; try{ saved=JSON.parse(localStorage.getItem(STORAGE_KEY)); }catch(e){}
-  if(saved) applyState(saved); else { autoGrowAll(); updateProgress(); }
-})();
-
-  </script>
   <script>
 (function () {
   var root = document.documentElement;

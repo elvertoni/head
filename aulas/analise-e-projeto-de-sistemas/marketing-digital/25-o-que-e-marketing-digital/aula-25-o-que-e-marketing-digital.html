@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Blueprint de Software · Template do TCC · Prof Toni Coimbra</title>
+  <title>Aula 25 · O que é Marketing Digital · Prof Toni Coimbra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -670,6 +670,7 @@ table.demo th, table.demo td {
   padding: 11px 14px;
   border-bottom: 1px solid var(--shell-border);
   text-align: left;
+  color: var(--shell-text-muted);
 }
 table.demo thead th {
   background: rgba(139, 92, 246, 0.10);
@@ -860,6 +861,7 @@ table.demo tr:last-child th { border-bottom: 0; }
     background: #f5f3ff !important;
     color: #0f172a !important;
   }
+  table.demo th, table.demo td { color: #334155 !important; }
   table.demo tbody tr:nth-child(even) { background: #f8fafc !important; }
   table.demo tfoot td { background: #ecfdf5 !important; color: #047857 !important; }
   table.demo th, table.demo td { border-color: #e2e8f0 !important; }
@@ -890,83 +892,6 @@ table.demo tr:last-child th { border-bottom: 0; }
 }
 
 .brand-mark svg { display: block; }
-
-/* ===================== EDITOR DE BLUEPRINT (TCC) ===================== */
-.topbar-inner { gap: 14px; flex-wrap: wrap; }
-.tb-progress { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 130px; }
-.tb-bar { flex: 1; height: 8px; border-radius: 999px; background: var(--shell-border-strong); overflow: hidden; min-width: 70px; }
-.tb-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--shell-primary), var(--shell-tertiary)); transition: width .35s ease; }
-.tb-pct { font-size: 12px; font-weight: 800; color: var(--shell-text); min-width: 38px; }
-.tb-save-state { font-size: 11px; color: var(--shell-text-soft); min-width: 64px; white-space: nowrap; }
-@media (max-width: 760px) { .tb-progress { order: 5; flex-basis: 100%; } }
-
-/* capa editavel (hero) */
-.hero-title.field-edit { outline: none; }
-.hero-title.field-edit:empty::before { content: attr(data-placeholder); color: var(--shell-text-soft); -webkit-text-fill-color: var(--shell-text-soft); }
-.hero-title.field-edit:focus { box-shadow: inset 0 -2px 0 var(--shell-tertiary); }
-.meta-card textarea {
-  width: 100%; border: 0; background: transparent; resize: none; overflow: hidden;
-  font-family: inherit; font-size: .98rem; font-weight: 600; line-height: 1.5;
-  color: var(--shell-text); outline: none; padding: 0; min-height: 0;
-}
-.meta-card textarea::placeholder { color: var(--shell-text-soft); font-weight: 500; }
-.meta-card:focus-within { border-color: var(--shell-tertiary); }
-
-/* guia (o que escrever aqui) */
-.bp-guide {
-  display: flex; gap: 12px; align-items: flex-start; margin: 2px 0 16px;
-  padding: 13px 15px; border-radius: var(--shell-radius-md);
-  border: 1px solid color-mix(in srgb, var(--shell-tertiary) 32%, transparent);
-  border-left: 4px solid var(--shell-tertiary);
-  background: color-mix(in srgb, var(--shell-tertiary) 9%, transparent);
-}
-.bp-guide-icon {
-  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; display: grid; place-items: center;
-  background: color-mix(in srgb, var(--shell-tertiary) 16%, transparent); color: var(--shell-tertiary-200); font-size: 1rem;
-}
-.bp-guide-title { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-tertiary-200); margin-bottom: 4px; }
-.bp-guide-text { color: var(--shell-text-muted); font-size: .9rem; line-height: 1.66; }
-.bp-guide-text em { color: var(--shell-tertiary-200); font-style: normal; font-weight: 700; }
-
-/* campo de resposta */
-.bp-field-label { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-text-soft); margin-bottom: 6px; display: block; }
-textarea.bp-field {
-  width: 100%; min-height: 120px; resize: vertical;
-  background: var(--shell-surface-soft); border: 1px solid var(--shell-border-strong);
-  border-radius: var(--shell-radius-md); padding: 13px 15px;
-  font-family: inherit; font-size: .96rem; line-height: 1.74; color: var(--shell-text); outline: none;
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
-textarea.bp-field:focus { border-color: var(--shell-tertiary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--shell-tertiary) 18%, transparent); }
-textarea.bp-field::placeholder { color: var(--shell-text-soft); }
-
-/* checklist (criterios de aceite) */
-.bp-checklist { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--shell-border-strong); }
-.bp-checklist-title { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--shell-primary-200); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
-.bp-check { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: .9rem; color: var(--shell-text-muted); cursor: pointer; }
-.bp-check input { width: 17px; height: 17px; margin-top: 2px; accent-color: var(--shell-primary); cursor: pointer; flex-shrink: 0; }
-.bp-check input:checked + span { color: var(--shell-text-soft); text-decoration: line-through; }
-
-/* tag de progresso por secao + estado done */
-.sec-tag { margin-left: auto; font-size: 9px; font-weight: 800; letter-spacing: .06em; padding: 3px 9px; border-radius: 999px; background: var(--shell-border); color: var(--shell-text-soft); }
-.section.done { border-color: color-mix(in srgb, var(--shell-primary) 45%, transparent); }
-.section.done .section-index { color: var(--shell-primary-200); }
-.section.done .sec-tag { background: color-mix(in srgb, var(--shell-primary) 16%, transparent); color: var(--shell-primary-200); }
-.section-head { display: flex; align-items: center; gap: 12px; }
-
-/* caixa de ajuda */
-.bp-help { background: var(--shell-surface-soft); border: 1px solid var(--shell-border); border-radius: var(--shell-radius-lg); padding: 18px 20px; margin-bottom: 22px; font-size: .9rem; color: var(--shell-text-muted); line-height: 1.7; }
-.bp-help strong { color: var(--shell-text); }
-.bp-help ul { margin: 8px 0 0 18px; }
-.bp-help li { margin-bottom: 4px; }
-.bp-help code { font-size: .85em; padding: 1px 5px; border-radius: 5px; background: var(--shell-border); }
-
-@media print {
-  .topbar, .bp-guide, .bp-help, .no-print { display: none !important; }
-  textarea.bp-field, .meta-card textarea { border: 0 !important; background: transparent !important; padding: 0 !important; resize: none; overflow: hidden; min-height: 0; box-shadow: none !important; }
-  .bp-checklist { border-top: 1px solid var(--shell-border); }
-}
-
 </style>
 </head>
 <body class="apostila-shell">
@@ -982,23 +907,19 @@ textarea.bp-field::placeholder { color: var(--shell-text-soft); }
         </span>
         <span class="brand-text">
           <strong>Prof Toni Coimbra</strong>
-          <small>Blueprint de Software · TCC</small>
+          <small>Apostila · Análise e Projeto de Sistemas</small>
         </span>
       </a>
-      <div class="tb-progress">
-        <div class="tb-bar"><div class="tb-bar-fill" id="barFill"></div></div>
-        <span class="tb-pct" id="barPct">0%</span>
-        <span class="tb-save-state" id="saveState">—</span>
-      </div>
       <nav class="toolbar">
-        <button class="btn btn-secondary" type="button" onclick="exportJSON()" title="Baixa um .json com tudo que você preencheu — backup / entrega ao professor">💾 Salvar</button>
-        <button class="btn btn-secondary" type="button" onclick="document.getElementById('importFile').click()" title="Carrega um .json salvo antes">📂 Abrir</button>
+        <a class="pill" href="#sumario">Sumário</a>
         <button class="btn btn-secondary" id="theme-toggle" type="button">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <span id="theme-label">Tema claro</span>
         </button>
-        <button class="btn btn-primary" type="button" onclick="window.print()">🖨️ PDF</button>
-        <input type="file" id="importFile" accept=".json,application/json" style="display:none" onchange="importJSON(event)" />
+        <button class="btn btn-primary" onclick="window.print()" type="button">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+          Salvar PDF
+        </button>
       </nav>
     </div>
   </header>
@@ -1010,190 +931,251 @@ textarea.bp-field::placeholder { color: var(--shell-text-soft); }
       <div class="hero-inner">
         <div class="eyebrow">
           <span class="eyebrow-line"></span>
-          Curso Técnico em Desenvolvimento de Sistemas · TCC
+          Aula 25 · Marketing Digital
         </div>
-        <h1 class="hero-title field-edit accent" data-key="capa_titulo" contenteditable="true" data-placeholder="Nome do seu projeto"></h1>
-        <p class="hero-lead">Blueprint de Software — documento vivo. Preencha as 8 seções no seu ritmo; tudo salva sozinho neste navegador.</p>
+        <h1 class="hero-title">
+          O que é Marketing <span class="accent">Digital</span>
+        </h1>
+        <p class="hero-lead">
+          Abre o seu feed agora. Entre um vídeo e outro apareceu um tênis que você comentou ontem, um criador que você segue divulgando um curso, um anúncio de uma loja que você nunca procurou mas que parece saber exatamente o que você quer. Nada disso é coincidência — você está dentro de uma máquina que tem nome: marketing digital. Hoje a gente vira essa máquina do avesso.
+        </p>
+
         <dl class="meta-grid">
-          <div class="meta-card"><dt>Aluno(a)</dt><dd><textarea data-key="capa_aluno" rows="1" placeholder="Seu nome completo"></textarea></dd></div>
-          <div class="meta-card"><dt>Tipo de sistema</dt><dd><textarea data-key="capa_tipo" rows="1" placeholder="Web / Mobile / Desktop / API…"></textarea></dd></div>
-          <div class="meta-card"><dt>Documento</dt><dd>Blueprint de TCC</dd></div>
-          <div class="meta-card"><dt>Última edição</dt><dd id="lastEdit">—</dd></div>
+          <div class="meta-card"><dt>Disciplina</dt><dd>Análise e Projeto de Sistemas</dd></div>
+          <div class="meta-card"><dt>Nível</dt><dd>Ensino Técnico · 3ª série</dd></div>
+          <div class="meta-card"><dt>Duração</dt><dd>50 minutos</dd></div>
+          <div class="meta-card"><dt>Entrega</dt><dd>1 atividade prática</dd></div>
         </dl>
       </div>
     </section>
 
-    <div class="bp-help no-print">
-      <strong>Como usar este documento</strong>
-      <ul>
-        <li>Preencha cada uma das 8 seções no seu ritmo. <strong>Tudo salva sozinho</strong> neste navegador, neste computador.</li>
-        <li>Marque os <strong>critérios de aceite</strong> conforme cada parte fica pronta — a barra no topo mostra seu progresso.</li>
-        <li><strong>💾 Salvar</strong> baixa um <code>.json</code> com tudo (backup / entrega). <strong>📂 Abrir</strong> retoma de onde parou em outro computador.</li>
-        <li>No fim, <strong>🖨️ PDF</strong> exporta em A4 (barra, dicas e guias somem no PDF).</li>
+    <nav class="sumario" id="sumario" aria-label="Sumário da aula">
+      <p class="sumario-title">Nesta aula</p>
+      <ol class="sumario-list">
+        <li><a href="#sec-1"><span class="sumario-num">01</span><span>Do outdoor para o feed</span></a></li>
+        <li><a href="#sec-2"><span class="sumario-num">02</span><span>Os três superpoderes do digital</span></a></li>
+        <li><a href="#sec-3"><span class="sumario-num">03</span><span>As ferramentas do jogo</span></a></li>
+        <li><a href="#sec-4"><span class="sumario-num">04</span><span>Prática: engenharia reversa de marca</span></a></li>
+        <li><a href="#sec-5"><span class="sumario-num">05</span><span>Avaliação</span></a></li>
+        <li><a href="#sec-6"><span class="sumario-num">06</span><span>Fechamento</span></a></li>
+      </ol>
+    </nav>
+
+    <section class="section" id="sec-1">
+      <header class="section-head">
+        <span class="section-index">Seção 01</span>
+        <h2>Do outdoor para o feed: o que mudou</h2>
+      </header>
+
+      <p>Marketing sempre existiu: é o conjunto de ações para fazer um produto ou serviço chegar a quem possa querer comprá-lo. O que mudou foi o <strong>lugar</strong> e, com ele, as <strong>regras do jogo</strong>.</p>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Marketing digital</p>
+          <p class="callout-text">Uso de plataformas e tecnologias <strong>online</strong> — sites, redes sociais, e-mails, buscadores e anúncios pagos — para promover produtos e serviços. A diferença não é só "ser na internet": é poder <strong>interagir diretamente</strong> com cada pessoa e <strong>medir</strong> cada resultado em tempo real.</p>
+        </div>
+      </aside>
+
+      <p>Pensa num outdoor na beira da rodovia. Ele é visto por milhares de carros por dia — mas a empresa não tem ideia de <strong>quem</strong> olhou, se a pessoa se interessou, nem se ela comprou por causa dele. O dono do outdoor está, literalmente, falando para uma multidão no escuro. Agora pensa num anúncio no Instagram: a marca sabe sua idade aproximada, sua cidade, o que você curte, quantos segundos você assistiu, se clicou, e se terminou comprando. É a diferença entre gritar numa praça e conversar no pé do ouvido de cada um.</p>
+
+      <aside class="callout c-warning">
+        <div class="callout-mark" aria-hidden="true">!</div>
+        <div class="callout-body">
+          <p class="callout-title">Erro comum</p>
+          <p class="callout-text">"Marketing digital é postar bastante nas redes sociais." Não é. Estar presente é só a porta de entrada. Marketing digital é ter <strong>estratégia</strong> (o que postar, para quem, com qual objetivo) e, principalmente, <strong>medir</strong> se aquilo funcionou. Uma marca que posta todo dia mas nunca olha os números está fazendo barulho, não marketing.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-2">
+      <header class="section-head">
+        <span class="section-index">Seção 02</span>
+        <h2>Os três superpoderes do digital</h2>
+      </header>
+
+      <p>O que faz o digital ganhar do tradicional cabe em três palavras.</p>
+
+      <div class="demo-wrap">
+        <div class="demo-label">Tradicional × Digital</div>
+        <div class="demo-body">
+          <table class="demo">
+            <thead>
+              <tr><th>Diferencial</th><th>Marketing tradicional</th><th>Marketing digital</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Alcance e segmentação</th><td>Amplo, mas no escuro: TV, outdoor, rádio falam para todo mundo</td><td>Global e mirado: escolhe idade, local, interesses, comportamento</td></tr>
+              <tr><th>Interatividade</th><td>Mão única — a marca fala, você só escuta</td><td>Mão dupla — você comenta, compartilha, responde na hora</td></tr>
+              <tr><th>Mensurabilidade</th><td>Difícil e lento: "vendeu mais, mas não sei por quê"</td><td>Imediata: cliques, conversões e engajamento em tempo real</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <aside class="callout c-secondary">
+        <div class="callout-mark" aria-hidden="true">+</div>
+        <div class="callout-body">
+          <p class="callout-title">O diferencial que manda em todos</p>
+          <p class="callout-text">Dos três, a <strong>mensurabilidade</strong> é o que muda o jogo de verdade. Quando você consegue medir cada passo, pode <strong>ajustar no meio do caminho</strong>: trocar o anúncio que não converte, investir mais no que está dando certo, parar de gastar com o que não funciona. O marketing tradicional só descobre o resultado no fim do mês; o digital corrige a rota durante a corrida.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-3">
+      <header class="section-head">
+        <span class="section-index">Seção 03</span>
+        <h2>As ferramentas do jogo</h2>
+      </header>
+
+      <p>Quatro técnicas aparecem o tempo todo daqui pra frente. Duas delas são o tema das duas próximas aulas, então guarde os nomes.</p>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">SEO e SEM</p>
+          <p class="callout-text"><strong>SEO</strong> (<em>Search Engine Optimization</em>) é otimizar seu conteúdo para aparecer <strong>de graça</strong> no topo dos resultados de busca — o chamado tráfego orgânico. <strong>SEM</strong> (<em>Search Engine Marketing</em>) é <strong>pagar</strong> para aparecer ali. Em resumo: SEO você conquista, SEM você compra. (Aulas 26 e 27 abrem cada um deles.)</p>
+        </div>
+      </aside>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Marketing de conteúdo</p>
+          <p class="callout-text">Criar e compartilhar material útil — posts, vídeos, e-books, infográficos — para <strong>atrair</strong> o público pelo valor, em vez de empurrar propaganda. Em vez de gritar "compre meu tênis", a marca ensina "como escolher o tênis certo para corrida". Quem ajuda, ganha confiança; quem ganha confiança, vende.</p>
+        </div>
+      </aside>
+
+      <p>As <strong>redes sociais</strong> (Instagram, TikTok, YouTube, LinkedIn) são onde tudo isso ganha alcance viral e feedback direto, e os <strong>canais digitais</strong> são os caminhos por onde o público chega até a marca. É essa jornada que a progressão abaixo destrincha.</p>
+
+      <h3>Como uma pessoa vira cliente de uma loja online</h3>
+      <ol>
+        <li><strong>Descoberta</strong> — a pessoa busca "tênis de corrida barato" no Google e encontra um artigo da loja bem posicionado (SEO) — ou vê um anúncio pago (SEM). Primeiro contato feito.</li>
+        <li><strong>Interesse</strong> — ela entra no site e no Instagram da marca, lê um conteúdo que ajuda de verdade e começa a confiar. O marketing de conteúdo fez o trabalho.</li>
+        <li><strong>Relacionamento</strong> — ela segue a marca e deixa o e-mail em troca de um cupom. Agora a loja pode falar direto com ela por e-mail, sem depender do algoritmo.</li>
+        <li><strong>Conversão</strong> — recebe uma oferta no momento certo e compra. A loja registra exatamente de qual canal veio essa venda — e investe mais nele.</li>
+      </ol>
+    </section>
+
+    <section class="section" id="sec-4">
+      <header class="section-head">
+        <span class="section-index">Seção 04</span>
+        <h2>Prática: engenharia reversa de marca</h2>
+      </header>
+
+      <p>Em duplas, sem computador obrigatório, ~15 min. Cada dupla escolhe <strong>uma marca ou criador que vocês realmente seguem</strong> (uma loja, um youtuber, um app). No caderno, respondam:</p>
+
+      <ol>
+        <li><strong>Canais</strong> — em quais lugares essa marca aparece para vocês? (feed, stories, busca do Google, e-mail, anúncio…)</li>
+        <li><strong>Técnica</strong> — o que ela faz para atrair: posta conteúdo útil? aparece em anúncio pago? sai no topo da busca?</li>
+        <li><strong>Mensurabilidade</strong> — que sinais públicos mostram se está funcionando? (curtidas, comentários, número de seguidores, avaliações)</li>
+        <li><strong>Veredito</strong> — na opinião de vocês, ela usa bem os três superpoderes do digital? O que melhoraria?</li>
+      </ol>
+
+      <p>Ao final, cada dupla apresenta sua marca em 1 minuto. A turma compara: quais marcas dependem de conteúdo, quais dependem de anúncio pago?</p>
+
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">✦</div>
+        <div class="callout-body">
+          <p class="callout-title">Por que isto importa para quem desenvolve sistemas</p>
+          <p class="callout-text">Você está num curso técnico, não numa agência de publicidade — então por que estudar isso? Porque o <strong>sistema que você vai construir</strong> (um e-commerce, um app, uma landing page) precisa ser <em>marketing-ready</em>: ter SEO para o Google achar, integrar uma ferramenta de análise (como o Google Analytics) para medir os acessos, e gerar os dados que o time de marketing vai usar para decidir. Programador que entende mensurabilidade constrói telas que registram os eventos certos. Quem não entende, entrega um site bonito que ninguém consegue medir.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="sec-5">
+      <header class="section-head">
+        <span class="section-index">Seção 05</span>
+        <h2>Avaliação</h2>
+      </header>
+
+      <h3>Questão 1</h3>
+      <p><strong>Qual é a principal vantagem do marketing digital sobre o tradicional?</strong></p>
+      <ol type="a">
+        <li>Ele é sempre mais barato que qualquer anúncio na TV.</li>
+        <li>Ele permite segmentar o público e medir cada resultado em tempo real. <strong>(correta)</strong></li>
+        <li>Ele dispensa qualquer tipo de estratégia ou planejamento.</li>
+        <li>Ele alcança um público mais amplo e genérico.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">O ganho central não é preço nem alcance bruto — é poder mirar quem você quer e medir o que acontece, ajustando a campanha enquanto ela roda.</p>
+        </div>
+      </aside>
+
+      <h3>Questão 2</h3>
+      <p><strong>Uma loja posta todo dia no Instagram, mas nunca olha curtidas, cliques ou vendas. Por que isso ainda não é marketing digital de verdade?</strong></p>
+      <ol type="a">
+        <li>Porque marketing digital só vale em anúncios pagos.</li>
+        <li>Porque falta a mensurabilidade — sem medir, não dá para saber o que funciona nem ajustar. <strong>(correta)</strong></li>
+        <li>Porque o Instagram não serve para marketing.</li>
+        <li>Porque postar todo dia é exagero.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">Presença sem medição é barulho. O que separa marketing de "só postar" é usar os números para decidir o próximo passo.</p>
+        </div>
+      </aside>
+
+      <h3>Questão 3</h3>
+      <p><strong>Qual a diferença entre SEO e SEM?</strong></p>
+      <ol type="a">
+        <li>SEO é pago e SEM é gratuito.</li>
+        <li>SEO é aparecer de graça na busca (orgânico); SEM é pagar para aparecer. <strong>(correta)</strong></li>
+        <li>São dois nomes para a mesma coisa.</li>
+        <li>SEO é para redes sociais e SEM é para e-mail.</li>
+      </ol>
+      <aside class="callout c-tertiary">
+        <div class="callout-mark" aria-hidden="true">i</div>
+        <div class="callout-body">
+          <p class="callout-title">Resposta comentada</p>
+          <p class="callout-text">SEO você conquista com conteúdo otimizado; SEM você compra com anúncios. Os dois miram o mesmo lugar — o topo dos resultados de busca.</p>
+        </div>
+      </aside>
+
+      <aside class="roteiro">
+        <header class="roteiro-head">
+          <span class="roteiro-chip">Roteiro do professor</span>
+        </header>
+        <p>Abrir mandando todo mundo literalmente puxar o celular e olhar o último anúncio que apareceu no feed — o impacto vem de eles perceberem que JÁ estão dentro do tema. Não definir marketing digital de cara: deixe-os tentarem ("o que vocês acham que é?") e construa a definição em cima das respostas. O erro comum ("é só postar") quase sempre aparece sozinho na fala da turma — use isso. Na tabela dos três superpoderes, peça exemplos deles (um anúncio que os "perseguiu" = segmentação).</p>
+        <p>A prática de engenharia reversa funciona melhor se você sortear 3-4 duplas para apresentar, não todas — guarde uns 8 min finais para o quiz coletivo lendo o feedback em voz alta. A atividade da Alura (curso "Marketing Digital - explorando conceitos") fica como extensão extraclasse opcional, não cobre em aula.</p>
+      </aside>
+    </section>
+
+    <section class="section section-close" id="sec-6">
+      <header class="section-head">
+        <span class="section-index">Fechamento</span>
+        <h2>O que levamos desta aula</h2>
+      </header>
+
+      <ul class="checklist">
+        <li><strong>Marketing digital</strong> não é "estar na internet": é interagir direto com cada pessoa e <strong>medir</strong> cada resultado.</li>
+        <li>O digital vence o tradicional por três superpoderes — <strong>alcance com segmentação, interatividade e mensurabilidade</strong> — e a mensurabilidade é a que manda em todas.</li>
+        <li>As técnicas centrais são <strong>SEO, SEM, marketing de conteúdo e redes sociais</strong>, e o público chega por <strong>canais</strong> numa jornada de descoberta até a compra.</li>
+        <li>Quem <strong>desenvolve sistemas</strong> precisa construir produtos <em>marketing-ready</em>: mensuráveis, achaveis e integrados a ferramentas de análise.</li>
+        <li><strong>Próxima aula:</strong> vimos que dá para aparecer na busca de graça. Na Aula 26 a gente abre o <strong>tráfego orgânico</strong> — atrair visitantes sem pagar por anúncio.</li>
       </ul>
-    </div>
 
-    <div id="sections"></div>
-
-    <p class="footer-note" style="text-align:center;margin-top:24px">
-      Blueprint de Software · TCC · Curso Técnico em Desenvolvimento de Sistemas · documento vivo — atualize conforme o projeto evoluir.
-    </p>
+      <p class="footer-note">
+        Material produzido pelo Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
+      </p>
+    </section>
 
   </main>
 
-  <footer class="page-foot no-print">
+  <footer class="page-foot">
     <div class="page-foot-inner">
       <span>© <span id="year"></span> Prof Toni Coimbra</span>
+      <span class="dotsep">·</span>
+      <span>Apostila estática · Aula 25 — O que é Marketing Digital</span>
       <span class="dotsep">·</span>
       <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
     </div>
   </footer>
 
-  <script>
-
-/* ===== 8 seções: guia + critérios de aceite ===== */
-const SECTIONS = [
-  { n:1, title:"Problema e Contexto",
-    guide:"Que <em>dor real</em> seu sistema resolve? Quem sofre com ela? Como é resolvido hoje — e por que essa forma falha? Traga ao menos <em>um dado ou número</em> que mostre o tamanho do problema.",
-    placeholder:"Descreva o problema: a dor, quem sofre, como é resolvido hoje e por que isso falha. Feche com o que o seu sistema vai resolver.",
-    checks:["Descrevi a dor concreta (não genérica)","Disse quem sofre com o problema","Mostrei como é resolvido hoje e por que falha","Incluí pelo menos 1 dado, número ou fato","Fechei dizendo o que o sistema resolve"] },
-  { n:2, title:"Público-alvo",
-    guide:"Quem vai <em>usar</em> o sistema? Defina de 2 a 4 perfis de usuário diferentes. Para cada um, diga o que ele faz dentro do sistema.",
-    placeholder:"Perfil 1 — quem é e o que faz no sistema.\nPerfil 2 — …\nPerfil 3 — …",
-    checks:["Defini de 2 a 4 perfis de usuário","Cada perfil diz o que faz no sistema","Os perfis são distintos entre si"] },
-  { n:3, title:"Solução Proposta",
-    guide:"Em <em>uma frase</em>, o que o sistema é. Qual o <em>tipo</em> (web, mobile, desktop, API). Quais os <em>módulos/funções principais</em>. Qual o diferencial.",
-    placeholder:"Em uma frase: o sistema é…\nTipo: …\nMódulos principais: …\nDiferencial: o que ele faz que as soluções de hoje não fazem.",
-    checks:["Tenho uma frase única que define o sistema","Defini o tipo de sistema","Listei os módulos/funções principais","Deixei claro o diferencial"] },
-  { n:4, title:"Requisitos Funcionais (o que o sistema FAZ)",
-    guide:"Liste o que o sistema <em>deve fazer</em>. Cada requisito começa com verbo (\"O sistema deve…\") e tem um <em>critério de aceite mensurável</em>. Mínimo de 8. Devem cobrir os módulos da Seção 3.",
-    placeholder:"RF01 — O sistema deve permitir… (critério: …)\nRF02 — O sistema deve… (critério: …)\nRF03 — …",
-    checks:["Listei pelo menos 8 requisitos funcionais","Cada RF começa com verbo (\"o sistema deve…\")","Cada RF tem critério mensurável/verificável","Os RF cobrem os módulos da Seção 3"] },
-  { n:5, title:"Requisitos Não Funcionais (COMO o sistema se comporta)",
-    guide:"Qualidades do sistema: <em>desempenho, segurança, usabilidade, disponibilidade</em>. Mínimo de 4. Devem ser mensuráveis (ter número ou limite).",
-    placeholder:"RNF01 — Desempenho: … (ex.: responder em até 2s)\nRNF02 — Segurança: …\nRNF03 — Usabilidade: …\nRNF04 — …",
-    checks:["Listei pelo menos 4 requisitos não funcionais","Cobri ao menos desempenho e segurança","São mensuráveis (têm número ou limite)","Não repetem os requisitos funcionais"] },
-  { n:6, title:"Arquitetura e Tecnologias",
-    guide:"Qual a <em>stack</em>: front-end, back-end, banco de dados, infra/autenticação. Qual o <em>padrão arquitetural</em>. <em>Justifique cada escolha</em>. A stack precisa caber no prazo do TCC.",
-    placeholder:"Front-end: … (por quê?)\nBack-end: … (por quê?)\nBanco de dados: … (por quê?)\nInfra/Auth: … (por quê?)\nPadrão arquitetural: …",
-    checks:["Defini o front-end","Defini back-end e/ou banco de dados","Citei o padrão arquitetural","Cada tecnologia tem justificativa","A stack é viável para o prazo do TCC"] },
-  { n:7, title:"Fluxo Principal de Uso",
-    guide:"Conte o <em>passo a passo</em> do uso central do sistema, do início ao fim, numerado. Começa na entrada e termina num resultado entregue.",
-    placeholder:"1. O usuário faz login / onboarding…\n2. …\n3. …\nN. O sistema entrega o resultado X.",
-    checks:["O fluxo está numerado, passo a passo","Começa na entrada (login/onboarding/abertura)","Termina num resultado ou valor entregue","Cada passo é uma ação clara","Cobre o caso de uso central do sistema"] },
-  { n:8, title:"Autoavaliação do Escopo",
-    guide:"O projeto <em>cabe no prazo</em> do TCC? Por quê? O que é <em>MVP</em> (essencial) e o que é extra? Quais os <em>riscos</em> e como mitigá-los?",
-    placeholder:"Viabilidade: o projeto cabe no prazo porque…\nMVP (essencial): …\nExtras (se sobrar tempo): …\nRiscos e mitigação: …",
-    checks:["Justifiquei a viabilidade no prazo","Separei o MVP do que é opcional","Citei ao menos 1 risco e como mitigar","Os critérios de avaliação são verificáveis"] }
-];
-
-const STORAGE_KEY = "blueprint_tcc_v1";
-const sectionsEl = document.getElementById("sections");
-SECTIONS.forEach(s => {
-  const sec = document.createElement("section");
-  sec.className = "section";
-  sec.id = "sec" + s.n;
-  sec.innerHTML = `
-    <header class="section-head">
-      <span class="section-index">Seção ${String(s.n).padStart(2,"0")}</span>
-      <h2>${s.title}</h2>
-      <span class="sec-tag" id="tag${s.n}">0/${s.checks.length}</span>
-    </header>
-    <div class="bp-guide no-print">
-      <div class="bp-guide-icon">💡</div>
-      <div><div class="bp-guide-title">O que escrever aqui</div><div class="bp-guide-text">${s.guide}</div></div>
-    </div>
-    <span class="bp-field-label">Sua resposta</span>
-    <textarea class="bp-field" data-key="sec${s.n}_texto" placeholder="${s.placeholder.replace(/"/g,'&quot;')}"></textarea>
-    <div class="bp-checklist">
-      <div class="bp-checklist-title">✓ Critérios de aceite — marque o que já está pronto</div>
-      ${s.checks.map((c,i)=>`<label class="bp-check"><input type="checkbox" data-key="sec${s.n}_chk${i}" data-sec="${s.n}" /><span>${c}</span></label>`).join("")}
-    </div>`;
-  sectionsEl.appendChild(sec);
-});
-
-/* ===== estado / persistência ===== */
-function collectState(){
-  const st={};
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    if(el.type==="checkbox") st[el.dataset.key]=el.checked;
-    else if(el.isContentEditable) st[el.dataset.key]=el.innerText;
-    else st[el.dataset.key]=el.value;
-  });
-  st._savedAt=new Date().toISOString();
-  return st;
-}
-function applyState(st){
-  if(!st) return;
-  document.querySelectorAll("[data-key]").forEach(el=>{
-    const v=st[el.dataset.key]; if(v===undefined) return;
-    if(el.type==="checkbox") el.checked=!!v;
-    else if(el.isContentEditable) el.innerText=v;
-    else el.value=v;
-  });
-  autoGrowAll(); updateProgress();
-  if(st._savedAt) showLastEdit(st._savedAt);
-}
-function save(){
-  const st=collectState();
-  try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(st)); flashSaved(); }
-  catch(e){ document.getElementById("saveState").textContent="⚠️ erro ao salvar"; }
-  showLastEdit(st._savedAt); updateProgress();
-}
-let saveTimer;
-function debouncedSave(){ clearTimeout(saveTimer); document.getElementById("saveState").textContent="salvando…"; saveTimer=setTimeout(save,600); }
-function flashSaved(){ const el=document.getElementById("saveState"); el.textContent="✓ salvo"; el.style.color="var(--shell-primary-200)"; setTimeout(()=>{el.style.color="";},1500); }
-function showLastEdit(iso){ if(!iso) return; const d=new Date(iso); document.getElementById("lastEdit").textContent=d.toLocaleDateString("pt-BR")+" "+d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}); }
-
-/* ===== progresso ===== */
-function updateProgress(){
-  const boxes=document.querySelectorAll('input[type="checkbox"][data-key]');
-  let done=0; boxes.forEach(b=>{ if(b.checked) done++; });
-  const pct=boxes.length?Math.round(done/boxes.length*100):0;
-  document.getElementById("barFill").style.width=pct+"%";
-  document.getElementById("barPct").textContent=pct+"%";
-  SECTIONS.forEach(s=>{
-    const sb=document.querySelectorAll(`input[data-sec="${s.n}"]`); let d=0; sb.forEach(b=>{ if(b.checked) d++; });
-    document.getElementById("tag"+s.n).textContent=`${d}/${sb.length}`;
-    document.getElementById("sec"+s.n).classList.toggle("done", d===sb.length && sb.length>0);
-  });
-}
-
-/* ===== auto-crescer textareas ===== */
-function autoGrow(el){ if(el.tagName!=="TEXTAREA") return; el.style.height="auto"; el.style.height=(el.scrollHeight+2)+"px"; }
-function autoGrowAll(){ document.querySelectorAll("textarea").forEach(autoGrow); }
-
-/* ===== export / import ===== */
-function slug(s){ return (s||"blueprint").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40)||"blueprint"; }
-function exportJSON(){
-  const st=collectState();
-  const blob=new Blob([JSON.stringify(st,null,2)],{type:"application/json"});
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download=`blueprint-${slug(st.capa_aluno)}-${slug(st.capa_titulo)}.json`;
-  a.click(); URL.revokeObjectURL(a.href);
-}
-function importJSON(ev){
-  const file=ev.target.files[0]; if(!file) return;
-  const r=new FileReader();
-  r.onload=e=>{ try{ applyState(JSON.parse(e.target.result)); save(); alert("Progresso carregado."); }
-    catch(err){ alert("Arquivo inválido. Use um .json salvo por este template."); }
-    ev.target.value=""; };
-  r.readAsText(file);
-}
-
-/* ===== listeners ===== */
-document.addEventListener("input", e=>{ if(e.target.matches("[data-key]")){ if(e.target.tagName==="TEXTAREA") autoGrow(e.target); debouncedSave(); } });
-document.addEventListener("change", e=>{ if(e.target.matches('input[type="checkbox"][data-key]')){ updateProgress(); debouncedSave(); } });
-document.querySelectorAll('[contenteditable][data-key]').forEach(el=>el.addEventListener("input",debouncedSave));
-
-/* ===== boot ===== */
-(function init(){
-  let saved=null; try{ saved=JSON.parse(localStorage.getItem(STORAGE_KEY)); }catch(e){}
-  if(saved) applyState(saved); else { autoGrowAll(); updateProgress(); }
-})();
-
-  </script>
   <script>
 (function () {
   var root = document.documentElement;
