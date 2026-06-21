@@ -10,6 +10,7 @@ objetivos:
   - Escolher a tarefa certa para um problema dado
 trilha: fundamentos-de-ia
 ordem: 6
+slug: aprendizado-supervisionado-na-pratica
 modo_origem: tema
 fontes: []
 revisao: false

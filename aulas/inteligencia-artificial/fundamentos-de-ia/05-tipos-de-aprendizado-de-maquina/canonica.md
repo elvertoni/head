@@ -10,6 +10,7 @@ objetivos:
   - Classificar um problema no tipo de aprendizado adequado
 trilha: fundamentos-de-ia
 ordem: 5
+slug: tipos-de-aprendizado-de-maquina
 modo_origem: tema
 fontes: []
 revisao: false

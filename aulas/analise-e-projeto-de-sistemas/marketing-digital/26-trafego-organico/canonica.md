@@ -10,6 +10,7 @@ objetivos:
   - Aplicar as estratégias de SEO, qualidade, regularidade e engajamento para atrair visitantes
 trilha: marketing-digital
 ordem: 26
+slug: trafego-organico
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 26_ANÁLISE E PROJETO DE SISTEMAS.pptx

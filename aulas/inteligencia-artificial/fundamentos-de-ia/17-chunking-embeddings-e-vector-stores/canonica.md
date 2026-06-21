@@ -10,6 +10,7 @@ objetivos:
   - Descrever o pipeline de ingestão de um RAG
 trilha: fundamentos-de-ia
 ordem: 17
+slug: chunking-embeddings-e-vector-stores
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-master

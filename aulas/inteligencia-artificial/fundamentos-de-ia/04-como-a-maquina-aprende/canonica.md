@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o papel dos dados e das características (features)
 trilha: fundamentos-de-ia
 ordem: 4
+slug: como-a-maquina-aprende
 modo_origem: tema
 fontes: []
 revisao: false

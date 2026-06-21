@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer as principais técnicas (SEO, SEM, marketing de conteúdo, redes sociais) e os canais digitais
 trilha: marketing-digital
 ordem: 25
+slug: o-que-e-marketing-digital
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 25_ANÁLISE E PROJETO DE SISTEMAS.pptx

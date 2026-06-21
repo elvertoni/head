@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o transformer como a base dos LLMs atuais
 trilha: fundamentos-de-ia
 ordem: 11
+slug: transformers-e-atencao
 modo_origem: tema
 fontes: []
 revisao: false

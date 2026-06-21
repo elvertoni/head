@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que mais contexto relevante vence mais contexto em quantidade
 trilha: fundamentos-de-ia
 ordem: 15
+slug: context-engineering
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-coders/o-que-e-context-engineering.md

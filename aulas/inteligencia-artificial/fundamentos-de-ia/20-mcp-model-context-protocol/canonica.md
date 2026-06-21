@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer a relação cliente-servidor e o que um servidor MCP oferece
 trilha: fundamentos-de-ia
 ordem: 20
+slug: mcp-model-context-protocol
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-coders/o-que-e-model-context-protocol-mcp.md

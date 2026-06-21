@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer as ferramentas de análise e diferenciar métrica de vaidade de métrica de negócio
 trilha: marketing-digital
 ordem: 29
+slug: analise-de-resultados
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 29_ANÁLISE E PROJETO DE SISTEMAS.pptx

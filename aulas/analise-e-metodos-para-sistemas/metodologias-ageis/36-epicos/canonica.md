@@ -10,6 +10,7 @@ objetivos:
   - Decompor um épico em itens menores e registrá-lo de forma clara
 trilha: metodologias-ageis
 ordem: 36
+slug: epicos
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 36_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

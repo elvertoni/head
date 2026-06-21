@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que o LLM não aprende sozinho com as conversas do dia a dia
 trilha: fundamentos-de-ia
 ordem: 12
+slug: treino-fine-tuning-e-cutoff
 modo_origem: tema
 fontes: []
 revisao: false

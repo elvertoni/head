@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer exemplos de ferramentas e o papel do formato estruturado
 trilha: fundamentos-de-ia
 ordem: 19
+slug: tool-use-e-function-calling
 modo_origem: tema
 fontes: []
 revisao: false

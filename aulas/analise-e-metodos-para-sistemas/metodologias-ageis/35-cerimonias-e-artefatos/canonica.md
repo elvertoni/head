@@ -10,6 +10,7 @@ objetivos:
   - Relacionar as cerimônias aos pilares de transparência, inspeção e adaptação
 trilha: metodologias-ageis
 ordem: 35
+slug: cerimonias-e-artefatos
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 35_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

@@ -11,9 +11,21 @@ Segundo cérebro (vault Obsidian) do Curso Técnico em Desenvolvimento de Sistem
 
 - **`lake/{disciplina}/`** — conteúdo cru, sem curadoria: livros, PDFs, transcrições, vídeo-aulas, anotações. Insumo.
 - **`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`** — warehouse: Aulas Canônicas ricas, auditadas, neutras de plataforma. **Fonte única de verdade.**
-- **`manifesto.json`** — índice máquina do acervo (disciplinas, séries, trilhas, aulas, status).
+- **`manifesto.json`** — índice máquina do acervo (disciplinas, séries, trilhas, aulas, status). **Gerado** por `python tools/gerar_manifesto.py` — nunca editar à mão.
 
 Cada Canônica é a fonte única de onde se derivam todos os formatos (apostila HTML standalone, ProfessorDash, PDF).
+
+## Contrato de import do portal (INVIOLÁVEL — leitura obrigatória p/ qualquer IA)
+
+O **ProfessorDash** importa as aulas lendo `manifesto.json` + `aulas/**/canonica.md`.
+Toda geração/edição **tem** que sair compatível com o contrato, senão a aula não
+aparece no portal. A especificação completa e inviolável está em **[`AGENTS.md` §5.1](AGENTS.md)**
+(também replicada na skill `prof-toni`). Resumo operacional:
+
+- Frontmatter mínimo de cada `canonica.md`: `titulo, disciplina, trilha, ordem, slug, status: aprovada, versao, atualizado_em`.
+- Caminho `aulas/{disciplina}/{trilha}/{NN}-{slug}/canonica.md`, `NN` = `ordem` em 2 dígitos, casando com o manifesto.
+- Portal só importa `status: aprovada`; só re-importa aula existente se `versao` **ou** `atualizado_em` mudou → **bumpe sempre** que editar conteúdo publicado.
+- Ao adicionar/aprovar/editar aula: **regere** com `python tools/gerar_manifesto.py` (valide com `--check`, exit ≠ 0 = divergência).
 
 ## Onde vivem as aulas
 

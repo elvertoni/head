@@ -10,6 +10,7 @@ objetivos:
   - Revisar a trilha relacionando estimativa, priorização e planejamento
 trilha: metodologias-ageis
 ordem: 41
+slug: estimativa-e-planning-poker
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 41_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

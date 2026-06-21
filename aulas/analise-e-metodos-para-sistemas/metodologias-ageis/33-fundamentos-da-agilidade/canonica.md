@@ -10,6 +10,7 @@ objetivos:
   - Diferenciar Scrum e Kanban como ferramentas da mentalidade ágil
 trilha: metodologias-ageis
 ordem: 33
+slug: fundamentos-da-agilidade
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA NIV1_ ANÁLISE E MÉTODO PARA SISTEMAS.pptx

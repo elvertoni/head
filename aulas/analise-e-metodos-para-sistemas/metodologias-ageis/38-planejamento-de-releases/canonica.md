@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que o cronograma ágil é estimado e ajustável, não fixo
 trilha: metodologias-ageis
 ordem: 38
+slug: planejamento-de-releases
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 38_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

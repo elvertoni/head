@@ -37,7 +37,14 @@ Cada aula vive em `aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`, conforme 
 - Material de origem (PDF/PPT/docx da SEED) vai em `fontes/` ao lado da `canonica.md`, imutável.
 
 ### Frontmatter — preencher completo
-Todo `canonica.md` abre com o frontmatter YAML do `spec/01-CANONICA.md §2`: `titulo`, `tema`, `disciplina`, `serie`, `prerequisitos`, `objetivos`, `trilha`, `ordem`, `modo_origem`, `fontes`, `status` (começa `rascunho`), `versao` (começa 1), `atualizado_em`. Aula sem frontmatter íntegro não é entregue.
+Todo `canonica.md` abre com o frontmatter YAML do `spec/01-CANONICA.md §2`: `titulo`, `tema`, `disciplina`, `serie`, `prerequisitos`, `objetivos`, `trilha`, `ordem`, `slug`, `modo_origem`, `fontes`, `status` (começa `rascunho`), `versao` (começa 1), `atualizado_em`. Aula sem frontmatter íntegro não é entregue. `slug` = `{slug}` da pasta `{NN-slug}` e do manifesto.
+
+### Contrato de import do portal (INVIOLÁVEL)
+O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. Regra inviolável (completo em `AGENTS.md §5.1` e `spec/01-CANONICA.md §2`):
+- Frontmatter mínimo: `titulo, disciplina, trilha, ordem, slug, status: aprovada, versao, atualizado_em`.
+- Caminho `aulas/{disciplina}/{trilha}/{NN}-{slug}/canonica.md` com `NN` = `ordem` em 2 dígitos; tudo casando com o manifesto.
+- Portal só importa `status: aprovada`, e só re-importa aula existente se `versao` OU `atualizado_em` mudou — **bumpe sempre** que editar conteúdo publicado.
+- **Sempre que adicionar/aprovar/editar aula, regere o manifesto:** `python tools/gerar_manifesto.py` (valide com `--check`). Nunca editar `manifesto.json` à mão.
 
 ### Entrega
 - Salve a `canonica.md` no caminho correto do acervo e mostre o arquivo ao Toni (`present_files` ou caminho, conforme o ambiente).

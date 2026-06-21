@@ -10,6 +10,7 @@ objetivos:
   - Aplicar estratégias para reduzir e detectar alucinações
 trilha: fundamentos-de-ia
 ordem: 23
+slug: alucinacoes-causas-tipos-e-mitigacao
 modo_origem: tema
 fontes: []
 revisao: false

@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que proximidade de vetores representa proximidade de significado
 trilha: fundamentos-de-ia
 ordem: 10
+slug: tokens-embeddings-e-vetores
 modo_origem: tema
 fontes: []
 revisao: false

@@ -10,6 +10,7 @@ objetivos:
   - Identificar usos reais e impactos da IA multimodal
 trilha: fundamentos-de-ia
 ordem: 13
+slug: ia-que-ve-e-ouve-multimodalidade
 modo_origem: tema
 fontes: []
 revisao: false

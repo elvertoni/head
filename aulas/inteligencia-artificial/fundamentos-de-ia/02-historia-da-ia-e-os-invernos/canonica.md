@@ -10,6 +10,7 @@ objetivos:
   - Relacionar a explosão atual da IA a três fatores - dados, poder de cálculo e algoritmos
 trilha: fundamentos-de-ia
 ordem: 2
+slug: historia-da-ia-e-os-invernos
 modo_origem: tema
 fontes: []
 revisao: false

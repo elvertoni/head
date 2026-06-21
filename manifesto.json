@@ -2,130 +2,437 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-06-14",
+  "atualizado_em": "2026-06-21",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
     "fonte_de_verdade": "canonica.md"
   },
   "series": [
-    { "slug": "1a-serie", "label": "1a Serie" },
-    { "slug": "2a-serie", "label": "2a Serie" },
-    { "slug": "3a-serie", "label": "3a Serie" },
-    { "slug": "disciplinas-extras", "label": "Disciplinas Extras" }
+    {
+      "slug": "1a-serie",
+      "label": "1a Serie"
+    },
+    {
+      "slug": "2a-serie",
+      "label": "2a Serie"
+    },
+    {
+      "slug": "3a-serie",
+      "label": "3a Serie"
+    },
+    {
+      "slug": "disciplinas-extras",
+      "label": "Disciplinas Extras"
+    }
   ],
   "disciplinas": [
     {
       "slug": "analise-e-metodos-para-sistemas",
       "label": "Analise e Metodos para Sistemas",
       "serie": "1a-serie",
+      "status": "em-construcao",
       "lake": "lake/analise-e-metodos-para-sistemas",
       "warehouse": "aulas/analise-e-metodos-para-sistemas",
-      "trilhas": ["metodologias-ageis"],
       "total_aulas": 9,
-      "status": "em-construcao"
+      "trilhas": [
+        {
+          "slug": "metodologias-ageis",
+          "label": "Metodologias Ágeis"
+        }
+      ]
     },
     {
       "slug": "introducao-a-computacao",
       "label": "Introducao a Computacao",
       "serie": "1a-serie",
+      "status": "planejada",
       "lake": "lake/introducao-a-computacao",
       "warehouse": "aulas/introducao-a-computacao",
-      "trilhas": [],
       "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": []
     },
     {
       "slug": "inovacao-tecnologia-e-empreendedorismo",
       "label": "Inovacao, Tecnologia e Empreendedorismo",
       "serie": "2a-serie",
+      "status": "planejada",
       "lake": "lake/inovacao-tecnologia-e-empreendedorismo",
       "warehouse": "aulas/inovacao-tecnologia-e-empreendedorismo",
-      "trilhas": [],
       "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": []
     },
     {
       "slug": "programacao-front-end",
       "label": "Programacao Front-End",
       "serie": "2a-serie",
+      "status": "planejada",
       "lake": "lake/programacao-front-end",
       "warehouse": "aulas/programacao-front-end",
-      "trilhas": [],
       "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": []
     },
     {
       "slug": "analise-e-projeto-de-sistemas",
       "label": "Analise e Projeto de Sistemas",
       "serie": "3a-serie",
+      "status": "em-construcao",
       "lake": "lake/analise-e-projeto-de-sistemas",
       "warehouse": "aulas/analise-e-projeto-de-sistemas",
-      "trilhas": ["marketing-digital"],
       "total_aulas": 6,
-      "status": "em-construcao"
+      "trilhas": [
+        {
+          "slug": "marketing-digital",
+          "label": "Marketing Digital"
+        }
+      ]
     },
     {
       "slug": "programacao-no-desenvolvimento-de-sistemas",
       "label": "Programacao no Desenvolvimento de Sistemas",
       "serie": "3a-serie",
+      "status": "planejada",
       "lake": "lake/programacao-no-desenvolvimento-de-sistemas",
       "warehouse": "aulas/programacao-no-desenvolvimento-de-sistemas",
-      "trilhas": [],
       "total_aulas": 0,
-      "status": "planejada"
+      "trilhas": []
     },
     {
       "slug": "inteligencia-artificial",
       "label": "Inteligencia Artificial",
       "serie": "disciplinas-extras",
+      "status": "em-construcao",
       "lake": "lake/inteligencia-artificial",
       "warehouse": "aulas/inteligencia-artificial",
-      "trilhas": ["fundamentos-de-ia"],
       "total_aulas": 25,
-      "status": "em-construcao"
+      "trilhas": [
+        {
+          "slug": "fundamentos-de-ia",
+          "label": "Fundamentos de IA"
+        }
+      ]
     }
   ],
   "lessons": [
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 33, "titulo": "Fundamentos da Agilidade", "slug": "fundamentos-da-agilidade", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA NIV1_ ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 34, "titulo": "Introducao ao Scrum", "slug": "introducao-ao-scrum", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 34_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 35, "titulo": "Cerimonias e Artefatos do Scrum", "slug": "cerimonias-e-artefatos", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 35_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 36, "titulo": "Elaboracao dos Epicos", "slug": "epicos", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 36_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 37, "titulo": "Priorizacao do Backlog", "slug": "priorizacao-do-backlog", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 37_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 38, "titulo": "Planejamento de Releases", "slug": "planejamento-de-releases", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 38_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 39, "titulo": "Planejamento em Scrum - visao integrada", "slug": "planejamento-em-scrum", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 39_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 40, "titulo": "Historias de Usuario", "slug": "historias-de-usuario", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 40_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-metodos-para-sistemas", "trilha": "metodologias-ageis", "ordem": 41, "titulo": "Estimativa e Planning Poker", "slug": "estimativa-e-planning-poker", "status": "aprovada", "fontes": ["lake/analise-e-metodos-para-sistemas/AULA 41_ANALISE E METODO PARA SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 25, "titulo": "O que e Marketing Digital", "slug": "o-que-e-marketing-digital", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 25_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 26, "titulo": "Marketing e trafego organico", "slug": "trafego-organico", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 26_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 27, "titulo": "Marketing e trafego pago", "slug": "trafego-pago", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 27_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 28, "titulo": "Planejamento de Marketing", "slug": "planejamento-de-marketing", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 28_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 29, "titulo": "Analise de resultados", "slug": "analise-de-resultados", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 29_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "analise-e-projeto-de-sistemas", "trilha": "marketing-digital", "ordem": 30, "titulo": "Storytelling no desenvolvimento pessoal", "slug": "storytelling", "status": "aprovada", "fontes": ["lake/analise-e-projeto-de-sistemas/AULA 30_ANALISE E PROJETO DE SISTEMAS.pptx"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 1, "titulo": "O que e Inteligencia Artificial", "slug": "o-que-e-inteligencia-artificial", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 2, "titulo": "Historia da IA e os invernos", "slug": "historia-da-ia-e-os-invernos", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 3, "titulo": "IA, ML, Deep Learning e IA Generativa", "slug": "ia-ml-deep-learning-e-ia-generativa", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ufpr"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 4, "titulo": "Como a maquina aprende", "slug": "como-a-maquina-aprende", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 5, "titulo": "Tipos de aprendizado de maquina", "slug": "tipos-de-aprendizado-de-maquina", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 6, "titulo": "Aprendizado supervisionado na pratica", "slug": "aprendizado-supervisionado-na-pratica", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 7, "titulo": "Aprendizado nao-supervisionado", "slug": "aprendizado-nao-supervisionado", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 8, "titulo": "Redes neurais e deep learning", "slug": "redes-neurais-e-deep-learning", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 9, "titulo": "O que e um LLM", "slug": "o-que-e-um-llm", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 10, "titulo": "Tokens, embeddings e vetores", "slug": "tokens-embeddings-e-vetores", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 11, "titulo": "Transformers e atencao", "slug": "transformers-e-atencao", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 12, "titulo": "Treino, fine-tuning e cutoff", "slug": "treino-fine-tuning-e-cutoff", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 13, "titulo": "IA que ve e ouve - multimodalidade", "slug": "ia-que-ve-e-ouve-multimodalidade", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 14, "titulo": "Prompt Engineering", "slug": "prompt-engineering", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 15, "titulo": "Context Engineering", "slug": "context-engineering", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-context-engineering.md"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 16, "titulo": "RAG - recuperacao com geracao aumentada", "slug": "rag-recuperacao-com-geracao-aumentada", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-master"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 17, "titulo": "Chunking, embeddings e vector stores", "slug": "chunking-embeddings-e-vector-stores", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-master"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 18, "titulo": "Agentes e subagentes", "slug": "agentes-e-subagentes", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 19, "titulo": "Tool use e function calling", "slug": "tool-use-e-function-calling", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 20, "titulo": "MCP - Model Context Protocol", "slug": "mcp-model-context-protocol", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-model-context-protocol-mcp.md"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 21, "titulo": "Harness Engineering", "slug": "harness-engineering", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-coders/o-que-e-harness-engineering.md"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 22, "titulo": "Desenvolvimento AI-First vs AI-Enabled", "slug": "desenvolvimento-ai-first-vs-ai-enabled", "status": "aprovada", "fontes": ["lake/inteligencia-artificial/ia-coders/desenvolvimento-ai-first-vs-ai-enabled.md", "lake/inteligencia-artificial/ia-master"] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 23, "titulo": "Alucinacoes - causas, tipos e mitigacao", "slug": "alucinacoes-causas-tipos-e-mitigacao", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 24, "titulo": "Evals e economia de tokens", "slug": "evals-e-economia-de-tokens", "status": "aprovada", "fontes": [] },
-    { "disciplina": "inteligencia-artificial", "trilha": "fundamentos-de-ia", "ordem": 25, "titulo": "Etica, responsabilidade e IA no Brasil", "slug": "etica-responsabilidade-e-ia-no-brasil", "status": "aprovada", "fontes": [] }
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 33,
+      "slug": "fundamentos-da-agilidade",
+      "titulo": "Fundamentos da Agilidade",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 34,
+      "slug": "introducao-ao-scrum",
+      "titulo": "Introdução ao Scrum",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 35,
+      "slug": "cerimonias-e-artefatos",
+      "titulo": "Cerimônias e Artefatos do Scrum",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 36,
+      "slug": "epicos",
+      "titulo": "Elaboração dos Épicos",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 37,
+      "slug": "priorizacao-do-backlog",
+      "titulo": "Priorização do Backlog",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 38,
+      "slug": "planejamento-de-releases",
+      "titulo": "Planejamento de Releases",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 39,
+      "slug": "planejamento-em-scrum",
+      "titulo": "Planejamento em Scrum — visão integrada",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 40,
+      "slug": "historias-de-usuario",
+      "titulo": "Histórias de Usuário",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 41,
+      "slug": "estimativa-e-planning-poker",
+      "titulo": "Estimativa e Planning Poker",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 25,
+      "slug": "o-que-e-marketing-digital",
+      "titulo": "O que é Marketing Digital",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 26,
+      "slug": "trafego-organico",
+      "titulo": "Marketing e Tráfego Orgânico",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 27,
+      "slug": "trafego-pago",
+      "titulo": "Marketing e Tráfego Pago",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 28,
+      "slug": "planejamento-de-marketing",
+      "titulo": "Planejamento de Marketing",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 29,
+      "slug": "analise-de-resultados",
+      "titulo": "Análise de Resultados",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "marketing-digital",
+      "ordem": 30,
+      "slug": "storytelling",
+      "titulo": "Storytelling no Desenvolvimento Pessoal",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 1,
+      "slug": "o-que-e-inteligencia-artificial",
+      "titulo": "O que é Inteligência Artificial",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 2,
+      "slug": "historia-da-ia-e-os-invernos",
+      "titulo": "História da IA e os Invernos",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 3,
+      "slug": "ia-ml-deep-learning-e-ia-generativa",
+      "titulo": "IA, ML, Deep Learning e IA Generativa",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 4,
+      "slug": "como-a-maquina-aprende",
+      "titulo": "Como a Máquina Aprende",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 5,
+      "slug": "tipos-de-aprendizado-de-maquina",
+      "titulo": "Tipos de Aprendizado de Máquina",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 6,
+      "slug": "aprendizado-supervisionado-na-pratica",
+      "titulo": "Aprendizado Supervisionado na Prática",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 7,
+      "slug": "aprendizado-nao-supervisionado",
+      "titulo": "Aprendizado Não-Supervisionado",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 8,
+      "slug": "redes-neurais-e-deep-learning",
+      "titulo": "Redes Neurais e Deep Learning",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 9,
+      "slug": "o-que-e-um-llm",
+      "titulo": "O que é um LLM",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 10,
+      "slug": "tokens-embeddings-e-vetores",
+      "titulo": "Tokens, Embeddings e Vetores",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 11,
+      "slug": "transformers-e-atencao",
+      "titulo": "Transformers e Atenção",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 12,
+      "slug": "treino-fine-tuning-e-cutoff",
+      "titulo": "Treino, Fine-tuning e Cutoff",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 13,
+      "slug": "ia-que-ve-e-ouve-multimodalidade",
+      "titulo": "IA que Vê e Ouve — Multimodalidade",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 14,
+      "slug": "prompt-engineering",
+      "titulo": "Prompt Engineering",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 15,
+      "slug": "context-engineering",
+      "titulo": "Context Engineering",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 16,
+      "slug": "rag-recuperacao-com-geracao-aumentada",
+      "titulo": "RAG — Recuperação com Geração Aumentada",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 17,
+      "slug": "chunking-embeddings-e-vector-stores",
+      "titulo": "Chunking, Embeddings e Vector Stores",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 18,
+      "slug": "agentes-e-subagentes",
+      "titulo": "Agentes e Subagentes",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 19,
+      "slug": "tool-use-e-function-calling",
+      "titulo": "Tool Use e Function Calling",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 20,
+      "slug": "mcp-model-context-protocol",
+      "titulo": "MCP — Model Context Protocol",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 21,
+      "slug": "harness-engineering",
+      "titulo": "Harness Engineering",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 22,
+      "slug": "desenvolvimento-ai-first-vs-ai-enabled",
+      "titulo": "Desenvolvimento AI-First vs AI-Enabled",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 23,
+      "slug": "alucinacoes-causas-tipos-e-mitigacao",
+      "titulo": "Alucinações — Causas, Tipos e Mitigação",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 24,
+      "slug": "evals-e-economia-de-tokens",
+      "titulo": "Evals e Economia de Tokens",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "inteligencia-artificial",
+      "trilha": "fundamentos-de-ia",
+      "ordem": 25,
+      "slug": "etica-responsabilidade-e-ia-no-brasil",
+      "titulo": "Ética, Responsabilidade e IA no Brasil",
+      "status": "aprovada"
+    }
   ]
 }

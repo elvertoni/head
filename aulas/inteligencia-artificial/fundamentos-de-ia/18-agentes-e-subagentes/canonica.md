@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o papel de subagentes em um time orquestrado
 trilha: fundamentos-de-ia
 ordem: 18
+slug: agentes-e-subagentes
 modo_origem: tema
 fontes: []
 revisao: false

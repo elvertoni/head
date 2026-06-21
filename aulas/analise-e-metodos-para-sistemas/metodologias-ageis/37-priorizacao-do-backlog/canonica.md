@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que a priorização é feita por valor e urgência, e é contínua
 trilha: metodologias-ageis
 ordem: 37
+slug: priorizacao-do-backlog
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 37_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

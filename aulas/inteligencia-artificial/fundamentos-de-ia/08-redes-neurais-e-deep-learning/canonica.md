@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer que a inspiração no cérebro é distante, não literal
 trilha: fundamentos-de-ia
 ordem: 8
+slug: redes-neurais-e-deep-learning
 modo_origem: tema
 fontes: []
 revisao: false

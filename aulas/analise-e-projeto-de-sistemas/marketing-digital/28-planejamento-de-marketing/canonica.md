@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o papel da pesquisa de mercado e do planejamento de conteúdo
 trilha: marketing-digital
 ordem: 28
+slug: planejamento-de-marketing
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 28_ANÁLISE E PROJETO DE SISTEMAS.pptx

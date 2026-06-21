@@ -28,6 +28,7 @@ objetivos:
 # — posição no acervo —
 trilha: fundamentos-ageis               # slug da sequência didática
 ordem: 1                                # posição na trilha (= NN da pasta)
+slug: manifesto-agil-e-os-4-valores     # = slug da pasta {NN-slug} e do manifesto
 
 # — proveniência e ciclo de vida —
 modo_origem: tema                       # seed | material | tema
@@ -42,8 +43,27 @@ atualizado_em: 2026-06-11
 Regras do frontmatter:
 - **Obrigatório e completo** — aula sem frontmatter íntegro reprova no checklist.
 - `disciplina` e `trilha` são slugs minúsculos idênticos aos das pastas (`aulas/{disciplina}/{trilha}/`).
+- `slug` é idêntico ao `{slug}` da pasta `{NN-slug}` e ao `slug` do manifesto. `ordem` = `NN` da pasta.
 - `status` só vira `aprovada` por ação explícita do Toni; `publicada` quando alguma saída foi gerada e distribuída.
 - Toda edição de conteúdo incrementa `versao` e atualiza `atualizado_em`. Saídas em `saidas/` geradas com `versao` anterior são consideradas vencidas.
+
+### Contrato de import do portal (INVIOLÁVEL)
+
+O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. A geração
+SEMPRE produz saída compatível com este contrato (detalhe completo em `AGENTS.md`
+§5.1):
+
+- **Mínimo obrigatório no frontmatter:** `titulo`, `disciplina`, `trilha`, `ordem`,
+  `slug`, `status: aprovada`, `versao`, `atualizado_em` (data ISO `YYYY-MM-DD`).
+- **Só importa `status: aprovada`.** Aula sem entrada em `lessons[]` do manifesto não importa.
+- **Caminho:** `aulas/{disciplina}/{trilha}/{NN}-{slug}/canonica.md`, com `NN` = `ordem`
+  em 2 dígitos e `{slug}` casando disciplina/trilha/ordem/slug do manifesto.
+- **Bump obrigatório:** o portal só re-importa uma aula existente se `versao` OU
+  `atualizado_em` mudou. Editou conteúdo de aula publicada → incremente `versao`
+  (ou avance `atualizado_em`), senão a edição não aparece no portal.
+- **Regerar o manifesto sempre** que adicionar/aprovar/editar aula:
+  `python tools/gerar_manifesto.py` (valide com `--check`). Nunca editar
+  `manifesto.json` à mão.
 
 ## 3. Anatomia (ordem fixa)
 

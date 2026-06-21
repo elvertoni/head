@@ -10,6 +10,7 @@ objetivos:
   - Transformar um prompt vago em um prompt eficaz
 trilha: fundamentos-de-ia
 ordem: 14
+slug: prompt-engineering
 modo_origem: tema
 fontes: []
 revisao: false

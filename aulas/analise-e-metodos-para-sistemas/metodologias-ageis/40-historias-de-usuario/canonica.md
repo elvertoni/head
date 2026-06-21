@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o Sprint Planning como o momento de selecionar histórias para a sprint
 trilha: metodologias-ageis
 ordem: 40
+slug: historias-de-usuario
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 40_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

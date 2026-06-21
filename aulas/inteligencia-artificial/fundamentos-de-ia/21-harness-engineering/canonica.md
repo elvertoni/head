@@ -10,6 +10,7 @@ objetivos:
   - Entender que o salto da demo para a produção mora no harness
 trilha: fundamentos-de-ia
 ordem: 21
+slug: harness-engineering
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-coders/o-que-e-harness-engineering.md

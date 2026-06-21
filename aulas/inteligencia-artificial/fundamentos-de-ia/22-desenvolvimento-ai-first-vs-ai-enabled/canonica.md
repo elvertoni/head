@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer o papel do humano que orquestra, revisa e valida
 trilha: fundamentos-de-ia
 ordem: 22
+slug: desenvolvimento-ai-first-vs-ai-enabled
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-coders/desenvolvimento-ai-first-vs-ai-enabled.md

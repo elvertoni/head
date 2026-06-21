@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer práticas para economizar tokens sem perder qualidade
 trilha: fundamentos-de-ia
 ordem: 24
+slug: evals-e-economia-de-tokens
 modo_origem: tema
 fontes: []
 revisao: false

@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer benefícios e desafios reais de adotar o Scrum
 trilha: metodologias-ageis
 ordem: 39
+slug: planejamento-em-scrum
 modo_origem: seed
 fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 39_ANÁLISE E MÉTODO PARA SISTEMAS.pptx

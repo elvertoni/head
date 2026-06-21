@@ -10,6 +10,7 @@ objetivos:
   - Identificar as vantagens do tráfego pago — alcance imediato, segmentação e medição em tempo real
 trilha: marketing-digital
 ordem: 27
+slug: trafego-pago
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 27_ANÁLISE E PROJETO DE SISTEMAS.pptx

@@ -10,6 +10,7 @@ objetivos:
   - Aplicar storytelling em situações reais como apresentações, entrevistas e projetos
 trilha: marketing-digital
 ordem: 30
+slug: storytelling
 modo_origem: seed
 fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 30_ANÁLISE E PROJETO DE SISTEMAS.pptx

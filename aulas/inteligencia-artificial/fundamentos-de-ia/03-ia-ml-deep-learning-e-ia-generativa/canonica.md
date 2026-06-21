@@ -10,6 +10,7 @@ objetivos:
   - Classificar exemplos do dia a dia na camada correta
 trilha: fundamentos-de-ia
 ordem: 3
+slug: ia-ml-deep-learning-e-ia-generativa
 modo_origem: tema
 fontes:
   - lake/inteligencia-artificial/ufpr

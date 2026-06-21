@@ -10,6 +10,7 @@ objetivos:
   - Aplicar a ideia de classificação por risco a usos reais de IA
 trilha: fundamentos-de-ia
 ordem: 25
+slug: etica-responsabilidade-e-ia-no-brasil
 modo_origem: tema
 fontes: []
 revisao: false

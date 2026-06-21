@@ -10,6 +10,7 @@ objetivos:
   - Situar os LLMs atuais como rede neural profunda treinada em texto massivo
 trilha: fundamentos-de-ia
 ordem: 9
+slug: o-que-e-um-llm
 modo_origem: tema
 fontes: []
 revisao: false

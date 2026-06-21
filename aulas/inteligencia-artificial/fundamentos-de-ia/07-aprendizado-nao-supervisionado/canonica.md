@@ -10,6 +10,7 @@ objetivos:
   - Entender que a máquina agrupa, mas quem interpreta o grupo é o humano
 trilha: fundamentos-de-ia
 ordem: 7
+slug: aprendizado-nao-supervisionado
 modo_origem: tema
 fontes: []
 revisao: false

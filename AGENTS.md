@@ -138,6 +138,45 @@ Saída do lint nunca aplica correção sozinha em conteúdo — propõe; Toni ap
 
 ---
 
+## 5.1 Contrato de import do portal (INVIOLÁVEL)
+
+O **ProfessorDash 2.0** importa as aulas deste vault baixando o tarball do repo e
+lendo `manifesto.json` + `aulas/**/canonica.md` (management command `import_acervo`).
+A geração **SEMPRE** produz saída compatível com este contrato. Quebrar qualquer
+item abaixo = aula não aparece no portal.
+
+**1. `manifesto.json` na raiz contém:**
+- `disciplinas[]`: objetos `{ "slug", "label", "serie", "status", "trilhas": [ { "slug", "label" } ] }`.
+- `lessons[]`: objetos `{ "disciplina", "trilha", "ordem", "slug", "titulo", "status": "aprovada" }`.
+- O portal **só importa** lessons com `status: "aprovada"`. Toda aula a publicar
+  **precisa** ter entrada em `lessons[]`. Aula sem entrada no manifesto **não importa**.
+
+**2. Caminho do arquivo:** `aulas/{disciplina-slug}/{trilha-slug}/{NN}-{slug}/canonica.md`
+- `NN` = `ordem` com 2 dígitos (ordem 7 → `07-…`).
+- `{slug}` idêntico ao `slug` do manifesto. disciplina/trilha/ordem/slug do caminho
+  **têm** que casar com o manifesto.
+
+**3. Frontmatter YAML do `canonica.md` — mínimo obrigatório:**
+`titulo`, `disciplina`, `trilha`, `ordem`, `slug`, `status: aprovada`,
+`versao` (int/string) e `atualizado_em` (data ISO `YYYY-MM-DD`).
+- **REGRA CRÍTICA DE ATUALIZAÇÃO:** a cada edição de conteúdo de uma aula já
+  publicada, **incrementar `versao`** (ou avançar `atualizado_em`). O portal só
+  re-importa/atualiza uma aula existente se `versao` **ou** `atualizado_em` mudou;
+  sem mudança ele **pula**. Esquecer de bumpar = edição não aparece no portal.
+  O frontmatter é a fonte de verdade desses dois campos.
+
+**4. Regenerar sempre:** ao adicionar/aprovar/editar aula, **regerar o `manifesto.json`**
+rodando `python tools/gerar_manifesto.py` para `lessons[]` e `disciplinas[]` ficarem
+em sincronia com os arquivos `canonica.md`. O gerador é a única fonte do manifesto —
+nunca editar `manifesto.json` à mão.
+
+> **Validação:** `python tools/gerar_manifesto.py --check` valida sem escrever
+> (exit ≠ 0 se houver divergência). Reporta: aula `aprovada` com caminho/frontmatter
+> inconsistente, `{NN}-{slug}` que não casa com ordem/slug, frontmatter sem campo
+> obrigatório (incl. `versao`/`atualizado_em`/`slug`) e slugs duplicados.
+
+---
+
 ## 6. Relação com a skill `prof-toni`
 
 `prof-toni` governa a camada 3 (aulas canônicas) — ver `.claude/skills/prof-toni/spec/`.

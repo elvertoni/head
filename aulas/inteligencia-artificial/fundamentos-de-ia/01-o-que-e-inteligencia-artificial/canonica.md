@@ -10,6 +10,7 @@ objetivos:
   - Distinguir IA estreita de IA geral e reconhecer a IA no cotidiano
 trilha: fundamentos-de-ia
 ordem: 1
+slug: o-que-e-inteligencia-artificial
 modo_origem: tema
 fontes: []
 revisao: false

@@ -10,6 +10,7 @@ objetivos:
   - Reconhecer as duas metades do RAG - ingestão e consulta
 trilha: fundamentos-de-ia
 ordem: 16
+slug: rag-recuperacao-com-geracao-aumentada
 modo_origem: material
 fontes:
   - lake/inteligencia-artificial/ia-master
