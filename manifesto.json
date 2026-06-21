@@ -49,8 +49,13 @@
       "status": "planejada",
       "lake": "lake/introducao-a-computacao",
       "warehouse": "aulas/introducao-a-computacao",
-      "total_aulas": 0,
-      "trilhas": []
+      "total_aulas": 1,
+      "trilhas": [
+        {
+          "slug": "arquitetura-computadores-e-sistemas-operacionais",
+          "label": "Arquitetura de Computadores"
+        }
+      ]
     },
     {
       "slug": "inovacao-tecnologia-e-empreendedorismo",
@@ -184,6 +189,14 @@
       "ordem": 41,
       "slug": "estimativa-e-planning-poker",
       "titulo": "Estimativa e Planning Poker",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 23,
+      "slug": "introducao-a-arquitetura-de-computadores-parte-1",
+      "titulo": "Introdução à Arquitetura de Computadores - Parte 1",
       "status": "aprovada"
     },
     {

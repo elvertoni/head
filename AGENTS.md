@@ -34,6 +34,25 @@ as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
 várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
 vez de ser re-extraído a cada material.
 
+### Estado atual do vault (2026-06-21)
+
+O vault já contém as 7 disciplinas do curso, mas nem todas estão no mesmo estágio.
+O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash.
+
+- `inteligencia-artificial/fundamentos-de-ia`: trilha completa com 25 aulas aprovadas
+  e grafo de conceitos em `conceitos/inteligencia-artificial/`.
+- `analise-e-metodos-para-sistemas/metodologias-ageis`: aulas 33–41 aprovadas.
+- `analise-e-projeto-de-sistemas/marketing-digital`: aulas 25–30 aprovadas.
+- `programacao-no-desenvolvimento-de-sistemas/blueprint-tcc`: contém blueprints/HTMLs
+  de apoio a TCC. Enquanto não houver `canonica.md` aprovada, isso é artefato de apoio,
+  não aula importável.
+- As demais disciplinas podem ter material no `lake/` mesmo sem aulas canônicas
+  publicadas. Não confundir presença de fonte bruta com aula pronta.
+
+Ao iniciar qualquer tarefa, rode leitura rápida de estado:
+`python tools/gerar_manifesto.py --check` para contrato do portal e `git status --short`
+para não misturar trabalho humano não versionado com mudanças do agente.
+
 ---
 
 ## 2. Página de conceito — formato
@@ -109,10 +128,41 @@ Registro cronológico, prefixo parseável. **Nunca reescrever linhas antigas.**
 
 ---
 
+## 4.1 Ferramentas operacionais
+
+### `tools/gerar_manifesto.py`
+Gerador/validador oficial do `manifesto.json`. Usa somente stdlib. Sempre rodar
+após criar, aprovar ou editar aula canônica.
+
+```powershell
+python tools/gerar_manifesto.py --check  # valida sem escrever
+python tools/gerar_manifesto.py          # valida e reescreve manifesto.json
+```
+
+### `tools/transcrever/`
+Entrada de áudio/vídeo para o lake. Transcreve localmente com `faster-whisper` e
+salva Markdown bruto em `lake/{disciplina}/{fonte}/`.
+
+```powershell
+cd tools\transcrever
+.\transcrever.ps1 "C:\videos\aula.mp4" --disciplina inteligencia-artificial --fonte ia-coders --titulo "MCP na prática"
+```
+
+Saída de transcrição é **fonte bruta** (`status: bruto`); não editar para virar
+aula. A curadoria acontece depois, via `prof-toni`, gerando `canonica.md`.
+
+### `tools/notion-wiki/`
+Scripts de apoio para puxar/reorganizar material vindo do Notion. Tratar a saída
+como fonte ou insumo intermediário: antes de publicar, ela precisa passar pelas
+mesmas regras de `lake/`, conceitos e aulas canônicas.
+
+---
+
 ## 5. Workflows — ingest · query · lint
 
 ### `ingest` — material novo entra
-1. Ler a fonte no `lake/` (nunca editá-la).
+1. Ler a fonte no `lake/` (nunca editá-la). Se a fonte veio de transcrição ou
+   Notion, validar metadados mínimos: disciplina, origem/fonte, título e data.
 2. Extrair conceitos/entidades. Para cada um: criar ou **atualizar** a página em
    `conceitos/{disciplina}/`. Atualizar é o caso comum — checar se já existe (por
    `slug` ou `aka`) antes de criar duplicata.
@@ -174,6 +224,11 @@ nunca editar `manifesto.json` à mão.
 > (exit ≠ 0 se houver divergência). Reporta: aula `aprovada` com caminho/frontmatter
 > inconsistente, `{NN}-{slug}` que não casa com ordem/slug, frontmatter sem campo
 > obrigatório (incl. `versao`/`atualizado_em`/`slug`) e slugs duplicados.
+
+**5. Artefatos fora do contrato:** HTMLs, blueprints, renders e arquivos em
+`**/saidas/` podem ser úteis para aluno ou TCC, mas **não entram no portal** sem
+`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` + entrada gerada no manifesto.
+Não adicionar esses artefatos manualmente a `lessons[]`.
 
 ---
 
