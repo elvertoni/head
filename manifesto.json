@@ -49,7 +49,7 @@
       "status": "planejada",
       "lake": "lake/introducao-a-computacao",
       "warehouse": "aulas/introducao-a-computacao",
-      "total_aulas": 1,
+      "total_aulas": 2,
       "trilhas": [
         {
           "slug": "arquitetura-computadores-e-sistemas-operacionais",
@@ -197,6 +197,14 @@
       "ordem": 23,
       "slug": "introducao-a-arquitetura-de-computadores-parte-1",
       "titulo": "Introdução à Arquitetura de Computadores - Parte 1",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 24,
+      "slug": "introducao-a-arquitetura-de-computadores-parte-2",
+      "titulo": "Introdução à Arquitetura de Computadores - Parte 2",
       "status": "aprovada"
     },
     {
