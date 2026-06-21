@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 39_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Até agora você viu as peças do Scrum separadas: os papéis, as cerimônias, os artefatos, os épicos, a priorização, as releases. É como ter aprendido cada peça de um quebra-cabeça sozinha. Hoje a gente monta a imagem inteira — e, mais importante, faz uma pergunta que pouca aula faz: o Scrum é tão perfeito assim? Resposta honesta: não. Ele resolve muita coisa, mas tem desafios reais. Saber os dois lados é o que separa quem decora o Scrum de quem entende o Scrum.
@@ -36,6 +36,12 @@ Ter visto as **Aulas 34 a 38** (papéis, cerimônias, artefatos, épicos, backlo
 
 ## Desenvolvimento
 
+### Em uma frase
+
+:::importante
+Scrum é um ciclo em que tudo fica visível, o time inspeciona o próprio trabalho e ajusta o rumo.
+:::
+
 ### O Scrum em uma foto
 
 O Scrum se sustenta sobre três tipos de peça, que você já conhece separadas:
@@ -45,6 +51,10 @@ O Scrum se sustenta sobre três tipos de peça, que você já conhece separadas:
 | **Papéis** | Product Owner, Scrum Master, Equipe | quem faz |
 | **Eventos** | Sprint, Planning, Daily, Review, Retrospectiva | quando e como o time se organiza |
 | **Artefatos** | Product Backlog, Sprint Backlog, incremento | o que guia e o que se entrega |
+
+:::exemplo
+Pense num quebra-cabeça montado por etapas: o time mostra uma parte, recebe feedback, corrige a posição das peças e continua. É esse ciclo que dá forma ao Scrum.
+:::
 
 Juntas, essas peças formam um ciclo que se repete a cada sprint: planeja-se, executa-se acompanhando de perto, entrega-se um incremento e reflete-se para melhorar.
 

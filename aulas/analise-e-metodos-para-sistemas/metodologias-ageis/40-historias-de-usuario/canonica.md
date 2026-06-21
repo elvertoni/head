@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 40_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 "O sistema deve permitir autenticação via credenciais com hash." Você entendeu? Provavelmente metade. Agora: "Como aluno, quero entrar no app com meu e-mail e senha para ver minhas notas." Essa qualquer um entende — inclusive quem vai usar o app. A diferença entre as duas frases é o segredo desta aula. No Scrum, a gente não descreve o que o sistema faz com jargão técnico frio; a gente conta o que a **pessoa** precisa, na forma de uma pequena história. Hoje você aprende a escrever essas histórias de usuário — a maneira ágil de registrar requisitos.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Ter visto a **Aula 39** (visão integrada do Scrum) e o conceito de backlog.
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+História de usuário é requisito escrito de um jeito que a pessoa entende, não o sistema.
+:::
 
 ### A fórmula da história de usuário
 

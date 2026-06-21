@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 36_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Pensa numa lista de compras com 80 itens jogados em qualquer ordem: arroz, sabão, maçã, detergente, frango, shampoo... Você anda o mercado inteiro, ziguezagueando, e ainda esquece coisa. Agora pensa na mesma lista **agrupada** por seção: hortifrúti, limpeza, açougue. Tudo fica fácil. Um Product Backlog de software tem o mesmo problema: dezenas de funcionalidades soltas viram caos. A solução é a mesma do mercado — **agrupar por tema**. No Scrum, esses grandes grupos têm um nome: épicos.
@@ -36,11 +36,21 @@ Ter visto a **Aula 35** (artefatos do Scrum, em especial o Product Backlog).
 
 ## Desenvolvimento
 
+### Em uma frase
+
+:::importante
+Épico é o guarda-chuva da lista: junta funcionalidades relacionadas e depois se divide em partes menores.
+:::
+
 ### O que é um épico
 
 :::conceito Épico
 É uma **unidade de trabalho de alto nível** que junta um conjunto de requisitos relacionados, normalmente ligados a uma **funcionalidade ampla** ou um **tema** comum. O épico não é detalhado: ele dá a visão geral de uma grande parte do produto e depois é **quebrado** em itens menores.
 
+:::
+
+:::exemplo
+No app da cantina, "Pagamento", "Cardápio" e "Pedidos" são épicos. Cada um agrupa várias funcionalidades menores que ficam mais fáceis de entender e planejar.
 :::
 
 Voltando ao app da cantina: "Pagamento" é um épico — dentro dele cabem várias funcionalidades (pagar por Pix, por cartão, ver histórico de pagamentos). "Cardápio" é outro épico. Cada um agrupa um monte de coisa relacionada.

@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 34_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Você já participou de um trabalho em grupo onde "todo mundo fazia tudo" e, no fim, ninguém tinha feito nada direito? Sem papéis claros, o time anda em círculos. O Scrum nasceu pra resolver exatamente isso no desenvolvimento de software: dar a cada pessoa um papel, dividir o trabalho em ciclos curtos e manter todo mundo apontando para o mesmo lugar. Na aula passada você viu o que é ser ágil; agora vai conhecer a ferramenta ágil mais usada do planeta — e como ela organiza um time de verdade.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Ter visto a **Aula 33** (o que é agilidade e a ideia de entregar valor).
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+Scrum funciona quando cada papel sabe o que faz e cada sprint termina com algo pronto para mostrar.
+:::
 
 ### O que é Scrum
 

@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA NIV1_ ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Pensa naquele trabalho em grupo em que vocês fizeram um plano lindo no começo — quem faz o quê, prazo pra tudo — e aí, na véspera da entrega, o professor mudou as regras. Plano todo no lixo, correria, noite mal dormida. O mundo do software vive isso o tempo inteiro: o cliente muda de ideia, o mercado vira, um concorrente lança algo novo. Por décadas, programadores tentaram lutar contra a mudança com planos cada vez mais rígidos — e quebravam a cara. Até que um grupo decidiu fazer o contrário: e se a gente **abraçar** a mudança em vez de fugir dela? Nascia a agilidade. É por aqui que sua trilha de métodos começa.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Nenhum. Se você já fez trabalho em grupo, já sentiu na pele o problema que a agilidade resolve.
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+Agilidade é entregar valor cedo, aprender com cada entrega e mudar de rota quando a realidade muda.
+:::
 
 ### Ágil não é correr
 

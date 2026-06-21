@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 41_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Quanto tempo leva pra arrumar o seu quarto? Se você responder sozinho, na pressa, provavelmente erra feio — "uns 10 minutos" vira duas horas. Agora, se três pessoas que já arrumaram aquele quarto palpitarem juntas, a estimativa fica bem melhor. Times de software vivem esse problema: precisam adivinhar quanto esforço cada história vai dar, e errar custa caro. Para acertar mais, o Scrum usa um jogo de cartas — sim, cartas — chamado Planning Poker. Nesta última aula da trilha, você aprende a estimar em grupo e amarra tudo que viu até aqui.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Ter visto a **Aula 40** (histórias de usuário) e a ideia de capacidade do time (Aula 38).
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+Estimativa boa não crava hora: compara esforço, ajuda a priorizar e alimenta o planejamento da sprint.
+:::
 
 ### Estimar é prever esforço, não cravar horas
 

@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 35_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Imagina um time de futebol que nunca conversa: ninguém combina jogada, ninguém revê o que deu errado no primeiro tempo, ninguém sabe o placar. Vira bagunça. Um time Scrum evita isso com **reuniões curtas e combinadas** (as cerimônias) e **listas vivas** que todo mundo enxerga (os artefatos). Na aula passada você montou o time e a lista de tarefas; agora vai ver como esse time se acompanha no dia a dia para nunca se perder.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Ter visto a **Aula 34** (papéis do Scrum e Product Backlog).
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+As cerimônias deixam o trabalho visível, enquanto os artefatos mostram o que entra, o que sai e o que fica pronto.
+:::
 
 ### As quatro cerimônias
 

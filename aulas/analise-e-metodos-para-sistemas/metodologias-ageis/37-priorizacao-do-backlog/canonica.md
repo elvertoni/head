@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 37_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Imagina que faltam três dias para a prova de todas as matérias e você não tem como estudar tudo. O que você faz? Estuda primeiro o que **vale mais nota** e o que você **domina menos**. Isso é priorizar — e é exatamente o que um time Scrum faz com o backlog. Por mais que a lista de funcionalidades seja enorme, o tempo é curto e a equipe é pequena. Não dá para fazer tudo de uma vez, então alguém precisa decidir: o que vem **primeiro**? Hoje você aprende a responder essa pergunta com método.
@@ -35,6 +35,12 @@ Ao final desta aula, você será capaz de:
 Ter visto a **Aula 36** (épicos e organização do backlog).
 
 ## Desenvolvimento
+
+### Em uma frase
+
+:::importante
+Priorizar é escolher o que entra primeiro para entregar mais valor com menos tempo desperdiçado.
+:::
 
 ### Por que priorizar
 

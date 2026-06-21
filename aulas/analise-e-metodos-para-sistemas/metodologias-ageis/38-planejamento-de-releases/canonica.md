@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 38_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-06-21
 ---
 
 Você toparia comer um bolo inteiro de uma garfada só? Ninguém topa — a gente come em fatias. Entregar software também: jogar o produto inteiro no cliente só no último dia é arriscado (e se estiver errado, descobre tarde demais). O Scrum prefere entregar em fatias que já funcionam, chamadas releases. Você já aprendeu a montar o time, organizar e priorizar o backlog; agora vai aprender a combinar **quando** cada fatia vai para a mesa.
@@ -36,11 +36,21 @@ Ter visto a **Aula 37** (priorização do backlog).
 
 ## Desenvolvimento
 
+### Em uma frase
+
+:::importante
+Release é a fatia pronta do produto: entregar em partes reduz risco e permite ajuste cedo.
+:::
+
 ### O que é uma release
 
 :::conceito Release
 É uma **entrega** de uma versão do produto com um conjunto de funcionalidades prontas e funcionando, disponibilizada para o usuário. Em vez de uma entrega única no fim, o Scrum faz **entregas incrementais**: várias releases ao longo do projeto, cada uma somando valor à anterior.
 
+:::
+
+:::exemplo
+Se o app da cantina fosse um bolo, a Release 1 seria a fatia mais simples que já mata a fome. As próximas fatias acrescentam cobertura, recheio e enfeite sem esperar o bolo inteiro ficar pronto.
 :::
 
 Entregar em releases reduz o risco: a cada fatia o cliente usa, dá retorno e o time corrige cedo. Se algo está errado, você descobre na release 1, não seis meses depois.
