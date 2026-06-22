@@ -49,11 +49,15 @@
       "status": "planejada",
       "lake": "lake/introducao-a-computacao",
       "warehouse": "aulas/introducao-a-computacao",
-      "total_aulas": 2,
+      "total_aulas": 18,
       "trilhas": [
         {
           "slug": "arquitetura-computadores-e-sistemas-operacionais",
           "label": "Arquitetura de Computadores"
+        },
+        {
+          "slug": "nivelamento-e-retomada",
+          "label": "Conversão de base decimal para binária"
         }
       ]
     },
@@ -205,6 +209,134 @@
       "ordem": 24,
       "slug": "introducao-a-arquitetura-de-computadores-parte-2",
       "titulo": "Introdução à Arquitetura de Computadores - Parte 2",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 25,
+      "slug": "como-o-computador-le-o-codigo-parte-1",
+      "titulo": "Como o Computador Lê o seu Código - Parte 1",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 26,
+      "slug": "como-o-computador-le-o-codigo-parte-2",
+      "titulo": "Como o Computador Lê o seu Código - Parte 2",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 27,
+      "slug": "memoria-e-armazenamento-temporario-e-permanente",
+      "titulo": "Memória e Armazenamento - o Temporário e o Permanente",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 28,
+      "slug": "a-cpu-em-acao-o-ciclo-de-instrucao",
+      "titulo": "A CPU em Ação - o Ciclo de Instrução",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 29,
+      "slug": "varios-programas-ao-mesmo-tempo-parte-1",
+      "titulo": "Vários Programas ao Mesmo Tempo - Parte 1",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 30,
+      "slug": "varios-programas-ao-mesmo-tempo-parte-2",
+      "titulo": "Vários Programas ao Mesmo Tempo - Parte 2",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 31,
+      "slug": "memoria-do-computador-parte-1-a-cache",
+      "titulo": "A Memória do Computador - Parte 1 - a Cache",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 32,
+      "slug": "memoria-do-computador-parte-2-a-hierarquia",
+      "titulo": "A Memória do Computador - Parte 2 - a Hierarquia",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 33,
+      "slug": "como-os-dados-viram-binario-parte-1",
+      "titulo": "Como os Dados Viram Binário - Parte 1",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 34,
+      "slug": "como-os-dados-viram-binario-parte-2",
+      "titulo": "Como os Dados Viram Binário - Parte 2",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 35,
+      "slug": "sistema-operacional-conceito-e-estrutura",
+      "titulo": "Sistema Operacional - Conceito e Estrutura",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 36,
+      "slug": "historia-e-evolucao-dos-sistemas-operacionais",
+      "titulo": "História e Evolução dos Sistemas Operacionais",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 37,
+      "slug": "o-que-o-sistema-operacional-faz-por-voce",
+      "titulo": "O Que o Sistema Operacional Faz por Você",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "arquitetura-computadores-e-sistemas-operacionais",
+      "ordem": 38,
+      "slug": "o-que-e-um-sistema-operacional",
+      "titulo": "O Que é um Sistema Operacional - Definição e Onde Vivem",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "nivelamento-e-retomada",
+      "ordem": 1,
+      "slug": "nivelamento-conversao-decimal-para-binario",
+      "titulo": "Nivelamento - Convertendo Decimal para Binário",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "introducao-a-computacao",
+      "trilha": "nivelamento-e-retomada",
+      "ordem": 2,
+      "slug": "retomada-execucao-de-programas",
+      "titulo": "Retomada - Entendendo a Execução de Programas",
       "status": "aprovada"
     },
     {
