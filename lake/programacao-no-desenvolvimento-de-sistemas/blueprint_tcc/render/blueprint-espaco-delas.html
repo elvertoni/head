@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Blueprint · Plataforma de Delivery de Comida Online · Prof Toni Coimbra</title>
+  <title>Blueprint · Espaço Delas · Prof Toni Coimbra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -932,13 +932,13 @@ table.demo tr:last-child th { border-bottom: 0; }
           Blueprint de Software · TCC
         </div>
         <h1 class="hero-title">
-          <span class="accent">Plataforma</span> de Delivery de Comida Online
+          <span class="accent">Espaço</span> Delas
         </h1>
-        <p class="hero-lead">Sistema web · Carlos</p>
+        <p class="hero-lead">Sistema web responsivo (mobile-first) de agendamento online · Nicolas Filardo Maia e Pedro Henrique dos Santos Costa</p>
 
         <dl class="meta-grid">
-          <div class="meta-card"><dt>Aluno(a)</dt><dd>Carlos</dd></div>
-          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Sistema web</dd></div>
+          <div class="meta-card"><dt>Aluno(a)</dt><dd>Nicolas Filardo Maia e Pedro Henrique dos Santos Costa</dd></div>
+          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Sistema web responsivo (mobile-first) de agendamento online</dd></div>
           <div class="meta-card"><dt>Disciplina</dt><dd>Programação / Desenvolvimento de Sistemas</dd></div>
           <div class="meta-card"><dt>Entrega</dt><dd>Blueprint de TCC</dd></div>
         </dl>
@@ -964,11 +964,8 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 01</span>
         <h2>Problema e Contexto</h2>
       </header>
-      <p>O setor de alimentação fora do lar cresceu significativamente nos últimos anos, especialmente com a popularização de plataformas de delivery. No entanto, restaurantes de pequeno e médio porte ainda dependem de anotações manuais, aplicativos de mensagens (WhatsApp) ou sistemas proprietários caros para receber e gerenciar pedidos. Isso gera três problemas concretos:</p>
-      <p>Pedidos perdidos ou com erros de anotação, causando retrabalho, devoluções e insatisfação do cliente;</p>
-      <p>Ausência de rastreabilidade — o cliente não sabe em que etapa está seu pedido, gerando ligações desnecessárias para o restaurante;</p>
-      <p>Falta de dados de vendas consolidados — o gestor não tem visão do cardápio mais vendido, horários de pico ou ticket médio para tomar decisões estratégicas.</p>
-      <p>Sem um sistema centralizado, estima-se que um restaurante de médio porte perde de 10% a 15% dos pedidos por erros operacionais, além de gastar em média 2 horas diárias em controles manuais de vendas — tempo que poderia ser direcionado ao atendimento e produção.</p>
+      <p>Atualmente, no studio de beleza feminino Espaço Delas, todo o processo de agendamento de serviços é feito de forma manual via WhatsApp ou ligações telefônicas diretamente com as profissionais (Alessandra, Luana e Larissa). Isso gera sobrecarga operacional, pois elas precisam interromper os atendimentos presenciais para responder mensagens, consultar agendas em planilhas ou cadernos físicos e negociar horários com as clientes.</p>
+      <p>Como consequência direta dessa gestão manual, ocorrem problemas frequentes: conflito de horários (dois agendamentos no mesmo slot), esquecimento de marcações por ausência de lembretes automáticos — gerando alta taxa de no-shows (clientes que não comparecem) — e grande dificuldade em consolidar o histórico de atendimentos e os relatórios de faturamento do studio.</p>
     </section>
 
     <section class="section" id="sec-2">
@@ -976,27 +973,11 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 02</span>
         <h2>Público-Alvo</h2>
       </header>
-      <p>O sistema atende a três perfis distintos de usuário, cada um com necessidades e permissões específicas:</p>
-      <ol class="lista">
-<li>1 Cliente Final</li>
-</ol>
-      <p>Busca restaurantes e pratos por nome, tipo de culinária ou localização;</p>
-      <p>Adiciona itens ao carrinho, informa endereço de entrega e realiza o pagamento;</p>
-      <p>Acompanha o status do pedido em tempo real (recebido → em preparo → a caminho → entregue);</p>
-      <p>Avalia restaurantes e pratos após a entrega.</p>
-      <ol class="lista">
-<li>2 Gestor de Restaurante</li>
-</ol>
-      <p>Cadastra e gerencia o cardápio (pratos, categorias, preços, imagens, disponibilidade);</p>
-      <p>Recebe notificações de novos pedidos e atualiza o status de cada um;</p>
-      <p>Acessa relatórios de vendas por período, produto e horário;</p>
-      <p>Define área de entrega e taxa de entrega.</p>
-      <ol class="lista">
-<li>3 Administrador da Plataforma</li>
-</ol>
-      <p>Aprova e gerencia o cadastro de restaurantes parceiros;</p>
-      <p>Monitora métricas globais da plataforma (pedidos, restaurantes ativos, usuários);</p>
-      <p>Gerencia usuários, conteúdo e configurações gerais do sistema.</p>
+      <ul class="lista">
+<li><strong>Clientes (usuárias finais):</strong> mulheres que buscam serviços de manicure e design de sobrancelha. Interagem com a página institucional para conhecer serviços e profissionais, acessam o fluxo de agendamento em tempo real e realizam ou cancelam suas próprias reservas online de forma autônoma.</li>
+<li>Profissionais do Studio (Alessandra, Luana e Larissa): acessam o painel administrativo individual para visualizar a própria grade diária, gerenciar o status dos agendamentos (confirmar/cancelar) e bloquear horários específicos (folgas e férias) na grade de disponibilidade.</li>
+<li><strong>Administradora / Proprietária (Owner):</strong> acesso total ao painel; cadastra e edita serviços, gerencia as profissionais, configura as grades semanais (WorkingHours) de cada profissional e exporta relatórios gerais de agendamento em CSV.</li>
+</ul>
     </section>
 
     <section class="section" id="sec-3">
@@ -1004,9 +985,7 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 03</span>
         <h2>Solução Proposta</h2>
       </header>
-      <p>Uma plataforma web de delivery de comida que conecta clientes a restaurantes cadastrados, centralizando todo o ciclo de um pedido — da descoberta do restaurante ao rastreamento da entrega — em uma interface única e responsiva.</p>
-      <p>O cliente acessa o sistema pelo navegador, escolhe o restaurante, monta seu pedido e paga online. O restaurante recebe o pedido instantaneamente no painel administrativo, gerencia a fila de produção e atualiza o status em tempo real. O cliente acompanha cada etapa do pedido sem precisar ligar para o estabelecimento.</p>
-      <p>O sistema também oferece ao gestor do restaurante relatórios de desempenho automáticos, eliminando o controle manual em planilhas e fornecendo dados para decisões de cardápio e operação.</p>
+      <p>Um sistema web responsivo (mobile-first) composto por um website institucional e um sistema de agendamento integrado. O sistema automatiza as reservas de horário das clientes conforme a disponibilidade das profissionais em tempo real, gerencia bloqueios de grade, automatiza o envio de e-mails transacionais (confirmação, lembretes de 24h via Celery e cancelamento por link de token único) e oferece painéis de controle dedicados para as profissionais e para a proprietária.</p>
     </section>
 
     <section class="section" id="sec-4">
@@ -1014,30 +993,14 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 04</span>
         <h2>Requisitos Funcionais</h2>
       </header>
-      <p>O sistema deve atender aos seguintes requisitos funcionais, organizados por módulo:</p>
-      <p>Módulo do Cliente</p>
       <ul class="lista">
-<li><strong>RF01</strong> — O sistema deve permitir o cadastro de clientes com nome, e-mail, senha e endereço, com validação de e-mail por link de confirmação.</li>
-<li><strong>RF02</strong> — O sistema deve permitir login com e-mail e senha, bloqueando a conta após 5 tentativas incorretas consecutivas.</li>
-<li><strong>RF03</strong> — O sistema deve exibir listagem de restaurantes com filtros por nome, tipo de culinária, avaliação e tempo estimado de entrega.</li>
-<li><strong>RF04</strong> — O sistema deve exibir o cardápio completo de cada restaurante, com nome, descrição, preço e imagem de cada prato.</li>
-<li><strong>RF05</strong> — O sistema deve permitir adicionar, remover e ajustar a quantidade de itens no carrinho antes de finalizar o pedido.</li>
-<li><strong>RF06</strong> — O sistema deve permitir ao cliente selecionar o endereço de entrega e o método de pagamento (cartão, Pix ou dinheiro) ao finalizar o pedido.</li>
-<li><strong>RF07</strong> — O sistema deve exibir o status do pedido em tempo real, atualizado pelo restaurante (recebido, em preparo, pronto para entrega, a caminho, entregue).</li>
-<li><strong>RF08</strong> — O sistema deve permitir ao cliente avaliar o restaurante e os pratos com nota de 1 a 5 e comentário opcional, após a confirmação de entrega.</li>
-<li><strong>RF09</strong> — O sistema deve exibir o histórico completo de pedidos anteriores do cliente, com data, itens e valores.</li>
-</ul>
-      <p>Módulo do Restaurante</p>
-      <ul class="lista">
-<li><strong>RF10</strong> — O sistema deve permitir ao gestor cadastrar e editar pratos com nome, descrição, preço, categoria, imagem e status de disponibilidade.</li>
-<li><strong>RF11</strong> — O sistema deve notificar o restaurante de novos pedidos em tempo real, com alerta sonoro e visual no painel administrativo.</li>
-<li><strong>RF12</strong> — O sistema deve permitir ao restaurante aceitar ou recusar pedidos e atualizar o status de cada pedido ao longo do ciclo de produção e entrega.</li>
-<li><strong>RF13</strong> — O sistema deve gerar relatórios de vendas por período, exibindo total de pedidos, receita, pratos mais vendidos e ticket médio.</li>
-</ul>
-      <p>Módulo Administrativo</p>
-      <ul class="lista">
-<li><strong>RF14</strong> — O sistema deve permitir ao administrador aprovar ou reprovar o cadastro de novos restaurantes parceiros.</li>
-<li><strong>RF15</strong> — O sistema deve exibir ao administrador um painel com métricas globais: total de pedidos, receita da plataforma, restaurantes ativos e clientes cadastrados.</li>
+<li><strong>RF01</strong> — O sistema deve apresentar uma página inicial (Home) institucional com informações do studio, galeria e catálogo de serviços.</li>
+<li><strong>RF02</strong> — O sistema deve disponibilizar um fluxo de agendamento online em etapas (seleção de serviço, profissional, data, horário e coleta de dados).</li>
+<li><strong>RF03</strong> — O sistema deve permitir o cancelamento autônomo do agendamento pela cliente, via link com token único expirável enviado por e-mail.</li>
+<li><strong>RF04</strong> — O sistema deve enviar e-mails de confirmação e cancelamento em tempo real, além de lembretes automáticos 24h antes do atendimento.</li>
+<li><strong>RF05</strong> — O sistema deve fornecer um painel administrativo restrito para as profissionais visualizarem suas agendas diárias e bloquearem horários na grade.</li>
+<li><strong>RF06</strong> — O sistema deve disponibilizar um painel administrativo consolidado para a Owner gerenciar serviços, profissionais e exportar agendamentos em CSV.</li>
+<li><strong>RF07</strong> — O sistema deve permitir à Owner configurar e editar as grades de trabalho semanais (dias e horários) de cada profissional.</li>
 </ul>
     </section>
 
@@ -1047,13 +1010,10 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Requisitos Não Funcionais</h2>
       </header>
       <ul class="lista">
-<li><strong>RNF01</strong> — O sistema deve responder a consultas de busca e carregamento de cardápio em menos de 2 segundos em condições normais de uso (até 100 usuários simultâneos).</li>
-<li><strong>RNF02</strong> — O sistema deve ser acessível por qualquer navegador moderno (Chrome, Firefox, Edge, Safari) em dispositivos desktop e mobile, sem necessidade de instalação de aplicativos.</li>
-<li><strong>RNF03</strong> — O sistema deve proteger senhas utilizando hashing com bcrypt e armazenar dados de pagamento exclusivamente no gateway externo (Mercado Pago), sem salvar dados de cartão localmente.</li>
-<li><strong>RNF04</strong> — O sistema deve garantir que apenas usuários autenticados e com o perfil correto acessem as funcionalidades de cada módulo (cliente, gestor, administrador).</li>
-<li><strong>RNF05</strong> — A interface deve ser legível, responsiva e utilizável sem treinamento formal, com textos claros, feedbacks visuais de ação e mensagens de erro descritivas.</li>
-<li><strong>RNF06</strong> — O sistema deve manter disponibilidade mínima de 99% em horário de pico (almoço e jantar), implementando tratamento de erros para evitar interrupção total em caso de falha parcial.</li>
-<li><strong>RNF07</strong> — O código deve ser modular, comentado e organizado segundo o padrão MVT do Django, de modo que novos módulos possam ser adicionados sem refatoração extensiva.</li>
+<li><strong>RNF01</strong> — O tempo de carregamento da página inicial institucional deve ser inferior a 2 segundos em conexões móveis (4G).</li>
+<li><strong>RNF02</strong> — A interface web deve ser totalmente responsiva (mobile-first), garantindo usabilidade a partir da resolução de 320px.</li>
+<li><strong>RNF03</strong> — As senhas das profissionais e da proprietária devem ser protegidas no banco com hashing seguro (bcrypt).</li>
+<li><strong>RNF04</strong> — O sistema deve usar transações atômicas com bloqueio no banco para evitar race conditions (dois agendamentos no mesmo slot).</li>
 </ul>
     </section>
 
@@ -1062,27 +1022,14 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 06</span>
         <h2>Arquitetura e Tecnologias</h2>
       </header>
-      <p>O sistema adota o padrão arquitetural MVT (Model-View-Template) nativo do Django, estruturado como uma aplicação monolítica com separação clara de responsabilidades. A comunicação com serviços externos (gateway de pagamento, mapas e armazenamento de arquivos) é feita via APIs REST. Abaixo estão as tecnologias escolhidas com suas respectivas justificativas:</p>
-      <p>Tecnologia / Componente</p>
-      <p>Justificativa técnica</p>
-      <p>Linguagem: Python</p>
-      <p>A equipe possui domínio prévio da linguagem, e o ecossistema Python oferece bibliotecas maduras para autenticação, ORM e APIs REST.</p>
-      <p>Framework back-end: Django 4.x</p>
-      <p>Inclui sistema de autenticação nativo, painel administrativo embutido e ORM integrado, acelerando o desenvolvimento sem comprometer a segurança.</p>
-      <p>Banco de dados: PostgreSQL</p>
-      <p>Banco relacional robusto com suporte a transações ACID, essencial para garantir integridade dos dados de pedidos e pagamentos.</p>
-      <p>Front-end: HTML + Bootstrap 5</p>
-      <p>Agilidade de prototipação com responsividade nativa; não exige build complexo, compatível com o prazo do TCC.</p>
-      <p>API de mapas: Google Maps API</p>
-      <p>Solução consolidada para cálculo de rotas de entrega e exibição do rastreamento em tempo real para o cliente.</p>
-      <p>Pagamentos: Mercado Pago SDK</p>
-      <p>Principal gateway de pagamento no Brasil, com SDK Python oficial, suporte a Pix, cartão e boleto, e ambiente de testes sandbox.</p>
-      <p>Armazenamento: AWS S3 (ou local)</p>
-      <p>Armazenamento escalável de imagens de pratos e perfis de restaurantes; versão local (FileSystemStorage) pode ser usada no ambiente de desenvolvimento.</p>
-      <p>Hospedagem: VPS Ubuntu / Render.com</p>
-      <p>Ambiente Linux compatível com Django e PostgreSQL; Render.com oferece deploy gratuito para protótipos de TCC.</p>
-      <p>Padrão arquitetural: MVT (Model-View-Template)</p>
-      <p>Padrão nativo do Django — separa responsabilidades entre dados, lógica de negócio e apresentação, facilitando manutenção e testes.</p>
+      <ul class="lista">
+<li><strong>Linguagem / Framework back-end:</strong> Python 3.12 + Django 5.x — justificativa: agilidade via ORM integrado, segurança robusta e painel administrativo nativo.</li>
+<li><strong>Banco de dados:</strong> PostgreSQL 16 (SQLite em ambiente local) — justificativa: suporte eficiente a consultas concorrentes, transações atômicas robustas e confiabilidade.</li>
+<li><strong>Front-end / Interface:</strong> Django Template Language + TailwindCSS 3.x — justificativa: criação rápida de componentes elegantes e responsivos, sem a complexidade de uma SPA separada.</li>
+<li><strong>Hospedagem / Deploy:</strong> VPS Ubuntu ou Railway/Render — justificativa: deploy facilitado, suporte nativo a contêineres e integração com GitHub Actions para deploy contínuo.</li>
+<li><strong>Outras ferramentas:</strong> Celery + Redis + SMTP (SendGrid) — justificativa: execução assíncrona de tarefas e lembretes automáticos sem travar a requisição HTTP da usuária.</li>
+<li><strong>Padrão arquitetural:</strong> Monolito MTV (Model-Template-View) — justificativa: reduz a complexidade de deploy, rede e manutenção em comparação a microsserviços.</li>
+</ul>
     </section>
 
     <section class="section" id="sec-7">
@@ -1090,18 +1037,15 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 07</span>
         <h2>Fluxo Principal do Usuário</h2>
       </header>
-      <p>O fluxo abaixo descreve o caminho completo do usuário principal (cliente) — do acesso ao sistema até a conclusão do pedido e avaliação:</p>
-      <p>Fluxo: Realizar um Pedido de Delivery</p>
       <ol class="lista">
-<li>Acesso e autenticação — O cliente acessa o site pelo navegador e realiza login com e-mail e senha. Caso seja o primeiro acesso, realiza o cadastro informando nome, e-mail, senha e endereço principal.</li>
-<li>Busca de restaurantes — O cliente visualiza a listagem de restaurantes disponíveis na sua região. Pode filtrar por tipo de culinária, avaliação ou tempo estimado de entrega.</li>
-<li>Seleção do restaurante e montagem do pedido — O cliente acessa o cardápio do restaurante escolhido, seleciona os pratos desejados, ajusta quantidades e adiciona os itens ao carrinho.</li>
-<li>Revisão do carrinho — O cliente revisa os itens selecionados, verifica o subtotal, a taxa de entrega e o total do pedido. Pode remover itens ou alterar quantidades antes de prosseguir.</li>
-<li>Informações de entrega e pagamento — O cliente confirma o endereço de entrega (ou informa um novo) e escolhe o método de pagamento: cartão de crédito/débito, Pix ou dinheiro na entrega.</li>
-<li>Confirmação do pedido — O cliente finaliza o pedido. O sistema processa o pagamento via Mercado Pago (quando online), exibe o número do pedido e envia confirmação por e-mail.</li>
-<li>Acompanhamento em tempo real — O cliente visualiza o status atualizado do pedido: "Recebido pelo restaurante" → "Em preparo" → "Pronto para entrega" → "A caminho" → "Entregue".</li>
-<li>Confirmação de entrega e avaliação — Após a entrega, o sistema exibe a tela de avaliação. O cliente atribui nota de 1 a 5 ao restaurante e aos pratos, com campo opcional para comentário.</li>
-<li>Histórico registrado — O pedido é salvo no histórico do cliente, disponível para consulta posterior com todos os detalhes (itens, valores, data e avaliação).</li>
+<li>A cliente acessa a página inicial do Espaço Delas e clica no CTA "Agendar Agora".</li>
+<li>Seleciona o serviço de beleza desejado (ex.: Manicure) no catálogo exposto.</li>
+<li>Seleciona a profissional de preferência para o atendimento (ou escolhe "Sem preferência").</li>
+<li>Interage com o calendário, escolhendo um dia ativo disponível.</li>
+<li>Seleciona um horário disponível na grade da profissional para o dia correspondente.</li>
+<li>Preenche os dados de identificação e contato (nome completo, e-mail e WhatsApp/telefone).</li>
+<li>Visualiza a tela de resumo com todas as informações e clica em "Confirmar Agendamento".</li>
+<li>O sistema valida a concorrência, salva a reserva no banco e exibe a tela de sucesso com opções de exportar o agendamento.</li>
 </ol>
     </section>
 
@@ -1110,12 +1054,8 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Autoavaliação</span>
         <h2>Autoavaliação do Escopo</h2>
       </header>
-      <p>O escopo deste blueprint foi delimitado de forma intencional para ser realizável dentro do prazo do TCC, considerando os seguintes fatores:</p>
-      <p>Equipe e prazo: projeto individual (ou dupla), com período de desenvolvimento estimado em 4 a 6 meses. Os módulos de Cliente, Restaurante e Administração foram priorizados; funcionalidades avançadas (sistema de entregadores próprio, chat em tempo real) foram excluídas do escopo inicial.</p>
-      <p>Domínio técnico: Python e Django são tecnologias já estudadas na disciplina de Desenvolvimento Web, reduzindo a curva de aprendizado. O Bootstrap 5 elimina a necessidade de um front-end complexo separado.</p>
-      <p>Infraestrutura: o sistema pode ser desenvolvido e testado localmente com SQLite e implantado em serviços gratuitos (Render.com ou PythonAnywhere) para apresentação à banca, sem custo de infraestrutura.</p>
-      <p>Funcionalidades priorizadas para entrega: RF01 a RF13 constituem o núcleo viável do sistema. RF14 e RF15 (módulo administrativo) são de implementação mais simples e podem ser adicionados em sprint final.</p>
-      <p>Nota: Este blueprint é um documento vivo. Ele deve ser atualizado sempre que houver mudanças de escopo, revisão de requisitos ou decisões técnicas ao longo do desenvolvimento do TCC.</p>
+      <p>O projeto é totalmente viável dentro do cronograma do TCC graças ao framework modular Django, que já fornece funcionalidades prontas e robustas para autenticação, upload de arquivos, persistência segura e um painel administrativo nativo, minimizando o código customizado.</p>
+      <p>Além disso, o escopo está estritamente focado em funcionalidades de alto valor e bem delimitadas (agenda pública, bloqueio manual e cancelamento autônomo), sem introdução de APIs REST ou comunicação em tempo real complexas. A estilização com TailwindCSS integrada aos templates Django acelera a prototipação, permitindo testes e homologações em menor tempo.</p>
       <p class="footer-note">
         Blueprint de TCC · Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
       </p>
@@ -1127,7 +1067,7 @@ table.demo tr:last-child th { border-bottom: 0; }
     <div class="page-foot-inner">
       <span>© <span id="year"></span> Prof Toni Coimbra</span>
       <span class="dotsep">·</span>
-      <span>Blueprint de TCC · Plataforma de Delivery de Comida Online</span>
+      <span>Blueprint de TCC · Espaço Delas</span>
       <span class="dotsep">·</span>
       <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
     </div>

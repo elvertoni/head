@@ -1,6 +1,6 @@
 {
   "capa_titulo": "Lumina",
-  "capa_aluno": "Camila, Suzanna e Maira",
+  "capa_aluno": "Camila Sara Stauffer Rodrigues, Maíra de Andrade Ribeiro e Suzanna Heliza Goncalves de Freitas",
   "capa_tipo": "Aplicativo web mobile-first",
   "sec1_texto": "Estudantes do ensino médio e pré-vestibular enfrentam grande dificuldade em manter consistência nos estudos. A rotina de preparação para o ENEM e Vestibulares exige disciplina, organização de horários, acompanhamento de progresso e motivação constante — elementos que raramente estão reunidos em uma única ferramenta acessível pelo celular.\n\nAplicativos genéricos de produtividade (como Notion ou Google Calendar) não foram projetados para esse público específico e carecem de elementos de engajamento adequados à faixa etária. O resultado é o abandono do plano de estudos, a falta de visibilidade sobre o próprio progresso e a perda de motivação ao longo do ciclo preparatório.",
   "sec2_texto": "Perfil principal — Estudante (16–24 anos):\n- Está se preparando para o ENEM, vestibulares ou concursos\n- Precisa organizar sua rotina de estudos e acompanhar o progresso\n- Tem familiaridade com apps mobile e jogos (engajamento visual é fundamental)\n- Usa o celular como principal dispositivo de acesso\n\nFuncionalidades esperadas pelo estudante:\n- Controlar o tempo de estudo com timer focado (Pomodoro)\n- Organizar sua agenda semanal com tarefas por dia\n- Acessar videoaulas recomendadas por matéria (ENEM/Vestibular)\n- Personalizar seu mascote (sistema de progressão e recompensa)\n- Estudar em grupo em tempo real com colegas",
@@ -40,5 +40,5 @@
   "sec7_chk2": true,
   "sec7_chk3": true,
   "sec7_chk4": true,
-  "_savedAt": "2026-06-17T08:50:59.600972"
+  "_savedAt": "2026-06-24T09:44:16.415820"
 }

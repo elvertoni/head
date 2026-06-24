@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Blueprint · ArenaMatch · Prof Toni Coimbra</title>
+  <title>Blueprint · HealthSync · Prof Toni Coimbra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -932,13 +932,13 @@ table.demo tr:last-child th { border-bottom: 0; }
           Blueprint de Software · TCC
         </div>
         <h1 class="hero-title">
-          <span class="accent">ArenaMatch</span>
+          <span class="accent">HealthSync</span>
         </h1>
-        <p class="hero-lead">Plataforma web social (Mobile First) · Nicolas Filardo Maia e Pedro Henrique</p>
+        <p class="hero-lead">Single Page Application (SPA) · Sistema web client-side · Carlos Eduardo de Souza da Silva, Francisco Krefta Silva e Samuel Guedin Souza</p>
 
         <dl class="meta-grid">
-          <div class="meta-card"><dt>Aluno(a)</dt><dd>Nicolas Filardo Maia e Pedro Henrique</dd></div>
-          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Plataforma web social (Mobile First)</dd></div>
+          <div class="meta-card"><dt>Aluno(a)</dt><dd>Carlos Eduardo de Souza da Silva, Francisco Krefta Silva e Samuel Guedin Souza</dd></div>
+          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Single Page Application (SPA) · Sistema web client-side</dd></div>
           <div class="meta-card"><dt>Disciplina</dt><dd>Programação / Desenvolvimento de Sistemas</dd></div>
           <div class="meta-card"><dt>Entrega</dt><dd>Blueprint de TCC</dd></div>
         </dl>
@@ -964,7 +964,8 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 01</span>
         <h2>Problema e Contexto</h2>
       </header>
-      <p>Atletas amadores de diversas modalidades (futebol, basquete, vôlei, etc.) sofrem com a falta de organização para partidas casuais ("rachões"). Atualmente, dependem de grupos de WhatsApp desorganizados, onde é difícil encontrar quórum, integrar novos jogadores ou achar quadras disponíveis por perto. Isso causa desistência da prática esportiva por falta de companhia ou local.</p>
+      <p>Atualmente, consultórios e clínicas médicas de pequeno e médio porte sofrem com a desorganização de prontuários em formato físico (papel) e o uso de agendas de papel para marcação de consultas. Esse modelo arcaico provoca perda constante do histórico do paciente, lentidão no atendimento (a busca de pastas físicas exige tempo) e conflitos de horários (marcações duplicadas).</p>
+      <p>Além disso, a falta de segurança digital expõe informações altamente confidenciais dos pacientes a riscos físicos (extravio, incêndio) e a acessos não autorizados por terceiros, violando preceitos de ética e privacidade dos dados médicos.</p>
     </section>
 
     <section class="section" id="sec-2">
@@ -973,9 +974,9 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Público-Alvo</h2>
       </header>
       <ul class="lista">
-<li><strong>Atleta:</strong> Busca partidas próximas via mapa, confirma presença e avalia outros jogadores.</li>
-<li><strong>Capitão/Organizador:</strong> Cria o evento, define regras, convoca amigos e gerencia as equipes.</li>
-<li><strong>Dono de Quadra (Sugestão):</strong> Cadastra o espaço para receber reservas diretamente pelo app, aumentando o faturamento.</li>
+<li><strong>Recepcionista / Assistente:</strong> gerencia o cadastro de pacientes (criar, visualizar, editar, excluir), realiza o agendamento de consultas com médicos credenciados e controla a fila de espera (status Pendente, Agendado, Atendido ou Cancelado).</li>
+<li><strong>Médico(a) / Profissional de Saúde:</strong> acessa a agenda diária de atendimentos, visualiza o histórico do Prontuário Eletrônico do Paciente (PEP), registra a evolução clínica (sintomas, diagnóstico e observações), prescreve medicamentos e emite receitas médicas digitalmente.</li>
+<li><strong>Administrador:</strong> acompanha o fluxo operacional da clínica pelo dashboard de estatísticas, visualizando o volume de atendimentos e gerenciando o cadastro de profissionais.</li>
 </ul>
     </section>
 
@@ -984,7 +985,7 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 03</span>
         <h2>Solução Proposta</h2>
       </header>
-      <p>Uma plataforma social baseada em geolocalização que centraliza a marcação de partidas esportivas. O sistema elimina a barreira da comunicação fragmentada, permitindo que qualquer pessoa encontre um jogo perto de casa, monte times competitivos e organize campeonatos amadores de forma automatizada e transparente.</p>
+      <p>O HealthSync é uma Single Page Application (SPA) responsiva desenvolvida para centralizar a gestão de clínicas médicas. O sistema integra a ficha cadastral do paciente, uma agenda de consultas flexível e o Prontuário Eletrônico do Paciente (PEP) em um fluxo unificado e de carregamento instantâneo. A solução foca na eliminação do papel, na melhoria da produtividade da equipe, na facilidade de uso e na persistência local segura dos dados.</p>
     </section>
 
     <section class="section" id="sec-4">
@@ -993,11 +994,13 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Requisitos Funcionais</h2>
       </header>
       <ul class="lista">
-<li><strong>RF01</strong> — O sistema deve permitir a busca de partidas por geolocalização e modalidade esportiva.</li>
-<li><strong>RF02</strong> — O sistema deve permitir a criação de "Equipes" com perfil, escudo e histórico de vitórias.</li>
-<li><strong>RF03</strong> — O sistema deve oferecer um módulo de criação de Campeonatos com chaves de mata-mata.</li>
-<li><strong>RF04</strong> — O sistema deve permitir que os usuários confirmem presença em partidas (check-in).</li>
-<li><strong>RF05</strong> — O sistema deve disponibilizar um chat interno para cada partida criada.</li>
+<li><strong>RF01</strong> — O sistema deve permitir o cadastro, a visualização, a edição e a exclusão (CRUD) de fichas de pacientes.</li>
+<li><strong>RF02</strong> — O sistema deve permitir criar, reagendar e cancelar consultas médicas, definindo data, hora, médico e motivo.</li>
+<li><strong>RF03</strong> — O sistema deve permitir gerenciar o status das consultas (Agendado, Pendente, Atendido, Cancelado).</li>
+<li><strong>RF04</strong> — O sistema deve permitir o registro de evoluções clínicas contendo sintomas, diagnóstico, prescrição e observações.</li>
+<li><strong>RF05</strong> — O sistema deve gerar receitas médicas formatadas para impressão ou geração de PDF direto pelo navegador.</li>
+<li><strong>RF06</strong> — O sistema deve apresentar um painel estatístico (dashboard) com total de pacientes, atendimentos do dia e pendências.</li>
+<li><strong>RF07</strong> — O sistema deve disponibilizar busca dinâmica por nome ou CPF nos módulos de pacientes e de prontuário.</li>
 </ul>
     </section>
 
@@ -1007,9 +1010,10 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Requisitos Não Funcionais</h2>
       </header>
       <ul class="lista">
-<li><strong>RNF01</strong> — O sistema deve ser responsivo (Mobile First) para uso em smartphones.</li>
-<li><strong>RNF02</strong> — As consultas ao banco de dados por localização devem retornar em menos de 2 segundos.</li>
-<li><strong>RNF03</strong> — A plataforma deve seguir as normas da LGPD para proteção dos dados dos usuários.</li>
+<li><strong>RNF01</strong> — O sistema deve rodar inteiramente no lado do cliente (Single Page Application), garantindo roteamento dinâmico sem recarga.</li>
+<li><strong>RNF02</strong> — O sistema deve se adaptar automaticamente a telas de computadores, tablets e smartphones (design responsivo).</li>
+<li><strong>RNF03</strong> — O sistema deve persistir as informações localmente no navegador via Web Storage API (LocalStorage), com dados estruturados em JSON.</li>
+<li><strong>RNF04</strong> — O sistema deve permitir a alternância de temas (Dark Mode / Light Mode) e persistir a escolha no armazenamento do usuário.</li>
 </ul>
     </section>
 
@@ -1019,11 +1023,12 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Arquitetura e Tecnologias</h2>
       </header>
       <ul class="lista">
-<li><strong>Back-end:</strong> Node.js (Express) — justificativa: Ótimo suporte para APIs REST e escalabilidade.</li>
-<li><strong>Banco de dados:</strong> PostgreSQL — justificativa: Robusto para lidar com relações entre usuários e times.</li>
-<li><strong>Front-end:</strong> React — justificativa: Componentização que acelera o desenvolvimento da interface.</li>
-<li><strong>Hospedagem:</strong> Vercel/Supabase — justificativa: Facilidade de deploy e serviços de banco na nuvem gratuitos.</li>
-<li><strong>Padrão:</strong> MVC (Model-View-Controller) — justificativa: Organização clara entre dados, lógica e interface.</li>
+<li><strong>Linguagem / Framework back-end:</strong> não aplicável (sistema 100% client-side) — justificativa: a lógica roda totalmente no navegador, eliminando infraestrutura e latência.</li>
+<li><strong>Banco de dados:</strong> Web Storage API (LocalStorage) — justificativa: persiste registros de pacientes, agenda e evolução clínica sem dependência de SGBDs remotos.</li>
+<li><strong>Front-end / Interface:</strong> HTML5, CSS3 puro com variáveis e JavaScript ES6 Vanilla — justificativa: alto desempenho de renderização, controle total de estilos e agilidade na manipulação do DOM.</li>
+<li><strong>Hospedagem / Deploy:</strong> GitHub Pages ou Vercel — justificativa: ideal para SPAs estáticas, com deploy contínuo e CDN de alta performance sem custos.</li>
+<li><strong>Outras ferramentas:</strong> FontAwesome (iconografia) e window.print() — justificativa: ícones melhoram a usabilidade e a impressão nativa gera receitas limpas via CSS.</li>
+<li><strong>Padrão arquitetural:</strong> arquitetura modular em SPA com Hash Routing — justificativa: separa responsabilidades em scripts isolados (pacientes.js, prontuario.js, agenda.js) gerenciados pelo núcleo (app.js).</li>
 </ul>
     </section>
 
@@ -1033,12 +1038,14 @@ table.demo tr:last-child th { border-bottom: 0; }
         <h2>Fluxo Principal do Usuário</h2>
       </header>
       <ol class="lista">
-<li>O usuário faz login e permite acesso à localização.</li>
-<li>O usuário navega pelo mapa e clica em um ícone de "Vôlei".</li>
-<li>O usuário visualiza detalhes da partida (hora, preço, nível).</li>
-<li>O usuário clica em "Entrar no Rachão" e confirma presença.</li>
-<li>O sistema notifica o organizador e adiciona o atleta à lista.</li>
-<li>Após o jogo, o usuário avalia os demais atletas para ganhar pontos de ranking.</li>
+<li>O atendente abre a SPA do HealthSync e visualiza o painel (Dashboard) com os dados consolidados da clínica.</li>
+<li>Vai à aba 'Pacientes' e pesquisa um paciente existente ou cria uma nova ficha de cadastro.</li>
+<li>Acessa a aba 'Agenda', seleciona o paciente, escolhe o médico e confirma a consulta.</li>
+<li>Quando o paciente chega à clínica, o atendente altera o status do agendamento para 'Pendente'.</li>
+<li>O médico entra no módulo 'Prontuários' e clica no nome do paciente que já aparece no fluxo de espera clínica.</li>
+<li>O médico analisa o histórico do PEP, abre o modal de 'Evolução', preenche sintomas, diagnóstico e receitas e salva.</li>
+<li>O sistema exibe a receita formatada e o médico aciona a impressão para entregar ao paciente assinada.</li>
+<li>A consulta é finalizada, o sistema atualiza o status para 'Atendido' e recalcula os contadores do dashboard.</li>
 </ol>
     </section>
 
@@ -1047,7 +1054,8 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Autoavaliação</span>
         <h2>Autoavaliação do Escopo</h2>
       </header>
-      <p>O projeto é viável pois utiliza tecnologias modernas com vasta documentação. O escopo está focado nas funções core (matchmaking e localização), podendo deixar funcionalidades complexas como pagamentos integrados para uma fase futura, garantindo a entrega do MVP no prazo.</p>
+      <p>O HealthSync é totalmente viável para entrega no prazo do TCC. Ao dispensar o desenvolvimento de um back-end relacional tradicional e de servidores remotos, a equipe direcionou todo o esforço na qualidade de UX/UI, na responsividade da interface e na consistência das operações.</p>
+      <p>O simulador de banco de dados baseado em LocalStorage (db.js) se comporta como um banco real nas operações CRUD, permitindo validação prática instantânea de todo o fluxo de uma clínica. O escopo focado em quatro submódulos integrados (Dashboard, Pacientes, Agenda e Prontuários) assegura uma entrega completa e de alta fidelidade técnica.</p>
       <p class="footer-note">
         Blueprint de TCC · Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
       </p>
@@ -1059,7 +1067,7 @@ table.demo tr:last-child th { border-bottom: 0; }
     <div class="page-foot-inner">
       <span>© <span id="year"></span> Prof Toni Coimbra</span>
       <span class="dotsep">·</span>
-      <span>Blueprint de TCC · ArenaMatch</span>
+      <span>Blueprint de TCC · HealthSync</span>
       <span class="dotsep">·</span>
       <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
     </div>

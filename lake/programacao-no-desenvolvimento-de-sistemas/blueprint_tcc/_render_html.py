@@ -193,8 +193,7 @@ def main():
     for jf in sorted(glob.glob("*.blueprint.json")):
         d = json.load(io.open(jf, encoding="utf-8"))
         out_html = build(tpl, d)
-        name = "%s/blueprint-%s-%s.html" % (OUT, slug(d.get("capa_aluno", jf)),
-                                            slug(d.get("capa_titulo", "")))
+        name = "%s/blueprint-%s.html" % (OUT, slug(d.get("capa_titulo", "")) or slug(jf))
         io.open(name, "w", encoding="utf-8").write(out_html)
         print("wrote", name)
     print("DONE")

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Blueprint · BrVPN - Rede Privada Virtual Brasileira · Prof Toni Coimbra</title>
+  <title>Blueprint · Alexandria · Prof Toni Coimbra</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -932,13 +932,13 @@ table.demo tr:last-child th { border-bottom: 0; }
           Blueprint de Software · TCC
         </div>
         <h1 class="hero-title">
-          <span class="accent">BrVPN</span> - Rede Privada Virtual Brasileira
+          <span class="accent">Alexandria</span>
         </h1>
-        <p class="hero-lead">Infraestrutura de Rede / Seguranca da Informacao · Daniel</p>
+        <p class="hero-lead">Aplicativo mobile (Android) + web · Gabriella Gomes de Almeida Miranda, Marlon Gabriel Perissute e Nathalia Elisa Prestes Fujikawa</p>
 
         <dl class="meta-grid">
-          <div class="meta-card"><dt>Aluno(a)</dt><dd>Daniel</dd></div>
-          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Infraestrutura de Rede / Seguranca da Informacao</dd></div>
+          <div class="meta-card"><dt>Aluno(a)</dt><dd>Gabriella Gomes de Almeida Miranda, Marlon Gabriel Perissute e Nathalia Elisa Prestes Fujikawa</dd></div>
+          <div class="meta-card"><dt>Tipo de sistema</dt><dd>Aplicativo mobile (Android) + web</dd></div>
           <div class="meta-card"><dt>Disciplina</dt><dd>Programação / Desenvolvimento de Sistemas</dd></div>
           <div class="meta-card"><dt>Entrega</dt><dd>Blueprint de TCC</dd></div>
         </dl>
@@ -964,13 +964,14 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 01</span>
         <h2>Problema e Contexto</h2>
       </header>
-      <p>VPNs comerciais disponiveis no Brasil apresentam tres problemas principais:</p>
-      <ul class="lista">
-<li><strong>Alta latencia:</strong> servidores fora do Brasil aumentam o ping desnecessariamente.</li>
-<li><strong>Falta de transparencia:</strong> o usuario nao sabe quais dados sao coletados ou como o trafego e tratado.</li>
-<li><strong>Custo elevado:</strong> planos de R$ 30 a R$ 80/mes para funcionalidades replicaveis com hardware simples.</li>
-</ul>
-      <p>[MIGRADO DE ESTRUTURA DIFERENTE] Detalhar quem sofre (perfil de usuario) e um dado que dimensione o problema.</p>
+      <p>Nos últimos dias eu notei a falta de sites e apps de leitura de mangás/manhwas/webtoons.</p>
+      <p>Muitos dos sites que tinham antes foram derrubados pela falta de licenciamento, e atualmente já</p>
+      <p>não há mais nenhum site ou aplicativo disponível, os que têm são gringos, sem tradução para o</p>
+      <p>português e ainda pagos, ou sites piratas cheio de anuncios. Isso dificulta a acessibilidade para</p>
+      <p>os leitores brasileiros que gostam desse conteúdo, e desvaloriza o trabalho dos autores dessas</p>
+      <p>obras, que .</p>
+      <p>É extremamente frustrante se interessar por um conteúdo ou obra e ter o acesso limitado,</p>
+      <p>sabendo que em outros lugares fora do Brasil o acesso é facilitado e ilimitado.</p>
     </section>
 
     <section class="section" id="sec-2">
@@ -978,8 +979,26 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 02</span>
         <h2>Público-Alvo</h2>
       </header>
-      <p>[SECAO AUSENTE NO DOCUMENTO ORIGINAL - PREENCHER]</p>
-      <p>Sugestao a partir do contexto: usuarios brasileiros que querem privacidade e baixa latencia; usuarios tecnicos que querem uma VPN auditavel e open source; o proprio operador/administrador do servidor.</p>
+      <ul class="lista">
+<li>Leitores brasileiros de mangás, manhwas e webtoons — utilizarão o aplicativo para ler</li>
+</ul>
+      <p>obras gratuitamente, comentar capítulos e acompanhar lançamentos.</p>
+      <ul class="lista">
+<li>Criadores e tradutores autorizados — poderão publicar obras próprias ou conteúdos</li>
+</ul>
+      <p>licenciados/autorizados no aplicativo.</p>
+      <ul class="lista">
+<li>Moderadores e apoiadores da comunidade — irão ajudar na organização do conteúdo,</li>
+</ul>
+      <p>denúncias e gerenciamento da comunidade.</p>
+      <ul class="lista">
+<li>Usuários menores de idade — terão acesso apenas a conteúdos apropriados para sua</li>
+</ul>
+      <p>faixa etária.</p>
+      <ul class="lista">
+<li>Usuários premium ou ativos — poderão desbloquear conteúdos especiais usando</li>
+</ul>
+      <p>moedas adquiridas no aplicativo.</p>
     </section>
 
     <section class="section" id="sec-3">
@@ -987,9 +1006,18 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 03</span>
         <h2>Solução Proposta</h2>
       </header>
-      <p>O BrVPN e uma Rede Privada Virtual (VPN) desenvolvida do zero como projeto de TCC, com foco em baixa latencia para usuarios brasileiros e maxima seguranca. Diferente de solucoes comerciais que funcionam como caixas-pretas, e totalmente transparente, auditavel e open source. Usa o protocolo WireGuard - o mesmo adotado por NordVPN e ExpressVPN - configurado e operado de forma independente.</p>
-      <p>Objetivo geral: projetar, implementar e documentar uma VPN funcional baseada em WireGuard, demonstrando viabilidade tecnica com recursos minimos.</p>
-      <p>Objetivos especificos: configurar servidor WireGuard em Ubuntu Server; criptografia ponta a ponta com ChaCha20-Poly1305; hospedar na nuvem com IP publico fixo; criar interface web de distribuicao do cliente; documentar a arquitetura para replicacao.</p>
+      <p>A nossa proposta é criar um aplicativo com leituras completamente gratuitas, onde os</p>
+      <p>usuários vão poder upar um manhwa de sua autoridade ou um que você recebeu permissão</p>
+      <p>para registrar no app.</p>
+      <p>O nosso aplicativo vai ter um sistema de comentários e perfis personalizados, onde nossos</p>
+      <p>usuários poderão personalizar seus perfis, com molduras, balões de comentários ou fontes</p>
+      <p>especiais. Terá um sistema de moedinhas que os usuários poderão receber ao assistir anúncios,</p>
+      <p>ou completar missões como “ler 3 capítulos”, e assim poder desbloquear obras ou capítulos</p>
+      <p>especiais. Cada manhwa/mangá/webtoon terá sua tag e classificação, menores de idade não</p>
+      <p>poderão ter acesso a conteúdos para maiores de idade.</p>
+      <p>Será uma comunidade toda se ajudando a promover esse conteúdo, então também terá</p>
+      <p>apoiadores que irão nos ajudar a upar as obras no app e a gerenciar a comunidade dos</p>
+      <p>usuários.</p>
     </section>
 
     <section class="section" id="sec-4">
@@ -997,14 +1025,26 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 04</span>
         <h2>Requisitos Funcionais</h2>
       </header>
-      <p>[MIGRADO DOS 'OBJETIVOS ESPECIFICOS' - converter para requisitos funcionais no formato 'O sistema deve...']</p>
       <ul class="lista">
-<li><strong>RF01</strong> — O sistema deve estabelecer tunel VPN entre cliente e servidor via WireGuard.</li>
-<li><strong>RF02</strong> — O sistema deve criptografar o trafego de ponta a ponta (ChaCha20-Poly1305).</li>
-<li><strong>RF03</strong> — O sistema deve disponibilizar o servidor na nuvem com IP publico fixo.</li>
-<li><strong>RF04</strong> — O sistema deve oferecer uma interface web para distribuicao do arquivo de cliente (.conf).</li>
-<li><strong>RF05</strong> — O sistema deve renovar o handshake periodicamente (Perfect Forward Secrecy).</li>
+<li>RF01 — O sistema deve permitir que usuários criem e personalizem suas contas.</li>
+<li>RF02 — O sistema deve permitir a leitura online de mangás, manhwas e webtoons.</li>
+<li>RF03 — O sistema deve permitir que usuários publiquem obras autorizadas.</li>
+<li>RF04 — O sistema deve possuir um sistema de comentários em capítulos e obras.</li>
+<li>RF05 — O sistema deve possuir classificação indicativa para restringir conteúdos</li>
 </ul>
+      <p>impróprios para menores de idade.</p>
+      <ul class="lista">
+<li>RF06 — O sistema deve permitir que usuários ganhem moedas virtuais ao assistir</li>
+</ul>
+      <p>anúncios ou completar missões.</p>
+      <ul class="lista">
+<li>RF07 — O sistema deve permitir desbloquear capítulos especiais utilizando moedas</li>
+</ul>
+      <p>virtuais.</p>
+      <ul class="lista">
+<li>RF08 — O sistema deve permitir denúncias de conteúdos inadequados ou usuários</li>
+</ul>
+      <p>ofensivos.</p>
     </section>
 
     <section class="section" id="sec-5">
@@ -1012,15 +1052,22 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 05</span>
         <h2>Requisitos Não Funcionais</h2>
       </header>
-      <p>Modelo de seguranca / atributos de qualidade:</p>
       <ul class="lista">
-<li><strong>Zero logs:</strong> nenhum dado de navegacao e armazenado no servidor.</li>
-<li><strong>Chaves geradas localmente:</strong> a chave privada nunca sai do dispositivo.</li>
-<li><strong>Perfect Forward Secrecy:</strong> handshake renovado a cada 3 minutos.</li>
-<li><strong>Codigo aberto:</strong> qualquer pessoa pode auditar a configuracao.</li>
-<li><strong>Baixa latencia:</strong> minimizar o ping para usuarios brasileiros.</li>
+<li>RNF01 — O sistema deve possuir interface intuitiva e fácil de usar em dispositivos</li>
 </ul>
-      <p>Pilha criptografica: ChaCha20-Poly1305 (dados), Curve25519 (troca de chaves ECDH), BLAKE2s (hash/autenticacao).</p>
+      <p>móveis.</p>
+      <ul class="lista">
+<li>RNF02 — O aplicativo deve carregar capítulos e imagens em até 3 segundos em</li>
+</ul>
+      <p>conexões comuns de internet.</p>
+      <ul class="lista">
+<li>RNF03 — O sistema deve proteger os dados dos usuários por meio de autenticação</li>
+</ul>
+      <p>segura e criptografia de senhas.</p>
+      <ul class="lista">
+<li>RNF04 — O aplicativo deve possuir disponibilidade mínima de 95% do tempo.</li>
+<li>RNF05 — O sistema deve ser compatível com Android e navegadores web modernos.</li>
+</ul>
     </section>
 
     <section class="section" id="sec-6">
@@ -1028,14 +1075,12 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 06</span>
         <h2>Arquitetura e Tecnologias</h2>
       </header>
-      <p>Componentes principais:</p>
-      <ul class="lista">
-<li><strong>Servidor VPN - Ubuntu Server + WireGuard:</strong> ponto central, roteia e criptografa o trafego.</li>
-<li><strong>Infraestrutura - Google Cloud (e2-micro):</strong> VM na nuvem com IP publico fixo.</li>
-<li>Cliente - App WireGuard (Android/iOS/Windows): dispositivo do usuario.</li>
-<li><strong>Interface Web - HTML/CSS/JavaScript:</strong> pagina de distribuicao do cliente.</li>
-</ul>
-      <p>Infraestrutura atual: Google Cloud (e2-micro, 1 vCPU, 1GB RAM), Ubuntu Server 26.04 LTS, IP publico fixo, porta 51820/UDP, custo gratuito (Free Tier).</p>
+      <p>Linguagem / Framework back-end: Node.js</p>
+      <p>Banco de dados: MongoDB</p>
+      <p>Front-end / Interface: React Native</p>
+      <p>Hospedagem / Deploy: Firebase</p>
+      <p>Outras ferramentas: Figma e GitHub</p>
+      <p>Padrão arquitetural (MVC, microsserviços, etc.): MVC (Model-View-Controller)</p>
     </section>
 
     <section class="section" id="sec-7">
@@ -1043,13 +1088,15 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Seção 07</span>
         <h2>Fluxo Principal do Usuário</h2>
       </header>
-      <p>Fluxo de conexao:</p>
       <ol class="lista">
-<li>O dispositivo instala o arquivo .conf com as chaves criptograficas.</li>
-<li>Ao ativar a VPN, o cliente realiza handshake com o servidor usando Curve25519.</li>
-<li>O trafego e encapsulado em pacotes UDP na porta 51820 e criptografado com ChaCha20-Poly1305.</li>
-<li>O servidor recebe, decifra e encaminha para a internet usando NAT (MASQUERADE).</li>
-<li>O handshake e renovado a cada 3 minutos (Perfect Forward Secrecy).</li>
+<li>O usuário instala o aplicativo e cria uma conta.</li>
+<li>O sistema solicita confirmação de idade e preferências de leitura.</li>
+<li>O usuário acessa a página inicial e pesquisa uma obra.</li>
+<li>O usuário seleciona um mangá/manhwa/webtoon para leitura.</li>
+<li>O sistema exibe os capítulos disponíveis.</li>
+<li>O usuário lê o capítulo e pode comentar ou reagir.</li>
+<li>O usuário ganha moedas ao concluir missões ou assistir anúncios.</li>
+<li>O usuário utiliza moedas para desbloquear conteúdos especiais.</li>
 </ol>
     </section>
 
@@ -1058,15 +1105,14 @@ table.demo tr:last-child th { border-bottom: 0; }
         <span class="section-index">Autoavaliação</span>
         <h2>Autoavaliação do Escopo</h2>
       </header>
-      <p>Fases de desenvolvimento (evidencia de viabilidade):</p>
-      <ul class="lista">
-<li><strong>Beta:</strong> servidor local em VM (WireGuard em rede local) - Concluido.</li>
-<li><strong>Nuvem:</strong> servidor no Google Cloud (acessivel de qualquer rede) - Concluido.</li>
-<li><strong>Interface:</strong> pagina web do BrVPN - Concluido.</li>
-<li><strong>App:</strong> aplicativo mobile proprio - Futuro.</li>
-</ul>
-      <p>Trabalhos futuros: migrar servidor para datacenter no Brasil; app mobile com WireGuard embutido (React Native); multiplos nos para balanceamento; autenticacao de usuarios; benchmarks de latencia vs. VPNs comerciais.</p>
-      <p>[A FAZER] Escrever a autoavaliacao em prosa: por que cabe no prazo, MVP x extras, riscos.</p>
+      <p>Acreditamos que o projeto é viável dentro do prazo do TCC porque a equipe possui uma</p>
+      <p>proposta organizada e funcionalidades bem definidas. O sistema poderá começar com recursos</p>
+      <p>principais, como leitura, login e comentários, deixando funções mais avançadas para versões</p>
+      <p>futuras.</p>
+      <p>As tecnologias escolhidas possuem bastante documentação e suporte na internet, facilitando o</p>
+      <p>aprendizado e desenvolvimento. Apesar de envolver desafios como armazenamento de imagens</p>
+      <p>e gerenciamento de usuários, o projeto é possível de ser desenvolvido em etapas ao longo do</p>
+      <p>período disponível.</p>
       <p class="footer-note">
         Blueprint de TCC · Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
       </p>
@@ -1078,7 +1124,7 @@ table.demo tr:last-child th { border-bottom: 0; }
     <div class="page-foot-inner">
       <span>© <span id="year"></span> Prof Toni Coimbra</span>
       <span class="dotsep">·</span>
-      <span>Blueprint de TCC · BrVPN - Rede Privada Virtual Brasileira</span>
+      <span>Blueprint de TCC · Alexandria</span>
       <span class="dotsep">·</span>
       <a href="https://aulas.tonicoimbra.com" target="_blank" rel="noopener">aulas.tonicoimbra.com</a>
     </div>

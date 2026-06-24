@@ -1,0 +1,92 @@
+
+GOLD FIT
+Blueprint de Software
+Trabalho de Conclusão de Curso — Desenvolvimento de Sistemas
+Entrega em grupo  ·  2026
+Projeto: Gold Fit — Aplicativo de Academia e Fitness
+Grupo: [Nomes dos integrantes]
+Turma: [Turma]   ·   Data: 2026
+
+1  Problema e Contexto
+Situação atual sem o sistema — quem sofre, como e quanto afeta.
+Praticantes de academia enfrentam dificuldades para organizar, registrar e acompanhar a evolução dos seus treinos de forma sistemática. A ausência de um registro centralizado impede que o usuário visualize o progresso ao longo do tempo, dificulta a aplicação de técnicas de sobrecarga progressiva e aumenta o risco de lesões por execução incorreta dos exercícios.
+Atualmente, muitos alunos utilizam cadernos em papel, planilhas genéricas ou dependem exclusivamente da memória, o que resulta em treinos inconsistentes, perda de motivação e abandono da prática esportiva. No Brasil, a falta de modo offline em apps similares representa uma barreira adicional, já que academias frequentemente possuem conexão de internet instável ou inexistente.
+
+2  Público-alvo
+Perfis de usuário e o que cada um fará no sistema.
+Praticante iniciante: cria seu perfil, consulta a biblioteca de exercícios com vídeos demonstrativos e segue treinos sugeridos pelo app.
+Praticante intermediário/avançado: cria treinos personalizados, registra cargas, séries e RPE, monitora PRs e acompanha gráficos de evolução.
+Usuário focado em metas: define objetivos (hipertrofia, emagrecimento, força), recebe sugestões automáticas de ajuste de carga e acompanha progresso pelo calendário.
+Usuário de wearables: sincroniza Apple Watch, Samsung Health, Google Fit ou Strava para enriquecer os dados de treino e saúde.
+
+3  Solução Proposta
+Ideia central do sistema — sem listar funcionalidades, apenas descrever a solução.
+O Gold Fit é um aplicativo mobile de academia e fitness que centraliza o planejamento, o registro e o acompanhamento de treinos em uma única plataforma. A solução combina uma biblioteca rica de exercícios com vídeos demonstrativos, um motor de personalização que aprende com o histórico do usuário e sugere ajustes de carga automáticos (sobrecarga progressiva), e um painel visual de evolução que transforma dados de treino em motivação concreta.
+O app é projetado para funcionar integralmente sem internet, garantindo usabilidade em qualquer academia. Toda a experiência é orientada a manter o usuário consistente nos treinos, reduzir lesões por técnica inadequada e tornar visível o progresso que muitas vezes passa despercebido sem um registro sistemático.
+
+4  Requisitos Funcionais
+Formato: RFxx — O sistema deve [ação]...
+RF01 — O sistema deve permitir o cadastro e autenticação de usuários via e-mail, Google ou Apple ID, com coleta de dados de perfil (peso, altura, nível e objetivo).
+RF02 — O sistema deve disponibilizar uma biblioteca com no mínimo 300 exercícios, contendo vídeo ou animação de execução, músculos trabalhados e instruções de segurança.
+RF03 — O sistema deve permitir que o usuário crie treinos personalizados organizados por grupo muscular, divisão semanal (A/B, PPL, full body) e métodos avançados (superset, drop set, circuito).
+RF04 — O sistema deve registrar cada série de treino com peso (kg), repetições, tempo de descanso, notas livres e RPE (escala de esforço percebido).
+RF05 — O sistema deve exibir gráficos de evolução de carga ao longo do tempo, volume total de treino semanal, Personal Records (PRs) e estimativa de 1RM por exercício.
+RF06 — O sistema deve sugerir automaticamente a carga para a próxima sessão com base no histórico registrado, aplicando o princípio de sobrecarga progressiva.
+RF07 — O sistema deve disponibilizar um timer de descanso configurável entre séries, com notificação sonora e vibração ao final do intervalo.
+RF08 — O sistema deve registrar medidas corporais (braço, peito, cintura, quadril) e fotos de progresso vinculadas a datas.
+RF09 — O sistema deve sincronizar dados com wearables (Apple Watch, Samsung Health, Google Fit e Strava) quando o dispositivo estiver conectado.
+RF10 — O sistema deve enviar notificações e lembretes de treino conforme a agenda semanal configurada pelo usuário.
+
+5  Requisitos Não Funcionais
+Qualidade, desempenho, segurança, usabilidade e disponibilidade.
+RNF01 — O sistema deve funcionar completamente offline, sincronizando dados com o servidor quando houver conexão disponível (disponibilidade e modo offline).
+RNF02 — O sistema deve carregar as telas principais em no máximo 2 segundos em dispositivos com hardware intermediário (desempenho).
+RNF03 — O sistema deve armazenar senhas com hash bcrypt e dados sensíveis criptografados em repouso e em trânsito via HTTPS/TLS 1.3 (segurança).
+RNF04 — A interface deve ser operável com uma mão durante o treino, com botões de ação com no mínimo 48dp de área de toque (usabilidade).
+RNF05 — O sistema deve suportar ao menos 10.000 usuários simultâneos sem degradação perceptível de desempenho (escalabilidade).
+
+6  Arquitetura e Tecnologias
+Tecnologia — justificativa: [motivo técnico]
+Camada
+Tecnologia
+Justificativa Técnica
+Front-end / Mobile
+React Native + Expo
+Permite desenvolvimento multiplataforma (iOS e Android) com uma única base de código, reduzindo custo e prazo do TCC.
+Back-end
+Node.js + Express
+Ecossistema JavaScript unificado com front-end, alta performance em I/O e vasta comunidade de suporte.
+Banco de Dados
+PostgreSQL
+Banco relacional robusto, suporta consultas complexas de histórico/séries e é gratuito para deploy em nuvem.
+Offline / Sync
+SQLite (local) + Sync API
+Armazenamento local nativo para modo offline; sincronização incremental ao reconectar à internet.
+Hospedagem
+Railway / Render
+Plataformas de deploy gratuitas/low-cost ideais para o escopo de TCC, com suporte a Node.js e PostgreSQL.
+Autenticação
+Firebase Auth
+Fornece login social (Google/Apple) pronto, com segurança gerenciada e SDK para React Native.
+Padrão Arquitetural
+MVC + REST API
+Separação clara de responsabilidades (Model-View-Controller) e API REST facilita integração com wearables e escalabilidade futura.
+
+7  Fluxo Principal do Usuário
+Caminho completo do usuário principal — do login até o resultado esperado.
+Etapa 1: O usuário baixa o app e realiza o cadastro informando nome, e-mail (ou login social), peso, altura, gênero, nível de experiência e objetivo principal (ex.: hipertrofia).
+Etapa 2: O sistema gera uma sugestão inicial de divisão de treino com base no perfil cadastrado (ex.: treino A/B para iniciante, PPL para avançado).
+Etapa 3: O usuário personaliza ou aceita o plano, podendo adicionar, remover ou reorganizar exercícios da biblioteca, configurando séries, repetições e cargas iniciais.
+Etapa 4: No dia do treino, o usuário abre o app, seleciona o treino do dia e inicia a sessão. Para cada série, registra a carga utilizada, as repetições executadas e o RPE.
+Etapa 5: O timer de descanso é acionado automaticamente entre séries, alertando o usuário com som e vibração quando o intervalo terminar.
+Etapa 6: Ao concluir o treino, o sistema calcula o volume total da sessão, detecta novos PRs e exibe um resumo com comparativo em relação à sessão anterior.
+Etapa 7: O sistema atualiza os gráficos de evolução (carga x tempo, volume semanal) e registra a sessão no calendário de treinos.
+Etapa 8: Com base no desempenho registrado, o app sugere ajuste de carga para a próxima sessão do mesmo treino, aplicando sobrecarga progressiva personalizada.
+
+8  Autoavaliação do Escopo
+Viabilidade dentro do prazo do TCC — tempo, equipe e dificuldade técnica.
+O escopo do Gold Fit foi dimensionado para ser viável dentro do prazo de um TCC semestral desenvolvido em grupo. O projeto utiliza tecnologias amplamente documentadas (React Native, Node.js, PostgreSQL), com grande disponibilidade de tutoriais, bibliotecas prontas e comunidade ativa, o que reduz o risco técnico.
+O desenvolvimento em grupo permite a divisão de responsabilidades: front-end mobile, back-end/API e banco de dados podem ser desenvolvidos em paralelo, acelerando a entrega. Funcionalidades mais complexas como integração com wearables e personalização via IA foram classificadas como incrementais — o MVP entregável no prazo cobre cadastro, biblioteca de exercícios, registro de treinos, histórico e gráficos de evolução.
+O modo offline é suportado por SQLite, tecnologia madura e de integração direta com React Native, sem necessidade de infraestrutura adicional. O deploy será realizado em plataformas gratuitas (Railway/Render), eliminando custo operacional durante o desenvolvimento. A equipe avalia o projeto como tecnicamente viável e com escopo compatível com o prazo disponível.
+
+Este blueprint é a base do TCC. Mantenha-o atualizado ao longo do desenvolvimento.
