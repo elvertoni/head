@@ -1,0 +1,10 @@
+COMO USAR NO GPT
+Anexe:
+- o XML v4;
+- a logo horizontal;
+- a aula completa;
+- o brief ou conceito da imagem.
+
+Depois solicite:
+“Execute integralmente o XML anexado e gere a imagem final. Não pare no prompt.
+Aplique a logo horizontal oficial como overlay do PNG anexado.”
