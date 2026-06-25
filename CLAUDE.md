@@ -22,12 +22,15 @@ python tools/gerar_manifesto.py --check
 # Regenerate manifesto.json after any aula add/approve/change
 python tools/gerar_manifesto.py
 
-# Transcribe audio/video to lake/ (GPU preferred, falls back to CPU)
-.\tools\transcrever\transcrever.ps1 -disciplina "inteligencia-artificial" -fonte "youtube" -titulo "titulo-da-aula"
+# Transcribe audio/video to lake/ (faster-whisper, local; GPU preferred, CPU fallback)
+# Positional <video> first, then --flags. Wrapper runs transcrever.py in tools/transcrever/.venv.
+.\tools\transcrever\transcrever.ps1 "C:\videos\aula.mp4" --disciplina inteligencia-artificial --fonte ia-coders --titulo "MCP na prática"
 
 # Sync Notion pages to lake/ (raw dump)
 python tools/notion-wiki/puxar_notion.py
 ```
+
+`tools/imagen-generator/` is **not a script** — it's a prompt bundle (`prompt.xml` + official logo + `LEIA-ME`) fed to an external image GPT to produce lesson cover/infographic PNGs. No CLI entrypoint.
 
 ## Architecture
 
@@ -42,7 +45,23 @@ python tools/notion-wiki/puxar_notion.py
 
 ### Lesson Path Convention
 
-`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`.
+`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), and `capa.png`.
+
+### Current vault state (7 disciplines)
+
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson.
+
+| Disciplina | Trilha | State |
+|---|---|---|
+| `inteligencia-artificial` | `fundamentos-de-ia` | 25 aulas aprovadas + 35-node concept graph |
+| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas aprovadas (Scrum) |
+| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas aprovadas |
+| `introducao-a-computacao` | `nivelamento-e-retomada`, `arquitetura-computadores-e-sistemas-operacionais` | aulas canônicas |
+| `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
+| `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | blueprints/HTML apoio, no `canonica.md` |
+| `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |
+
+Concept graph (`conceitos/`) currently only populated for `inteligencia-artificial`.
 
 ### manifesto.json
 
