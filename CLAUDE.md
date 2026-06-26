@@ -49,14 +49,15 @@ python tools/notion-wiki/puxar_notion.py
 
 ### Current vault state (7 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-06-26, `python tools/gerar_manifesto.py --check` validates 58 approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
 | `inteligencia-artificial` | `fundamentos-de-ia` | 25 aulas aprovadas + 35-node concept graph |
-| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas aprovadas (Scrum) |
-| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas aprovadas |
-| `introducao-a-computacao` | `nivelamento-e-retomada`, `arquitetura-computadores-e-sistemas-operacionais` | aulas canônicas |
+| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33-41 aprovadas (Scrum/agilidade) |
+| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas |
+| `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
+| `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas |
 | `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
 | `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | blueprints/HTML apoio, no `canonica.md` |
 | `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |

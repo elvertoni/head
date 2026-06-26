@@ -34,15 +34,21 @@ as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
 várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
 vez de ser re-extraído a cada material.
 
-### Estado atual do vault (2026-06-21)
+### Estado atual do vault (2026-06-26)
 
 O vault já contém as 7 disciplinas do curso, mas nem todas estão no mesmo estágio.
-O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash.
+O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash. No
+estado validado em 2026-06-26, há 58 aulas aprovadas importáveis.
 
 - `inteligencia-artificial/fundamentos-de-ia`: trilha completa com 25 aulas aprovadas
   e grafo de conceitos em `conceitos/inteligencia-artificial/`.
 - `analise-e-metodos-para-sistemas/metodologias-ageis`: aulas 33–41 aprovadas.
 - `analise-e-projeto-de-sistemas/marketing-digital`: aulas 25–30 aprovadas.
+- `introducao-a-computacao/nivelamento-e-retomada`: aulas 1–2 aprovadas.
+- `introducao-a-computacao/arquitetura-computadores-e-sistemas-operacionais`:
+  aulas 23–38 aprovadas.
+- `programacao-front-end/projeto petfinder`: contém HTMLs de apoio; sem
+  `canonica.md` aprovada, não é aula importável.
 - `programacao-no-desenvolvimento-de-sistemas/blueprint-tcc`: contém blueprints/HTMLs
   de apoio a TCC. Enquanto não houver `canonica.md` aprovada, isso é artefato de apoio,
   não aula importável.
