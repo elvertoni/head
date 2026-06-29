@@ -34,14 +34,14 @@ as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
 várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
 vez de ser re-extraído a cada material.
 
-### Estado atual do vault (2026-06-26)
+### Estado atual do vault (2026-06-28)
 
 O vault já contém as 7 disciplinas do curso, mas nem todas estão no mesmo estágio.
 O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash. No
-estado validado em 2026-06-26, há 58 aulas aprovadas importáveis.
+estado validado em 2026-06-28, há 58 aulas aprovadas importáveis.
 
 - `inteligencia-artificial/fundamentos-de-ia`: trilha completa com 25 aulas aprovadas
-  e grafo de conceitos em `conceitos/inteligencia-artificial/`.
+  e grafo com 35 conceitos em `conceitos/inteligencia-artificial/`.
 - `analise-e-metodos-para-sistemas/metodologias-ageis`: aulas 33–41 aprovadas.
 - `analise-e-projeto-de-sistemas/marketing-digital`: aulas 25–30 aprovadas.
 - `introducao-a-computacao/nivelamento-e-retomada`: aulas 1–2 aprovadas.
@@ -54,6 +54,10 @@ estado validado em 2026-06-26, há 58 aulas aprovadas importáveis.
   não aula importável.
 - As demais disciplinas podem ter material no `lake/` mesmo sem aulas canônicas
   publicadas. Não confundir presença de fonte bruta com aula pronta.
+
+As 58 aulas canônicas possuem `imagens.md`, o briefing visual da aula. `capa.png`
+é um ativo complementar versionável quando existir; nenhum dos dois substitui a
+`canonica.md` nem cria uma aula importável no portal.
 
 Ao iniciar qualquer tarefa, rode leitura rápida de estado:
 `python tools/gerar_manifesto.py --check` para contrato do portal e `git status --short`
@@ -161,6 +165,12 @@ aula. A curadoria acontece depois, via `prof-toni`, gerando `canonica.md`.
 Scripts de apoio para puxar/reorganizar material vindo do Notion. Tratar a saída
 como fonte ou insumo intermediário: antes de publicar, ela precisa passar pelas
 mesmas regras de `lake/`, conceitos e aulas canônicas.
+
+### `tools/imagen-generator/`
+Pacote de prompt para um gerador externo de imagens (`prompt.xml`, logo oficial e
+guia de uso). **Não é uma ferramenta CLI.** As capas/infográficos gerados são
+ativos complementares da aula; não editar `manifesto.json` para incluí-los e não
+tratá-los como substitutos da `canonica.md`.
 
 ---
 
