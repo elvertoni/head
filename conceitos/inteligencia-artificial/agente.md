@@ -27,6 +27,7 @@ Como o agente age é via [[tool-use]] (chamar ferramentas). Tarefas grandes usam
 - Dar autonomia sem freios — risco de loop infinito e ações erradas em escala.
 
 ## Onde aparece
+- [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 18 — *Agentes e Subagentes*
 - Conceitos vizinhos: [[llm]], [[tool-use]], [[harness]], [[guardrails]]

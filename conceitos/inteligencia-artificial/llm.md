@@ -27,6 +27,7 @@ O LLM **não entende** no sentido humano e, por padrão, **não busca na interne
 - Tratar a resposta como verdade absoluta sem conferir.
 
 ## Onde aparece
+- [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 9 — *O que é um LLM*
 - Conceitos vizinhos: [[rede-neural]], [[tokens]], [[transformers]], [[ia-generativa]], [[cutoff]], [[fine-tuning]], [[rag]], [[alucinacoes]]

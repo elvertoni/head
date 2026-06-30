@@ -27,6 +27,7 @@ Tudo entra na **janela de contexto** (medida em [[tokens]]), que é limitada. En
 - "Colar tudo pra garantir" (context stuffing) — dilui atenção, piora e encarece.
 
 ## Onde aparece
+- [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 15 — *Context Engineering*
 - Conceitos vizinhos: [[prompt-engineering]], [[llm]], [[tokens]], [[cutoff]], [[rag]], [[atencao]]

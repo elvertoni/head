@@ -43,4 +43,4 @@
 - [[vector-store]] — banco que guarda embeddings e busca por similaridade · vivo · aulas [17]
 - [[segundo-cerebro]] — vault de markdown no GitHub que dá ao agente memória de longo prazo · vivo · aulas []
 
-<!-- stubs pendentes (linkados mas sem página): [[llm]], [[cutoff]], [[context-engineering]], [[alucinacoes]], [[tokens]] -->
+<!-- stubs pendentes (linkados mas sem página): [[obsidian]], [[hermes-agent]] -->

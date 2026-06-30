@@ -26,6 +26,7 @@ O LLM só gera texto (inclusive o texto que pede a ação) — quem executa é o
 - "O modelo roda o código/acessa a internet sozinho" — ele pede; o sistema faz.
 
 ## Onde aparece
+- [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 19 — *Tool Use e Function Calling*
 - Conceitos vizinhos: [[agente]], [[llm]], [[mcp]], [[harness]]

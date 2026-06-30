@@ -27,6 +27,7 @@ Resolve o caos da integração ponto a ponto (N×N feita na mão, que não escal
 - Achar que "MCP é uma IA inteligente" — é um protocolo de comunicação.
 
 ## Onde aparece
+- [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 20 — *MCP — Model Context Protocol*
 - Conceitos vizinhos: [[tool-use]], [[agente]], [[harness]]
