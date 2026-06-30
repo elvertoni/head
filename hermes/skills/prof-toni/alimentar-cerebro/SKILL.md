@@ -85,6 +85,18 @@ Fontes possíveis e como tratar:
 Classifique e **confirme com o Toni**: `disciplina` (slug existente do vault) e
 `fonte` (origem curta, ex.: `ia-coders`, `notion`, `pycodebr`).
 
+> **Path por fonte e o caso elite-wiki — regra fixa.** Grave em
+> `lake/{disciplina}/{fonte}/`. `fonte` é a **origem real** do material, não o
+> canal de transporte. Conteúdo da **elite-wiki** (mesmo entregue por link do
+> Notion) vai em `lake/{disciplina}/elite-wiki/` e é **local-only (gitignored por
+> design)**: o arquivo bruto NÃO vai pro git — o que viaja pro git é o
+> conhecimento sintetizado em `conceitos/` (voz própria). NÃO mover material
+> elite-wiki pra fora do gitignore nem usar `git add -f`. Só material de fonte
+> realmente versionável (ex.: `notion` público que não seja elite-wiki) entra num
+> path não-ignorado tipo `lake/{disciplina}/notion/`. Confirme com
+> `git check-ignore <arquivo>` que o path bate com a política da fonte: bruto
+> elite-wiki fica ignorado (esperado); o valor versionado é o `conceitos/`.
+
 ## Passo 2 — registrar a fonte no lake (arquivo NOVO)
 
 Grave em `lake/{disciplina}/{fonte}/{slug-descritivo}.md`. Frontmatter mínimo de
