@@ -41,5 +41,6 @@
 - [[chunking]] — cortar documentos em pedaços do tamanho certo antes de vetorizar · vivo · aulas [17]
 - [[embeddings]] — texto vira vetor onde proximidade numérica = proximidade de significado · vivo · aulas [10,17]
 - [[vector-store]] — banco que guarda embeddings e busca por similaridade · vivo · aulas [17]
+- [[segundo-cerebro]] — vault de markdown no GitHub que dá ao agente memória de longo prazo · vivo · aulas []
 
 <!-- stubs pendentes (linkados mas sem página): [[llm]], [[cutoff]], [[context-engineering]], [[alucinacoes]], [[tokens]] -->
