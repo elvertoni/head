@@ -6,8 +6,8 @@ tipo: conceito
 aka: [second brain, vault pessoal, base de contexto do agente, knowledge base]
 status: vivo
 fontes:
-  - lake/inteligencia-artificial/notion/encontro-elite-02-agentes-pessoais-com-hermes-agent-parte-02.md
-  - lake/inteligencia-artificial/notion/encontro-elite-04-deploy-monitoria-e-observabilidade-de-sistemas-com-ia-parte-2.md
+  - lake/inteligencia-artificial/elite-wiki/encontro-elite-02-agentes-pessoais-com-hermes-agent-parte-02.md
+  - lake/inteligencia-artificial/elite-wiki/encontro-elite-04-deploy-monitoria-e-observabilidade-de-sistemas-com-ia-parte-2.md
 aulas: []
 atualizado_em: 2026-06-30
 ---
