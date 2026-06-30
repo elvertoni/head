@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-06-21",
+  "atualizado_em": "2026-06-30",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -105,6 +105,21 @@
       "warehouse": "aulas/programacao-no-desenvolvimento-de-sistemas",
       "total_aulas": 0,
       "trilhas": []
+    },
+    {
+      "slug": "tcc",
+      "label": "TCC",
+      "serie": "3a-serie",
+      "status": "aprovada",
+      "lake": "lake/programacao-no-desenvolvimento-de-sistemas/blueprint_tcc",
+      "warehouse": "aulas/tcc/blueprint-tcc",
+      "total_aulas": 9,
+      "trilhas": [
+        {
+          "slug": "blueprint-tcc",
+          "label": "Blueprints de TCC"
+        }
+      ]
     },
     {
       "slug": "inteligencia-artificial",
@@ -385,6 +400,78 @@
       "ordem": 30,
       "slug": "storytelling",
       "titulo": "Storytelling no Desenvolvimento Pessoal",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 1,
+      "slug": "blueprint-a-n-n-beauty",
+      "titulo": "Blueprint · A.N.N Beauty",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 2,
+      "slug": "blueprint-alexandria",
+      "titulo": "Blueprint · BrVPN",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 3,
+      "slug": "blueprint-brvpn",
+      "titulo": "Blueprint · Alexandria",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 4,
+      "slug": "blueprint-espaco-delas",
+      "titulo": "Blueprint · Espaço Delas",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 5,
+      "slug": "blueprint-gold-fit",
+      "titulo": "Blueprint · Gold Fit",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 6,
+      "slug": "blueprint-healthsync",
+      "titulo": "Blueprint · HealthSync",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 7,
+      "slug": "blueprint-hobbyquest",
+      "titulo": "Blueprint · HobbyQuest",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 8,
+      "slug": "blueprint-lumina",
+      "titulo": "Blueprint · Lumina",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "tcc",
+      "trilha": "blueprint-tcc",
+      "ordem": 9,
+      "slug": "blueprint-resumetech",
+      "titulo": "Blueprint · ResumeTech",
       "status": "aprovada"
     },
     {
