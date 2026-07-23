@@ -11,6 +11,7 @@ lake/          raw sources (transcripts, PDFs, Notion dumps) — never LLM-edit
 conceitos/     atomic concept wiki nodes
 aulas/         canonical lessons (warehouse, source of truth)
 tools/         CLI scripts
+hermes/        skills for the Quíron agent (Hermes Agent on VPS) — versioned here, deployed via git pull + copy to ~/.hermes/skills/
 ```
 
 ## Commands
@@ -47,9 +48,9 @@ python tools/notion-wiki/puxar_notion.py
 
 `aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), and `capa.png`.
 
-### Current vault state (7 disciplines)
+### Current vault state (8 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-06-26, `python tools/gerar_manifesto.py --check` validates 58 approved importable lessons.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-07-23, `python tools/gerar_manifesto.py --check` validates 67 approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
@@ -58,8 +59,9 @@ Not all disciplines are at the same stage. The manifesto is the source of truth 
 | `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas |
 | `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
 | `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas |
+| `tcc` | `blueprint-tcc` | aulas 1-9 aprovadas (blueprints de TCC em canônica) |
 | `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
-| `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | blueprints/HTML apoio, no `canonica.md` |
+| `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | HTML apoio only — the canonical versions of these blueprints live under `tcc/blueprint-tcc` |
 | `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |
 
 Concept graph (`conceitos/`) currently only populated for `inteligencia-artificial`.
@@ -80,10 +82,12 @@ Machine-generated index (`tools/gerar_manifesto.py`). **Never hand-edit.** Only 
 
 | Skill | Trigger | What it does |
 |---|---|---|
-| `prof-toni` | Creating/planning lessons | Produces `canonica.md` following spec/ protocol (read `spec/00-PROTOCOLO.md` first) |
+| `prof-toni` | Creating/planning lessons | Produces `canonica.md` following the spec protocol (read `.claude/skills/prof-toni/spec/00-PROTOCOLO.md` first) |
 | `aula-estatica` | Rendering lessons | Converts `canonica.md` → standalone `.html` (dark/light, A4-print) |
 
-Skills read `spec/` for anatomy, rubrica, and examples. Do not bypass them for lesson creation — the 7-point rubrica in `spec/02-RUBRICA.md` is an approval gate.
+Skills live in `.claude/skills/` and read their `spec/` subfolder for anatomy, rubrica, and examples. Do not bypass them for lesson creation — the 7-point rubrica in `.claude/skills/prof-toni/spec/02-RUBRICA.md` is an approval gate.
+
+`hermes/skills/prof-toni/` holds separate skills (`operar-acervo`, `alimentar-cerebro`) for the Quíron agent that operates this acervo from a VPS — not Claude Code skills; see `hermes/README.md`.
 
 ## Concept Wiki
 
