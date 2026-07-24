@@ -1,10 +1,19 @@
 #!/usr/bin/env python
 """Ingere uma wiki publica do Notion (.notion.site) para markdown no lake.
 
-Usa a API publica nao-oficial loadPageChunk (sem auth, so paginas publicas).
+Usa a API publica nao-oficial (sem auth, so paginas publicas):
+    loadPageChunk      blocos de uma pagina
+    syncRecordValues   blocos avulsos por id (filhos de toggle, links externos)
+
 Dois modos:
     --index            mapeia a arvore (titulos) ate --depth, sem baixar
     (default)          baixa cada pagina como .md em --saida
+
+O loadPageChunk sozinho perde conteudo em dois pontos, ambos tratados aqui:
+  - filhos de toggle: os ids vem declarados em content[] mas os blocos nao vem
+    na resposta. Sem buscar, uma pagina de 200 KB rende 900 chars.
+  - links: viram o marcador '‣' sem destino. Tres formas — eoi e p precisam de
+    fetch, lm ja traz href embutido.
 
 Uso:
     python puxar_notion.py <page_id_ou_url> --index --depth 2
@@ -22,7 +31,12 @@ import urllib.request
 from pathlib import Path
 
 API = "https://www.notion.so/api/v3/loadPageChunk"
+SYNC = "https://www.notion.so/api/v3/syncRecordValues"
 HEADERS = {"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
+
+# caches de resolucao de link (o Notion so devolve o marcador '‣' no texto)
+EOI_URLS: dict[str, str] = {}       # external_object_instance -> url
+PAGE_TITULOS: dict[str, str] = {}   # mencao a pagina -> titulo
 
 # console do Windows usa cp1252 e estoura em travessao/seta dos titulos do Notion
 for _stream in (sys.stdout, sys.stderr):
@@ -45,11 +59,11 @@ def slugify(t: str) -> str:
     return re.sub(r"[\s_-]+", "-", t) or "pagina"
 
 
-def _post(body: bytes, tentativas: int = 6) -> dict:
+def _post(body: bytes, url: str = API, tentativas: int = 6) -> dict:
     """POST com retry e backoff exponencial em 429 / 5xx."""
     espera = 2.0
     for i in range(tentativas):
-        req = urllib.request.Request(API, data=body, headers=HEADERS)
+        req = urllib.request.Request(url, data=body, headers=HEADERS)
         try:
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read())
@@ -63,6 +77,62 @@ def _post(body: bytes, tentativas: int = 6) -> dict:
                 continue
             raise
     raise SystemExit("[erro] falhou apos varias tentativas (rate limit).")
+
+
+def fetch_blocks(ids) -> dict:
+    """Busca blocos avulsos por id via syncRecordValues.
+
+    O loadPageChunk devolve o bloco `toggle` e declara os ids dos filhos em
+    `content[]`, mas nao inclui esses filhos na resposta. Esta funcao os busca.
+    Serve tambem para os registros `external_object_instance` (links externos).
+    """
+    out: dict = {}
+    ids = list(ids)
+    for i in range(0, len(ids), 30):
+        lote = ids[i:i + 30]
+        body = json.dumps({"requests": [
+            {"pointer": {"table": "block", "id": x}, "version": -1} for x in lote
+        ]}).encode()
+        data = _post(body, SYNC)
+        for bid, rec in data.get("recordMap", {}).get("block", {}).items():
+            v = rec.get("value", {})
+            v = v.get("value", v)
+            if v:
+                out[bid] = v
+        time.sleep(0.4)
+    return out
+
+
+def _resolver_links(blocks: dict) -> None:
+    """Resolve os destinos dos links citados nos blocos.
+
+    O Notion representa link no texto como o marcador '‣' e guarda o destino
+    na anotacao. Sem resolver, todo link vira um simbolo mudo. Tres formas:
+      eoi  registro externo, precisa de fetch (url em format.original_url)
+      p    mencao a outra pagina, precisa de fetch (queremos o titulo)
+      lm   link mention, ja traz href/title embutidos — resolvido em rich()
+    """
+    pendentes = set()
+    for b in blocks.values():
+        for seg in (b.get("properties") or {}).get("title", []):
+            if len(seg) > 1 and seg[1]:
+                for ann in seg[1]:
+                    if not ann or len(ann) < 2 or not isinstance(ann[1], str):
+                        continue
+                    if ann[0] == "eoi" and ann[1] not in EOI_URLS:
+                        pendentes.add(ann[1])
+                    elif ann[0] == "p" and ann[1] not in PAGE_TITULOS:
+                        pendentes.add(ann[1])
+    if not pendentes:
+        return
+    for bid, v in fetch_blocks(pendentes).items():
+        url = (v.get("format") or {}).get("original_url")
+        if url:
+            EOI_URLS[bid] = url
+            continue
+        titulo = rich(v.get("properties"))
+        if titulo:
+            PAGE_TITULOS[bid] = titulo
 
 
 def load_chunk(page_id: str) -> dict:
@@ -84,6 +154,20 @@ def load_chunk(page_id: str) -> dict:
         if not cursor.get("stack"):
             break
         time.sleep(0.2)
+
+    # busca em cascata os filhos declarados mas nao devolvidos (toggle, colunas).
+    # um filho pode ter filhos proprios, entao repete ate fechar.
+    for _ in range(10):  # teto de seguranca
+        faltando = {c for b in blocks.values() for c in (b.get("content") or [])
+                    if c not in blocks and c != page_id}
+        if not faltando:
+            break
+        novos = fetch_blocks(faltando)
+        if not novos:
+            break  # nao resolveu nenhum; evita loop infinito
+        blocks.update(novos)
+
+    _resolver_links(blocks)
     return blocks
 
 
@@ -92,7 +176,28 @@ def rich(props: dict | None, key: str = "title") -> str:
         return ""
     out = []
     for seg in props[key]:
-        out.append(seg[0] if seg and isinstance(seg, list) else "")
+        if not (seg and isinstance(seg, list)):
+            out.append("")
+            continue
+        texto = seg[0]
+        # link: o texto e so o marcador '‣'; troca pelo destino resolvido
+        for ann in (seg[1] if len(seg) > 1 and seg[1] else []):
+            if not ann or len(ann) < 2:
+                continue
+            if ann[0] == "eoi" and isinstance(ann[1], str):
+                texto = EOI_URLS.get(ann[1], texto)
+            elif ann[0] == "p" and isinstance(ann[1], str):
+                titulo = PAGE_TITULOS.get(ann[1])
+                # sem titulo (pagina privada ou removida): guarda ao menos a URL
+                texto = f"[[{titulo}]]" if titulo else \
+                    f"https://notion.so/{ann[1].replace('-', '')}"
+            elif ann[0] == "lm" and isinstance(ann[1], dict):
+                # link mention ja traz tudo embutido, sem chamada extra
+                href = ann[1].get("href")
+                if href:
+                    rotulo = ann[1].get("title") or href
+                    texto = f"[{rotulo}]({href})"
+        out.append(texto)
     return "".join(out)
 
 
@@ -144,12 +249,25 @@ def child_pages(page_id: str, blocks: dict) -> list[tuple[str, str]]:
     return out
 
 
+LISTAS = {"bulleted_list", "numbered_list", "to_do"}
+
+
 def render_md(page_id: str, blocks: dict) -> str:
     """Converte os blocos de uma pagina em markdown."""
     page = blocks.get(page_id, {})
     linhas = [f"# {title_of(page)}", ""]
+    _render(page.get("content", []), blocks, linhas, "")
+    return "\n".join(linhas).strip() + "\n"
+
+
+def _render(ids: list, blocks: dict, linhas: list, ident: str) -> None:
+    """Emite os blocos de um nivel e recursa nos filhos.
+
+    Lista indenta os filhos; toggle nao — o conteudo dele costuma ser bloco de
+    codigo, e indentar quebraria a cerca ```.
+    """
     num = 0
-    for cid in page.get("content", []):
+    for cid in ids:
         b = blocks.get(cid)
         if not b:
             continue
@@ -164,15 +282,15 @@ def render_md(page_id: str, blocks: dict) -> str:
         elif t == "text":
             linhas += [txt, ""] if txt else [""]
         elif t == "bulleted_list":
-            linhas.append(f"- {txt}")
+            linhas.append(f"{ident}- {txt}")
         elif t == "numbered_list":
             num += 1
-            linhas.append(f"{num}. {txt}")
+            linhas.append(f"{ident}{num}. {txt}")
         elif t == "to_do":
             chk = "x" if (b.get("properties", {}).get("checked", [["No"]])[0][0] == "Yes") else " "
-            linhas.append(f"- [{chk}] {txt}")
+            linhas.append(f"{ident}- [{chk}] {txt}")
         elif t == "toggle":
-            linhas += [f"- {txt}"]
+            linhas += [f"{ident}- {txt}"]
         elif t == "quote":
             linhas += [f"> {txt}", ""]
         elif t == "callout":
@@ -187,13 +305,17 @@ def render_md(page_id: str, blocks: dict) -> str:
             if src:
                 linhas += [f"![imagem]({src})", ""]
         elif t in PAGE_TYPES:
-            linhas += [f"- [[{title_of(b)}]]  (subpagina)"]
+            linhas += [f"{ident}- [[{title_of(b)}]]  (subpagina)"]
         else:
             if txt:
                 linhas += [txt, ""]
         if t not in ("numbered_list",):
             num = 0
-    return "\n".join(linhas).strip() + "\n"
+
+        # subpagina nao entra inline: walk_dump a salva em arquivo proprio
+        filhos = b.get("content") or []
+        if filhos and t not in PAGE_TYPES:
+            _render(filhos, blocks, linhas, ident + "  " if t in LISTAS else ident)
 
 
 def walk_index(page_id: str, depth: int, prefix: str = "", seen: set | None = None,

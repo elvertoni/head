@@ -186,15 +186,28 @@ Duas correções ao que estava escrito antes nesta auditoria:
 
 Enquanto o script não for corrigido, permanece o risco de **backup**: `lake/**/elite-wiki/` é gitignored, então esses 202 KB não têm versionamento. É a biblioteca-mestre de prompts XML citada acima como peça de maior valor do acervo.
 
-## Correções pendentes no `puxar_notion.py`
+## Correções aplicadas no `puxar_notion.py` (2026-07-24)
 
-Três limitações conhecidas, em ordem de impacto:
+As três limitações foram corrigidas e verificadas:
 
-1. **Filhos de toggle não buscados** — implementar `syncRecordValues` para os ids declarados em `content[]` que não vierem no `recordMap`. Recupera os 202 KB do `prompts-scsi` e qualquer outro conteúdo em toggle.
-2. **Links externos (`eoi`) descartados** — 81 ocorrências viram `‣` sem URL. O mesmo endpoint provavelmente resolve o registro `external_object_instance`; a testar.
-3. **`render_md` não recursa** — só percorre `page.content`, ignorando `content[]` dos blocos aninhados. Impacto medido na página testada foi baixo (27 chars), mas cresce em páginas com listas e colunas aninhadas.
+1. **Filhos de toggle** — `syncRecordValues` busca em cascata os ids declarados em `content[]` que não vêm no `recordMap`.
+2. **Links** — três mecanismos, todos tratados: `eoi` (registro externo, precisa de fetch), `p` (menção a página, vira `[[Título]]`), `lm` (link mention, já traz `href` e `title` embutidos — sem chamada extra).
+3. **`render_md` recursivo** — desce nos blocos aninhados. Lista indenta os filhos; toggle não, para não quebrar cerca de código.
 
-**Consequência operacional até lá:** refresh de arquivo inteiro a partir do crawler é **lossy**. Verificado na prática — `workflows/workflow-com-ia-assistida.md` tem `https://opencode.ai` no lake e `‣` no que o crawler devolve hoje. Drift deve ser aplicado cirurgicamente, linha a linha, nunca por substituição do arquivo.
+Resultado medido:
+
+| Página | Antes | Depois |
+|---|---|---|
+| `prompts-scsi` | 910 chars | 172.035 chars |
+| `imersao-ia-para-devs-aula-01` | 10.934 chars, 22 links mudos | 17.595 chars, 76 links resolvidos |
+| `prompts-curados-pycodebr` | 111.512 chars | 117.361 chars, zero `‣` |
+| `encontro-elite-01` | 39.248 chars | 42.462 chars, zero `‣` |
+
+Filhos órfãos: **0**. Links resolvidos: **80 dos 81** — o único irrecuperável é um embed de `imersao-ia-para-devs-aula-01` cujo registro volta vazio (deletado na origem). Ali o `‣` permanece, e é a representação honesta.
+
+Efeito colateral: mais chamadas por página, então mais 429. O backoff exponencial absorve, mas um re-crawl completo demora bem mais que antes.
+
+**Refresh de arquivo inteiro continua sendo decisão de risco.** As cópias atuais do lake foram feitas com o crawler antigo e algumas receberam correção manual — `workflows/workflow-com-ia-assistida.md` tinha `https://opencode.ai` no lake onde o crawler devolvia `‣`. Antes de re-crawlear em massa, comparar arquivo a arquivo.
 
 ## Consistência interna
 
