@@ -24,6 +24,11 @@ from pathlib import Path
 API = "https://www.notion.so/api/v3/loadPageChunk"
 HEADERS = {"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"}
 
+# console do Windows usa cp1252 e estoura em travessao/seta dos titulos do Notion
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 
 def to_uuid(s: str) -> str:
     s = s.strip()

@@ -57,3 +57,151 @@
 ## ⚠️ Aviso de obsolescência (regra de honestidade)
 
 Os arquivos citam **versões fictícias/futuras** como se fossem fato: GPT-5.5, Opus 4.7/4.8, Gemini 3.1, GLM-5.1, Django 6, LangChain 1.0, "GPT-5.5 lançou 23/04/2026". Na geração das aulas, tratar esses nomes como **placeholders ilustrativos do método de escolha de modelo** — nunca como tabela factual de versões. Números de preço/limite também envelhecem rápido: usar como exemplo, não como verdade.
+
+---
+
+# Adendo — 2026-07-24 · Encontros #04/#05 + transcrições completas
+
+Duas entradas novas no lake desde a auditoria original:
+
+| O que | Onde | Volume |
+|---|---|---|
+| Páginas Notion dos Encontros Elite **#04** e **#05** | `elite-wiki/agentes/encontros-elite/` | 23 KB |
+| **Transcrições integrais** dos Encontros **#01–#05** (PDF → md) | `elite-wiki/_transcricoes/` | 800 K chars |
+
+As transcrições mudam a economia do material. Comparação do #05: página Notion 9,3 KB × transcrição 134 KB — **14× mais densa**. As páginas do Notion são a ementa; a carne está na transcrição, que vem estruturada em `Resumo` → `Próximas etapas` → `Detalhes` (bullets com timestamp) → transcrição corrida. **Os bullets de `Detalhes` são o índice de trabalho** — dá pra localizar o trecho exato pelo timestamp sem ler os 674 parágrafos.
+
+## Temas de #04 e #05
+
+- **#04 — Deploy, monitoria e observabilidade (parte 2):** stack Prometheus + Grafana + Loki + Promtail + cAdvisor + Node Exporter; **Django MCP Server** (17 tools expostas: listar/descrever/criar/atualizar/deletar registros); **Grafana MCP** (IA consulta dashboards, roda query no Prometheus, tira print de painel); IA lendo 22.339 linhas de log e achando os erros; *alert fatigue*; LangSmith p/ rastrear tokens e custo por resposta de agente; Sentry como complemento; criação de *skills* de agente ("SCSI Manager").
+- **#05 — Integrações e automações (parte 1):** VPS + Cloudflare; Firecrawl com **DuckDuckGo como busca primária e Firecrawl como fallback**; **Composio** como broker de integrações (e a decisão de usar CLI em vez do MCP por limitação de múltiplas contas); Vision + geração de imagem; Central de Operações (portal autenticado); pipeline de conteúdo com **curadoria humana antes de publicar**; cron jobs; **Loop Engineering**; **IA proativa**; **perfis de agente com permissões restritas** contra prompt injection; Evolution API.
+
+## Peças de maior valor (ouro didático) — novas
+
+- **Loop Engineering (#05, 01:49:02)** — a IA gera a imagem, chama a ferramenta de Vision pra conferir se saiu dentro do padrão e **pede ajuste a si mesma** até passar. É o exemplo mais limpo de auto-verificação em ciclo fechado do acervo inteiro. → aulas 23, 24.
+- **Django MCP Server + Grafana MCP (#04)** — MCP deixa de ser diagrama e vira "a IA criou 11 notificações reais no banco, cada uma com link pro registro". Melhor exemplo concreto de MCP e de tool use que existe no material. → aulas 19, 20.
+- **Economia de tokens com decisão de produto (#05, 01:14:32)** — o relatório sugere 5 ideias de carrossel, mas só gera imagem pras 2 de maior potencial de engajamento. Economia de token como escolha de engenharia, não como sovinice. → aula 24.
+- **Observabilidade de agente (#04, 01:23:07)** — LangSmith medindo tokens de entrada/saída e custo médio por resposta. Fecha o par "avaliar qualidade (evals) + medir custo". → aula 24.
+- **Segurança de agente por remoção de ferramenta (#05, 01:58:03)** — tirar ferramentas do perfil pro agente **não ter shell**, prevenindo prompt injection; perfis isolados por finalidade. Princípio do menor privilégio aplicado a agente. → ver lacuna abaixo.
+- **IA proativa (#05, 01:38:50 e 01:43:04)** — o agente acompanha o grupo de WhatsApp, vê a discussão sobre campanha nova e **gera os criativos sem ninguém pedir**. Vira a pergunta "IA responde ou IA age?". → aula 22.
+- **Fallback de ferramenta (#05, 00:24:29)** — DuckDuckGo primeiro, Firecrawl só no caso difícil. Degradação graciosa + controle de custo em uma decisão só. → aula 19.
+- **Alert fatigue (#04, 01:27:12)** — coletar tudo não é observar; excesso de alerta treina o humano a ignorar. Transversal, boa analogia para excesso de contexto. → aulas 15, 24.
+
+## Mapa fonte → aula (adendo)
+
+| Aula | Fontes novas |
+|---|---|
+| 15 Context Engineering | `_transcricoes/04` (alert fatigue como analogia de ruído de contexto) |
+| 18 Agentes e Subagentes | `_transcricoes/05` (perfis de agente por finalidade, permissões isoladas), `_transcricoes/04` (skills de agente) |
+| 19 Tool Use e Function Calling | `_transcricoes/04` (17 tools do Django MCP, o que cada uma faz), `_transcricoes/05` (fallback DuckDuckGo→Firecrawl, Composio CLI × MCP) |
+| 20 MCP | `_transcricoes/04` (Django MCP Server + Grafana MCP na prática, autenticação, o que a IA consegue fazer), `encontros-elite/04` |
+| 21 Harness Engineering | `_transcricoes/04` (criação de skill "SCSI Manager"), `_transcricoes/05` (Central de Operações, versionamento automático) |
+| 22 AI-First vs AI-Enabled | `_transcricoes/05` (IA proativa × reativa — o melhor material do acervo pra essa aula) |
+| 23 Alucinações | `_transcricoes/05` (Loop Engineering: gerar → validar → auto-corrigir) |
+| 24 Evals e Economia de Tokens | `_transcricoes/04` (LangSmith, custo/resposta), `_transcricoes/05` (gerar 2 imagens de 5 ideias; alert fatigue) |
+| 25 Ética e IA no Brasil | `_transcricoes/05` (OAuth × scraping, limite de dados de terceiros, política de uso e risco de banimento) |
+
+## Fora de escopo (não puxar para Fundamentos de IA)
+
+Boa parte de #04 e #05 é **infraestrutura**, não IA — nível muito acima de aluno de 14–18 anos e fora da ementa: Traefik, Docker Swarm, DNS Cloudflare, Basic Auth com hash, `deploymonitoring.sh`, IDs de dashboard do Grafana, Nginx, Evolution API. Se algum dia render aula, é de outra disciplina (arquitetura/SO), não daqui.
+
+Descartar também: links de afiliado (OpenCode Go, "5 dólares no primeiro mês"), divulgação da Elite Week, grupo VIP de WhatsApp. É material comercial do curso, não conteúdo.
+
+## Lacuna identificada — decisão do Toni
+
+A trilha tem 25 aulas e fecha em Ética/LGPD. O material novo cobre bem as aulas existentes, com **uma exceção**: *segurança de agentes* não tem casa clara.
+
+Prompt injection, princípio do menor privilégio na escolha de ferramentas, isolamento de perfis, e "por que o agente não deve ter acesso ao shell" não estão na aula 19 (que é sobre *como* a ferramenta funciona) nem na 25 (que é ética e lei, não ataque técnico). É um tema que só cresce e o material de #05 dá exemplo concreto.
+
+Duas saídas:
+1. **Enriquecer a 19 e a 25** — mais barato, mantém a trilha fechada em 25, mas o tema fica diluído.
+2. **Aula 26 — Segurança de Agentes de IA** — trilha vira 26 aulas. Tem conteúdo pra 50 min com folga.
+
+Não decidi nada; a trilha parece deliberadamente fechada em 25.
+
+## Obsolescência (mesma regra)
+
+As transcrições citam GPT-5.6 (Sol/Luna/Terra), DeepSeek V4 Flash/Pro, GLM 5.2, GPT Image 2, Whisper 1. Mesma regra do aviso acima: **placeholder do método de escolha de modelo**, nunca tabela factual.
+
+## Dado pessoal
+
+As transcrições trazem **nomes reais de participantes** do curso pago (perguntas atribuídas a alunos). O material é local-only e gitignored, o que resolve por ora — mas nenhum desses nomes pode atravessar para a Canônica.
+
+---
+
+# Verificação de integridade — 2026-07-24
+
+Varredura de 42 arquivos: cada cópia local rebaixada do Notion pelo `page_id` do frontmatter e comparada corpo a corpo. Rodada por 4 agentes em fatias disjuntas.
+
+| Veredito | Qtd |
+|---|---|
+| Idêntico à fonte | 38 |
+| Drift real | 3 |
+| Truncado no crawler (lake é a versão boa) | 1 |
+| Erro de download | 0 |
+
+**O acervo é fiel.** Arquivos de 178 KB e 161 KB bateram char-a-char. A ingestão não corrompeu nada.
+
+## Os 3 drifts
+
+1. **`workflows/workflow-com-ia-assistida.md`** — o comando de instalação do opencode mudou na fonte: `npm install -g @opencode/cli` → `npm i -g opencode-ai`. **É o único drift acionável**: comando de instalação errado quebra na mão do aluno. Corrigir antes de qualquer uso didático.
+2. **`agentes/encontros-elite/encontro-elite-03-...md`** — ganhou uma linha `Desenhos: ‣` (embed externo, ver abaixo).
+3. **`_indice/elite-wiki.md`** — 2 marcadores `‣` novos, sem conteúdo resolvível.
+
+## Ponto cego do crawler: 81 links externos perdidos
+
+O `puxar_notion.py` renderiza embeds de link externo (`eoi`, *external object instance*) como o caractere `‣` **sem preservar a URL**. Todo link para GitHub, diagrama, vídeo ou ferramenta externa vira um símbolo mudo.
+
+São **81 ocorrências** no acervo. Concentração:
+
+| Arquivo | `‣` perdidos |
+|---|---|
+| `fundamentos/imersao-ia-para-devs-aula-01.md` | 22 |
+| `agentes/encontros-elite/...01.md` | 20 |
+| `agentes/encontros-elite/...03.md` | 11 |
+| `workflows/workflow-com-ia-assistida.md` | 9 |
+| demais (5 arquivos) | 19 |
+
+Exemplos do que se perdeu: `Repositório do projeto: ‣` e `Desenhos: ‣` no Encontro #03 — provavelmente o repo do SCSI e o diagrama da arquitetura de deploy.
+
+Resolver exige outra chamada de API (`syncRecordValues` sobre o registro `external_object_instance`), não implementada no script. **Enquanto isso, todo link citado em aula precisa ser conferido na fonte, não no lake.**
+
+## Limitação do crawler: conteúdo dentro de toggle
+
+O crawler traz **910 chars** de `prompts/prompts-scsi.md`; a cópia do lake tem **202.006** — 0,5%.
+
+**Causa exata, diagnosticada:** o `loadPageChunk` devolve os blocos `toggle` de topo e declara os ids dos filhos em `content[]`, mas **não inclui esses filhos na resposta**. Nessa página são 12 toggles, cada um com 1 filho não retornado. O conteúdo real dos prompts está nesses 12 blocos ausentes.
+
+**É recuperável.** O endpoint `POST /api/v3/syncRecordValues` busca cada bloco órfão por id, sem autenticação:
+
+```
+{"requests": [{"pointer": {"table": "block", "id": "<uuid-do-filho>"}, "version": -1}]}
+```
+
+Testado no primeiro órfão: devolveu um bloco `code` com **17.971 chars** — o prompt bruto do SCSI. 12 toggles × ~17 K ≈ os 202 KB da cópia do lake. Ou seja: o arquivo **é reproduzível**, só exige implementar essa segunda chamada no `puxar_notion.py`.
+
+Duas correções ao que estava escrito antes nesta auditoria:
+- "esse arquivo não é reproduzível" — **errado**, ver acima.
+- "toggles colapsados que o crawler não abre" — a formulação certa é *filhos declarados mas não retornados pela API*, resolvível com `syncRecordValues`.
+
+Enquanto o script não for corrigido, permanece o risco de **backup**: `lake/**/elite-wiki/` é gitignored, então esses 202 KB não têm versionamento. É a biblioteca-mestre de prompts XML citada acima como peça de maior valor do acervo.
+
+## Correções pendentes no `puxar_notion.py`
+
+Três limitações conhecidas, em ordem de impacto:
+
+1. **Filhos de toggle não buscados** — implementar `syncRecordValues` para os ids declarados em `content[]` que não vierem no `recordMap`. Recupera os 202 KB do `prompts-scsi` e qualquer outro conteúdo em toggle.
+2. **Links externos (`eoi`) descartados** — 81 ocorrências viram `‣` sem URL. O mesmo endpoint provavelmente resolve o registro `external_object_instance`; a testar.
+3. **`render_md` não recursa** — só percorre `page.content`, ignorando `content[]` dos blocos aninhados. Impacto medido na página testada foi baixo (27 chars), mas cresce em páginas com listas e colunas aninhadas.
+
+**Consequência operacional até lá:** refresh de arquivo inteiro a partir do crawler é **lossy**. Verificado na prática — `workflows/workflow-com-ia-assistida.md` tem `https://opencode.ai` no lake e `‣` no que o crawler devolve hoje. Drift deve ser aplicado cirurgicamente, linha a linha, nunca por substituição do arquivo.
+
+## Consistência interna
+
+**Nenhuma contradição técnica real.** Duas candidatas foram levantadas e as duas caem sob análise: "não use Docker local" × "Docker na VPS" são contextos distintos; "LLM local é ruim" × "use modelo barato na nuvem" também (o primeiro é limite de hardware, o segundo roda em datacenter). O material é coerente consigo mesmo.
+
+**Duplicação confirmada** — prompt XML de landing page e meta-prompt de refino, ambos replicados entre o arquivo dedicado e `prompts-curados-pycodebr.md` (canônico). **Correção à auditoria original:** o prompt de Design System **não** está duplicado — `prompts-curados` só o indexa, o arquivo dedicado tem a versão explicada. Propósitos diferentes.
+
+**Ajuste de enquadramento no aviso de obsolescência:** a seção acima chama as versões citadas de "fictícias". Isso afirma demais — não há como verificar. O correto é tratá-las como **afirmações datáveis que envelhecem rápido**. Inventário ampliado: GPT-5.3-codex/5.4/5.5/5.6/5-mini, GPT Image 2, Opus 4.6/4.7/4.8, Sonnet 4.6, Gemini 3.1 Pro, GLM-5/5.1/5.2, Qwen 3.7 Max, Kimi K2.6, DeepSeek V4/Flash/Pro, Django 6.0, LangChain 1.0. (Ubuntu 24.04 LTS, Docker Compose 3.9 e Python 3.11–3.13 são correntes e não entram nessa lista.)
+
+**Preços afirmados como fato** — envelhecem igual: planos MentorIA (R$ 0/97/297/697), Hostinger KVM2 (R$ 43–70/mês), Open Code Go (US$ 5 no 1º mês, US$ 10 depois), "Claude Max 5X R$ 550, cancelado em 27/06/2026".
