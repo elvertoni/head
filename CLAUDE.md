@@ -78,6 +78,8 @@ Concept graph (`conceitos/`) currently only populated for `inteligencia-artifici
 
 Machine-generated index (`tools/gerar_manifesto.py`). **Never hand-edit.** Only lessons with `status: aprovada` appear in `lessons[]`. ProfessorDash portal reads this file as its import contract.
 
+`conceitos[]` carries `{slug, nome, disciplina}` for every non-obsolete node in `conceitos/`. The portal resolves `[[slug]]` wikilinks in lessons through it — slugs have no accents, so deriving the label from the slug would show the student "aprendizado de maquina". Prefer `[[slug|rótulo]]` in lessons; the map is the fallback for bare links.
+
 ## Key Invariants
 
 1. **Canonica is SOT** — all exports (HTML, portal import, PDF) derive from `canonica.md`; never edit outputs directly.

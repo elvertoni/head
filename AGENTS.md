@@ -214,6 +214,11 @@ item abaixo = aula não aparece no portal.
 **1. `manifesto.json` na raiz contém:**
 - `disciplinas[]`: objetos `{ "slug", "label", "serie", "status", "trilhas": [ { "slug", "label" } ] }`.
 - `lessons[]`: objetos `{ "disciplina", "trilha", "ordem", "slug", "titulo", "status": "aprovada" }`.
+- `conceitos[]`: objetos `{ "slug", "nome", "disciplina" }` — todo nó não obsoleto
+  de `conceitos/`. É por aí que o portal troca `[[slug]]` pelo nome de exibição
+  correto; o slug não tem acento e derivar dele mostraria "aprendizado de maquina"
+  para o aluno. Nas aulas, **prefira `[[slug|rótulo]]`** — o mapa é a rede de
+  segurança para o link sem rótulo.
 - O portal **só importa** lessons com `status: "aprovada"`. Toda aula a publicar
   **precisa** ter entrada em `lessons[]`. Aula sem entrada no manifesto **não importa**.
 

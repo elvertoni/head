@@ -137,6 +137,188 @@
       ]
     }
   ],
+  "conceitos": [
+    {
+      "slug": "agente",
+      "nome": "Agente de IA",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "ai-first-vs-ai-enabled",
+      "nome": "AI-First vs AI-Enabled",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "alucinacoes",
+      "nome": "Alucinações",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizado-de-maquina",
+      "nome": "Aprendizado de Máquina",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizado-nao-supervisionado",
+      "nome": "Aprendizado Não-Supervisionado",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizado-por-reforco",
+      "nome": "Aprendizado por Reforço",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizado-supervisionado",
+      "nome": "Aprendizado Supervisionado",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "atencao",
+      "nome": "Atenção",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "chunking",
+      "nome": "Chunking",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "classificacao-e-regressao",
+      "nome": "Classificação e Regressão",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "clustering",
+      "nome": "Clustering",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "context-engineering",
+      "nome": "Context Engineering",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "cutoff",
+      "nome": "Cutoff",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "dados-treino-inferencia",
+      "nome": "Dados, Treino e Inferência",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "deep-learning",
+      "nome": "Deep Learning",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "embeddings",
+      "nome": "Embeddings",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "evals",
+      "nome": "Evals",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "fine-tuning",
+      "nome": "Fine-tuning",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "guardrails",
+      "nome": "Guardrails",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "harness",
+      "nome": "Harness",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "ia-generativa",
+      "nome": "IA Generativa",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "inteligencia-artificial",
+      "nome": "Inteligência Artificial",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "inverno-da-ia",
+      "nome": "Inverno da IA",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "lgpd",
+      "nome": "LGPD",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "llm",
+      "nome": "LLM",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "marco-legal-da-ia",
+      "nome": "Marco Legal da IA (Brasil)",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "mcp",
+      "nome": "MCP",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "multimodalidade",
+      "nome": "Multimodalidade",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "prompt-engineering",
+      "nome": "Prompt Engineering",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "rag",
+      "nome": "RAG",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "rede-neural",
+      "nome": "Rede Neural",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "segundo-cerebro",
+      "nome": "Segundo Cérebro",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "tokens",
+      "nome": "Tokens",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "tool-use",
+      "nome": "Tool Use",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "transformers",
+      "nome": "Transformers",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "vector-store",
+      "nome": "Vector store",
+      "disciplina": "inteligencia-artificial"
+    }
+  ],
   "lessons": [
     {
       "disciplina": "analise-e-metodos-para-sistemas",

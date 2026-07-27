@@ -68,12 +68,14 @@ LABELS_TRILHA = {
 }
 
 
-def parse_frontmatter(texto: str) -> dict:
+def parse_frontmatter(texto: str, campos: tuple[str, ...] | None = None) -> dict:
     """Extrai chaves escalares do bloco YAML entre os dois primeiros '---'.
 
     Ignora listas/blocos aninhados (linhas indentadas ou iniciadas por '-').
-    Suficiente para os campos escalares do contrato.
+    Suficiente para os campos escalares do contrato. `campos` troca o conjunto
+    aceito — os nós de `conceitos/` usam outro vocabulário que o das aulas.
     """
+    aceitos = CAMPOS if campos is None else campos
     linhas = texto.splitlines()
     if not linhas or linhas[0].strip() != "---":
         return {}
@@ -87,7 +89,7 @@ def parse_frontmatter(texto: str) -> dict:
         if not m:
             continue
         chave, valor = m.group(1), m.group(2).strip()
-        if chave in CAMPOS:
+        if chave in aceitos:
             fm[chave] = valor.strip().strip('"').strip("'")
     return fm
 
@@ -162,6 +164,39 @@ def label_de_slug(slug: str) -> str:
     return slug.replace("-", " ").title()
 
 
+def coletar_conceitos() -> list[dict]:
+    """Lê `conceitos/**/*.md` e devolve o dicionário slug -> nome de exibição.
+
+    As aulas referenciam conceitos com `[[slug]]` ou `[[slug|rótulo]]`. Quem
+    renderiza a aula (ProfessorDash) precisa do nome legível para o `[[slug]]`
+    sem rótulo — derivar do slug entregaria "aprendizado de maquina", sem
+    acento, ao aluno. O nome correto já existe no frontmatter do conceito.
+    """
+    dir_conceitos = RAIZ / "conceitos"
+    if not dir_conceitos.exists():
+        return []
+
+    conceitos: dict[str, dict] = {}
+    for arquivo in sorted(dir_conceitos.glob("**/*.md")):
+        if arquivo.name in ("index.md", "log.md"):
+            continue
+        fm = parse_frontmatter(
+            arquivo.read_text(encoding="utf-8"),
+            campos=("conceito", "slug", "disciplina", "tipo", "status"),
+        )
+        if fm.get("status") == "obsoleto":
+            continue
+        slug, nome = fm.get("slug", "").strip(), fm.get("conceito", "").strip()
+        if slug and nome:
+            conceitos[slug] = {
+                "slug": slug,
+                "nome": nome,
+                "disciplina": fm.get("disciplina", ""),
+            }
+
+    return [conceitos[s] for s in sorted(conceitos)]
+
+
 def construir_manifesto(aulas: list[dict]) -> dict:
     """Mescla metadados curados (manifesto atual) com aulas descobertas no FS."""
     base = json.loads(MANIFESTO.read_text(encoding="utf-8")) if MANIFESTO.exists() else {}
@@ -219,6 +254,7 @@ def construir_manifesto(aulas: list[dict]) -> dict:
         "arquitetura": base.get("arquitetura", {}),
         "series": base.get("series", []),
         "disciplinas": disciplinas,
+        "conceitos": coletar_conceitos(),
         "lessons": lessons,
     }
 
