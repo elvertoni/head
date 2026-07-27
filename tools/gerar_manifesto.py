@@ -41,6 +41,32 @@ CAMPOS = ("titulo", "tema", "disciplina", "trilha", "ordem", "slug",
 OBRIGATORIOS = ("titulo", "disciplina", "trilha", "ordem", "slug",
                 "status", "versao", "atualizado_em")
 
+# Nomes de exibição curados. O slug não carrega acento, e derivar o label dele
+# produzia "Analise e Metodos para Sistemas" no seletor de disciplina do portal.
+# Slug ausente aqui cai no label do manifesto atual e, por fim, no derivado.
+LABELS_DISCIPLINA = {
+    "analise-e-metodos-para-sistemas": "Análise e Métodos para Sistemas",
+    "introducao-a-computacao": "Introdução à Computação",
+    "inovacao-tecnologia-e-empreendedorismo": "Inovação, Tecnologia e Empreendedorismo",
+    "programacao-front-end": "Programação Front-End",
+    "analise-e-projeto-de-sistemas": "Análise e Projeto de Sistemas",
+    "programacao-no-desenvolvimento-de-sistemas": "Programação no Desenvolvimento de Sistemas",
+    "tcc": "TCC",
+    "inteligencia-artificial": "Inteligência Artificial",
+}
+
+# Idem para trilhas: o label default vem do `tema` da primeira aula, que descreve
+# a aula e não a trilha ("Conversão de base decimal para binária").
+LABELS_TRILHA = {
+    "nivelamento-e-retomada": "Nivelamento e Retomada",
+    "arquitetura-computadores-e-sistemas-operacionais":
+        "Arquitetura de Computadores e Sistemas Operacionais",
+    "metodologias-ageis": "Metodologias Ágeis",
+    "marketing-digital": "Marketing Digital",
+    "blueprint-tcc": "Blueprints de TCC",
+    "fundamentos-de-ia": "Fundamentos de IA",
+}
+
 
 def parse_frontmatter(texto: str) -> dict:
     """Extrai chaves escalares do bloco YAML entre os dois primeiros '---'.
@@ -151,7 +177,9 @@ def construir_manifesto(aulas: list[dict]) -> dict:
         d, t = a["disciplina"], a["trilha"]
         trilhas_por_disc.setdefault(d, {})
         if t not in trilhas_por_disc[d]:
-            trilhas_por_disc[d][t] = a.get("tema") or label_de_slug(t)
+            trilhas_por_disc[d][t] = (
+                LABELS_TRILHA.get(t) or a.get("tema") or label_de_slug(t)
+            )
         contagem[d] = contagem.get(d, 0) + 1
 
     disciplinas = []
@@ -161,7 +189,7 @@ def construir_manifesto(aulas: list[dict]) -> dict:
                    for ts, tl in trilhas_por_disc.get(slug, {}).items()]
         disciplinas.append({
             "slug": slug,
-            "label": meta.get("label", label_de_slug(slug)),
+            "label": LABELS_DISCIPLINA.get(slug) or meta.get("label") or label_de_slug(slug),
             "serie": meta.get("serie", ""),
             "status": meta.get("status", "planejada"),
             "lake": meta.get("lake", f"lake/{slug}"),

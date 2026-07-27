@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-06-30",
+  "atualizado_em": "2026-07-27",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -29,7 +29,7 @@
   "disciplinas": [
     {
       "slug": "analise-e-metodos-para-sistemas",
-      "label": "Analise e Metodos para Sistemas",
+      "label": "Análise e Métodos para Sistemas",
       "serie": "1a-serie",
       "status": "em-construcao",
       "lake": "lake/analise-e-metodos-para-sistemas",
@@ -44,7 +44,7 @@
     },
     {
       "slug": "introducao-a-computacao",
-      "label": "Introducao a Computacao",
+      "label": "Introdução à Computação",
       "serie": "1a-serie",
       "status": "planejada",
       "lake": "lake/introducao-a-computacao",
@@ -53,17 +53,17 @@
       "trilhas": [
         {
           "slug": "arquitetura-computadores-e-sistemas-operacionais",
-          "label": "Arquitetura de Computadores"
+          "label": "Arquitetura de Computadores e Sistemas Operacionais"
         },
         {
           "slug": "nivelamento-e-retomada",
-          "label": "Conversão de base decimal para binária"
+          "label": "Nivelamento e Retomada"
         }
       ]
     },
     {
       "slug": "inovacao-tecnologia-e-empreendedorismo",
-      "label": "Inovacao, Tecnologia e Empreendedorismo",
+      "label": "Inovação, Tecnologia e Empreendedorismo",
       "serie": "2a-serie",
       "status": "planejada",
       "lake": "lake/inovacao-tecnologia-e-empreendedorismo",
@@ -73,7 +73,7 @@
     },
     {
       "slug": "programacao-front-end",
-      "label": "Programacao Front-End",
+      "label": "Programação Front-End",
       "serie": "2a-serie",
       "status": "planejada",
       "lake": "lake/programacao-front-end",
@@ -83,7 +83,7 @@
     },
     {
       "slug": "analise-e-projeto-de-sistemas",
-      "label": "Analise e Projeto de Sistemas",
+      "label": "Análise e Projeto de Sistemas",
       "serie": "3a-serie",
       "status": "em-construcao",
       "lake": "lake/analise-e-projeto-de-sistemas",
@@ -98,7 +98,7 @@
     },
     {
       "slug": "programacao-no-desenvolvimento-de-sistemas",
-      "label": "Programacao no Desenvolvimento de Sistemas",
+      "label": "Programação no Desenvolvimento de Sistemas",
       "serie": "3a-serie",
       "status": "planejada",
       "lake": "lake/programacao-no-desenvolvimento-de-sistemas",
@@ -123,7 +123,7 @@
     },
     {
       "slug": "inteligencia-artificial",
-      "label": "Inteligencia Artificial",
+      "label": "Inteligência Artificial",
       "serie": "disciplinas-extras",
       "status": "em-construcao",
       "lake": "lake/inteligencia-artificial",

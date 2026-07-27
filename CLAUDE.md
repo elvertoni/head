@@ -29,7 +29,15 @@ python tools/gerar_manifesto.py
 
 # Sync Notion pages to lake/ (raw dump)
 python tools/notion-wiki/puxar_notion.py
+
+# Push the approved-lesson index to the Notion "Aulas" base (one-way, repo → Notion)
+# Needs $env:NOTION_TOKEN. Run gerar_manifesto.py first — this reads manifesto.json.
+python tools/sync_notion.py --dry-run   # plan only
+python tools/sync_notion.py             # apply (create/update)
+python tools/sync_notion.py --prune     # apply + archive orphan rows
 ```
+
+`tools/sync_notion.py` mirrors the lesson **index** (metadata + ProfessorDash link, no body) into the `Aulas` database of the "Toni's Brain" Notion workspace, keyed on the `Caminho` property. Strictly one-way — Notion is a read-only projection of `canonica.md`, never an input. Requires an internal Notion integration token in `NOTION_TOKEN` and the `Aulas` + `Projetos` bases shared with that integration.
 
 `tools/imagen-generator/` is **not a script** — it's a prompt bundle (`prompt.xml` + official logo + `LEIA-ME`) fed to an external image GPT to produce lesson cover/infographic PNGs. No CLI entrypoint.
 
