@@ -1,6 +1,11 @@
 # Derivados regeneráveis — nunca versionar (regenerados a partir da canonica.md)
 **/saidas/
 
+# Saídas de ferramenta — regeneráveis, local-only
+graphify-out/
+.playwright-mcp/
+scratch/
+
 # Temporários e backups
 *.tmp
 *.bak
