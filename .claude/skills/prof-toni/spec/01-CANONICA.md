@@ -90,6 +90,22 @@ Dentro de **qualquer bloco** vale Markdown pleno:
 
 Achatamento, se necessário, é problema do **adaptador** — nunca de quem escreve a Canônica.
 
+### 4.1 Wikilinks de conceito — sempre com rótulo
+
+Referência a um nó de `conceitos/` usa `[[slug|rótulo]]`, **nunca `[[slug]]` sozinho**:
+
+```markdown
+✅  o [[aprendizado-de-maquina|aprendizado de máquina]] descobre o padrão sozinho
+✅  um [[llm|LLM]] prevê o próximo token
+❌  o [[aprendizado-de-maquina]] descobre o padrão sozinho
+```
+
+Motivo: o slug não carrega acento nem caixa. Quem renderiza a aula (ProfessorDash)
+resolve o link pelo `conceitos[]` do manifesto, mas se o conceito ainda não existe
+no grafo o aluno lê "aprendizado de maquina". O rótulo explícito é a única forma
+que não depende de nada externo — e é ele que o aluno vê, já que o portal não tem
+página de conceito e renderiza só o texto.
+
 ## 5. Callouts semânticos (catálogo FECHADO — 6 tipos)
 
 Sintaxe `:::tipo` (legível e portável). Conteúdo interno é Markdown rico.
@@ -116,6 +132,25 @@ uma parte sem quebrar o resto.
 >
 > **Código não é interativo da Canônica.** Trechos de código são fence Markdown normal (com destaque de linguagem). O aluno escreve e roda **no VSCode da máquina** — ferramenta profissional real, não sandbox de browser.
 
+> **REGRA DE YAML (vale para os dois blocos).** O corpo dos fences é YAML de
+> verdade. Todo valor de texto que contenha **`: ` (dois-pontos seguido de
+> espaço)** ou que **comece com aspas** tem que vir entre aspas duplas, com as
+> aspas internas escapadas. Sem isso o bloco não parseia e o portal exibe o YAML
+> cru na tela do aluno.
+>
+> ```yaml
+> # ERRADO — quebra o parse
+>     conteudo: A ideia central (inspirada na lei europeia): quanto maior o risco, mais regras.
+>     - texto: "Quanto?" é a resposta — um número
+>
+> # CERTO
+>     conteudo: "A ideia central (inspirada na lei europeia): quanto maior o risco, mais regras."
+>     - texto: "\"Quanto?\" é a resposta — um número"
+> ```
+>
+> Alternativa igualmente válida: reescrever a frase sem os dois-pontos. Números
+> e booleanos (`correta: true`) **nunca** levam aspas.
+
 ### 6.1 `quiz` — feedback imediato é o ato de aprender
 
 ````markdown
@@ -141,16 +176,19 @@ Regras: exatamente 1 alternativa com `correta: true`; `feedback` explica o porqu
 ```diagrama-progressivo
 titulo: Como uma requisição HTTP viaja
 camadas:
-  - rotulo: 1. Navegador
+  - rotulo: Navegador
     conteudo: O usuário digita a URL e o navegador monta a requisição.
-  - rotulo: 2. DNS
-    conteudo: O domínio é traduzido para um endereço IP.
-  - rotulo: 3. Servidor
+  - rotulo: DNS
+    conteudo: "O domínio é traduzido para um endereço IP: 142.250.79.14, por exemplo."
+  - rotulo: Servidor
     conteudo: O servidor processa e devolve a resposta.
 ```
 ````
 
 Cada camada revela-se sob comando do aluno — evita despejar a complexidade toda de uma vez.
+
+**`rotulo` não leva número.** O componente já numera cada camada; escrever
+"1. Navegador" produz "1 · 1. Navegador" na tela.
 
 ## 7. Roteiro do professor
 

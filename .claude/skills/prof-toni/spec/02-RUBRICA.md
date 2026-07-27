@@ -65,6 +65,9 @@ Rodar antes de entregar toda Canônica. Veredito binário: falhou um item → co
 - [ ] Cada interativo passa no teste da seção 3 (não é decoração).
 - [ ] Quiz da Avaliação mede os `objetivos` do frontmatter.
 - [ ] Só os 6 callouts e 2 interativos oficiais; código é fence.
+- [ ] **YAML dos interativos parseia**: todo texto com `: ` ou aspas iniciais está entre aspas duplas (`spec/01-CANONICA.md` §6). YAML quebrado vira bloco cru na tela do aluno.
+- [ ] **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
+- [ ] **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (§4.1) — o slug não tem acento.
 - [ ] `:::roteiro` não contém conteúdo essencial ao aluno.
 - [ ] Volume cabe em 50 min (≤5 conceitos novos, ≤4 elementos por seção).
 - [ ] Nos modos SEED/Material: achados da origem refletidos como marcação inline; `revisao: true` se houve correção.

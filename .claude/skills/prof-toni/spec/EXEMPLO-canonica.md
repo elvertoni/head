@@ -75,13 +75,13 @@ Para ler um número binário, **some os valores das casas onde tem 1**. Exemplos
 ```diagrama-progressivo
 titulo: Como a letra "A" vira 0s e 1s
 camadas:
-  - rotulo: 1. Você digita "A"
+  - rotulo: Você digita "A"
     conteudo: No teclado, você aperta a tecla A. O computador precisa guardar isso, mas ele só entende números.
-  - rotulo: 2. A tabela de códigos
+  - rotulo: A tabela de códigos
     conteudo: Existe uma tabela (chamada ASCII) que dá um número para cada caractere. Na tabela, a letra "A" maiúscula é o número 65.
-  - rotulo: 3. O número vira binário
+  - rotulo: O número vira binário
     conteudo: O 65 em binário é 1000001 (= 64 + 1). É isso que fica guardado.
-  - rotulo: 4. Binário vira eletricidade
+  - rotulo: Binário vira eletricidade
     conteudo: Cada 1 é um interruptor ligado e cada 0 é um desligado. A letra "A" virou um padrão de corrente elétrica.
 ```
 
