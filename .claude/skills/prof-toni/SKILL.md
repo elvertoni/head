@@ -54,15 +54,27 @@ O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. Regra i
 ### Imagens — brief por aula (padrão obrigatório)
 Toda aula gerada acompanha um **brief de imagem**: o arquivo `imagens.md` na pasta da aula, neutro de plataforma. Isso **não cria bloco novo na Canônica** — imagem entra no corpo como Markdown `![alt](img/nome.png)`, sempre com justificativa pedagógica (vale o teste anti-decoração; sem justificativa, sai).
 
-Para cada visual sugerido, `imagens.md` traz:
-- **secao** — onde entra na aula (ex.: "Desenvolvimento › Anatomia do Harness").
+**Duas peças por aula, no máximo — e com perfil declarado.** O acervo tem dois formatos visuais distintos, definidos em `tools/imagen-generator/prompt.xml` (v6):
+
+| perfil | arquivo | função | proporção | densidade |
+|---|---|---|---|---|
+| `capa` | `capa.png` | mapa da aula inteira; é o que o portal exibe | 3:2 | 4–10 blocos, rótulo + micro-parágrafo, subtítulo, faixa de rodapé |
+| `infografico` | `img/{slug}.png` | ensina UM conceito difícil, no miolo | 16:9 | 2–5 blocos, só rótulos curtos, sem parágrafo, sem rodapé |
+
+O `imagens.md` traz **exatamente um brief de `capa`** e **no máximo um de `infografico`** — o do conceito mais difícil da aula. Não liste propostas alternativas: escolher é trabalho da spec, não do Toni.
+
+Para cada brief:
+- **perfil** — `capa` ou `infografico`. Primeiro campo, sempre.
+- **secao** — onde entra na aula (ex.: "Desenvolvimento › Anatomia do Harness"). Só para `infografico`.
 - **objetivo** — o que o visual ensina (por que não é decoração).
 - **alt** — texto alternativo (acessibilidade + fallback quando o renderer não suporta imagem).
-- **prompt** — prompt pronto pra colar num gerador (Gemini Nano Banana / GPT) e produzir a imagem.
+- **prompt** — deixe **vazio ou como esboço de uma linha**. O prompt final é montado pela skill `gerar-imagem-aula` a partir do `prompt.xml` v6, que carrega paleta semântica, gramática visual e o catálogo de 12 defeitos conhecidos. Prompt escrito à mão aqui produz peça fora do design system.
 
-Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → Toni pega o `prompt`, gera, salva em `img/`. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
+Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula` (Modo A) para obter o prompt colável, gerar no ChatGPT do navegador, salvar, e voltar no Modo B para validação. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
 
-Lembrete de renderer: o standalone (`aula-estatica`) **não tem componente de imagem de conteúdo** (o design system proíbe imagem externa obrigatória) — lá a imagem degrada com marcação explícita; ela brilha no ProfessorDash. Isso não altera a Canônica: o brief existe sempre.
+Estado real dos renderers (verificado no código do portal): **nenhum dos dois entrega imagem de conteúdo ao aluno hoje.** O `import_acervo.py` copia só a capa da aula, e `img/` não tem rota no ProfessorDash — o `<img>` fica quebrado; o standalone (`aula-estatica`) sequer tem componente pra isso. Por isso o `alt` carrega a informação de verdade (regra em `spec/01-CANONICA.md` §4.1) e o brief continua existindo: ele é o ativo que fica pronto pra quando o portal servir `img/`.
+
+**Capa é o caso que funciona.** Salve como `capa.png` na pasta da aula (ou aponte no frontmatter `imagem:`) — essa o importador copia e o portal exibe no card e no topo da aula.
 
 ## Limites desta skill
 

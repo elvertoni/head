@@ -37,6 +37,9 @@ revisao: false                          # true quando nasceu de origem COM corre
 status: rascunho                        # rascunho | aprovada | publicada
 versao: 1
 atualizado_em: 2026-06-11
+
+# — capa (opcional) —
+imagem: capa.png                        # relativo à pasta da aula; omita se usar o nome padrão
 ---
 ```
 
@@ -65,6 +68,15 @@ SEMPRE produz saída compatível com este contrato (detalhe completo em `AGENTS.
   `python tools/gerar_manifesto.py` (valide com `--check`). Nunca editar
   `manifesto.json` à mão.
 
+### Capa da aula
+
+O importador procura a capa em duas etapas: primeiro o campo `imagem` (aceita
+também `capa`/`cover`) resolvido **dentro da pasta da aula** — caminho que sobe
+de diretório é descartado por segurança —, depois os nomes padrão
+`capa.png`, `capa.jpg`, `capa.jpeg`, `capa.webp`. Salvar como `capa.png` cobre o
+caso comum sem precisar do campo. Capa é opcional: sem ela a aula importa e o
+portal mostra o card sem imagem.
+
 ## 3. Anatomia (ordem fixa)
 
 1. **Frontmatter YAML** — acima.
@@ -90,7 +102,25 @@ Dentro de **qualquer bloco** vale Markdown pleno:
 
 Achatamento, se necessário, é problema do **adaptador** — nunca de quem escreve a Canônica.
 
-### 4.1 Wikilinks de conceito — sempre com rótulo
+### 4.1 Imagem no corpo — o `alt` é o conteúdo real
+
+Imagem de conteúdo entra como Markdown puro: `![alt](img/nome.png)`, com o
+arquivo em `img/` ao lado da `canonica.md`.
+
+O detalhe que muda como você escreve: **o ProfessorDash não serve esses
+arquivos.** O importador copia apenas a capa da aula; o `img/` fica no repo do
+acervo, sem rota no portal, e o `<img>` renderiza quebrado. O standalone
+(`aula-estatica`) também não tem componente de imagem de conteúdo. Ou seja: hoje
+a imagem chega ao aluno pelo `alt`, não pelo pixel.
+
+Consequência prática: escreva o `alt` como **descrição autossuficiente do que a
+imagem ensina**, não como rótulo ("diagrama do fluxo"). E nunca deixe um passo
+do raciocínio existir só dentro da imagem — se sumir o arquivo, a aula tem que
+continuar ensinando. Enquanto o portal não servir `img/`, prefira resolver o
+visual com `diagrama-progressivo`, tabela ou fence de código, que atravessam
+inteiros para os dois renderers.
+
+### 4.2 Wikilinks de conceito — sempre com rótulo
 
 Referência a um nó de `conceitos/` usa `[[slug|rótulo]]`, **nunca `[[slug]]` sozinho**:
 
@@ -168,7 +198,17 @@ uma parte sem quebrar o resto.
 ```
 ````
 
-Regras: exatamente 1 alternativa com `correta: true`; `feedback` explica o porquê (aparece após a resposta).
+Regras: exatamente 1 alternativa com `correta: true` — o portal marca como certa
+**toda** alternativa com `correta`, então duas verdadeiras viram duas respostas
+certas na tela. Quiz onde nenhuma alternativa tem `correta` degrada para lista
+estática, sem interação.
+
+Sobre o `feedback`: hoje **nenhum renderer o exibe**. O ProfessorDash mostra só
+"✓ Correto!" / "✗ Incorreta — veja a resposta destacada". Continue escrevendo o
+campo: ele é conhecimento pedagógico legítimo da Canônica (que é mais rica que
+qualquer saída) e o dia em que o portal renderizar explicação, ela já existe em
+67 aulas. Só não conte com ele para ensinar algo que o aluno **precisa** ler —
+isso vai no corpo da aula.
 
 ### 6.2 `diagrama-progressivo` — controla carga cognitiva por camadas
 

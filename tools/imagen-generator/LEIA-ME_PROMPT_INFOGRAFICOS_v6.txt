@@ -1,0 +1,66 @@
+COMO USAR NO CHATGPT — V6
+
+O QUE MUDOU DA V5 PARA A V6
+---------------------------
+A v5 pedia uma peça enxuta (no máximo 5 blocos, 6 rótulos, sem parágrafo). A
+auditoria das 54 imagens já aprovadas do acervo mostrou que o padrão real da
+casa é mais denso: mediana de 7 blocos, micro-parágrafos de 1 a 3 linhas,
+subtítulo sob o título e faixa de síntese no rodapé. Seguindo a v5, o resultado
+saía pobre perto do acervo.
+
+A v6 separa DOIS PERFIS:
+
+  CAPA          3:2 (1536x1024) · 4 a 10 blocos · micro-parágrafos ·
+                subtítulo obrigatório · faixa de rodapé obrigatória.
+                É o arquivo capa.png. Vende a aula inteira no card do portal.
+
+  INFOGRAFICO   16:9 · 2 a 5 blocos · só rótulos curtos · sem subtítulo ·
+                sem faixa de rodapé. Vai em img/ e entra no miolo do texto,
+                ao lado do conceito que explica.
+
+Escolher o perfil é o passo 0. Não misture: capa esparsa em 16:9 fica órfã e
+infográfico com parágrafo em 3:2 vira capa ruim.
+
+
+COMO USAR
+---------
+Forneça ao Projeto:
+- a aula completa (canonica.md);
+- o brief da imagem (imagens.md);
+- o perfil desejado.
+
+O prompt.xml v6 já deve estar nos arquivos do Projeto. NÃO anexe a logo ao
+ChatGPT e não peça ao modelo para aplicar marca ou identificação do curso.
+
+Solicite:
+"Execute integralmente o XML v6 no perfil CAPA (ou INFOGRAFICO) e gere a
+arte-base final. Não pare no prompt. Mantenha os dois cantos superiores
+escuros, vazios e reservados."
+
+
+ANTES DE ACEITAR A IMAGEM
+-------------------------
+Confira os 12 defeitos da regra R3 do XML. Todos já aconteceram no acervo:
+
+  D1  texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO")
+  D2  palavra inventada em português ("nulhado", "madruagda")
+  D3  peça sem título
+  D4  fundo claro ou branco
+  D5  texto ou objeto cortado pela borda
+  D6  faixa superior vazia grande
+  D7  ornamento dentro de uma zona reservada
+  D8  conteúdo da aula errada — confira o título da aula-alvo!
+  D9  wireframe cinza sem ícone, cor ou título
+  D10 comparação com só um lado rotulado
+  D11 logo real de terceiro desenhada (Windows, Linux, Android...)
+  D12 perfil trocado
+
+Qualquer um deles: peça a regeneração citando o defeito. Não aceite com
+ressalva.
+
+
+DEPOIS
+------
+A saída do ChatGPT termina na arte-base PNG. A logo oficial, a identificação do
+curso e a normalização do canvas são aplicadas depois, externamente, pela action
+determinística do Photoshop.

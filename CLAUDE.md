@@ -39,7 +39,7 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 `tools/sync_notion.py` mirrors the lesson **index** (metadata + ProfessorDash link, no body) into the `Aulas` database of the "Toni's Brain" Notion workspace, keyed on the `Caminho` property. Strictly one-way — Notion is a read-only projection of `canonica.md`, never an input. Requires an internal Notion integration token in `NOTION_TOKEN` and the `Aulas` + `Projetos` bases shared with that integration.
 
-`tools/imagen-generator/` is **not a script** — it's a prompt bundle (`prompt.xml` + official logo + `LEIA-ME`) fed to an external image GPT to produce lesson cover/infographic PNGs. No CLI entrypoint.
+`tools/imagen-generator/` is **not a script**. Its `prompt.xml` is the v6 source of truth for unbranded lesson base art, split into two profiles — `capa` (dense, 3:2, the portal-facing cover) and `infografico` (sparse, 16:9, a body figure teaching one concept). The v6 density rules were derived from an audit of the 54 approved images already in the acervo, and its `R3` rule catalogs 12 defects that have actually shipped. **Images are generated in the browser (ChatGPT web), not by Claude Code** — quality there is materially better. Claude Code's job is to compose the paste-ready v5 prompt and audit the returned PNG; read `.claude/skills/gerar-imagem-aula/SKILL.md` first. Never attach the logo to the image model: Photoshop later applies the official logo, course identifier, and canonical canvas through a deterministic action. No CLI entrypoint.
 
 ## Architecture
 
@@ -58,7 +58,7 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 ### Current vault state (8 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-07-23, `python tools/gerar_manifesto.py --check` validates 67 approved importable lessons.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-07-29, `python tools/gerar_manifesto.py --check` validates 73 approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
@@ -94,8 +94,9 @@ Machine-generated index (`tools/gerar_manifesto.py`). **Never hand-edit.** Only 
 |---|---|---|
 | `prof-toni` | Creating/planning lessons | Produces `canonica.md` following the spec protocol (read `.claude/skills/prof-toni/spec/00-PROTOCOLO.md` first) |
 | `aula-estatica` | Rendering lessons | Converts `canonica.md` → standalone `.html` (dark/light, A4-print) |
+| `gerar-imagem-aula` | Lesson images | Picks the profile (`capa` 3:2 / `infografico` 16:9), composes the paste-ready v6 prompt for browser generation, then audits the returned PNG against the 12 known defects (upper corners empty, branding external) |
 
-Skills live in `.claude/skills/` and read their `spec/` subfolder for anatomy, rubrica, and examples. Do not bypass them for lesson creation — the 7-point rubrica in `.claude/skills/prof-toni/spec/02-RUBRICA.md` is an approval gate.
+Skills live in `.claude/skills/`. Do not bypass `prof-toni` for lesson creation or `gerar-imagem-aula` for visual generation. The 7-point rubrica in `.claude/skills/prof-toni/spec/02-RUBRICA.md` is an approval gate.
 
 `hermes/skills/prof-toni/` holds separate skills (`operar-acervo`, `alimentar-cerebro`) for the Quíron agent that operates this acervo from a VPS — not Claude Code skills; see `hermes/README.md`.
 

@@ -167,10 +167,29 @@ como fonte ou insumo intermediário: antes de publicar, ela precisa passar pelas
 mesmas regras de `lake/`, conceitos e aulas canônicas.
 
 ### `tools/imagen-generator/`
-Pacote de prompt para um gerador externo de imagens (`prompt.xml`, logo oficial e
-guia de uso). **Não é uma ferramenta CLI.** As capas/infográficos gerados são
-ativos complementares da aula; não editar `manifesto.json` para incluí-los e não
-tratá-los como substitutos da `canonica.md`.
+Pacote do fluxo visual v6 (`prompt.xml`, logo oficial para a etapa externa e guia
+de uso). **Não é uma ferramenta CLI.** Antes de gerar, regenerar ou editar capa,
+infográfico ou imagem de conteúdo, ler `.claude/skills/gerar-imagem-aula/SKILL.md`
+e o `prompt.xml` integralmente.
+
+O v6 tem **dois perfis** e escolher um é o passo 0: `capa` (3:2, densa, 4–10
+blocos com micro-parágrafo, subtítulo e faixa de rodapé — é o `capa.png` que o
+portal exibe) e `infografico` (16:9, enxuto, 2–5 blocos só com rótulos — vai em
+`img/` e explica um conceito no miolo). As regras de densidade vieram da
+auditoria das 54 imagens já aprovadas do acervo; a regra `R3` do XML cataloga 12
+defeitos que já foram publicados de verdade e precisa ser percorrida item a item
+antes de aceitar qualquer arte.
+
+**A geração acontece no navegador (ChatGPT web), não dentro do agente.** O papel
+do agente é montar o prompt v5 pronto pra colar e depois auditar o PNG que voltar.
+
+O modelo generativo entrega **somente a arte-base**: PNG paisagem 16:9 na maior
+resolução disponível, com os dois cantos superiores escuros e vazios. Nunca
+anexar a logo ao modelo, desenhar/aplicar marca, escrever a identificação do curso
+ou normalizar para 1600×900. Logo, curso e canvas canônico são aplicados depois
+pela action determinística do Photoshop. As capas/infográficos continuam sendo
+ativos complementares; não entram no `manifesto.json` e não substituem a
+`canonica.md`.
 
 ---
 
