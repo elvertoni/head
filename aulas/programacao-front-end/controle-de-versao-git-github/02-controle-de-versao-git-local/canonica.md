@@ -10,13 +10,13 @@ objetivos:
   - Executar o ciclo local completo — git init, git add, git commit, git log
   - Usar .gitignore para excluir arquivos que nunca devem ser versionados
 trilha: controle-de-versao-git-github
-ordem: 1
+ordem: 2
 slug: controle-de-versao-git-local
 modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-07-29
 ---
 

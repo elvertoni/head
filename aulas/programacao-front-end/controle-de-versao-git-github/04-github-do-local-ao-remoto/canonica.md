@@ -10,13 +10,13 @@ objetivos:
   - Trazer um repositório existente para o computador com git clone
   - Explicar por que o GitHub não aceita mais senha em operações Git e escolher entre SSH e GitHub CLI para autenticar
 trilha: controle-de-versao-git-github
-ordem: 3
+ordem: 4
 slug: github-do-local-ao-remoto
 modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-07-29
 ---
 

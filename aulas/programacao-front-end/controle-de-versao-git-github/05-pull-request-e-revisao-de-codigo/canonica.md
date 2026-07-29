@@ -10,13 +10,13 @@ objetivos:
   - Escrever mensagens de commit no padrão Conventional Commits (feat, fix, docs, chore)
   - Explicar o papel da revisão de código antes do merge, incluindo o que a IA (Copilot) já faz hoje nesse fluxo
 trilha: controle-de-versao-git-github
-ordem: 4
+ordem: 5
 slug: pull-request-e-revisao-de-codigo
 modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-07-29
 ---
 

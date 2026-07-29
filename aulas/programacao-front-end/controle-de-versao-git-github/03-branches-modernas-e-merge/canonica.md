@@ -10,13 +10,13 @@ objetivos:
   - Fazer merge de uma branch e diferenciar fast-forward de merge commit
   - Resolver um conflito de merge de verdade, reconhecendo os marcadores de conflito
 trilha: controle-de-versao-git-github
-ordem: 2
+ordem: 3
 slug: branches-modernas-e-merge
 modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-07-29
 ---
 

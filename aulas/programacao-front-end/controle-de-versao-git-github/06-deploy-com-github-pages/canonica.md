@@ -10,13 +10,13 @@ objetivos:
   - Diagnosticar o erro mais comum de deploy — caminho de arquivo que funciona local mas quebra publicado
   - Saber quando GitHub Pages via GitHub Actions é necessário, para projetos com etapa de build
 trilha: controle-de-versao-git-github
-ordem: 5
+ordem: 6
 slug: deploy-com-github-pages
 modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-07-29
 ---
 
