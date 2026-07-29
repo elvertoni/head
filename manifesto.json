@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-07-27",
+  "atualizado_em": "2026-07-29",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -78,8 +78,17 @@
       "status": "planejada",
       "lake": "lake/programacao-front-end",
       "warehouse": "aulas/programacao-front-end",
-      "total_aulas": 0,
-      "trilhas": []
+      "total_aulas": 6,
+      "trilhas": [
+        {
+          "slug": "controle-de-versao-git-github",
+          "label": "Controle de versão com Git (local)"
+        },
+        {
+          "slug": "fundamentos-html-css",
+          "label": "HTML Semântico"
+        }
+      ]
     },
     {
       "slug": "analise-e-projeto-de-sistemas",
@@ -534,6 +543,54 @@
       "ordem": 2,
       "slug": "retomada-execucao-de-programas",
       "titulo": "Retomada - Entendendo a Execução de Programas",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "controle-de-versao-git-github",
+      "ordem": 1,
+      "slug": "controle-de-versao-git-local",
+      "titulo": "Controle de versão: por que <code>projeto-final-VERSAO-2-agora-vai.html</code> não escala",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "controle-de-versao-git-github",
+      "ordem": 2,
+      "slug": "branches-modernas-e-merge",
+      "titulo": "Branches: testando uma ideia arriscada sem bagunçar o que já funciona",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "controle-de-versao-git-github",
+      "ordem": 3,
+      "slug": "github-do-local-ao-remoto",
+      "titulo": "GitHub: tirando seu repositório do seu notebook e colocando na nuvem",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "controle-de-versao-git-github",
+      "ordem": 4,
+      "slug": "pull-request-e-revisao-de-codigo",
+      "titulo": "Pull Request: como propor uma mudança sem simplesmente sobrescrever o código de alguém",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "controle-de-versao-git-github",
+      "ordem": 5,
+      "slug": "deploy-com-github-pages",
+      "titulo": "GitHub Pages: transformando seu repositório num site que qualquer pessoa acessa",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "fundamentos-html-css",
+      "ordem": 1,
+      "slug": "html-semantico",
+      "titulo": "HTML semântico: por que <div> não conta a história toda",
       "status": "aprovada"
     },
     {

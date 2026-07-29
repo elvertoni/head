@@ -15,7 +15,7 @@ slug: controle-de-versao-git-local
 modo_origem: tema
 fontes: []
 revisao: false
-status: rascunho
+status: aprovada
 versao: 1
 atualizado_em: 2026-07-29
 ---
