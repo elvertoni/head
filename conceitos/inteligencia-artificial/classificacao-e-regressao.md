@@ -28,7 +28,7 @@ A pergunta define a tarefa: categoria → classificação; número → regressã
 ## Onde aparece
 
 - Aula 6 — *Aprendizado Supervisionado na Prática*
-- Conceitos vizinhos: [[aprendizado-supervisionado]], [[aprendizado-de-maquina]]
+- Conceitos vizinhos: [[aprendizado-supervisionado]], [[aprendizado-de-maquina]] e [[arvore-de-decisao]]
 
 ## Fontes
 

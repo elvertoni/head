@@ -30,7 +30,7 @@ Divide-se em duas tarefas (ver [[classificacao-e-regressao]]): classificação (
 
 - Aula 5 — *Tipos de Aprendizado de Máquina*
 - Aula 6 — *Aprendizado Supervisionado na Prática*
-- Conceitos vizinhos: [[aprendizado-de-maquina]], [[classificacao-e-regressao]], [[aprendizado-nao-supervisionado]], [[aprendizado-por-reforco]]
+- Conceitos vizinhos: [[aprendizado-de-maquina]], [[classificacao-e-regressao]], [[aprendizado-nao-supervisionado]], [[aprendizado-por-reforco]], [[redes-bayesianas]], [[naive-bayes]], [[arvore-de-decisao]] e [[poda-de-arvore]]
 
 ## Fontes
 

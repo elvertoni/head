@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-07-29",
+  "atualizado_em": "2026-08-01",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -148,9 +148,89 @@
   ],
   "conceitos": [
     {
+      "slug": "5g",
+      "nome": "5G",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "abducao",
+      "nome": "Abdução",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "abstracao",
+      "nome": "Abstração",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "acessibilidade",
+      "nome": "Acessibilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "acesso-nao-autorizado-em-nuvem",
+      "nome": "Acesso não autorizado em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "acid",
+      "nome": "ACID",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "acomodacao",
+      "nome": "Acomodação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "active-record",
+      "nome": "Active Record",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "acuracia",
+      "nome": "Acurácia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ad-hominem",
+      "nome": "Ad hominem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "adaptacao-piagetiana",
+      "nome": "Adaptação piagetiana",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "adolescencia",
+      "nome": "Adolescência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "afetividade",
+      "nome": "Afetividade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "agente",
       "nome": "Agente de IA",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "agregacao",
+      "nome": "Agregação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "agrupamento-de-dados-sql",
+      "nome": "Agrupamento de dados SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "agrupamento-de-rotas",
+      "nome": "Agrupamento de rotas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "ai-first-vs-ai-enabled",
@@ -158,9 +238,149 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "algebra-relacional",
+      "nome": "Álgebra relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "algoritmo",
+      "nome": "Algoritmo",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "algoritmos-geneticos",
+      "nome": "Algoritmos genéticos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "alta-disponibilidade",
+      "nome": "Alta disponibilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "alucinacoes",
       "nome": "Alucinações",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "ambiente-de-desenvolvimento-integrado",
+      "nome": "Ambiente de desenvolvimento integrado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ambiente-de-teste",
+      "nome": "Ambiente de teste",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "amostra-estatistica",
+      "nome": "Amostra estatística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "amostragem",
+      "nome": "Amostragem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "amplitude-total",
+      "nome": "Amplitude total",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "analise-de-cenarios",
+      "nome": "Análise de cenários",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "analise-de-sensibilidade",
+      "nome": "Análise de sensibilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "analise-de-sentimento",
+      "nome": "Análise de sentimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "analise-de-series-temporais",
+      "nome": "Análise de séries temporais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "angular",
+      "nome": "Angular",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ansi-sql",
+      "nome": "ANSI SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "antropomorfismo-em-ia",
+      "nome": "Antropomorfismo em IA",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "apelo-a-autoridade",
+      "nome": "Apelo à autoridade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "apelo-a-emocao",
+      "nome": "Apelo à emoção",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "apelo-a-ignorancia",
+      "nome": "Apelo à ignorância",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "api",
+      "nome": "API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "api-de-geolocalizacao",
+      "nome": "API de geolocalização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "api-rest",
+      "nome": "API REST",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "api-server-kubernetes",
+      "nome": "API server Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "aplicacoes-descentralizadas",
+      "nome": "Aplicações descentralizadas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "app-router",
+      "nome": "App Router",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "aprendizado-adversarial",
+      "nome": "Aprendizado adversarial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizado-baseado-em-instancias",
+      "nome": "Aprendizado baseado em instâncias",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizado-de-conjunto",
+      "nome": "Aprendizado de conjunto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "aprendizado-de-maquina",
@@ -168,9 +388,19 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "aprendizado-estatistico",
+      "nome": "Aprendizado estatístico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "aprendizado-nao-supervisionado",
       "nome": "Aprendizado Não-Supervisionado",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizado-online",
+      "nome": "Aprendizado online",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "aprendizado-por-reforco",
@@ -178,9 +408,194 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "aprendizado-por-transferencia",
+      "nome": "Aprendizado por transferência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizado-simbolico",
+      "nome": "Aprendizado simbólico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "aprendizado-supervisionado",
       "nome": "Aprendizado Supervisionado",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "aprendizagem",
+      "nome": "Aprendizagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-ao-longo-da-vida",
+      "nome": "Aprendizagem ao longo da vida",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-baseada-em-problemas",
+      "nome": "Aprendizagem baseada em problemas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-colaborativa",
+      "nome": "Aprendizagem colaborativa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-dialogica",
+      "nome": "Aprendizagem dialógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-experiencial",
+      "nome": "Aprendizagem experiencial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-mecanica",
+      "nome": "Aprendizagem mecânica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-por-observacao",
+      "nome": "Aprendizagem por observação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aprendizagem-significativa",
+      "nome": "Aprendizagem significativa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "argumento-circular",
+      "nome": "Argumento circular",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "argumento-invalido",
+      "nome": "Argumento inválido",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "argumento-logico",
+      "nome": "Argumento lógico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "argumento-valido",
+      "nome": "Argumento válido",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aria",
+      "nome": "ARIA",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquetipos-de-bartle",
+      "nome": "Arquétipos de Bartle",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "arquitetura-cliente-servidor",
+      "nome": "Arquitetura cliente-servidor",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-de-microservicos",
+      "nome": "Arquitetura de microsserviços",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-de-nuvem",
+      "nome": "Arquitetura de nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-de-tres-esquemas",
+      "nome": "Arquitetura de três esquemas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-em-camadas",
+      "nome": "Arquitetura em camadas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-modular",
+      "nome": "Arquitetura modular",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-monolitica",
+      "nome": "Arquitetura monolítica",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-orientada-a-eventos",
+      "nome": "Arquitetura orientada a eventos",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquivo-fonte-solidity",
+      "nome": "Arquivo-fonte Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "arrays-em-javascript",
+      "nome": "Arrays em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arrays-multidimensionais",
+      "nome": "Arrays multidimensionais",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arvore-de-acessibilidade",
+      "nome": "Árvore de acessibilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arvore-de-decisao",
+      "nome": "Árvore de decisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "arvore-de-jogo",
+      "nome": "Árvore de jogo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "arvore-de-merkle",
+      "nome": "Árvore de Merkle",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "asic",
+      "nome": "ASIC",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "assimilacao",
+      "nome": "Assimilação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "assinatura-digital",
+      "nome": "Assinatura digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "associacionismo",
+      "nome": "Associacionismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ataque-de-51-porcento",
+      "nome": "Ataque de 51 por cento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "atencao",
@@ -188,9 +603,424 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "ativo-digital",
+      "nome": "Ativo digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "atributo",
+      "nome": "Atributo",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atributo-composto",
+      "nome": "Atributo composto",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atributo-de-relacionamento",
+      "nome": "Atributo de relacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atributo-derivado",
+      "nome": "Atributo derivado",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atributo-multivalorado",
+      "nome": "Atributo multivalorado",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atributo-simples",
+      "nome": "Atributo simples",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "atuador",
+      "nome": "Atuador",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "autenticacao",
+      "nome": "Autenticação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "autenticacao-federada",
+      "nome": "Autenticação federada",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "autenticacao-multifator",
+      "nome": "Autenticação multifator",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "automacao",
+      "nome": "Automação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "autorizacao",
+      "nome": "Autorização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "autorrealizacao",
+      "nome": "Autorrealização",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "autorrelacionamento",
+      "nome": "Autorrelacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "avaliacao-da-aprendizagem",
+      "nome": "Avaliação da aprendizagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "avaliacao-de-riscos",
+      "nome": "Avaliação de riscos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "aws",
+      "nome": "AWS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "axiomas-de-zermelo-fraenkel",
+      "nome": "Axiomas de Zermelo-Fraenkel",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "axios",
+      "nome": "Axios",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "azure",
+      "nome": "Azure",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "backend",
+      "nome": "Backend",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "bag-of-words",
+      "nome": "Bag of words",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "balanceamento-de-carga",
+      "nome": "Balanceamento de carga",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "banco-de-dados",
+      "nome": "Banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "banco-de-dados-nao-relacional",
+      "nome": "Banco de dados não relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "banco-de-dados-relacional",
+      "nome": "Banco de dados relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "behaviorismo",
+      "nome": "Behaviorismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bicondicional",
+      "nome": "Bicondicional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bitcoin",
+      "nome": "Bitcoin",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "blockchain",
+      "nome": "Blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bloco-de-blockchain",
+      "nome": "Bloco de blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bncc",
+      "nome": "Base Nacional Comum Curricular",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bootstrap",
+      "nome": "Bootstrap",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "box-model",
+      "nome": "Box model",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "brainstorming",
+      "nome": "Brainstorming",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "broker",
+      "nome": "Broker",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "busca-a-estrela",
+      "nome": "Busca A*",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-cega",
+      "nome": "Busca cega",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-competitiva",
+      "nome": "Busca competitiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-de-custo-uniforme",
+      "nome": "Busca de custo uniforme",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-de-dados-no-servidor",
+      "nome": "Busca de dados no servidor",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "busca-em-largura",
+      "nome": "Busca em largura",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-em-profundidade",
+      "nome": "Busca em profundidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-gulosa",
+      "nome": "Busca gulosa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-heuristica",
+      "nome": "Busca heurística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "busca-sequencial-e-paralela",
+      "nome": "Busca sequencial e paralela",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "bytecode",
+      "nome": "Bytecode",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cache-control",
+      "nome": "Cache-Control",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cache-de-entidades",
+      "nome": "Cache de entidades",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cache-de-fetch-nextjs",
+      "nome": "Cache de fetch no Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cache-http",
+      "nome": "Cache HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cache-local",
+      "nome": "Cache local",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "caixas-de-dialogo-javascript",
+      "nome": "Caixas de diálogo JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "call-stack",
+      "nome": "Call stack",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "callback-queue",
+      "nome": "Callback queue",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "caminho-critico-de-renderizacao",
+      "nome": "Caminho crítico de renderização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "capex",
+      "nome": "CAPEX",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cardinalidade",
+      "nome": "Cardinalidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "carreira",
+      "nome": "Carreira",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "carreira-proteana",
+      "nome": "Carreira proteana",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "carreira-sem-fronteiras",
+      "nome": "Carreira sem fronteiras",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "carrinho-de-compras",
+      "nome": "Carrinho de compras",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "carteira-de-criptomoedas",
+      "nome": "Carteira de criptomoedas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cdn",
+      "nome": "CDN",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chamadas-de-mensagem",
+      "nome": "Chamadas de mensagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "chave-candidata",
+      "nome": "Chave candidata",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chave-composta",
+      "nome": "Chave composta",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chave-de-api",
+      "nome": "Chave de API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chave-estrangeira",
+      "nome": "Chave estrangeira",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chave-primaria",
+      "nome": "Chave primária",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "chaves-de-lista-react",
+      "nome": "Chaves de lista no React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "chunking",
       "nome": "Chunking",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "cibercultura",
+      "nome": "Cibercultura",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ciberespaco",
+      "nome": "Ciberespaço",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cibernetica",
+      "nome": "Cibernética",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ciberseguranca",
+      "nome": "Cibersegurança",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ciclo-de-vida-de-api",
+      "nome": "Ciclo de vida de API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ciclo-de-vida-de-componente",
+      "nome": "Ciclo de vida de componente",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ciclo-de-vida-de-erikson",
+      "nome": "Ciclo de vida de Erikson",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ciclo-de-vida-devops",
+      "nome": "Ciclo de vida DevOps",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ciclo-de-vida-do-documento",
+      "nome": "Ciclo de vida do documento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cidades-inteligentes",
+      "nome": "Cidades inteligentes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "classificacao-de-texto",
+      "nome": "Classificação de texto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "classificacao-e-regressao",
@@ -198,9 +1028,234 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "clientes-ethereum",
+      "nome": "Clientes Ethereum",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cloud-firestore",
+      "nome": "Cloud Firestore",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cloud-functions",
+      "nome": "Cloud Functions",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cloud-messaging",
+      "nome": "Cloud Messaging",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cloud-storage",
+      "nome": "Cloud Storage",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cluster-kubernetes",
+      "nome": "Cluster Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "clustering",
       "nome": "Clustering",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "codigos-de-status-http",
+      "nome": "Códigos de status HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "colaboracao",
+      "nome": "Colaboração",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "colecoes-em-javascript",
+      "nome": "Coleções em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "colisao-criptografica",
+      "nome": "Colisão criptográfica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "commonjs",
+      "nome": "CommonJS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "compatibilidade-retroativa",
+      "nome": "Compatibilidade retroativa",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "competencia-digital",
+      "nome": "Competência digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "competencias-organizacionais",
+      "nome": "Competências organizacionais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "componente-react",
+      "nome": "Componente React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "componentes-de-cliente-nextjs",
+      "nome": "Componentes de cliente Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "componentes-de-iot",
+      "nome": "Componentes de IoT",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "componentes-de-servidor-nextjs",
+      "nome": "Componentes de servidor Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "composicao-de-funcoes",
+      "nome": "Composição de funções",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "computacao-em-nuvem",
+      "nome": "Computação em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "computacao-ubiqua",
+      "nome": "Computação ubíqua",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "comunicacao",
+      "nome": "Comunicação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conceitos-cientificos",
+      "nome": "Conceitos científicos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conceitos-espontaneos",
+      "nome": "Conceitos espontâneos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "condicionamento-classico",
+      "nome": "Condicionamento clássico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "condicionamento-operante",
+      "nome": "Condicionamento operante",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "configuracao-declarativa-kubernetes",
+      "nome": "Configuração declarativa do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "configuracao-insegura-de-nuvem",
+      "nome": "Configuração insegura de nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "conflito-de-merge",
+      "nome": "Conflito de merge",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "conhecimento",
+      "nome": "Conhecimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conhecimento-explicito",
+      "nome": "Conhecimento explícito",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conhecimento-tacito",
+      "nome": "Conhecimento tácito",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjuncao-logica",
+      "nome": "Conjunção lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjunto",
+      "nome": "Conjunto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjunto-das-partes",
+      "nome": "Conjunto das partes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjunto-de-exemplos",
+      "nome": "Conjunto de exemplos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjunto-universo",
+      "nome": "Conjunto universo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjunto-vazio",
+      "nome": "Conjunto vazio",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conjuntos-iguais",
+      "nome": "Conjuntos iguais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "constructor-solidity",
+      "nome": "Constructor Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "construtivismo",
+      "nome": "Construtivismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conta-de-contrato",
+      "nome": "Conta de contrato",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conta-externa",
+      "nome": "Conta externamente controlada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "conteinerizacao",
+      "nome": "Conteinerização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "content-security-policy",
+      "nome": "Content Security Policy",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "context-engineering",
@@ -208,9 +1263,169 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "contexto-de-execucao-solidity",
+      "nome": "Contexto de execução Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "contingencia-logica",
+      "nome": "Contingência lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "continuidade-de-negocios",
+      "nome": "Continuidade de negócios",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "contradicao-logica",
+      "nome": "Contradição lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "contratos-inteligentes",
+      "nome": "Contratos inteligentes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "control-plane",
+      "nome": "Control plane",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "controle-de-sistemas-roboticos",
+      "nome": "Controle de sistemas robóticos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "controle-de-versao",
+      "nome": "Controle de versão",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "controller-manager-kubernetes",
+      "nome": "Controller Manager do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "conversao-de-tipos",
+      "nome": "Conversão de tipos",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "conversao-do-conhecimento",
+      "nome": "Conversão do conhecimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cookies",
+      "nome": "Cookies HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "core-web-vitals",
+      "nome": "Core Web Vitals",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cors",
+      "nome": "CORS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "coworking",
+      "nome": "Coworking",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "creative-commons",
+      "nome": "Creative Commons",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "criatividade",
+      "nome": "Criatividade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "criptografia",
+      "nome": "Criptografia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "criptografia-de-chave-publica",
+      "nome": "Criptografia de chave pública",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "crise-de-identidade",
+      "nome": "Crise de identidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "crud",
+      "nome": "CRUD",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "csr",
+      "nome": "Client-side rendering",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "css-grid",
+      "nome": "CSS Grid",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "css-modules",
+      "nome": "CSS Modules",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "css3",
+      "nome": "CSS3",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cultura-devops",
+      "nome": "Cultura DevOps",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "cultura-digital",
+      "nome": "Cultura digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cultura-maker",
+      "nome": "Cultura maker",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "curadoria-da-informacao",
+      "nome": "Curadoria da informação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "curso-de-pedagogia",
+      "nome": "Curso de Pedagogia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "cutoff",
       "nome": "Cutoff",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "dado",
+      "nome": "Dado",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dados-pessoais",
+      "nome": "Dados pessoais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "dados-treino-inferencia",
@@ -218,13 +1433,608 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "data-access-object",
+      "nome": "Data Access Object",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "data-augmentation",
+      "nome": "Data augmentation",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dcl",
+      "nome": "DCL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ddl",
+      "nome": "DDL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "decomposicao",
+      "nome": "Decomposição",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "deep-learning",
       "nome": "Deep Learning",
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "defesa-em-profundidade",
+      "nome": "Defesa em profundidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "delegacao-de-eventos",
+      "nome": "Delegação de eventos",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "delimitacao-do-problema",
+      "nome": "Delimitação do problema",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dependencia-de-conectividade",
+      "nome": "Dependência de conectividade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "deployment",
+      "nome": "Deployment Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "deprecacao-de-api",
+      "nome": "Depreciação de API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "descentralizacao",
+      "nome": "Descentralização",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-adulto",
+      "nome": "Desenvolvimento adulto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-biopsicossocial",
+      "nome": "Desenvolvimento biopsicossocial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-cognitivo",
+      "nome": "Desenvolvimento cognitivo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-humano",
+      "nome": "Desenvolvimento humano",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-infantil",
+      "nome": "Desenvolvimento infantil",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-na-velhice",
+      "nome": "Desenvolvimento na velhice",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desenvolvimento-psicossocial",
+      "nome": "Desenvolvimento psicossocial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "design-thinking",
+      "nome": "Design Thinking",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "designer-difuso",
+      "nome": "Designer difuso",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desigualdade-digital",
+      "nome": "Desigualdade digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desigualdade-educacional",
+      "nome": "Desigualdade educacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "desvio-padrao",
+      "nome": "Desvio-padrão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "devops",
+      "nome": "DevOps",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "devsecops",
+      "nome": "DevSecOps",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "diagrama-de-ishikawa",
+      "nome": "Diagrama de Ishikawa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "diagrama-entidade-relacionamento",
+      "nome": "Diagrama entidade-relacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "diferenca-relacional",
+      "nome": "Diferença relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dificuldades-de-aprendizagem",
+      "nome": "Dificuldades de aprendizagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dimensoes-da-aprendizagem",
+      "nome": "Dimensões da aprendizagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "direito-autoral",
+      "nome": "Direito autoral",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "diretrizes-curriculares-de-pedagogia",
+      "nome": "Diretrizes Curriculares de Pedagogia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "discalculia",
+      "nome": "Discalculia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "disjuncao-exclusiva",
+      "nome": "Disjunção exclusiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "disjuncao-inclusiva",
+      "nome": "Disjunção inclusiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dislexia",
+      "nome": "Dislexia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "distribuicao-de-frequencia",
+      "nome": "Distribuição de frequência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "divisao-relacional",
+      "nome": "Divisão relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "diy",
+      "nome": "Faça você mesmo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dml",
+      "nome": "DML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dns",
+      "nome": "DNS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "docker",
+      "nome": "Docker",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "docker-engine",
+      "nome": "Docker Engine",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "docker-swarm",
+      "nome": "Docker Swarm",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dockerfile",
+      "nome": "Dockerfile",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dominio-de-atributo",
+      "nome": "Domínio de atributo",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dominio-de-funcao",
+      "nome": "Domínio de função",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dominio-personalizado",
+      "nome": "Domínio personalizado",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dql",
+      "nome": "DQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "dropout",
+      "nome": "Dropout",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "dtl",
+      "nome": "DTL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "early-stopping",
+      "nome": "Early stopping",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-a-distancia",
+      "nome": "Educação a distância",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-bancaria",
+      "nome": "Educação bancária",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-dialogica",
+      "nome": "Educação dialógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-domestica",
+      "nome": "Educação doméstica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-domiciliar",
+      "nome": "Educação domiciliar",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-emancipadora",
+      "nome": "Educação emancipadora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-empreendedora",
+      "nome": "Educação empreendedora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-inclusiva",
+      "nome": "Educação inclusiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-indigena",
+      "nome": "Educação indígena",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-integral",
+      "nome": "Educação integral",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-laica",
+      "nome": "Educação laica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-libertadora",
+      "nome": "Educação libertadora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-maker",
+      "nome": "Educação maker",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-nao-formal",
+      "nome": "Educação não formal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-para-a-paz",
+      "nome": "Educação para a paz",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-popular",
+      "nome": "Educação popular",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-publica",
+      "nome": "Educação pública",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educacao-tradicional",
+      "nome": "Educação tradicional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "educomunicacao",
+      "nome": "Educomunicação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "efeitos-colaterais",
+      "nome": "Efeitos colaterais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ejs",
+      "nome": "EJS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "embeddings",
       "nome": "Embeddings",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "emocao",
+      "nome": "Emoção",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "empatia",
+      "nome": "Empatia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "empirismo",
+      "nome": "Empirismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "empreendedorismo",
+      "nome": "Empreendedorismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "enade",
+      "nome": "Enade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "endpoint",
+      "nome": "Endpoint",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ensino-como-atividade-humana",
+      "nome": "Ensino como atividade humana",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ensino-digital",
+      "nome": "Ensino digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ensino-programado",
+      "nome": "Ensino programado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "entidade",
+      "nome": "Entidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "entidade-associativa",
+      "nome": "Entidade associativa",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "entidade-forte",
+      "nome": "Entidade forte",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "entidade-fraca",
+      "nome": "Entidade fraca",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "entrada-e-saida-em-javascript",
+      "nome": "Entrada e saída em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "entrega-continua",
+      "nome": "Entrega contínua",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "enum-solidity",
+      "nome": "Enum Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "epistemologia",
+      "nome": "Epistemologia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "equilibracao",
+      "nome": "Equilibração",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "erro-customizado-solidity",
+      "nome": "Erro customizado Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "escalabilidade",
+      "nome": "Escalabilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "escalabilidade-em-blockchain",
+      "nome": "Escalabilidade em blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "escalonamento",
+      "nome": "Escalonamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "escola-nova",
+      "nome": "Escola Nova",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "escolastica",
+      "nome": "Escolástica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "escopo-de-variavel",
+      "nome": "Escopo de variável",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "espaco-amostral",
+      "nome": "Espaço amostral",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "espacos-maker",
+      "nome": "Espaços maker",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "especializacao",
+      "nome": "Especialização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "esquema-de-banco-de-dados",
+      "nome": "Esquema de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "estado-desejado-kubernetes",
+      "nome": "Estado desejado do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "estado-mutavel",
+      "nome": "Estado mutável",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estados-de-interface",
+      "nome": "Estados de interface",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "estagios-cognitivos-de-piaget",
+      "nome": "Estágios cognitivos de Piaget",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estagios-de-wallon",
+      "nome": "Estágios de Wallon",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estatistica",
+      "nome": "Estatística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estatistica-inferencial",
+      "nome": "Estatística inferencial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estrutura-cognitiva",
+      "nome": "Estrutura cognitiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estrutura-de-documento-html",
+      "nome": "Estrutura de documento HTML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "estruturalismo",
+      "nome": "Estruturalismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estruturas-condicionais",
+      "nome": "Estruturas condicionais",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "etag",
+      "nome": "ETag",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "etcd",
+      "nome": "etcd",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ether",
+      "nome": "Ether",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ethereum",
+      "nome": "Ethereum",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "etica-em-ia",
+      "nome": "Ética em IA",
       "disciplina": "inteligencia-artificial"
     },
     {
@@ -233,9 +2043,429 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "evasao-escolar",
+      "nome": "Evasão escolar",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "event-emitter",
+      "nome": "Event emitter",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "event-loop",
+      "nome": "Event loop",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "evento",
+      "nome": "Evento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "evento-complementar",
+      "nome": "Evento complementar",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "evento-solidity",
+      "nome": "Evento Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "eventos-independentes",
+      "nome": "Eventos independentes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "eventos-mutualmente-exclusivos",
+      "nome": "Eventos mutuamente exclusivos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "experiencia-do-usuario",
+      "nome": "Experiência do usuário",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "experimentacao",
+      "nome": "Experimentação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "experimento-aleatorio",
+      "nome": "Experimento aleatório",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "expressjs",
+      "nome": "Express.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "f1-score",
+      "nome": "F1-score",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "fab-lab",
+      "nome": "Fab Lab",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "fabricacao-digital",
+      "nome": "Fabricação digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "falacia",
+      "nome": "Falácia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "falacia-da-falsa-causa",
+      "nome": "Falácia da falsa causa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "falsa-dicotomia",
+      "nome": "Falsa dicotomia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "fatores-ambientais-no-desenvolvimento",
+      "nome": "Fatores ambientais no desenvolvimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "fatos-e-regras",
+      "nome": "Fatos e regras",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "fechamento-em-javascript",
+      "nome": "Fechamento em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "fetch-api",
+      "nome": "Fetch API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "filtro-de-consulta-sql",
+      "nome": "Filtro de consulta SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "financas-descentralizadas",
+      "nome": "Finanças descentralizadas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "fine-tuning",
       "nome": "Fine-tuning",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "firebase",
+      "nome": "Firebase",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "firebase-cli",
+      "nome": "Firebase CLI",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "firebase-hosting",
+      "nome": "Firebase Hosting",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "flexbox",
+      "nome": "Flexbox",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "fluencia-digital",
+      "nome": "Fluência digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "flux",
+      "nome": "Flux",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "fluxograma",
+      "nome": "Fluxograma",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "flyweight",
+      "nome": "Flyweight",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "foco-de-teclado",
+      "nome": "Foco de teclado",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "formacao-continuada",
+      "nome": "Formação continuada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "formacao-docente",
+      "nome": "Formação docente",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "formalismos-de-representacao-do-conhecimento",
+      "nome": "Formalismos de representação do conhecimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "formdata",
+      "nome": "FormData",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "fragmento-react",
+      "nome": "Fragmento React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "frames",
+      "nome": "Frames",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "framework",
+      "nome": "Framework",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "frase-de-recuperacao",
+      "nome": "Frase de recuperação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "frequencia-relativa",
+      "nome": "Frequência relativa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "frontend",
+      "nome": "Frontend",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "full-stack",
+      "nome": "Full stack",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcao",
+      "nome": "Função em programação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-bijetora",
+      "nome": "Função bijetora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-de-aptidao",
+      "nome": "Função de aptidão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-de-banco-de-dados",
+      "nome": "Função de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcao-de-utilidade",
+      "nome": "Função de utilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-injetora",
+      "nome": "Função injetora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-matematica",
+      "nome": "Função matemática",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-pura",
+      "nome": "Função pura",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-sobrejetora",
+      "nome": "Função sobrejetora",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcao-solidity",
+      "nome": "Função Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcionalismo",
+      "nome": "Funcionalismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcoes-construtoras",
+      "nome": "Funções construtoras",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcoes-de-agregacao-sql",
+      "nome": "Funções de agregação SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcoes-de-flecha",
+      "nome": "Funções de flecha",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcoes-de-primeira-classe",
+      "nome": "Funções de primeira classe",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "funcoes-em-javascript",
+      "nome": "Funções em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "funcoes-escalares-sql",
+      "nome": "Funções escalares SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gamificacao",
+      "nome": "Gamificação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "gas",
+      "nome": "Gas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "gcp",
+      "nome": "GCP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "generalizacao",
+      "nome": "Generalização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "generalizacao-apressada",
+      "nome": "Generalização apressada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "geracao-de-linguagem-natural",
+      "nome": "Geração de linguagem natural",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "geracao-de-parametros-estaticos-nextjs",
+      "nome": "Geração de parâmetros estáticos no Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "geradores",
+      "nome": "Geradores JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gerenciamento-de-containers",
+      "nome": "Gerenciamento de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gerenciamento-de-sessao",
+      "nome": "Gerenciamento de sessão",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gestalt",
+      "nome": "Gestalt",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "gestao-de-chaves-criptograficas",
+      "nome": "Gestão de chaves criptográficas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "gestao-de-custos-em-nuvem",
+      "nome": "Gestão de custos em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gestao-democratica",
+      "nome": "Gestão democrática",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "git",
+      "nome": "Git",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "git-aliases",
+      "nome": "Git aliases",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "git-cherry-pick",
+      "nome": "Git cherry-pick",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "git-hooks",
+      "nome": "Git hooks",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "git-rebase",
+      "nome": "Git rebase",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gitflow",
+      "nome": "Gitflow",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "github-flow",
+      "nome": "GitHub Flow",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "governanca-por-token",
+      "nome": "Governança por token",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "graphql",
+      "nome": "GraphQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "guardrails",
@@ -243,9 +2473,109 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "gwei",
+      "nome": "Gwei",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "habilidades-sociais",
+      "nome": "Habilidades sociais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hard-skills",
+      "nome": "Hard skills",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hardware-aberto",
+      "nome": "Hardware aberto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "harness",
       "nome": "Harness",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "hash-de-senhas",
+      "nome": "Hash de senhas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "hashing",
+      "nome": "Hashing",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hereditariedade",
+      "nome": "Hereditariedade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "heuristica-admissivel",
+      "nome": "Heurística admissível",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "heuristica-de-corte",
+      "nome": "Heurística de corte",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hipotese-de-aprendizado",
+      "nome": "Hipótese de aprendizado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hoisting",
+      "nome": "Hoisting",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "home-office",
+      "nome": "Home office",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hooks-react",
+      "nome": "Hooks do React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "horizontal-pod-autoscaler",
+      "nome": "Horizontal Pod Autoscaler",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "html-semantico",
+      "nome": "HTML semântico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "html5",
+      "nome": "HTML5",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "http",
+      "nome": "HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "http-streaming",
+      "nome": "HTTP streaming",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "https",
+      "nome": "HTTPS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "hypervisor",
+      "nome": "Hypervisor",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "ia-generativa",
@@ -253,9 +2583,229 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "iaas",
+      "nome": "IaaS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "id-ego-e-superego",
+      "nome": "Id, ego e superego",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ideacao",
+      "nome": "Ideação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "idempotencia-http",
+      "nome": "Idempotência HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "imagem-de-funcao",
+      "nome": "Imagem de função",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "imagem-docker",
+      "nome": "Imagem Docker",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "implantacao-continua",
+      "nome": "Implantação contínua",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "implicacao-logica",
+      "nome": "Implicação lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "import-solidity",
+      "nome": "Import Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "imutabilidade",
+      "nome": "Imutabilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "imutabilidade-de-registro",
+      "nome": "Imutabilidade de registro",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "inatismo",
+      "nome": "Inatismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "independencia-de-dados",
+      "nome": "Independência de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "indice-de-banco-de-dados",
+      "nome": "Índice de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "industria-4-0",
+      "nome": "Indústria 4.0",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "indutor-de-aprendizado",
+      "nome": "Indutor de aprendizado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "infancias-e-juventudes",
+      "nome": "Infâncias e juventudes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "informacao",
+      "nome": "Informação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "infraestrutura-como-codigo",
+      "nome": "Infraestrutura como código",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "injecao-de-dependencia",
+      "nome": "Injeção de dependência",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "inner-join",
+      "nome": "INNER JOIN",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "inovacao",
+      "nome": "Inovação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "inovacao-aberta",
+      "nome": "Inovação aberta",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "inovacao-incremental",
+      "nome": "Inovação incremental",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
+      "slug": "inovacao-radical",
+      "nome": "Inovação radical",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
+      "slug": "insight",
+      "nome": "Insight",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "instancia-de-dados",
+      "nome": "Instância de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "instancia-de-entidade",
+      "nome": "Instância de entidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "integracao-continua",
+      "nome": "Integração contínua",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "integracao-de-dados",
+      "nome": "Integração de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "integracao-javascript-html",
+      "nome": "Integração JavaScript-HTML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "integridade-de-dados",
+      "nome": "Integridade de dados",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "integridade-do-ego",
+      "nome": "Integridade do ego",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "integridade-referencial",
+      "nome": "Integridade referencial",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "inteligencia-artificial",
       "nome": "Inteligência Artificial",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "intencionalidade-pedagogica",
+      "nome": "Intencionalidade pedagógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "interacao-hereditariedade-ambiente",
+      "nome": "Interação hereditariedade–ambiente",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "interacionismo",
+      "nome": "Interacionismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "interceptacao-de-rotas",
+      "nome": "Interceptação de rotas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "interface-de-dapp",
+      "nome": "Interface de DApp",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "internet",
+      "nome": "Internet",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "internet-das-coisas",
+      "nome": "Internet das Coisas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "interoperabilidade",
+      "nome": "Interoperabilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "interpretacao-de-linguagem-natural",
+      "nome": "Interpretação de linguagem natural",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "intersecao-relacional",
+      "nome": "Interseção relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "inverno-da-ia",
@@ -263,9 +2813,159 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "inversao-de-controle",
+      "nome": "Inversão de controle",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "isolamento-de-containers",
+      "nome": "Isolamento de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "isr",
+      "nome": "Incremental static regeneration",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "iteradores",
+      "nome": "Iteradores",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "javascript",
+      "nome": "JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "jest",
+      "nome": "Jest",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "jogo-de-soma-zero",
+      "nome": "Jogo de soma zero",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "jogos",
+      "nome": "Jogos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "jogos-de-azar",
+      "nome": "Jogos de azar",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "jogos-deterministicos",
+      "nome": "Jogos determinísticos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "json",
+      "nome": "JSON",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "jsx",
+      "nome": "JSX",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "juncao-por-igualdade",
+      "nome": "Junção por igualdade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "juncao-relacional",
+      "nome": "Junção relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "jwt",
+      "nome": "JWT",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "knn",
+      "nome": "KNN",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "koa",
+      "nome": "Koa",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "kubectl",
+      "nome": "kubectl",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "kubernetes",
+      "nome": "Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "lacos-de-repeticao",
+      "nome": "Laços de repetição",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "layout-nextjs",
+      "nome": "Layout do Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ldb",
+      "nome": "LDB",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "left-join",
+      "nome": "LEFT JOIN",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "lematizacao",
+      "nome": "Lematização",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "letramento-digital",
+      "nome": "Letramento digital",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "lgpd",
       "nome": "LGPD",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "libuv",
+      "nome": "libuv",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "lift-and-shift",
+      "nome": "Lift and shift",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "lifting-state-up",
+      "nome": "Lifting state up",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "linguagem-e-desenvolvimento",
+      "nome": "Linguagem e desenvolvimento",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "link-nextjs",
+      "nome": "Link do Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "llm",
@@ -273,9 +2973,114 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "loading-ui-nextjs",
+      "nome": "Loading UI do Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "logging",
+      "nome": "Logging",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "logica-de-descricao",
+      "nome": "Lógica de descrição",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "logica-de-primeira-ordem",
+      "nome": "Lógica de primeira ordem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "logica-fuzzy",
+      "nome": "Lógica fuzzy",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ludicidade",
+      "nome": "Ludicidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "maieutica",
+      "nome": "Maiêutica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "manipulacao-do-dom",
+      "nome": "Manipulação do DOM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "manual-de-oslo",
+      "nome": "Manual de Oslo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mapeamento-conceitual-logico",
+      "nome": "Mapeamento conceitual-lógico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mapeamento-de-portas",
+      "nome": "Mapeamento de portas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mapping-solidity",
+      "nome": "Mapping Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "maquina-virtual",
+      "nome": "Máquina virtual",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "maquina-virtual-ethereum",
+      "nome": "Máquina Virtual Ethereum",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "marcacao-de-partes-do-discurso",
+      "nome": "Marcação de partes do discurso",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "marco-legal-da-ia",
       "nome": "Marco Legal da IA (Brasil)",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "market-maker-automatizado",
+      "nome": "Market maker automatizado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "marketing-pessoal",
+      "nome": "Marketing pessoal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "matcher-de-middleware",
+      "nome": "Matcher de middleware",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "matematica",
+      "nome": "Matemática",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "matriz-de-confusao",
+      "nome": "Matriz de confusão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "matriz-gut",
+      "nome": "Matriz GUT",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "mcp",
@@ -283,9 +3088,844 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "md5",
+      "nome": "MD5",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mecanismo-de-inferencia",
+      "nome": "Mecanismo de inferência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mecanismos-de-consenso",
+      "nome": "Mecanismos de consenso",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "media-aritmetica",
+      "nome": "Média aritmética",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "media-query",
+      "nome": "Media query",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mediacao-pedagogica",
+      "nome": "Mediação pedagógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mediana",
+      "nome": "Mediana",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "memoria",
+      "nome": "Memória",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mensageria",
+      "nome": "Mensageria",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "metadados-seo",
+      "nome": "Metadados SEO",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "metamodelo-de-dados",
+      "nome": "Metamodelo de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "metaverso",
+      "nome": "Metaverso",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "metodologias-ativas",
+      "nome": "Metodologias ativas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "metodos-de-array",
+      "nome": "Métodos de array",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "metodos-de-ensino",
+      "nome": "Métodos de ensino",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "metodos-http",
+      "nome": "Métodos HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "microcontrolador",
+      "nome": "Microcontrolador",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "middleware",
+      "nome": "Middleware",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "midias",
+      "nome": "Mídias",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "midias-digitais",
+      "nome": "Mídias digitais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "migracao-de-aplicacoes",
+      "nome": "Migração de aplicações",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "migracao-de-banco",
+      "nome": "Migração de banco",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "migracao-entre-clusters-kubernetes",
+      "nome": "Migração entre clusters Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mineracao-de-criptomoedas",
+      "nome": "Mineração de criptomoedas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "minimax",
+      "nome": "Minimax",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mock-server",
+      "nome": "Mock server",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "moda",
+      "nome": "Moda",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelagem-de-dados",
+      "nome": "Modelagem de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-cha",
+      "nome": "Modelo CHA",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelo-conceitual",
+      "nome": "Modelo conceitual",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-de-dados",
+      "nome": "Modelo de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-de-eventos-do-dom",
+      "nome": "Modelo de eventos do DOM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-entidade-relacionamento",
+      "nome": "Modelo entidade-relacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-entidade-relacionamento-estendido",
+      "nome": "Modelo entidade-relacionamento estendido",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-estocastico",
+      "nome": "Modelo estocástico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelo-fisico",
+      "nome": "Modelo físico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-logico",
+      "nome": "Modelo lógico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-relacional",
+      "nome": "Modelo relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modelo-riasec",
+      "nome": "Modelo RIASEC",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelo-topografico-do-aparelho-psiquico",
+      "nome": "Modelo topográfico do aparelho psíquico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelos-de-carreira",
+      "nome": "Modelos de carreira",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modelos-de-nuvem",
+      "nome": "Modelos de nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modernizacao-de-aplicacoes",
+      "nome": "Modernização de aplicações",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modificador-de-funcao-solidity",
+      "nome": "Modificador de função Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modulos-esm",
+      "nome": "Módulos ESM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "modus-ponens",
+      "nome": "Modus ponens",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "modus-tollens",
+      "nome": "Modus tollens",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "monitoramento",
+      "nome": "Monitoramento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "motivacao",
+      "nome": "Motivação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "motor-de-renderizacao",
+      "nome": "Motor de renderização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "multicloud",
+      "nome": "Multicloud",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "multimodalidade",
       "nome": "Multimodalidade",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "multiplicidade",
+      "nome": "Multiplicidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mvc",
+      "nome": "MVC",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mysql",
+      "nome": "MySQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "naive-bayes",
+      "nome": "Naive Bayes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "navegador-web",
+      "nome": "Navegador Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "negacao-logica",
+      "nome": "Negação lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "neurociencia",
+      "nome": "Neurociência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "neuroplasticidade",
+      "nome": "Neuroplasticidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "nextauth",
+      "nome": "NextAuth",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nextjs",
+      "nome": "Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nft",
+      "nome": "NFT",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "nivel-de-isolamento",
+      "nome": "Nível de isolamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "node-kubernetes",
+      "nome": "Node do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nodejs",
+      "nome": "Node.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nome-acessivel",
+      "nome": "Nome acessível",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nonce",
+      "nome": "Nonce",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "not-found-nextjs",
+      "nome": "Not found no Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "notacao-pes-de-galinha",
+      "nome": "Notação pé de galinha",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "npm",
+      "nome": "NPM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nuvem-hibrida",
+      "nome": "Nuvem híbrida",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nuvem-privada",
+      "nome": "Nuvem privada",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nuvem-publica",
+      "nome": "Nuvem pública",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "oauth",
+      "nome": "OAuth",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "observabilidade",
+      "nome": "Observabilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ontologia",
+      "nome": "Ontologia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "opcode",
+      "nome": "Opcode",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "openapi",
+      "nome": "OpenAPI",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "operacoes-com-conjuntos",
+      "nome": "Operações com conjuntos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "operacoes-de-conjunto-relacional",
+      "nome": "Operações de conjunto relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "operador-mod",
+      "nome": "Operador módulo",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "operadores-javascript",
+      "nome": "Operadores JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "opex",
+      "nome": "OPEX",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ordenacao-de-consulta-sql",
+      "nome": "Ordenação de consulta SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "origem-web",
+      "nome": "Origem Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "orm",
+      "nome": "ORM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "orquestracao-de-containers",
+      "nome": "Orquestração de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "overfitting",
+      "nome": "Overfitting",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paas",
+      "nome": "PaaS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pac",
+      "nome": "PAC",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "package-json",
+      "nome": "package.json",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "padroes-arquiteturais",
+      "nome": "Padrões arquiteturais",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "padroes-de-projeto",
+      "nome": "Padrões de projeto",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pagamento-conforme-uso",
+      "nome": "Pagamento conforme uso",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pages-router",
+      "nome": "Pages Router",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "paideia",
+      "nome": "Paideia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "par-ordenado",
+      "nome": "Par ordenado",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradigma-declarativo",
+      "nome": "Paradigma declarativo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradigma-funcional",
+      "nome": "Paradigma funcional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradigma-imperativo",
+      "nome": "Paradigma imperativo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradigma-logico",
+      "nome": "Paradigma lógico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradigmas-de-programacao",
+      "nome": "Paradigmas de programação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paradoxo-de-russell",
+      "nome": "Paradoxo de Russell",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "parametro-estatistico",
+      "nome": "Parâmetro estatístico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "parametros-de-rota",
+      "nome": "Parâmetros de rota",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "participacao-em-relacionamento",
+      "nome": "Participação em relacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "payable-solidity",
+      "nome": "Payable Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia",
+      "nome": "Pedagogia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia-da-convivencia",
+      "nome": "Pedagogia da convivência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia-liberal",
+      "nome": "Pedagogia liberal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia-progressista",
+      "nome": "Pedagogia progressista",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia-social",
+      "nome": "Pedagogia social",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogia-tradicional",
+      "nome": "Pedagogia tradicional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pedagogo",
+      "nome": "Pedagogo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pensamento-computacional",
+      "nome": "Pensamento computacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pensamento-critico",
+      "nome": "Pensamento crítico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pensamento-de-ordem-superior",
+      "nome": "Pensamento de ordem superior",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "percentil",
+      "nome": "Percentil",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "percepcao",
+      "nome": "Percepção",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "performance-web",
+      "nome": "Performance Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pergunta-problema",
+      "nome": "Pergunta-problema",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pertinencia-de-conjuntos",
+      "nome": "Pertinência de conjuntos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pesquisa-cientifica",
+      "nome": "Pesquisa científica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pesquisa-educacional",
+      "nome": "Pesquisa educacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pilares-cultura-maker",
+      "nome": "Pilares da cultura maker",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pipeline-ci-cd",
+      "nome": "Pipeline CI/CD",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pipes-e-filtros",
+      "nome": "Pipes e filtros",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "piramide-de-maslow",
+      "nome": "Pirâmide de Maslow",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "plagio",
+      "nome": "Plágio",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "planejamento-de-capacidade",
+      "nome": "Planejamento de capacidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "planejamento-educacional",
+      "nome": "Planejamento educacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "plano-de-carreira",
+      "nome": "Plano de carreira",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "play-to-earn",
+      "nome": "Play-to-earn",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pod",
+      "nome": "Pod",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "poda-alfa-beta",
+      "nome": "Poda alfa-beta",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "poda-de-arvore",
+      "nome": "Poda de árvore",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "politica-de-mesma-origem",
+      "nome": "Política de mesma origem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "politicas-publicas-educacionais",
+      "nome": "Políticas públicas educacionais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pool-de-liquidez",
+      "nome": "Pool de liquidez",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "populacao-estatistica",
+      "nome": "População estatística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "portabilidade-de-containers",
+      "nome": "Portabilidade de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "portfolio-profissional",
+      "nome": "Portfólio profissional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pragma-solidity",
+      "nome": "Pragma Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pratica-pedagogica-inclusiva",
+      "nome": "Prática pedagógica inclusiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "praxis-educativa",
+      "nome": "Práxis educativa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "precisao",
+      "nome": "Precisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "premissa",
+      "nome": "Premissa",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "principio-da-responsabilidade-unica",
+      "nome": "Princípio da responsabilidade única",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "probabilidade",
+      "nome": "Probabilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "probabilidade-condicional",
+      "nome": "Probabilidade condicional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "problema-de-busca",
+      "nome": "Problema de busca",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processamento-de-linguagem-natural",
+      "nome": "Processamento de linguagem natural",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processo-de-inovacao",
+      "nome": "Processo de inovação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processo-incremental-de-decisao",
+      "nome": "Processo incremental de decisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processo-intuitivo-de-decisao",
+      "nome": "Processo intuitivo de decisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processo-racional-de-decisao",
+      "nome": "Processo racional de decisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processos-mentais",
+      "nome": "Processos mentais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "produto-cartesiano-relacional",
+      "nome": "Produto cartesiano relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "professor-curador",
+      "nome": "Professor-curador",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "profissional-fazedor",
+      "nome": "Profissional fazedor",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "programacao-assincrona",
+      "nome": "Programação assíncrona",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "programacao-em-blocos",
+      "nome": "Programação em blocos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "programacao-embarcada",
+      "nome": "Programação embarcada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "programacao-orientada-a-contratos",
+      "nome": "Programação orientada a contratos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "programacao-orientada-a-objetos",
+      "nome": "Programação orientada a objetos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "projecao-relacional",
+      "nome": "Projeção relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "promises",
+      "nome": "Promises",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "prompt-engineering",
@@ -293,9 +3933,259 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "prop-drilling",
+      "nome": "Prop drilling",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "propagacao-de-eventos",
+      "nome": "Propagação de eventos",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "proposicao-composta",
+      "nome": "Proposição composta",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-condicional",
+      "nome": "Proposição condicional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-conjuntiva",
+      "nome": "Proposição conjuntiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-disjuntiva",
+      "nome": "Proposição disjuntiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-existencial",
+      "nome": "Proposição existencial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-logica",
+      "nome": "Proposição lógica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-simples",
+      "nome": "Proposição simples",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proposicao-universal",
+      "nome": "Proposição universal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "propriedades-de-algoritmos-de-busca",
+      "nome": "Propriedades de algoritmos de busca",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "props",
+      "nome": "Props",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "protecao-de-credenciais",
+      "nome": "Proteção de credenciais",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "protecao-de-rotas",
+      "nome": "Proteção de rotas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "prototipagem",
+      "nome": "Prototipagem",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "prova-de-delegacao",
+      "nome": "Proof-of-Delegated-Stake",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "prova-de-participacao",
+      "nome": "Proof-of-Stake",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "prova-de-trabalho",
+      "nome": "Proof-of-Work",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "proxy-pattern",
+      "nome": "Proxy",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "pseudocodigo",
+      "nome": "Pseudocódigo",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "psicanalise",
+      "nome": "Psicanálise",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "psicologia-cientifica",
+      "nome": "Psicologia científica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "psicologia-da-educacao",
+      "nome": "Psicologia da educação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "psicologia-humanista",
+      "nome": "Psicologia Humanista",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "psicomotricidade",
+      "nome": "Psicomotricidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pulsao-de-vida-e-pulsao-de-morte",
+      "nome": "Pulsão de vida e pulsão de morte",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pwa",
+      "nome": "Progressive Web App",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "quantificador-existencial",
+      "nome": "Quantificador existencial",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "quantificador-universal",
+      "nome": "Quantificador universal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "quartil",
+      "nome": "Quartil",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "quarto-chines",
+      "nome": "Quarto Chinês",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "query-string",
+      "nome": "Query string",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "raciocinio-dedutivo",
+      "nome": "Raciocínio dedutivo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "raciocinio-indutivo",
+      "nome": "Raciocínio indutivo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "raciocinio-logico",
+      "nome": "Raciocínio lógico",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "rag",
       "nome": "RAG",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "raiz-de-merkle",
+      "nome": "Raiz de Merkle",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "random-forest",
+      "nome": "Random Forest",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "rastreabilidade-em-blockchain",
+      "nome": "Rastreabilidade em blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "rbac",
+      "nome": "RBAC",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "react",
+      "nome": "React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "react-router",
+      "nome": "React Router",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "realidade-aumentada",
+      "nome": "Realidade aumentada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "realidade-virtual",
+      "nome": "Realidade virtual",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "realtime-database",
+      "nome": "Realtime Database",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "reconhecimento-de-entidades-nomeadas",
+      "nome": "Reconhecimento de entidades nomeadas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "reconhecimento-de-padroes",
+      "nome": "Reconhecimento de padrões",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "recuperacao-automatica-de-falhas",
+      "nome": "Recuperação automática de falhas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "recuperacao-de-desastres",
+      "nome": "Recuperação de desastres",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "recursividade",
+      "nome": "Recursividade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "rede-de-containers",
+      "nome": "Rede de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
       "slug": "rede-neural",
@@ -303,9 +4193,779 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "rede-p2p",
+      "nome": "Rede peer-to-peer",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "redes-bayesianas",
+      "nome": "Redes bayesianas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "redes-semanticas",
+      "nome": "Redes semânticas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "redis",
+      "nome": "Redis",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "redundancia-de-rede",
+      "nome": "Redundância de rede",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "registro-de-imagens-de-containers",
+      "nome": "Registro de imagens de containers",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "regra-da-probabilidade-total",
+      "nome": "Regra da probabilidade total",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regra-da-soma",
+      "nome": "Regra da soma",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regra-de-inferencia",
+      "nome": "Regra de inferência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regra-do-produto",
+      "nome": "Regra do produto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regras-de-codd",
+      "nome": "Regras de Codd",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "regressao-linear",
+      "nome": "Regressão linear",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regressao-logistica",
+      "nome": "Regressão logística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "regularizacao",
+      "nome": "Regularização",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "relacao",
+      "nome": "Relação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "relacao-matematica",
+      "nome": "Relação matemática",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "relacao-professor-aluno",
+      "nome": "Relação professor-aluno",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "relacionamento",
+      "nome": "Relacionamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "relacionamento-binario",
+      "nome": "Relacionamento binário",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "relacionamento-ternario",
+      "nome": "Relacionamento ternário",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "renderizacao-condicional",
+      "nome": "Renderização condicional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "renderizacao-de-listas",
+      "nome": "Renderização de listas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "renomeacao-relacional",
+      "nome": "Renomeação relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "replicaset",
+      "nome": "ReplicaSet",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "replication-controller-kubernetes",
+      "nome": "Replication Controller do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "representacao-de-conjuntos",
+      "nome": "Representação de conjuntos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "representacao-de-incerteza",
+      "nome": "Representação de incerteza",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "request-response",
+      "nome": "Requisição e resposta HTTP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "require-solidity",
+      "nome": "Require Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "reset-css",
+      "nome": "Reset CSS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "resolucao-de-problemas",
+      "nome": "Resolução de problemas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "rest",
+      "nome": "REST",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "restricao-semantica",
+      "nome": "Restrição semântica",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "restricoes-do-modelo-relacional",
+      "nome": "Restrições do modelo relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "revalidacao-de-dados",
+      "nome": "Revalidação de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "revert-solidity",
+      "nome": "Revert Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "rewrite-de-rotas-nextjs",
+      "nome": "Rewrite de rotas no Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "rig-de-mineracao",
+      "nome": "Rig de mineração",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "right-join",
+      "nome": "RIGHT JOIN",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "robotica",
+      "nome": "Robótica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "robotica-educacional",
+      "nome": "Robótica educacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "robots-txt",
+      "nome": "robots.txt",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "rotas-aninhadas",
+      "nome": "Rotas aninhadas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "rotas-de-api-nextjs",
+      "nome": "Rotas de API Next.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "roteamento",
+      "nome": "Roteamento",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "roteamento-dinamico",
+      "nome": "Roteamento dinâmico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "runtime-do-navegador",
+      "nome": "Runtime do navegador",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "saas",
+      "nome": "SaaS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "saberes-docentes",
+      "nome": "Saberes docentes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "scheduler-kubernetes",
+      "nome": "Scheduler do Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "scrum",
+      "nome": "Scrum",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sdk-do-firebase",
+      "nome": "SDK do Firebase",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "seeder-de-banco",
+      "nome": "Seeder de banco",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "segundo-cerebro",
       "nome": "Segundo Cérebro",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "seguranca-da-informacao",
+      "nome": "Segurança da informação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "seguranca-de-banco-de-dados",
+      "nome": "Segurança de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "seguranca-em-blockchain",
+      "nome": "Segurança em blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "seguranca-em-nuvem",
+      "nome": "Segurança em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "selecao-relacional",
+      "nome": "Seleção relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "seletores-css",
+      "nome": "Seletores CSS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sensibilidade",
+      "nome": "Sensibilidade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sensor",
+      "nome": "Sensor",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "seo",
+      "nome": "SEO",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "separacao-treino-teste",
+      "nome": "Separação treino-teste",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sequelize",
+      "nome": "Sequelize",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sequencia-de-banco-de-dados",
+      "nome": "Sequência de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "server-actions",
+      "nome": "Server Actions",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "serverless",
+      "nome": "Serverless",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "service-kubernetes",
+      "nome": "Service Kubernetes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "service-workers",
+      "nome": "Service worker",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sessao-de-autenticacao",
+      "nome": "Sessão de autenticação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sgbd",
+      "nome": "Sistema gerenciador de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sha-256",
+      "nome": "SHA-256",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "signos-e-ferramentas-culturais",
+      "nome": "Signos e ferramentas culturais",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "silogismo",
+      "nome": "Silogismo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "silogismo-disjuntivo",
+      "nome": "Silogismo disjuntivo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "silogismo-hipotetico",
+      "nome": "Silogismo hipotético",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sinaes",
+      "nome": "Sinaes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "single-page-application",
+      "nome": "Single-page application",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "single-sign-on",
+      "nome": "Single Sign-On",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sistema-educacional",
+      "nome": "Sistema educacional",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sistemas-multiagentes",
+      "nome": "Sistemas multiagentes",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sitemap-xml",
+      "nome": "Sitemap XML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sla",
+      "nome": "SLA",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "slash-career",
+      "nome": "Slash career",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "smart-working",
+      "nome": "Smart working",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "soap",
+      "nome": "SOAP",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "socializacao",
+      "nome": "Socialização",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sociologia-da-educacao",
+      "nome": "Sociologia da educação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "socket-de-rede",
+      "nome": "Socket de rede",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sofisma",
+      "nome": "Sofisma",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "soft-skills",
+      "nome": "Soft skills",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "software-aberto",
+      "nome": "Software aberto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "solidity",
+      "nome": "Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "solucao-tecnologica",
+      "nome": "Solução tecnológica",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sql",
+      "nome": "SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ssg",
+      "nome": "Static site generation",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ssr",
+      "nome": "Server-side rendering",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "stage-gate",
+      "nome": "Stage-Gate",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "staking",
+      "nome": "Staking",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "startup",
+      "nome": "Startup",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "state",
+      "nome": "State em React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "stateful",
+      "nome": "Stateful",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "stateless",
+      "nome": "Stateless",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "stemming",
+      "nome": "Stemming",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "stored-procedure",
+      "nome": "Stored procedure",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "streaming-web",
+      "nome": "Streaming Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "streams-nodejs",
+      "nome": "Streams no Node.js",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "struct-solidity",
+      "nome": "Struct Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "styled-components",
+      "nome": "styled-components",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "subclasse",
+      "nome": "Subclasse",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "subconjunto",
+      "nome": "Subconjunto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "subconsulta-sql",
+      "nome": "Subconsulta SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "subsun-cor",
+      "nome": "Subsunçor",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "superclasse",
+      "nome": "Superclasse",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "supertest",
+      "nome": "Supertest",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "suspense-react",
+      "nome": "Suspense React",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sustentabilidade-em-nuvem",
+      "nome": "Sustentabilidade em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "svm",
+      "nome": "SVM",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "swagger",
+      "nome": "Swagger",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "switch-case",
+      "nome": "Switch case",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tabela-associativa",
+      "nome": "Tabela associativa",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tabela-verdade",
+      "nome": "Tabela-verdade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tailwind-css",
+      "nome": "Tailwind CSS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tarefas-descritivas",
+      "nome": "Tarefas descritivas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tarefas-preditivas",
+      "nome": "Tarefas preditivas",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tautologia",
+      "nome": "Tautologia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tco",
+      "nome": "Custo total de propriedade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tdah",
+      "nome": "TDAH",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tdd",
+      "nome": "Desenvolvimento orientado a testes",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tecnologia",
+      "nome": "Tecnologia",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tecnologia-assistiva",
+      "nome": "Tecnologia assistiva",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tempo-integral",
+      "nome": "Tempo integral",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "teoria-de-wallon",
+      "nome": "Teoria de Wallon",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "teoria-psicossexual",
+      "nome": "Teoria psicossexual",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "terraform",
+      "nome": "Terraform",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "teste-de-aceitacao",
+      "nome": "Teste de aceitação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "teste-de-api",
+      "nome": "Teste de API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "teste-de-mesa",
+      "nome": "Teste de mesa",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "teste-de-turing",
+      "nome": "Teste de Turing",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "testes-de-integracao",
+      "nome": "Testes de integração",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "testes-de-ponta-a-ponta",
+      "nome": "Testes de ponta a ponta",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "testes-unitarios",
+      "nome": "Testes unitários",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tf-idf",
+      "nome": "TF-IDF",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "the-merge",
+      "nome": "The Merge",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "this-em-javascript",
+      "nome": "this em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tipos-de-dados-sql",
+      "nome": "Tipos de dados SQL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tipos-de-nos-blockchain",
+      "nome": "Tipos de nós em blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tipos-de-rede-blockchain",
+      "nome": "Tipos de rede blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tipos-de-sgbd",
+      "nome": "Tipos de SGBD",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tls",
+      "nome": "TLS",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "token-de-liquidez",
+      "nome": "Token de liquidez",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "token-erc20",
+      "nome": "Token ERC-20",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tokenizacao",
+      "nome": "Tokenização de texto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tokenizacao-de-ativos",
+      "nome": "Tokenização de ativos",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "tokens",
@@ -313,9 +4973,34 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "tolerancia-a-falhas",
+      "nome": "Tolerância a falhas",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tomada-de-decisao",
+      "nome": "Tomada de decisão",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "tomada-de-decisao-em-grupo",
+      "nome": "Tomada de decisão em grupo",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
       "slug": "tool-use",
       "nome": "Tool Use",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "transacao-de-banco",
+      "nome": "Transação de banco",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "transferencia",
+      "nome": "Transferência",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
       "slug": "transformers",
@@ -323,9 +5008,284 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "transparencia-em-blockchain",
+      "nome": "Transparência em blockchain",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "transpilacao",
+      "nome": "Transpilação",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tratamento-de-erros-javascript",
+      "nome": "Tratamento de erros em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "trigger",
+      "nome": "Trigger",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "tupla",
+      "nome": "Tupla",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "uml",
+      "nome": "UML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "underfitting",
+      "nome": "Underfitting",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "uniao-relacional",
+      "nome": "União relacional",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "unificacao",
+      "nome": "Unificação",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "uniswap",
+      "nome": "Uniswap",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "url-web",
+      "nome": "URL Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "usabilidade-web",
+      "nome": "Usabilidade Web",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "use-context",
+      "nome": "useContext",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "use-effect",
+      "nome": "useEffect",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "use-reducer",
+      "nome": "useReducer",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "use-state",
+      "nome": "useState",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "validacao-cruzada",
+      "nome": "Validação cruzada",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "validacao-de-formulario",
+      "nome": "Validação de formulário",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "valor-de-verdade",
+      "nome": "Valor de verdade",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "value-object",
+      "nome": "Value object",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "var-let-const",
+      "nome": "var, let e const",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variancia",
+      "nome": "Variância",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "variaveis-de-ambiente",
+      "nome": "Variáveis de ambiente",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variaveis-em-javascript",
+      "nome": "Variáveis em JavaScript",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variavel-acumuladora",
+      "nome": "Variável acumuladora",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variavel-contadora",
+      "nome": "Variável contadora",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variavel-de-estado-solidity",
+      "nome": "Variável de estado Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "variavel-estatistica",
+      "nome": "Variável estatística",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "vazamento-de-dados-em-nuvem",
+      "nome": "Vazamento de dados em nuvem",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
       "slug": "vector-store",
       "nome": "Vector store",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "vercel",
+      "nome": "Vercel",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "versionamento-de-api",
+      "nome": "Versionamento de API",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "versionamento-de-arquivos-estaticos",
+      "nome": "Versionamento de arquivos estáticos",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "versionamento-semantico",
+      "nome": "Versionamento semântico",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "vetorizacao-de-texto",
+      "nome": "Vetorização de texto",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "view-solidity",
+      "nome": "View Solidity",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "virtual-dom",
+      "nome": "Virtual DOM",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "virtualizacao",
+      "nome": "Virtualização",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "visao-de-banco-de-dados",
+      "nome": "Visão de banco de dados",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "visao-materializada",
+      "nome": "Visão materializada",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "volumes-docker",
+      "nome": "Volumes Docker",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "vue",
+      "nome": "Vue",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "waterfall",
+      "nome": "Waterfall",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "web",
+      "nome": "World Wide Web",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "web-apis-do-navegador",
+      "nome": "Web APIs do navegador",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "web-services",
+      "nome": "Web services",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "webhook",
+      "nome": "Webhook",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "websocket",
+      "nome": "WebSocket",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "wei",
+      "nome": "Wei",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "word2vec",
+      "nome": "Word2Vec",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "wsdl",
+      "nome": "WSDL",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "xss",
+      "nome": "Cross-Site Scripting",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "yaml",
+      "nome": "YAML",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "zero-trust",
+      "nome": "Zero Trust",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "zona-de-desenvolvimento-proximal",
+      "nome": "Zona de desenvolvimento proximal",
+      "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "zona-de-disponibilidade",
+      "nome": "Zona de disponibilidade",
+      "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     }
   ],
   "lessons": [
