@@ -24,7 +24,7 @@ Brief neutro de plataforma, no contrato v6: **um brief de `capa` + no máximo um
 - **perfil:** `infografico`
 - **arquivo:** img/mesmo-visual-dois-codigos.png
 - **secao:** Desenvolvimento › O problema da div-soup / O catálogo que resolve isso
-- **estado:** existe arte-base v5 — regerar no perfil v6 antes de publicar
+- **estado:** aprovada — arte v6 substituiu a v5 em 2026-08-11. A v5 reprovava em D10 (só o lado das tags semânticas era rotulado; o lado da div vinha sem `class` visível, o que invertia o argumento da aula) e D9 (nós cinza sem cor nem rótulo). 1664×936, 16:9 exato.
 - **objetivo:** Provar, num golpe de vista, que os dois códigos produzem o mesmo resultado visual e que só um deles carrega significado. É o ponto exato onde o texto sozinho não convence: o aluno precisa **ver** que a tela é idêntica.
 - **alt:** Duas árvores de elementos HTML lado a lado, representando o mesmo layout visual (header no topo, article/aside/nav no meio, footer embaixo). À esquerda, todos os nós são `<div>` cinza, diferenciados apenas pelo atributo `class`. À direita, os mesmos nós usam as tags `<header>`, `<article>`, `<aside>`, `<nav>` e `<footer>`, destacadas em cores distintas. Um sinal de igual entre os dois painéis mostra que o resultado renderizado é o mesmo — o significado estrutural é explícito na tag, não no nome da classe.
 
