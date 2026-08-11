@@ -1,11 +1,32 @@
 # Delegar a geração ao Codex
 
 O Codex CLI tem ferramenta nativa de imagem. Verificado em 29/07/2026: a partir
-do prompt v6 já montado, entregou um infográfico 1664×936 (16:9 exato) que
-passou nos 12 defeitos da regra R3 na primeira tentativa.
+do prompt v6 já montado, o `image_gen` nativo entregou um infográfico em
+1672×941. O arquivo 1664×936 existente no acervo veio depois de um crop
+(`Rectangle(4,2,1664,936)`), não é resolução nativa. Na Images API, os tamanhos
+16:9 válidos são `1536x864` e `2048x1152`.
 
 Esse é o caminho padrão de geração. O navegador continua válido, mas é a
-segunda opção — ver `instrucoes-projeto-gpt.md`.
+segunda opção — ver `instrucoes-projeto-gpt.md`. A ferramenta nativa é opaca:
+não expõe modelo, `quality`, `size`, `background` nem `fidelity`. Um pedido de
+`quality=high` é descartado silenciosamente; no mesmo prompt, os dois PNGs
+medidos saíram em 1536×1024, com 1764423 e 1862719 bytes. A diferença é
+variação estocástica, não efeito de parâmetro. O PNG nasce em
+`.codex/generated_images/` e deve ser copiado de lá para o caminho de saída
+pedido.
+
+### Caminho futuro: Images API
+
+A receita controlável fica documentada, mas está indisponível nesta máquina:
+
+```powershell
+image_gen.py generate --model gpt-image-2 --no-augment --quality high --size 1536x1024 --background opaque --output-format png --n 1
+```
+
+A tentativa retornou literalmente: `Error: OPENAI_API_KEY is not set. Export it
+before running.` O Codex está autenticado por login ChatGPT (`stored ChatGPT
+tokens true`, `stored API key false`); token de ChatGPT não equivale a
+`OPENAI_API_KEY`. Definir `OPENAI_API_KEY` no ambiente destrava esse caminho.
 
 ## Por que o prompt vai montado
 
@@ -33,6 +54,12 @@ Grave o prompt montado em um `.txt` no scratchpad e chame o subagente
 `codex:codex-rescue` de forma **síncrona** (`run_in_background: false`) — o PNG
 precisa estar em disco antes de você auditar.
 
+A saída de cada rodada deve ficar sempre no scratchpad da sessão, nunca em
+`aulas/`: `{scratchpad}/imagem-aula/{slug-da-aula}--{perfil}--r{n}.png`. A
+rodada reprovada morre fora do repo. A cópia da peça aprovada para o acervo
+acontece fora desta delegação, pelo Claude Code, depois da auditoria e conforme
+a tabela de destinos do `SKILL.md`.
+
 Modelo do pedido:
 
 ```
@@ -47,7 +74,7 @@ geração de imagem.
 Saída esperada: um PNG {PROPORCAO}, na maior resolução possível, salvo em:
 {CAMINHO_DE_SAIDA}
 
-{LINHA_DE_PROTECAO}
+Não leia, não altere e não grave nada dentro de aulas/ nesta tarefa.
 
 Use a ferramenta nativa de imagem do Codex. Se ela não estiver disponível,
 investigue alternativas no ambiente (API de imagens da OpenAI via credencial
@@ -71,9 +98,10 @@ Três cláusulas carregam peso e não devem ser cortadas:
   gerador — tecnicamente engenhoso, inútil aqui.
 - **"não invente sucesso" + dimensões em bytes e pixels.** Dá uma verificação
   barata antes de você abrir o arquivo.
-- **`{LINHA_DE_PROTECAO}`** quando já existe arte no caminho alvo. Use:
-  `(NÃO sobrescreva o arquivo existente {nome}. Grave em {caminho}-v6.png para
-  comparação.)` Substituir arte antiga é decisão do Toni, não da rodada.
+- **proteção do acervo.** O pedido precisa conter literalmente a linha
+  `Não leia, não altere e não grave nada dentro de aulas/ nesta tarefa.`. A
+  versão v6 identifica o sistema de prompt, não a tentativa; por isso o nome
+  usa `r{n}` no scratchpad e nunca um sufixo de versão no PNG.
 
 ## Depois que o PNG voltar
 
@@ -89,4 +117,7 @@ python .claude/skills/gerar-imagem-aula/scripts/inspecionar_png.py \
 Reprovou? Reforce no prompt exatamente a seção que falhou — não o prompt
 inteiro — e chame o Codex de novo. Dá para continuar o mesmo subagente com
 `SendMessage`, o que preserva o contexto da rodada anterior e sai mais barato
-que abrir outro.
+que abrir outro. O teto é de três rodadas, nomeadas `r1`, `r2` e `r3`. Na
+terceira reprovação, pare e reporte ao Toni o defeito persistente pelo id e o
+que mudou em cada tentativa; falha repetida no mesmo defeito costuma indicar
+brief ambíguo, não gerador ruim.

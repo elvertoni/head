@@ -63,13 +63,43 @@ Se `imagens.md` trouxer várias propostas de miolo, escolher uma, nesta ordem:
 2. a que não duplica tabela, quiz ou `diagrama-progressivo` já suficiente;
 3. a que permanece clara em três segundos e no celular.
 
-Ideias inseparáveis → integrar numa composição só. Já existe imagem no caminho?
-Substituir no mesmo caminho, nunca criar arquivo irmão — mas só depois de o Toni
-aprovar a nova.
+Ideias inseparáveis → integrar numa composição só.
+
+## Onde o arquivo cai
+
+Uma regra só, porque duas se contradizem e o custo cai no Toni. Toda rodada
+nasce no scratchpad da sessão, não no acervo:
+
+```
+{scratchpad}/imagem-aula/{slug-da-aula}--{perfil}--r{n}.png
+```
+
+Rodada reprovada morre ali e nunca entra em `aulas/`. Isso é o que impede a
+pasta da aula de acumular tentativa — foi assim que dois PNGs de fundo claro
+ficaram semanas ocupando espaço na pasta de HTML semântico.
+
+Só a peça **aprovada na auditoria** é copiada para o acervo, e o destino depende
+do que já existe lá:
+
+| situação | destino |
+|---|---|
+| caminho canônico vazio | grava direto em `capa.png` ou `img/{slug}.png` |
+| já existe arte no caminho | grava como `{stem}.proposta.png` ao lado |
+
+`{stem}.proposta.png` é sempre o mesmo nome — a proposta seguinte sobrescreve a
+anterior. Nunca sufixar com a versão do prompt: `v6` identifica o sistema, não a
+tentativa, e `capa-v6 (2).png` é o beco sem saída que essa regra existe pra
+evitar.
+
+Substituir arte que já está no acervo é decisão do Toni, nunca da rodada. Ao
+entregar uma proposta, dizer qual arquivo é o canônico atual, qual é a proposta,
+e o que muda entre os dois — ele precisa disso pra decidir sem abrir os dois no
+Photoshop.
 
 ## Modo 1 — gerar aqui (padrão)
 
-1. `git status --short` para ver o que já existe na pasta da aula.
+1. Listar a pasta da aula para ver que arte já existe e qual caminho está
+   ocupado.
 2. **Declarar o perfil** e reafirmar o **título exato da aula-alvo**. Não é
    burocracia: três capas do acervo saíram com o conteúdo da aula seguinte
    (**D8**) por erro de pareamento entre brief e aula.
@@ -81,9 +111,20 @@ aprovar a nova.
    seguram os defeitos, e são as primeiras que a tentação de encurtar ataca.
 5. Gravar o prompt montado num `.txt` no scratchpad e delegar ao Codex conforme
    `references/delegar-ao-codex.md`, de forma síncrona.
-6. Auditar o PNG (Modo 3). Sem exceção — o relato do subagente cobre existência
+6. Auditar o PNG (Modo 3). Sem exceção — o relato de quem gerou cobre existência
    e medida, nunca conteúdo.
-7. Aprovado → registrar. Reprovado → reforçar a seção que falhou e regerar.
+7. Aprovado → copiar pro acervo e registrar. Reprovado → nova rodada.
+
+**Teto de três rodadas** (`r1`, `r2`, `r3`). Se a terceira reprovar, parar e
+reportar: o defeito que persistiu, pelo id, e o que mudou em cada tentativa. Aí
+a decisão é do Toni — insistir, mudar o brief, ou ir pro navegador (Modo 2).
+Girar sozinho gasta dinheiro dele sem convergir, e falha repetida no mesmo
+defeito costuma ser sinal de brief ambíguo, não de gerador ruim.
+
+O gerador nativo do Codex **não aceita ajuste de qualidade** — `quality`, modelo
+e tamanho não são expostos, e um pedido de `quality=high` é descartado em
+silêncio. Não prometa ao Toni um ganho por parâmetro que a ferramenta não tem;
+o que separa peça boa de peça ruim aqui é o prompt ir montado, não cru.
 
 Entregar ao Toni o prompt montado junto do resultado. Ele reusa esse texto no
 navegador quando quiser comparar geradores.
@@ -98,8 +139,19 @@ do Projeto, anexos e mensagem de rodada estão em
 ## Modo 3 — auditar o PNG
 
 Vale para qualquer PNG, venha do Codex, do navegador ou do Downloads do Toni.
-Abrir a imagem com `Read` e percorrer o `checklist_final` do XML **e** os 12
-defeitos da regra `R3`. Cada um já aconteceu de verdade no acervo:
+
+**Olhar antes de lembrar.** Abrir a imagem com `Read` e primeiro descrever o que
+está de fato ali — cada bloco, cada palavra renderizada — sem reler o prompt que
+a gerou. Só depois comparar com o brief e percorrer o `checklist_final` do XML.
+A ordem importa porque quem montou o prompt sabe o que deveria estar na peça e
+lê o que espera ver; D2 e D4 escapam por isso, não por falta de checklist. Se a
+peça reprovar duas vezes no mesmo defeito, vale pedir ao Toni uma auditoria de
+terceiro — alguém que receba só o PNG e a tabela abaixo, nunca o prompt.
+
+A lista canônica dos 12 defeitos é a regra `R3` do `prompt.xml`; a tabela aqui é
+a mesma lista com os casos reais anexados. Divergiu entre as duas? O XML manda,
+e a divergência se reporta. Defeito novo que chegar ao acervo entra nos dois
+lugares: a regra no XML, o caso aqui.
 
 | | defeito | caso real |
 |---|---|---|
@@ -133,10 +185,10 @@ ressalva: o Toni não tem como consertar isso no Photoshop.
 
 ## Registro
 
-Aprovado → atualizar o **estado** da entrada correspondente em `imagens.md` e
-confirmar o caminho. Não criar entrada para proposta descartada. Não apagar arte
-antiga sem pedido explícito — gravar a nova como `{nome}-v6.png` ao lado e
-deixar a substituição para o Toni decidir.
+Aprovado → copiar do scratchpad para o acervo conforme a tabela de destinos,
+atualizar o **estado** da entrada correspondente em `imagens.md` e confirmar o
+caminho. Não criar entrada para proposta descartada. Não apagar nem sobrescrever
+arte que já está no acervo sem pedido explícito do Toni.
 
 Imagens não alteram `manifesto.json` e não exigem bump de `versao` na aula.
 
@@ -149,13 +201,17 @@ etapa seguinte é a action determinística do Photoshop.
 
 ## Entrega
 
-**Modo 1:** perfil declarado · caminho do PNG gerado · dimensões medidas ·
-veredito da auditoria com defeitos por id · conceito central · mensagem de 3
-segundos · alt text em português · o prompt montado · a frase
-`Arte-base validada com cantos superiores reservados e limpos.`
+A entrega prova o trabalho com medida e veredito, não com frase de encerramento
+— atestado que o modelo consegue escrever sem ter olhado a imagem não vale nada
+pro Toni.
+
+**Modo 1:** perfil declarado · caminho final do PNG e se é canônico ou proposta ·
+dimensões medidas pelo script · veredito da auditoria, defeito por id ou
+"nenhum" · quantas rodadas foram · conceito central · mensagem de 3 segundos ·
+alt text em português · o prompt montado.
 
 **Modo 2:** perfil declarado · prompt colável · caminho alvo · conceito central ·
-mensagem de 3 segundos · alt text · a frase `Prompt v6 pronto para o navegador.`
+mensagem de 3 segundos · alt text.
 
-**Modo 3:** veredito · defeitos por id · proporção medida · caminho registrado ·
-a frase `Arte-base validada com cantos superiores reservados e limpos.`
+**Modo 3:** veredito · defeitos por id · proporção medida contra o alvo do
+perfil · caminho auditado.
