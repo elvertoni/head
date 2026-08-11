@@ -39,7 +39,7 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 `tools/sync_notion.py` mirrors the lesson **index** (metadata + ProfessorDash link, no body) into the `Aulas` database of the "Toni's Brain" Notion workspace, keyed on the `Caminho` property. Strictly one-way — Notion is a read-only projection of `canonica.md`, never an input. Requires an internal Notion integration token in `NOTION_TOKEN` and the `Aulas` + `Projetos` bases shared with that integration.
 
-`tools/imagen-generator/` is **not a script**. Its `prompt.xml` is the v6 source of truth for unbranded lesson base art, split into two profiles — `capa` (dense, 3:2, the portal-facing cover) and `infografico` (sparse, 16:9, a body figure teaching one concept). The v6 density rules were derived from an audit of the 54 approved images already in the acervo, and its `R3` rule catalogs 12 defects that have actually shipped. **Images are generated in the browser (ChatGPT web), not by Claude Code** — quality there is materially better. Claude Code's job is to compose the paste-ready v5 prompt and audit the returned PNG; read `.claude/skills/gerar-imagem-aula/SKILL.md` first. Never attach the logo to the image model: Photoshop later applies the official logo, course identifier, and canonical canvas through a deterministic action. No CLI entrypoint.
+`tools/imagen-generator/` is **not a script**. Its `prompt.xml` is the v6 source of truth for unbranded lesson base art, split into two profiles — `capa` (dense, 3:2, the portal-facing cover) and `infografico` (sparse, 16:9, a body figure teaching one concept). The v6 density rules were derived from an audit of the 54 approved images already in the acervo, and its `R3` rule catalogs 12 defects that have actually shipped. **Images are generated here, by delegating the composed prompt to the Codex CLI's native image tool** (verified 2026-07-29). The browser Project (ChatGPT web) remains a valid fallback. Either way, Claude Code composes the fully-resolved v6 prompt and audits the returned PNG — handing the model the raw XML and letting it interpret the design system produces light backgrounds and occupied corners. Read `.claude/skills/gerar-imagem-aula/SKILL.md` first. Never attach the logo to the image model: Photoshop later applies the official logo, course identifier, and canonical canvas through a deterministic action. No CLI entrypoint.
 
 ## Architecture
 
@@ -58,7 +58,7 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 ### Current vault state (8 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-07-29, `python tools/gerar_manifesto.py --check` validates 73 approved importable lessons.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-08-10, `python tools/gerar_manifesto.py --check` validates 73 approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
@@ -68,11 +68,13 @@ Not all disciplines are at the same stage. The manifesto is the source of truth 
 | `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
 | `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas |
 | `tcc` | `blueprint-tcc` | aulas 1-9 aprovadas (blueprints de TCC em canônica) |
+| `programacao-front-end` | `fundamentos-html-css` | aula 1 aprovada |
+| `programacao-front-end` | `controle-de-versao-git-github` | aulas 2-6 aprovadas |
 | `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
 | `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | HTML apoio only — the canonical versions of these blueprints live under `tcc/blueprint-tcc` |
 | `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |
 
-Concept graph (`conceitos/`) currently only populated for `inteligencia-artificial`.
+Concept graph (`conceitos/`) holds 1028 nodes, concentrated in the two pós-graduação ingestions: `inovacao-inteligencia-artificial-e-robotica-educacional` (523) and `desenvolvimento-full-stack-e-cloud-computing` (466), plus `inteligencia-artificial` (37) and `inovacao-tecnologia-e-empreendedorismo` (2). Only `inteligencia-artificial` nodes are currently wired into approved lessons via `[[slug]]`.
 
 ### manifesto.json
 
@@ -94,7 +96,7 @@ Machine-generated index (`tools/gerar_manifesto.py`). **Never hand-edit.** Only 
 |---|---|---|
 | `prof-toni` | Creating/planning lessons | Produces `canonica.md` following the spec protocol (read `.claude/skills/prof-toni/spec/00-PROTOCOLO.md` first) |
 | `aula-estatica` | Rendering lessons | Converts `canonica.md` → standalone `.html` (dark/light, A4-print) |
-| `gerar-imagem-aula` | Lesson images | Picks the profile (`capa` 3:2 / `infografico` 16:9), composes the paste-ready v6 prompt for browser generation, then audits the returned PNG against the 12 known defects (upper corners empty, branding external) |
+| `gerar-imagem-aula` | Lesson images | Picks the profile (`capa` 3:2 / `infografico` 16:9), composes the v6 prompt, generates via Codex (or hands the prompt to the browser Project), then audits the returned PNG against the 12 known defects (upper corners empty, branding external) |
 
 Skills live in `.claude/skills/`. Do not bypass `prof-toni` for lesson creation or `gerar-imagem-aula` for visual generation. The 7-point rubrica in `.claude/skills/prof-toni/spec/02-RUBRICA.md` is an approval gate.
 
@@ -110,6 +112,16 @@ Frontmatter required fields: `conceito`, `slug`, `disciplina`, `tipo` (`conceito
 
 Aulas reference concepts via `[[slug]]` wikilinks. Backlink sync checked by lint workflow described in `AGENTS.md §4`.
 
+## Memory
+
+Durable project memory lives in **ai-memory** (MCP), not in local files.
+
+**Read before you write.** Call `memory_query` before proposing architecture, before re-deriving a decision that may already exist, and before telling the user you don't know something about this project. Call `memory_recent` at session start when no handoff arrived. Storing memory nobody reads is wasted disk — the retrieval side is the one that has to be deliberate.
+
+Write with `memory_write_page`, choosing the path by kind: `decisions/` for architectural calls (pinned, ADR shape), `_rules/` for standing rules, plus `gotchas/`, `notes/`, `procedures/`, `concepts/`. Do **not** duplicate what this file, `AGENTS.md`, or `manifesto.json` already document — memory that mirrors the repo rots and then contradicts it.
+
+The legacy file store at `~/.claude/projects/C--PROJETOS-PROF-TONI/memory/` is **frozen**: read-only history, never add to it.
+
 ## Git
 
-Remote uses SSH dual-account setup. This repo → `elvertoni` account (not `tonicoimbra`). See memory `git-ssh-duas-contas.md` for SSH config details.
+Remote uses SSH dual-account setup. This repo → `elvertoni` account (not `tonicoimbra`). Commits go straight to `main` — no PR flow in this acervo. See ai-memory page `_rules/git-ssh-duas-contas.md` for SSH config details.

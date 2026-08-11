@@ -1,7 +1,7 @@
 # Plano de execução — ingestão das duas pós em grandes lotes
 
 **Data:** 2026-08-01  
-**Status:** pronto para execução incremental  
+**Status:** concluído (Onda 1 + Onda 2 + auditoria de fechamento — ver `conceitos/log.md` 2026-08-01, entradas "Onda 1 completa", "Onda 2 completa" e "review | auditoria completa"). Só 1 lacuna real restou ([[etica-em-ia]]), já criada.  
 **Escopo:** `lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/` e `lake/desenvolvimento-full-stack-e-cloud-computing/`
 
 ## Decisão de escopo

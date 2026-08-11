@@ -1,4 +1,4 @@
 interface:
   display_name: "Gerar imagem de aula"
-  short_description: "Monta o prompt v5 pra colar no navegador e valida o PNG"
-  default_prompt: "Use $gerar-imagem-aula para escolher a imagem principal desta aula e me entregar o prompt v5 pronto pra colar no ChatGPT do navegador."
+  short_description: "Monta o prompt v6, gera a arte-base e audita o PNG contra os 12 defeitos"
+  default_prompt: "Use $gerar-imagem-aula para escolher a imagem principal desta aula, gerar a arte-base no perfil correto e auditar o resultado."

@@ -1,33 +1,41 @@
 ---
 name: gerar-imagem-aula
-description: Monta o prompt v6 "The Digital Atelier" pronto para colar no ChatGPT do navegador e depois valida/registra o PNG que voltar de lá. Use sempre que o pedido envolver imagem de aula do acervo PROF-TONI — produzir, refazer, editar, validar, executar propostas de imagens.md, criar capa.png, criar infográfico de miolo ou trabalhar com tools/imagen-generator. A geração acontece FORA do Claude Code (navegador); esta skill escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), escreve o prompt completo, audita o resultado contra 12 defeitos conhecidos e registra o caminho. Branding (logo, curso, canvas) é aplicado depois no Photoshop.
+description: Produz e valida as artes-base das aulas do acervo PROF-TONI, do brief até o PNG auditado. Use sempre que o pedido tocar em imagem de aula — gerar capa.png, gerar infográfico de miolo, refazer ou editar uma arte, executar propostas de imagens.md, auditar um PNG que voltou do ChatGPT, ajustar o Projeto do navegador ou mexer em tools/imagen-generator — mesmo que o Toni não use as palavras "skill", "prompt" ou "imagem". Escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), monta o prompt v6 "The Digital Atelier", delega a geração ao Codex (que gera aqui mesmo, sem navegador) ou entrega o prompt pronto pra colar, e audita o resultado contra os 12 defeitos conhecidos do acervo. Branding — logo, curso, canvas — é aplicado depois no Photoshop, nunca aqui.
 ---
 
 # gerar-imagem-aula
 
-Esta skill **não gera a imagem**. Decisão do Toni (29/07/2026): a geração fica no
-ChatGPT do navegador, que com o `prompt.xml` entrega qualidade bem superior à
-ferramenta de imagem disponível aqui.
+A skill leva a arte-base do brief até o PNG auditado. Ela **gera**: o Codex CLI
+tem ferramenta nativa de imagem e produz aqui mesmo, sem navegador.
 
-Papel da skill: **escolher o perfil, escrever o prompt v6 pronto pra colar, e
-depois auditar e registrar o PNG que o Toni trouxer de volta.**
+O trabalho que agrega valor não é apertar o botão de gerar — é a análise
+pedagógica que vira prompt e a auditoria que impede peça defeituosa de entrar no
+acervo. O gerador é intercambiável; essas duas pontas não são.
 
-Nunca gerar a imagem com ferramenta interna, nem oferecer isso como atalho.
+Dois caminhos de geração, na ordem de preferência:
+
+1. **Codex, aqui** (padrão) — ver `references/delegar-ao-codex.md`.
+2. **Projeto do ChatGPT, no navegador** — quando o Toni pedir, ou se o Codex
+   falhar. Ver `references/instrucoes-projeto-gpt.md`.
 
 ## Fontes obrigatórias
 
 1. Ler integralmente `tools/imagen-generator/prompt.xml`.
-2. Confirmar `versao="6.0"` e `modo="arte_base_para_branding_externo"`. Se não
-   casar, interromper e reportar a divergência.
+2. Confirmar `versao="6.0"` e `modo="arte_base_para_branding_externo"`. Não
+   casou? Interromper e reportar a divergência antes de gerar qualquer coisa.
 3. Ler a `canonica.md` e o `imagens.md` da aula-alvo.
-4. XML = fonte de verdade visual. O brief define o conceito específico.
 
-Nunca instruir o Toni a anexar `logo-prof-toni-coimbra-horizontal.png` ao
-ChatGPT. A logo pertence à etapa do Photoshop.
+O XML é a fonte de verdade visual; o brief define o conceito específico. Se os
+dois conflitarem, o XML ganha na forma e o brief ganha no conteúdo.
+
+`logo-prof-toni-coimbra-horizontal.png` nunca entra na entrada de um modelo
+generativo, em nenhum dos dois caminhos. Dar a marca ao modelo é convite para
+ele redesenhá-la.
 
 ## Os dois perfis
 
-O primeiro passo, sempre, é declarar o perfil. Eles não se misturam.
+Declarar o perfil é sempre o passo zero. Eles não se misturam, e não se
+empilham num quadro só.
 
 | | **capa** | **infografico** |
 |---|---|---|
@@ -37,55 +45,68 @@ O primeiro passo, sempre, é declarar o perfil. Eles não se misturam.
 | blocos | 4 a 10 (ideal 7) | 2 a 5 |
 | texto | rótulo caixa-alta + micro-parágrafo de 1–3 linhas por bloco | só rótulos: até 8, de até 4 palavras |
 | subtítulo | obrigatório, 1–2 linhas | proibido |
-| faixa de rodapé | obrigatória (`EM RESUMO`, `LEMBRE-SE`...) | proibida |
+| faixa de rodapé | obrigatória (`EM RESUMO`, `LEMBRE-SE`…) | proibida |
 | ocupação do miolo | 70–90% da altura útil | 60–80% |
 
-Errar o perfil é o defeito **D12** do XML: capa esparsa em 16:9 fica órfã,
-infográfico com parágrafos em 3:2 vira capa ruim.
+Errar ou fundir o perfil é o defeito **D12**: capa esparsa em 16:9 fica órfã,
+infográfico com parágrafos em 3:2 vira capa ruim, e capa com painel de
+comparação pendurado embaixo vira duas peças brigando pelo mesmo olhar.
 
 ## Quantas imagens por aula
 
-**Uma capa + no máximo um infográfico.** Nada de lote, alternativa ou variação.
-Se `imagens.md` trouxer várias propostas de miolo, escolher uma só, nesta ordem:
+**Uma capa + no máximo um infográfico.** Nada de lote, alternativa ou variação —
+o custo de escolher recai no Toni depois, e ele não pediu opções.
+
+Se `imagens.md` trouxer várias propostas de miolo, escolher uma, nesta ordem:
 
 1. a que explica visualmente algo difícil de entender só por texto;
 2. a que não duplica tabela, quiz ou `diagrama-progressivo` já suficiente;
 3. a que permanece clara em três segundos e no celular.
 
-Ideias inseparáveis → integrar numa composição só. Já existe imagem?
-Substituir no mesmo caminho; não criar arquivo irmão.
+Ideias inseparáveis → integrar numa composição só. Já existe imagem no caminho?
+Substituir no mesmo caminho, nunca criar arquivo irmão — mas só depois de o Toni
+aprovar a nova.
 
-## Modo A — preparar o prompt (padrão)
+## Modo 1 — gerar aqui (padrão)
 
-1. Rodar `git status --short` para ver o que já existe.
-2. **Declarar o perfil** e reafirmar o **título exato da aula-alvo**. Isso não é
+1. `git status --short` para ver o que já existe na pasta da aula.
+2. **Declarar o perfil** e reafirmar o **título exato da aula-alvo**. Não é
    burocracia: três capas do acervo saíram com o conteúdo da aula seguinte
-   (defeito **D8**) por erro de pareamento entre brief e aula.
-3. Análise pedagógica do XML: conceito difícil, erro comum, relação visual,
-   mensagem de três segundos.
-4. Preencher as `<variaveis_da_aula>`, incluindo a lista de blocos com rótulo e
-   micro-texto (perfil capa) ou os rótulos curtos (perfil infográfico).
-5. Entregar, num único bloco de código pronto pra colar, o
-   `<prompt_arte_base>` **do perfil correto**, com todos os `[insert ...]`
-   substituídos e sem cortar nenhuma seção — `RESERVED EMPTY ZONES`,
-   `COLOR SYSTEM`, `TYPOGRAPHY`, `LAYOUT` e `AVOID` vão inteiras.
-6. Informar o caminho alvo (`capa.png` ou `img/{slug-kebab}.png`) e o alt text
-   em português.
+   (**D8**) por erro de pareamento entre brief e aula.
+3. Análise pedagógica exigida pelo XML: conceito mais difícil, erro comum a
+   evitar, relação visual que precisa ficar evidente, mensagem de três segundos.
+4. Montar o `<prompt_arte_base>` **do perfil correto** com todos os
+   `[insert …]` resolvidos. Nenhuma seção sai — `RESERVED EMPTY ZONES`,
+   `COLOR SYSTEM`, `TYPOGRAPHY`, `LAYOUT` e `AVOID` vão inteiras. São elas que
+   seguram os defeitos, e são as primeiras que a tentação de encurtar ataca.
+5. Gravar o prompt montado num `.txt` no scratchpad e delegar ao Codex conforme
+   `references/delegar-ao-codex.md`, de forma síncrona.
+6. Auditar o PNG (Modo 3). Sem exceção — o relato do subagente cobre existência
+   e medida, nunca conteúdo.
+7. Aprovado → registrar. Reprovado → reforçar a seção que falhou e regerar.
 
-A entrega do Modo A é texto. Nenhuma imagem é gerada aqui.
+Entregar ao Toni o prompt montado junto do resultado. Ele reusa esse texto no
+navegador quando quiser comparar geradores.
 
-## Modo B — validar o PNG que voltou do navegador
+## Modo 2 — prompt pronto pro navegador
 
-Quando o Toni salvar o arquivo e pedir conferência, abrir o PNG e percorrer o
-`checklist_final` do XML **e** os 12 defeitos conhecidos da regra `R3`. Cada um
-já aconteceu de verdade no acervo:
+Quando o Toni pedir o caminho do navegador, a entrega é texto: o prompt colável
+num único bloco de código, o caminho alvo e o alt text. Detalhes de configuração
+do Projeto, anexos e mensagem de rodada estão em
+`references/instrucoes-projeto-gpt.md`.
+
+## Modo 3 — auditar o PNG
+
+Vale para qualquer PNG, venha do Codex, do navegador ou do Downloads do Toni.
+Abrir a imagem com `Read` e percorrer o `checklist_final` do XML **e** os 12
+defeitos da regra `R3`. Cada um já aconteceu de verdade no acervo:
 
 | | defeito | caso real |
 |---|---|---|
-| D1 | texto de placeholder impresso na arte | aula 10 de IA saiu com "ESPAÇO RESERVADO PARA LOGO" |
-| D2 | palavra inventada em português | "nulhado" (aula 08), "madruagda" (aula 06) |
+| D1 | texto de placeholder impresso na arte | aula 10 de IA: "ESPAÇO RESERVADO PARA LOGO" |
+| D2 | palavra inventada em português | "nulhado" (aula 08), "madruagda" (aula 06), "rosolveu" e "flex-contáiner" (HTML semântico) |
 | D3 | peça sem título | aula 31 de arquitetura, aula 06 de IA |
-| D4 | fundo claro/branco | aulas 05 e 06 de IA, as duas de tráfego orgânico |
+| D4 | fundo claro/branco | aulas 05 e 06 de IA, as duas de tráfego orgânico, duas tentativas de HTML semântico |
 | D5 | texto/objeto cortado pela borda | "AM" solto na aula 25 |
 | D6 | faixa superior vazia demais | aulas 04 e 09 de IA |
 | D7 | ornamento dentro de zona reservada | aula 33, nivelamento 01 |
@@ -93,18 +114,31 @@ já aconteceu de verdade no acervo:
 | D9 | wireframe cinza sem ícone/cor/título | falha recorrente da v5 |
 | D10 | comparação com um lado só rotulado | — |
 | D11 | logo real de terceiro desenhada | logos de SO na aula 35 |
-| D12 | perfil trocado | — |
+| D12 | perfil trocado ou fundido | HTML semântico: capa + infográfico no mesmo quadro |
 
-Fluxo:
+Além da tabela, checar sempre:
 
-1. Reprovado → apontar o defeito **pelo id** e devolver o prompt reforçado
-   exatamente no ponto que falhou. Nova rodada no navegador.
-2. Aprovado → registrar o caminho em `imagens.md`. Não criar caminho para
-   proposta descartada. Não apagar arquivo antigo sem pedido. Imagens não
-   alteram `manifesto.json`.
+- **zonas reservadas** — os dois cantos superiores escuros e vazios, e o título
+  não invadindo nenhum deles;
+- **proporção** — `python .claude/skills/gerar-imagem-aula/scripts/inspecionar_png.py {perfil} {arquivo}`
+  mede e compara com o alvo do perfil. Proporção errada se regenera; **não** se
+  recorta, e **não** se normaliza para 1536×1024 nem 1600×900 — canvas é da
+  action do Photoshop;
+- **cada palavra renderizada** — existe em português, escrita certa. D2 é o
+  defeito que mais passa batido porque a peça está bonita.
 
-Verificar também a proporção do perfil e a resolução. **Não** normalizar para
-1536×1024 nem 1600×900 — isso é da action do Photoshop.
+Reprovado → apontar o defeito **pelo id**, reforçar no prompt exatamente a seção
+que falhou (não o prompt inteiro) e regerar. Não entregar peça reprovada com
+ressalva: o Toni não tem como consertar isso no Photoshop.
+
+## Registro
+
+Aprovado → atualizar o **estado** da entrada correspondente em `imagens.md` e
+confirmar o caminho. Não criar entrada para proposta descartada. Não apagar arte
+antiga sem pedido explícito — gravar a nova como `{nome}-v6.png` ao lado e
+deixar a substituição para o Toni decidir.
+
+Imagens não alteram `manifesto.json` e não exigem bump de `versao` na aula.
 
 ## Limite de responsabilidade
 
@@ -113,13 +147,15 @@ Coimbra", identificação "TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS", smart objec
 overlay ou normalização de canvas. Pedido de imagem já brandada → explicar que a
 etapa seguinte é a action determinística do Photoshop.
 
-A logo pode ficar no repositório como insumo externo, mas nunca entra na entrada
-do modelo generativo.
-
 ## Entrega
 
-**Modo A:** perfil declarado + prompt colável + caminho alvo + conceito central +
-mensagem 3s + alt text + a frase `Prompt v6 pronto para o navegador.`
+**Modo 1:** perfil declarado · caminho do PNG gerado · dimensões medidas ·
+veredito da auditoria com defeitos por id · conceito central · mensagem de 3
+segundos · alt text em português · o prompt montado · a frase
+`Arte-base validada com cantos superiores reservados e limpos.`
 
-**Modo B:** veredito (aprovado/reprovado), defeitos por id, caminho registrado e
+**Modo 2:** perfil declarado · prompt colável · caminho alvo · conceito central ·
+mensagem de 3 segundos · alt text · a frase `Prompt v6 pronto para o navegador.`
+
+**Modo 3:** veredito · defeitos por id · proporção medida · caminho registrado ·
 a frase `Arte-base validada com cantos superiores reservados e limpos.`
