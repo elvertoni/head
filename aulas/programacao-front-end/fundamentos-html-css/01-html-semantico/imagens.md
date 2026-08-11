@@ -8,7 +8,7 @@ Brief neutro de plataforma, no contrato v6: **um brief de `capa` + no máximo um
 
 - **perfil:** `capa`
 - **arquivo:** capa.png
-- **estado:** a gerar
+- **estado:** aprovada — gerada pelo `image_gen` nativo do Codex a partir do prompt v6 montado, auditada nos 12 defeitos, 1536×1024 (3:2 exato). Escolhida entre três candidatas por ter 7 blocos, a mediana do acervo.
 - **objetivo:** Dar o mapa da aula inteira: o que é uma tag semântica, quais são as cinco do catálogo (`header`, `nav`, `main`/`article`, `aside`, `footer`), o que a div-soup custa na prática (leitor de tela, SEO, manutenção) e a regra de bolso para escolher a tag certa. Serve de material de revisão depois da aula.
 - **esboço de blocos:**
   1. `O PROBLEMA` — div-soup: todo elemento é `<div>`, o significado mora só no `class`.
