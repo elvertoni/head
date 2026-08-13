@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-08-01",
+  "atualizado_em": "2026-08-13",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -34,7 +34,7 @@
       "status": "em-construcao",
       "lake": "lake/analise-e-metodos-para-sistemas",
       "warehouse": "aulas/analise-e-metodos-para-sistemas",
-      "total_aulas": 9,
+      "total_aulas": 11,
       "trilhas": [
         {
           "slug": "metodologias-ageis",
@@ -5359,6 +5359,22 @@
       "ordem": 41,
       "slug": "estimativa-e-planning-poker",
       "titulo": "Estimativa e Planning Poker",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 53,
+      "slug": "kanban-o-quadro-e-o-fluxo",
+      "titulo": "Kanban: o quadro e o fluxo",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-metodos-para-sistemas",
+      "trilha": "metodologias-ageis",
+      "ordem": 54,
+      "slug": "priorizacao-raias-e-politicas-explicitas",
+      "titulo": "Priorização no quadro: raias e políticas explícitas",
       "status": "aprovada"
     },
     {
