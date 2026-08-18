@@ -5,159 +5,330 @@
 <title>Gabarito · Engenharia reversa de app · Prof Toni Coimbra</title>
 <style>
 :root{
-  --ink:#0f172a; --ink-soft:#475569; --line:#c7cedb; --line-soft:#e2e8f0;
-  --blue:#023E8A; --cyan:#00B4D8; --wash:#f4f7fb;
-  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
-  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+  --ink:#111827;
+  --ink-2:#3d4757;
+  --ink-3:#6b7686;
+  --rule:#111827;
+  --hair:#b7c0cd;
+  --hair-2:#dde3ea;
+  --blue:#023E8A;
+  --tint:#f1f5f9;
+  --paper:#fff;
+
+  --sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+
+  --rail: 42mm;
+  --gutter: 7mm;
 }
+
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
-body{font-size:9.2pt;line-height:1.33;}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family:var(--serif);font-size:9.6pt;line-height:1.4;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;
+}
 @page{ size:A4; margin:11mm 12mm 10mm 12mm; }
 .page{width:186mm;margin:0 auto;page-break-after:always;break-after:page;}
 .page:last-child{page-break-after:auto;break-after:auto;}
-.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:7px;}
-.head .who{font-size:8pt;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;}
-.head h1{margin:1px 0 0;font-size:14.5pt;letter-spacing:-.01em;}
-.head h1 span{color:var(--cyan);}
-.head .tag{font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;}
-.runhead{display:flex;justify-content:space-between;font-size:7.6pt;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em;}
-.instr{border-left:3px solid #f59e0b;background:#fff7ed;padding:5px 8px;font-size:8.4pt;margin-bottom:8px;}
-h2.ex{font-size:10pt;margin:9px 0 4px;padding:2px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;}
-h2.ex b{color:var(--blue);}
-h2.ex .pts{font-size:7.6pt;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
-table{width:100%;border-collapse:collapse;font-size:8.5pt;margin:4px 0;}
-th,td{border:1px solid var(--line);padding:3px 5px;text-align:left;vertical-align:top;}
-th{background:var(--wash);font-size:7.8pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
-td.c{text-align:center;font-family:var(--mono);}
-.box{border:1px solid var(--line);border-radius:3px;padding:6px 8px;margin:4px 0;}
-.box.tight{padding:5px 7px;}
-.cap{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px;}
-.small{font-size:8pt;color:var(--ink-soft);}
-ul.tight{margin:3px 0;padding-left:15px;}
-ul.tight li{margin:1.5px 0;}
-.foot{margin-top:8px;border-top:1px solid var(--line);padding-top:4px;font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;}
-.cols2{display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+p{margin:0 0 5px;}
+p:last-child{margin-bottom:0;}
+
+.sheet{display:grid;grid-template-columns:var(--rail) 1fr;column-gap:var(--gutter);align-items:start;}
+
+/* cabeçalho */
+.masthead{border-bottom:2.4pt solid var(--rule);padding-bottom:6px;}
+.masthead .kicker{
+  font-family:var(--sans);font-size:7pt;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:5px;display:flex;justify-content:space-between;
+}
+.masthead .kicker b{color:var(--blue);font-weight:700;}
+.masthead h1{
+  font-family:var(--sans);font-weight:800;font-size:19pt;line-height:1.02;
+  letter-spacing:-.022em;margin:0;
+}
+.masthead h1 em{font-style:normal;color:var(--blue);}
+.masthead .deck{display:grid;grid-template-columns:1fr auto;align-items:end;gap:8mm;margin-top:5px;}
+.masthead .deck p{font-size:9.2pt;color:var(--ink-2);max-width:118mm;margin:0;}
+.masthead .stamp{
+  font-family:var(--sans);font-size:7.4pt;line-height:1.45;color:var(--ink-3);
+  text-align:right;text-transform:uppercase;letter-spacing:.07em;white-space:nowrap;
+}
+.masthead .stamp b{display:block;color:var(--ink);font-size:8pt;letter-spacing:.05em;}
+
+.howto{
+  font-family:var(--sans);font-size:8pt;line-height:1.4;color:var(--ink-2);
+  border-top:1.4pt solid var(--rule);border-bottom:.6pt solid var(--hair);
+  padding:4px 0 5px;margin:7px 0 8px;
+  display:grid;grid-template-columns:var(--rail) 1fr;column-gap:var(--gutter);
+}
+.howto .lbl{font-size:6.6pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);font-weight:700;}
+.howto b{color:var(--ink);}
+
+/* trilha lateral */
+.rail{font-family:var(--sans);font-size:7.8pt;line-height:1.38;color:var(--ink-2);}
+.rail > * + *{margin-top:8px;}
+.rail .lbl{font-size:6.6pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:3px;}
+.note{border-top:1.4pt solid var(--rule);padding-top:5px;}
+.note .lbl{color:var(--blue);}
+.note.alert .lbl{color:var(--ink);}
+.note b{color:var(--ink);}
+
+/* títulos */
+h2.ex{
+  font-family:var(--sans);margin:9px 0 0;padding:0 0 3px;
+  border-bottom:1.4pt solid var(--rule);
+  display:flex;justify-content:space-between;align-items:baseline;gap:6mm;
+}
+.main > h2.ex:first-child{margin-top:0;}
+h2.ex .t{font-size:11pt;font-weight:800;letter-spacing:-.015em;}
+h2.ex .t b{color:var(--blue);}
+h2.ex .meta{font-size:7pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;}
+h2.ex .meta b{color:var(--ink);font-weight:700;}
+
+/* tabelas */
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:8.3pt;margin:5px 0 0;}
+th,td{text-align:left;vertical-align:top;padding:3px 5px;border-bottom:.6pt solid var(--hair-2);}
+thead th{
+  font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
+  border-bottom:1.2pt solid var(--rule);padding-bottom:3px;font-weight:700;
+}
+tbody tr:last-child td{border-bottom:.9pt solid var(--ink);}
+td.c,th.c{text-align:center;}
+td.n{text-align:center;font-variant-numeric:tabular-nums;}
+td.k{font-weight:700;color:var(--ink);}
+table.grid th,table.grid td{border-right:.6pt solid var(--hair-2);}
+table.grid th:last-child,table.grid td:last-child{border-right:0;}
+table.zebra tbody tr:nth-child(odd) td{background:var(--tint);}
+.tipo{font-family:var(--sans);font-weight:800;color:var(--blue);}
+
+/* blocos */
+.callout{
+  font-family:var(--sans);font-size:8.3pt;line-height:1.4;color:var(--ink-2);
+  border-top:1.4pt solid var(--rule);border-bottom:.6pt solid var(--hair);
+  padding:5px 0 6px;margin:8px 0;
+}
+.callout .lbl{font-size:6.6pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:2px;font-weight:700;}
+.callout b{color:var(--ink);}
+ul.dash{list-style:none;margin:3px 0 0;padding:0;}
+ul.dash li{position:relative;padding-left:5mm;margin:0 0 1.5px;}
+ul.dash li::before{content:"—";position:absolute;left:0;color:var(--ink-3);}
+ul.dash b{color:var(--ink);}
+ul.dash.cols{columns:2;column-gap:7mm;}
+ul.dash.cols li{break-inside:avoid;}
+.duo{display:grid;grid-template-columns:1fr 1fr;column-gap:7mm;}
+.colhead{
+  font-family:var(--sans);font-size:6.8pt;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);border-bottom:1.2pt solid var(--rule);padding-bottom:2px;margin:0 0 3px;
+}
+.small{font-family:var(--sans);font-size:8pt;color:var(--ink-2);}
+.small b{color:var(--ink);}
+
+.runhead{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--sans);font-size:6.8pt;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  border-bottom:.6pt solid var(--hair);padding-bottom:3px;margin-bottom:8px;
+}
+.runhead b{color:var(--ink);font-weight:700;}
+.foot{
+  margin-top:10px;border-top:1.4pt solid var(--rule);padding-top:4px;
+  font-family:var(--sans);font-size:6.8pt;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);display:flex;justify-content:space-between;
+}
+.foot b{color:var(--ink);}
 </style>
 </head>
 <body>
 
+<!-- ======================== PÁGINA 1 ======================== -->
 <section class="page">
-  <div class="head">
-    <div>
-      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Análise e Projeto de Sistemas</div>
-      <h1>Gabarito — Engenharia reversa de <span>app</span></h1>
+
+  <header class="masthead">
+    <div class="kicker">
+      <span>Curso Técnico em Desenvolvimento de Sistemas · Análise e Projeto de Sistemas</span>
+      <span><b>Aula 31 · gabarito</b></span>
     </div>
-    <div class="tag">Prof. Toni Coimbra<br>Aula 31 · 3ª série<br>Uso do professor</div>
+    <h1>Gabarito — engenharia reversa de <em>app</em></h1>
+    <div class="deck">
+      <p>Respostas esperadas, critérios de aceite e a rubrica da atividade em grupo. Documento do professor — não distribuir com a apostila.</p>
+      <div class="stamp"><b>Prof. Toni Coimbra</b>3ª série · 50 min<br>Uso do professor</div>
+    </div>
+  </header>
+
+  <div class="howto">
+    <span class="lbl">Como corrigir</span>
+    <span>Os exercícios 1 a 4 são de aquecimento em dupla e admitem mais de uma resposta certa — corrija o <b>critério</b>, não a redação. Onde houver <b>“aceite também”</b>, aceite. A Parte B não tem gabarito de conteúdo: vale a rubrica da página 2.</span>
   </div>
 
-  <div class="instr">
-    <b>Como corrigir.</b> Os exercícios 1 a 4 são de aquecimento em dupla e admitem mais de uma resposta certa — o que se corrige é o <b>critério</b>, não a redação. Onde houver <b>“aceite também”</b>, aceite. A Parte B (grupo) não tem gabarito de conteúdo: vale a rubrica da última página.
+  <div class="sheet">
+    <div class="rail">
+      <div class="note">
+        <span class="lbl">O que se está avaliando</span>
+        Se o aluno entendeu que <b>ator é papel, não pessoa</b> — e que outro sistema também é ator. A lista completa importa menos que aparecer <b>um ator de bastidor</b> (administrador, atendimento) e <b>um não-humano</b>.
+      </div>
+      <div class="note alert">
+        <span class="lbl">Pergunta de virada</span>
+        Resposta: <b>nos três</b>. Gateway de pagamento, sistema acadêmico e antifraude são atores que não são pessoas. Se a dupla achou pelo menos um, o conceito pegou.
+      </div>
+    </div>
+
+    <div class="main">
+      <h2 class="ex">
+        <span class="t"><b>Exercício 1.</b> Caça aos atores esquecidos</span>
+        <span class="meta">Critério · <b>papel ≠ pessoa</b></span>
+      </h2>
+      <table class="grid">
+        <thead><tr><th style="width:26mm">Sistema</th><th>Atores esperados (três quaisquer)</th><th style="width:44mm">O conflito que revela</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="k">Barbearia</td>
+            <td>Barbeiro (agenda própria), <b>dono/administrador</b> (cadastra serviço, preço, horário), recepcionista, <b>gateway de pagamento</b>, sistema de notificação</td>
+            <td>Cliente quer horário livre a qualquer hora; barbeiro quer intervalo; dono quer agenda cheia</td>
+          </tr>
+          <tr>
+            <td class="k">Biblioteca</td>
+            <td><b>Bibliotecário</b>, professor (reserva para a turma), <b>coordenação</b> (relatório e multa), responsável pelo acervo, <b>sistema acadêmico</b> que informa quem é aluno ativo</td>
+            <td>Aluno quer prazo longo; professor quer o mesmo livro reservado; bibliotecário quer o livro de volta</td>
+          </tr>
+          <tr>
+            <td class="k">Ingressos</td>
+            <td><b>Produtor do evento</b>, casa de show, <b>fiscal de portaria</b> (valida o ingresso), atendimento/reembolso, <b>antifraude</b> e gateway de pagamento</td>
+            <td>Comprador quer meia e reembolso; produtor quer venda garantida; casa quer controle de lotação</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <h2 class="ex"><span><b>Exercício 1.</b> Caça aos atores esquecidos</span><span class="pts">critério: papel ≠ pessoa · interesse conflitante</span></h2>
-  <table>
-    <tr><th style="width:44mm">Sistema</th><th>Atores esperados (três quaisquer)</th><th style="width:52mm">O conflito que revela</th></tr>
-    <tr>
-      <td>Barbearia</td>
-      <td>Barbeiro (agenda própria), <b>dono/administrador</b> (cadastra serviço, preço e horário de funcionamento), recepcionista, <b>gateway de pagamento</b> (outro sistema), sistema de notificação/WhatsApp</td>
-      <td>Cliente quer horário livre a qualquer hora; barbeiro quer intervalo; dono quer agenda cheia</td>
-    </tr>
-    <tr>
-      <td>Biblioteca da escola</td>
-      <td><b>Bibliotecário</b>, professor (reserva para a turma), <b>coordenação/direção</b> (relatório e multa), responsável pelo acervo, <b>sistema acadêmico</b> que informa quem é aluno ativo</td>
-      <td>Aluno quer prazo longo; professor quer o mesmo livro reservado; bibliotecário quer o livro de volta</td>
-    </tr>
-    <tr>
-      <td>Ingressos de show</td>
-      <td><b>Produtor do evento</b>, casa de show, <b>fiscal de portaria</b> (valida o ingresso), atendimento/reembolso, <b>antifraude e gateway de pagamento</b> (outros sistemas)</td>
-      <td>Comprador quer meia-entrada e reembolso; produtor quer venda garantida; casa quer controle de lotação</td>
-    </tr>
-  </table>
-  <p class="small" style="margin:2px 0 0"><b>Pergunta de virada:</b> nos três. Gateway de pagamento, sistema acadêmico e antifraude são atores que <b>não são pessoas</b> — são outros sistemas. Se o grupo achou pelo menos um, o conceito de ator pegou.</p>
+  <div class="sheet" style="margin-top:11px">
+    <div class="rail">
+      <div class="note alert">
+        <span class="lbl">Erro típico a caçar</span>
+        Classificar <i>“a senha não pode ser vista”</i> como funcional porque tem a palavra “senha”. Volte à regra prática: <b>dá pra desenhar uma tela pra isso?</b> Tela de login é funcional; o modo como a senha é guardada não tem tela.
+      </div>
+    </div>
 
-  <h2 class="ex"><span><b>Exercício 2.</b> Classifique e conserte</span><span class="pts">tipo + reescrita testável</span></h2>
-  <table>
-    <tr><th style="width:12mm">Tipo</th><th style="width:66mm">Requisito</th><th>Reescrita esperada</th></tr>
-    <tr><td class="c"><b>NF</b></td><td>O sistema deve ser seguro.</td><td>Vago. Ex.: “a senha é armazenada com hash e o sistema bloqueia a conta após 5 tentativas erradas em 10 minutos”</td></tr>
-    <tr><td class="c"><b>F</b></td><td>O aluno consulta as notas do bimestre.</td><td>Funcional — dá pra desenhar a tela. Não precisa de número</td></tr>
-    <tr><td class="c"><b>NF</b></td><td>O site deve carregar rápido.</td><td>Vago. Ex.: “a página inicial carrega em menos de 3 segundos numa conexão 4G comum”</td></tr>
-    <tr><td class="c"><b>NF</b></td><td>Fica fora do ar no máximo 1 hora por mês.</td><td><b>ok</b> — já é testável (equivale a ~99,86% de disponibilidade)</td></tr>
-    <tr><td class="c"><b>F</b></td><td>O administrador cadastra novos produtos.</td><td>Funcional. Aproveite para perguntar: <b>existe essa tela no TCC de vocês?</b></td></tr>
-    <tr><td class="c"><b>NF</b></td><td>A senha não pode ser vista por ninguém.</td><td>É segurança. Ex.: “a senha é gravada apenas como hash; nem o administrador consegue lê-la em texto”</td></tr>
-  </table>
-  <p class="small" style="margin:2px 0 0"><b>Erro típico a caçar:</b> classificar “a senha não pode ser vista” como funcional porque tem a palavra “senha”. Volte à regra prática: <b>dá pra desenhar uma tela pra isso?</b> Tela de login é funcional; o modo como a senha é guardada não tem tela.</p>
-
-  <h2 class="ex"><span><b>Exercício 3.</b> A pergunta “e se…?”</span><span class="pts">3 pares “e se” → regra</span></h2>
-  <div class="box tight">
-    <p class="cap">Respostas válidas (qualquer três, ou equivalentes)</p>
-    <ul class="tight" style="margin:0">
-      <li><b>E se o cupom já tiver sido usado por esse cliente?</b> → cupom de primeira compra só vale para quem nunca fez pedido.</li>
-      <li><b>E se o produto acabar entre o carrinho e o pagamento?</b> → o estoque só é baixado quando o pagamento é confirmado; até lá, ninguém tem reserva.</li>
-      <li><b>E se o Pix cair mas a entrega falhar?</b> → o estorno é automático em até X dias, sem o cliente precisar pedir.</li>
-      <li><b>E se o cliente cancelar depois de pago?</b> → cancelamento é livre até o pedido ser aceito pelo vendedor; depois vira solicitação com análise.</li>
-      <li><b>E se dois clientes pedirem a última unidade ao mesmo tempo?</b> → vence quem confirmar o pagamento primeiro; o outro recebe aviso de indisponibilidade.</li>
-      <li><b>E se o cupom valer menos que o frete?</b> → o desconto se aplica ao produto, nunca ao frete (ou o contrário — o que vale é a dupla ter <i>decidido</i>).</li>
-    </ul>
+    <div class="main">
+      <h2 class="ex">
+        <span class="t"><b>Exercício 2.</b> Classifique e conserte</span>
+        <span class="meta">Critério · <b>tipo + número testável</b></span>
+      </h2>
+      <table class="grid">
+        <thead><tr><th class="c" style="width:12mm">Tipo</th><th style="width:60mm">Requisito</th><th>Reescrita esperada</th></tr></thead>
+        <tbody>
+          <tr><td class="c tipo">NF</td><td>O sistema deve ser seguro.</td><td>Vago. Ex.: “a senha é armazenada com hash e a conta bloqueia após 5 tentativas erradas em 10 minutos”</td></tr>
+          <tr><td class="c tipo">F</td><td>O aluno consulta as notas do bimestre.</td><td>Funcional — dá pra desenhar a tela. Não precisa de número</td></tr>
+          <tr><td class="c tipo">NF</td><td>O site deve carregar rápido.</td><td>Vago. Ex.: “a página inicial carrega em menos de 3 segundos numa conexão 4G comum”</td></tr>
+          <tr><td class="c tipo">NF</td><td>Fica fora do ar no máximo 1 hora por mês.</td><td><b>ok</b> — já é testável (equivale a ~99,86% de disponibilidade)</td></tr>
+          <tr><td class="c tipo">F</td><td>O administrador cadastra novos produtos.</td><td>Funcional. Aproveite para perguntar: <b>existe essa tela no TCC de vocês?</b></td></tr>
+          <tr><td class="c tipo">NF</td><td>A senha não pode ser vista por ninguém.</td><td>É segurança. Ex.: “a senha é gravada apenas como hash; nem o administrador consegue lê-la em texto”</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <p class="small" style="margin:2px 0 0"><b>Não aceite</b> “e se o app travar?” sem regra associada — travar é falha técnica, não decisão de negócio. Peça a regra: <i>o que o sistema faz com o pedido pendente quando volta?</i></p>
 
-  <div class="foot"><span>Gabarito · Engenharia reversa de app · Prof. Toni Coimbra</span><span>Página 1 de 2</span></div>
+  <div class="sheet" style="margin-top:11px">
+    <div class="rail">
+      <div class="note alert">
+        <span class="lbl">Não aceite</span>
+        “E se o app travar?” sem regra associada — travar é falha técnica, não decisão de negócio. Peça a regra: <i>o que o sistema faz com o pedido pendente quando volta?</i>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2 class="ex">
+        <span class="t"><b>Exercício 3.</b> A pergunta “e se…?”</span>
+        <span class="meta">Critério · <b>3 pares “e se” → regra</b></span>
+      </h2>
+      <div class="callout" style="margin-top:6px">
+        <span class="lbl">Respostas válidas — quaisquer três, ou equivalentes</span>
+        <ul class="dash cols">
+          <li><b>E se o cupom já tiver sido usado por esse cliente?</b> Cupom de primeira compra só vale para quem nunca fez pedido.</li>
+          <li><b>E se o produto acabar entre o carrinho e o pagamento?</b> O estoque só é baixado quando o pagamento é confirmado; até lá, ninguém tem reserva.</li>
+          <li><b>E se o Pix cair mas a entrega falhar?</b> O estorno é automático em até X dias, sem o cliente precisar pedir.</li>
+          <li><b>E se o cliente cancelar depois de pago?</b> Cancelamento é livre até o pedido ser aceito; depois vira solicitação com análise.</li>
+          <li><b>E se dois clientes pedirem a última unidade ao mesmo tempo?</b> Vence quem confirmar o pagamento primeiro; o outro recebe aviso de indisponibilidade.</li>
+          <li><b>E se o cupom valer menos que o frete?</b> O desconto se aplica ao produto, nunca ao frete — ou o contrário; o que vale é a dupla ter <i>decidido</i>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Gabarito · engenharia reversa de app · <b>Prof. Toni Coimbra</b></span><span>Página <b>1</b> / 2</span></div>
 </section>
 
+<!-- ======================== PÁGINA 2 ======================== -->
 <section class="page">
-  <div class="runhead"><span>Gabarito — Engenharia reversa de app · Aula 31</span><span>Uso do professor</span></div>
+  <div class="runhead"><span><b>Gabarito</b> · engenharia reversa de app · Aula 31</span><span>Uso do professor</span></div>
 
-  <h2 class="ex"><span><b>Exercício 4.</b> Ordene defendendo a nota — app de carona</span><span class="pts">ordem esperada · a defesa vale mais que o número</span></h2>
-  <table>
-    <tr><th style="width:66mm">Requisito</th><th style="width:8mm">G</th><th style="width:8mm">U</th><th style="width:8mm">T</th><th style="width:12mm">GUT</th><th>Por quê</th></tr>
-    <tr><td>Cadastro só com e-mail institucional</td><td class="c">5</td><td class="c">5</td><td class="c">5</td><td class="c"><b>125</b></td><td>É o que faz o app ser “entre alunos”. Sem isso entra estranho no carro — e o problema piora à medida que o app cresce</td></tr>
-    <tr><td>Nota de avaliação visível antes de aceitar</td><td class="c">5</td><td class="c">4</td><td class="c">4</td><td class="c"><b>80</b></td><td>Segurança e confiança; a nota só tem valor depois de acumular histórico, então atrasar custa caro</td></tr>
-    <tr><td>Chat interno</td><td class="c">3</td><td class="c">2</td><td class="c">2</td><td class="c"><b>12</b></td><td>Conveniência real, mas WhatsApp resolve enquanto isso</td></tr>
-    <tr><td>Ícone com as cores do time</td><td class="c">1</td><td class="c">1</td><td class="c">1</td><td class="c"><b>1</b></td><td>Zero impacto no funcionamento; é o “tema escuro” dessa lista</td></tr>
-  </table>
-  <div class="box tight">
-    <p class="cap">Como corrigir sem engessar</p>
-    <p style="margin:0" class="small">Notas diferentes das do gabarito <b>podem estar certas</b> — inclusive trocar as duas primeiras posições, se a dupla argumentar que sem avaliação ninguém entra no carro. O que <b>não</b> se aceita: chat ou ícone acima dos dois primeiros, e nota alta sem frase de defesa. Se a defesa for “porque é mais legal de fazer”, é exatamente o vício que a GUT existe pra matar — devolva a pergunta: <i>urgente por quê?</i></p>
+  <div class="sheet">
+    <div class="rail">
+      <div class="note">
+        <span class="lbl">Como corrigir sem engessar</span>
+        Notas diferentes das do gabarito <b>podem estar certas</b> — inclusive trocar as duas primeiras posições, se a dupla argumentar que sem avaliação ninguém entra no carro.
+        <br><br>O que <b>não</b> se aceita: chat ou ícone acima dos dois primeiros, e nota alta sem frase de defesa. Se a defesa for “porque é mais legal de fazer”, é o vício que a GUT existe pra matar — devolva a pergunta: <i>urgente por quê?</i>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2 class="ex" style="margin-top:0">
+        <span class="t"><b>Exercício 4.</b> Ordene defendendo a nota — app de carona</span>
+        <span class="meta">A defesa vale mais que <b>o número</b></span>
+      </h2>
+      <table class="grid zebra">
+        <thead><tr><th style="width:52mm">Requisito</th><th class="c" style="width:8mm">G</th><th class="c" style="width:8mm">U</th><th class="c" style="width:8mm">T</th><th class="c" style="width:12mm">GUT</th><th>Por quê</th></tr></thead>
+        <tbody>
+          <tr><td>Cadastro só com e-mail institucional</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n k">125</td><td>É o que faz o app ser “entre alunos”. Sem isso entra estranho no carro — e piora conforme o app cresce</td></tr>
+          <tr><td>Nota de avaliação visível antes de aceitar</td><td class="n">5</td><td class="n">4</td><td class="n">4</td><td class="n k">80</td><td>Segurança e confiança; a nota só vale depois de acumular histórico, então atrasar custa caro</td></tr>
+          <tr><td>Chat interno</td><td class="n">3</td><td class="n">2</td><td class="n">2</td><td class="n k">12</td><td>Conveniência real, mas o WhatsApp resolve enquanto isso</td></tr>
+          <tr><td>Ícone com as cores do time</td><td class="n">1</td><td class="n">1</td><td class="n">1</td><td class="n k">1</td><td>Zero impacto no funcionamento; é o “tema escuro” dessa lista</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <h2 class="ex"><span><b>Parte B.</b> Consultoria relâmpago — rubrica de grupo</span><span class="pts">10,0 pontos</span></h2>
-  <table>
-    <tr><th style="width:44mm">Critério</th><th style="width:14mm">Pontos</th><th>O que faz ganhar o ponto cheio</th></tr>
-    <tr><td>Rodada 1 — atores</td><td class="c">2,0</td><td>Cinco ou mais papéis, sendo <b>pelo menos um não-humano</b> (outro sistema) e pelo menos um de bastidor (administrador, atendimento, moderação)</td></tr>
-    <tr><td>Rodada 2 — regras escondidas</td><td class="c">3,0</td><td>Cinco regras que <b>não aparecem em tela</b> e que o grupo consegue justificar. Descrever a interface (“aparece um botão de cancelar”) não é regra: 0,3 por regra desse tipo</td></tr>
-    <tr><td>Rodada 3 — F × NF</td><td class="c">2,0</td><td>Três de cada, com <b>número em todos os três não-funcionais</b>. NF sem número é anulado, como avisado na folha</td></tr>
-    <tr><td>Rodada 4 — GUT</td><td class="c">1,5</td><td>Notas preenchidas, produto calculado certo e ordem coerente com o produto</td></tr>
-    <tr><td>Pitch e ataque</td><td class="c">1,5</td><td>Pitch dentro dos 90 s com <b>um argumento por letra</b> (G, U e T); no ataque, uma crítica sustentada por <b>evidência no app</b>, não por palpite</td></tr>
+  <h2 class="ex">
+    <span class="t"><b>Parte B.</b> Consultoria relâmpago — rubrica de grupo</span>
+    <span class="meta">Total · <b>10,0 pontos</b></span>
+  </h2>
+  <table class="grid">
+    <thead><tr><th style="width:42mm">Critério</th><th class="c" style="width:14mm">Pontos</th><th>O que faz ganhar o ponto cheio</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Rodada 1 — atores</td><td class="n">2,0</td><td>Cinco ou mais papéis, sendo <b>pelo menos um não-humano</b> (outro sistema) e pelo menos um de bastidor (administrador, atendimento, moderação)</td></tr>
+      <tr><td class="k">Rodada 2 — regras escondidas</td><td class="n">3,0</td><td>Cinco regras que <b>não aparecem em tela</b> e que o grupo consegue justificar. Descrever a interface (“aparece um botão de cancelar”) não é regra: 0,3 por regra desse tipo</td></tr>
+      <tr><td class="k">Rodada 3 — F × NF</td><td class="n">2,0</td><td>Três de cada, com <b>número em todos os três não-funcionais</b>. NF sem número é anulado, como avisado na folha</td></tr>
+      <tr><td class="k">Rodada 4 — GUT</td><td class="n">1,5</td><td>Notas preenchidas, produto calculado certo e ordem coerente com o produto</td></tr>
+      <tr><td class="k">Pitch e ataque</td><td class="n">1,5</td><td>Pitch dentro dos 90 s com <b>um argumento por letra</b> (G, U e T); no ataque, uma crítica sustentada por <b>evidência no app</b>, não por palpite</td></tr>
+    </tbody>
   </table>
 
-  <div class="cols2">
-    <div class="box tight">
-      <p class="cap">Sinais de que a aula pegou</p>
-      <ul class="tight" style="margin:0;font-size:8.2pt">
+  <div class="duo" style="margin-top:11px">
+    <div>
+      <p class="colhead">Sinais de que a aula pegou</p>
+      <ul class="dash small">
         <li>Alguém cita um ator que não é pessoa sem você ter pedido</li>
         <li>Um grupo derruba uma “regra” de outro abrindo o app na hora</li>
         <li>Alguém rebate um NF do próprio grupo por falta de número</li>
         <li>Aparece a frase “mas isso é regra de negócio ou é tela?”</li>
       </ul>
     </div>
-    <div class="box tight">
-      <p class="cap">Sinais de que não pegou — e o que fazer</p>
-      <ul class="tight" style="margin:0;font-size:8.2pt">
+    <div>
+      <p class="colhead">Sinais de que não pegou — e o que fazer</p>
+      <ul class="dash small">
         <li>Atores param em dois → pergunte “quem cadastra o preço?”</li>
         <li>Regras viram descrição de tela → pergunte “e quando dá errado?”</li>
-        <li>GUT toda 5 → peça pra ordenar mesmo assim, o empate obriga a escolher</li>
+        <li>GUT toda 5 → peça pra ordenar mesmo assim; o empate obriga a escolher</li>
         <li>Grupo escolhe o requisito mais divertido → mostre a linha “tema escuro”</li>
       </ul>
     </div>
   </div>
 
-  <div class="box" style="border-left:3px solid var(--cyan)">
-    <p class="cap">Dever de casa — o que cobrar na aula seguinte</p>
-    <p style="margin:0" class="small">Uma folha por grupo com as quatro rodadas aplicadas ao <b>sistema do TCC</b>. O entregável que importa é a <b>tabela GUT ordenada</b>: ela vira o cronograma do bimestre, e a primeira linha é o que o grupo começa a implementar. Guarde as folhas — a aula seguinte (casos de uso) parte exatamente do requisito de GUT mais alta de cada grupo.</p>
+  <div class="callout" style="margin-bottom:0">
+    <span class="lbl">Dever de casa · o que cobrar na aula seguinte</span>
+    Uma folha por grupo com as quatro rodadas aplicadas ao <b>sistema do TCC</b>. O entregável que importa é a <b>tabela GUT ordenada</b>: ela vira o cronograma do bimestre, e a primeira linha é o que o grupo começa a implementar. Guarde as folhas — a aula seguinte (casos de uso) parte exatamente do requisito de GUT mais alta de cada grupo.
   </div>
 
-  <div class="foot"><span>Gabarito · Engenharia reversa de app · Prof. Toni Coimbra</span><span>Página 2 de 2</span></div>
+  <div class="foot"><span>Gabarito · engenharia reversa de app · <b>Prof. Toni Coimbra</b></span><span>Página <b>2</b> / 2</span></div>
 </section>
 
 </body>
