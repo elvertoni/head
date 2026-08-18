@@ -97,8 +97,12 @@
       "status": "em-construcao",
       "lake": "lake/analise-e-projeto-de-sistemas",
       "warehouse": "aulas/analise-e-projeto-de-sistemas",
-      "total_aulas": 6,
+      "total_aulas": 7,
       "trilhas": [
+        {
+          "slug": "analise-de-requisitos",
+          "label": "Levantamento e priorização de requisitos"
+        },
         {
           "slug": "marketing-digital",
           "label": "Marketing Digital"
@@ -112,8 +116,13 @@
       "status": "planejada",
       "lake": "lake/programacao-no-desenvolvimento-de-sistemas",
       "warehouse": "aulas/programacao-no-desenvolvimento-de-sistemas",
-      "total_aulas": 0,
-      "trilhas": []
+      "total_aulas": 1,
+      "trilhas": [
+        {
+          "slug": "arquitetura-e-fluxo-de-sistemas",
+          "label": "Arquitetura e fluxo de uma requisição"
+        }
+      ]
     },
     {
       "slug": "tcc",
@@ -5571,6 +5580,14 @@
     },
     {
       "disciplina": "analise-e-projeto-de-sistemas",
+      "trilha": "analise-de-requisitos",
+      "ordem": 31,
+      "slug": "engenharia-reversa-de-app",
+      "titulo": "Engenharia reversa — desmonte o app que você usa todo dia",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "analise-e-projeto-de-sistemas",
       "trilha": "marketing-digital",
       "ordem": 25,
       "slug": "o-que-e-marketing-digital",
@@ -5615,6 +5632,14 @@
       "ordem": 30,
       "slug": "storytelling",
       "titulo": "Storytelling no Desenvolvimento Pessoal",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-no-desenvolvimento-de-sistemas",
+      "trilha": "arquitetura-e-fluxo-de-sistemas",
+      "ordem": 1,
+      "slug": "o-que-acontece-quando-voce-aperta-enter",
+      "titulo": "O que acontece quando você aperta Enter",
       "status": "aprovada"
     },
     {

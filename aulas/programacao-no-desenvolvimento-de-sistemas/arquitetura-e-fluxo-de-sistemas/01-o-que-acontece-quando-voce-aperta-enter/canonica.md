@@ -15,7 +15,7 @@ slug: o-que-acontece-quando-voce-aperta-enter
 modo_origem: tema
 fontes: []
 revisao: false
-status: rascunho
+status: aprovada
 versao: 1
 atualizado_em: 2026-08-18
 ---
