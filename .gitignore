@@ -1,6 +1,9 @@
 # Derivados regeneráveis — nunca versionar (regenerados a partir da canonica.md)
 **/saidas/
 
+# Atividades impressas: o .html é a fonte editável; o .pdf sai dele via print
+aulas/**/atividades/*.pdf
+
 # Saídas de ferramenta — regeneráveis, local-only
 graphify-out/
 .playwright-mcp/

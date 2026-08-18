@@ -58,18 +58,20 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 ### Current vault state (8 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-08-10, `python tools/gerar_manifesto.py --check` validates 73 approved importable lessons.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-08-18, `python tools/gerar_manifesto.py --check` validates 77 approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
-| `inteligencia-artificial` | `fundamentos-de-ia` | 25 aulas aprovadas + 35-node concept graph |
-| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33-41 aprovadas (Scrum/agilidade) |
-| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas |
-| `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
+| `inteligencia-artificial` | `fundamentos-de-ia` | aulas 1-25 aprovadas + 37-node concept graph |
 | `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas |
+| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33-41 + 53-54 aprovadas (Scrum/agilidade, Kanban) |
 | `tcc` | `blueprint-tcc` | aulas 1-9 aprovadas (blueprints de TCC em canônica) |
+| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas |
+| `analise-e-projeto-de-sistemas` | `analise-de-requisitos` | aula 31 aprovada (engenharia reversa de app) |
+| `programacao-front-end` | `controle-de-versao-git-github` | aulas 2-6 aprovadas + `atividades/` (apoio impresso, fora do manifesto) |
 | `programacao-front-end` | `fundamentos-html-css` | aula 1 aprovada |
-| `programacao-front-end` | `controle-de-versao-git-github` | aulas 2-6 aprovadas |
+| `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
+| `programacao-no-desenvolvimento-de-sistemas` | `arquitetura-e-fluxo-de-sistemas` | aula 1 aprovada (o que acontece quando você aperta Enter) |
 | `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
 | `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | HTML apoio only — the canonical versions of these blueprints live under `tcc/blueprint-tcc` |
 | `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |

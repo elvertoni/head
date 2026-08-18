@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Gabarito · Atividade Git e GitHub · Prof Toni Coimbra</title>
+<style>
+:root{
+  --ink:#0f172a; --ink-soft:#475569; --line:#c7cedb; --line-soft:#e2e8f0;
+  --blue:#023E8A; --cyan:#00B4D8; --wash:#f4f7fb; --ok:#0e7c66;
+  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
+body{font-size:9pt;line-height:1.32;}
+@page{ size:A4; margin:11mm 12mm 10mm 12mm; }
+.page{width:186mm;margin:0 auto;page-break-after:always;}
+.page:last-child{page-break-after:auto;}
+.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:6px;}
+.head .who{font-size:8pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+.head h1{margin:1px 0 0;font-size:14pt;}
+.head h1 span{color:var(--cyan);}
+.head .tag{font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;}
+.warn{border-left:3px solid #f59e0b;background:#fff7ed;padding:5px 8px;font-size:8.4pt;margin-bottom:7px;}
+h2{font-size:9.6pt;margin:8px 0 3px;border-bottom:1px solid var(--line);padding-bottom:2px;color:var(--blue);}
+p{margin:0 0 3px;}
+code{font-family:var(--mono);font-size:8.4pt;background:var(--wash);padding:0 2px;border-radius:2px;}
+table{width:100%;border-collapse:collapse;font-size:8.4pt;margin:3px 0;}
+th,td{border:1px solid var(--line);padding:3px 5px;vertical-align:top;text-align:left;}
+th{background:var(--wash);font-size:7.6pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
+.ok{color:var(--ok);font-weight:700;}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.small{font-size:8pt;color:var(--ink-soft);}
+.foot{margin-top:8px;border-top:1px solid var(--line);padding-top:4px;font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;}
+ul{margin:2px 0 3px 0;padding-left:15px;}
+li{margin:1px 0;}
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="head">
+    <div>
+      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Programação Front-End</div>
+      <h1>Gabarito — Atividade de <span>Git e GitHub</span></h1>
+    </div>
+    <div class="tag">Prof. Toni Coimbra<br>Aulas 02 a 06 · 3ª série<br>Total: 10,0 + 0,5 extra</div>
+  </div>
+
+  <div class="warn"><b>Folha do professor.</b> Não distribuir junto com a atividade. Distribuição: Ex.1 1,5 · Ex.2 1,0 · Ex.2b 0,5 · Ex.3 2,0 · Ex.4 1,5 · Ex.5 1,0 · Ex.6 1,0 · Ex.7 0,5 · Ex.8 1,0 · Ex.9 prático (visto) · Ex.10 extra 0,5.</div>
+
+  <div class="cols2">
+    <div>
+      <h2>Exercício 1 — Fluxo (1,5)</h2>
+      <table>
+        <tr><th style="width:9mm">Nº</th><th style="width:32mm">Comando</th><th>O que faz</th></tr>
+        <tr><td>1</td><td><code>git add</code></td><td>marca o arquivo para a próxima foto (stage)</td></tr>
+        <tr><td>2</td><td><code>git commit -m</code></td><td>grava a foto no histórico local, com mensagem</td></tr>
+        <tr><td>3</td><td><code>git push</code></td><td>envia os commits locais para o GitHub</td></tr>
+        <tr><td>4</td><td><code>git pull</code></td><td>traz do GitHub os commits que não estão no local</td></tr>
+      </table>
+      <p class="small">Bônus: <code>git init</code> — cria a pasta <code>.git</code>, não move código entre lugares.<br>
+      Aceitar <code>git fetch</code> + <code>git merge</code> no lugar do <code>pull</code>. Descontar 0,25 se escrever <code>git commit</code> sem entender que a foto sai do stage, não da pasta.</p>
+
+      <h2>Exercício 2 — V ou F (1,0)</h2>
+      <ul>
+        <li><b>F</b> — commit guarda o estado inteiro (fotografia), não só o diff.</li>
+        <li><b>F</b> — branch é rótulo móvel; não duplica arquivo nenhum.</li>
+        <li><b>V</b> — todo o ciclo local roda offline.</li>
+        <li><b>V</b> — é exatamente o papel do <code>.gitignore</code>.</li>
+        <li><b>F</b> — senha foi bloqueada em 2021; usar SSH ou GitHub CLI.</li>
+        <li><b>F</b> — conflito é pedido de decisão humana, não erro nem corrupção.</li>
+        <li><b>F</b> — <code>clone</code> baixa o histórico completo.</li>
+        <li><b>V</b> — cada push na branch-fonte republica o site em ~1 min.</li>
+      </ul>
+
+      <h2>Exercício 2b — Associação (0,5)</h2>
+      <p>Na ordem das frases: <span class="ok">5 · 3 · 1 · 6 · 4 · 2</span></p>
+      <p class="small">(5) pull · (3) switch -c · (1) status · (6) remote add origin · (4) merge · (2) log --oneline</p>
+
+      <h2>Exercício 3 — Objetivas (2,0)</h2>
+      <table>
+        <tr><th>3.1</th><th>3.2</th><th>3.3</th><th>3.4</th><th>3.5</th><th>3.6</th></tr>
+        <tr><td class="ok">b</td><td class="ok">c</td><td class="ok">b</td><td class="ok">d</td><td class="ok">b</td><td class="ok">c</td></tr>
+      </table>
+      <p class="small">Cerca de 0,33 por item. Em 3.6, o ponto é o servidor Linux diferenciar maiúscula de minúscula — o Windows não.</p>
+
+      <h2>Exercício 4 — Terminal (1,5)</h2>
+      <p><code>git init</code> · <code>.gitignore</code> · <code>git add .</code> · <code>git status</code> ·
+      <code>git commit -m "..."</code> · <code>origin</code> · <code>git push -u origin main</code></p>
+      <p class="small">A mensagem do commit precisa dizer o que mudou; aceitar qualquer frase descritiva. Descontar se trocar a ordem <code>add</code> → <code>commit</code> → <code>push</code>.</p>
+    </div>
+
+    <div>
+      <h2>Exercício 5 — Conflito (1,0)</h2>
+      <p><b>a)</b> Entre <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> e <code>=======</code> está a versão da branch <b>atual</b> (<code>main</code>). Depois do <code>=======</code>, a versão de <code>modo-escuro</code>.</p>
+      <p><b>b)</b> Qualquer redação sem nenhum marcador, ex.:</p>
+      <p><code>&lt;section class="hero"&gt; &lt;h1&gt;Encontre seu novo melhor amigo no Petfinder!&lt;/h1&gt; &lt;/section&gt;</code></p>
+      <p class="small">Vale escolher uma das duas ou combinar as duas — o que não vale é sobrar <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> ou <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.</p>
+      <p><b>c)</b> <code>git add index.html</code> e depois <code>git commit</code> (aceita a mensagem de merge sugerida).</p>
+
+      <h2>Exercício 6 — Conventional Commits (1,0)</h2>
+      <table>
+        <tr><th style="width:26mm">Original</th><th>Esperado (variações válidas)</th></tr>
+        <tr><td>“ajustes”</td><td><code>feat: adiciona formulário de contato</code></td></tr>
+        <tr><td>“arrumei o bug”</td><td><code>fix: corrige botão Enviar que não respondia no mobile</code></td></tr>
+        <tr><td>“mudei umas coisas”</td><td><code>docs: corrige erros de digitação no README</code></td></tr>
+        <tr><td>“wip”</td><td><code>chore: atualiza versão da dependência</code></td></tr>
+      </table>
+      <p class="small">0,25 cada. Prefixo certo com frase vaga (<code>feat: mudanças</code>) vale só metade — o padrão exige as duas partes.</p>
+
+      <h2>Exercício 7 — .gitignore (0,5)</h2>
+      <p><b>Versionar:</b> <code>index.html</code>, <code>css/estilo.css</code>, <code>img/pet1.jpg</code>, <code>README.md</code>.</p>
+      <p><b>Ignorar:</b></p>
+      <p><code>node_modules/</code> · <code>.env</code> · <code>*.log</code> · <code>anotacoes-pessoais.txt</code></p>
+      <p class="small">Sobre o <code>.env</code>: apagar o arquivo não apaga a fotografia antiga — o commit anterior continua no histórico e no GitHub. Na prática, a senha vazou e precisa ser trocada, não só removida.</p>
+
+      <h2>Exercício 8 — Fast-forward × merge commit (1,0)</h2>
+      <p><b>Caso A:</b> <span class="ok">fast-forward</span> — a <code>main</code> não recebeu commit novo, então o Git só empurra o rótulo. <b>0</b> commits novos criados.</p>
+      <p><b>Caso B:</b> <span class="ok">merge commit</span> — as duas histórias divergiram. Esse commit tem <b>2</b> pais, um de cada branch.</p>
+      <p><b>Conflito:</b> só pode acontecer no <b>Caso B</b>. No Caso A a <code>main</code> não mudou, então não existem duas versões concorrentes da mesma linha para o Git escolher.</p>
+
+      <h2>Exercícios 9 e 10 — critérios</h2>
+      <p><b>Ex.9 (visto prático):</b> conferir na tela do aluno — branch com nome descritivo, commit com prefixo, PR aberto com descrição preenchida, merge feito pelo botão e link do Pages abrindo no celular.</p>
+      <p><b>Ex.10 (extra 0,5):</b> conceder o ponto só quando a resposta separar <b>ferramenta local</b> de <b>serviço na nuvem</b> <i>e</i> citar um exemplo concreto do que foi feito em aula (ex.: “commitei sem internet e só depois dei push”). Resposta decorada sem exemplo: 0,25.</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Gabarito · Atividade Git e GitHub · Prof. Toni Coimbra</span><span>Folha do professor · 1 de 1</span></div>
+</section>
+</body>
+</html>

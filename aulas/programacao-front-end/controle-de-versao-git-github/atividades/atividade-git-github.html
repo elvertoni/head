@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-doc="atividade">
+<head>
+<meta charset="utf-8">
+<title>Atividade · Git e GitHub · Prof Toni Coimbra</title>
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-soft:#475569;
+  --line:#c7cedb;
+  --line-soft:#e2e8f0;
+  --blue:#023E8A;
+  --cyan:#00B4D8;
+  --wash:#f4f7fb;
+  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
+body{font-size:9.4pt;line-height:1.34;}
+
+@page{ size:A4; margin:11mm 12mm 10mm 12mm; }
+
+.page{
+  width:186mm;
+  margin:0 auto;
+  padding:0;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+
+/* ---------- cabeçalho ---------- */
+.head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:7px;
+}
+.head .who{font-size:8pt;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;}
+.head h1{margin:1px 0 0;font-size:15pt;letter-spacing:-.01em;}
+.head h1 span{color:var(--cyan);}
+.head .tag{
+  font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;
+}
+.runhead{
+  display:flex;justify-content:space-between;font-size:7.6pt;color:var(--ink-soft);
+  border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:7px;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+
+/* ---------- identificação ---------- */
+.ident{
+  display:grid;grid-template-columns:1fr 34mm 26mm 20mm;gap:0;
+  border:1px solid var(--line);margin-bottom:7px;
+}
+.ident div{padding:6px 6px 12px;border-right:1px solid var(--line);font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+.ident div:last-child{border-right:0;background:var(--wash);}
+
+/* ---------- blocos ---------- */
+.instr{
+  border-left:3px solid var(--cyan);background:var(--wash);
+  padding:5px 8px;font-size:8.4pt;margin-bottom:8px;
+}
+h2.ex{
+  font-size:10pt;margin:9px 0 4px;padding:2px 0 2px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+h2.ex .pts{font-size:7.6pt;font-weight:600;color:var(--ink-soft);}
+h2.ex b{color:var(--blue);}
+.q{margin:0 0 4px;}
+.q .n{font-weight:700;color:var(--blue);}
+ol.alts{margin:2px 0 6px 0;padding-left:0;list-style:none;}
+ol.alts li{margin:1px 0;padding-left:16px;text-indent:-16px;}
+ol.alts li::before{content:"( ) ";font-family:var(--mono);}
+.mono,code{font-family:var(--mono);font-size:8.6pt;}
+code{background:var(--wash);padding:0 2px;border-radius:2px;}
+pre{
+  font-family:var(--mono);font-size:8.4pt;line-height:1.35;
+  background:var(--wash);border:1px solid var(--line-soft);
+  border-radius:3px;padding:6px 8px;margin:4px 0;white-space:pre-wrap;
+}
+.rule{border-bottom:1px dotted #94a3b8;height:13px;margin:0 0 3px;}
+.rule.short{width:60%;}
+table{width:100%;border-collapse:collapse;font-size:8.6pt;margin:4px 0;}
+th,td{border:1px solid var(--line);padding:3px 5px;text-align:left;vertical-align:top;}
+th{background:var(--wash);font-size:7.8pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
+td.fill{height:15px;}
+td.fill-lg{height:26px;}
+.vf{width:100%;border-collapse:collapse;font-size:8.8pt;}
+.vf td{border:1px solid var(--line);padding:3px 5px;}
+.vf td.mark{width:16mm;text-align:center;font-family:var(--mono);color:var(--ink-soft);}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.box{border:1px solid var(--line);border-radius:3px;padding:6px 8px;}
+.box.tight{padding:5px 7px;}
+.cap{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px;}
+.fig{border:1px solid var(--line);border-radius:3px;padding:5px;margin:4px 0;background:#fff;}
+.fig svg{display:block;width:100%;height:auto;}
+.chk{list-style:none;margin:2px 0;padding:0;}
+.chk li{padding-left:16px;text-indent:-16px;margin:1.5px 0;}
+.chk li::before{content:"☐ ";}
+.foot{
+  margin-top:8px;border-top:1px solid var(--line);padding-top:4px;
+  font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;
+}
+.small{font-size:8pt;color:var(--ink-soft);}
+.gab-only{background:#fff7ed;border-left:3px solid #f59e0b;}
+</style>
+</head>
+<body>
+
+<!-- ============================ PÁGINA 1 ============================ -->
+<section class="page">
+  <div class="head">
+    <div>
+      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Programação Front-End</div>
+      <h1>Atividade — Controle de versão com <span>Git e GitHub</span></h1>
+    </div>
+    <div class="tag">Prof. Toni Coimbra<br>Aulas 02 a 06 · 3ª série<br>Valor: 10,0 pontos</div>
+  </div>
+
+  <div class="ident">
+    <div>Nome completo</div>
+    <div>Turma</div>
+    <div>Data</div>
+    <div>Nota</div>
+  </div>
+
+  <div class="instr">
+    <b>Instruções.</b> Responda a caneta, individualmente, sem consultar o computador — exceto no Exercício 9, que é prático.
+    Marque uma única alternativa nas questões objetivas. Comandos devem ser escritos exatamente como se digitam no terminal.
+  </div>
+
+  <h2 class="ex"><span><b>Exercício 1.</b> Os quatro lugares onde seu código pode estar</span><span class="pts">1,5</span></h2>
+  <p class="q small">Cada seta do diagrama é um comando do Git. Escreva na linha abaixo o comando que corresponde a cada número.</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 700 176" role="img" aria-label="Diagrama do fluxo Git: pasta do projeto, área de stage, repositório local e GitHub">
+      <defs>
+        <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L9,4 L0,8 z" fill="#023E8A"/>
+        </marker>
+        <marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto">
+          <path d="M0,0 L9,4 L0,8 z" fill="#64748b"/>
+        </marker>
+      </defs>
+
+      <!-- caixas -->
+      <g font-family="ui-sans-serif, system-ui, Arial" >
+        <rect x="6" y="46" width="148" height="52" rx="6" fill="#f4f7fb" stroke="#023E8A" stroke-width="1.4"/>
+        <text x="80" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Pasta do projeto</text>
+        <text x="80" y="85" text-anchor="middle" font-size="11" fill="#475569">arquivos que você edita</text>
+
+        <rect x="188" y="46" width="140" height="52" rx="6" fill="#f4f7fb" stroke="#023E8A" stroke-width="1.4"/>
+        <text x="258" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Área de stage</text>
+        <text x="258" y="85" text-anchor="middle" font-size="11" fill="#475569">o que entra na foto</text>
+
+        <rect x="362" y="46" width="152" height="52" rx="6" fill="#f4f7fb" stroke="#023E8A" stroke-width="1.4"/>
+        <text x="438" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Repositório local</text>
+        <text x="438" y="85" text-anchor="middle" font-size="11" fill="#475569">pasta .git · histórico</text>
+
+        <rect x="548" y="46" width="146" height="52" rx="6" fill="#e6f7fc" stroke="#00B4D8" stroke-width="1.6"/>
+        <text x="621" y="68" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">GitHub</text>
+        <text x="621" y="85" text-anchor="middle" font-size="11" fill="#475569">repositório remoto</text>
+
+        <!-- setas ida -->
+        <line x1="156" y1="63" x2="184" y2="63" stroke="#023E8A" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="170" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#023E8A">1</text>
+
+        <line x1="330" y1="63" x2="358" y2="63" stroke="#023E8A" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="344" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#023E8A">2</text>
+
+        <line x1="516" y1="63" x2="544" y2="63" stroke="#023E8A" stroke-width="1.6" marker-end="url(#ar)"/>
+        <text x="530" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#023E8A">3</text>
+
+        <!-- seta volta -->
+        <path d="M600,100 L600,124 L438,124 L438,101" fill="none" stroke="#64748b" stroke-width="1.4" marker-end="url(#ar2)"/>
+        <text x="519" y="138" text-anchor="middle" font-size="12" font-weight="700" fill="#475569">4</text>
+
+        <!-- rodapé do diagrama -->
+        <text x="10" y="26" font-size="11" letter-spacing="1" fill="#475569">SEU COMPUTADOR</text>
+        <text x="690" y="26" text-anchor="end" font-size="11" letter-spacing="1" fill="#00B4D8">NUVEM</text>
+        <line x1="533" y1="16" x2="533" y2="150" stroke="#c7cedb" stroke-width="1" stroke-dasharray="4 4"/>
+      </g>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th style="width:14mm">Nº</th><th style="width:52mm">Comando</th><th>O que ele faz, na sua explicação</th></tr>
+    <tr><td>1</td><td class="fill-lg"></td><td></td></tr>
+    <tr><td>2</td><td class="fill-lg"></td><td></td></tr>
+    <tr><td>3</td><td class="fill-lg"></td><td></td></tr>
+    <tr><td>4</td><td class="fill-lg"></td><td></td></tr>
+  </table>
+  <p class="small" style="margin:2px 0 0">Bônus (0,0 pt, mas conta na conversa): qual comando cria a pasta <code>.git</code> e não aparece em nenhuma seta? ______________________</p>
+
+  <h2 class="ex"><span><b>Exercício 2.</b> Verdadeiro ou falso</span><span class="pts">1,0</span></h2>
+  <p class="q small">Escreva <b>V</b> ou <b>F</b>. Em cada afirmação falsa, corrija a palavra errada na própria linha.</p>
+  <table class="vf">
+    <tr><td class="mark">V / F</td><td>Um commit guarda apenas as linhas que mudaram desde o commit anterior.</td></tr>
+    <tr><td class="mark">V / F</td><td>Criar uma branch faz uma cópia de todos os arquivos do projeto dentro do repositório.</td></tr>
+    <tr><td class="mark">V / F</td><td>É possível usar Git no seu computador sem nenhuma conexão com a internet.</td></tr>
+    <tr><td class="mark">V / F</td><td>Um arquivo listado no <code>.gitignore</code> é ignorado mesmo quando você roda <code>git add .</code></td></tr>
+    <tr><td class="mark">V / F</td><td>Desde 2021 o GitHub aceita usuário e senha em <code>git push</code> pela linha de comando.</td></tr>
+    <tr><td class="mark">V / F</td><td>Conflito de merge é um bug do Git e significa que o repositório foi corrompido.</td></tr>
+    <tr><td class="mark">V / F</td><td><code>git clone</code> baixa somente a versão mais recente dos arquivos, sem o histórico de commits.</td></tr>
+    <tr><td class="mark">V / F</td><td>Depois que o GitHub Pages está ativo, todo <code>push</code> na branch escolhida atualiza o site sozinho.</td></tr>
+  </table>
+
+  <h2 class="ex"><span><b>Exercício 2b.</b> Ligue cada comando ao que ele faz</span><span class="pts">0,5</span></h2>
+  <div class="cols2">
+    <div class="box tight">
+      <p class="small" style="margin:0">(1) <code>git status</code> &nbsp;&nbsp; (2) <code>git log --oneline</code> &nbsp;&nbsp; (3) <code>git switch -c</code><br>
+      (4) <code>git merge</code> &nbsp;&nbsp; (5) <code>git pull</code> &nbsp;&nbsp; (6) <code>git remote add origin</code></p>
+    </div>
+    <div class="box tight">
+      <p class="small" style="margin:0">( &nbsp; ) traz para o local os commits que estão no GitHub<br>
+      ( &nbsp; ) cria uma branch nova e já muda para ela<br>
+      ( &nbsp; ) mostra o que está modificado e o que está em stage<br>
+      ( &nbsp; ) cadastra o endereço do repositório remoto<br>
+      ( &nbsp; ) junta os commits de uma branch na branch atual<br>
+      ( &nbsp; ) lista o histórico, um commit por linha</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Atividade · Git e GitHub · Prof. Toni Coimbra</span><span>Página 1 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 2 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Git e GitHub</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <h2 class="ex"><span><b>Exercício 3.</b> Questões objetivas</span><span class="pts">2,0</span></h2>
+  <p class="q small">Marque com <b>X</b> a única alternativa correta.</p>
+
+  <p class="q"><span class="n">3.1</span> Qual é a diferença principal entre guardar <code>projeto-v1.html</code>, <code>projeto-v2.html</code>, <code>projeto-final.html</code> e usar Git?</p>
+  <ol class="alts">
+    <li>a) Não há diferença: os dois guardam histórico do mesmo jeito.</li>
+    <li>b) Git guarda o histórico dentro do próprio projeto, com data, autor e mensagem, sem multiplicar arquivos.</li>
+    <li>c) Git só funciona se o projeto estiver publicado no GitHub.</li>
+    <li>d) Arquivos com nome de versão abrem mais rápido no navegador.</li>
+  </ol>
+
+  <p class="q"><span class="n">3.2</span> Por que existe o comando <code>git add</code> antes do <code>git commit</code>?</p>
+  <ol class="alts">
+    <li>a) Porque o Git exige dois comandos para tudo, sem motivo real.</li>
+    <li>b) Porque <code>git add</code> é quem realmente grava o histórico.</li>
+    <li>c) Para permitir escolher exatamente quais mudanças entram na próxima fotografia.</li>
+    <li>d) Para liberar memória do computador antes de salvar.</li>
+  </ol>
+
+  <p class="q"><span class="n">3.3</span> O que uma branch é, por dentro do Git?</p>
+  <ol class="alts">
+    <li>a) Uma cópia completa de todos os arquivos do projeto.</li>
+    <li>b) Um rótulo móvel apontando para um commit, que anda independente das outras branches.</li>
+    <li>c) Um backup automático feito na nuvem.</li>
+    <li>d) Uma pasta separada criada dentro do repositório.</li>
+  </ol>
+
+  <p class="q"><span class="n">3.4</span> Você quer trazer para o seu computador um projeto que já existe no GitHub e do qual você ainda não tem nenhum arquivo local. Qual comando usar?</p>
+  <ol class="alts">
+    <li>a) <code>git init</code></li>
+    <li>b) <code>git push</code></li>
+    <li>c) <code>git switch</code></li>
+    <li>d) <code>git clone</code></li>
+  </ol>
+
+  <p class="q"><span class="n">3.5</span> Qual é a principal diferença entre um merge direto e um Pull Request?</p>
+  <ol class="alts">
+    <li>a) Não existe diferença técnica nenhuma.</li>
+    <li>b) O Pull Request cria um espaço de revisão e conversa antes de o merge acontecer.</li>
+    <li>c) Pull Request só existe em repositórios privados.</li>
+    <li>d) Merge direto é mais rápido porque não usa Git.</li>
+  </ol>
+
+  <p class="q"><span class="n">3.6</span> Uma imagem aparece certinho no seu computador, mas fica quebrada depois de publicada no GitHub Pages. Qual é a causa mais provável?</p>
+  <ol class="alts">
+    <li>a) O GitHub Pages não suporta imagens <code>.jpg</code>.</li>
+    <li>b) A imagem é pesada demais para a internet do celular.</li>
+    <li>c) Diferença entre maiúscula e minúscula no nome do arquivo — o servidor Linux diferencia, o Windows não.</li>
+    <li>d) O GitHub Pages só publica arquivos que estejam numa branch chamada <code>gh-pages</code>.</li>
+  </ol>
+
+  <h2 class="ex"><span><b>Exercício 4.</b> Complete o terminal</span><span class="pts">1,5</span></h2>
+  <p class="q small">Cenário: a pasta <code>petfinder</code> ainda não é um repositório. Você quer versioná-la, ignorar arquivos de log, fazer o primeiro commit e enviar tudo para um repositório vazio já criado no GitHub. Preencha as lacunas.</p>
+<pre>$ cd petfinder
+
+$ git ______________            # cria o repositório local
+
+$ echo "*.log" &gt; ______________ # arquivo que lista o que o Git deve ignorar
+
+$ git ______________ .          # marca todos os arquivos para a próxima foto
+
+$ git ______________            # confere o que está marcado antes de commitar
+
+$ git commit ____ "___________________________________________"
+
+$ git remote add ____________ https://github.com/seu-usuario/petfinder.git
+
+$ git push ____ origin ____________</pre>
+
+  <div class="foot"><span>Atividade · Git e GitHub · Prof. Toni Coimbra</span><span>Página 2 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 3 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Git e GitHub</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <h2 class="ex"><span><b>Exercício 5.</b> Resolvendo um conflito de merge</span><span class="pts">1,0</span></h2>
+  <p class="q small">Você rodou <code>git merge modo-escuro</code> estando na <code>main</code> e o Git parou o merge deixando o arquivo <code>index.html</code> assim:</p>
+<pre>&lt;section class="hero"&gt;
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+  &lt;h1&gt;Bem-vindo ao Petfinder!&lt;/h1&gt;
+=======
+  &lt;h1&gt;Encontre seu novo melhor amigo no Petfinder!&lt;/h1&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; modo-escuro
+&lt;/section&gt;</pre>
+
+  <div class="cols2">
+    <div class="box tight">
+      <p class="cap">a) De qual branch veio cada linha?</p>
+      <p class="small" style="margin:0 0 2px">Entre <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> e <code>=======</code>:</p>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="small" style="margin:2px 0 2px">Entre <code>=======</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>:</p>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="cap" style="margin-top:6px">c) Depois de editar, quais dois comandos fecham o merge?</p>
+      <div class="rule"></div>
+      <div class="rule"></div>
+    </div>
+    <div class="box tight">
+      <p class="cap">b) Reescreva o trecho já resolvido</p>
+      <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+      <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="small" style="margin:2px 0 0">Atenção: nenhum marcador pode sobrar no arquivo final.</p>
+    </div>
+  </div>
+
+  <h2 class="ex"><span><b>Exercício 6.</b> Conventional Commits</span><span class="pts">1,0</span></h2>
+  <p class="q small">Reescreva cada mensagem ruim no padrão <code>tipo: descrição</code>, usando <code>feat</code>, <code>fix</code>, <code>docs</code>, <code>style</code>, <code>refactor</code> ou <code>chore</code>. O prefixo classifica a intenção; a frase depois dele precisa dizer <b>o quê</b> mudou.</p>
+  <table>
+    <tr><th style="width:70mm">Mensagem original</th><th>Reescrita no padrão</th></tr>
+    <tr><td>“ajustes”<br><span class="small">(você adicionou o formulário de contato)</span></td><td class="fill-lg"></td></tr>
+    <tr><td>“arrumei o bug”<br><span class="small">(o botão Enviar não respondia no celular)</span></td><td class="fill-lg"></td></tr>
+    <tr><td>“mudei umas coisas”<br><span class="small">(você só corrigiu erros de digitação no README)</span></td><td class="fill-lg"></td></tr>
+    <tr><td>“wip”<br><span class="small">(você atualizou a versão de uma dependência)</span></td><td class="fill-lg"></td></tr>
+  </table>
+
+  <h2 class="ex"><span><b>Exercício 7.</b> O que entra no repositório?</span><span class="pts">0,5</span></h2>
+  <p class="q small">Marque com <b>X</b> apenas os arquivos que <b>devem</b> ser versionados. Depois, escreva o <code>.gitignore</code> que barra os demais.</p>
+  <div class="cols2">
+    <div>
+      <ul class="chk">
+        <li><code>index.html</code></li>
+        <li><code>css/estilo.css</code></li>
+        <li><code>node_modules/</code></li>
+        <li><code>.env</code> <span class="small">(com a senha do banco)</span></li>
+        <li><code>img/pet1.jpg</code></li>
+        <li><code>debug.log</code></li>
+        <li><code>anotacoes-pessoais.txt</code></li>
+        <li><code>README.md</code></li>
+      </ul>
+    </div>
+    <div class="box tight">
+      <p class="cap">.gitignore</p>
+      <div class="rule"></div><div class="rule"></div>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="small" style="margin:4px 0 0">Por que um <code>.env</code> commitado por engano continua sendo um problema mesmo depois de você apagar o arquivo?</p>
+      <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+    </div>
+  </div>
+
+  <div class="foot"><span>Atividade · Git e GitHub · Prof. Toni Coimbra</span><span>Página 3 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 4 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Git e GitHub</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <h2 class="ex"><span><b>Exercício 8.</b> Leitura de histórico: fast-forward ou merge commit?</span><span class="pts">1,0</span></h2>
+  <p class="q small">Os dois grafos abaixo mostram o estado do repositório <b>antes</b> de você rodar <code>git switch main</code> e <code>git merge modo-escuro</code>.</p>
+
+  <div class="fig">
+    <svg viewBox="0 0 700 168" role="img" aria-label="Dois grafos de commits comparando merge com e sem divergência">
+      <g font-family="ui-sans-serif, system-ui, Arial">
+        <!-- CASO A -->
+        <text x="10" y="16" font-size="12" font-weight="700" fill="#023E8A">Caso A</text>
+        <line x1="70" y1="46" x2="140" y2="46" stroke="#023E8A" stroke-width="1.6"/>
+        <circle cx="70" cy="46" r="8" fill="#fff" stroke="#023E8A" stroke-width="1.6"/>
+        <circle cx="140" cy="46" r="8" fill="#fff" stroke="#023E8A" stroke-width="1.6"/>
+        <text x="105" y="34" text-anchor="middle" font-size="10" fill="#475569">main</text>
+        <path d="M140,54 L200,86" stroke="#00B4D8" stroke-width="1.6" fill="none"/>
+        <circle cx="210" cy="92" r="8" fill="#e6f7fc" stroke="#00B4D8" stroke-width="1.6"/>
+        <circle cx="280" cy="92" r="8" fill="#e6f7fc" stroke="#00B4D8" stroke-width="1.6"/>
+        <line x1="218" y1="92" x2="272" y2="92" stroke="#00B4D8" stroke-width="1.6"/>
+        <text x="245" y="112" text-anchor="middle" font-size="10" fill="#0f172a">modo-escuro</text>
+        <text x="150" y="30" font-size="10" fill="#94a3b8">↑ nenhum commit novo aqui</text>
+        <text x="10" y="140" font-size="11" fill="#0f172a">Resultado do merge: ______________________________</text>
+        <text x="10" y="158" font-size="11" fill="#0f172a">Quantos commits novos são criados? _______</text>
+
+        <line x1="360" y1="10" x2="360" y2="164" stroke="#e2e8f0" stroke-width="1.4"/>
+
+        <!-- CASO B -->
+        <text x="376" y="16" font-size="12" font-weight="700" fill="#023E8A">Caso B</text>
+        <line x1="430" y1="46" x2="600" y2="46" stroke="#023E8A" stroke-width="1.6"/>
+        <circle cx="430" cy="46" r="8" fill="#fff" stroke="#023E8A" stroke-width="1.6"/>
+        <circle cx="500" cy="46" r="8" fill="#fff" stroke="#023E8A" stroke-width="1.6"/>
+        <circle cx="600" cy="46" r="8" fill="#fff" stroke="#023E8A" stroke-width="1.6"/>
+        <text x="515" y="34" text-anchor="middle" font-size="10" fill="#475569">main</text>
+        <path d="M500,54 L560,86" stroke="#00B4D8" stroke-width="1.6" fill="none"/>
+        <circle cx="570" cy="92" r="8" fill="#e6f7fc" stroke="#00B4D8" stroke-width="1.6"/>
+        <circle cx="640" cy="92" r="8" fill="#e6f7fc" stroke="#00B4D8" stroke-width="1.6"/>
+        <line x1="578" y1="92" x2="632" y2="92" stroke="#00B4D8" stroke-width="1.6"/>
+        <text x="605" y="112" text-anchor="middle" font-size="10" fill="#0f172a">modo-escuro</text>
+        <text x="586" y="30" font-size="10" fill="#94a3b8">↑ commit novo na main</text>
+        <text x="376" y="140" font-size="11" fill="#0f172a">Resultado do merge: ______________________________</text>
+        <text x="376" y="158" font-size="11" fill="#0f172a">Quantos pais tem esse commit? _______</text>
+      </g>
+    </svg>
+  </div>
+
+  <p class="q small">Nos dois casos as branches mexeram na <b>mesma linha</b> do mesmo arquivo. Em qual deles pode haver conflito, e por quê?</p>
+  <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+
+  <h2 class="ex"><span><b>Exercício 9.</b> Prática no computador — checklist de entrega</span><span class="pts">Prático</span></h2>
+  <p class="q small">No repositório do Petfinder, execute o fluxo completo. Marque cada etapa concluída e anote o que o professor precisa conferir.</p>
+  <div class="cols2">
+    <div>
+      <ul class="chk">
+        <li>Criei a branch <code>feature/rodape</code> com <code>git switch -c</code></li>
+        <li>Fiz um commit no padrão Conventional Commits</li>
+        <li>Enviei a branch com <code>git push -u origin feature/rodape</code></li>
+        <li>Abri um Pull Request com título e descrição</li>
+        <li>Recebi um comentário de revisão e fiz o merge</li>
+        <li>Ativei o GitHub Pages e testei o link no celular</li>
+      </ul>
+    </div>
+    <div class="box tight">
+      <p class="cap">Cole aqui (escrevendo) os dados da entrega</p>
+      <p class="small" style="margin:0 0 2px">URL do repositório:</p><div class="rule"></div>
+      <p class="small" style="margin:0 0 2px">URL do Pull Request (nº):</p><div class="rule"></div>
+      <p class="small" style="margin:0 0 2px">Link público do GitHub Pages:</p><div class="rule"></div>
+    </div>
+  </div>
+
+  <h2 class="ex"><span><b>Exercício 10.</b> Escreva com suas palavras</span><span class="pts">Extra 0,5</span></h2>
+  <p class="q small">Um colega diz: “Git e GitHub são a mesma coisa, só muda o nome.” Em até quatro linhas, mostre por que ele está errado usando um exemplo concreto do que você fez em aula.</p>
+  <div class="rule"></div><div class="rule"></div><div class="rule"></div><div class="rule"></div>
+
+  <div class="cols2" style="margin-top:8px">
+    <div class="box tight">
+      <p class="cap">Autoavaliação — marque o que você já faz sozinho</p>
+      <ul class="chk" style="font-size:8.6pt">
+        <li>Committo sem precisar consultar a ordem dos comandos</li>
+        <li>Sei ler <code>git status</code> antes de commitar</li>
+        <li>Crio branch para cada mudança, em vez de mexer na <code>main</code></li>
+        <li>Escrevo mensagem de commit que outra pessoa entende</li>
+      </ul>
+    </div>
+    <div class="box tight">
+      <p class="cap">Uso do professor — devolutiva</p>
+      <div class="rule"></div><div class="rule"></div>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="small" style="margin:2px 0 0">Refazer os exercícios: ____________________________</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Atividade · Git e GitHub · Prof. Toni Coimbra · aulas.tonicoimbra.com</span><span>Página 4 de 4</span></div>
+</section>
+
+</body>
+</html>
