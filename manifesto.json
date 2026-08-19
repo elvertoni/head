@@ -78,7 +78,7 @@
       "status": "planejada",
       "lake": "lake/programacao-front-end",
       "warehouse": "aulas/programacao-front-end",
-      "total_aulas": 6,
+      "total_aulas": 18,
       "trilhas": [
         {
           "slug": "controle-de-versao-git-github",
@@ -87,6 +87,10 @@
         {
           "slug": "fundamentos-html-css",
           "label": "HTML Semântico"
+        },
+        {
+          "slug": "landing-page-mvp",
+          "label": "O que define uma startup"
         }
       ]
     },
@@ -5576,6 +5580,102 @@
       "ordem": 1,
       "slug": "html-semantico",
       "titulo": "HTML semântico: por que <div> não conta a história toda",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 7,
+      "slug": "startup-nao-e-empresa-pequena",
+      "titulo": "Startup não é empresa pequena",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 8,
+      "slug": "mvp-a-menor-coisa-que-ensina",
+      "titulo": "MVP: a menor coisa que ensina alguma coisa",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 9,
+      "slug": "a-copy-que-vende-em-5-segundos",
+      "titulo": "A copy: o texto que vende em 5 segundos",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 10,
+      "slug": "a-ossatura-da-landing",
+      "titulo": "A ossatura: toda landing do mundo tem o mesmo esqueleto",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 11,
+      "slug": "cor-e-tipografia",
+      "titulo": "Cor e tipografia: a marca em seis linhas de CSS",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 12,
+      "slug": "flexbox-nav-e-hero",
+      "titulo": "Flexbox: alinhar de verdade o topo e o hero",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 13,
+      "slug": "grid-cards-de-beneficio",
+      "titulo": "Grid: os três benefícios viram cards",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 14,
+      "slug": "mobile-first",
+      "titulo": "Mobile-first: o MVP no celular de quem vai validar",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 15,
+      "slug": "movimento-com-proposito",
+      "titulo": "Movimento com propósito: o que leva o olho até o botão",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 16,
+      "slug": "os-tres-javascripts",
+      "titulo": "JavaScript na conta certa: três comportamentos, vinte linhas",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 17,
+      "slug": "publicar-e-encarar-gente",
+      "titulo": "Publicar de verdade e encarar gente",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "landing-page-mvp",
+      "ordem": 18,
+      "slug": "validacao-passou-ou-reprovou",
+      "titulo": "Validação: o MVP passou ou reprovou?",
       "status": "aprovada"
     },
     {
