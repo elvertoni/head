@@ -18,8 +18,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 54_ANÁLISE E MÉTODO PARA SISTEMAS.pptx.pdf
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-13
+versao: 2
+atualizado_em: 2026-08-20
 ---
 
 Abre o caderno e conta quantos trabalhos você tem em aberto agora. Não os que terminou — os que **começou e não terminou**: a pesquisa de história, o exercício de matemática pela metade, o vídeo que prometeu editar pro grupo. Provavelmente são uns quatro ou cinco. E aqui vai a parte incômoda: se alguém perguntasse hoje "quantos desses estão prontos?", a resposta seria *nenhum*. Todo esse trabalho existe, custou horas suas, e mesmo assim não entregou nada a ninguém. Times de software vivem exatamente esse problema, só que multiplicado por dez pessoas — e inventaram um quadro de parede pra resolver.
@@ -119,14 +119,15 @@ Todo quadro que você já viu na internet é um Kanban: Trello, quadro de Projec
 
 ## Prática
 
-**Atividade "fábrica de crachás" (grupos de 4, sem computador, ~15 min).** Cada grupo é uma fábrica com quatro etapas, uma por pessoa, em ordem: **1) escrever o nome · 2) desenhar a moldura · 3) pintar · 4) conferir e entregar**. O produto é um crachá de papel. Cada pessoa só faz a sua etapa e passa adiante.
+**Atividade "Meu Kanban da semana" (individual, no caderno, ~10 min).** Cada aluno monta o próprio quadro Kanban com tarefas reais da vida escolar. O objetivo é sentir na pele os três conceitos da aula — cartão, coluna e limite de WIP — aplicados a algo que é dele, não a um exemplo abstrato.
 
-1. **Rodada empurrada (2 min).** Cada um produz o mais rápido que conseguir e empurra pro colega, sem esperar ninguém. Ao apito, contem: quantos crachás estão **totalmente prontos** e quantos estão **pela metade** espalhados pela mesa.
-2. **Rodada puxada (2 min).** Agora vale uma regra só: **cada pessoa pode ter no máximo 1 papel na sua frente**. Se o colega da frente ainda está com um, você não passa — para e vai ajudar ele. Contem de novo: prontos e pela metade.
-3. **Comparem os dois números.** Quase sempre a segunda rodada termina *mais* crachás e deixa *menos* trabalho pela metade, com o mesmo tempo e as mesmas pessoas.
-4. **Achem o gargalo.** Em qual etapa o papel mais se acumulou? O que o grupo faria na próxima rodada para atacar justamente ela?
+1. **Liste o trabalho real.** No caderno, escreva 5 tarefas escolares que estão em aberto **agora** — dever de casa, trabalho em grupo, estudo pra prova, redação. Cada uma vira um cartão: um retângulo pequeno com o nome da tarefa dentro.
+2. **Desenhe o quadro.** Trace 3 colunas lado a lado com estes títulos: `A Fazer` · `Fazendo` · `Feito`. Essas são as etapas reais do trabalho de estudar — do jeito que ele acontece de verdade.
+3. **Posicione cada cartão.** Olhe as 5 tarefas e coloque cada uma na coluna que representa a situação dela **hoje**: ainda nem começou (`A Fazer`), já começou mas não terminou (`Fazendo`), ou já entregou (`Feito`).
+4. **Aplique o limite de WIP.** Regra: **no máximo 2 cartões na coluna `Fazendo`.** Se já tem 2 ali e quer começar uma terceira tarefa, não pode — primeiro termina uma das duas e move pra `Feito`. É a mesma regra do supermercado: só repõe quando alguém tira.
+5. **Ache seu gargalo.** Olhe pra coluna `Fazendo`: qual tarefa está parada ali há mais tempo? Escreva uma frase respondendo por que ela travou — faltou tempo, ficou difícil, dependia de outra pessoa?
 
-Fechem com uma pergunta franca para a turma: na rodada empurrada, alguém *parecia* mais ocupado? E produziu mais?
+Fechem com uma pergunta pra turma: quem tinha mais de 2 tarefas "começadas" antes de desenhar o quadro? E quantas dessas estavam de fato prontas?
 
 ## Avaliação
 
@@ -185,5 +186,5 @@ Hoje você descobriu que:
 **Próxima aula:** o quadro te mostra *o que* está acontecendo, mas não decide *o que puxar agora*. Quando chega um bug que derrubou o sistema no meio de uma tarefa importante, quem passa na frente? Vamos ver as **raias**, a diferença entre **importante e urgente**, e as **políticas explícitas** — as regras que fazem o quadro funcionar sem alguém apitando.
 
 :::roteiro
-Abrir mandando contar os trabalhos escolares em aberto, de verdade, em voz alta — o número costuma envergonhar e é exatamente o gancho. NÃO entregue o limite de WIP como regra pronta: pergunte primeiro "por que um time se proibiria de trabalhar?" e deixe a turma achar absurdo, o efeito da prática depende desse estranhamento inicial. A conta dos 5 trabalhos (1h cada) vale ir ao quadro branco desenhando a linha do tempo das duas estratégias; é o momento em que a ficha cai. A prática dos crachás é o núcleo da aula, não corte — prepare papel cortado antes, senão os 15 min viram 25. Se a rodada puxada der resultado pior (acontece, com grupo bagunçado), use como achado honesto: pergunte se a regra do 1 papel foi mesmo respeitada. Fusão de origem: esta aula cobre os decks 53 e 54 da SEED, que repetem o mesmo conteúdo de quadro/cartão/WIP; o "como montar o quadro" do deck 54 virou a prática. Curso Alura ("Kanban: análises e implementação") é apoio opcional para quem quiser seguir em casa — não cabe em 50 min junto com a prática.
+Abrir mandando contar os trabalhos escolares em aberto, de verdade, em voz alta — o número costuma envergonhar e é exatamente o gancho. NÃO entregue o limite de WIP como regra pronta: pergunte primeiro "por que um time se proibiria de trabalhar?" e deixe a turma achar absurdo, o efeito da prática depende desse estranhamento inicial. A conta dos 5 trabalhos (1h cada) vale ir ao quadro branco desenhando a linha do tempo das duas estratégias; é o momento em que a ficha cai. A prática do "Meu Kanban da semana" é individual e rápida — cada aluno usa as próprias tarefas reais, então não precisa preparar material antes. Se algum aluno reclamar que não tem 5 tarefas em aberto, peça pra incluir também compromissos fora da escola (estágio, casa). O passo do limite de WIP costuma gerar resistência ("mas eu consigo fazer 3 ao mesmo tempo") — não ceda, é exatamente esse desconforto que ensina o conceito. Fusão de origem: esta aula cobre os decks 53 e 54 da SEED, que repetem o mesmo conteúdo de quadro/cartão/WIP; o "como montar o quadro" do deck 54 virou a prática. Curso Alura ("Kanban: análises e implementação") é apoio opcional para quem quiser seguir em casa — não cabe em 50 min junto com a prática.
 :::
