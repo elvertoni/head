@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Sua página está no ar desde a aula passada, e ela está horrível. Tudo Times New Roman, tudo preto no branco, links azuis sublinhados, texto atravessando a tela de ponta a ponta. Não é falta de talento: é o navegador aplicando os padrões dele porque você ainda não disse nada. E aqui vem a parte que surpreende — a distância entre isso e algo que **parece um produto de verdade** não é um mês de CSS. São umas quinze linhas, e a maior parte delas você escreve uma vez só, num lugar só. Hoje é a aula em que o projeto muda de categoria.
@@ -44,6 +44,8 @@ A página da aula 10, estruturada e publicada. Se a sua ficou pelo caminho, term
 O erro de quem começa não é escolher cor feia. É escolher **cor demais**. A página ganha um azul aqui, um verde ali, um roxo no botão porque ficou bonitinho — e o resultado parece festa de aniversário, não produto.
 
 A saída é parar de pensar "que cores eu gosto" e passar a pensar **cargo**: cada cor tem uma função, e nada entra sem função.
+
+![Duas versões da mesma página lado a lado. Na da esquerda, a cor de destaque aparece no título, nas bordas, nos ícones, nos links e no botão, e nenhum elemento sobressai — o olho não encontra ponto de entrada. Na da direita, a mesma página usa a cor de destaque em um único elemento, o botão, com todo o resto em texto escuro e cinza de apoio, e o botão salta imediatamente.](img/destaque-so-destaca-se-for-raro.png)
 
 | Cargo | Para que serve | Quanto aparece |
 |---|---|---|

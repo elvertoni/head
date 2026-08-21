@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Na aula 08 vocês escreveram um número em um papel. Alguma coisa como "pelo menos 3 de cada 5". Naquele momento era só uma linha de formulário, meio chata de preencher. Hoje esse número volta com um poder desagradável: ele é a única coisa que impede vocês de olhar para cinco respostas e concluir, com toda a sinceridade do mundo, que deu certo. Porque é isso que a gente faz, e é involuntário — a gente lê o resultado procurando confirmação. A aula de hoje é sobre ler o que aconteceu de verdade, inclusive quando o que aconteceu foi a sua ideia levar um não.
@@ -74,6 +74,8 @@ Isso não significa que o número original era sagrado. Significa que ele valia 
 O teste de corredor deu duas informações por pessoa: **o que ela entendeu** e **se clicaria**. A ordem entre as duas é o coração da leitura, porque elas diagnosticam problemas opostos.
 
 Se a pessoa não soube dizer o que o produto faz, a resposta dela sobre clicar **não vale nada** — ela estava chutando sobre uma coisa que não entendeu. Antes de qualquer conclusão sobre o produto, separe as respostas em dois montes: quem entendeu e quem não entendeu. Só o primeiro monte tem opinião sobre a ideia.
+
+![Funil de duas etapas com cinco figuras entrando no topo. Na primeira etapa, a pergunta sobre o que o produto faz separa as figuras em dois grupos, e o grupo que não entendeu sai do funil por uma saída lateral marcada como falha de mensagem, sem chegar à segunda pergunta. Apenas o grupo que entendeu segue para a segunda etapa, onde a pergunta sobre clicar divide de novo, e é sobre esse grupo menor que a taxa é calculada.](img/entendeu-antes-de-clicaria.png)
 
 ```diagrama-progressivo
 titulo: Lendo o resultado — o mesmo teste, quatro diagnósticos diferentes

@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Abre agora, no celular, os três últimos sites que tentaram te vender alguma coisa — um tênis, um curso, um jogo. Ignora as cores e as fotos e olha só a forma. Você vai ver a mesma coisa nos três: uma frase enorme no topo com um botão embaixo, depois um trecho contando por que aquilo presta, depois uma prova de que não é conversa, e no fim o mesmo botão de novo. Não é falta de criatividade. É que essa ordem responde, na sequência certa, às cinco perguntas que você faz sem perceber quando abre um link. Hoje vocês montam esse esqueleto com o texto do próprio projeto — e saem daqui com o endereço no ar.
@@ -70,6 +70,8 @@ No celular, a dobra é impiedosa: cabe pouco mais que a headline, uma linha de a
 ### Tags que dizem o que a coisa é
 
 Dá para montar essa página inteira usando só `<div>`. Funciona, o navegador desenha igual, e o resultado na tela é idêntico. E ainda assim é a escolha errada — porque a tela não é o único lugar onde a sua página é lida.
+
+![No centro, um mesmo trecho de página. Dele saem quatro linhas para quatro leitores diferentes, cada um mostrando o que recebe. O leitor visual recebe a página desenhada, idêntica nas duas versões. O leitor de tela recebe, de um lado, uma lista de regiões nomeadas e, de outro, uma sequência de caixas sem nome. O buscador recebe, de um lado, o assunto identificado e, de outro, nada. O programador recebe, de um lado, um arquivo legível e, de outro, uma pilha de caixas aninhadas.](img/mesma-pagina-quatro-leitores.png)
 
 :::conceito Elemento semântico
 Uma tag é **semântica** quando o nome dela já diz o que aquele pedaço da página **é**, sem depender de `class` nenhuma. `<nav>` é sempre navegação. `<footer>` é sempre rodapé. `<div>` é uma caixa sem nome: só existe significado para quem escreveu, e some para todo o resto.

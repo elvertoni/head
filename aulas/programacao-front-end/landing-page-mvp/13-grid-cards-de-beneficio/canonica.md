@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Os três benefícios do kit de copy estão na página como uma lista: um embaixo do outro, cada um com seu titulozinho e seu parágrafo. Funciona, e não convence. Em toda landing page do mundo esses três aparecem **lado a lado**, em caixinhas iguais — porque três coisas em paralelo comunicam "escolha entre alternativas equivalentes", enquanto três coisas empilhadas comunicam "leia isso tudo". É a mesma informação dizendo coisas diferentes só pela forma. Hoje vocês montam esses cards, e de quebra levam um truque que faz eles se reorganizarem sozinhos no celular — sem escrever uma linha a mais para isso.
@@ -35,7 +35,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-A página das aulas 10 a 09, com Flexbox aplicado no topo e no hero. Hoje o assunto é a seção de benefícios, que continua intocada.
+A página das aulas 10 a 12, com Flexbox aplicado no topo e no hero. Hoje o assunto é a seção de benefícios, que continua intocada.
 
 ## Desenvolvimento
 
@@ -76,6 +76,8 @@ A tentação é escrever `width: 33.33%` em cada card e um `gap: 24px` entre ele
 ### O truque que dispensa a media query
 
 `repeat(3, 1fr)` tem um defeito sério: são **sempre** três colunas. Num celular de 360 pixels, cada card fica com cerca de 100 pixels — três colunas espremidas e ilegíveis. Você pode consertar isso com media query, e vai aprender media query na aula 14. Mas para grade de cards existe algo melhor, que resolve antes de o problema existir.
+
+![Três telas de larguras diferentes alinhadas lado a lado, da mais larga à mais estreita, todas com a mesma linha de código idêntica escrita abaixo delas. Na tela larga os três cards aparecem em três colunas; na tela média, dois cards em cima e um embaixo; na tela estreita, os três empilhados em coluna única — nenhum card fica abaixo do piso de largura mínima definido, e o código não mudou entre as três situações.](img/auto-fit-conta-sozinho.png)
 
 ```diagrama-progressivo
 titulo: Como o navegador decide quantos cards cabem na linha

@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Sua página tem cor, tem tipografia decente e continua com um problema óbvio: **tudo está empilhado**. O nome do produto em cima, o menu embaixo dele, cada link numa linha, o botão do hero jogado à esquerda. Nenhum site que você usa é assim, e o motivo é que o HTML, sozinho, só sabe empilhar — ele coloca uma caixa embaixo da outra e pronto. Colocar coisas **lado a lado**, com espaço parelho entre elas e alinhadas de verdade, é um trabalho que já foi um dos mais penosos da profissão. Hoje é uma propriedade só. Hoje o seu topo passa a parecer o topo de um site.
@@ -35,7 +35,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-A página das aulas 10 e 08, com a estrutura semântica e o `estilo.css` ligado. Vamos escrever CSS novo em cima do que já existe, sem apagar nada.
+A página das aulas 10 e 11, com a estrutura semântica e o `estilo.css` ligado. Vamos escrever CSS novo em cima do que já existe, sem apagar nada.
 
 ## Desenvolvimento
 
@@ -59,6 +59,8 @@ nav {
 ### Os dois eixos — e a armadilha de decorar
 
 Todo container flex tem dois eixos, e cada um tem sua própria propriedade de alinhamento. Aqui mora a confusão que persegue a maioria das pessoas por anos, porque quase todo mundo aprende errado do jeito mais conveniente.
+
+![Comparação de dois containers com os mesmos três itens dentro. No primeiro, a fila corre da esquerda para a direita, com uma seta grossa horizontal rotulada como eixo principal e uma seta fina vertical rotulada como eixo cruzado. No segundo container, a direção foi trocada para vertical, e as mesmas duas setas aparecem giradas: a grossa agora desce e continua associada à mesma propriedade de antes, enquanto a fina agora atravessa horizontalmente — o papel não mudou, só a direção.](img/os-dois-eixos-trocam-de-lugar.png)
 
 ```diagrama-progressivo
 titulo: Os dois eixos, e por que decorar horizontal e vertical te trai

@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Duas empresas abriram em Curitiba na mesma semana. A primeira é uma barbearia: dois cadeirões, dois barbeiros, agenda cheia até sábado. A segunda são duas pessoas no quarto de uma delas, escrevendo código de um aplicativo que ninguém ainda usou. Pergunta séria: qual das duas é uma **startup**? A resposta mais comum da turma é "a segunda, porque é de tecnologia" — e ela está errada pelo motivo errado. Tem barbearia que é startup e tem app que nunca vai ser. O que separa as duas não é o setor, não é o tamanho e não é a idade da empresa. É uma pergunta só, e ela é o assunto da aula de hoje.
@@ -56,6 +56,8 @@ Repare que isso **não é um elogio**. A barbearia pode dar muito mais dinheiro,
 Escalável sozinho não basta. Falta a irmã dela, que é a que mais reprova projeto de aluno: **repetível**.
 
 Repetível é conseguir vender a mesma coisa, do mesmo jeito, para o próximo cliente — sem reinventar tudo. Se para cada cliente novo você tem que fazer uma reunião diferente, montar uma solução diferente e cobrar um preço diferente, você tem uma prestação de serviço, e prestação de serviço não escala: o gargalo é você.
+
+![Duas curvas comparadas no mesmo par de eixos, com clientes no eixo horizontal e custo no vertical. A curva rotulada como crescer sobe em linha reta e acompanha o número de clientes passo a passo, com pequenos ícones de cadeirão e de funcionário aparecendo a cada degrau. A curva rotulada como escalar sobe pouco e depois se achata quase na horizontal, com um único ícone de servidor que não se multiplica, mostrando que o milésimo cliente custou quase o mesmo que o décimo.](img/crescer-nao-e-escalar.png)
 
 :::conceito Startup
 **Startup** é uma organização que está **procurando** um modelo de negócio **repetível e escalável**, em **condições de incerteza extrema**. Repare no verbo: ela ainda não achou. Achou e passou a só executar? Deixou de ser startup e virou empresa. O estado de startup é temporário por definição.

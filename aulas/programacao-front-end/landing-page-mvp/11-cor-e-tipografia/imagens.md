@@ -6,7 +6,7 @@
 
 - **perfil:** capa
 - **arquivo:** `capa.png`
-- **estado:** pendente
+- **estado:** gerada e aprovada em 2026-08-19 (Codex, v6, r1 — 1536×1024, sem defeito). Canônica.
 - **objetivo:** Dar o mapa da aula num olhar — as duas decisões de identidade, cor e tipografia, saindo de um bloco central de variáveis e se espalhando pela página. Mostra os quatro cargos de cor, os cinco degraus da escala e o fato de que tudo é declarado num lugar só. É o que o portal exibe no card.
 - **alt:** No centro, um bloco de definições rotulado como a raiz do documento, com quatro amostras de cor nomeadas por função — fundo, texto, destaque e apoio — e duas famílias de fonte. Setas saem desse bloco para uma página de site à direita, indicando onde cada valor chega, com o destaque apontando para um único elemento, o botão. À esquerda, uma escada de cinco degraus com tamanhos de letra crescentes, do texto pequeno até a headline.
 - **prompt:** (esboço) bloco central de variáveis distribuindo cor e fonte para uma página à direita, com a escada tipográfica de cinco degraus à esquerda.
@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/destaque-so-destaca-se-for-raro.png`
-- **estado:** pendente
+- **estado:** gerada e aprovada em 2026-08-19 (Codex, v6, r3 — 1672×941, sem defeito). Canônica. r1 e r2 reprovaram por oclusão: o traço do caminho do olho cobriu o "A" de ATENDIMENTO e depois o "R" de RÁPIDO. Proibir a sobreposição não bastou — a geometria do brief forçava a colisão, porque o botão fica abaixo da fileira de tiles. A r3 mudou a rota: faixa livre pela margem esquerda e entrada horizontal no botão.
 - **secao:** Desenvolvimento › Quatro cores, e cada uma com um cargo
 - **objetivo:** Ensinar a regra que mais falha na prática e que o texto só consegue afirmar — que a cor de destaque perde a função quando é usada em muitos lugares. É um efeito perceptivo: precisa ser visto para ser aceito, porque o aluno acha que está reforçando a identidade ao espalhar a cor da marca.
 - **alt:** Duas versões da mesma página lado a lado. Na da esquerda, a cor de destaque aparece no título, nas bordas, nos ícones, nos links e no botão, e nenhum elemento sobressai — o olho não encontra ponto de entrada. Na da direita, a mesma página usa a cor de destaque em um único elemento, o botão, com todo o resto em texto escuro e cinza de apoio, e o botão salta imediatamente. Uma marca indica para onde o olho vai primeiro em cada versão — disperso na esquerda, direto ao botão na direita.

@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Pensa em como o teste da aula 17 vai acontecer de verdade. Você vai chegar em alguém no corredor, entregar **o seu celular** com a página aberta, e essa pessoa vai ter dez segundos. Não vai ser num monitor de 24 polegadas com a janela maximizada — que é exatamente onde vocês vêm construindo tudo até agora. É bem provável que a sua headline de 44 pixels esteja ocupando quatro linhas na tela pequena, que o menu esteja espremido e que a página deslize para os lados quando a pessoa encostar o dedo. Hoje a gente conserta isso, e o teste é feito no aparelho de cada um.
@@ -35,7 +35,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-A página das aulas 10 a 10, publicada. Traga o celular com internet — hoje ele é ferramenta de trabalho, e o teste da aula acontece nele.
+A página das aulas 10 a 13, publicada. Traga o celular com internet — hoje ele é ferramenta de trabalho, e o teste da aula acontece nele.
 
 ## Desenvolvimento
 
@@ -58,6 +58,8 @@ No `<head>` da sua página, desde a aula 10, existe esta linha:
 ```
 
 Ela parece burocracia. Não é — sem ela, nada do que vem a seguir tem efeito nenhum.
+
+![Comparação de dois celulares idênticos exibindo a mesma página. No da esquerda, sem a linha de viewport, uma régua sobreposta mostra que o navegador assume uma largura muito maior que a do aparelho; a página é montada nessa largura imaginária e depois reduzida para caber, resultando em conteúdo minúsculo. No da direita, com a linha declarada, a régua coincide com a largura real do aparelho, a página é montada nessa medida e o texto aparece em tamanho legível.](img/sem-viewport-o-celular-finge.png)
 
 ```diagrama-progressivo
 titulo: O que o celular faz com uma página que não declara viewport

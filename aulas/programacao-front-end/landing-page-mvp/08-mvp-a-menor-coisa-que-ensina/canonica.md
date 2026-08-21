@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Vocês saíram da aula passada com uma frase. O instinto agora é abrir o VSCode e começar o aplicativo — e essa é exatamente a armadilha. Todo ano tem trio que faz isso: passa três meses programando com afinco, entrega em novembro um sistema que funciona, bonito de ver, e descobre na apresentação que ninguém queria aquilo. O trabalho estava certo; a pergunta é que nunca foi feita. A aula de hoje é sobre a pergunta que se faz **antes** de construir: qual é a menor coisa que eu consigo colocar de pé para descobrir se estou errado — em uma semana, e não em três meses?
@@ -42,6 +42,8 @@ A frase de dor da Aula 07, no formato *"[quem] não consegue [o quê] porque [ob
 Pergunte a dez pessoas o que é um MVP e nove respondem alguma variação de "é a primeira versão, mais simples, com o básico". Essa definição parece inofensiva e faz o trio inteiro perder o semestre, porque ela mantém a lógica de **construir**: se MVP é o produto com menos coisa, então o trabalho continua sendo escolher o que cortar. Você corta, corta, corta — e no fim ainda construiu, só que menos. E continua sem saber se alguém queria.
 
 A sigla ajuda a confundir. *Minimum Viable Product* tem a palavra "produto" no nome, e a gente se agarra nela. Mas a palavra que faz o trabalho é outra:
+
+![Comparação de duas leituras. À esquerda, sob a marca de errado, o produto final desenhado como um bloco completo e, ao lado, o mesmo bloco com pedaços removidos, rotulado como versão reduzida — as duas coisas continuam sendo o produto. À direita, sob a marca de certo, uma balança ou instrumento de medida com uma pergunta de um lado e dois pratos de resposta possível, sim e não, mostrando que o MVP é um teste que admite resultado negativo, e não uma parte do produto.](img/mvp-nao-e-produto-menor.png)
 
 :::conceito MVP
 **MVP** é o **experimento mais barato capaz de te dar uma resposta confiável** sobre se sua aposta está certa. O objetivo dele não é entregar valor ao cliente — é **entregar aprendizado a você**. Se você aprendeu o que precisava sem escrever uma linha de código, o MVP cumpriu o papel inteiro.

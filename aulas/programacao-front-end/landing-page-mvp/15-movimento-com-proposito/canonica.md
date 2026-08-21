@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Passa o mouse por cima do seu botão. Não acontece nada. O cursor vira uma mãozinha e só — nenhum sinal de que aquilo ali é a coisa mais importante da página, nenhuma resposta ao seu gesto. Agora repara em qualquer aplicativo que você usa: tudo reage. O botão escurece um pouco, o card sobe um milímetro, o menu desliza em vez de aparecer do nada. Não é enfeite, e é aqui que mora a confusão desta aula — a maior parte da animação que existe na web é ruído, e um pouquinho dela é o que faz o produto parecer vivo. Hoje a gente aprende a diferença, e aplica só a parte que serve.
@@ -35,7 +35,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-A página das aulas 10 a 11, responsiva e testada no celular. Hoje mexemos só em aparência e resposta ao gesto — nada de estrutura.
+A página das aulas 10 a 14, responsiva e testada no celular. Hoje mexemos só em aparência e resposta ao gesto — nada de estrutura.
 
 ## Desenvolvimento
 
@@ -88,6 +88,8 @@ Para fazer um card subir um pouquinho no hover, o caminho intuitivo seria mexer 
 Os três movimentos que resolvem quase tudo: `translateY()` para deslocar, `scale()` para crescer de leve — `1.02` já se percebe, `1.2` é exagero — e `rotate()`, que numa landing page raramente tem função.
 
 ### Quem toca, quem clica e quem usa teclado
+
+![Grade de comparação com o mesmo botão em quatro colunas, uma para cada modo de uso — repouso, mouse, teclado e toque. Na coluna do repouso, o botão aparece já destacado por cor e respiro. Na do mouse, o botão aparece com o tom alterado e um cursor sobre ele. Na do teclado, o botão aparece com um contorno de foco em volta e um símbolo de tecla de tabulação. Na do toque, uma mão encosta diretamente no botão e o quadro do estado intermediário aparece vazio, marcado como inexistente, evidenciando que o hover nunca ocorre ali.](img/o-mesmo-botao-quatro-pessoas.png)
 
 ```diagrama-progressivo
 titulo: O mesmo botão, quatro pessoas diferentes

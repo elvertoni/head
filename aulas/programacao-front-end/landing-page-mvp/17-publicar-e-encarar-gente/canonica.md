@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Hoje ninguém constrói nada. Hoje a página sai da sala pela primeira vez e vai para a mão de gente que não sabe do que se trata, não conhece vocês e não tem paciência nenhuma. Vocês vão entregar o celular para cinco pessoas, dar dez segundos, tirar da frente delas e fazer duas perguntas. E vai doer um pouco — porque quem passou sete aulas dentro do projeto perdeu, sem perceber, a capacidade de olhar para ele com olhos de estranho. É exatamente essa capacidade que a gente aluga de cinco pessoas hoje. Antes disso, meia hora tirando os defeitos que só aparecem depois de publicado.
@@ -108,6 +108,8 @@ Um método real de avaliação de interface: mostra-se a página por poucos segu
 :::
 
 O método é simples e frágil: quem aplica estraga o próprio teste com uma facilidade impressionante, e sempre por boa intenção.
+
+![Quatro pares emparelhados, cada um com uma cena errada e a correspondente correta. No primeiro, explicar antes de mostrar versus só pedir pra olhar. No segundo, olhar por cima do ombro versus ficar de costas. No terceiro, perguntar se ficou bom versus perguntar o que o produto faz. No quarto, corrigir a pessoa que entendeu errado versus apenas anotar o que ela disse. Cada cena errada leva uma marca de recusa e cada correta uma marca de aprovação.](img/como-estragar-o-proprio-teste.png)
 
 ```diagrama-progressivo
 titulo: Quatro maneiras de estragar o seu próprio teste

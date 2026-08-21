@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-21
 ---
 
 Lembra da última vez que você abriu um link que alguém mandou no grupo, olhou por um segundo e voltou? Você não leu nada. Não deu chance nenhuma. E não foi má vontade: é assim que todo mundo se comporta, você comigo e eu com você. A landing page que vocês vão publicar vai ser aberta exatamente desse jeito — no celular, no meio de outra coisa, por alguém que não pediu para ver. O tempo que ela tem para provar que merece existir é mais ou menos o tempo de uma frase. A aula de hoje é sobre escrever essa frase, e sobre as poucas que vêm depois dela.
@@ -77,6 +77,8 @@ Cubra o nome do produto e leia sua headline. Se ela puder ser a headline de **ou
 Este é o erro mais teimoso da aula, e ele tem uma causa: vocês passaram semanas pensando no **como**, então é o como que sai quando vocês escrevem. Só que o visitante não comprou o como. Ele quer saber o que sobra para ele.
 
 **Funcionalidade** é o que o sistema faz. **Benefício** é o que a pessoa deixa de sofrer ou passa a conseguir. A conversão de um no outro cabe numa pergunta: *"e daí?"* — repetida até doer.
+
+![Três pares alinhados. Em cada par, à esquerda, uma caixa cinza descrevendo o que o sistema faz, e uma seta rotulada com a pergunta e daí apontando para a direita, onde uma caixa colorida descreve o que a pessoa deixa de sofrer. No quarto par, a caixa da esquerda traz uma funcionalidade de bastidor, o login, e a seta termina num espaço vazio marcado com um traço, mostrando que existe funcionalidade sem benefício algum e que ela não entra na página.](img/beneficio-nao-e-funcionalidade.png)
 
 | Funcionalidade (o que o sistema faz) | Benefício (o que sobra para a pessoa) |
 |---|---|
