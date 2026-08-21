@@ -34,30 +34,45 @@ as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
 várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
 vez de ser re-extraído a cada material.
 
-### Estado atual do vault (2026-06-28)
+### Estado atual do vault (2026-08-21)
 
-O vault já contém as 7 disciplinas do curso, mas nem todas estão no mesmo estágio.
+O vault já contém as disciplinas do curso, mas nem todas estão no mesmo estágio.
 O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash. No
-estado validado em 2026-06-28, há 58 aulas aprovadas importáveis.
+estado validado em 2026-08-21 (`gerar_manifesto.py --check` sem divergências), há
+**89 aulas aprovadas importáveis**, distribuídas assim:
 
-- `inteligencia-artificial/fundamentos-de-ia`: trilha completa com 25 aulas aprovadas
-  e grafo com 35 conceitos em `conceitos/inteligencia-artificial/`.
-- `analise-e-metodos-para-sistemas/metodologias-ageis`: aulas 33–41 aprovadas.
-- `analise-e-projeto-de-sistemas/marketing-digital`: aulas 25–30 aprovadas.
-- `introducao-a-computacao/nivelamento-e-retomada`: aulas 1–2 aprovadas.
-- `introducao-a-computacao/arquitetura-computadores-e-sistemas-operacionais`:
-  aulas 23–38 aprovadas.
-- `programacao-front-end/projeto petfinder`: contém HTMLs de apoio; sem
-  `canonica.md` aprovada, não é aula importável.
-- `programacao-no-desenvolvimento-de-sistemas/blueprint-tcc`: contém blueprints/HTMLs
-  de apoio a TCC. Enquanto não houver `canonica.md` aprovada, isso é artefato de apoio,
-  não aula importável.
+| Disciplina | Trilha | Aulas aprovadas |
+|---|---|---|
+| `inteligencia-artificial` (extra) | `fundamentos-de-ia` | 25 |
+| `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | 16 |
+| `programacao-front-end` | `landing-page-mvp` | 12 |
+| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | 11 |
+| `tcc` | `blueprint-tcc` | 9 |
+| `analise-e-projeto-de-sistemas` | `marketing-digital` | 6 |
+| `programacao-front-end` | `controle-de-versao-git-github` | 5 |
+| `analise-e-projeto-de-sistemas` | `analise-de-requisitos` | 1 |
+| `programacao-front-end` | `fundamentos-html-css` | 1 |
+| `programacao-no-desenvolvimento-de-sistemas` | `arquitetura-e-fluxo-de-sistemas` | 1 |
+| `introducao-a-computacao` | `nivelamento-e-retomada` | 2 |
+
+- Grafo de conceitos: ~1.028 nós não obsoletos em `conceitos/`, concentrados em
+  `desenvolvimento-full-stack-e-cloud-computing` (~466), `inovacao-inteligencia-
+  artificial-e-robotica-educacional` (~523) e `inteligencia-artificial` (37).
+  A maioria está `status: rascunho` — presença de página não implica conceito vivo.
+- `inovacao-tecnologia-e-empreendedorismo`: disciplina declarada no manifesto,
+  sem trilha nem aula publicada ainda.
+- `aulas/programacao-front-end/projeto petfinder` e
+  `aulas/programacao-no-desenvolvimento-de-sistemas/blueprint-tcc`: contêm HTMLs/
+  blueprints de apoio; sem `canonica.md` aprovada, não são aulas importáveis.
 - As demais disciplinas podem ter material no `lake/` mesmo sem aulas canônicas
   publicadas. Não confundir presença de fonte bruta com aula pronta.
 
-As 58 aulas canônicas possuem `imagens.md`, o briefing visual da aula. `capa.png`
-é um ativo complementar versionável quando existir; nenhum dos dois substitui a
-`canonica.md` nem cria uma aula importável no portal.
+As 89 aulas canônicas possuem `imagens.md`, o briefing visual da aula; 69 têm
+`capa.png`. `capa.png` é um ativo complementar versionável quando existir;
+nenhum dos dois substitui a `canonica.md` nem cria uma aula importável no portal.
+
+Esta seção é um retrato — **o manifesto e o `--check` é que mandam**. Ao tocar em
+qualquer pasta do acervo, revalide antes de confiar nos números acima.
 
 Ao iniciar qualquer tarefa, rode leitura rápida de estado:
 `python tools/gerar_manifesto.py --check` para contrato do portal e `git status --short`
