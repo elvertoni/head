@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/raia-e-classe-de-servico.png`
-- **estado:** gerada e aprovada em 2026-08-13 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Não referenciada no corpo da aula: o portal ainda não serve `img/`.
+- **estado:** gerada e aprovada em 2026-08-13 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Referenciada no corpo da aula desde 2026-08-23.
 - **secao:** Desenvolvimento › Raias: o quadro ganha faixas
 - **objetivo:** Ensinar o conceito mais difícil da aula — a diferença de eixo entre coluna e raia. Coluna é etapa do fluxo e corre na vertical; raia é categoria de trabalho e corta na horizontal; o cartão anda pelas colunas **dentro** da sua raia. É uma relação espacial que texto explica mal e uma figura resolve em três segundos.
 - **alt:** Quadro visto de frente com três colunas verticais de fluxo atravessadas por duas faixas horizontais. A faixa de cima, estreita, é a de urgência e carrega um cartão só; a de baixo, larga, é a de trabalho normal e carrega vários cartões que andam da esquerda para a direita sem sair da própria faixa.

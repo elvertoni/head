@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-23
 ---
 
 Você abre o app do banco, digita a senha e aperta **Entrar**. Meio segundo depois aparece o seu saldo. Parece uma coisa só, um bloco maciço de mágica. Não é. Nesse meio segundo o seu clique atravessou umas seis fronteiras diferentes, passou por pelo menos três programas escritos por gente diferente, em máquinas diferentes, e voltou. Hoje a gente vai desenhar esse caminho inteiro no quadro — sem computador, sem código rodando — porque quem enxerga o caminho antes de programar escreve muito menos código errado. E, no fim, você vai desenhar o caminho de uma função do **seu TCC**.
@@ -109,6 +109,8 @@ Chegou a hora do fluxograma. Quase todo aluno desenha o **caminho feliz**: entra
 Só que em sistema de verdade o caminho feliz é a minoria dos casos. O usuário digita e-mail errado. O cupom já venceu. A internet cai no meio. O banco de dados demora e estoura o tempo. Cada uma dessas situações é um **caminho de exceção** — e cada caminho de exceção que você não desenhou vira uma tela travada, um botão que não responde ou, pior, um "sucesso!" mentiroso.
 
 Fluxograma é a ferramenta mais barata do mundo pra achar esses buracos: um losango é uma pergunta, e **toda pergunta tem duas saídas**. Se você desenhou um losango com uma saída só, você esqueceu um caminho.
+
+![Comparação de dois fluxogramas. À esquerda, uma sequência reta de losangos com uma única seta descendo de cada um, terminando em sucesso. À direita, o mesmo caminho, mas cada losango tem também uma seta lateral saindo para um bloco de erro próprio, mostrando que toda pergunta tem duas respostas possíveis.](img/losango-tem-duas-saidas.png)
 
 ```text
               ┌─────────────────┐

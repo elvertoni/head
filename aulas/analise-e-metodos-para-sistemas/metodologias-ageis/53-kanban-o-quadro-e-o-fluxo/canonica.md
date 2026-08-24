@@ -18,8 +18,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 54_ANÁLISE E MÉTODO PARA SISTEMAS.pptx.pdf
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-20
+versao: 3
+atualizado_em: 2026-08-23
 ---
 
 Abre o caderno e conta quantos trabalhos você tem em aberto agora. Não os que terminou — os que **começou e não terminou**: a pesquisa de história, o exercício de matemática pela metade, o vídeo que prometeu editar pro grupo. Provavelmente são uns quatro ou cinco. E aqui vai a parte incômoda: se alguém perguntasse hoje "quantos desses estão prontos?", a resposta seria *nenhum*. Todo esse trabalho existe, custou horas suas, e mesmo assim não entregou nada a ninguém. Times de software vivem exatamente esse problema, só que multiplicado por dez pessoas — e inventaram um quadro de parede pra resolver.
@@ -92,6 +92,8 @@ Por que raios um time se **impediria** de trabalhar? Volta pros seus cinco traba
 - **Puxando um de cada vez:** o primeiro fica pronto na hora 1. O segundo na hora 2. Na hora 5 você tem os mesmos cinco prontos.
 
 O esforço total foi idêntico. Mas no segundo caso você teve **algo pronto quatro horas antes** — e, se a professora antecipar o prazo de um deles, você já entregou. É por isso que limitar o WIP não faz o time trabalhar menos: faz o trabalho **terminar mais cedo**. O que se corta não é esforço, é fila.
+
+![Duas linhas do tempo lado a lado com o mesmo comprimento. Na de cima, cinco itens começam juntos e todos só terminam no ponto final. Na de baixo, os cinco itens são feitos em sequência e o primeiro já fica pronto perto do início.](img/limite-de-wip.png)
 
 :::atencao Erro comum, e dá pra diagnosticar de longe
 Olhe um quadro com **12 cartões em "Em andamento" e 1 em "Concluído"**. Esse time não está produtivo — está travado. Cada cartão parado ali é trabalho já pago e ainda não entregue, e cada troca de contexto entre eles custa mais um pedaço de atenção. Sintoma clássico: todo mundo se diz ocupadíssimo e a entrega não sai. O quadro denuncia na hora, e é exatamente para isso que ele serve.

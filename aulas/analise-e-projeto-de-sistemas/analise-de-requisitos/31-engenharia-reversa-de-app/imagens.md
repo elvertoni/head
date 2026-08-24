@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/funcional-x-nao-funcional.png`
-- **estado:** gerada e aprovada em 2026-08-18 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Não referenciada no corpo da aula: o portal ainda não serve `img/`.
+- **estado:** gerada e aprovada em 2026-08-18 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Referenciada no corpo da aula desde 2026-08-23.
 - **secao:** Desenvolvimento › O que ele faz × o quão bem ele faz
 - **objetivo:** Ensinar o conceito que mais confunde na aula — a diferença entre o requisito funcional e o não-funcional. Funcional é uma ação a que corresponde uma tela desenhável; não-funcional é um atributo de qualidade medido por um número, que não tem tela própria. É uma distinção que os alunos erram por analogia e que a figura fixa por contraste espacial.
 - **alt:** Duas colunas em contraste. À esquerda, sob o rótulo de funcional, telas desenhadas com um botão e uma ação em cada uma. À direita, sob o rótulo de não-funcional, medidores e cronômetros com valores numéricos, sem nenhuma tela — mostrando que a qualidade se mede, não se desenha.

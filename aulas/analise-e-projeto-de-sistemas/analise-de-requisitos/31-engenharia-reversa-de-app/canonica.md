@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-18
+versao: 2
+atualizado_em: 2026-08-23
 ---
 
 Você pediu comida pelo celular essa semana. Abriu o app, escolheu, pagou, chegou. Do lado de fora, três toques. Do lado de dentro, alguém teve que decidir: **e se o restaurante fechar depois que o pedido entrou? E se o cupom for só de primeira compra e o cliente já comprou? E se o entregador aceitar e sumir?** Cada uma dessas perguntas foi respondida por uma pessoa numa reunião, virou uma regra e virou código. Hoje você vai fazer o caminho inverso: pegar um app pronto e desmontar até achar as decisões escondidas nele. É exatamente isso que um analista de sistemas faz — e é isso que falta no TCC de vocês.
@@ -76,6 +76,8 @@ Agora separe o que você descobriu em duas caixas.
 :::conceito Requisito funcional e não-funcional
 **Funcional** é o que o sistema **faz**: "o cliente pode acompanhar o pedido em tempo real". **Não-funcional** é a **qualidade** com que ele faz: desempenho, [[seguranca-da-informacao|segurança]], [[acessibilidade|acessibilidade]], [[alta-disponibilidade|disponibilidade]]. Regra prática: se dá pra desenhar uma tela pra ele, é funcional; se é um advérbio (rápido, seguro, sempre disponível), é não-funcional.
 :::
+
+![Duas colunas em contraste. À esquerda, sob o rótulo de funcional, telas desenhadas com um botão e uma ação em cada uma. À direita, sob o rótulo de não-funcional, medidores e cronômetros com valores numéricos, sem nenhuma tela — mostrando que a qualidade se mede, não se desenha.](img/funcional-x-nao-funcional.png)
 
 | Requisito | Tipo | Por quê |
 |---|---|---|

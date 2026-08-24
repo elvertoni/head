@@ -16,8 +16,8 @@ modo_origem: material
 fontes: [fontes/FLEXBOX.pdf]
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-07-29
+versao: 2
+atualizado_em: 2026-08-23
 ---
 
 Abre o código-fonte de um site qualquer — clique direito, "Ver código-fonte da página", ou `Ctrl+Shift+I` e aba Elements. Se o site for bem feito, você vai ver palavras como `<header>`, `<nav>`, `<main>`, `<footer>` antes mesmo de olhar uma linha de CSS. Isso não é estilo. É o site contando pra qualquer máquina que ler aquele HTML — navegador, leitor de tela, robô do Google — **o que cada pedaço da página significa**, não só onde ele fica na tela.
@@ -62,6 +62,8 @@ O HTML5 trouxe um conjunto de tags feitas exatamente pra substituir a div genér
 | `<section>` | Um agrupamento temático dentro de `main` ou `article`, quando nenhuma tag mais específica se encaixa |
 
 Repara: nenhuma dessas tags muda como a página **parece**. `<header>` por padrão se comporta igual a uma `<div>` (ocupa a largura toda, quebra linha antes e depois). A diferença inteira é de **significado**, não de aparência — e é justamente por isso que trocar de uma pra outra é seguro.
+
+![Duas árvores de elementos HTML lado a lado, representando o mesmo layout visual (header no topo, article/aside/nav no meio, footer embaixo). À esquerda, todos os nós são `<div>` cinza, diferenciados apenas pelo atributo `class`. À direita, os mesmos nós usam as tags `<header>`, `<article>`, `<aside>`, `<nav>` e `<footer>`, destacadas em cores distintas. Um sinal de igual entre os dois painéis mostra que o resultado renderizado é o mesmo — o significado estrutural é explícito na tag, não no nome da classe.](img/mesmo-visual-dois-codigos.png)
 
 :::exemplo O layout do Flexbox, sem nome nenhum
 Lembra do exercício de reproduzir este layout com `display: flex`?

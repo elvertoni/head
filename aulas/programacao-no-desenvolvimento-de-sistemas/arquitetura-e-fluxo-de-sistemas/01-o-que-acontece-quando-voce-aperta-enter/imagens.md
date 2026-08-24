@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/losango-tem-duas-saidas.png`
-- **estado:** gerada e aprovada em 2026-08-18 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Não referenciada no corpo da aula: o portal ainda não serve `img/`.
+- **estado:** gerada e aprovada em 2026-08-18 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Referenciada no corpo da aula desde 2026-08-23.
 - **secao:** Desenvolvimento › O caminho que ninguém desenha: o erro
 - **objetivo:** Ensinar o conceito mais difícil da aula — que decisão sempre bifurca. Contrasta o fluxograma incompleto (losango com uma saída só, o caminho feliz em linha reta) com o completo (cada losango com a segunda saída indo para uma resposta de erro). É uma diferença estrutural que o texto descreve mas a figura resolve num olhar.
 - **alt:** Comparação de dois fluxogramas. À esquerda, uma sequência reta de losangos com uma única seta descendo de cada um, terminando em sucesso. À direita, o mesmo caminho, mas cada losango tem também uma seta lateral saindo para um bloco de erro próprio, mostrando que toda pergunta tem duas respostas possíveis.

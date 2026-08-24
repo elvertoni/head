@@ -17,8 +17,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 55_ANÁLISE E MÉTODO PARA SISTEMAS.pptx.pdf
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-08-13
+versao: 2
+atualizado_em: 2026-08-23
 ---
 
 Seu celular vibrou agora. Você vai olhar — quase todo mundo olha. E o trabalho de história que vale nota, com prazo daqui a duas semanas, **não vibra**. Nunca vibrou, nunca vai vibrar. Essa é a assimetria mais cara da vida adulta e da vida profissional: o urgente grita, o importante fica quieto — e quem decide na hora, no impulso, acaba passando o ano inteiro apagando incêndio sem nunca construir nada. Times de software caem nisso todo santo dia. A aula de hoje é sobre a defesa que o Kanban inventou: decidir **antes**, e deixar escrito no quadro.
@@ -74,6 +74,8 @@ O time começa a marcar **tudo** como urgente. Chega a um ponto em que existem s
 É uma **divisão horizontal** do quadro. As colunas continuam sendo as etapas do fluxo (vertical, da esquerda pra direita); a raia corta o quadro no outro sentido e separa **tipos de trabalho** que atravessam essas mesmas etapas. Um cartão anda pelas colunas **dentro** da sua raia.
 
 :::
+
+![Quadro visto de frente com três colunas verticais de fluxo atravessadas por duas faixas horizontais. A faixa de cima, estreita, é a de urgência e carrega um cartão só; a de baixo, larga, é a de trabalho normal e carrega vários cartões que andam da esquerda para a direita sem sair da própria faixa.](img/raia-e-classe-de-servico.png)
 
 O critério da raia é escolha do time — pode ser por tipo de trabalho, por produto, por equipe responsável. Mas o uso mais valioso, e o que resolve o problema desta aula, é separar por **urgência**:
 

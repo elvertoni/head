@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/limite-de-wip.png`
-- **estado:** gerada e aprovada em 2026-08-13 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Não referenciada no corpo da aula: o portal ainda não serve `img/`.
+- **estado:** gerada e aprovada em 2026-08-13 (Codex, v6, r1 — 1672×941, sem defeito). Canônica. Referenciada no corpo da aula desde 2026-08-23.
 - **secao:** Desenvolvimento › Puxar em vez de empurrar: o limite de WIP
 - **objetivo:** Ensinar o conceito mais difícil da aula — por que limitar o trabalho em progresso entrega mais cedo. Contrasta duas linhas do tempo com o mesmo esforço total: empurrando tudo junto, nada fica pronto até o fim; puxando um de cada vez, o primeiro item sai logo no começo. É o argumento que o texto sozinho custa a convencer.
 - **alt:** Duas linhas do tempo lado a lado com o mesmo comprimento. Na de cima, cinco itens começam juntos e todos só terminam no ponto final. Na de baixo, os cinco itens são feitos em sequência e o primeiro já fica pronto perto do início.
