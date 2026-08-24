@@ -54,24 +54,29 @@ python tools/sync_notion.py --prune     # apply + archive orphan rows
 
 ### Lesson Path Convention
 
-`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), and `capa.png`.
+`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), `capa.png`, and optionally `img/` for body figures.
+
+`NN`/`ordem` is part of the portal's import key — renumbering a lesson already imported creates a duplicate row instead of updating it, leaving the old one published to classes. Renumbering a whole trilha means cleaning up on the portal side afterwards.
+
+A file in `img/` only reaches the student if the canonica references it as `![alt](img/arquivo.png)`; an unreferenced file is imported and never shown. The `alt` carries the accessible description — write it from the brief, not from the filename.
 
 ### Current vault state (8 disciplines)
 
-Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-08-18, `python tools/gerar_manifesto.py --check` validates 77 approved importable lessons.
+Not all disciplines are at the same stage. The manifesto is the source of truth for what's importable. Don't confuse presence of `lake/` source with a ready lesson. As of 2026-08-23, `python tools/gerar_manifesto.py --check` validates **89** approved importable lessons.
 
 | Disciplina | Trilha | State |
 |---|---|---|
-| `inteligencia-artificial` | `fundamentos-de-ia` | aulas 1-25 aprovadas + 37-node concept graph |
-| `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas |
-| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33-41 + 53-54 aprovadas (Scrum/agilidade, Kanban) |
-| `tcc` | `blueprint-tcc` | aulas 1-9 aprovadas (blueprints de TCC em canônica) |
-| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas |
-| `analise-e-projeto-de-sistemas` | `analise-de-requisitos` | aula 31 aprovada (engenharia reversa de app) |
-| `programacao-front-end` | `controle-de-versao-git-github` | aulas 2-6 aprovadas + `atividades/` (apoio impresso, fora do manifesto) |
-| `programacao-front-end` | `fundamentos-html-css` | aula 1 aprovada |
-| `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas |
-| `programacao-no-desenvolvimento-de-sistemas` | `arquitetura-e-fluxo-de-sistemas` | aula 1 aprovada (o que acontece quando você aperta Enter) |
+| `inteligencia-artificial` | `fundamentos-de-ia` | aulas 1-25 aprovadas (25) + 37-node concept graph |
+| `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23-38 aprovadas (16) |
+| `programacao-front-end` | `landing-page-mvp` | aulas 7-18 aprovadas (12) — startup/MVP até publicar e validar; 12 infográficos de miolo em `img/` |
+| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33-41 + 53-54 aprovadas (11) (Scrum/agilidade, Kanban) |
+| `tcc` | `blueprint-tcc` | aulas 1-9 aprovadas (9) (blueprints de TCC em canônica) |
+| `analise-e-projeto-de-sistemas` | `marketing-digital` | aulas 25-30 aprovadas (6) |
+| `programacao-front-end` | `controle-de-versao-git-github` | aulas 2-6 aprovadas (5) + `atividades/` (apoio impresso, fora do manifesto) |
+| `introducao-a-computacao` | `nivelamento-e-retomada` | aulas 1-2 aprovadas (2) |
+| `analise-e-projeto-de-sistemas` | `analise-de-requisitos` | aula 31 aprovada (1) (engenharia reversa de app) |
+| `programacao-front-end` | `fundamentos-html-css` | aula 1 aprovada (1) |
+| `programacao-no-desenvolvimento-de-sistemas` | `arquitetura-e-fluxo-de-sistemas` | aula 1 aprovada (1) (o que acontece quando você aperta Enter) |
 | `programacao-front-end` | `projeto petfinder` | **HTML-only** (9 `.html` files), no `canonica.md` — apoio/saída, NOT importable |
 | `programacao-no-desenvolvimento-de-sistemas` | `blueprint-tcc` | HTML apoio only — the canonical versions of these blueprints live under `tcc/blueprint-tcc` |
 | `inovacao-tecnologia-e-empreendedorismo` | — | no canonical lessons yet |
@@ -91,6 +96,7 @@ Machine-generated index (`tools/gerar_manifesto.py`). **Never hand-edit.** Only 
 3. **Version bump** — every edit to a published (`status: aprovada`) lesson must increment `versao` or advance `atualizado_em`.
 4. **Lake immutability** — LLM never edits files under `lake/`; only reads for source material.
 5. **Portal frontmatter contract** — `titulo`, `disciplina`, `trilha`, `ordem`, `slug`, `status`, `versao`, `atualizado_em` must be complete for ProfessorDash import.
+6. **Publishing is four steps, in order** — `gerar_manifesto.py` → **push the acervo** → deploy the portal → **reimport with `--force`**. The portal reads a GitHub tarball, so pushing before deploying is what makes the new content visible; the reimport is what reprocesses lesson HTML. Skipping step 4 leaves the portal silently behind with no error anywhere — it happened, and the portal sat 13 lessons and 14 covers stale. Reimport via the "Importar do GitHub" button in `/catalogo/` (admin) or `import_acervo --force` in the container.
 
 ## Skills
 
