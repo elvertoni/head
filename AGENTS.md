@@ -176,6 +176,24 @@ cd tools\transcrever
 Saída de transcrição é **fonte bruta** (`status: bruto`); não editar para virar
 aula. A curadoria acontece depois, via `prof-toni`, gerando `canonica.md`.
 
+### `tools/extrair_rco.py`
+Entrada das aulas RCO (SEED-PR) para o lake. Lê `lake/AULAS_RCO-*/AULAS_RCO/{SIGLA}/{N}TRI/{aula}/`
+(slides `.pptx` + `ATIVIDADE`/`PRÁTICA` `.docx`), une os zips do Drive e grava
+`lake/{disciplina}/rco/{n}tri/{aula}.md` com `tipo: rco-seed` e `status: bruto`.
+Determinístico, stdlib, reexecutável (`--check`). Siglas: AMS, APS, IAC, ITE, PDS, PFE.
+
+### `tools/triar_rco.py` + `tools/jev.py`
+Triagem das aulas RCO extraídas com o Jev (TypeSafe; `$TYPESAFE_API_KEY`). Uma
+chamada por aula responde se alguma aula aprovada já cobre o conteúdo, a natureza
+e a densidade conceitual; saída em `docs/rco-triagem.md`. É **triagem**: marca ⚠
+o que tem confiança baixa e nunca cria, promove ou edita conceito ou aula.
+
+### `tools/gerar_mapas.py`
+Gera os MOCs do Obsidian em `mapas/` a partir de `fontes` dos conceitos
+(módulo → matéria → aula nas pós) e `mapas/index.md`, página de entrada do vault.
+Derivado como o `index.md`: nunca editar à mão. As vistas `mapas/*.base`
+(Obsidian Bases) são escritas à mão.
+
 ### `tools/notion-wiki/`
 Scripts de apoio para puxar/reorganizar material vindo do Notion. Tratar a saída
 como fonte ou insumo intermediário: antes de publicar, ela precisa passar pelas

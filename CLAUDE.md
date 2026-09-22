@@ -10,6 +10,7 @@ Content acervo for Prof. Toni Coimbra (Curso Técnico em Desenvolvimento de Sist
 lake/          raw sources (transcripts, PDFs, Notion dumps) — never LLM-edit
 conceitos/     atomic concept wiki nodes
 aulas/         canonical lessons (warehouse, source of truth)
+mapas/         Obsidian navigation: generated MOCs (index.md, one per discipline) + hand-written .base views
 tools/         CLI scripts
 hermes/        skills for the Quíron agent (Hermes Agent on VPS) — versioned here, deployed via git pull + copy to ~/.hermes/skills/
 ```
@@ -50,6 +51,19 @@ python tools/sync_notion.py --check           # exit != 0 if Notion diverges
 python tools/sync_notion.py --apply           # create/update rows
 python tools/sync_notion.py --apply --prune   # also archive orphan rows
 
+# Extract SEED "RCO" lessons (pptx + atividade/prática docx) to lake/{disciplina}/rco/{n}tri/*.md
+# Deterministic, stdlib. Reads every lake/AULAS_RCO-*/AULAS_RCO root and merges them.
+python tools/extrair_rco.py                   # all; --sigla AMS for one discipline
+python tools/extrair_rco.py --check           # exit != 0 if any extraction is stale
+
+# Triage extracted RCO lessons with Jev (TypeSafe). Needs $env:TYPESAFE_API_KEY.
+# Answers are cached in scratch/jev-rco/, so reruns are free. Output: docs/rco-triagem.md
+python tools/triar_rco.py                     # all; --disciplina <slug> for one
+
+# Regenerate the Obsidian MOCs in mapas/ from concept provenance
+python tools/gerar_mapas.py
+python tools/gerar_mapas.py --check
+
 # Tests (stdlib unittest, no deps) — run before committing tool changes
 python -m unittest discover -s tests -v
 python -m unittest tests.test_wiki -v                                   # one module
@@ -57,6 +71,18 @@ python -m unittest tests.test_wiki.WikiCoreTests.test_clean_fixture_has_no_lint_
 ```
 
 `tools/sync_notion.py` mirrors the lesson **index** (metadata + ProfessorDash link, no body) into the `Aulas` database of the "Toni's Brain" Notion workspace, keyed on the `Caminho` property. Strictly one-way — Notion is a read-only projection of `canonica.md`, never an input. Requires an internal Notion integration token in `NOTION_TOKEN` and the `Aulas` + `Projetos` bases shared with that integration.
+
+**RCO intake.** `lake/AULAS_RCO-*` holds the raw SEED 2026 export from Google Drive. The export splits the batch into several zips, so one lesson's pptx and docx files can land in different roots. `extrair_rco.py` merges them by `SIGLA/NTRI/lesson` path. Each output note is `tipo: rco-seed` and `status: bruto`, with `fontes` pointing at the original Office files. The binaries are git-ignored; only the `.md` extractions are versioned. An extracted RCO lesson is raw material, not a lesson: turning one into a `canonica.md` still goes through `prof-toni` in SEED mode.
+
+**Jev** (`tools/jev.py`) is TypeSafe's judgment model. It returns typed `noul`, `choice` or `score` answers with probabilities and never generates text. Use it for bulk triage where code owns the decision, not for writing content. It reads text only, is strongest in English, and costs US$0.042 per million input tokens. The whole 516-lesson triage cost about US$0.07.
+
+`triar_rco.py` decides some things in code and asks Jev the rest:
+- An identical title (after normalization) is matched in code without asking the model.
+- When Jev compared RCO content against bare approved-lesson titles, it gave low confidence even on correct pairs. Each approved option therefore carries the `objetivos` from its canonica.
+- Any equivalence below 0.7 is flagged ⚠ for review.
+- A few wrong matches still came back at 0.88–0.96, for example a general "Revisão de Scrum" matched to "Planning Poker". Treat `docs/rco-triagem.md` as a sorting aid, never as the decision.
+
+**Obsidian.** The repo root is the vault. `mapas/index.md` is the entry page. The kepano `obsidian` plugin (obsidian-bases, obsidian-markdown, json-canvas, obsidian-cli, defuddle, knap) is installed at project scope in `.claude/settings.json`. Read its `obsidian-bases` skill before editing any `.base` file.
 
 `tools/imagen-generator/` is **not a script**. Its `prompt.xml` is the v6 source of truth for unbranded lesson base art, split into two profiles — `capa` (dense, 3:2, the portal-facing cover) and `infografico` (sparse, 16:9, a body figure teaching one concept). The v6 density rules were derived from an audit of the 54 approved images already in the acervo, and its `R3` rule catalogs 12 defects that have actually shipped. **Images are generated here, by delegating the composed prompt to the Codex CLI's native image tool** (verified 2026-07-29). The browser Project (ChatGPT web) remains a valid fallback. Either way, Claude Code composes the fully-resolved v6 prompt and audits the returned PNG — handing the model the raw XML and letting it interpret the design system produces light backgrounds and occupied corners. Read `.claude/skills/gerar-imagem-aula/SKILL.md` first. Never attach the logo to the image model: Photoshop later applies the official logo, course identifier, and canonical canvas through a deterministic action. No CLI entrypoint.
 
@@ -77,7 +103,7 @@ Provenance has three distinct roles: raw files in `lake/` are the source materia
 
 ### Lesson Path Convention
 
-`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), `capa.png`, and optionally `img/` for body figures.
+`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` where `NN` (zero-padded 2-digit) **must match** `ordem` in the lesson's frontmatter and in `manifesto.json`. A lesson folder holds `canonica.md`, `imagens.md` (image brief — always generated, Toni's rule), `capa.png`, and optionally `img/` for body figures and `fontes/` for lesson-specific source material (immutable, like `lake/`).
 
 `NN`/`ordem` is part of the portal's import key — renumbering a lesson already imported creates a duplicate row instead of updating it, leaving the old one published to classes. Renumbering a whole trilha means cleaning up on the portal side afterwards.
 
@@ -131,7 +157,7 @@ The generator's non-obvious behavior — read `tools/gerar_manifesto.py` before 
 - **The generator merges over the existing `manifesto.json` as its base.** `version`, `vault`, `descricao`, `arquitetura`, `series[]` and each discipline's `serie`/`status`/`lake`/`warehouse` are carried over from the file, and `disciplinas[]` only emits slugs that are already there. A brand-new discipline folder therefore yields lessons in `lessons[]` with no matching entry in `disciplinas[]` until its curated metadata is seeded — the one narrow exception to "never hand-edit".
 - **Display labels are maintained** in `LABELS_DISCIPLINA` / `LABELS_TRILHA` inside `tools/gerar_manifesto.py`. Register a curated label there when creating a discipline or track; do not rely on a lesson title as the permanent track label.
 
-`gerar_manifesto.py --check`, `lint_wiki.py` and `sync_notion.py --check` are the repo's automated validators. The wiki lint is read-only and reports findings; it never auto-fixes content. The repository has no CI (`.github/` does not exist), so the test suite only runs when someone runs it locally. `lint_wiki.py` and `gerar_indice.py` share `tools/wiki_core.py`, a deliberately stdlib-only parser for the vault's small YAML subset (scalars, inline and block lists) — keep the tools dependency-free rather than pulling in PyYAML. `sync_notion.py` imports `parse_frontmatter` from `gerar_manifesto.py`, so a change to that parser affects both.
+`gerar_manifesto.py --check`, `lint_wiki.py` and `sync_notion.py --check` are the repo's automated validators. `gerar_indice.py --check`, `gerar_mapas.py --check` and `extrair_rco.py --check` check that derived files are current. The wiki lint is read-only and reports findings; it never auto-fixes content. The repository has no CI (`.github/` does not exist), so the test suite only runs when someone runs it locally. `lint_wiki.py` and `gerar_indice.py` share `tools/wiki_core.py`, a deliberately stdlib-only parser for the vault's small YAML subset (scalars, inline and block lists) — keep the tools dependency-free rather than pulling in PyYAML. `sync_notion.py` imports `parse_frontmatter` from `gerar_manifesto.py`, so a change to that parser affects both.
 
 ## Key Invariants
 
@@ -167,7 +193,7 @@ explicit pedagogical decision; only canonical lessons enter `manifesto.json`.
 
 Frontmatter required fields: `conceito`, `slug`, `disciplina`, `tipo` (`conceito|entidade|sintese`), `status` (`vivo|rascunho|obsoleto`).
 
-Aulas reference concepts via `[[slug]]` wikilinks. Backlink sync checked by lint workflow described in `AGENTS.md §4`.
+Aulas reference concepts via `[[slug]]` wikilinks. A concept lists the lessons that cite it under `## Onde aparece`; `tools/lint_wiki.py` reports drift in either direction (lint workflow in `AGENTS.md §5`, page anatomy in `§2`).
 
 ## Memory
 
