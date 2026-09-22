@@ -1,0 +1,111 @@
+filters:
+  and:
+    - file.inFolder("lake")
+    - 'tipo == "rco-seed"'
+
+properties:
+  titulo:
+    displayName: Aula RCO
+  disciplina:
+    displayName: Disciplina
+  trimestre:
+    displayName: Tri
+  ordem_rco:
+    displayName: Nº
+  serie:
+    displayName: Série
+  slides:
+    displayName: Slides
+  tem_atividade:
+    displayName: Atividade
+  tem_pratica:
+    displayName: Prática
+
+views:
+  - type: table
+    name: Todas por disciplina
+    groupBy:
+      property: disciplina
+      direction: ASC
+    order:
+      - titulo
+      - trimestre
+      - ordem_rco
+      - serie
+      - slides
+      - tem_atividade
+      - tem_pratica
+    summaries:
+      slides: Sum
+  - type: table
+    name: Análise e Métodos (AMS)
+    filters:
+      and:
+        - 'sigla_rco == "AMS"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides
+  - type: table
+    name: Análise e Projeto (APS)
+    filters:
+      and:
+        - 'sigla_rco == "APS"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides
+  - type: table
+    name: Introdução à Computação (IAC)
+    filters:
+      and:
+        - 'sigla_rco == "IAC"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides
+  - type: table
+    name: Inovação e Empreendedorismo (ITE)
+    filters:
+      and:
+        - 'sigla_rco == "ITE"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides
+  - type: table
+    name: Programação no Desenv. (PDS)
+    filters:
+      and:
+        - 'sigla_rco == "PDS"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides
+  - type: table
+    name: Front-End (PFE)
+    filters:
+      and:
+        - 'sigla_rco == "PFE"'
+    groupBy:
+      property: trimestre
+      direction: ASC
+    order:
+      - titulo
+      - ordem_rco
+      - slides

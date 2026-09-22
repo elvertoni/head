@@ -1,0 +1,89 @@
+filters:
+  and:
+    - file.inFolder("conceitos")
+    - 'file.ext == "md"'
+    - 'file.basename != "index"'
+    - 'file.basename != "log"'
+
+formulas:
+  n_fontes: 'if(fontes, fontes.length, 0)'
+  n_aulas: 'if(aulas, aulas.length, 0)'
+
+properties:
+  conceito:
+    displayName: Conceito
+  disciplina:
+    displayName: Disciplina
+  tipo:
+    displayName: Tipo
+  status:
+    displayName: Status
+  atualizado_em:
+    displayName: Atualizado em
+  formula.n_fontes:
+    displayName: Fontes
+  formula.n_aulas:
+    displayName: Aulas
+
+views:
+  - type: table
+    name: Promover primeiro (rascunho já usado em aula)
+    filters:
+      and:
+        - 'status == "rascunho"'
+        - 'aulas.length > 0'
+    order:
+      - conceito
+      - disciplina
+      - formula.n_aulas
+      - formula.n_fontes
+      - atualizado_em
+  - type: table
+    name: Pós — IA e Robótica Educacional
+    filters:
+      and:
+        - 'disciplina == "inovacao-inteligencia-artificial-e-robotica-educacional"'
+    groupBy:
+      property: tipo
+      direction: ASC
+    order:
+      - conceito
+      - status
+      - formula.n_fontes
+      - atualizado_em
+  - type: table
+    name: Pós — Full Stack e Cloud
+    filters:
+      and:
+        - 'disciplina == "desenvolvimento-full-stack-e-cloud-computing"'
+    groupBy:
+      property: tipo
+      direction: ASC
+    order:
+      - conceito
+      - status
+      - formula.n_fontes
+      - atualizado_em
+  - type: table
+    name: Vivos (curados)
+    filters:
+      and:
+        - 'status == "vivo"'
+    groupBy:
+      property: disciplina
+      direction: ASC
+    order:
+      - conceito
+      - tipo
+      - formula.n_aulas
+      - atualizado_em
+  - type: table
+    name: Sínteses
+    filters:
+      and:
+        - 'tipo == "sintese"'
+    order:
+      - conceito
+      - disciplina
+      - status
+      - atualizado_em
