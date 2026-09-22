@@ -7,7 +7,7 @@ aka: [vetores de significado, representação vetorial, vector embeddings]
 status: vivo
 fontes:
   - lake/inteligencia-artificial/elite-wiki/arquitetura/blueprint-sistema-rag-para-suporte-a-alunos.md
-aulas: [10, 17]
+aulas: [10, 13, 17]
 atualizado_em: 2026-06-15
 ---
 
@@ -33,6 +33,9 @@ No pipeline de um [[rag]], cada chunk produzido pelo [[chunking]] vira um embedd
 
 - Aula 10 — *Tokens, embeddings e vetores*
 - Aula 17 — *Chunking, embeddings e vector stores*
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/10-tokens-embeddings-e-vetores/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/13-ia-que-ve-e-ouve-multimodalidade/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/17-chunking-embeddings-e-vector-stores/canonica.md`
 - Conceitos vizinhos: [[rag]], [[chunking]], [[vector-store]], [[llm]], [[tokens]]
 
 ## Fontes

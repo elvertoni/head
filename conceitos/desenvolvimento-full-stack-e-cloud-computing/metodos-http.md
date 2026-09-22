@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Projeto Front - End e Desenvolvimento Web/02 - Aula 2 - Introdução ao Front - End II - Apostila (Slides).pdf"
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/Desafio_ Desenvolvimento Front - End/01 - Aula 1 - Hands on_ Desenvolvimento Front - End - Contextualização - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [1]
+atualizado_em: 2026-09-21
 ---
 
 Métodos HTTP são verbos que expressam a intenção de uma requisição sobre um recurso Web, como consultar, criar, substituir ou remover uma representação. Além do nome, cada método tem semântica própria sobre segurança, idempotência, corpo e efeitos esperados, orientando contratos de [[api]] e [[http]].
@@ -29,6 +29,8 @@ GET costuma recuperar uma representação; POST pode criar ou disparar processam
 - Escolher o verbo sem definir o contrato do recurso e seus efeitos.
 
 ## Onde aparece
+
+- Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
 
 - Projeto Front-End e Desenvolvimento Web, Aula 2, página 4.
 - Desafio Front-End, Aula 1, página 5.

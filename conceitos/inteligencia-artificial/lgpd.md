@@ -29,6 +29,7 @@ A IA é faminta por dados — inclusive os seus (fotos, mensagens, hábitos) —
 ## Onde aparece
 
 - Aula 25 — *Ética, Responsabilidade e IA no Brasil*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/25-etica-responsabilidade-e-ia-no-brasil/canonica.md`
 - Pós-graduação — Aula 2, *Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança*
 - Conceitos vizinhos: [[marco-legal-da-ia]], [[ciberseguranca]], [[dados-pessoais]], [[seguranca-da-informacao]] e [[etica-em-ia]]
 

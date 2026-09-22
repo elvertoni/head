@@ -19,7 +19,7 @@ Informação é dado contextualizado e interpretado para orientar entendimento o
 
 ## O que precisa saber
 
-Um [[banco-de-dados]] apoia a produção de informação, mas não garante sozinho que a interpretação seja correta. [[Dado]] precisa de semântica, qualidade e regras; [[modelagem-de-dados]] ajuda a preservar relações importantes entre registros.
+Um [[banco-de-dados]] apoia a produção de informação, mas não garante sozinho que a interpretação seja correta. [[dado]] precisa de semântica, qualidade e regras; [[modelagem-de-dados]] ajuda a preservar relações importantes entre registros.
 
 ## Erros comuns
 

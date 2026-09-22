@@ -7,7 +7,7 @@ aka: [ajuste fino, fine tuning]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md
-aulas: [12]
+aulas: [12, 16]
 atualizado_em: 2026-06-15
 ---
 
@@ -28,6 +28,8 @@ Ajuste direcionado, após o pré-treino, que especializa o modelo num comportame
 ## Onde aparece
 
 - Aula 12 — *Treino, Fine-tuning e Cutoff*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/16-rag-recuperacao-com-geracao-aumentada/canonica.md`
 - Conceitos vizinhos: [[llm]], [[cutoff]], [[rag]]
 
 ## Fontes

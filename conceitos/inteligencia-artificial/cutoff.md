@@ -7,7 +7,7 @@ aka: [data de corte, knowledge cutoff, cutoff de conhecimento]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md
-aulas: [12]
+aulas: [12, 15, 16, 19, 23]
 atualizado_em: 2026-06-15
 ---
 
@@ -29,6 +29,11 @@ O LLM **não aprende sozinho** com as conversas — o conhecimento fica fixado n
 ## Onde aparece
 
 - Aula 12 — *Treino, Fine-tuning e Cutoff*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/16-rag-recuperacao-com-geracao-aumentada/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/19-tool-use-e-function-calling/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md`
 - Conceitos vizinhos: [[llm]], [[fine-tuning]], [[rag]], [[alucinacoes]]
 
 ## Fontes

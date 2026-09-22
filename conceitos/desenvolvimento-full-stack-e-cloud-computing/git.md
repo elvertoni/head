@@ -7,8 +7,8 @@ aka: [sistema Git]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Cultura DevOps e Integração Contínua/07 - Aula 7 - Controle de Versão - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [2]
+atualizado_em: 2026-09-21
 ---
 
 Git é um sistema distribuído de controle de versão que registra snapshots de arquivos e permite ramificar, integrar e compartilhar históricos. Seu modelo local favorece trabalho offline e colaboração por repositórios remotos.
@@ -29,6 +29,7 @@ Git implementa [[controle-de-versao]]; branches, commits e merges precisam de co
 
 ## Onde aparece
 
+- Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/02-controle-de-versao-git-local/canonica.md` (ordem 2).
 - Aulas 7–9 — Controle de Versão.
 - É uma ferramenta de [[controle-de-versao]] usada em [[devops]].
 

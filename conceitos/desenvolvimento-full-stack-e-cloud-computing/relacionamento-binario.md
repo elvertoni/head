@@ -3,7 +3,7 @@ conceito: Relacionamento binário
 slug: relacionamento-binario
 disciplina: desenvolvimento-full-stack-e-cloud-computing
 tipo: conceito
-aka: [relação binária]
+aka: []
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/Modelagem de Banco de Dados/13 - Aula 13 - Relacionamentos II - Apostila (Slides).pdf"

@@ -8,8 +8,10 @@ status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md
   - lake/inteligencia-artificial/ia-coders/o-que-e-context-engineering.md
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 01] - 2026_04_22 17_49 GMT-03_00 - Anotações do Gemini.docx"
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 02] - 2026_04_23 19_12 GMT-03_00 - Anotações do Gemini.docx"
 aulas: [15]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 Context engineering é decidir **o que colocar junto da pergunta** ao [[llm]]: quais instruções, documentos, exemplos e histórico entram, e em que ordem. Se o [[prompt-engineering]] é "como perguntar", o context engineering é "o que vai ao lado". Tese central: o modelo não sabe nada além do que está no contexto — "contexto é o novo código".
@@ -30,7 +32,8 @@ Tudo entra na **janela de contexto** (medida em [[tokens]]), que é limitada. En
 - [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 15 — *Context Engineering*
-- Conceitos vizinhos: [[prompt-engineering]], [[llm]], [[tokens]], [[cutoff]], [[rag]], [[atencao]]
+- `aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md`
+- Conceitos vizinhos: [[prompt-engineering]], [[llm]], [[tokens]], [[cutoff]], [[rag]], [[atencao]], [[provedor-de-modelo]]
 
 ## Fontes
 

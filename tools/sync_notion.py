@@ -21,15 +21,17 @@ Pré-requisitos:
   3. Exportar o token: $env:NOTION_TOKEN = "ntn_..."
 
 Uso:
+    python tools/sync_notion.py             # mostra o plano, não escreve
     python tools/sync_notion.py --dry-run   # mostra o plano, não escreve
     python tools/sync_notion.py --check     # só valida (exit!=0 se divergente)
-    python tools/sync_notion.py             # aplica (cria/atualiza)
-    python tools/sync_notion.py --prune     # aplica + arquiva órfãs
+    python tools/sync_notion.py --apply    # aplica (cria/atualiza)
+    python tools/sync_notion.py --apply --prune  # aplica + arquiva órfãs
 
 Exit code 1 se houver divergência em `--check` ou erro na aplicação.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import sys
@@ -296,10 +298,46 @@ def aplicar(criar, atualizar, orfas, prune: bool) -> None:
             time.sleep(PAUSA)
 
 
-def main() -> int:
-    dry = "--dry-run" in sys.argv
-    check = "--check" in sys.argv
-    prune = "--prune" in sys.argv
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Sincroniza os metadados das aulas aprovadas com o Notion.",
+        epilog=(
+            "Sem --apply, o comando apenas mostra o plano e nunca escreve. "
+            "Use --apply explicitamente para sincronizar."
+        ),
+    )
+    parser.add_argument(
+        "--apply",
+        action="store_true",
+        help="aplica o plano no Notion (necessário para qualquer escrita)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="mostra o plano sem escrever no Notion",
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="valida a sincronização e sai com erro se houver divergência",
+    )
+    parser.add_argument(
+        "--prune",
+        action="store_true",
+        help="inclui órfãs no plano; arquiva somente com --apply --prune",
+    )
+    args = parser.parse_args(argv)
+    if args.apply and (args.check or args.dry_run):
+        parser.error("--apply nao pode ser combinado com --check ou --dry-run")
+    return args
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    apply = args.apply
+    dry = args.dry_run
+    check = args.check
+    prune = args.prune
 
     aulas, divergencias = coletar_aulas()
     for d in divergencias:
@@ -325,6 +363,10 @@ def main() -> int:
 
     if dry:
         print("[dry-run] nada foi escrito no Notion.")
+        return 1 if divergencias else 0
+
+    if not apply:
+        print("[plan] nada foi escrito no Notion. Use --apply para aplicar.")
         return 1 if divergencias else 0
 
     aplicar(criar, atualizar, orfas, prune)

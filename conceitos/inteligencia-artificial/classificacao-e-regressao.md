@@ -28,6 +28,7 @@ A pergunta define a tarefa: categoria → classificação; número → regressã
 ## Onde aparece
 
 - Aula 6 — *Aprendizado Supervisionado na Prática*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/06-aprendizado-supervisionado-na-pratica/canonica.md`
 - Conceitos vizinhos: [[aprendizado-supervisionado]], [[aprendizado-de-maquina]] e [[arvore-de-decisao]]
 
 ## Fontes

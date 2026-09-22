@@ -6,10 +6,15 @@ tipo: conceito
 aka: [second brain, vault pessoal, base de contexto do agente, knowledge base]
 status: vivo
 fontes:
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-01-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-02-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-04-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_06_resumo_e_transcricao.pdf
   - lake/inteligencia-artificial/elite-wiki/agentes/encontros-elite/encontro-elite-02-agentes-pessoais-com-hermes-agent-parte-02.md
   - lake/inteligencia-artificial/elite-wiki/agentes/encontros-elite/encontro-elite-04-deploy-monitoria-e-observabilidade-de-sistemas-com-ia-parte-2.md
 aulas: []
-atualizado_em: 2026-06-30
+atualizado_em: 2026-09-21
 ---
 
 Segundo cérebro é um vault [[obsidian|Obsidian]] versionado no GitHub que serve como base de conhecimento permanente para um agente de IA pessoal. Não é um backup de arquivos nem um wiki genérico — é um diretório de markdown estruturado que o agente **lê** para buscar contexto sobre você (rotina, projetos, saúde, finanças) e **escreve** para registrar decisões, aprendizados e estado. A entrevista inicial — feita por um [[llm]] forte (Claude Opus, GPT-5.5, GLM-5.1, Kimi K2.6) — produz um retrato denso que o agente carrega em toda sessão.
@@ -20,7 +25,7 @@ Um vault de markdown no GitHub que dá ao seu agente de IA memória de longo pra
 
 ## O que precisa saber
 
-O problema que resolve: agentes de IA sem memória esquecem tudo entre sessões. Você repete contexto, explica de novo o mesmo projeto, perde continuidade. Ferramentas de memória embutidas (como a do [[hermes-agent|Hermes Agent]]) guardam fragmentos, mas não têm a riqueza de um documento curado sobre você.
+O problema que resolve: agentes de IA sem memória esquecem tudo entre sessões. Você repete contexto, explica de novo o mesmo projeto, perde continuidade. Ferramentas de memória embutidas (como a do [[hermes-agent|Hermes Agent]]) guardam fragmentos, mas não têm a riqueza de um documento curado sobre você. O estado operacional do agente pode viver em SQLite; o segundo cérebro é a camada Markdown portátil e curada que organiza o contexto humano.
 
 O segundo cérebro resolve isso com três propriedades:
 
@@ -56,12 +61,13 @@ A estrutura recomendada dentro do vault:
 - **Não versionar.** Sem Git, o vault é um diretório local que morre com o disco. Versionar no GitHub (público ou privado) garante que o segundo cérebro sobrevive a qualquer máquina e permite sincronizar entre PC e VPS.
 - **Tratar como diário, não como contexto.** O vault não é um blog pessoal; é memória de trabalho do agente. Cada arquivo deve responder "o que o agente precisa saber sobre isso?" — não "o que eu quero registrar para a posteridade?".
 - **Esquecer de injetar no agente.** Criar o vault é meio caminho. O agente precisa carregar os arquivos relevantes no contexto de cada sessão. No [[hermes-agent|Hermes Agent]] isso é automático (project context files); em outros CLIs você precisa incluir os arquivos no prompt ou configurar injeção automática.
+- **Misturar memória operacional com conhecimento curado.** O banco de memória registra estado e interações; o vault deve preservar contexto revisado, decisões e fontes que possam ser reutilizados.
 
 ## Onde aparece
 
 - Encontro Elite #02 — seção "Base de contexto (segundo cérebro)" — instalação prática na VPS, passo a passo com Git
 - Encontro Elite #04 — deploy de agentes com contexto persistente via vault versionado
-- Conceitos vizinhos: [[hermes-agent]], [[context-engineering]], [[agente]], [[tool-use]], [[mcp]]
+- Conceitos vizinhos: [[hermes-agent]], [[context-engineering]], [[agente]], [[tool-use]], [[mcp]], [[harness]], [[seguranca-de-agentes]]
 
 ## Fontes
 

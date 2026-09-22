@@ -7,8 +7,8 @@ aka: [HTTP status codes]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/Desafio_ Desenvolvimento Front - End/01 - Aula 1 - Hands on_ Desenvolvimento Front - End - Contextualização - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [1]
+atualizado_em: 2026-09-21
 ---
 
 Códigos de status HTTP comunicam o resultado semântico de uma requisição em classes de informação, sucesso, redirecionamento, erro do cliente ou erro do servidor. O código integra o contrato entre [[api]] e consumidor.
@@ -28,6 +28,8 @@ O consumidor deve tratar status e corpo de erro de modo coerente. Status não su
 - Expor detalhes internos em respostas 5xx.
 
 ## Onde aparece
+
+- Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
 
 - Desafio Desenvolvimento Front-End, Aula 1, página 5.
 - Relaciona-se a [[http]], [[api-rest]], [[idempotencia-http]] e [[teste-de-api]].

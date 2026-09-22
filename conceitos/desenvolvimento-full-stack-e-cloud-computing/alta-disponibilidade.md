@@ -7,8 +7,8 @@ aka: [high availability, HA]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Estratégias de Cloud Computing/04 - Aula 4 - Modelos de Nuvem_ Público, Privado e Híbrido - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [31]
+atualizado_em: 2026-09-21
 ---
 
 Alta disponibilidade é a capacidade de manter um serviço acessível durante falhas esperadas ou parciais, usando redundância, detecção e recuperação. Ela é uma propriedade medida por objetivos e acordos, não uma promessa de funcionamento contínuo.
@@ -28,6 +28,8 @@ Arquiteturas de [[computacao-em-nuvem]] usam zonas, réplicas, health checks e a
 - Definir disponibilidade sem métricas, RTO ou RPO.
 
 ## Onde aparece
+
+- Aula canônica 31 — `aulas/analise-e-projeto-de-sistemas/analise-de-requisitos/31-engenharia-reversa-de-app/canonica.md`.
 
 - Aulas 4–6 — Modelos de Nuvem.
 - Conecta [[escalabilidade]], [[nuvem-publica]] e [[arquitetura-de-nuvem]].

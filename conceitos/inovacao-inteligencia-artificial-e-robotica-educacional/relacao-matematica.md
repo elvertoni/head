@@ -3,7 +3,7 @@ conceito: Relação matemática
 slug: relacao-matematica
 disciplina: inovacao-inteligencia-artificial-e-robotica-educacional
 tipo: conceito
-aka: [relação binária]
+aka: []
 status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo III - Pensamento Computacional e Robótica/Teoria dos Conjuntos, Estatística e Probabilidade/06 - Aula 6 - Diagramas de Venn e Relações de Conjuntos III - Apostila (Slides).pdf"

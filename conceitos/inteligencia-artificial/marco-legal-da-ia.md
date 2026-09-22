@@ -28,6 +28,7 @@ A ideia central, inspirada na lei europeia (EU AI Act): **classificação por ri
 ## Onde aparece
 
 - Aula 25 — *Ética, Responsabilidade e IA no Brasil*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/25-etica-responsabilidade-e-ia-no-brasil/canonica.md`
 - Conceitos vizinhos: [[lgpd]]
 
 ## Fontes

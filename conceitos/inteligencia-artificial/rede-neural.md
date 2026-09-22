@@ -7,7 +7,7 @@ aka: [redes neurais, neurônio artificial, neural network]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/08-redes-neurais-e-deep-learning/canonica.md
-aulas: [8]
+aulas: [8, 9]
 atualizado_em: 2026-06-15
 ---
 
@@ -28,6 +28,8 @@ As camadas vão da **entrada** (dados crus) às **ocultas** (onde mora o aprendi
 ## Onde aparece
 
 - Aula 8 — *Redes Neurais e Deep Learning*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/08-redes-neurais-e-deep-learning/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/09-o-que-e-um-llm/canonica.md`
 - Conceitos vizinhos: [[deep-learning]], [[aprendizado-de-maquina]], [[ia-generativa]], [[llm]]
 
 ## Fontes

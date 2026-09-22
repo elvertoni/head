@@ -7,7 +7,7 @@ aka: [fatiamento de documentos, divisão em pedaços]
 status: vivo
 fontes:
   - lake/inteligencia-artificial/elite-wiki/arquitetura/blueprint-sistema-rag-para-suporte-a-alunos.md
-aulas: [17]
+aulas: [10, 17]
 atualizado_em: 2026-06-15
 ---
 
@@ -32,6 +32,8 @@ Não existe número mágico — depende do material e do tipo de pergunta. É o 
 ## Onde aparece
 
 - Aula 17 — *Chunking, embeddings e vector stores*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/10-tokens-embeddings-e-vetores/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/17-chunking-embeddings-e-vector-stores/canonica.md`
 - Conceitos vizinhos: [[rag]], [[embeddings]], [[vector-store]]
 
 ## Fontes

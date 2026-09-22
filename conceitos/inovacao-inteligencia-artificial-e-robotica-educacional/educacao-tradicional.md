@@ -3,7 +3,7 @@ conceito: Educação tradicional
 slug: educacao-tradicional
 disciplina: inovacao-inteligencia-artificial-e-robotica-educacional
 tipo: conceito
-aka: [ensino tradicional, educação transmissiva]
+aka: [educação transmissiva]
 status: rascunho
 fontes:
   - lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo III - Pensamento Computacional e Robótica/Programação para Robótica/01 - Aula 1 - Educação, Inovação e Cultura Maker - Apostila (Slides).pdf
@@ -34,4 +34,3 @@ O conceito descreve uma relação entre professor, estudante, conteúdo e partic
 ## Fontes
 
 - lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo III - Pensamento Computacional e Robótica/Programação para Robótica/01 - Aula 1 - Educação, Inovação e Cultura Maker - Apostila (Slides).pdf; páginas indicadas no relatório do lote.
-

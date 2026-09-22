@@ -9,7 +9,7 @@ fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/01-o-que-e-inteligencia-artificial/canonica.md
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/01 - Aula 1 - Inteligência Artificial, Aprendizado de Máquina, Realidade Virtual, Realidade Aumentada e o Metaverso - Resumo (Aula em PDF).pdf"
 aulas: [1, 2, 3]
-atualizado_em: 2026-07-31
+atualizado_em: 2026-09-21
 ---
 
 Inteligência artificial é a área da computação que cria sistemas capazes de realizar tarefas que, feitas por pessoas, exigiriam inteligência — reconhecer um rosto, entender uma frase, recomendar um vídeo. O traço que define a IA moderna é **aprender padrões a partir de dados** (ver [[aprendizado-de-maquina]]) em vez de seguir apenas regras fixas escritas por um programador.
@@ -30,9 +30,9 @@ A IA atual é **estreita**: cada sistema faz uma coisa bem (recomendar, reconhec
 
 ## Onde aparece
 
-- Aula 1 — *O que é Inteligência Artificial* (conceito central)
-- Aula 2 — *História da IA e os Invernos*
-- Aula 3 — *IA, ML, Deep Learning e IA Generativa*
+- Aula 1 — *O que é Inteligência Artificial* (conceito central) `aulas/inteligencia-artificial/fundamentos-de-ia/01-o-que-e-inteligencia-artificial/canonica.md`
+- Aula 2 — *História da IA e os Invernos* `aulas/inteligencia-artificial/fundamentos-de-ia/02-historia-da-ia-e-os-invernos/canonica.md`
+- Aula 3 — *IA, ML, Deep Learning e IA Generativa* `aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md`
 - Pós-graduação — Aula 1, *Inteligência Artificial, Aprendizado de Máquina, Realidade Virtual, Realidade Aumentada e o Metaverso*
 - Pós-graduação — Módulo II, Aulas 1–2, *Paradigmas de Programação: Lógico e Funcional*
 - Pós-graduação — Módulo II, Aulas 7–9, *Busca Heurística* (busca orientada por estimativas): [[busca-heuristica]]

@@ -8,7 +8,7 @@ status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md
 aulas: [3, 9]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 IA generativa é o uso de [[deep-learning]] voltado a **criar conteúdo novo** — texto, imagem, áudio, vídeo — em vez de só classificar ou prever. ChatGPT e geradores de imagem a partir de texto são os exemplos mais conhecidos, e é a onda que tornou a IA febre a partir de 2022.
@@ -28,8 +28,9 @@ Modelos de deep learning que criam conteúdo novo (texto, imagem, áudio) em vez
 
 ## Onde aparece
 
-- Aula 3 — *IA, ML, Deep Learning e IA Generativa*
+- Aula 3 — *IA, ML, Deep Learning e IA Generativa* `aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md`
 - Aula 9 — *O que é um LLM*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/09-o-que-e-um-llm/canonica.md`
 - Conceitos vizinhos: [[deep-learning]], [[aprendizado-de-maquina]], [[inteligencia-artificial]], [[llm]]
 
 ## Fontes

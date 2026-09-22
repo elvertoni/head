@@ -28,6 +28,7 @@ Resolveu o problema dos modelos antigos, que liam palavra a palavra e perdiam o 
 ## Onde aparece
 
 - Aula 11 — *Transformers e Atenção*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/11-transformers-e-atencao/canonica.md`
 - Conceitos vizinhos: [[atencao]], [[llm]], [[rede-neural]]
 
 ## Fontes

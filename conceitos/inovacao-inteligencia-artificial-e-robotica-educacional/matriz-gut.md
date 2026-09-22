@@ -7,8 +7,8 @@ aka: [gravidade urgência tendência]
 status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Desafio_ Casos de Estudo - Cultura Maker/02 - Aula 2 - Desenvolvimento - Etapa 1 - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [31]
+atualizado_em: 2026-09-21
 ---
 
 Matriz GUT é um método de priorização que classifica problemas por gravidade, urgência e tendência. A pontuação ajuda a ordenar atenção quando há mais problemas do que recursos imediatos.
@@ -28,6 +28,8 @@ As notas dependem de critérios explícitos e não substituem análise de contex
 - Priorizar sem considerar dependências ou pessoas afetadas.
 
 ## Onde aparece
+
+- Aula canônica 31 — `aulas/analise-e-projeto-de-sistemas/analise-de-requisitos/31-engenharia-reversa-de-app/canonica.md`.
 
 - Desafio Cultura Maker, Aula 2, página 4.
 - Relaciona-se a [[resolucao-de-problemas]], [[pensamento-critico]] e [[delimitacao-do-problema]].

@@ -7,8 +7,8 @@ aka: [client-server architecture]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Projeto Front - End e Desenvolvimento Web/02 - Aula 2 - Introdução ao Front - End II - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [1]
+atualizado_em: 2026-09-21
 ---
 
 Arquitetura cliente-servidor separa consumidores que solicitam recursos de servidores que processam requisições, aplicam regras e devolvem respostas.
@@ -27,6 +27,8 @@ Navegador, frontend e [[backend]] podem ocupar papéis distintos sobre [[http]] 
 - Confundir servidor lógico com uma máquina única.
 
 ## Onde aparece
+
+- Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
 
 - Aulas 2–4 — Introdução ao Front-End e React.
 

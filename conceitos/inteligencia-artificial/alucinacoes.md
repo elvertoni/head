@@ -7,8 +7,9 @@ aka: [alucinação, hallucination, alucinação de IA]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
 aulas: [23]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 Alucinação é quando um [[llm]] gera informação **falsa ou inventada** apresentando-a como verdadeira, com total confiança. Não é mentira (sem intenção) nem defeito: é consequência direta de o modelo **prever o texto mais provável** ([[llm]]) em vez de consultar fatos. Quando não "sabe", ele completa com o que soa plausível.
@@ -24,11 +25,13 @@ Tipos comuns: fatos inventados, **fontes falsas** (livros/leis/links que não ex
 ## Erros comuns
 
 - Confiar porque "a resposta está bem escrita" — o LLM é ótimo em soar convincente.
+- Repetir gerações sem critério de verificação, limite de tentativas ou evidência do resultado.
 
 ## Onde aparece
 
 - Aula 23 — *Alucinações — Causas, Tipos e Mitigação*
-- Conceitos vizinhos: [[llm]], [[cutoff]], [[rag]], [[tool-use]]
+- `aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md`
+- Conceitos vizinhos: [[llm]], [[cutoff]], [[rag]], [[tool-use]], [[evals]], [[loop-engineering]]
 
 ## Fontes
 

@@ -29,6 +29,7 @@ A máquina **acha** a estrutura; o **humano interpreta e nomeia** os grupos depo
 ## Onde aparece
 
 - Aula 7 — *Aprendizado Não-Supervisionado*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/07-aprendizado-nao-supervisionado/canonica.md`
 - Conceitos vizinhos: [[aprendizado-nao-supervisionado]], [[aprendizado-de-maquina]]
 
 ## Fontes

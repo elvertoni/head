@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Arquitetura e Programação/33 - Aula 33 - Conceitos Sobre API REST (métodos e HTTP Codes) I - Apostila (Slides).pdf"
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Arquitetura e Programação/36 - Aula 36 - Conceitos Sobre API REST (métodos e HTTP Codes) IV - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [1]
+atualizado_em: 2026-09-21
 ---
 
 API REST é uma API Web que usa recursos, representações e convenções HTTP inspiradas no estilo [[rest]]. Ela define caminhos, métodos, payloads, status e regras para consumidores interagirem com um serviço.
@@ -29,6 +29,8 @@ API REST expõe recursos por um contrato HTTP orientado a representações.
 - Expor dados de banco sem contrato e autorização.
 
 ## Onde aparece
+
+- Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
 
 - Aulas 33–36 — Conceitos sobre API REST.
 - Conecta [[rest]], [[api]], [[http]], [[json]] e endpoints.

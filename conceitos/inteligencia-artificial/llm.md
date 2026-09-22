@@ -7,7 +7,7 @@ aka: [large language model, modelo de linguagem de grande escala, modelo de ling
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/09-o-que-e-um-llm/canonica.md
-aulas: [9]
+aulas: [9, 10, 11, 12, 14, 15, 16, 18, 19, 21, 23]
 atualizado_em: 2026-06-15
 ---
 
@@ -28,6 +28,18 @@ O LLM **não entende** no sentido humano e, por padrão, **não busca na interne
 
 ## Onde aparece
 - [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
+
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/09-o-que-e-um-llm/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/10-tokens-embeddings-e-vetores/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/11-transformers-e-atencao/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/14-prompt-engineering/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/16-rag-recuperacao-com-geracao-aumentada/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/18-agentes-e-subagentes/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/19-tool-use-e-function-calling/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/21-harness-engineering/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md`
 
 - Aula 9 — *O que é um LLM*
 - Conceitos vizinhos: [[rede-neural]], [[tokens]], [[transformers]], [[ia-generativa]], [[cutoff]], [[fine-tuning]], [[rag]], [[alucinacoes]]

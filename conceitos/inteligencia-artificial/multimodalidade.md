@@ -7,8 +7,9 @@ aka: [multimodal, IA multimodal, multimodalidade]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/13-ia-que-ve-e-ouve-multimodalidade/canonica.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_06_resumo_e_transcricao.pdf
 aulas: [13]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 Multimodalidade é a capacidade de uma IA de **processar e/ou gerar mais de um tipo de dado** — texto, imagem, áudio, vídeo — em vez de só texto. Um modelo multimodal recebe uma foto e a descreve, ouve um áudio e responde, ou lê texto e cria imagem. Em 2026 virou padrão nos principais modelos.
@@ -28,7 +29,8 @@ O truque é converter **tudo** — palavra, pixel, som — em [[embeddings|vetor
 ## Onde aparece
 
 - Aula 13 — *IA que Vê e Ouve — Multimodalidade*
-- Conceitos vizinhos: [[embeddings]], [[ia-generativa]], [[llm]]
+- `aulas/inteligencia-artificial/fundamentos-de-ia/13-ia-que-ve-e-ouve-multimodalidade/canonica.md`
+- Conceitos vizinhos: [[embeddings]], [[ia-generativa]], [[llm]], [[tool-use]]
 
 ## Fontes
 

@@ -28,6 +28,7 @@ Não usa exemplos rotulados nem busca grupos: aprende **interagindo**. É como s
 ## Onde aparece
 
 - Aula 5 — *Tipos de Aprendizado de Máquina*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/05-tipos-de-aprendizado-de-maquina/canonica.md`
 - Conceitos vizinhos: [[aprendizado-de-maquina]], [[aprendizado-supervisionado]], [[aprendizado-nao-supervisionado]]
 
 ## Fontes

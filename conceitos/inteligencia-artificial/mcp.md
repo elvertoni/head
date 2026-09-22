@@ -8,8 +8,14 @@ status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/20-mcp-model-context-protocol/canonica.md
   - lake/inteligencia-artificial/ia-coders/o-que-e-model-context-protocol-mcp.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-01-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-03-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-04-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_06_resumo_e_transcricao.pdf
+  - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_09_resumo_e_transcricao.pdf
 aulas: [20]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 MCP (Model Context Protocol) é um **protocolo aberto** (criado pela Anthropic em 2024) que padroniza como aplicações de IA se conectam a ferramentas, dados e serviços externos. É o **"USB da IA"**: em vez de programar cada integração na mão, qualquer IA que "fala MCP" conecta a qualquer ferramenta que "fala MCP".
@@ -20,7 +26,7 @@ O padrão (tipo USB/HTTP) que faz qualquer IA conectar a qualquer ferramenta sem
 
 ## O que precisa saber
 
-Resolve o caos da integração ponto a ponto (N×N feita na mão, que não escala). Funciona por **cliente** (na IA) e **servidor** (no serviço): conecta-se uma vez, serve para todos. Um servidor MCP expõe **ferramentas** ([[tool-use]]) e **dados** à IA. Importante: MCP é **protocolo**, não uma IA — não pensa, só padroniza a comunicação, como o HTTP na web.
+Resolve o caos da integração ponto a ponto (N×N feita na mão, que não escala). Funciona por **cliente** (na IA) e **servidor** (no serviço): conecta-se uma vez, serve para todos. Um servidor MCP expõe **ferramentas** ([[tool-use]]) e **dados** à IA. Um [[hub-de-integracoes]] pode reunir vários conectores, mas não elimina a necessidade de escopo e autenticação. Importante: MCP é **protocolo**, não uma IA — não pensa, só padroniza a comunicação, como o HTTP na web.
 
 ## Erros comuns
 
@@ -30,7 +36,8 @@ Resolve o caos da integração ponto a ponto (N×N feita na mão, que não escal
 - [[segundo-cerebro]] — vault pessoal versionado como memória de longo prazo do agente
 
 - Aula 20 — *MCP — Model Context Protocol*
-- Conceitos vizinhos: [[tool-use]], [[agente]], [[harness]]
+- `aulas/inteligencia-artificial/fundamentos-de-ia/20-mcp-model-context-protocol/canonica.md`
+- Conceitos vizinhos: [[tool-use]], [[agente]], [[harness]], [[hub-de-integracoes]], [[seguranca-de-agentes]], [[observabilidade-de-agentes]]
 
 ## Fontes
 

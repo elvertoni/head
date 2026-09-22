@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/02 - Aula 2 - Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança - Resumo (Aula em PDF).pdf"
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/02 - Aula 2 - Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [31]
+atualizado_em: 2026-09-21
 ---
 
 Segurança da informação é a proteção da informação em qualquer formato e contexto, garantindo que ela seja acessada por quem deve, permaneça correta e esteja disponível quando necessária. Seus objetivos clássicos são confidencialidade, integridade e disponibilidade; cibersegurança é uma parte importante quando os sistemas e canais são digitais.
@@ -32,6 +32,8 @@ Proteger [[dados-pessoais|dados pessoais]] exige combinar segurança e privacida
 - Confundir informação confidencial com informação necessariamente correta ou disponível.
 
 ## Onde aparece
+
+- Aula canônica 31 — `aulas/analise-e-projeto-de-sistemas/analise-de-requisitos/31-engenharia-reversa-de-app/canonica.md`.
 
 - Aula 2 — Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança.
 - É a moldura de objetivos para [[ciberseguranca]], [[dados-pessoais]], [[lgpd]], [[etica-em-ia]], [[seguranca-em-blockchain]], [[transparencia-em-blockchain]] e [[integridade-de-dados]].

@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-08-23",
+  "atualizado_em": "2026-09-21",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -82,15 +82,15 @@
       "trilhas": [
         {
           "slug": "controle-de-versao-git-github",
-          "label": "Controle de versão com Git (local)"
+          "label": "Controle de Versão com Git e GitHub"
         },
         {
           "slug": "fundamentos-html-css",
-          "label": "HTML Semântico"
+          "label": "Fundamentos de HTML e CSS"
         },
         {
           "slug": "landing-page-mvp",
-          "label": "O que define uma startup"
+          "label": "Landing Page e MVP"
         }
       ]
     },
@@ -105,7 +105,7 @@
       "trilhas": [
         {
           "slug": "analise-de-requisitos",
-          "label": "Levantamento e priorização de requisitos"
+          "label": "Análise de Requisitos"
         },
         {
           "slug": "marketing-digital",
@@ -124,7 +124,7 @@
       "trilhas": [
         {
           "slug": "arquitetura-e-fluxo-de-sistemas",
-          "label": "Arquitetura e fluxo de uma requisição"
+          "label": "Arquitetura e Fluxo de Sistemas"
         }
       ]
     },
@@ -1581,6 +1581,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "diagnostico-operacional",
+      "nome": "Diagnóstico operacional",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
       "slug": "diagrama-de-ishikawa",
       "nome": "Diagrama de Ishikawa",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2366,6 +2371,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "funil-comercial",
+      "nome": "Funil comercial",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
       "slug": "gamificacao",
       "nome": "Gamificação",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2496,6 +2506,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "handoff-humano",
+      "nome": "Handoff humano",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
       "slug": "hard-skills",
       "nome": "Hard skills",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2586,6 +2601,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "hub-de-integracoes",
+      "nome": "Hub de integrações",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
       "slug": "hypervisor",
       "nome": "Hypervisor",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -2593,6 +2613,11 @@
     {
       "slug": "ia-generativa",
       "nome": "IA Generativa",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "ia-proativa",
+      "nome": "IA proativa",
       "disciplina": "inteligencia-artificial"
     },
     {
@@ -3009,6 +3034,11 @@
       "slug": "logica-fuzzy",
       "nome": "Lógica fuzzy",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "loop-engineering",
+      "nome": "Loop Engineering",
+      "disciplina": "inteligencia-artificial"
     },
     {
       "slug": "ludicidade",
@@ -3481,6 +3511,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "observabilidade-de-agentes",
+      "nome": "Observabilidade de agentes",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
       "slug": "ontologia",
       "nome": "Ontologia",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3831,6 +3866,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "precificacao-de-servicos",
+      "nome": "Precificação de serviços",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
       "slug": "precisao",
       "nome": "Precisão",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3936,6 +3976,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "projeto-piloto",
+      "nome": "Projeto piloto",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
+    },
+    {
       "slug": "promises",
       "nome": "Promises",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -4034,6 +4079,11 @@
       "slug": "prova-de-trabalho",
       "nome": "Proof-of-Work",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "provedor-de-modelo",
+      "nome": "Provedor de modelo",
+      "disciplina": "inteligencia-artificial"
     },
     {
       "slug": "proxy-pattern",
@@ -4481,6 +4531,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "seguranca-de-agentes",
+      "nome": "Segurança de agentes",
+      "disciplina": "inteligencia-artificial"
+    },
+    {
       "slug": "seguranca-de-banco-de-dados",
       "nome": "Segurança de banco de dados",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -4494,6 +4549,11 @@
       "slug": "seguranca-em-nuvem",
       "nome": "Segurança em nuvem",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "selecao-de-modelo",
+      "nome": "Seleção de modelo",
+      "disciplina": "inteligencia-artificial"
     },
     {
       "slug": "selecao-relacional",
@@ -4554,6 +4614,11 @@
       "slug": "service-workers",
       "nome": "Service worker",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "servico-gerenciado",
+      "nome": "Serviço gerenciado",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
     },
     {
       "slug": "sessao-de-autenticacao",
@@ -5109,6 +5174,11 @@
       "slug": "validacao-de-formulario",
       "nome": "Validação de formulário",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "validacao-de-mercado",
+      "nome": "Validação de mercado",
+      "disciplina": "inovacao-tecnologia-e-empreendedorismo"
     },
     {
       "slug": "valor-de-verdade",

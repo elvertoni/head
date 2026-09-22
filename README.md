@@ -10,7 +10,9 @@ Segundo cérebro (vault Obsidian) do Curso Técnico em Desenvolvimento de Sistem
 ```
 
 - **`lake/{disciplina}/`** — conteúdo cru, sem curadoria: livros, PDFs, transcrições, vídeo-aulas, anotações. Insumo.
+- **`conceitos/{disciplina}/{slug}.md`** — wiki persistente de conceitos, entidades e sínteses mantida pelo LLM, com wikilinks e proveniência.
 - **`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`** — warehouse: Aulas Canônicas ricas, auditadas, neutras de plataforma. **Fonte única de verdade.**
+- **`conceitos/index.md`** e **`conceitos/log.md`** — catálogo regenerável e diário append-only da wiki.
 - **`manifesto.json`** — índice máquina do acervo (disciplinas, séries, trilhas, aulas, status). **Gerado** por `python tools/gerar_manifesto.py` — nunca editar à mão.
 
 Cada Canônica é a fonte única de onde se derivam todos os formatos (apostila HTML standalone, ProfessorDash, PDF).
@@ -26,6 +28,31 @@ aparece no portal. A especificação completa e inviolável está em **[`AGENTS.
 - Caminho `aulas/{disciplina}/{trilha}/{NN}-{slug}/canonica.md`, `NN` = `ordem` em 2 dígitos, casando com o manifesto.
 - Portal só importa `status: aprovada`; só re-importa aula existente se `versao` **ou** `atualizado_em` mudou → **bumpe sempre** que editar conteúdo publicado.
 - Ao adicionar/aprovar/editar aula: **regere** com `python tools/gerar_manifesto.py` (valide com `--check`, exit ≠ 0 = divergência).
+
+## Manutenção do segundo cérebro
+
+O fluxo segue `ingest → query → lint`: fontes entram em `lake/`, o LLM atualiza
+conceitos existentes antes de criar duplicatas, consultas relevantes podem virar
+sínteses permanentes e o lint apenas propõe problemas para revisão humana.
+
+**Ingestão não é publicação de aula.** PDFs, transcrições, anotações e materiais
+de cursos podem ficar no `lake/` ou alimentar conceitos e sínteses em rascunho.
+Uma aula canônica só nasce quando existe uma decisão pedagógica explícita; ter
+uma fonte ingerida nunca adiciona uma entrada ao `manifesto.json` por si só.
+Uma fonte repetida ou contextual pode permanecer somente como material de estudo
+no `lake/`, sem criar conceito nem aula.
+
+```powershell
+python tools/lint_wiki.py                 # auditoria completa, somente leitura
+python tools/lint_wiki.py --format json   # diagnóstico para automação
+python tools/lint_wiki.py --fail-on error # gate estrutural
+python tools/gerar_indice.py --check      # verifica o catálogo
+python tools/gerar_indice.py --write      # regenera index.md preservando resumos
+```
+
+Detalhes de promoção, proveniência, stubs e registro de consultas estão em
+[`docs/manutencao-wiki.md`](docs/manutencao-wiki.md) e no schema de
+[`AGENTS.md`](AGENTS.md).
 
 ## Onde vivem as aulas
 

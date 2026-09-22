@@ -8,7 +8,7 @@ status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/02-historia-da-ia-e-os-invernos/canonica.md
 aulas: [2]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 Inverno da IA é um período em que o entusiasmo com a [[inteligencia-artificial]] despenca: o financiamento seca, empresas desistem e a pesquisa quase para. Sempre vem depois de uma fase de **hype** — promessas grandes que a tecnologia da época não conseguia cumprir.
@@ -28,7 +28,7 @@ A IA viveu dois grandes invernos: anos 1970 (após o otimismo exagerado dos anos
 
 ## Onde aparece
 
-- Aula 2 — *História da IA e os Invernos*
+- Aula 2 — *História da IA e os Invernos* `aulas/inteligencia-artificial/fundamentos-de-ia/02-historia-da-ia-e-os-invernos/canonica.md`
 - Conceitos vizinhos: [[inteligencia-artificial]]
 
 ## Fontes

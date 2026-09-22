@@ -7,9 +7,10 @@ aka: [retrieval-augmented generation, geração aumentada por recuperação, rec
 status: vivo
 fontes:
   - lake/inteligencia-artificial/elite-wiki/arquitetura/blueprint-sistema-rag-para-suporte-a-alunos.md
-  - lake/inteligencia-artificial/ia-master
-aulas: [16, 17]
-atualizado_em: 2026-06-15
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 01] - 2026_04_22 17_49 GMT-03_00 - Anotações do Gemini.docx"
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 02] - 2026_04_23 19_12 GMT-03_00 - Anotações do Gemini.docx"
+aulas: [10, 12, 15, 16, 17, 19, 23]
+atualizado_em: 2026-09-21
 ---
 
 RAG é a técnica de dar ao modelo de linguagem o conteúdo certo na hora da pergunta, em vez de esperar que ele já "saiba" a resposta. Antes de o [[llm]] gerar o texto, um sistema de busca vai num acervo próprio (PDFs, transcrições, documentação), pesca os trechos mais relevantes para aquela pergunta e cola esses trechos no contexto junto com a pergunta. O modelo então responde olhando para esse material fresco — não só para o que aprendeu no treino, que tem [[cutoff|data de corte]] e não conhece o seu conteúdo privado.
@@ -42,6 +43,14 @@ O ponto que os alunos costumam errar: RAG **não treina** o modelo. Nada nos pes
 
 ## Onde aparece
 
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/10-tokens-embeddings-e-vetores/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/16-rag-recuperacao-com-geracao-aumentada/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/17-chunking-embeddings-e-vector-stores/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/19-tool-use-e-function-calling/canonica.md`
+- Canônica: `aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md`
+
 - Aula 16 — *RAG — recuperação com geração aumentada* (conceito central)
 - Aula 17 — *Chunking, embeddings e vector stores* (a mecânica da ingestão)
 - Conceitos vizinhos: [[chunking]], [[embeddings]], [[vector-store]], [[llm]], [[context-engineering]], [[alucinacoes]], [[cutoff]]
@@ -49,4 +58,4 @@ O ponto que os alunos costumam errar: RAG **não treina** o modelo. Nada nos pes
 ## Fontes
 
 - `blueprint-sistema-rag-para-suporte-a-alunos.md` (elite-wiki) — arquitetura geral, por que RAG e não fine-tuning, stack (FAISS/Qdrant/pgvector).
-- `lake/inteligencia-artificial/ia-master` — Imersão IA para Devs, material de origem das Aulas 16/17 (`.docx`, ainda a tratar).
+- `Imersão IA para Devs [Aulas 01–02]` — anotações DOCX com referências ao uso de contexto, RAG e construção de sistemas assistidos.

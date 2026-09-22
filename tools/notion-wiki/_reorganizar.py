@@ -2,7 +2,10 @@
 import shutil
 from pathlib import Path
 
-BASE = Path(r"C:\PROJETOS\PROF-TONI\lake\inteligencia-artificial\elite-wiki")
+REPO_ROOT = Path(__file__).resolve().parents[2]
+BASE = REPO_ROOT / "lake" / "inteligencia-artificial" / "elite-wiki"
+if not BASE.is_dir():
+    raise SystemExit(f"[erro] pasta elite-wiki não encontrada: {BASE}")
 
 # basename -> pasta-alvo (subpastas com '/')
 MAP = {

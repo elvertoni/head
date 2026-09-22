@@ -29,6 +29,7 @@ O objetivo do treino é **generalizar** — acertar o que nunca se viu — e nã
 ## Onde aparece
 
 - Aula 4 — *Como a Máquina Aprende*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/04-como-a-maquina-aprende/canonica.md`
 - Conceitos vizinhos: [[aprendizado-de-maquina]], [[deep-learning]]
 
 ## Fontes

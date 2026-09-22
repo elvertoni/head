@@ -28,6 +28,7 @@ A atenção age sobre todas as palavras **simultaneamente** (em paralelo), o que
 ## Onde aparece
 
 - Aula 11 — *Transformers e Atenção*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/11-transformers-e-atencao/canonica.md`
 - Conceitos vizinhos: [[transformers]], [[llm]], [[context-engineering]]
 
 ## Fontes

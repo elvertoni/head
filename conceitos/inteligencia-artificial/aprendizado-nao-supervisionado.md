@@ -31,6 +31,8 @@ A tarefa mais comum é o [[clustering]] (agrupar por semelhança). A máquina ac
 
 - Aula 5 — *Tipos de Aprendizado de Máquina*
 - Aula 7 — *Aprendizado Não-Supervisionado*
+- `aulas/inteligencia-artificial/fundamentos-de-ia/05-tipos-de-aprendizado-de-maquina/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/07-aprendizado-nao-supervisionado/canonica.md`
 - Conceitos vizinhos: [[aprendizado-de-maquina]], [[clustering]], [[aprendizado-supervisionado]]
 
 ## Fontes

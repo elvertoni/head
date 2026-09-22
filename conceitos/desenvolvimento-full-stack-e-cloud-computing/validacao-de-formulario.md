@@ -7,8 +7,8 @@ aka: [form validation]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/JavaScript e Aplicações Práticas/05 - Aula 5 - Imersão JavaScript - Coleções e Funções - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [1]
+atualizado_em: 2026-09-21
 ---
 
 Validação de formulário verifica se entradas atendem formato, presença, faixa e regras antes de uma operação. A validação no cliente melhora feedback, mas a autoridade deve permanecer no servidor.
@@ -28,6 +28,8 @@ Mensagens, foco, associação de erro e validação assíncrona fazem parte da e
 - Apagar valores e contexto ao falhar uma submissão.
 
 ## Onde aparece
+
+- Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
 
 - JavaScript e Aplicações Práticas, Aula 5, páginas 2–5.
 - Relaciona-se a [[formdata]], [[acessibilidade]], [[estados-de-interface]] e [[api]].

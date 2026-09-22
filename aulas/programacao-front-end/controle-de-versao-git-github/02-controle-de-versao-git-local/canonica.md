@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-07-29
+versao: 3
+atualizado_em: 2026-09-21
 ---
 
 Você já teve uma pasta com `projeto.html`, `projeto-2.html`, `projeto-final.html` e `projeto-final-agora-vai.html`? Cada arquivo é uma tentativa de responder a mesma pergunta: "qual dessas versões é a boa?" — e depois de duas semanas, nem quem escreveu lembra mais. O problema não é falta de organização sua. É que arquivo comum não foi feito pra guardar **história**. Existe uma ferramenta feita exatamente pra isso, e hoje você aprende a base dela.
@@ -45,7 +45,7 @@ Você precisa saber abrir o terminal integrado do VSCode (`` Ctrl+` ``) e ter al
 - Se dois colegas mexem no mesmo projeto ao mesmo tempo, alguém sobrescreve o trabalho do outro sem nem perceber.
 - Não existe "voltar pro que funcionava ontem" — só existe o arquivo que sobrou.
 
-Git resolve isso trocando "arquivo com nome diferente" por **histórico dentro do próprio projeto**, sem multiplicar arquivo nenhum.
+[[git|Git]] resolve isso trocando "arquivo com nome diferente" por **histórico dentro do próprio projeto**, sem multiplicar arquivo nenhum.
 
 ### Um commit é uma fotografia, não um "diff"
 

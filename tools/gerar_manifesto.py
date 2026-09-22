@@ -65,6 +65,11 @@ LABELS_TRILHA = {
     "marketing-digital": "Marketing Digital",
     "blueprint-tcc": "Blueprints de TCC",
     "fundamentos-de-ia": "Fundamentos de IA",
+    "controle-de-versao-git-github": "Controle de Versão com Git e GitHub",
+    "fundamentos-html-css": "Fundamentos de HTML e CSS",
+    "landing-page-mvp": "Landing Page e MVP",
+    "analise-de-requisitos": "Análise de Requisitos",
+    "arquitetura-e-fluxo-de-sistemas": "Arquitetura e Fluxo de Sistemas",
 }
 
 
@@ -197,9 +202,10 @@ def coletar_conceitos() -> list[dict]:
     return [conceitos[s] for s in sorted(conceitos)]
 
 
-def construir_manifesto(aulas: list[dict]) -> dict:
+def construir_manifesto(aulas: list[dict], base: dict | None = None) -> dict:
     """Mescla metadados curados (manifesto atual) com aulas descobertas no FS."""
-    base = json.loads(MANIFESTO.read_text(encoding="utf-8")) if MANIFESTO.exists() else {}
+    if base is None:
+        base = json.loads(MANIFESTO.read_text(encoding="utf-8")) if MANIFESTO.exists() else {}
 
     # Índice de ordem das disciplinas (preserva a curadoria do manifesto atual).
     disc_meta = {d["slug"]: d for d in base.get("disciplinas", [])}
@@ -259,6 +265,23 @@ def construir_manifesto(aulas: list[dict]) -> dict:
     }
 
 
+def manifesto_sem_data(data: dict) -> dict:
+    """Remove somente a data global, que muda a cada regeneração."""
+    normalizado = json.loads(json.dumps(data, ensure_ascii=False))
+    normalizado.pop("atualizado_em", None)
+    return normalizado
+
+
+def divergencias_do_manifesto(atual: dict, esperado: dict) -> list[str]:
+    """Compara o manifesto persistido com o estado que o gerador produziria."""
+    if manifesto_sem_data(atual) == manifesto_sem_data(esperado):
+        return []
+    return [
+        "[manifesto] manifesto.json diverge do estado de aulas, disciplinas ou conceitos; "
+        "execute python tools/gerar_manifesto.py"
+    ]
+
+
 def main() -> int:
     check = "--check" in sys.argv
     aulas, divergencias = coletar()
@@ -266,7 +289,24 @@ def main() -> int:
     for d in divergencias:
         print("DIVERGENCIA " + d, file=sys.stderr)
 
-    manifesto = construir_manifesto(aulas)
+    base: dict = {}
+    manifesto_atual: dict | None = None
+    if MANIFESTO.exists():
+        try:
+            manifesto_atual = json.loads(MANIFESTO.read_text(encoding="utf-8"))
+            if not isinstance(manifesto_atual, dict):
+                raise ValueError("raiz JSON não é objeto")
+            base = manifesto_atual
+        except (json.JSONDecodeError, OSError, ValueError) as exc:
+            divergencias.append(f"[manifesto] manifesto.json inválido: {exc}")
+            base = {}
+    elif check:
+        divergencias.append("[manifesto] manifesto.json não existe")
+
+    manifesto = construir_manifesto(aulas, base)
+
+    if check and manifesto_atual is not None:
+        divergencias.extend(divergencias_do_manifesto(manifesto_atual, manifesto))
 
     if check:
         print(f"[check] {len(aulas)} aulas aprovadas, "

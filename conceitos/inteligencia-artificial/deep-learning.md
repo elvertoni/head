@@ -8,7 +8,7 @@ status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md
 aulas: [3, 8]
-atualizado_em: 2026-06-15
+atualizado_em: 2026-09-21
 ---
 
 Deep learning ("aprendizado profundo") é um tipo de [[aprendizado-de-maquina]] que usa **redes neurais com muitas camadas** empilhadas, inspiradas de longe no cérebro. Cada camada aprende algo mais abstrato que a anterior, o que destravou reconhecer imagens, voz e linguagem com qualidade altíssima.
@@ -28,8 +28,8 @@ Machine learning feito com redes neurais de muitas camadas — o que destravou v
 
 ## Onde aparece
 
-- Aula 3 — *IA, ML, Deep Learning e IA Generativa*
-- Aula 8 — *Redes neurais e deep learning* (aprofundamento)
+- Aula 3 — *IA, ML, Deep Learning e IA Generativa* `aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md`
+- Aula 8 — *Redes neurais e deep learning* (aprofundamento) `aulas/inteligencia-artificial/fundamentos-de-ia/08-redes-neurais-e-deep-learning/canonica.md`
 - Conceitos vizinhos: [[aprendizado-de-maquina]], [[ia-generativa]], [[inteligencia-artificial]]
 
 ## Fontes

@@ -7,8 +7,10 @@ aka: [engenharia de prompt, prompt engineering]
 status: vivo
 fontes:
   - aulas/inteligencia-artificial/fundamentos-de-ia/14-prompt-engineering/canonica.md
-aulas: [14]
-atualizado_em: 2026-06-15
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 01] - 2026_04_22 17_49 GMT-03_00 - Anotações do Gemini.docx"
+  - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 02] - 2026_04_23 19_12 GMT-03_00 - Anotações do Gemini.docx"
+aulas: [14, 15]
+atualizado_em: 2026-09-21
 ---
 
 Prompt engineering é a habilidade de **formular bem a instrução** dada a um [[llm]] para obter a melhor resposta. Como o modelo gera a partir do que recebe, um pedido claro e específico leva a uma resposta boa; um pedido vago leva a uma resposta vaga.
@@ -28,7 +30,9 @@ Bons prompts têm clareza, contexto (para quem/com que fim), formato desejado, e
 ## Onde aparece
 
 - Aula 14 — *Prompt Engineering*
-- Conceitos vizinhos: [[llm]], [[context-engineering]]
+- `aulas/inteligencia-artificial/fundamentos-de-ia/14-prompt-engineering/canonica.md`
+- `aulas/inteligencia-artificial/fundamentos-de-ia/15-context-engineering/canonica.md`
+- Conceitos vizinhos: [[llm]], [[context-engineering]], [[harness]], [[loop-engineering]]
 
 ## Fontes
 
