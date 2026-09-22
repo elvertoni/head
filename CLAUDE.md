@@ -44,9 +44,16 @@ python tools/notion-wiki/puxar_notion.py
 
 # Push the approved-lesson index to the Notion "Aulas" base (one-way, repo → Notion)
 # Needs $env:NOTION_TOKEN. Run gerar_manifesto.py first — this reads manifesto.json.
-python tools/sync_notion.py --dry-run   # plan only
-python tools/sync_notion.py             # apply (create/update)
-python tools/sync_notion.py --prune     # apply + archive orphan rows
+# Writing is opt-in: without --apply the script only prints the plan.
+python tools/sync_notion.py                   # plan only (same as --dry-run)
+python tools/sync_notion.py --check           # exit != 0 if Notion diverges
+python tools/sync_notion.py --apply           # create/update rows
+python tools/sync_notion.py --apply --prune   # also archive orphan rows
+
+# Tests (stdlib unittest, no deps) — run before committing tool changes
+python -m unittest discover -s tests -v
+python -m unittest tests.test_wiki -v                                   # one module
+python -m unittest tests.test_wiki.WikiCoreTests.test_clean_fixture_has_no_lint_findings  # one test
 ```
 
 `tools/sync_notion.py` mirrors the lesson **index** (metadata + ProfessorDash link, no body) into the `Aulas` database of the "Toni's Brain" Notion workspace, keyed on the `Caminho` property. Strictly one-way — Notion is a read-only projection of `canonica.md`, never an input. Requires an internal Notion integration token in `NOTION_TOKEN` and the `Aulas` + `Projetos` bases shared with that integration.
@@ -124,7 +131,7 @@ The generator's non-obvious behavior — read `tools/gerar_manifesto.py` before 
 - **The generator merges over the existing `manifesto.json` as its base.** `version`, `vault`, `descricao`, `arquitetura`, `series[]` and each discipline's `serie`/`status`/`lake`/`warehouse` are carried over from the file, and `disciplinas[]` only emits slugs that are already there. A brand-new discipline folder therefore yields lessons in `lessons[]` with no matching entry in `disciplinas[]` until its curated metadata is seeded — the one narrow exception to "never hand-edit".
 - **Display labels are maintained** in `LABELS_DISCIPLINA` / `LABELS_TRILHA` inside `tools/gerar_manifesto.py`. Register a curated label there when creating a discipline or track; do not rely on a lesson title as the permanent track label.
 
-`gerar_manifesto.py --check`, `lint_wiki.py` and `sync_notion.py --check` are the repo's automated validators. The wiki lint is read-only and reports findings; it never auto-fixes content. The repository has no CI (`.github/` does not exist), so run `python -m unittest discover -s tests -v` locally before committing tool changes.
+`gerar_manifesto.py --check`, `lint_wiki.py` and `sync_notion.py --check` are the repo's automated validators. The wiki lint is read-only and reports findings; it never auto-fixes content. The repository has no CI (`.github/` does not exist), so the test suite only runs when someone runs it locally. `lint_wiki.py` and `gerar_indice.py` share `tools/wiki_core.py`, a deliberately stdlib-only parser for the vault's small YAML subset (scalars, inline and block lists) — keep the tools dependency-free rather than pulling in PyYAML. `sync_notion.py` imports `parse_frontmatter` from `gerar_manifesto.py`, so a change to that parser affects both.
 
 ## Key Invariants
 
