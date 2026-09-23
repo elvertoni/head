@@ -6,7 +6,6 @@ tipo: conceito
 aka: [Model Context Protocol, protocolo MCP]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/20-mcp-model-context-protocol/canonica.md
   - lake/inteligencia-artificial/ia-coders/o-que-e-model-context-protocol-mcp.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-01-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-03-transcricao.md

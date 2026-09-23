@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [transformer, arquitetura transformer]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/11-transformers-e-atencao/canonica.md
+fontes: []
 aulas: [11]
 atualizado_em: 2026-06-15
 ---

@@ -6,7 +6,6 @@ tipo: conceito
 aka: [function calling, uso de ferramentas, chamada de funções]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/19-tool-use-e-function-calling/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-01-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-03-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-04-transcricao.md

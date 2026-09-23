@@ -6,7 +6,6 @@ tipo: conceito
 aka: [IA, AI, artificial intelligence]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/01-o-que-e-inteligencia-artificial/canonica.md
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/01 - Aula 1 - Inteligência Artificial, Aprendizado de Máquina, Realidade Virtual, Realidade Aumentada e o Metaverso - Resumo (Aula em PDF).pdf"
 aulas: [1, 2, 3]
 atualizado_em: 2026-09-21

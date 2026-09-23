@@ -6,7 +6,6 @@ tipo: conceito
 aka: [eval, avaliação de IA, evaluation]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/24-evals-e-economia-de-tokens/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-04-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_09_resumo_e_transcricao.pdf

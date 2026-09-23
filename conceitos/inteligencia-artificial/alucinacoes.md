@@ -6,7 +6,6 @@ tipo: conceito
 aka: [alucinação, hallucination, alucinação de IA]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/23-alucinacoes-causas-tipos-e-mitigacao/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
 aulas: [23]
 atualizado_em: 2026-09-21

@@ -6,7 +6,6 @@ tipo: conceito
 aka: [AI-first, AI-enabled, desenvolvimento ai-first]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/22-desenvolvimento-ai-first-vs-ai-enabled/canonica.md
   - lake/inteligencia-artificial/ia-coders/desenvolvimento-ai-first-vs-ai-enabled.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
 aulas: [22]

@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [reinforcement learning, RL, aprendizado por recompensa]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/05-tipos-de-aprendizado-de-maquina/canonica.md
+fontes: []
 aulas: [5]
 atualizado_em: 2026-06-15
 ---

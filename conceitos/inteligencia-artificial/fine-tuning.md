@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [ajuste fino, fine tuning]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md
+fontes: []
 aulas: [12, 16]
 atualizado_em: 2026-06-15
 ---

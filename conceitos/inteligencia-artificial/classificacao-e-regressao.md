@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [classificação, regressão, classification, regression]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/06-aprendizado-supervisionado-na-pratica/canonica.md
+fontes: []
 aulas: [6]
 atualizado_em: 2026-06-15
 ---

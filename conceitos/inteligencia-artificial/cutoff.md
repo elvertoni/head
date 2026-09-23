@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [data de corte, knowledge cutoff, cutoff de conhecimento]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/12-treino-fine-tuning-e-cutoff/canonica.md
+fontes: []
 aulas: [12, 15, 16, 19, 23]
 atualizado_em: 2026-06-15
 ---

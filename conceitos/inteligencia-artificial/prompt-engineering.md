@@ -6,7 +6,6 @@ tipo: conceito
 aka: [engenharia de prompt, prompt engineering]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/14-prompt-engineering/canonica.md
   - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 01] - 2026_04_22 17_49 GMT-03_00 - Anotações do Gemini.docx"
   - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 02] - 2026_04_23 19_12 GMT-03_00 - Anotações do Gemini.docx"
 aulas: [14, 15]

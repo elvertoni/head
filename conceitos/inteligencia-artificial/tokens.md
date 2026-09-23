@@ -6,7 +6,6 @@ tipo: conceito
 aka: [token, tokenização, tokenizador]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/10-tokens-embeddings-e-vetores/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_09_resumo_e_transcricao.pdf
   - "lake/inteligencia-artificial/elite-wiki/_transcricoes/Imersão IA para Devs PycodeBR [Aula 01] - 2026_04_22 17_49 GMT-03_00 - Anotações do Gemini.docx"
 aulas: [10, 15, 17, 24]

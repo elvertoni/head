@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [redes neurais, neurônio artificial, neural network]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/08-redes-neurais-e-deep-learning/canonica.md
+fontes: []
 aulas: [8, 9]
 atualizado_em: 2026-06-15
 ---

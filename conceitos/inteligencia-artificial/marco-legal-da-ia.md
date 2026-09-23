@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [PL 2338, marco regulatório da IA, regulação da IA no Brasil]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/25-etica-responsabilidade-e-ia-no-brasil/canonica.md
+fontes: []
 aulas: [25]
 atualizado_em: 2026-06-15
 ---

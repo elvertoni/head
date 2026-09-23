@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [large language model, modelo de linguagem de grande escala, modelo de linguagem]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/09-o-que-e-um-llm/canonica.md
+fontes: []
 aulas: [9, 10, 11, 12, 14, 15, 16, 18, 19, 21, 23]
 atualizado_em: 2026-06-15
 ---

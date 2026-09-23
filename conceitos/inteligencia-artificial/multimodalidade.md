@@ -6,7 +6,6 @@ tipo: conceito
 aka: [multimodal, IA multimodal, multimodalidade]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/13-ia-que-ve-e-ouve-multimodalidade/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_06_resumo_e_transcricao.pdf
 aulas: [13]
 atualizado_em: 2026-09-21

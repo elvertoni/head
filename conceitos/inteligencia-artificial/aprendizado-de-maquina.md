@@ -6,8 +6,6 @@ tipo: conceito
 aka: [machine learning, ML]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md
-  - aulas/inteligencia-artificial/fundamentos-de-ia/04-como-a-maquina-aprende/canonica.md
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/01 - Aula 1 - Inteligência Artificial, Aprendizado de Máquina, Realidade Virtual, Realidade Aumentada e o Metaverso - Resumo (Aula em PDF).pdf"
 aulas: [3, 4, 5]
 atualizado_em: 2026-09-21

@@ -6,7 +6,6 @@ tipo: conceito
 aka: [Lei Geral de Proteção de Dados, lei de dados]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/25-etica-responsabilidade-e-ia-no-brasil/canonica.md
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/02 - Aula 2 - Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança - Resumo (Aula em PDF).pdf"
 aulas: [25]
 atualizado_em: 2026-07-31

@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [aprendizado profundo, redes neurais profundas]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/03-ia-ml-deep-learning-e-ia-generativa/canonica.md
+fontes: []
 aulas: [3, 8]
 atualizado_em: 2026-09-21
 ---

@@ -6,7 +6,6 @@ tipo: conceito
 aka: [freios de segurança, guarda-corpos, políticas do agente]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/21-harness-engineering/canonica.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-03-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-05-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_06_resumo_e_transcricao.pdf

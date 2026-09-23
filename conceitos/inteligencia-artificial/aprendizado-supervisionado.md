@@ -5,9 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [supervised learning, aprendizado com gabarito]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/05-tipos-de-aprendizado-de-maquina/canonica.md
-  - aulas/inteligencia-artificial/fundamentos-de-ia/06-aprendizado-supervisionado-na-pratica/canonica.md
+fontes: []
 aulas: [5, 6]
 atualizado_em: 2026-06-15
 ---

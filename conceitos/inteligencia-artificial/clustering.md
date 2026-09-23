@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [agrupamento, clusterização, análise de agrupamento]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/07-aprendizado-nao-supervisionado/canonica.md
+fontes: []
 aulas: [7]
 atualizado_em: 2026-06-15
 ---

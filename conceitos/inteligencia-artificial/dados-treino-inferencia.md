@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [treino e inferência, training and inference, ciclo de aprendizado]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/04-como-a-maquina-aprende/canonica.md
+fontes: []
 aulas: [4]
 atualizado_em: 2026-06-15
 ---

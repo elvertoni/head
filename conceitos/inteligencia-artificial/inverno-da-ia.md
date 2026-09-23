@@ -5,8 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [AI winter, inverno da inteligência artificial]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/02-historia-da-ia-e-os-invernos/canonica.md
+fontes: []
 aulas: [2]
 atualizado_em: 2026-09-21
 ---

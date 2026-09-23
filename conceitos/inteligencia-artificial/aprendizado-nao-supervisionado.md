@@ -5,9 +5,7 @@ disciplina: inteligencia-artificial
 tipo: conceito
 aka: [unsupervised learning, aprendizado sem rótulos]
 status: vivo
-fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/05-tipos-de-aprendizado-de-maquina/canonica.md
-  - aulas/inteligencia-artificial/fundamentos-de-ia/07-aprendizado-nao-supervisionado/canonica.md
+fontes: []
 aulas: [5, 7]
 atualizado_em: 2026-06-15
 ---

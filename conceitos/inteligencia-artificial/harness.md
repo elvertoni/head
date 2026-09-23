@@ -6,7 +6,6 @@ tipo: conceito
 aka: [harness engineering, infraestrutura do agente]
 status: vivo
 fontes:
-  - aulas/inteligencia-artificial/fundamentos-de-ia/21-harness-engineering/canonica.md
   - lake/inteligencia-artificial/ia-coders/o-que-e-harness-engineering.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-01-transcricao.md
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/encontro-elite-04-transcricao.md
