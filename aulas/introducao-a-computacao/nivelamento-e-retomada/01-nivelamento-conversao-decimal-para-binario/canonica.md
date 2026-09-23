@@ -16,8 +16,8 @@ fontes:
   - lake/introducao-a-computacao/AULA NIVELAMENTO 01_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você já sabe **por que** o computador usa binário (Aula 33): os circuitos têm dois estados, ligado e desligado, 1 e 0. Mas saber o porquê não é o mesmo que saber **fazer**. Esta é uma aula de nivelamento, de pôr a mão na massa: pegar um número que você usa todo dia, como 26, e transformá-lo na fileira de zeros e uns que o computador entende. Não tem mágica nem decoreba — tem um método simples, de dividir por 2 várias vezes, que sempre funciona. No fim da aula, você converte qualquer número decimal em binário no papel, sozinho.
@@ -56,7 +56,7 @@ Existe uma receita infalível para converter de decimal para binário. Ela usa s
 Essa sequência de restos, de trás para frente, é o número em binário.
 :::
 
-A parte que mais confunde é a **ordem reversa**: o último resto que você anotou é o **primeiro** dígito do binário. Guarde isso.
+A parte que mais confunde é a **ordem reversa**: o último resto que você anotou é o **primeiro** dígito do [[sistema-binario|binário]]. Guarde isso.
 
 ### Fazendo junto: o número 26
 

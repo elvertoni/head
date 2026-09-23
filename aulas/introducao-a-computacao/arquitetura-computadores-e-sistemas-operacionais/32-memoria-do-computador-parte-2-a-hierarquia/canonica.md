@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 32_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Na aula passada, terminamos com uma provocação que o estudante João colocou em palavras: "se a memória cache é tão rápida, **por que não usamos só ela** no computador inteiro?" É uma pergunta ótima — daquelas que parecem ingênuas mas escondem o jeito como engenheiros de verdade pensam. A resposta não é "porque sim". É uma troca calculada entre três coisas que **nunca** andam juntas: velocidade, capacidade e preço. Hoje você vai montar, peça por peça, a pirâmide que organiza toda a memória de um computador — e entender por que ela tem que ser assim.
@@ -40,11 +40,11 @@ Ter visto a **Aula 31** (cache: rápida, pequena, cara, perto da CPU), a **Aula 
 
 ### Por que não existe a memória perfeita
 
-A resposta para o João é direta: a memória cache é rápida, mas é **cara** e **pequena**. Encher o computador só de cache custaria uma fortuna e ainda assim não caberiam todos os seus arquivos. Por outro lado, uma memória gigante e barata (como o disco) é **lenta**. Não dá para ter tudo ao mesmo tempo.
+A resposta para o João é direta: a memória [[memoria-cache|cache]] é rápida, mas é **cara** e **pequena**. Encher o computador só de cache custaria uma fortuna e ainda assim não caberiam todos os seus arquivos. Por outro lado, uma memória gigante e barata (como o [[armazenamento-secundario|disco]]) é **lenta**. Não dá para ter tudo ao mesmo tempo.
 
 :::importante O trio que nunca anda junto
 Toda memória equilibra três qualidades, e melhorar uma piora as outras:
-- **Velocidade** — quão rápido a CPU acessa.
+- **Velocidade** — quão rápido a [[cpu|CPU]] acessa.
 - **Capacidade** — quanto cabe.
 - **Custo** — quanto custa por espaço guardado.
 Memória rápida é cara e pequena. Memória barata é grande e lenta. Como não existe a memória perfeita, o computador usa **várias**, cada uma boa em algo.
@@ -52,7 +52,7 @@ Memória rápida é cara e pequena. Memória barata é grande e lenta. Como não
 
 ### A solução: empilhar memórias em camadas
 
-Já que nenhuma memória faz tudo, o computador as organiza em uma **hierarquia**: as mais rápidas (e pequenas) no topo, as mais lentas (e gigantes) na base.
+Já que nenhuma memória faz tudo, o computador as organiza em uma **[[hierarquia-de-memoria|hierarquia]]**: as mais rápidas (e pequenas) no topo, as mais lentas (e gigantes) na base.
 
 :::conceito Hierarquia de memória
 É a organização dos tipos de memória em **camadas**, segundo velocidade, capacidade e custo. No **topo** ficam as memórias mais rápidas, menores e mais caras (perto da CPU); na **base**, as mais lentas, maiores e mais baratas. A ideia é manter o que se usa **agora** no topo e o que se usa **raramente** na base.
@@ -76,7 +76,7 @@ camadas:
 A regra geral é simples: **quanto mais perto da CPU (topo), mais rápido e menor; quanto mais longe (base), mais lento e maior.** Os dados sobem a pirâmide quando vão ser usados e descem quando precisam ser guardados.
 
 :::exemplo
-Quando você abre uma foto guardada na nuvem para editar: ela **desce** da nuvem para o disco (download), **sobe** para a RAM quando você abre o editor, e os pedaços que a CPU mexe a cada instante passam pela **cache**. Quando você salva e fecha, o caminho se inverte. A foto viaja pela hierarquia inteira conforme o quão "agora" ela é para você.
+Quando você abre uma foto guardada na nuvem para editar: ela **desce** da nuvem para o disco (download), **sobe** para a [[memoria-ram|RAM]] quando você abre o editor, e os pedaços que a CPU mexe a cada instante passam pela **cache**. Quando você salva e fecha, o caminho se inverte. A foto viaja pela hierarquia inteira conforme o quão "agora" ela é para você.
 :::
 
 :::atencao Erro comum

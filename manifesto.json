@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-09-21",
+  "atualizado_em": "2026-09-23",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -506,6 +506,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "armazenamento-secundario",
+      "nome": "Armazenamento secundário",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "arquetipos-de-bartle",
       "nome": "Arquétipos de Bartle",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -514,6 +519,11 @@
       "slug": "arquitetura-cliente-servidor",
       "nome": "Arquitetura cliente-servidor",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "arquitetura-de-computadores",
+      "nome": "Arquitetura de computadores",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "arquitetura-de-microservicos",
@@ -554,6 +564,11 @@
       "slug": "arquivo-fonte-solidity",
       "nome": "Arquivo-fonte Solidity",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "array",
+      "nome": "Array",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "arrays-em-javascript",
@@ -751,6 +766,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "barramento",
+      "nome": "Barramento",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "behaviorismo",
       "nome": "Behaviorismo",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -759,6 +779,11 @@
       "slug": "bicondicional",
       "nome": "Bicondicional",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "bit",
+      "nome": "Bit",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "bitcoin",
@@ -849,6 +874,11 @@
       "slug": "busca-sequencial-e-paralela",
       "nome": "Busca sequencial e paralela",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "byte",
+      "nome": "Byte",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "bytecode",
@@ -1001,6 +1031,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "ciclo-de-instrucao",
+      "nome": "Ciclo de instrução",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "ciclo-de-vida-de-api",
       "nome": "Ciclo de vida de API",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -1046,6 +1081,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "clock",
+      "nome": "Clock",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "cloud-firestore",
       "nome": "Cloud Firestore",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -1074,6 +1114,11 @@
       "slug": "clustering",
       "nome": "Clustering",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "codificacao-de-caracteres",
+      "nome": "Codificação de caracteres",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "codigos-de-status-http",
@@ -1114,6 +1159,11 @@
       "slug": "competencias-organizacionais",
       "nome": "Competências organizacionais",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "compilador",
+      "nome": "Compilador",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "componente-react",
@@ -1261,6 +1311,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "contador-de-programa",
+      "nome": "Contador de programa",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "conteinerizacao",
       "nome": "Conteinerização",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -1306,6 +1361,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "controlador-de-dispositivo",
+      "nome": "Controlador de dispositivo",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "controle-de-sistemas-roboticos",
       "nome": "Controle de sistemas robóticos",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -1349,6 +1409,11 @@
       "slug": "coworking",
       "nome": "Coworking",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "cpu",
+      "nome": "CPU",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "creative-commons",
@@ -1506,6 +1571,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "depuracao",
+      "nome": "Depuração",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "descentralizacao",
       "nome": "Descentralização",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -1641,6 +1711,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "dispositivos-de-entrada-e-saida",
+      "nome": "Dispositivos de entrada e saída",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "distribuicao-de-frequencia",
       "nome": "Distribuição de frequência",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -1704,6 +1779,11 @@
       "slug": "dql",
       "nome": "DQL",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "driver",
+      "nome": "Driver",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "dropout",
@@ -1939,6 +2019,11 @@
       "slug": "escalonamento",
       "nome": "Escalonamento",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "escalonamento-de-processos",
+      "nome": "Escalonamento de processos",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "escola-nova",
@@ -2381,6 +2466,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "gargalo-de-desempenho",
+      "nome": "Gargalo de desempenho",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "gas",
       "nome": "Gas",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2414,6 +2504,11 @@
       "slug": "geradores",
       "nome": "Geradores JavaScript",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "gerencia-de-memoria",
+      "nome": "Gerência de memória",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "gerenciamento-de-containers",
@@ -2516,6 +2611,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "hardware",
+      "nome": "Hardware",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "hardware-aberto",
       "nome": "Hardware aberto",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2549,6 +2649,11 @@
       "slug": "heuristica-de-corte",
       "nome": "Heurística de corte",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "hierarquia-de-memoria",
+      "nome": "Hierarquia de memória",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "hipotese-de-aprendizado",
@@ -2821,6 +2926,16 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "interface-de-linha-de-comando",
+      "nome": "Interface de linha de comando",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "interface-grafica",
+      "nome": "Interface gráfica",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "internet",
       "nome": "Internet",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2839,6 +2954,11 @@
       "slug": "interpretacao-de-linguagem-natural",
       "nome": "Interpretação de linguagem natural",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "interpretador",
+      "nome": "Interpretador",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "intersecao-relacional",
@@ -2926,6 +3046,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "kernel",
+      "nome": "Kernel",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "knn",
       "nome": "KNN",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2996,6 +3121,16 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "linguagem-de-alto-nivel",
+      "nome": "Linguagem de alto nível",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "linguagem-de-maquina",
+      "nome": "Linguagem de máquina",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "linguagem-e-desenvolvimento",
       "nome": "Linguagem e desenvolvimento",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3004,6 +3139,11 @@
       "slug": "link-nextjs",
       "nome": "Link do Next.js",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "linux",
+      "nome": "Linux",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "llm",
@@ -3169,6 +3309,16 @@
       "slug": "memoria",
       "nome": "Memória",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "memoria-cache",
+      "nome": "Memória cache",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "memoria-ram",
+      "nome": "Memória RAM",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "mensageria",
@@ -3396,6 +3546,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "multitarefa",
+      "nome": "Multitarefa",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "mvc",
       "nome": "MVC",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -3484,6 +3639,11 @@
       "slug": "npm",
       "nome": "NPM",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "nucleo-de-processador",
+      "nome": "Núcleo de processador",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "nuvem-hibrida",
@@ -3654,6 +3814,11 @@
       "slug": "paradoxo-de-russell",
       "nome": "Paradoxo de Russell",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "paralelismo",
+      "nome": "Paralelismo",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "parametro-estatistico",
@@ -3831,6 +3996,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "ponto-flutuante",
+      "nome": "Ponto flutuante",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "pool-de-liquidez",
       "nome": "Pool de liquidez",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3904,6 +4074,16 @@
       "slug": "processamento-de-linguagem-natural",
       "nome": "Processamento de linguagem natural",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "processamento-em-lote",
+      "nome": "Processamento em lote",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "processo",
+      "nome": "Processo",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "processo-de-inovacao",
@@ -4279,6 +4459,11 @@
       "slug": "redundancia-de-rede",
       "nome": "Redundância de rede",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "registrador",
+      "nome": "Registrador",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "registro-de-imagens-de-containers",
@@ -4671,9 +4856,24 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "sistema-binario",
+      "nome": "Sistema binário",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "sistema-de-arquivos",
+      "nome": "Sistema de arquivos",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "sistema-educacional",
       "nome": "Sistema educacional",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sistema-operacional",
+      "nome": "Sistema operacional",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "sistemas-multiagentes",
@@ -4731,9 +4931,19 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "software",
+      "nome": "Software",
+      "disciplina": "introducao-a-computacao"
+    },
+    {
       "slug": "software-aberto",
       "nome": "Software aberto",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "software-de-base",
+      "nome": "Software de base",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "solidity",
@@ -4999,6 +5209,11 @@
       "slug": "this-em-javascript",
       "nome": "this em JavaScript",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "thread",
+      "nome": "Thread",
+      "disciplina": "introducao-a-computacao"
     },
     {
       "slug": "tipos-de-dados-sql",

@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 23_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você já viu um computador travar, esquentar, demorar para abrir um programa ou ficar "sem espaço", mas talvez ainda não tenha parado para pensar no que acontece por dentro. Para muita gente, computador é só "a tela" ou "a CPU" embaixo da mesa. Só que um computador funciona mais como uma cidade: tem lugares para guardar coisas, vias por onde a informação passa, uma parte que executa tarefas, portas de entrada e saída, energia mantendo tudo vivo e programas dando sentido ao conjunto. A aula de hoje é a primeira visita guiada por essa cidade invisível.
@@ -40,7 +40,7 @@ Você precisa lembrar a ideia básica de que o computador representa informaçõ
 
 ### Arquitetura não é só coisa de prédio
 
-Quando você ouve a palavra "arquitetura", talvez pense em casas, prédios e plantas desenhadas por arquitetos. A ideia central é boa: arquitetura é a **organização das partes** para que uma estrutura funcione.
+Quando você ouve a palavra "arquitetura", talvez pense em casas, prédios e plantas desenhadas por arquitetos. A ideia central é boa: [[arquitetura-de-computadores|arquitetura]] é a **organização das partes** para que uma estrutura funcione.
 
 :::conceito Arquitetura de computadores
 É o estudo de como as partes de um computador são organizadas e trabalham juntas para executar programas. Ela envolve os componentes físicos, a forma como os dados circulam, o conjunto de instruções que a máquina entende e os caminhos usados para entrada, processamento, memória e saída.
@@ -82,11 +82,11 @@ Quando um usuário diz "meu computador está lento", um profissional de TI não 
 Vamos organizar as peças sem transformar isso em catálogo de loja.
 
 :::conceito CPU
-A **CPU** é o processador. Ela executa instruções: soma, compara, move dados, decide o próximo passo. Não é o "cérebro" no sentido humano, porque não pensa nem entende; é mais parecido com uma equipe extremamente rápida seguindo ordens pequenas e precisas.
+A **[[cpu|CPU]]** é o processador. Ela executa instruções: soma, compara, move dados, decide o próximo passo. Não é o "cérebro" no sentido humano, porque não pensa nem entende; é mais parecido com uma equipe extremamente rápida seguindo ordens pequenas e precisas.
 :::
 
 :::conceito Memória principal
-A **memória RAM** guarda temporariamente dados e instruções que estão em uso agora. Ela é rápida, mas perde o conteúdo quando o computador desliga. Por isso um arquivo aberto precisa estar na RAM para ser editado, mas precisa ser salvo no armazenamento para não desaparecer.
+A **[[memoria-ram|memória RAM]]** guarda temporariamente dados e instruções que estão em uso agora. Ela é rápida, mas perde o conteúdo quando o computador desliga. Por isso um arquivo aberto precisa estar na RAM para ser editado, mas precisa ser salvo no armazenamento para não desaparecer.
 :::
 
 :::conceito Armazenamento
@@ -94,11 +94,11 @@ O **armazenamento** guarda dados de forma persistente: sistema operacional, prog
 :::
 
 :::conceito Entrada e saída
-Dispositivos de **entrada** trazem dados para o computador: teclado, mouse, câmera, microfone, scanner, sensores. Dispositivos de **saída** devolvem resultado: monitor, caixa de som, impressora, projetor. Alguns fazem os dois, como tela touch, placa de rede e armazenamento externo.
+Dispositivos de **[[dispositivos-de-entrada-e-saida|entrada]]** trazem dados para o computador: teclado, mouse, câmera, microfone, scanner, sensores. Dispositivos de **saída** devolvem resultado: monitor, caixa de som, impressora, projetor. Alguns fazem os dois, como tela touch, placa de rede e armazenamento externo.
 :::
 
 :::conceito Barramentos
-**Barramentos** são caminhos de comunicação entre componentes. Eles transportam dados, endereços e sinais de controle. Pense neles como ruas internas: se as ruas são mal planejadas ou congestionadas, as partes até existem, mas o fluxo fica ruim.
+**[[barramento|Barramentos]]** são caminhos de comunicação entre componentes. Eles transportam dados, endereços e sinais de controle. Pense neles como ruas internas: se as ruas são mal planejadas ou congestionadas, as partes até existem, mas o fluxo fica ruim.
 :::
 
 ### Hardware sem software é corpo parado
@@ -106,7 +106,7 @@ Dispositivos de **entrada** trazem dados para o computador: teclado, mouse, câm
 O slide da SEED acerta num ponto essencial: um computador cheio de peças boas continua inútil se não houver software adequado.
 
 :::conceito Hardware e software
-**Hardware** é a parte física: placas, chips, cabos, memória, tela, teclado. **Software** é o conjunto de programas e instruções que dizem ao hardware o que fazer. O hardware oferece capacidade; o software transforma essa capacidade em tarefa útil.
+**[[hardware|Hardware]]** é a parte física: placas, chips, cabos, memória, tela, teclado. **[[software|Software]]** é o conjunto de programas e instruções que dizem ao hardware o que fazer. O hardware oferece capacidade; o software transforma essa capacidade em tarefa útil.
 :::
 
 Um notebook desligado tem hardware, mas não está executando nada. Quando você abre o navegador, um software começa a pedir recursos: memória para carregar abas, CPU para processar páginas, armazenamento para cache, placa de rede para acessar a internet e tela para mostrar o resultado. O software "dá vida" ao hardware porque organiza trabalho.

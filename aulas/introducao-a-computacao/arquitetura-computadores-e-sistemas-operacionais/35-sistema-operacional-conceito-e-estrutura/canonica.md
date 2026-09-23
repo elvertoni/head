@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 35_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Nas últimas dez aulas você conheceu as peças de um computador: CPU, memória, cache, disco, processos, threads, bits. Mas tem uma coisa estranha quando você para para pensar: quem é que **coordena** tudo isso? Quem decide qual processo usa a CPU, quanta memória cada programa recebe, onde cada arquivo é salvo? A CPU não decide sozinha — você viu que ela só executa instruções obedientemente. Existe um programa especial, que liga junto com o computador e fica nos bastidores comandando a orquestra inteira. É o **sistema operacional** — e a partir de hoje ele é o protagonista.
@@ -41,10 +41,10 @@ Ter visto **processos e escalonamento** (Aulas 29 e 30), **memória e armazename
 ### O gerente que nunca aparece, mas comanda tudo
 
 :::conceito Sistema operacional
-É o software fundamental que funciona como uma **ponte entre você e o hardware**, controlando e coordenando todos os recursos do computador: CPU, memória, armazenamento e dispositivos. Sem ele, os programas não teriam como rodar e você não teria como usar a máquina. Windows, Linux, macOS, Android e iOS são sistemas operacionais.
+É o [[software|software]] fundamental que funciona como uma **ponte entre você e o [[hardware|hardware]]**, controlando e coordenando todos os recursos do computador: [[cpu|CPU]], memória, armazenamento e dispositivos. Sem ele, os programas não teriam como rodar e você não teria como usar a máquina. Windows, Linux, macOS, Android e iOS são [[sistema-operacional|sistemas operacionais]].
 :::
 
-A melhor imagem é a de um **gerente**. Pense no gerente de um restaurante movimentado: ele não cozinha, não serve, não lava prato — mas decide quem faz o quê, quando cada pedido entra, qual mesa é atendida primeiro, como os recursos da cozinha são divididos. Sem ele, com todo mundo se atropelando, vira o caos. O sistema operacional é esse gerente, coordenando processos, memória e dispositivos para que nada colida.
+A melhor imagem é a de um **gerente**. Pense no gerente de um restaurante movimentado: ele não cozinha, não serve, não lava prato — mas decide quem faz o quê, quando cada pedido entra, qual mesa é atendida primeiro, como os recursos da cozinha são divididos. Sem ele, com todo mundo se atropelando, vira o caos. O sistema operacional é esse gerente, coordenando [[processo|processos]], memória e dispositivos para que nada colida.
 
 :::dica Você convive com ele o tempo todo sem perceber
 Quando você arrasta um arquivo, conecta um fone, abre dois apps lado a lado ou recebe o aviso de "bateria fraca", é o sistema operacional trabalhando. Ele é tão presente que fica invisível — como o gerente nos bastidores. Justamente por estar em tudo, entender o SO é entender o ambiente onde **todo** software que você vier a criar vai rodar.
@@ -72,10 +72,10 @@ Repare na lógica: um aplicativo **não** fala direto com o hardware. Ele pede a
 Dentro do sistema operacional, há uma parte central, a mais importante de todas: o **kernel**.
 
 :::conceito Kernel
-É o **núcleo** do sistema operacional — a parte que interage **diretamente** com o hardware. É ele que gerencia a memória, o tempo de CPU e os dispositivos de entrada e saída, tornando possível a execução dos programas. Quando um aplicativo precisa de algum recurso físico, é o kernel que, no fundo, atende ao pedido.
+É o **núcleo** do sistema operacional — a parte que interage **diretamente** com o hardware. É ele que gerencia a memória, o tempo de CPU e os dispositivos de entrada e saída, tornando possível a execução dos programas. Quando um aplicativo precisa de algum recurso físico, é o [[kernel|kernel]] que, no fundo, atende ao pedido.
 :::
 
-Se o sistema operacional é o gerente do restaurante, o kernel é o gerente **dentro da cozinha**, que comanda diretamente os fogões e os cozinheiros (o hardware). Em volta do kernel ficam os **serviços do sistema** e os **drivers** (que ensinam o SO a conversar com cada dispositivo específico), e, mais acima, os programas que você usa.
+Se o sistema operacional é o gerente do restaurante, o kernel é o gerente **dentro da cozinha**, que comanda diretamente os fogões e os cozinheiros (o hardware). Em volta do kernel ficam os **serviços do sistema** e os **[[driver|drivers]]** (que ensinam o SO a conversar com cada dispositivo específico), e, mais acima, os programas que você usa.
 
 :::atencao Erro comum
 Confundir "sistema operacional" com "os programas que vêm instalados" (navegador, editor de fotos). Esses são **aplicações** rodando **em cima** do SO, não o SO em si. O sistema operacional é a camada do meio — o gerente invisível. Outro engano é achar que o computador "liga e os programas funcionam sozinhos": antes de qualquer aplicativo, o sistema operacional precisa carregar e assumir o comando.
@@ -85,7 +85,7 @@ Confundir "sistema operacional" com "os programas que vêm instalados" (navegado
 
 Reunindo o papel do gerente, dá para listar as funções centrais:
 
-- **Gerencia recursos** — divide CPU, memória e dispositivos entre os programas (é o escalonamento que você já viu, e mais).
+- **Gerencia recursos** — divide CPU, memória e dispositivos entre os programas (é o [[escalonamento-de-processos|escalonamento]] que você já viu, e mais).
 - **Controla o armazenamento** — organiza onde os arquivos ficam no disco.
 - **Faz a interface com você** — oferece a tela, os ícones e as janelas (ou a linha de comando) para você operar a máquina.
 - **Protege e organiza** — evita que um programa invada o espaço de outro ou trave o sistema inteiro.

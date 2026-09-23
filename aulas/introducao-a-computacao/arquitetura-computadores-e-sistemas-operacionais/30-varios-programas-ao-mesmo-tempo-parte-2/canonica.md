@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 30_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Tem uma cena que todo mundo já viveu: você está editando um vídeo, ouvindo música e navegando, e de repente o **vídeo trava** — mas a música **continua tocando lisinha**. Estranho, né? Se o computador travou, por que não travou tudo? A resposta a esse mistério está na peça que faltava da aula passada. Você já sabe que o sistema operacional reveza entre processos. Hoje a gente vai um nível mais fundo: dentro de cada processo existem **subtarefas**, e é a forma como o sistema distribui essas subtarefas que explica por que uma coisa engasga enquanto a outra voa.
@@ -40,10 +40,10 @@ Ter visto a **Aula 29**: processo é programa em execução, multitarefa é alte
 
 ### Dentro de um processo cabe mais de uma tarefa
 
-Na Parte 1, a menor unidade era o processo. Mas um processo pode fazer várias coisas internas ao mesmo tempo. Pense num editor de vídeo: ele exibe a prévia, processa o áudio, salva o projeto de fundo — tudo dentro do **mesmo** programa. Cada uma dessas linhas de trabalho é uma **thread**.
+Na Parte 1, a menor unidade era o [[processo|processo]]. Mas um processo pode fazer várias coisas internas ao mesmo tempo. Pense num editor de vídeo: ele exibe a prévia, processa o áudio, salva o projeto de fundo — tudo dentro do **mesmo** programa. Cada uma dessas linhas de trabalho é uma **thread**.
 
 :::conceito Thread
-É uma **subtarefa** dentro de um processo — uma linha de execução que faz parte do programa. Um único processo pode ter **várias threads** rodando coisas diferentes ao mesmo tempo. Por exemplo, num jogo: uma thread cuida da imagem, outra do som, outra da rede.
+É uma **subtarefa** dentro de um processo — uma linha de execução que faz parte do programa. Um único processo pode ter **[[thread|várias threads]]** rodando coisas diferentes ao mesmo tempo. Por exemplo, num jogo: uma thread cuida da imagem, outra do som, outra da rede.
 :::
 
 A relação encaixa em três níveis, do maior para o menor:
@@ -65,10 +65,10 @@ Confundir **thread** com **programa instalado** ou com um **tipo de memória**. 
 
 ### O escalonador como um gerente justo
 
-Com tantos processos e threads disputando poucos núcleos, alguém precisa distribuir o tempo. Esse é o trabalho do **escalonamento**, que você conheceu na Parte 1 — agora visto mais de perto.
+Com tantos processos e threads disputando poucos [[nucleo-de-processador|núcleos]], alguém precisa distribuir o tempo. Esse é o trabalho do **[[escalonamento-de-processos|escalonamento]]**, que você conheceu na Parte 1 — agora visto mais de perto.
 
 :::conceito Escalonamento (revisitado)
-É o sistema operacional decidindo, a cada instante, **qual** thread ou processo usa a CPU e **por quanto tempo**. Ele leva em conta o peso de cada tarefa: tarefas leves e contínuas ganham fatias pequenas e frequentes; tarefas pesadas pedem mais. O objetivo é manter o sistema **responsivo** e dividir os recursos de forma equilibrada.
+É o sistema operacional decidindo, a cada instante, **qual** thread ou processo usa a [[cpu|CPU]] e **por quanto tempo**. Ele leva em conta o peso de cada tarefa: tarefas leves e contínuas ganham fatias pequenas e frequentes; tarefas pesadas pedem mais. O objetivo é manter o sistema **responsivo** e dividir os recursos de forma equilibrada.
 :::
 
 ### O mistério do vídeo travado, resolvido
@@ -80,7 +80,7 @@ Tocar música é uma tarefa **leve e contínua**: pede pouca CPU e é fácil de 
 :::
 
 :::conceito Gargalo de desempenho
-É o ponto que **limita** a velocidade do sistema — o "pescoço estreito da garrafa". Pode ser a CPU sem núcleos suficientes, a RAM lotada, ou um disco lento. Quando algo trava, identificar o gargalo é descobrir **qual recurso** está no limite.
+É o ponto que **limita** a velocidade do sistema — o "pescoço estreito da garrafa". Pode ser a CPU sem núcleos suficientes, a [[memoria-ram|RAM]] lotada, ou um disco lento. Quando algo trava, identificar o [[gargalo-de-desempenho|gargalo]] é descobrir **qual recurso** está no limite.
 :::
 
 :::dica O raciocínio profissional por trás do "está travando"

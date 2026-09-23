@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 36_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você desbloqueia o celular e, em **menos de um segundo**, tudo está pronto: apps, mensagens, câmera. Parece o mínimo. Mas nos anos 1950, para rodar **um único** programa, um especialista passava horas conectando fios em painéis ou empilhando cartões de papel perfurado, e qualquer errinho recomeçava tudo. Não existia "gerente" nenhum — a pessoa **era** o gerente, na unha. A distância entre aquele pesadelo e o seu celular instantâneo é a história do sistema operacional. E essa história tem uma direção clara: cada passo existiu para **facilitar a vida de quem usa o computador**.
@@ -41,10 +41,10 @@ Ter visto a **Aula 35**: o que é um sistema operacional, suas camadas e o kerne
 ### Antes do SO: o trabalho na unha
 
 :::conceito Processamento batch (em lote)
-Nos primeiros computadores, os programas eram preparados em **cartões perfurados** e processados em **lotes**, um depois do outro, sem interação. A pessoa entregava a pilha de cartões, esperava, e só depois recebia o resultado. Se houvesse um erro, recomeçava. Era lento, manual e exigia especialistas.
+Nos primeiros computadores, os programas eram preparados em **cartões perfurados** e processados em **[[processamento-em-lote|lotes]]**, um depois do outro, sem interação. A pessoa entregava a pilha de cartões, esperava, e só depois recebia o resultado. Se houvesse um erro, recomeçava. Era lento, manual e exigia especialistas.
 :::
 
-Foi essa dor que criou a necessidade de um sistema operacional: alguém — ou melhor, **algum software** — para automatizar o trabalho repetitivo de preparar, organizar e executar programas.
+Foi essa dor que criou a necessidade de um [[sistema-operacional|sistema operacional]]: alguém — ou melhor, **algum software** — para automatizar o trabalho repetitivo de preparar, organizar e executar programas.
 
 :::importante O fio que costura toda a história
 Cada avanço dos sistemas operacionais teve **um mesmo objetivo**: tornar o computador **mais fácil de usar** e o trabalho de criar e rodar programas **menos penoso**. Guarde isso — é a chave para entender por que cada era surgiu. Não foi tecnologia por tecnologia; foi sempre para facilitar a vida de quem está do outro lado.
@@ -52,7 +52,7 @@ Cada avanço dos sistemas operacionais teve **um mesmo objetivo**: tornar o comp
 
 ### As grandes eras, em movimento
 
-Em vez de decorar datas soltas, entenda o **salto** de cada era — e como cada salto dependeu de um avanço no hardware.
+Em vez de decorar datas soltas, entenda o **salto** de cada era — e como cada salto dependeu de um avanço no [[hardware|hardware]].
 
 ```diagrama-progressivo
 titulo: As eras dos sistemas operacionais
@@ -78,7 +78,7 @@ O **chip** (circuito integrado) deixou os computadores menores e mais baratos �
 :::
 
 :::curiosidade
-O **Linux**, que hoje roda na maioria dos servidores da internet, em supercomputadores e por dentro de **todo aparelho Android**, nasceu como um projeto de estudante. Linus Torvalds o criou e o liberou como **código aberto** — qualquer um pode ver, usar e melhorar. Por isso existem tantas "distribuições" diferentes de Linux: a liberdade do código aberto fez o sistema se ramificar em incontáveis versões. Provavelmente você usa Linux todos os dias sem saber, cada vez que abre um app no celular ou acessa um site.
+O **[[linux|Linux]]**, que hoje roda na maioria dos servidores da internet, em supercomputadores e por dentro de **todo aparelho Android**, nasceu como um projeto de estudante. Linus Torvalds o criou e o liberou como **código aberto** — qualquer um pode ver, usar e melhorar. Por isso existem tantas "distribuições" diferentes de Linux: a liberdade do código aberto fez o sistema se ramificar em incontáveis versões. Provavelmente você usa Linux todos os dias sem saber, cada vez que abre um app no celular ou acessa um site.
 :::
 
 :::atencao Cuidado com a precisão histórica

@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 34_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Na aula passada você viu como **um** valor vira binário. Mas nenhum programa interessante usa um valor só. Uma lista de contatos, as notas de uma turma, os quadros de um vídeo, o placar de um jogo — tudo é **monte** de dados juntos. E aí surge a dúvida que o programador iniciante Leo teve: se eu guardo cinco números numa lista, eles ficam **espalhados** pela memória ou **enfileirados** um do lado do outro? E o que acontece se eu quiser adicionar um sexto? A resposta tem consequências práticas enormes — e explica decisões que você vai tomar quando programar de verdade.
@@ -40,7 +40,7 @@ Ter visto a **Aula 33**: bit e byte, inteiros em binário, a ideia de ponto flut
 
 ### Array: uma fila de caixas lado a lado
 
-Quando você precisa guardar vários dados do mesmo tipo, usa um **array**.
+Quando você precisa guardar vários dados do mesmo tipo, usa um **[[array|array]]**.
 
 :::conceito Array
 É uma **coleção de elementos do mesmo tipo**, guardados em sequência. Pense numa fila de caixas no caixa do supermercado: cada caixa guarda um item (um elemento), e as caixas ficam **uma exatamente ao lado da outra**.
@@ -80,7 +80,7 @@ Imaginar que adicionar um item a uma lista é sempre "de graça" e instantâneo.
 
 ### Olhando o ponto flutuante por dentro
 
-Na Aula 33 você viu que decimais usam ponto flutuante e que ele arredonda. Agora vamos abrir a caixa e ver **como** ele guarda um número quebrado. O padrão usado mundialmente (chamado IEEE 754) divide o espaço em **três partes**:
+Na Aula 33 você viu que decimais usam [[ponto-flutuante|ponto flutuante]] e que ele arredonda. Agora vamos abrir a caixa e ver **como** ele guarda um número quebrado. O padrão usado mundialmente (chamado IEEE 754) divide o espaço em **três partes**:
 
 ```diagrama-progressivo
 titulo: As três partes de um número de ponto flutuante
@@ -94,7 +94,7 @@ camadas:
 ```
 
 :::conceito Sinal, expoente e mantissa
-O **sinal** indica positivo ou negativo. O **expoente** define a escala (quão grande ou pequeno). A **mantissa** carrega os dígitos precisos do número. Juntando os três, o computador representa desde números gigantes até frações minúsculas — mas sempre com um **número limitado** de bits na mantissa.
+O **sinal** indica positivo ou negativo. O **expoente** define a escala (quão grande ou pequeno). A **mantissa** carrega os dígitos precisos do número. Juntando os três, o computador representa desde números gigantes até frações minúsculas — mas sempre com um **número limitado** de [[bit|bits]] na mantissa.
 :::
 
 E é justamente esse limite que explica o arredondamento da aula passada: a mantissa tem **espaço finito**. Quando um número precisaria de mais dígitos do que cabe ali, ele é **cortado e arredondado**. Não tem como representar infinitos dígitos em bits finitos — por isso `0.1 + 0.2` escorrega.

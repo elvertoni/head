@@ -16,8 +16,8 @@ fontes:
   - lake/introducao-a-computacao/AULA_RETOMADA_2_ INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você já viu, em aulas separadas, onde os programas ficam guardados (Aula 27), como a memória trabalha (Aulas 31 e 32) e como a CPU executa instruções (Aula 28). Cada peça fez sentido sozinha. Mas no mundo real elas não trabalham isoladas — elas formam **um único fluxo**, do momento em que você dá dois cliques num programa até ele aparecer rodando na tela. Esta é uma aula de retomada: em vez de conteúdo novo, a gente vai **costurar** o que você já sabe num percurso só, para que a história inteira fique clara. Quando terminar, você vai conseguir narrar a viagem de um programa, do disco até a execução, sem pular nenhuma estação.
@@ -41,9 +41,9 @@ Ter visto a **Aula 27** (RAM × disco), a **Aula 28** (ciclo de instrução) e, 
 Antes de juntar, um lembrete rápido de cada estação da viagem:
 
 :::conceito As três estações da execução
-- **Armazenamento (disco — HDD/SSD):** guarda o programa de forma **permanente**, mesmo desligado. É de onde tudo parte.
-- **Memória RAM:** guarda o programa e os dados **enquanto ele roda**. Rápida, mas volátil — some ao desligar.
-- **CPU (processador):** **executa** as instruções, uma a uma, no ciclo buscar → decodificar → executar → armazenar.
+- **[[armazenamento-secundario|Armazenamento]] (disco — HDD/SSD):** guarda o programa de forma **permanente**, mesmo desligado. É de onde tudo parte.
+- **[[memoria-ram|Memória RAM]]:** guarda o programa e os dados **enquanto ele roda**. Rápida, mas volátil — some ao desligar.
+- **[[cpu|CPU]] (processador):** **executa** as instruções, uma a uma, no [[ciclo-de-instrucao|ciclo]] buscar → decodificar → executar → armazenar.
 :::
 
 Nenhuma dessas ideias é nova para você. O que talvez ainda não esteja firme é **como elas se conectam** numa sequência.

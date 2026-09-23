@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 26_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Na aula passada você descobriu que tanto o compilador quanto o interpretador fazem o mesmo trabalho — levar seu código de alto nível até o binário que o processador entende. A diferença era só o **momento** da tradução: tudo antes, ou linha por linha na hora. Mas aí fica uma pergunta solta no ar: se os dois chegam no mesmo lugar, **por que escolher um e não o outro?** Spoiler: não existe "o melhor". Existe o mais certo para cada situação — e saber decidir isso é o que separa quem só copia código de quem entende o que está fazendo.
@@ -43,7 +43,7 @@ Ter visto a **Aula 25**: o que é linguagem de máquina, o que é tradutor de c�
 Em computação, quase nenhuma decisão é "isso é bom, aquilo é ruim". Quase tudo é **trade-off**: você ganha de um lado e cede do outro.
 
 :::conceito Trade-off
-É uma troca: para ganhar uma vantagem, você aceita uma desvantagem em outro ponto. Escolher entre compilador e interpretador é um trade-off clássico — cada caminho te dá algo e te cobra algo.
+É uma troca: para ganhar uma vantagem, você aceita uma desvantagem em outro ponto. Escolher entre [[compilador|compilador]] e [[interpretador|interpretador]] é um trade-off clássico — cada caminho te dá algo e te cobra algo.
 :::
 
 Então a pergunta certa nunca é "qual é o melhor?". É "**o que eu preciso agora** e o que estou disposto a abrir mão para conseguir isso?".
@@ -67,7 +67,7 @@ O interpretador traduz e executa linha por linha, toda vez que o programa roda:
 - **Cobra que o interpretador esteja presente.** Quem for rodar seu código precisa ter a linguagem instalada.
 
 :::conceito Depuração
-É o processo de encontrar e corrigir erros (bugs) em um programa. Quanto mais rápido você consegue rodar o código e ver o que aconteceu, mais rápida fica a depuração — e é aí que o interpretador brilha.
+É o processo de encontrar e corrigir erros (bugs) em um programa. Quanto mais rápido você consegue rodar o código e ver o que aconteceu, mais rápida fica a [[depuracao|depuração]] — e é aí que o interpretador brilha.
 :::
 
 :::importante O quadro que resume tudo

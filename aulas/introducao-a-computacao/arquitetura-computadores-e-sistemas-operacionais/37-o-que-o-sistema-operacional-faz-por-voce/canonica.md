@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Nas duas últimas aulas você descobriu o que o sistema operacional **é** (o gerente) e **de onde veio** (dos cartões perfurados ao seu bolso). Mas "gerente" ainda é meio abstrato. Então vamos pegar uma cena banal de cinco segundos da sua vida: você abre o navegador, pluga um fone, salva um arquivo e troca de janela. Pronto. Nesses cinco segundos, o sistema operacional fez **quatro trabalhos completamente diferentes**, e você não percebeu nenhum. Hoje a gente abre a caixa do gerente e vê, uma por uma, as funções que transformam um monte de hardware num computador que você simplesmente **usa**.
@@ -44,15 +44,15 @@ O gerente faz muita coisa, mas dá para agrupar em quatro grandes funções. Vam
 ### Função 1 — Gerenciar os processos (quem usa a CPU)
 
 :::conceito Gerência de processos
-É o sistema operacional decidindo **quais programas rodam** e **quando** cada um usa a CPU. É aqui que mora o **escalonamento** que você viu nas Aulas 29 e 30: o SO reveza o tempo do processador entre todos os programas abertos para que tudo conviva.
+É o [[sistema-operacional|sistema operacional]] decidindo **quais programas rodam** e **quando** cada um usa a [[cpu|CPU]]. É aqui que mora o **escalonamento** que você viu nas Aulas 29 e 30: o SO reveza o tempo do processador entre todos os programas abertos para que tudo conviva.
 :::
 
-**No seu dia a dia:** é o que permite ter música, navegador e mensagens abertos ao mesmo tempo. Quando você fecha um app travado pelo Gerenciador de Tarefas, está mandando o SO **encerrar um processo**.
+**No seu dia a dia:** é o que permite ter música, navegador e mensagens abertos ao mesmo tempo. Quando você fecha um app travado pelo Gerenciador de Tarefas, está mandando o SO **encerrar um [[processo|processo]]**.
 
 ### Função 2 — Gerenciar a memória (quem fica na mesa de trabalho)
 
 :::conceito Gerência de memória
-É o sistema operacional **dividindo a memória RAM** entre os programas: dando a cada um o espaço de que precisa, evitando que um invada o espaço do outro e liberando memória quando um programa fecha.
+É o sistema operacional **dividindo a [[memoria-ram|memória RAM]]** entre os programas: dando a cada um o espaço de que precisa, evitando que um invada o espaço do outro e liberando memória quando um programa fecha.
 :::
 
 **No seu dia a dia:** é por isso que abrir programas demais deixa tudo lento — o SO está fazendo malabarismo para encaixar todos na RAM (Aula 27). E é o SO que **devolve** a memória quando você fecha um app, deixando espaço para os outros.
@@ -63,14 +63,14 @@ O gerente faz muita coisa, mas dá para agrupar em quatro grandes funções. Vam
 É a forma como o sistema operacional **organiza o armazenamento** em **arquivos e pastas**, com nomes, locais e permissões. Sem ele, o disco seria um mar de bits sem nenhuma ordem; com ele, você encontra a sua foto pelo nome, dentro de uma pasta, em segundos.
 :::
 
-**No seu dia a dia:** toda vez que você cria uma pasta, renomeia um arquivo, salva um documento ou arrasta algo para a lixeira, é o sistema de arquivos do SO trabalhando. Ele transforma o disco bruto numa estante organizada.
+**No seu dia a dia:** toda vez que você cria uma pasta, renomeia um arquivo, salva um documento ou arrasta algo para a lixeira, é o [[sistema-de-arquivos|sistema de arquivos]] do SO trabalhando. Ele transforma o disco bruto numa estante organizada.
 
 ### Função 4 — Conversar com os dispositivos (e os drivers)
 
 Teclado, fone, impressora, câmera — cada dispositivo funciona de um jeito físico diferente. O SO não nasce sabendo conversar com todos. Para isso existem os **drivers**.
 
 :::conceito Driver
-É um pequeno programa que **ensina o sistema operacional a conversar com um dispositivo específico**. O driver da impressora traduz os comandos gerais do SO para a linguagem exata daquela impressora. Sem o driver certo, o dispositivo não funciona direito — daí a famosa frase "preciso instalar o driver".
+É um pequeno programa que **ensina o sistema operacional a conversar com um dispositivo específico**. O [[driver|driver]] da impressora traduz os comandos gerais do SO para a linguagem exata daquela impressora. Sem o driver certo, o dispositivo não funciona direito — daí a famosa frase "preciso instalar o driver".
 :::
 
 **No seu dia a dia:** quando você pluga um fone e ele simplesmente toca, é porque o SO já tinha o driver. Quando uma impressora nova "não é reconhecida", costuma faltar o driver dela.
@@ -168,7 +168,7 @@ Depois, cada grupo **inventa mais uma situação** para uma função à sua esco
 Hoje você abriu a caixa do gerente e viu o trabalho por dentro:
 
 - O SO **gerencia processos**: decide quem usa a CPU e quando.
-- O SO **gerencia a memória**: divide a RAM entre os programas.
+- O SO **[[gerencia-de-memoria|gerencia a memória]]**: divide a RAM entre os programas.
 - O SO mantém o **sistema de arquivos**: organiza o disco em arquivos e pastas.
 - O SO conversa com **dispositivos** por meio de **drivers** — e te dá a **interface** para comandar tudo.
 

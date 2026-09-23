@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 24_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Na aula passada, você conheceu as peças principais de um computador. Hoje a pergunta muda: **como essas peças conversam sem virar bagunça?** Pense numa escola no intervalo. Tem aluno entrando, professor chamando, secretaria imprimindo documento, internet caindo, caixa de som tocando aviso. Se todo mundo tentar falar com todo mundo ao mesmo tempo, ninguém entende nada. Um computador tem o mesmo problema em escala absurda: CPU, memória, armazenamento e periféricos precisam trocar informação o tempo todo. A arquitetura existe para organizar esse trânsito.
@@ -41,7 +41,7 @@ Ter visto a **Aula 23**: componentes básicos do computador, diferença entre ha
 ### Em uma frase
 
 :::importante
-Arquitetura de computadores é o projeto do trânsito interno da máquina: quem processa, quem guarda, quem transfere e quem controla cada etapa.
+[[arquitetura-de-computadores|Arquitetura de computadores]] é o projeto do trânsito interno da máquina: quem processa, quem guarda, quem transfere e quem controla cada etapa.
 :::
 
 ### Estrutura física e estrutura lógica
@@ -49,7 +49,7 @@ Arquitetura de computadores é o projeto do trânsito interno da máquina: quem 
 Na Aula 23, a gente olhou para o computador como conjunto de partes. Agora vamos subir um nível: não basta saber que existe uma peça física; é preciso entender a **função lógica** dela dentro do sistema.
 
 :::conceito Estrutura física e estrutura lógica
-A **estrutura física** é o hardware: chips, placas, memória, cabos, portas e dispositivos. A **estrutura lógica** é a forma como essas partes são organizadas para executar instruções, trocar dados e obedecer comandos do software. Um computador bom depende das duas: peça sem organização vira bagunça; organização sem peça não executa nada.
+A **estrutura física** é o [[hardware|hardware]]: chips, placas, [[memoria-ram|memória]], cabos, portas e dispositivos. A **estrutura lógica** é a forma como essas partes são organizadas para executar instruções, trocar dados e obedecer comandos do software. Um computador bom depende das duas: peça sem organização vira bagunça; organização sem peça não executa nada.
 :::
 
 Uma comparação ajuda: em um teatro, a estrutura física é o palco, a iluminação, as cadeiras e o som. A estrutura lógica é o roteiro, a ordem das cenas, quem entra primeiro, quem fala depois e quem controla a luz. Sem palco não há peça; sem organização, a peça vira improviso confuso.
@@ -81,13 +81,13 @@ Quando um computador dá problema, pensar em níveis evita confusão. O erro est
 
 ### Barramentos: as avenidas dos dados
 
-Na Aula 23, os barramentos apareceram como caminhos internos. Agora vamos deixar isso mais preciso.
+Na Aula 23, os [[barramento|barramentos]] apareceram como caminhos internos. Agora vamos deixar isso mais preciso.
 
 :::conceito Barramento
 É um conjunto de linhas de comunicação que permite a troca de dados, endereços e sinais de controle entre componentes do computador. Pode ligar CPU, memória, armazenamento e dispositivos de entrada/saída. Pense nele como uma avenida interna: por ela passam as informações que mantêm as partes sincronizadas.
 :::
 
-Nem todo tráfego interno tem a mesma prioridade. Por isso os barramentos costumam ser organizados de forma hierárquica: a comunicação entre CPU e memória precisa ser muito rápida; já alguns dispositivos de entrada e saída podem trabalhar em ritmo mais lento. Separar esses fluxos melhora desempenho.
+Nem todo tráfego interno tem a mesma prioridade. Por isso os barramentos costumam ser organizados de forma hierárquica: a comunicação entre CPU e memória precisa ser muito rápida; já alguns [[dispositivos-de-entrada-e-saida|dispositivos de entrada e saída]] podem trabalhar em ritmo mais lento. Separar esses fluxos melhora desempenho.
 
 | Caminho | O que circula | Por que importa |
 |---|---|---|
@@ -107,7 +107,7 @@ Um teclado, um SSD e uma placa de rede não funcionam do mesmo jeito. Cada dispo
 É um chip ou conjunto de chips que controla fisicamente um dispositivo. Ele recebe comandos do sistema operacional ou da CPU, executa a operação no hardware e devolve o resultado. Em vez de o processador conhecer todos os detalhes de cada dispositivo, o controlador faz a ponte.
 :::
 
-Pense no controlador como um intérprete em uma excursão internacional. O professor diz o que precisa, o intérprete fala a língua local e resolve a conversa com o serviço certo. Sem controlador, cada dispositivo exigiria que a CPU soubesse todos os detalhes elétricos e mecânicos de tudo.
+Pense no [[controlador-de-dispositivo|controlador]] como um intérprete em uma excursão internacional. O professor diz o que precisa, o intérprete fala a língua local e resolve a conversa com o serviço certo. Sem controlador, cada dispositivo exigiria que a CPU soubesse todos os detalhes elétricos e mecânicos de tudo.
 
 :::atencao Erro comum
 Achar que a CPU controla cada tecla, cada pixel e cada setor do SSD diretamente. A CPU coordena e executa instruções, mas muitos detalhes físicos ficam com controladores especializados. Isso evita que o processador vire um funcionário tentando fazer todos os trabalhos da escola ao mesmo tempo.
@@ -118,7 +118,7 @@ Achar que a CPU controla cada tecla, cada pixel e cada setor do SSD diretamente.
 O slide da SEED chama o processador de "cérebro" do computador. A analogia ajuda, mas precisa de cuidado: a CPU não pensa como gente; ela executa instruções em altíssima velocidade.
 
 :::conceito CPU
-A **CPU** é a Unidade Central de Processamento. Ela busca instruções, interpreta operações, processa dados e coordena o fluxo básico de execução. Dentro dela existem unidades de cálculo, controle e pequenas memórias de altíssima velocidade chamadas registradores.
+A **[[cpu|CPU]]** é a Unidade Central de Processamento. Ela busca instruções, interpreta operações, processa dados e coordena o fluxo básico de execução. Dentro dela existem unidades de cálculo, controle e pequenas memórias de altíssima velocidade chamadas [[registrador|registradores]].
 :::
 
 :::conceito Registradores

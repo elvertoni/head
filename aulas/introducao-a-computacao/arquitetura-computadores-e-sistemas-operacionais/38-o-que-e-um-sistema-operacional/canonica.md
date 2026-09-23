@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 38_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Imagine a Marina num processo seletivo para o seu primeiro estágio. O recrutador entrega um questionário e a primeira pergunta é seca: **"Defina o que é um sistema operacional e diga onde eles podem ser encontrados."** Parece simples — até você ter que escrever a resposta numa linha clara, sem enrolar. Esta é a última aula da trilha, e ela tem exatamente esse objetivo: pegar tudo o que você aprendeu sobre SOs nas últimas três aulas e transformar numa **definição precisa**, do tipo que impressiona em prova e em entrevista. E, de quebra, você vai descobrir que os sistemas operacionais estão em muito mais lugares do que imagina.
@@ -53,12 +53,12 @@ Repare que essa definição não é nova — é o aperto de tudo que você já v
 Por que chamamos o SO de "software de base"? Porque os programas se dividem em categorias, e o SO é o alicerce sobre o qual todos os outros se apoiam.
 
 :::conceito Software de base
-É a categoria de software cuja função é **controlar o hardware e dar suporte** aos demais programas. O sistema operacional é o principal software de base: tudo o que você usa (os **softwares de aplicação**, como navegador, jogos e editores) roda **em cima** dele. Sem o software de base, os softwares de aplicação não têm onde funcionar.
+É a categoria de software cuja função é **controlar o hardware e dar suporte** aos demais programas. O [[sistema-operacional|sistema operacional]] é o principal [[software-de-base|software de base]]: tudo o que você usa (os **softwares de aplicação**, como navegador, jogos e editores) roda **em cima** dele. Sem o software de base, os softwares de aplicação não têm onde funcionar.
 :::
 
 :::importante Hardware × software, revisitado com precisão
-- **Hardware:** a parte física e eletrônica que processa, armazena e troca dados por sinais elétricos (CPU, memória, disco, teclado).
-- **Software:** o conjunto de instruções (algoritmos) que controla o hardware e forma as aplicações.
+- **[[hardware|Hardware]]:** a parte física e eletrônica que processa, armazena e troca dados por sinais elétricos ([[cpu|CPU]], memória, disco, teclado).
+- **[[software|Software]]:** o conjunto de instruções (algoritmos) que controla o hardware e forma as aplicações.
 - **Software de base (o SO):** o software especial que fica **entre** os dois, controlando o hardware e sustentando os softwares de aplicação.
 Essa é a definição madura da dupla hardware/software com que a trilha começou — agora com o SO ocupando seu lugar exato no meio.
 :::
@@ -90,7 +90,7 @@ Quando você liga o computador ou o celular, o **primeiro** programa importante 
 Você dá ordens ao SO de duas formas principais — e conhecer as duas é importante para a carreira.
 
 :::conceito Interface de linha de comando × interface gráfica
-A **interface gráfica** (janelas, ícones, toques, cliques) é a que você usa todo dia — visual e amigável. A **interface de linha de comando** é a que recebe comandos **digitados em texto** (como no terminal/prompt). A gráfica é mais fácil para o uso comum; a de linha de comando é mais direta e poderosa para tarefas técnicas — e é por isso que programadores e profissionais de TI a usam bastante.
+A **[[interface-grafica|interface gráfica]]** (janelas, ícones, toques, cliques) é a que você usa todo dia — visual e amigável. A **[[interface-de-linha-de-comando|interface de linha de comando]]** é a que recebe comandos **digitados em texto** (como no terminal/prompt). A gráfica é mais fácil para o uso comum; a de linha de comando é mais direta e poderosa para tarefas técnicas — e é por isso que programadores e profissionais de TI a usam bastante.
 :::
 
 :::dica Por que a linha de comando importa para você

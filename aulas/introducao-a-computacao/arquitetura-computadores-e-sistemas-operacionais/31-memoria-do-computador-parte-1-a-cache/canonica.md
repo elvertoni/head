@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 31_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você já conhece a RAM (a mesa de trabalho, rápida) e o disco (a gaveta, permanente). Parece que está completo. Mas tem uma peça escondida, pequena, cara e raramente comentada, que está fazendo o seu computador ser rápido **agora mesmo**, sem você saber. Ela é tão veloz que mora dentro do próprio processador. O nome dela é **cache** — e a pergunta de hoje é a mesma que a estudante Maria fez: se a gente já tem RAM e disco, **para que serve mais uma memória?** A resposta revela um dos truques mais elegantes da computação.
@@ -40,9 +40,9 @@ Ter visto a **Aula 27** (RAM volátil × disco permanente) e a **Aula 28** (a CP
 
 ### O problema: a CPU é rápida demais para a RAM
 
-Nas aulas passadas, a CPU revezava entre tarefas em frações de segundo. Mas tem um detalhe incômodo: a CPU é **tão** veloz que, quando ela pede um dado para a RAM, precisa **esperar**. A RAM é rápida para nós, mas lenta para a CPU. E CPU parada esperando dado é desempenho jogado fora.
+Nas aulas passadas, a [[cpu|CPU]] revezava entre tarefas em frações de segundo. Mas tem um detalhe incômodo: a CPU é **tão** veloz que, quando ela pede um dado para a [[memoria-ram|RAM]], precisa **esperar**. A RAM é rápida para nós, mas lenta para a CPU. E CPU parada esperando dado é desempenho jogado fora.
 
-Era preciso uma memória ainda mais rápida, **coladinha** na CPU, para guardar o que ela mais usa. Essa memória é a cache.
+Era preciso uma memória ainda mais rápida, **coladinha** na CPU, para guardar o que ela mais usa. Essa memória é a [[memoria-cache|cache]].
 
 :::conceito Memória cache
 É uma memória **muito rápida** e **pequena**, localizada dentro (ou bem perto) do processador. Ela guarda os dados e instruções que a CPU usa **com mais frequência**, funcionando como uma **ponte** entre a CPU e a RAM. Assim, a CPU pega o que precisa quase instantaneamente, sem esperar a RAM toda hora.
@@ -86,7 +86,7 @@ O seu **navegador** tem uma cache. Quando você visita um site, ele guarda image
 :::
 
 :::atencao Erro comum
-Pensar que a cache "substitui" a RAM ou o disco, ou que ter mais cache resolveria tudo. A cache é **pequena de propósito** (é cara) e funciona em **parceria** com a RAM e o disco, não no lugar delas. Ela acelera o acesso ao que é mais usado; o restante continua morando na RAM e no disco. Cada memória tem seu papel — tema que a Parte 2 vai amarrar numa hierarquia.
+Pensar que a cache "substitui" a RAM ou o disco, ou que ter mais cache resolveria tudo. A cache é **pequena de propósito** (é cara) e funciona em **parceria** com a RAM e o disco, não no lugar delas. Ela acelera o acesso ao que é mais usado; o restante continua morando na RAM e no disco. Cada memória tem seu papel — tema que a Parte 2 vai amarrar numa [[hierarquia-de-memoria|hierarquia]].
 :::
 
 ## Prática

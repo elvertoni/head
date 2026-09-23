@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 27_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você já viu duas mensagens de "cheio" no celular ou no computador, e elas são bem diferentes. Uma é "**armazenamento cheio**": não cabe mais foto, mais app, mais vídeo. A outra aparece quando você abre apps demais e tudo começa a **travar**, mesmo tendo espaço de sobra para arquivos. Parecem o mesmo problema, mas não são — eles acontecem em **dois lugares diferentes** da máquina, com funções diferentes. Entender essa diferença é entender uma das coisas mais importantes sobre como um computador trabalha: onde ele guarda o que está usando **agora** e onde ele guarda o que precisa **para sempre**.
@@ -49,7 +49,7 @@ Pense na sua escrivaninha de estudos. Tem a **mesa**, onde ficam o caderno abert
 ### A RAM: a mesa que é limpa toda noite
 
 :::conceito Memória RAM
-A **RAM** (Memória de Acesso Aleatório) guarda os dados e programas que estão **em uso ativo** naquele momento. É muito rápida, para a CPU pegar o que precisa sem esperar. Mas é **volátil**: quando o computador desliga, tudo que estava nela é apagado.
+A **[[memoria-ram|RAM]]** (Memória de Acesso Aleatório) guarda os dados e programas que estão **em uso ativo** naquele momento. É muito rápida, para a CPU pegar o que precisa sem esperar. Mas é **volátil**: quando o computador desliga, tudo que estava nela é apagado.
 :::
 
 É por isso que, quando falta luz e o computador desliga sem salvar, você **perde** o que estava digitando. O texto estava na RAM — a mesa de trabalho — e a mesa foi limpa. Não chegou a ser guardado na gaveta.
@@ -61,7 +61,7 @@ Achar que "salvar" e "estar aberto" são a mesma coisa. Enquanto você digita, o
 ### O HDD e o SSD: a gaveta que não esvazia
 
 :::conceito Armazenamento secundário (HDD / SSD)
-É o armazenamento **permanente**: o disco rígido (**HDD**) ou a unidade de estado sólido (**SSD**). Guarda arquivos e programas **mesmo com o computador desligado**. É bem mais lento que a RAM, mas tem muito mais capacidade e não perde os dados quando falta energia.
+É o armazenamento **[[armazenamento-secundario|permanente]]**: o disco rígido (**HDD**) ou a unidade de estado sólido (**SSD**). Guarda arquivos e programas **mesmo com o computador desligado**. É bem mais lento que a RAM, mas tem muito mais capacidade e não perde os dados quando falta energia.
 :::
 
 A diferença prática entre HDD e SSD é a tecnologia: o HDD usa um disco que gira fisicamente (mais barato, mais lento); o SSD não tem partes móveis (mais rápido, mais caro). Os dois servem ao mesmo papel: **memória de longo prazo**.

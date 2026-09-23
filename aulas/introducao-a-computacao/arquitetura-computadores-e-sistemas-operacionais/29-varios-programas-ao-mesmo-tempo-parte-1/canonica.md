@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 29_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Na aula passada você aprendeu uma coisa que agora vira um problema: a CPU executa **uma** instrução de cada vez, na ordem do contador de programa. Beleza. Só que, neste exato momento, você provavelmente tem música tocando, um navegador aberto, mensagens chegando e ainda este material na tela. Tudo "ao mesmo tempo". Se a CPU faz uma coisa de cada vez, **como** ela dá conta de tantas coisas juntas? Ou será que "ao mesmo tempo" é só uma ilusão muito bem feita? Hoje você descobre o truque.
@@ -43,7 +43,7 @@ Ter visto a **Aula 28**: a CPU executa instruções uma a uma, em ciclos, e pode
 Primeiro, um nome para "um programa que está rodando":
 
 :::conceito Processo
-É um programa **em execução**. Não o arquivo guardado no disco, mas o programa **rodando agora**, ocupando memória e pedindo tempo da CPU. Abrir o mesmo programa duas vezes cria dois processos. Cada processo tem seu próprio espaço na memória.
+É um programa **em execução**. Não o arquivo guardado no disco, mas o programa **rodando agora**, ocupando memória e pedindo tempo da [[cpu|CPU]]. Abrir o mesmo programa duas vezes cria dois [[processo|processos]]. Cada processo tem seu próprio espaço na memória.
 :::
 
 A diferença entre programa e processo é como a diferença entre uma receita e o bolo sendo feito. A receita (o arquivo no disco) fica parada, guardada. O processo é a receita **em ação**, com alguém mexendo a massa agora.
@@ -55,7 +55,7 @@ Agora o coração da aula. Suponha um computador com **um único núcleo** — c
 A resposta é honesta e surpreendente: **ele não faz os dois ao mesmo tempo**. Ele alterna entre eles **tão rápido** que você não percebe.
 
 :::conceito Multitarefa
-É a técnica em que o sistema operacional **alterna rapidamente** entre vários processos, dando a cada um uma fatia minúscula de tempo da CPU. A troca é tão veloz (frações de segundo) que parece, para nós, que tudo roda simultaneamente — mas, em um único núcleo, só um processo usa a CPU em cada instante.
+É a técnica em que o [[sistema-operacional|sistema operacional]] **alterna rapidamente** entre vários processos, dando a cada um uma fatia minúscula de tempo da CPU. A troca é tão veloz (frações de segundo) que parece, para nós, que tudo roda simultaneamente — mas, em um único [[nucleo-de-processador|núcleo]], só um processo usa a CPU em cada instante.
 :::
 
 :::exemplo
@@ -73,7 +73,7 @@ Quando a CPU tem **vários núcleos**, processos diferentes podem rodar **de ver
 :::importante Os dois jeitos de "fazer várias coisas juntas"
 - **Alternância rápida (1 núcleo):** a CPU reveza entre processos tão depressa que parece simultâneo. É ilusão de simultaneidade.
 - **Paralelismo real (vários núcleos):** processos rodam genuinamente ao mesmo tempo, um por núcleo.
-No dia a dia, o computador combina os dois: ele tem alguns núcleos (paralelismo real) e, em cada núcleo, ainda reveza entre muitos processos (alternância). É assim que dezenas de programas convivem com poucos núcleos.
+No dia a dia, o computador combina os dois: ele tem alguns núcleos ([[paralelismo|paralelismo real]]) e, em cada núcleo, ainda reveza entre muitos processos (alternância). É assim que dezenas de programas convivem com poucos núcleos.
 :::
 
 ### Quem comanda o revezamento: o sistema operacional
@@ -85,7 +85,7 @@ Esse revezamento não acontece sozinho. Tem um maestro.
 :::
 
 :::dica Por que isso importa para quem desenvolve
-Quando você abre o **Gerenciador de Tarefas** (Windows) ou o **Monitor de Atividade** (Mac) e vê a lista de processos com o quanto cada um usa de CPU, está olhando o escalonamento na prática. Um programa mal feito pode "segurar" a CPU e travar o resto — e diagnosticar isso é parte do trabalho de quem desenvolve e dá suporte. Entender processo, multitarefa e escalonamento é o primeiro passo para entender por que um sistema fica lento ou travado.
+Quando você abre o **Gerenciador de Tarefas** (Windows) ou o **Monitor de Atividade** (Mac) e vê a lista de processos com o quanto cada um usa de CPU, está olhando o [[escalonamento-de-processos|escalonamento]] na prática. Um programa mal feito pode "segurar" a CPU e travar o resto — e diagnosticar isso é parte do trabalho de quem desenvolve e dá suporte. Entender processo, [[multitarefa|multitarefa]] e escalonamento é o primeiro passo para entender por que um sistema fica lento ou travado.
 :::
 
 :::atencao Erro comum

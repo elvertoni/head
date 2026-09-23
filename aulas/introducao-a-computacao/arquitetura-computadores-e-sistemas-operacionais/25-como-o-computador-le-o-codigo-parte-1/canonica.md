@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 25_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Você abre o VSCode, digita `print("Olá")` e o programa funciona. Parece óbvio. Mas pare um segundo: o processador que você estudou nas duas últimas aulas não faz a menor ideia do que significa a palavra `print`. Ele não lê português, não lê inglês e não lê Python. Ele só entende uma coisa: sequências de 0 e 1. Então existe um abismo entre o que **você** escreve e o que a **máquina** executa — e alguma coisa precisa atravessar esse abismo toda vez que um programa roda. Hoje você vai descobrir quem faz essa travessia.
@@ -40,7 +40,7 @@ Ter visto as **Aulas 23 e 24**: o que é a CPU, e a ideia de que o computador fu
 
 ### O abismo entre você e o processador
 
-Na Aula 24 ficou claro que a CPU busca uma instrução, interpreta, executa e guarda o resultado — repetindo isso bilhões de vezes por segundo. Só que essas instruções não chegam até ela escritas em português. Elas chegam em **binário**.
+Na Aula 24 ficou claro que a [[cpu|CPU]] busca uma instrução, interpreta, executa e guarda o resultado — repetindo isso bilhões de vezes por segundo. Só que essas instruções não chegam até ela escritas em português. Elas chegam em **[[sistema-binario|binário]]**.
 
 :::conceito Linguagem de máquina
 É a única linguagem que o processador entende de verdade: instruções escritas como sequências de **0 e 1**. Cada sequência corresponde a uma operação específica — somar dois valores, mover um dado de um lugar para outro, comparar dois números. É rápida para a máquina, mas praticamente impossível de ler ou escrever para um ser humano.
@@ -50,7 +50,7 @@ Imagine ter que escrever um jogo inteiro digitando coisas como `0101 0011 1000`.
 
 ### A linguagem que foi feita para você, não para a máquina
 
-É aí que entram as **linguagens de alto nível**.
+É aí que entram as **[[linguagem-de-alto-nivel|linguagens de alto nível]]**.
 
 :::conceito Linguagem de alto nível
 É uma linguagem de programação projetada para o **ser humano** entender, não para o processador. Ela usa palavras (`print`, `if`, `while`), símbolos matemáticos e estruturas organizadas que se aproximam do nosso raciocínio. Python, Java, C++ e JavaScript são exemplos. O computador **não** entende nenhuma delas diretamente.
@@ -73,7 +73,7 @@ A linha de cima qualquer pessoa lê. A de baixo só o processador. As duas pedem
 Se você escreve em alto nível e a máquina só lê binário, falta uma peça no meio. Essa peça é o **tradutor de código**.
 
 :::conceito Tradutor de código
-É um programa que converte o código escrito em linguagem de alto nível para a linguagem de máquina, para que o processador consiga executá-lo. Sem tradutor, seu código em Python seria só um texto bonito que a máquina ignora.
+É um programa que converte o código escrito em linguagem de alto nível para a [[linguagem-de-maquina|linguagem de máquina]], para que o processador consiga executá-lo. Sem tradutor, seu código em Python seria só um texto bonito que a máquina ignora.
 :::
 
 Existem dois tipos principais de tradutor, e a diferença entre eles **não** é o que traduzem — os dois levam de alto nível para binário. A diferença é **quando** isso acontece.
@@ -84,7 +84,7 @@ Existem dois tipos principais de tradutor, e a diferença entre eles **não** é
 É um tradutor que converte **todo** o código de uma vez, **antes** de o programa rodar, gerando um arquivo executável. Traduz uma vez; depois esse arquivo pode ser executado quantas vezes você quiser, sem traduzir de novo.
 :::
 
-Pense num livro escrito em inglês que você quer ler em português. O compilador é como contratar um tradutor profissional para traduzir o **livro inteiro** e te entregar a versão final impressa. Dá trabalho na primeira vez, mas depois você lê o livro pronto, rápido, quantas vezes quiser, sem precisar do tradutor por perto.
+Pense num livro escrito em inglês que você quer ler em português. O [[compilador|compilador]] é como contratar um tradutor profissional para traduzir o **livro inteiro** e te entregar a versão final impressa. Dá trabalho na primeira vez, mas depois você lê o livro pronto, rápido, quantas vezes quiser, sem precisar do tradutor por perto.
 
 ### Interpretador: traduz e executa linha por linha, na hora
 
@@ -92,7 +92,7 @@ Pense num livro escrito em inglês que você quer ler em português. O compilado
 É um tradutor que converte e executa o código **linha por linha**, durante a execução. Ele lê uma instrução, traduz, executa na hora, e só então passa para a próxima.
 :::
 
-Voltando ao livro em inglês: o interpretador é como ter um amigo que fala inglês lendo o livro **em voz alta** e traduzindo para você frase por frase, ao vivo. Você começa a entender na hora, sem esperar a tradução do livro todo — ótimo se você só quer dar uma olhada rápida ou corrigir uma frase errada. Mas como ele traduz tudo de novo cada vez, fica mais lento do que ler a versão já impressa.
+Voltando ao livro em inglês: o [[interpretador|interpretador]] é como ter um amigo que fala inglês lendo o livro **em voz alta** e traduzindo para você frase por frase, ao vivo. Você começa a entender na hora, sem esperar a tradução do livro todo — ótimo se você só quer dar uma olhada rápida ou corrigir uma frase errada. Mas como ele traduz tudo de novo cada vez, fica mais lento do que ler a versão já impressa.
 
 ```diagrama-progressivo
 titulo: Os dois caminhos do seu código até a máquina

@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 33_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 A esta altura você já ouviu mil vezes que o computador só trabalha com 0 e 1. Mas pare para pensar no que isso significa de verdade: a sua mensagem, a sua foto, a sua nota da prova, a música que você ouve — **tudo** isso, lá no fundo, é só uma fileira gigante de zeros e uns. Aí surge a pergunta que a estudante Letícia fez e que trava muita gente: se é **tudo** 0 e 1, como o computador sabe que uma sequência é o número **7**, outra é a letra **A** e outra é um número quebrado como **3,5**? Como ele não confunde tudo? Hoje você descobre o sistema por trás disso.
@@ -43,14 +43,14 @@ Ter visto que a memória guarda dados (Aulas 27, 31 e 32) e a ideia, das primeir
 Antes de tudo, dois nomes que você vai usar para sempre:
 
 :::conceito Bit e byte
-Um **bit** é a menor unidade de informação: um único **0 ou 1**. Sozinho, ele diz pouco. Mas juntando **8 bits** formamos um **byte**, e um byte já consegue representar muita coisa — um número, uma letra, uma cor. O byte é a **unidade fundamental** de armazenamento: quando você vê "MB", "GB", está contando bytes aos montes.
+Um **[[bit|bit]]** é a menor unidade de informação: um único **0 ou 1**. Sozinho, ele diz pouco. Mas juntando **8 bits** formamos um **[[byte|byte]]**, e um byte já consegue representar muita coisa — um número, uma letra, uma cor. O byte é a **unidade fundamental** de armazenamento: quando você vê "MB", "GB", está contando bytes aos montes.
 :::
 
 A sacada genial da computação é que, com apenas dois símbolos (0 e 1) e combinações suficientes, dá para representar **qualquer** informação. O segredo está em **como** interpretar cada grupo de bits.
 
 ### Números inteiros: contar em base 2
 
-Você conta em base 10 (dez dígitos: 0 a 9) porque tem dez dedos. O computador conta em **base 2** (dois dígitos: 0 e 1) porque seus circuitos têm dois estados: ligado e desligado.
+Você conta em base 10 (dez dígitos: 0 a 9) porque tem dez dedos. O computador conta em **[[sistema-binario|base 2]]** (dois dígitos: 0 e 1) porque seus circuitos têm dois estados: ligado e desligado.
 
 :::conceito Número inteiro em binário
 Números inteiros são guardados como sua representação em **base 2**. Cada posição vale o dobro da anterior. Por exemplo, o número **7** é `0111` e o número **15** é `1111`. Mesma lógica do nosso sistema, só que com dois dígitos em vez de dez.
@@ -69,7 +69,7 @@ Some os que têm bit 1: 4 + 2 + 1 = **7**. É só isso. Contar em binário é so
 
 ### Números decimais: o ponto que flutua
 
-E um número quebrado, como 3,5 ou 0,001? Aí entra uma estratégia mais esperta, o **ponto flutuante**.
+E um número quebrado, como 3,5 ou 0,001? Aí entra uma estratégia mais esperta, o **[[ponto-flutuante|ponto flutuante]]**.
 
 :::conceito Ponto flutuante
 É a forma de guardar números **com casas decimais**. A ideia é separar o número em duas partes — a parte inteira e a parte fracionária — e representar cada uma em binário. O nome "flutuante" vem do ponto decimal poder "se mover" para representar números muito grandes ou muito pequenos com a mesma técnica.
@@ -87,7 +87,7 @@ Falta o caso da Letícia: como uma letra vira binário? A resposta é uma **comb
 É um padrão que dá a cada caractere um **número**, que então é guardado em binário. Na tabela **ASCII**, por exemplo, a letra **'A'** é o número **65**. O **Unicode** é uma tabela muito maior, que cobre praticamente todos os alfabetos, símbolos e até emojis do mundo. Quando o computador lê os bits, ele usa a tabela para saber qual caractere mostrar.
 :::
 
-Então a resposta para "como o computador não confunde 65 com 'A'?" é: **ele só sabe que é uma letra porque o programa diz que aquela posição da memória deve ser lida como caractere**, e aí usa a tabela de codificação. O mesmo padrão de bits pode ser o número 65 ou a letra 'A' — quem decide a interpretação é o **tipo de dado** que o programa espera ali.
+Então a resposta para "como o computador não confunde 65 com 'A'?" é: **ele só sabe que é uma letra porque o programa diz que aquela posição da memória deve ser lida como caractere**, e aí usa a tabela de [[codificacao-de-caracteres|codificação]]. O mesmo padrão de bits pode ser o número 65 ou a letra 'A' — quem decide a interpretação é o **tipo de dado** que o programa espera ali.
 
 :::dica Por que isso aparece quando você menos espera
 Já viu um site mostrar "Ã§" no lugar de "ç", ou um nome aparecer todo quebrado com símbolos estranhos? Isso é um choque de **codificação**: o texto foi guardado com uma tabela e lido com outra. Saber que letra é número-virado-binário-via-tabela é o que permite a um profissional entender e corrigir esses erros de acentuação — pesadelo comum em sites, bancos de dados e arquivos.

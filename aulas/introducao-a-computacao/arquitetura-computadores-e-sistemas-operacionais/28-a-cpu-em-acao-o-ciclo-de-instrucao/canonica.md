@@ -17,8 +17,8 @@ fontes:
   - lake/introducao-a-computacao/AULA 28_INTRODUÇÃO A COMPUTAÇÃO.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-21
+versao: 2
+atualizado_em: 2026-09-22
 ---
 
 Seu código virou binário (Aulas 25 e 26) e está guardado na memória (Aula 27). Agora vem a parte mágica — só que não é mágica nenhuma, é um processo. A CPU pega aquelas instruções e **executa** uma por uma, numa velocidade que beira o absurdo: bilhões de vezes por segundo. Mas como ela sabe **qual** instrução vem primeiro? E a próxima? E a próxima? A resposta é um ciclo simples, repetido sem parar enquanto o computador está ligado. Hoje você vai ver o coração do computador batendo.
@@ -40,7 +40,7 @@ Ter visto a **Aula 24** (a CPU busca, interpreta, executa e guarda — apresenta
 
 ### Um programa é uma fila de ordens
 
-Antes de ver a CPU trabalhar, uma ideia que muda tudo: para o computador, um programa **não** é uma coisa só. É uma **lista de instruções** pequenas e simples, uma atrás da outra, esperando para serem executadas na ordem.
+Antes de ver a [[cpu|CPU]] trabalhar, uma ideia que muda tudo: para o computador, um programa **não** é uma coisa só. É uma **lista de instruções** pequenas e simples, uma atrás da outra, esperando para serem executadas na ordem.
 
 :::conceito Instrução
 É uma única ordem que a CPU sabe executar — algo bem básico, como "some estes dois números", "mova este dado para ali" ou "compare estes dois valores". Programas grandes são feitos de **milhões** dessas ordens simples, executadas em sequência e em altíssima velocidade.
@@ -50,7 +50,7 @@ A CPU não faz uma tarefa gigante de uma vez. Ela faz um zilhão de tarefinhas m
 
 ### O ciclo de instrução: o batimento da CPU
 
-Para executar cada instrução, a CPU repete sempre as mesmas quatro etapas. Esse é o **ciclo de instrução**.
+Para executar cada instrução, a CPU repete sempre as mesmas quatro etapas. Esse é o **[[ciclo-de-instrucao|ciclo de instrução]]**.
 
 :::conceito Ciclo de instrução
 É a sequência de etapas que a CPU repete para executar cada instrução: **buscar** a instrução na memória, **decodificar** (entender o que ela pede), **executar** a operação e **armazenar** o resultado. Terminou uma, começa a próxima — sem parar, enquanto o computador estiver ligado.
@@ -77,7 +77,7 @@ Mas falta responder à pergunta do começo: como a CPU sabe **qual** é a "próx
 É um pequeno registrador dentro da CPU que guarda a **posição da próxima instrução** a ser executada. Depois que uma instrução é executada, o contador avança para apontar a seguinte. É ele que garante que o programa seja executado **na ordem certa**.
 :::
 
-Pense em ler um livro e usar o dedo para marcar a linha que você está lendo. Quando termina a linha, o dedo desce para a próxima. O contador de programa é esse dedo: ele nunca deixa a CPU se perder sobre onde parou.
+Pense em ler um livro e usar o dedo para marcar a linha que você está lendo. Quando termina a linha, o dedo desce para a próxima. O [[contador-de-programa|contador de programa]] é esse dedo: ele nunca deixa a CPU se perder sobre onde parou.
 
 :::exemplo
 Imagine três instruções guardadas na memória, nas posições 1, 2 e 3:
@@ -100,11 +100,11 @@ Chamar a CPU de "cérebro" e achar que ela **pensa** ou decide sozinha o que faz
 Se toda CPU faz o mesmo ciclo, por que umas são mais rápidas que outras? Dois fatores principais:
 
 :::conceito Velocidade de clock
-É o ritmo em que a CPU executa os ciclos, medido em **hertz** (geralmente gigahertz, GHz). Um clock de 3 GHz significa cerca de **3 bilhões** de ciclos por segundo. Quanto maior o clock, mais instruções por segundo — em geral, mais velocidade.
+É o ritmo em que a CPU executa os ciclos, medido em **hertz** (geralmente gigahertz, GHz). Um [[clock|clock]] de 3 GHz significa cerca de **3 bilhões** de ciclos por segundo. Quanto maior o clock, mais instruções por segundo — em geral, mais velocidade.
 :::
 
 :::conceito Núcleo
-É uma unidade de processamento completa dentro da CPU. Uma CPU com vários núcleos (**multi-core**) pode executar vários ciclos de instrução **ao mesmo tempo**, um em cada núcleo — como ter vários trabalhadores em vez de um só.
+É uma unidade de processamento completa dentro da CPU. Uma CPU com vários [[nucleo-de-processador|núcleos]] (**multi-core**) pode executar vários ciclos de instrução **ao mesmo tempo**, um em cada núcleo — como ter vários trabalhadores em vez de um só.
 :::
 
 :::dica Por que isso aparece na hora de comprar um computador
