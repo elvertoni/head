@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-doc="atividade">
+<head>
+<meta charset="utf-8">
+<title>Atividade · Caça às dores · Prof Toni Coimbra</title>
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-soft:#475569;
+  --line:#c7cedb;
+  --line-soft:#e2e8f0;
+  --blue:#023E8A;
+  --cyan:#00B4D8;
+  --wash:#f4f7fb;
+  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
+body{font-size:9.4pt;line-height:1.34;}
+
+@page{ size:A4; margin:11mm 12mm 10mm 12mm; }
+
+.page{
+  width:186mm;
+  margin:0 auto;
+  padding:0;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+
+/* ---------- cabeçalho ---------- */
+.head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:7px;
+}
+.head .who{font-size:8pt;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;}
+.head h1{margin:1px 0 0;font-size:15pt;letter-spacing:-.01em;}
+.head h1 span{color:var(--cyan);}
+.head .tag{
+  font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;white-space:nowrap;padding-left:6mm;
+}
+.runhead{
+  display:flex;justify-content:space-between;font-size:7.6pt;color:var(--ink-soft);
+  border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:7px;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+
+/* ---------- identificação ---------- */
+.ident{
+  display:grid;grid-template-columns:1fr 34mm 26mm 20mm;gap:0;
+  border:1px solid var(--line);margin-bottom:7px;
+}
+.ident div{padding:6px 6px 12px;border-right:1px solid var(--line);font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+.ident div:last-child{border-right:0;background:var(--wash);}
+
+/* ---------- blocos ---------- */
+.instr{
+  border-left:3px solid var(--cyan);background:var(--wash);
+  padding:5px 8px;font-size:8.4pt;margin-bottom:6px;
+}
+.instr p{margin:0 0 3px;}
+.instr p:last-child{margin:0;}
+h2.ex{
+  font-size:10pt;margin:9px 0 4px;padding:2px 0 2px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+h2.ex .pts{font-size:7.6pt;font-weight:600;color:var(--ink-soft);}
+h2.ex b{color:var(--blue);}
+.q{margin:0 0 4px;}
+.q .n{font-weight:700;color:var(--blue);}
+.mono,code{font-family:var(--mono);font-size:8.6pt;}
+.rule{border-bottom:1px dotted #94a3b8;height:21px;margin:0 0 2px;}
+table{width:100%;border-collapse:collapse;font-size:8.6pt;margin:4px 0;}
+th,td{border:1px solid var(--line);padding:3px 5px;text-align:left;vertical-align:top;}
+th{background:var(--wash);font-size:7.8pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
+td.fill{height:15px;}
+td.fill-lg{height:40px;}
+td.fill-xl{height:52px;}
+td.mark{width:14mm;text-align:center;font-family:var(--mono);color:var(--ink-soft);}
+td.num{width:7mm;text-align:center;font-weight:700;color:var(--blue);}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.cols3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;}
+.box{border:1px solid var(--line);border-radius:3px;padding:6px 8px;}
+.box.tight{padding:5px 7px;}
+.cap{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px;}
+.chk{list-style:none;margin:2px 0;padding:0;}
+.chk li{padding-left:16px;text-indent:-16px;margin:1.5px 0;}
+.chk li::before{content:"☐ ";}
+.foot{
+  margin-top:8px;border-top:1px solid var(--line);padding-top:4px;
+  font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;
+}
+.small{font-size:8pt;color:var(--ink-soft);}
+
+/* ---------- anatomia da dor ---------- */
+.anat{display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;border:1px solid var(--blue);border-radius:3px;margin:0 0 6px;}
+.anat div{padding:4px 6px;border-right:1px solid var(--line);font-size:8pt;}
+.anat div:last-child{border-right:0;background:#e6f7fc;}
+.anat b{display:block;font-size:7.6pt;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);}
+
+/* ---------- zonas de caça ---------- */
+.zona{border:1px solid var(--line);border-radius:3px;padding:4px 6px 0;}
+.zona .cap{color:var(--blue);font-weight:700;margin-bottom:1px;}
+.zona p{margin:0 0 3px;font-size:7.9pt;color:var(--ink-soft);}
+.zona .rule{height:17px;}
+
+/* ---------- fôrma ---------- */
+.forma{border:1.5px solid var(--blue);border-radius:4px;padding:6px 9px;}
+.forma .lin{display:flex;align-items:flex-end;gap:6px;margin:5px 0;}
+.forma .lin b{font-size:8pt;letter-spacing:.05em;text-transform:uppercase;color:var(--blue);white-space:nowrap;min-width:36mm;}
+.forma .lin span{flex:1;border-bottom:1px dotted #94a3b8;height:24px;}
+
+.ent{border:1px solid var(--line);border-radius:3px;padding:5px 7px;margin-bottom:6px;}
+.ent .top{display:grid;grid-template-columns:1.3fr 1fr 0.8fr;gap:4mm;margin-bottom:3px;}
+.ent .top div{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;border-bottom:1px dotted #94a3b8;padding-bottom:9px;}
+.ent p{margin:3px 0 1px;font-size:8.3pt;}
+.ent p .n{font-weight:700;color:var(--blue);}
+.ent .rule{height:21px;}
+.etica{border-left:3px solid #f59e0b;background:#fff7ed;padding:4px 8px;font-size:8.1pt;margin:0 0 6px;}
+</style>
+</head>
+<body>
+
+<!-- ============================ PÁGINA 1 ============================ -->
+<section class="page">
+  <div class="head">
+    <div>
+      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Programação Front-End · Inovação, Tecnologia e Empreendedorismo</div>
+      <h1>Atividade — <span>Caça às dores</span>: de onde vem a ideia da startup</h1>
+    </div>
+    <div class="tag">Prof. Toni Coimbra<br>Aulas 07 e 08 · 2ª série<br>Valor: 10,0 pontos</div>
+  </div>
+
+  <div class="ident">
+    <div>Nome completo</div>
+    <div>Turma</div>
+    <div>Data de entrega</div>
+    <div>Nota</div>
+  </div>
+
+  <div class="instr">
+    <p><b>Para que serve.</b> Nenhuma startup começa com uma ideia genial — começa com uma <b>reclamação</b> que alguém já faz sem você perguntar. Nesta atividade você não vai inventar nada: vai <b>caçar</b> dores reais na sua rotina, conversar com quem as sente e sair com uma frase que o trio consegue testar.</p>
+    <p><b>Como fazer.</b> <b>Em sala:</b> Partes 1, 2 e 4. <b>Durante a semana, em campo:</b> Partes 3 e 5. <b>Na aula seguinte, com o trio:</b> Partes 6 e 7. Escreva a caneta. Anote a <b>fala exata</b> das pessoas, entre aspas — resumo com as suas palavras não vale como prova.</p>
+  </div>
+
+  <p class="cap" style="margin-top:2px">A anatomia de uma dor real — use nas sete partes</p>
+  <div class="anat">
+    <div><b>Quem</b>uma pessoa ou grupo específico, não "as pessoas"</div>
+    <div><b>Não consegue</b>algo concreto, que dá para ver acontecer</div>
+    <div><b>Porque</b>o obstáculo real que atrapalha</div>
+    <div><b>Gambiarra (a prova)</b>como a pessoa se vira hoje: caderno, print, planilha, grupo de WhatsApp, papel na geladeira</div>
+  </div>
+
+  <h2 class="ex"><span><b>Parte 1.</b> Dor real ou ideia legal?</span><span class="pts">1,5</span></h2>
+  <p class="q small">Marque <b>D</b> (dor real) ou <b>I</b> (ideia legal). Em cada ideia legal, escreva na última coluna <b>o que falta</b> para ela virar dor: quem, o quê, obstáculo ou gambiarra.</p>
+  <table>
+    <tr><th style="width:7mm">Nº</th><th>Frase</th><th style="width:14mm">D / I</th><th style="width:44mm">O que falta?</th></tr>
+    <tr><td class="num">1</td><td>“Um app que conecta estudantes do Brasil inteiro.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">2</td><td>“Meu tio é pedreiro e perde serviço porque leva dois dias para fazer o orçamento à mão, no caderno — quando entrega, o cliente já fechou com outro.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">3</td><td>“As pessoas têm dificuldade de encontrar bons restaurantes.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">4</td><td>“Na cantina da escola a fila do intervalo leva 15 minutos porque só uma pessoa recebe dinheiro e Pix; metade da turma volta para a sala sem lanchar.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">5</td><td>“Uma plataforma com inteligência artificial para revolucionar a saúde mental dos jovens.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">6</td><td>“O time de futsal do bairro já perdeu dois jogos por W.O. porque a confirmação de quem vai se perde num grupo de WhatsApp com 200 mensagens por dia.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">7</td><td>“Seria muito legal ter um app para trocar figurinhas.”</td><td class="mark">D / I</td><td></td></tr>
+    <tr><td class="num">8</td><td>“Minha vizinha faz bolo por encomenda e já esqueceu pedido, porque anota uns no papelzinho e outros ficam perdidos em áudio no WhatsApp.”</td><td class="mark">D / I</td><td></td></tr>
+  </table>
+  <p class="small" style="margin:2px 0 0"><b>Teste rápido:</b> troque o assunto da frase por qualquer outro (“as pessoas têm dificuldade de encontrar bons <i>cursos / treinos / filmes</i>”). Se ela continua fazendo sentido, não está falando de ninguém.</p>
+
+  <h2 class="ex"><span><b>Parte 2.</b> Onde as dores moram — mapa de caça</span><span class="pts">1,0</span></h2>
+  <p class="q small">Dor real deixa rastro. Procure estes sinais: <b>fila</b>, <b>papelzinho</b>, <b>planilha</b>, <b>print</b>, <b>“de novo isso?”</b>, <b>alguém pedindo favor</b>, <b>alguém refazendo a mesma coisa toda semana</b>. Em cada lugar, anote <b>uma</b> situação que você já viu acontecer.</p>
+  <div class="cols3">
+    <div class="zona"><p class="cap">Escola</p><p>Intervalo, secretaria, trabalho em grupo, recados, provas.</p><div class="rule"></div><div class="rule"></div></div>
+    <div class="zona"><p class="cap">Casa e família</p><p>Contas, remédios, consultas, compras do mês, tarefas divididas.</p><div class="rule"></div><div class="rule"></div></div>
+    <div class="zona"><p class="cap">Caminho e transporte</p><p>Ônibus, horário, carona, bicicleta, chuva, segurança.</p><div class="rule"></div><div class="rule"></div></div>
+    <div class="zona"><p class="cap">Trabalho de quem você conhece</p><p>Pais, tios, vizinhos: agenda, orçamento, estoque, cobrança.</p><div class="rule"></div><div class="rule"></div></div>
+    <div class="zona"><p class="cap">Comércio do bairro</p><p>Mercadinho, salão, oficina, lanchonete, feira, igreja.</p><div class="rule"></div><div class="rule"></div></div>
+    <div class="zona"><p class="cap">Esporte, jogo e lazer</p><p>Time, campeonato, academia, jogos online, eventos.</p><div class="rule"></div><div class="rule"></div></div>
+  </div>
+
+  <div class="foot"><span>Atividade · Caça às dores · Prof. Toni Coimbra</span><span>Página 1 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 2 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Caça às dores</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <h2 class="ex"><span><b>Parte 3.</b> Diário de reclamações — 7 dias de escuta</span><span class="pts">2,0</span></h2>
+  <p class="q small">Durante uma semana, registre <b>reclamações que você ouviu ou fez</b>. Não pergunte nada ainda: só escute e anote. Mínimo de <b>6 registros</b>, de pelo menos <b>3 pessoas diferentes</b>. Identifique a pessoa pela relação (“minha mãe”, “o dono do mercadinho”), nunca por nome completo.</p>
+  <table>
+    <tr><th style="width:7mm">Nº</th><th style="width:28mm">Quem reclamou</th><th>O que disse — fala exata, entre aspas</th><th style="width:22mm">Onde / quando</th><th style="width:40mm">Como se vira hoje (gambiarra)</th></tr>
+    <tr><td class="num">1</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">2</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">3</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">4</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">5</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">6</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">7</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+    <tr><td class="num">8</td><td class="fill-xl"></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="small" style="margin:2px 0 0">Se a coluna <b>gambiarra</b> ficou vazia numa linha, circule o número dela. Dor sem gambiarra quase sempre é incômodo que ninguém se esforça para resolver.</p>
+
+  <h2 class="ex"><span><b>Parte 4.</b> Pergunta boa, pergunta ruim</span><span class="pts">1,0</span></h2>
+  <p class="q small">Antes de entrevistar alguém, aprenda a perguntar. Pergunta ruim fala do <b>futuro</b> e da <b>sua ideia</b> — e aí todo mundo é gentil e diz que sim. Pergunta boa fala do <b>passado</b> e da <b>vida da pessoa</b>. Marque <b>B</b> (boa) ou <b>R</b> (ruim).</p>
+  <div class="cols2">
+    <table style="margin:0">
+      <tr><td class="mark">B / R</td><td>a) “Você usaria um app que organiza seus horários de estudo?”</td></tr>
+      <tr><td class="mark">B / R</td><td>b) “Quando foi a última vez que você esqueceu uma prova? Me conta como foi.”</td></tr>
+      <tr><td class="mark">B / R</td><td>c) “Não seria bem melhor se a cantina aceitasse pedido pelo celular?”</td></tr>
+      <tr><td class="mark">B / R</td><td>d) “E o que você fez para resolver, dessa última vez?”</td></tr>
+      <tr><td class="mark">B / R</td><td>e) “Quanto você pagaria por uma solução assim?”</td></tr>
+    </table>
+    <table style="margin:0">
+      <tr><td class="mark">B / R</td><td>f) “Você já tentou alguma solução? Qual? Por que parou de usar?”</td></tr>
+      <tr><td class="mark">B / R</td><td>g) “A nossa ideia é boa, né? Fala a verdade.”</td></tr>
+      <tr><td class="mark">B / R</td><td>h) “Quanto tempo isso te toma numa semana normal?”</td></tr>
+      <tr><td class="mark">B / R</td><td>i) “Qual é a parte mais chata disso no seu dia?”</td></tr>
+      <tr><td colspan="2" class="small" style="background:var(--wash)">Nenhuma pergunta boa menciona o seu produto.</td></tr>
+    </table>
+  </div>
+  <p class="q small" style="margin-top:5px">Escolha <b>duas</b> perguntas ruins e reescreva cada uma como pergunta boa, sobre o passado da pessoa:</p>
+  <p class="small" style="margin:0">Letra ____ →</p><div class="rule"></div><div class="rule"></div>
+  <p class="small" style="margin:0">Letra ____ →</p><div class="rule"></div><div class="rule"></div>
+
+  <div class="foot"><span>Atividade · Caça às dores · Prof. Toni Coimbra</span><span>Página 2 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 3 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Caça às dores</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <h2 class="ex"><span><b>Parte 5.</b> Duas entrevistas de descoberta</span><span class="pts">2,0</span></h2>
+  <p class="q small">Escolha a reclamação mais forte do seu diário e converse com <b>duas pessoas que vivem essa situação</b> — pode ser quem reclamou e mais uma. Conversa de 5 a 10 minutos. Use só perguntas boas. Não conte sua ideia de produto: você está ali para escutar, não para vender.</p>
+
+  <div class="etica"><b>Antes de começar.</b> Peça licença e diga que é um trabalho da escola. Não anote sobrenome, telefone, endereço, nem detalhe de saúde ou de dinheiro que a pessoa não queira contar. Se ela não quiser responder alguma pergunta, pule. Prefira gente que você já conhece: família, vizinhos, colegas, comerciantes do bairro.</div>
+
+  <div class="ent">
+    <div class="top"><div>Entrevista 1 · Quem é (relação)</div><div>Onde a conversa aconteceu</div><div>Data</div></div>
+    <p><span class="n">1.</span> Quando foi a <b>última vez</b> que isso aconteceu? O que aconteceu, passo a passo?</p>
+    <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+    <p><span class="n">2.</span> O que isso custou? (tempo, dinheiro, nota, vergonha, briga, oportunidade perdida)</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">3.</span> Como a pessoa resolve hoje? Já tentou outra solução? Por que não funcionou?</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">4.</span> A frase mais forte que ela disse — <b>exatamente como disse</b>, entre aspas:</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">5.</span> Com que frequência acontece? &nbsp; ☐ todo dia &nbsp; ☐ toda semana &nbsp; ☐ todo mês &nbsp; ☐ raramente</p>
+  </div>
+
+  <div class="ent">
+    <div class="top"><div>Entrevista 2 · Quem é (relação)</div><div>Onde a conversa aconteceu</div><div>Data</div></div>
+    <p><span class="n">1.</span> Quando foi a <b>última vez</b> que isso aconteceu? O que aconteceu, passo a passo?</p>
+    <div class="rule"></div><div class="rule"></div><div class="rule"></div>
+    <p><span class="n">2.</span> O que isso custou? (tempo, dinheiro, nota, vergonha, briga, oportunidade perdida)</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">3.</span> Como a pessoa resolve hoje? Já tentou outra solução? Por que não funcionou?</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">4.</span> A frase mais forte que ela disse — <b>exatamente como disse</b>, entre aspas:</p>
+    <div class="rule"></div><div class="rule"></div>
+    <p><span class="n">5.</span> Com que frequência acontece? &nbsp; ☐ todo dia &nbsp; ☐ toda semana &nbsp; ☐ todo mês &nbsp; ☐ raramente</p>
+  </div>
+
+  <div class="box tight">
+    <p class="cap">O que as duas conversas mudaram no que você achava</p>
+    <p class="small" style="margin:0 0 2px">Uma coisa que você <b>não sabia</b> antes de conversar, ou que era <b>diferente</b> do que você imaginava:</p>
+    <div class="rule"></div><div class="rule"></div>
+  </div>
+
+  <div class="foot"><span>Atividade · Caça às dores · Prof. Toni Coimbra</span><span>Página 3 de 4</span></div>
+</section>
+
+<!-- ============================ PÁGINA 4 ============================ -->
+<section class="page">
+  <div class="runhead"><span>Atividade — Caça às dores</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <div class="box tight" style="margin-bottom:4px">
+    <p class="cap">Integrantes do trio — as Partes 6 e 7 são feitas em conjunto</p>
+    <div class="cols3"><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+  </div>
+
+  <h2 class="ex"><span><b>Parte 6.</b> Qual dor o trio vai caçar? — matriz de escolha</span><span class="pts">1,0</span></h2>
+  <p class="q small">Juntem os diários e as entrevistas dos três. Escolham as <b>quatro dores mais fortes</b> e deem nota de <b>1 a 3</b> em cada critério. <b>Regra de corte:</b> dor sem gambiarra leva <b>0</b> na coluna G e é eliminada, não importa o total.</p>
+  <table>
+    <tr>
+      <th>Dor (resumo em poucas palavras)</th>
+      <th style="width:19mm">F<br><span style="text-transform:none;letter-spacing:0">quantas vezes apareceu</span></th>
+      <th style="width:19mm">I<br><span style="text-transform:none;letter-spacing:0">quanto custa a quem sente</span></th>
+      <th style="width:19mm">G<br><span style="text-transform:none;letter-spacing:0">tem gambiarra (0 ou 1–3)</span></th>
+      <th style="width:19mm">E<br><span style="text-transform:none;letter-spacing:0">muita gente tem</span></th>
+      <th style="width:19mm">A<br><span style="text-transform:none;letter-spacing:0">o trio alcança essas pessoas</span></th>
+      <th style="width:13mm">Total</th>
+    </tr>
+    <tr><td class="fill-lg"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="fill-lg"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="fill-lg"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="fill-lg"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  </table>
+  <p class="small" style="margin:2px 0 0"><b>E</b> é a pergunta da escala: se mil pessoas tivessem essa dor amanhã, a mesma solução serviria para todas? <b>A</b> é a pergunta do teste: vocês conseguem mandar um link para dez dessas pessoas na semana que vem?</p>
+
+  <h2 class="ex"><span><b>Parte 7.</b> A frase do trio</span><span class="pts">1,5</span></h2>
+  <p class="q small">Escrevam a dor vencedora na fôrma. É esta frase que vira o <b>briefing da Aula 08</b> e, lá na frente, a primeira seção do TCC.</p>
+  <div class="forma">
+    <div class="lin"><b>Quem (específico)</b><span></span></div>
+    <div class="lin"><b>Não consegue (concreto)</b><span></span></div>
+    <div class="lin"><b>Porque (obstáculo)</b><span></span></div>
+    <div class="lin"><b>Prova (gambiarra de hoje)</b><span></span></div>
+    <div class="lin"><b>Fala que mais convence</b><span></span></div>
+    <div class="lin"><b>Evidência</b><span style="flex:0 0 auto;border:0;height:auto;font-size:8.4pt;color:var(--ink)">das pessoas que o trio ouviu, ______ de ______ vivem essa dor.</span></div>
+    <p class="cap" style="margin:8px 0 0">A frase inteira — “[quem] não consegue [o quê] porque [obstáculo]”</p>
+    <div class="rule"></div><div class="rule"></div>
+  </div>
+
+  <p class="q small" style="margin-top:6px">Confiram a frase antes de entregar:</p>
+  <ul class="chk" style="font-size:8.6pt">
+    <li>Trocamos o assunto por outro qualquer e a frase <b>deixou</b> de fazer sentido — ela fala de alguém de verdade.</li>
+    <li>A frase <b>não cita nenhum app, site ou solução</b>. Ela descreve o problema, não a nossa ideia.</li>
+    <li>Conseguimos dizer o <b>nome de uma pessoa real</b> que reclamou disso na última semana.</li>
+  </ul>
+
+  <div class="cols2" style="margin-top:8px">
+    <div class="box tight">
+      <p class="cap">Autoavaliação — marque o que você já faz sozinho</p>
+      <ul class="chk" style="font-size:8.6pt">
+        <li>Percebo uma reclamação e anoto antes de esquecer</li>
+        <li>Separo uma dor real de uma ideia legal na hora</li>
+        <li>Pergunto sobre o passado da pessoa, não sobre a minha ideia</li>
+        <li>Escuto mais do que falo numa entrevista</li>
+      </ul>
+    </div>
+    <div class="box tight">
+      <p class="cap">Uso do professor — devolutiva</p>
+      <div class="rule"></div><div class="rule"></div>
+      <div class="rule"></div><div class="rule"></div>
+      <p class="small" style="margin:2px 0 0">Frase aprovada para o briefing: ☐ sim &nbsp; ☐ refazer</p>
+    </div>
+  </div>
+
+  <div class="foot"><span>Atividade · Caça às dores · Prof. Toni Coimbra · aulas.tonicoimbra.com</span><span>Página 4 de 4</span></div>
+</section>
+
+</body>
+</html>
