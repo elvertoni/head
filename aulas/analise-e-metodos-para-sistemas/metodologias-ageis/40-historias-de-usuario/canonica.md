@@ -16,11 +16,11 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 40_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
-"O sistema deve permitir autenticação via credenciais com hash." Você entendeu? Provavelmente metade. Agora: "Como aluno, quero entrar no app com meu e-mail e senha para ver minhas notas." Essa qualquer um entende — inclusive quem vai usar o app. A diferença entre as duas frases é o segredo desta aula. No Scrum, a gente não descreve o que o sistema faz com jargão técnico frio; a gente conta o que a **pessoa** precisa, na forma de uma pequena história. Hoje você aprende a escrever essas histórias de usuário — a maneira ágil de registrar requisitos.
+"O sistema deve permitir autenticação via credenciais com hash." Você entendeu? Provavelmente metade. Agora: "Como aluno, quero entrar no app com meu e-mail e senha para ver minhas notas." Essa qualquer um entende — inclusive quem vai usar o app. A diferença entre as duas frases é o segredo desta aula. No Scrum, a gente não descreve o que o sistema faz com jargão técnico frio; a gente conta o que a **pessoa** precisa, na forma de uma pequena história. Hoje você aprende a escrever essas **[[historia-de-usuario|histórias de usuário]]** — a maneira ágil de registrar requisitos.
 
 ## Objetivos
 
@@ -62,7 +62,7 @@ Escrever a história focada na **solução técnica** em vez da **necessidade do
 
 ### Como saber que está pronto
 
-Uma história sozinha pode ser vaga. Por isso ela vem acompanhada de **critérios de aceitação**.
+Uma história sozinha pode ser vaga. Por isso ela vem acompanhada de **[[criterio-de-aceitacao|critérios de aceitação]]**.
 
 :::conceito Critérios de aceitação
 São as condições que definem **quando** a história está concluída — o "combinado" que diz se ficou pronta de verdade. Para a história de salvar favoritos: *"o cliente consegue marcar um pedido como favorito; o favorito aparece no topo na próxima visita; é possível desmarcar."* Sem critérios, "pronto" vira opinião; com critérios, vira fato verificável.
@@ -143,7 +143,7 @@ Hoje você descobriu que:
 - **História de usuário** descreve uma necessidade no formato **Como / Quero / Para que** — foco na pessoa, não na tecnologia.
 - O **"para que"** mantém o time focado em **valor**.
 - **Critérios de aceitação** definem quando a história está pronta, de forma verificável.
-- No **Sprint Planning**, o time escolhe e estima as histórias do topo do backlog para a sprint.
+- No **[[sprint-planning|Sprint Planning]]**, o time escolhe e estima as histórias do topo do backlog para a sprint.
 
 **Próxima aula:** já temos as histórias. Mas quanto esforço cada uma dá? E como o time decide isso junto, sem brigar? Vamos fechar a trilha com **estimativa e Planning Poker**.
 

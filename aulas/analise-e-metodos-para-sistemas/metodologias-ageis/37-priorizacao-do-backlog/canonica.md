@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 37_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Imagina que faltam três dias para a prova de todas as matérias e você não tem como estudar tudo. O que você faz? Estuda primeiro o que **vale mais nota** e o que você **domina menos**. Isso é priorizar — e é exatamente o que um time Scrum faz com o backlog. Por mais que a lista de funcionalidades seja enorme, o tempo é curto e a equipe é pequena. Não dá para fazer tudo de uma vez, então alguém precisa decidir: o que vem **primeiro**? Hoje você aprende a responder essa pergunta com método.
@@ -45,11 +45,11 @@ Priorizar é escolher o que entra primeiro para entregar mais valor com menos te
 ### Por que priorizar
 
 :::conceito Priorização do backlog
-É o processo de **ordenar** os itens do backlog para que o time trabalhe primeiro no que tem **maior valor e urgência**. Quem lidera é o **Product Owner**, junto com o time e os interessados. O objetivo: entregar o que mais importa **antes**, maximizando o retorno do esforço.
+É o processo de **ordenar** os itens do backlog para que o time trabalhe primeiro no que tem **maior [[entrega-de-valor|valor]] e urgência**. Quem lidera é o **[[product-owner|Product Owner]]**, junto com o time e os interessados. O objetivo: entregar o que mais importa **antes**, maximizando o retorno do esforço.
 
 :::
 
-Sem priorização, o time corre o risco de gastar a primeira sprint num detalhe bonitinho enquanto o essencial — aquilo sem o qual o produto nem funciona — fica para depois.
+Sem **[[priorizacao-do-backlog|priorização]]**, o time corre o risco de gastar a primeira sprint num detalhe bonitinho enquanto o essencial — aquilo sem o qual o produto nem funciona — fica para depois.
 
 :::atencao Erro comum
 Priorizar pelo que é **mais fácil ou mais divertido** de fazer, em vez do que tem mais valor. É tentador começar pela funcionalidade legal e deixar a chata (mas essencial) para o fim. Resultado: o produto fica cheio de enfeites e sem o básico. Priorize por **valor para o usuário**, não por conforto do time.
@@ -58,7 +58,7 @@ Priorizar pelo que é **mais fácil ou mais divertido** de fazer, em vez do que 
 
 ### O método MoSCoW
 
-Uma das formas mais usadas de priorizar é o **MoSCoW**. O nome é um truque de memória com quatro categorias:
+Uma das formas mais usadas de priorizar é o **[[moscow|MoSCoW]]**. O nome é um truque de memória com quatro categorias:
 
 ```diagrama-progressivo
 titulo: As quatro caixas do MoSCoW
@@ -78,7 +78,7 @@ A beleza do MoSCoW é forçar escolhas: nem tudo pode ser "Must". Se tudo é pri
 ### Priorizar é para sempre
 
 :::importante A lista nunca fica pronta
-A priorização **não** acontece uma vez só no início. Ela é **contínua e iterativa**: a cada sprint o time revê o backlog, porque surgem novos itens, o mercado muda e o que era urgente deixa de ser. O backlog é um documento **vivo**, reordenado o tempo todo pelo PO.
+A priorização **não** acontece uma vez só no início. Ela é **contínua e iterativa**: a cada sprint o time revê o backlog, porque surgem novos itens, o mercado muda e o que era urgente deixa de ser. O **[[product-backlog|backlog]]** é um documento **vivo**, reordenado o tempo todo pelo PO.
 
 :::
 

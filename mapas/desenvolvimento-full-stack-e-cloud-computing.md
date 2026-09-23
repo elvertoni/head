@@ -12,6 +12,10 @@ gerado_por: tools/gerar_mapas.py
 
 ## (sem módulo)
 
+#### AULA 34_ANÁLISE E MÉTODO PARA SISTEMAS
+
+- [[conceitos/desenvolvimento-full-stack-e-cloud-computing/scrum|Scrum]] · _rascunho_
+
 #### FLEXBOX
 
 - [[conceitos/desenvolvimento-full-stack-e-cloud-computing/flexbox|Flexbox]] · _rascunho_

@@ -16,11 +16,11 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 38_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
-Você toparia comer um bolo inteiro de uma garfada só? Ninguém topa — a gente come em fatias. Entregar software também: jogar o produto inteiro no cliente só no último dia é arriscado (e se estiver errado, descobre tarde demais). O Scrum prefere entregar em fatias que já funcionam, chamadas releases. Você já aprendeu a montar o time, organizar e priorizar o backlog; agora vai aprender a combinar **quando** cada fatia vai para a mesa.
+Você toparia comer um bolo inteiro de uma garfada só? Ninguém topa — a gente come em fatias. Entregar software também: jogar o produto inteiro no cliente só no último dia é arriscado (e se estiver errado, descobre tarde demais). O Scrum prefere entregar em fatias que já funcionam, chamadas **[[release|releases]]**. Você já aprendeu a montar o time, organizar e priorizar o backlog; agora vai aprender a combinar **quando** cada fatia vai para a mesa.
 
 ## Objetivos
 
@@ -79,7 +79,7 @@ Tratar o cronograma ágil como uma **promessa de pedra**. Em métodos tradiciona
 
 ### Estimar é diferente de adivinhar
 
-Para planejar releases, o time precisa **estimar** quanto esforço cada item dá e quanta coisa consegue entregar por sprint (a **capacidade**). Estimativa não é chute aleatório nem promessa exata — é uma previsão informada que melhora a cada sprint, quando o time compara o que planejou com o que realmente entregou.
+Para planejar releases, o time precisa **[[estimativa-de-esforco|estimar]]** quanto esforço cada item dá e quanta coisa consegue entregar por **[[sprint]]** (a **capacidade**). Estimativa não é chute aleatório nem promessa exata — é uma previsão informada que melhora a cada sprint, quando o time compara o que planejou com o que realmente entregou.
 
 :::dica O cronograma físico-financeiro
 No mundo profissional, esse planejamento de entregas vira o **cronograma do projeto** — documento que clientes e gestores cobram. Saber dividir um trabalho grande em entregas datadas e ajustáveis é exatamente a habilidade de "acompanhar o cronograma de um projeto" que aparece no perfil do técnico em desenvolvimento de sistemas.

@@ -17,8 +17,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 55_ANÁLISE E MÉTODO PARA SISTEMAS.pptx.pdf
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-23
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Seu celular vibrou agora. Você vai olhar — quase todo mundo olha. E o trabalho de história que vale nota, com prazo daqui a duas semanas, **não vibra**. Nunca vibrou, nunca vai vibrar. Essa é a assimetria mais cara da vida adulta e da vida profissional: o urgente grita, o importante fica quieto — e quem decide na hora, no impulso, acaba passando o ano inteiro apagando incêndio sem nunca construir nada. Times de software caem nisso todo santo dia. A aula de hoje é sobre a defesa que o Kanban inventou: decidir **antes**, e deixar escrito no quadro.
@@ -64,7 +64,7 @@ O time começa a marcar **tudo** como urgente. Chega a um ponto em que existem s
 :::
 
 :::importante Corrigindo uma confusão comum
-"Importante × urgente" **não é um conceito do Kanban** — é a matriz de Eisenhower, uma ferramenta de decisão pessoal bem mais antiga. Ela ajuda a *pensar*, mas não organiza um time sozinha: não adianta cada pessoa classificar de cabeça, porque cada uma classifica diferente. O mecanismo que o Kanban realmente oferece para isso é a **raia** com uma **classe de serviço** — a mesma ideia, só que escrita no quadro e valendo para todo mundo. É disso que trata o resto da aula.
+"Importante × urgente" **não é um conceito do Kanban** — é a **[[matriz-de-eisenhower|matriz de Eisenhower]]**, uma ferramenta de decisão pessoal bem mais antiga. Ela ajuda a *pensar*, mas não organiza um time sozinha: não adianta cada pessoa classificar de cabeça, porque cada uma classifica diferente. O mecanismo que o Kanban realmente oferece para isso é a **raia** com uma **classe de serviço** — a mesma ideia, só que escrita no quadro e valendo para todo mundo. É disso que trata o resto da aula.
 
 :::
 
@@ -77,13 +77,13 @@ O time começa a marcar **tudo** como urgente. Chega a um ponto em que existem s
 
 ![Quadro visto de frente com três colunas verticais de fluxo atravessadas por duas faixas horizontais. A faixa de cima, estreita, é a de urgência e carrega um cartão só; a de baixo, larga, é a de trabalho normal e carrega vários cartões que andam da esquerda para a direita sem sair da própria faixa.](img/raia-e-classe-de-servico.png)
 
-O critério da raia é escolha do time — pode ser por tipo de trabalho, por produto, por equipe responsável. Mas o uso mais valioso, e o que resolve o problema desta aula, é separar por **urgência**:
+O critério da **[[raia]]** é escolha do time — pode ser por tipo de trabalho, por produto, por equipe responsável. Mas o uso mais valioso, e o que resolve o problema desta aula, é separar por **urgência**:
 
 - **Raia de urgência** (bem no topo, estreita): o que interrompe. Bug que derrubou o sistema, problema que trava o cliente.
 - **Raia padrão** (o corpo do quadro): o trabalho planejado, que anda na ordem da fila.
 
 :::conceito Classe de serviço
-É a **regra de atendimento** que a raia carrega. Não basta desenhar a faixa: ela precisa vir com o combinado — quantos cartões cabem ali, quem pode colocar um cartão nela, e o que o time faz quando ela recebe trabalho. Sem essa regra, a raia é só uma linha bonita no quadro.
+É a **[[classe-de-servico|regra de atendimento]]** que a raia carrega. Não basta desenhar a faixa: ela precisa vir com o combinado — quantos cartões cabem ali, quem pode colocar um cartão nela, e o que o time faz quando ela recebe trabalho. Sem essa regra, a raia é só uma linha bonita no quadro.
 
 :::
 
@@ -105,7 +105,7 @@ camadas:
 Todo time tem regras. A diferença é que na maioria dos times elas moram na cabeça das pessoas mais antigas — e quem chega novo descobre no tropeço.
 
 :::conceito Políticas explícitas
-São as regras do quadro **escritas e visíveis para todos**, geralmente no próprio quadro. Respondem coisas como: o que precisa estar pronto para um cartão passar desta coluna para a próxima, qual o limite de WIP de cada coluna, quem pode puxar o quê, e o que fazer quando um cartão trava.
+São as **[[politicas-explicitas|regras do quadro]]** escritas e visíveis para todos, geralmente no próprio quadro. Respondem coisas como: o que precisa estar pronto para um cartão passar desta coluna para a próxima, qual o limite de WIP de cada coluna, quem pode puxar o quê, e o que fazer quando um cartão trava.
 
 :::
 
@@ -211,7 +211,7 @@ Hoje você descobriu que:
 - **Políticas explícitas** tiram as regras da cabeça das pessoas e colocam no quadro, onde quem chegou ontem também enxerga.
 - A grande sacada é o **momento** da decisão: combinar com a cabeça fria, semanas antes, em vez de discutir com o cliente ligando.
 
-**Fim do bloco de Kanban:** você percorreu a agilidade inteira nesta trilha — do **Manifesto Ágil** ao time Scrum, das **cerimônias** e **histórias de usuário** à **estimativa**, e agora do **quadro Kanban** ao fluxo puxado, ao limite de WIP e às políticas explícitas. São duas famílias de método que qualquer time de software espera que você reconheça. Na vida real, o próximo passo é medir: quanto tempo um cartão leva do começo à entrega — e o que fazer quando esse número não agrada.
+**Fim do bloco de [[kanban|Kanban]]:** você percorreu a agilidade inteira nesta trilha — do **Manifesto Ágil** ao time Scrum, das **cerimônias** e **histórias de usuário** à **estimativa**, e agora do **quadro Kanban** ao fluxo puxado, ao limite de WIP e às políticas explícitas. São duas famílias de método que qualquer time de software espera que você reconheça. Na vida real, o próximo passo é medir: quanto tempo um cartão leva do começo à entrega — e o que fazer quando esse número não agrada.
 
 :::roteiro
 Abrir com o celular de novo (na 53 já foi usado, e a repetição aqui é proposital): peça que digam quantas notificações chegaram durante a aula anterior, e depois pergunte quantos trabalhos escolares "notificaram". O silêncio é o gancho. A matriz 2x2 vale ir ao quadro branco e preencher COM a turma, pedindo exemplos deles antes de mostrar os do texto — o quadrante "não importante e urgente" é o que gera mais discussão e é o mais útil da vida. Marque bem a correção da origem: "importante x urgente" é matriz de Eisenhower, não é Kanban; o deck da SEED apresenta como se fosse conceito nativo, e o mecanismo Kanban de verdade é raia + classe de serviço. Na prática, o cartão-surpresa do passo 4 é o momento pedagógico — não entregue antes dos grupos terem escrito as políticas, senão perde a graça; a resposta certa costuma ser "não é urgente, é só barulhento", mas aceite qualquer resposta que as políticas do grupo sustentem. A tabela Scrum × Kanban cobre o escopo do deck 53 da SEED e fecha a trilha; se o tempo apertar, corte o exemplo em bloco de código, não a tabela. Alura ("Kanban: análises e implementação", tarefas de raias e políticas explícitas) e o vídeo de políticas explícitas ficam como apoio opcional pra quem quiser seguir em casa.

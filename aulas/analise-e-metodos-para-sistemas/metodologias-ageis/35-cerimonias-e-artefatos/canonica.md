@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 35_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Imagina um time de futebol que nunca conversa: ninguém combina jogada, ninguém revê o que deu errado no primeiro tempo, ninguém sabe o placar. Vira bagunça. Um time Scrum evita isso com **reuniões curtas e combinadas** (as cerimônias) e **listas vivas** que todo mundo enxerga (os artefatos). Na aula passada você montou o time e a lista de tarefas; agora vai ver como esse time se acompanha no dia a dia para nunca se perder.
@@ -44,7 +44,7 @@ As cerimônias deixam o trabalho visível, enquanto os artefatos mostram o que e
 
 ### As quatro cerimônias
 
-Cerimônias são as reuniões combinadas do Scrum. Cada sprint tem quatro momentos:
+**[[cerimonias-do-scrum|Cerimônias]]** são as reuniões combinadas do Scrum. Cada sprint tem quatro momentos:
 
 ```diagrama-progressivo
 titulo: Uma sprint do começo ao fim
@@ -60,7 +60,7 @@ camadas:
 ```
 
 :::atencao Erro comum
-Transformar a **Daily** numa reunião longa de prestação de contas para o chefe. A Daily é de **15 minutos, em pé** (por isso "stand-up"), e é do time **para o time** — serve para sincronizar e revelar obstáculos, não para alguém cobrar status. Se está virando uma hora sentado, deixou de ser Daily.
+Transformar a **[[daily-standup|Daily]]** numa reunião longa de prestação de contas para o chefe. A Daily é de **15 minutos, em pé** (por isso "stand-up"), e é do time **para o time** — serve para sincronizar e revelar obstáculos, não para alguém cobrar status. Se está virando uma hora sentado, deixou de ser Daily.
 
 :::
 
@@ -69,16 +69,16 @@ Transformar a **Daily** numa reunião longa de prestação de contas para o chef
 Artefatos são as "listas vivas" que dão transparência ao trabalho.
 
 :::conceito Product Backlog, Sprint Backlog e incremento
-O **Product Backlog** é a lista de **tudo** que o produto precisa (visão geral, cuidada pelo PO). O **Sprint Backlog** é o **recorte** que o time escolheu fazer **nesta sprint**. E o **incremento** é o pedaço **pronto e funcionando** que sai ao final do ciclo. Em resumo: do tudo (Product), tira-se o agora (Sprint), que vira o pronto (incremento).
+O **Product Backlog** é a lista de **tudo** que o produto precisa (visão geral, cuidada pelo PO). O **[[sprint-backlog|Sprint Backlog]]** é o **recorte** que o time escolheu fazer **nesta sprint**. E o **[[incremento]]** é o pedaço **pronto e funcionando** que sai ao final do ciclo. Em resumo: do tudo (Product), tira-se o agora (Sprint), que vira o pronto (incremento).
 
 :::
 
 ### Por que tudo isso existe
 
-As cerimônias e os artefatos não são burocracia — eles sustentam os **três pilares** do Scrum:
+As cerimônias e os artefatos não são burocracia — eles sustentam os **[[pilares-do-scrum|três pilares]]** do Scrum:
 
 :::importante Transparência, inspeção e adaptação
-**Transparência:** todos enxergam o mesmo (os backlogs são abertos). **Inspeção:** o time olha com frequência o trabalho e o processo (Review e Retrospectiva). **Adaptação:** com base no que viu, ajusta o rumo. É esse ciclo — mostrar, olhar, corrigir — que torna o Scrum capaz de lidar com a mudança.
+**Transparência:** todos enxergam o mesmo (os backlogs são abertos). **Inspeção:** o time olha com frequência o trabalho e o processo (**[[sprint-review|Review]]** e **[[sprint-retrospectiva|Retrospectiva]]**). **Adaptação:** com base no que viu, ajusta o rumo. É esse ciclo — mostrar, olhar, corrigir — que torna o Scrum capaz de lidar com a mudança.
 
 :::
 

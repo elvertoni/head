@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 39_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Até agora você viu as peças do Scrum separadas: os papéis, as cerimônias, os artefatos, os épicos, a priorização, as releases. É como ter aprendido cada peça de um quebra-cabeça sozinha. Hoje a gente monta a imagem inteira — e, mais importante, faz uma pergunta que pouca aula faz: o Scrum é tão perfeito assim? Resposta honesta: não. Ele resolve muita coisa, mas tem desafios reais. Saber os dois lados é o que separa quem decora o Scrum de quem entende o Scrum.
@@ -60,7 +60,7 @@ Juntas, essas peças formam um ciclo que se repete a cada sprint: planeja-se, ex
 
 ### Os três pilares
 
-Por baixo de tudo, o Scrum se apoia em três pilares. São eles que explicam **por que** o framework funciona:
+Por baixo de tudo, o Scrum se apoia em **[[pilares-do-scrum|três pilares]]**. São eles que explicam **por que** o framework funciona:
 
 ```diagrama-progressivo
 titulo: Os três pilares do Scrum
@@ -98,7 +98,7 @@ Numa entrevista, qualquer um recita "PO, SM, Dev". Quem impressiona é quem sabe
 
 1. *"O time descobre os problemas só no fim da sprint, nunca durante."*
 2. *"O Product Backlog fica num caderno do PO; ninguém mais sabe o que vem por aí."*
-3. *"Toda Retrospectiva aponta os mesmos erros, mas nada muda na sprint seguinte."*
+3. *"Toda **[[sprint-retrospectiva|Retrospectiva]]** aponta os mesmos erros, mas nada muda na sprint seguinte."*
 
 Para cada caso: qual pilar falhou? Que prática do Scrum corrigiria?
 

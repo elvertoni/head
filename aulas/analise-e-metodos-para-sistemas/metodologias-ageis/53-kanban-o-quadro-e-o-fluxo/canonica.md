@@ -18,8 +18,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 54_ANÁLISE E MÉTODO PARA SISTEMAS.pptx.pdf
 revisao: true
 status: aprovada
-versao: 3
-atualizado_em: 2026-08-23
+versao: 4
+atualizado_em: 2026-09-23
 ---
 
 Abre o caderno e conta quantos trabalhos você tem em aberto agora. Não os que terminou — os que **começou e não terminou**: a pesquisa de história, o exercício de matemática pela metade, o vídeo que prometeu editar pro grupo. Provavelmente são uns quatro ou cinco. E aqui vai a parte incômoda: se alguém perguntasse hoje "quantos desses estão prontos?", a resposta seria *nenhum*. Todo esse trabalho existe, custou horas suas, e mesmo assim não entregou nada a ninguém. Times de software vivem exatamente esse problema, só que multiplicado por dez pessoas — e inventaram um quadro de parede pra resolver.
@@ -73,7 +73,7 @@ camadas:
 ```
 
 :::curiosidade De onde isso saiu
-O Kanban nasceu na Toyota, no Japão do pós-guerra. Taiichi Ohno, o engenheiro por trás do sistema, se inspirou em algo bem prosaico: o **supermercado americano**. Ele notou que o funcionário não enche a prateleira num cronograma fixo — ele repõe quando o cliente tira. O consumo é que dispara a produção. Levar essa ideia para a linha de montagem virou o Sistema Toyota de Produção; levá-la para software só aconteceu por volta de 2007, quase sessenta anos depois.
+O **[[kanban|Kanban]]** nasceu na Toyota, no Japão do pós-guerra. Taiichi Ohno, o engenheiro por trás do sistema, se inspirou em algo bem prosaico: o **supermercado americano**. Ele notou que o funcionário não enche a prateleira num cronograma fixo — ele repõe quando o cliente tira. O consumo é que dispara a produção. Levar essa ideia para a linha de montagem virou o Sistema Toyota de Produção; levá-la para software só aconteceu por volta de 2007, quase sessenta anos depois.
 
 :::
 
@@ -115,7 +115,7 @@ Um time tem `Desenvolver → Testar → Publicar`. Na segunda-feira o quadro mos
 :::
 
 :::dica Onde você vai encontrar isso
-Todo quadro que você já viu na internet é um Kanban: Trello, quadro de Projects do GitHub, Jira, Notion. Em processo seletivo de estágio, "sei trabalhar com quadro Kanban" só impressiona quem consegue completar a frase — falar de **limite de WIP** e de **gargalo** separa quem usou a ferramenta de quem entendeu o método. E vale fora do trabalho: um quadro de três colunas para as matérias do bimestre, com limite de 2 em andamento, resolve mais do que parece.
+Todo quadro que você já viu na internet é um Kanban: Trello, quadro de Projects do GitHub, Jira, Notion. Em processo seletivo de estágio, "sei trabalhar com quadro Kanban" só impressiona quem consegue completar a frase — falar de **[[limite-de-wip|limite de WIP]]** e de **[[gargalo]]** separa quem usou a ferramenta de quem entendeu o método. E vale fora do trabalho: um quadro de três colunas para as matérias do bimestre, com limite de 2 em andamento, resolve mais do que parece.
 
 :::
 

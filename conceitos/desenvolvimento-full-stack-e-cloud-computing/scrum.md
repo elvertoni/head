@@ -7,8 +7,9 @@ aka: [framework Scrum]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Cultura DevOps e Integração Contínua/02 - Aula 2 - Abordagens de Entrega de Softwares II - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+  - "lake/analise-e-metodos-para-sistemas/AULA 34_ANÁLISE E MÉTODO PARA SISTEMAS.pptx"
+aulas: [34]
+atualizado_em: 2026-09-23
 ---
 
 Scrum é um framework para desenvolver e entregar valor em ciclos curtos, com papéis, eventos, artefatos e inspeção frequente do trabalho. Ele organiza transparência, adaptação e priorização, mas não é sinônimo de qualquer projeto dividido em tarefas ou sprints.
@@ -30,8 +31,10 @@ O trabalho é ordenado por prioridade e revisado ao fim de cada ciclo. A equipe 
 ## Onde aparece
 
 - Cultura DevOps e Integração Contínua, Aula 2, páginas 2–4.
-- Relaciona-se a [[devops]], [[entrega-continua]], [[pipeline-ci-cd]] e [[waterfall]].
+- Aula 34 — *Introdução ao Scrum* `aulas/analise-e-metodos-para-sistemas/metodologias-ageis/34-introducao-ao-scrum/canonica.md`
+- Relaciona-se a [[devops]], [[entrega-continua]], [[pipeline-ci-cd]], [[waterfall]], [[sprint]], [[product-owner]], [[scrum-master]], [[product-backlog]] e [[kanban]].
 
 ## Fontes
 
 - Cultura DevOps e Integração Contínua, Aula 2, slides sobre abordagens iterativas.
+- Papéis, sprint e Product Backlog: slides SEED da Aula 34 de Análise e Métodos para Sistemas.

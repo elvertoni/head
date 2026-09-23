@@ -231,6 +231,11 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "agilidade",
+      "nome": "Agilidade",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "agregacao",
       "nome": "Agregação",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -971,6 +976,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "cerimonias-do-scrum",
+      "nome": "Cerimônias do Scrum",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "chamadas-de-mensagem",
       "nome": "Chamadas de mensagem",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -1064,6 +1074,11 @@
       "slug": "cidades-inteligentes",
       "nome": "Cidades inteligentes",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "classe-de-servico",
+      "nome": "Classe de serviço",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "classificacao-de-texto",
@@ -1441,6 +1456,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "criterio-de-aceitacao",
+      "nome": "Critérios de aceitação",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "crud",
       "nome": "CRUD",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -1509,6 +1529,11 @@
       "slug": "dados-treino-inferencia",
       "nome": "Dados, Treino e Inferência",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "daily-standup",
+      "nome": "Daily Stand-up",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "data-access-object",
@@ -1986,9 +2011,19 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "entrega-de-valor",
+      "nome": "Entrega de valor",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "enum-solidity",
       "nome": "Enum Solidity",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "epico",
+      "nome": "Épico",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "epistemologia",
@@ -1999,6 +2034,11 @@
       "slug": "equilibracao",
       "nome": "Equilibração",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "equipe-de-desenvolvimento",
+      "nome": "Equipe de desenvolvimento",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "erro-customizado-solidity",
@@ -2094,6 +2134,11 @@
       "slug": "estatistica-inferencial",
       "nome": "Estatística inferencial",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "estimativa-de-esforco",
+      "nome": "Estimativa de esforço",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "estrutura-cognitiva",
@@ -2466,6 +2511,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "gargalo",
+      "nome": "Gargalo",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "gargalo-de-desempenho",
       "nome": "Gargalo de desempenho",
       "disciplina": "introducao-a-computacao"
@@ -2661,6 +2711,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "historia-de-usuario",
+      "nome": "História de usuário",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "hoisting",
       "nome": "Hoisting",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -2784,6 +2839,11 @@
       "slug": "inatismo",
       "nome": "Inatismo",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "incremento",
+      "nome": "Incremento",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "independencia-de-dados",
@@ -3046,6 +3106,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "kanban",
+      "nome": "Kanban",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "kernel",
       "nome": "Kernel",
       "disciplina": "introducao-a-computacao"
@@ -3121,6 +3186,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "limite-de-wip",
+      "nome": "Limite de WIP",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "linguagem-de-alto-nivel",
       "nome": "Linguagem de alto nível",
       "disciplina": "introducao-a-computacao"
@@ -3191,6 +3261,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "manifesto-agil",
+      "nome": "Manifesto Ágil",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "manipulacao-do-dom",
       "nome": "Manipulação do DOM",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -3259,6 +3334,11 @@
       "slug": "matriz-de-confusao",
       "nome": "Matriz de confusão",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "matriz-de-eisenhower",
+      "nome": "Matriz de Eisenhower",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "matriz-gut",
@@ -3519,6 +3599,11 @@
       "slug": "monitoramento",
       "nome": "Monitoramento",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "moscow",
+      "nome": "MoSCoW",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "motivacao",
@@ -3931,6 +4016,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "pilares-do-scrum",
+      "nome": "Pilares do Scrum",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "pipeline-ci-cd",
       "nome": "Pipeline CI/CD",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -3961,6 +4051,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "planning-poker",
+      "nome": "Planning Poker",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "plano-de-carreira",
       "nome": "Plano de carreira",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3989,6 +4084,11 @@
       "slug": "politica-de-mesma-origem",
       "nome": "Política de mesma origem",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "politicas-explicitas",
+      "nome": "Políticas explícitas",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "politicas-publicas-educacionais",
@@ -4056,6 +4156,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "priorizacao-do-backlog",
+      "nome": "Priorização do backlog",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "probabilidade",
       "nome": "Probabilidade",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4109,6 +4214,16 @@
       "slug": "processos-mentais",
       "nome": "Processos mentais",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "product-backlog",
+      "nome": "Product Backlog",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
+      "slug": "product-owner",
+      "nome": "Product Owner",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "produto-cartesiano-relacional",
@@ -4356,6 +4471,11 @@
       "disciplina": "inteligencia-artificial"
     },
     {
+      "slug": "raia",
+      "nome": "Raia",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "raiz-de-merkle",
       "nome": "Raiz de Merkle",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4541,6 +4661,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "release",
+      "nome": "Release",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
       "slug": "renderizacao-condicional",
       "nome": "Renderização condicional",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -4694,6 +4819,11 @@
       "slug": "scrum",
       "nome": "Scrum",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "scrum-master",
+      "nome": "Scrum Master",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "sdk-do-firebase",
@@ -4954,6 +5084,31 @@
       "slug": "solucao-tecnologica",
       "nome": "Solução tecnológica",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "sprint",
+      "nome": "Sprint",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
+      "slug": "sprint-backlog",
+      "nome": "Sprint Backlog",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
+      "slug": "sprint-planning",
+      "nome": "Sprint Planning",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
+      "slug": "sprint-retrospectiva",
+      "nome": "Sprint Retrospectiva",
+      "disciplina": "analise-e-metodos-para-sistemas"
+    },
+    {
+      "slug": "sprint-review",
+      "nome": "Sprint Review",
+      "disciplina": "analise-e-metodos-para-sistemas"
     },
     {
       "slug": "sql",

@@ -16,11 +16,11 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 36_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
-Pensa numa lista de compras com 80 itens jogados em qualquer ordem: arroz, sabão, maçã, detergente, frango, shampoo... Você anda o mercado inteiro, ziguezagueando, e ainda esquece coisa. Agora pensa na mesma lista **agrupada** por seção: hortifrúti, limpeza, açougue. Tudo fica fácil. Um Product Backlog de software tem o mesmo problema: dezenas de funcionalidades soltas viram caos. A solução é a mesma do mercado — **agrupar por tema**. No Scrum, esses grandes grupos têm um nome: épicos.
+Pensa numa lista de compras com 80 itens jogados em qualquer ordem: arroz, sabão, maçã, detergente, frango, shampoo... Você anda o mercado inteiro, ziguezagueando, e ainda esquece coisa. Agora pensa na mesma lista **agrupada** por seção: hortifrúti, limpeza, açougue. Tudo fica fácil. Um **[[product-backlog|Product Backlog]]** de software tem o mesmo problema: dezenas de funcionalidades soltas viram caos. A solução é a mesma do mercado — **agrupar por tema**. No Scrum, esses grandes grupos têm um nome: **[[epico|épicos]]**.
 
 ## Objetivos
 

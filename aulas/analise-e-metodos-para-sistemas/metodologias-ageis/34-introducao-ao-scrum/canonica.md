@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 34_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Você já participou de um trabalho em grupo onde "todo mundo fazia tudo" e, no fim, ninguém tinha feito nada direito? Sem papéis claros, o time anda em círculos. O Scrum nasceu pra resolver exatamente isso no desenvolvimento de software: dar a cada pessoa um papel, dividir o trabalho em ciclos curtos e manter todo mundo apontando para o mesmo lugar. Na aula passada você viu o que é ser ágil; agora vai conhecer a ferramenta ágil mais usada do planeta — e como ela organiza um time de verdade.
@@ -45,11 +45,11 @@ Scrum funciona quando cada papel sabe o que faz e cada sprint termina com algo p
 ### O que é Scrum
 
 :::conceito Scrum
-É um **framework ágil** para desenvolver produtos de forma **iterativa e incremental** — ou seja, em ciclos que se repetem, entregando um pedaço pronto de cada vez. O time trabalha em **sprints**, ciclos curtos (geralmente de 2 a 4 semanas) ao fim dos quais sempre existe algo funcionando para mostrar.
+É um **framework ágil** para desenvolver produtos de forma **iterativa e incremental** — ou seja, em ciclos que se repetem, entregando um pedaço pronto de cada vez. O time trabalha em **[[sprint|sprints]]**, ciclos curtos (geralmente de 2 a 4 semanas) ao fim dos quais sempre existe algo funcionando para mostrar.
 
 :::
 
-Em vez de sumir por seis meses e reaparecer com o produto inteiro (que pode estar errado), o time Scrum entrega de pedacinho em pedacinho e corrige o rumo a cada sprint.
+Em vez de sumir por seis meses e reaparecer com o produto inteiro (que pode estar errado), o time **[[scrum|Scrum]]** entrega de pedacinho em pedacinho e corrige o rumo a cada sprint.
 
 ### Os três papéis
 
@@ -57,9 +57,9 @@ Num time Scrum, cada pessoa tem um papel com responsabilidade definida. São tr�
 
 | Papel | Responsabilidade | Em uma frase |
 |---|---|---|
-| **Product Owner (PO)** | maximizar o valor do produto; cuida e prioriza o Product Backlog | decide **o que** fazer e em que ordem |
-| **Scrum Master (SM)** | garantir que o time siga o Scrum; remove obstáculos | facilita e **protege** o time |
-| **Equipe de Desenvolvimento** | construir e entregar o incremento a cada sprint | faz **acontecer** |
+| **[[product-owner|Product Owner (PO)]]** | maximizar o valor do produto; cuida e prioriza o Product Backlog | decide **o que** fazer e em que ordem |
+| **[[scrum-master|Scrum Master (SM)]]** | garantir que o time siga o Scrum; remove obstáculos | facilita e **protege** o time |
+| **[[equipe-de-desenvolvimento|Equipe de Desenvolvimento]]** | construir e entregar o incremento a cada sprint | faz **acontecer** |
 
 :::atencao Erro comum
 Achar que o **Scrum Master é o chefe** do time. Não é. Ele não manda nas pessoas nem distribui ordens — ele é um **facilitador**: tira pedras do caminho, organiza as reuniões e protege o time de interrupções. Quem decide o que entra no produto é o PO; quem decide **como** fazer é a própria equipe.
@@ -69,7 +69,7 @@ Achar que o **Scrum Master é o chefe** do time. Não é. Ele não manda nas pes
 ### O Product Backlog
 
 :::conceito Product Backlog
-É a **lista ordenada** de tudo que o produto precisa: funcionalidades, melhorias e correções. Fica sob responsabilidade do **Product Owner**, que a mantém **priorizada** — o mais importante no topo. É dessa lista que o time puxa o trabalho de cada sprint.
+É a **[[product-backlog|lista ordenada]]** de tudo que o produto precisa: funcionalidades, melhorias e correções. Fica sob responsabilidade do **Product Owner**, que a mantém **priorizada** — o mais importante no topo. É dessa lista que o time puxa o trabalho de cada sprint.
 
 :::
 

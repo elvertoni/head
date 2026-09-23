@@ -3,6 +3,40 @@
 > Catálogo do grafo de conceitos do segundo cérebro. Uma linha por nó.
 > Regenerável a partir dos frontmatters com `python tools/gerar_indice.py`.
 
+## Analise E Metodos Para Sistemas
+
+- [[agilidade]] — Entregar valor cedo, aprender com cada entrega e mudar de rota quando a realidade muda. · rascunho · aulas [33]
+- [[cerimonias-do-scrum]] — As quatro reuniões que dão ritmo a uma sprint: planejar, sincronizar todo dia, mostrar e refletir. · rascunho · aulas [35]
+- [[classe-de-servico]] — A regra de atendimento combinada para uma raia: limite, quem pode usar e o que fazer quando ela recebe trabalho. · rascunho · aulas [54]
+- [[criterio-de-aceitacao]] — As condições verificáveis que dizem quando uma história está de fato pronta. · rascunho · aulas [40]
+- [[daily-standup]] — Reunião diária de 15 minutos, em pé, do time para o time. · rascunho · aulas [35]
+- [[entrega-de-valor]] — O objetivo não é terminar tarefas, é entregar o que resolve o problema de quem usa — o quanto antes. · rascunho · aulas [33,37,41]
+- [[epico]] — O guarda-chuva temático que agrupa funcionalidades relacionadas antes de serem quebradas em partes menores. · rascunho · aulas [36]
+- [[equipe-de-desenvolvimento]] — Constrói e entrega o incremento de cada sprint; decide como o trabalho técnico é feito. · rascunho · aulas [34]
+- [[estimativa-de-esforco]] — Previsão relativa de esforço — comparar histórias entre si, não cravar horas. · rascunho · aulas [38,41]
+- [[gargalo]] — A etapa onde os cartões se empilham — a velocidade do time inteiro é a velocidade dela. · rascunho · aulas [53]
+- [[historia-de-usuario]] — Requisito escrito no formato Como/Quero/Para que — na linguagem de quem vai usar, não do sistema. · rascunho · aulas [40]
+- [[incremento]] — O pedaço pronto e funcionando que sai ao final de uma sprint. · rascunho · aulas [35]
+- [[kanban]] — Sistema puxado que torna o trabalho visível em cartões que atravessam colunas de fluxo real. · rascunho · aulas [53,54]
+- [[limite-de-wip]] — O número máximo de cartões permitidos numa coluna ao mesmo tempo. · rascunho · aulas [53]
+- [[manifesto-agil]] — Documento de 2001 que trocou "seguir o plano a qualquer custo" por "abraçar a mudança e entregar valor". · rascunho · aulas [33]
+- [[matriz-de-eisenhower]] — Cruza importante × urgente para decidir o que fazer agora, agendar, questionar ou descartar. · rascunho · aulas [54]
+- [[moscow]] — Classifica cada item do backlog em Must, Should, Could ou Won't have. · rascunho · aulas [37]
+- [[pilares-do-scrum]] — Transparência para enxergar, inspeção para olhar com frequência, adaptação para ajustar o rumo. · rascunho · aulas [35,39]
+- [[planning-poker]] — Estimativa em grupo com cartas de Fibonacci reveladas em segredo e ao mesmo tempo. · rascunho · aulas [41]
+- [[politicas-explicitas]] — As regras do quadro escritas e visíveis para todos — não guardadas na cabeça de alguém. · rascunho · aulas [54]
+- [[priorizacao-do-backlog]] — Ordenar o backlog para que o mais valioso venha primeiro. · rascunho · aulas [37]
+- [[product-backlog]] — A lista ordenada de tudo que o produto precisa, priorizada pelo PO. · rascunho · aulas [34,36,37]
+- [[product-owner]] — Decide o quê e em que ordem, mantendo o Product Backlog priorizado por valor. · rascunho · aulas [34,37]
+- [[raia]] — Divisão horizontal do quadro que separa tipos de trabalho — o cartão anda pelas colunas dentro dela. · rascunho · aulas [54]
+- [[release]] — Uma fatia do produto entregue ao usuário — reduz o risco de descobrir um erro só no final. · rascunho · aulas [38]
+- [[scrum-master]] — Facilita o processo e protege o time; não é o chefe. · rascunho · aulas [34]
+- [[sprint]] — Ciclo curto e repetido ao fim do qual sempre existe algo pronto para mostrar. · rascunho · aulas [34,38]
+- [[sprint-backlog]] — O recorte do Product Backlog que a equipe se comprometeu a entregar nesta sprint. · rascunho · aulas [35]
+- [[sprint-planning]] — Reunião de início de sprint em que o time escolhe e estima o que vai fazer. · rascunho · aulas [40]
+- [[sprint-retrospectiva]] — O time revê o próprio processo e decide o que muda no próximo ciclo. · rascunho · aulas [35,39]
+- [[sprint-review]] — Reunião de fim de sprint em que o time mostra o que ficou pronto. · rascunho · aulas [35]
+
 ## Desenvolvimento Full Stack e Cloud Computing
 
 - [[acesso-nao-autorizado-em-nuvem]] — acesso ilegítimo a recursos cloud · rascunho · aulas []
@@ -375,7 +409,7 @@
 - [[runtime-do-navegador]] — ambiente de execução JavaScript no browser · rascunho · aulas []
 - [[saas]] — software consumido como serviço · rascunho · aulas []
 - [[scheduler-kubernetes]] — alocação de Pods no cluster · rascunho · aulas []
-- [[scrum]] — ciclos curtos com inspeção e adaptação · rascunho · aulas []
+- [[scrum]] — ciclos curtos com inspeção e adaptação · rascunho · aulas [34]
 - [[sdk-do-firebase]] — biblioteca de integração Firebase · rascunho · aulas []
 - [[seeder-de-banco]] — carga controlada de dados iniciais · rascunho · aulas []
 - [[seguranca-de-banco-de-dados]] — proteção de dados, objetos e operações · rascunho · aulas []

@@ -13,6 +13,7 @@ gerado_por: tools/gerar_mapas.py
 - [[mapas/desenvolvimento-full-stack-e-cloud-computing|Pós — Desenvolvimento Full Stack e Cloud Computing]] — 466 conceitos, 0 vivos
 - [[mapas/inteligencia-artificial|Inteligência Artificial]] — 45 conceitos, 36 vivos
 - [[mapas/introducao-a-computacao|Introdução à Computação]] — 43 conceitos, 0 vivos
+- [[mapas/analise-e-metodos-para-sistemas|Análise e Métodos para Sistemas]] — 31 conceitos, 0 vivos
 - [[mapas/inovacao-tecnologia-e-empreendedorismo|Inovação, Tecnologia e Empreendedorismo]] — 8 conceitos, 0 vivos
 
 ## Vistas (Bases)

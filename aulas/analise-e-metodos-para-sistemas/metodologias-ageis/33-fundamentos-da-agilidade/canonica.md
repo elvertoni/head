@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA NIV1_ ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
 Pensa naquele trabalho em grupo em que vocês fizeram um plano lindo no começo — quem faz o quê, prazo pra tudo — e aí, na véspera da entrega, o professor mudou as regras. Plano todo no lixo, correria, noite mal dormida. O mundo do software vive isso o tempo inteiro: o cliente muda de ideia, o mercado vira, um concorrente lança algo novo. Por décadas, programadores tentaram lutar contra a mudança com planos cada vez mais rígidos — e quebravam a cara. Até que um grupo decidiu fazer o contrário: e se a gente **abraçar** a mudança em vez de fugir dela? Nascia a agilidade. É por aqui que sua trilha de métodos começa.
@@ -44,7 +44,7 @@ Agilidade é entregar valor cedo, aprender com cada entrega e mudar de rota quan
 
 ### Ágil não é correr
 
-Quando alguém diz "fulano é ágil", você pensa em rapidez. No mundo do software, agilidade é outra coisa.
+Quando alguém diz "fulano é ágil", você pensa em rapidez. No mundo do software, [[agilidade]] é outra coisa.
 
 :::conceito Agilidade
 É uma **filosofia de trabalho** que valoriza entregar resultado útil em pequenos pedaços, com frequência, e **se adaptar** às mudanças em vez de seguir um plano fixo a qualquer custo. Não é sobre velocidade bruta — é sobre **direção certa** e capacidade de mudar de rota.
@@ -58,10 +58,10 @@ Quando alguém diz "fulano é ágil", você pensa em rapidez. No mundo do softwa
 
 ### O Manifesto Ágil
 
-Em 2001, dezessete profissionais cansados de projetos que fracassavam escreveram o **Manifesto Ágil** — um documento curtíssimo que virou a base de tudo. A ideia central:
+Em 2001, dezessete profissionais cansados de projetos que fracassavam escreveram o **[[manifesto-agil|Manifesto Ágil]]** — um documento curtíssimo que virou a base de tudo. A ideia central:
 
 :::conceito Entregar valor
-**Valor** é aquilo que o cliente ou usuário realmente deseja e que resolve o problema dele. O objetivo do time ágil não é "terminar tarefas", é **entregar valor** o quanto antes — e em pedaços que já funcionam, em vez de um pacote gigante só no final.
+**[[entrega-de-valor|Valor]]** é aquilo que o cliente ou usuário realmente deseja e que resolve o problema dele. O objetivo do time ágil não é "terminar tarefas", é **entregar valor** o quanto antes — e em pedaços que já funcionam, em vez de um pacote gigante só no final.
 
 :::
 

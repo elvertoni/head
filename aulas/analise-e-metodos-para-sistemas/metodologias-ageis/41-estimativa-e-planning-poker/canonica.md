@@ -16,11 +16,11 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/AULA 41_ANÁLISE E MÉTODO PARA SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 2
-atualizado_em: 2026-06-21
+versao: 3
+atualizado_em: 2026-09-23
 ---
 
-Quanto tempo leva pra arrumar o seu quarto? Se você responder sozinho, na pressa, provavelmente erra feio — "uns 10 minutos" vira duas horas. Agora, se três pessoas que já arrumaram aquele quarto palpitarem juntas, a estimativa fica bem melhor. Times de software vivem esse problema: precisam adivinhar quanto esforço cada história vai dar, e errar custa caro. Para acertar mais, o Scrum usa um jogo de cartas — sim, cartas — chamado Planning Poker. Nesta última aula da trilha, você aprende a estimar em grupo e amarra tudo que viu até aqui.
+Quanto tempo leva pra arrumar o seu quarto? Se você responder sozinho, na pressa, provavelmente erra feio — "uns 10 minutos" vira duas horas. Agora, se três pessoas que já arrumaram aquele quarto palpitarem juntas, a estimativa fica bem melhor. Times de software vivem esse problema: precisam adivinhar quanto esforço cada história vai dar, e errar custa caro. Para acertar mais, o Scrum usa um jogo de cartas — sim, cartas — chamado Planning Poker. Nesta última aula da trilha, você aprende a **[[estimativa-de-esforco|estimar]]** em grupo e amarra tudo que viu até aqui.
 
 ## Objetivos
 
@@ -49,7 +49,7 @@ Estimativa boa não crava hora: compara esforço, ajuda a priorizar e alimenta o
 
 :::
 
-A estimativa serve para dois usos que você já conhece: ajuda a **priorizar** (uma história de muito valor e pouco esforço fura a fila) e ajuda a planejar **quanto cabe** numa sprint (a capacidade da Aula 38).
+A estimativa serve para dois usos que você já conhece: ajuda a **priorizar** (uma história de muito **[[entrega-de-valor|valor]]** e pouco esforço fura a fila) e ajuda a planejar **quanto cabe** numa sprint (a capacidade da Aula 38).
 
 ### O Planning Poker
 
@@ -132,7 +132,7 @@ Cada grupo conta um caso em que as cartas vieram bem diferentes e o que descobri
 Hoje você descobriu que:
 
 - **Estimar esforço** é prever quanto trabalho uma história dá — e no ágil isso é **relativo**, por comparação.
-- O **Planning Poker** estima em **consenso**, com cartas de **Fibonacci** reveladas **ao mesmo tempo**.
+- O **[[planning-poker|Planning Poker]]** estima em **consenso**, com cartas de **Fibonacci** reveladas **ao mesmo tempo**.
 - A revelação simultânea evita o **viés de ancoragem** — a grande sacada do método.
 - A estimativa amarra a trilha: alimenta a **priorização** e o **planejamento** das sprints.
 
