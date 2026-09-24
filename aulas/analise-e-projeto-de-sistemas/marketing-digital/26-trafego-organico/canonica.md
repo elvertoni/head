@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 26_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Na aula passada você descobriu que dá pra aparecer no topo do Google **sem pagar nada**. Soa bom demais, né? E aqui mora a pegadinha que separa quem entende de marketing de quem só acha que entende: "de graça" não é "fácil". Quando você pesquisa "melhor tênis de corrida" e clica no primeiro resultado, alguém trabalhou meses para aquele link estar ali na sua frente — sem ter pago um centavo de anúncio. Hoje você vai aprender como esse alguém conseguiu, e por que essa é a estratégia mais valiosa (e mais paciente) do marketing digital.
@@ -58,7 +58,7 @@ O tráfego orgânico não cai do céu: ele é puxado por **conteúdo que as pess
 - **Posts em redes sociais** — distribuem o conteúdo e trazem visitantes de volta ao site.
 
 :::dica O que isso tem a ver com quem programa
-Aqui o desenvolvedor entra em campo de verdade. Um site lindo mas **lento** ou com HTML bagunçado é punido pelo Google — performance e estrutura são fatores de ranqueamento. Quando você usa tags semânticas (`<h1>`, `<title>`, `<meta>`), otimiza imagens e deixa a página rápida, você está fazendo **SEO técnico**: o trabalho de SEO que só o programador consegue fazer. O redator escreve o texto; você constrói a casa onde o Google entra com facilidade.
+Aqui o desenvolvedor entra em campo de verdade. Um site lindo mas **lento** ou com HTML bagunçado é punido pelo Google — performance e estrutura são fatores de ranqueamento. Quando você usa tags semânticas (`<h1>`, `<title>`, `<meta>`), otimiza imagens e deixa a página rápida, você está fazendo **[[seo|SEO]] técnico**: o trabalho de SEO que só o programador consegue fazer. O redator escreve o texto; você constrói a casa onde o Google entra com facilidade.
 :::
 
 ### As estratégias para crescer
@@ -132,7 +132,7 @@ Cada dupla lê seu título em voz alta. A turma vota: qual título equilibra mel
 
 Hoje você descobriu que:
 
-- **Tráfego orgânico** são os visitantes que chegam pela busca não paga — gratuito em dinheiro, **caro em tempo e consistência**.
+- **[[trafego-organico|Tráfego orgânico]]** são os visitantes que chegam pela busca não paga — gratuito em dinheiro, **caro em tempo e consistência**.
 - Ele é puxado por **conteúdo procurado**: artigos, vídeos, infográficos e posts.
 - Quatro estratégias o fazem crescer — **SEO, qualidade, regularidade e engajamento** — e elas só funcionam **juntas**, como efeito composto.
 - O **desenvolvedor** sustenta o SEO técnico: site rápido, HTML semântico, imagens otimizadas.

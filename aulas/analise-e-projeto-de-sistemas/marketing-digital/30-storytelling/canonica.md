@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 30_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Na aula passada você viu que números provam, mas não emocionam. Ninguém nunca chorou olhando uma planilha. E aqui está um segredo que vale para a campanha de marketing e para a sua vida inteira: as pessoas **decidem com a emoção e justificam com a razão**. Por isso a marca que conta uma boa história vende mais que a que só lista vantagens — e o candidato que conta uma boa história numa entrevista é lembrado, enquanto o que recita o currículo é esquecido. Hoje, no fechamento da trilha, você aprende a ferramenta mais antiga da humanidade: contar histórias de um jeito que gruda.
@@ -52,7 +52,7 @@ Listar conquistas sem amarrar numa narrativa. "Fiz isso, depois aquilo, depois m
 
 ### A anatomia de uma boa história
 
-Toda história que funciona tem a mesma espinha. Não precisa ser complexa — precisa ter as três partes:
+Toda história que funciona tem a mesma **[[estrutura-narrativa|espinha]]**. Não precisa ser complexa — precisa ter as três partes:
 
 ```diagrama-progressivo
 titulo: A estrutura de toda boa história
@@ -134,8 +134,8 @@ Depois, contem a história para a dupla **em até 1 minuto**. Quem ouve dá um r
 
 Hoje — e no fim desta trilha — você descobriu que:
 
-- **Storytelling** é contar histórias estruturadas e envolventes; o cérebro lembra de histórias, não de listas.
-- Toda boa história tem **início, meio e fim**, e o **conflito** (o meio) é o motor que emociona.
+- **[[storytelling|Storytelling]]** é contar histórias estruturadas e envolventes; o cérebro lembra de histórias, não de listas.
+- Toda boa história tem **[[estrutura-narrativa|início, meio e fim]]**, e o **conflito** (o meio) é o motor que emociona.
 - Ele se aplica em **apresentações, entrevistas e projetos** — inclusive no *pitch* do seu próprio trabalho como desenvolvedor.
 - Fechando a trilha: você aprendeu a **atrair** (tráfego), **planejar**, **medir** (resultados) e agora a **comunicar**. Marketing completo é técnica e história juntas.
 

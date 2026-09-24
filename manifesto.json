@@ -311,6 +311,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "analise-de-resultados",
+      "nome": "Análise de resultados",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "analise-de-sensibilidade",
       "nome": "Análise de sensibilidade",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -639,6 +644,11 @@
       "slug": "ativo-digital",
       "nome": "Ativo digital",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "ator",
+      "nome": "Ator",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "atributo",
@@ -1436,6 +1446,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "cpc",
+      "nome": "CPC",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "cpu",
       "nome": "CPU",
       "disciplina": "introducao-a-computacao"
@@ -1494,6 +1509,11 @@
       "slug": "css3",
       "nome": "CSS3",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "ctr",
+      "nome": "CTR",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "cultura-devops",
@@ -1981,6 +2001,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "engenharia-reversa-de-requisitos",
+      "nome": "Engenharia reversa de requisitos",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "ensino-como-atividade-humana",
       "nome": "Ensino como atividade humana",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -2169,6 +2194,11 @@
       "slug": "estrutura-de-documento-html",
       "nome": "Estrutura de documento HTML",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "estrutura-narrativa",
+      "nome": "Estrutura narrativa",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "estruturalismo",
@@ -3351,6 +3381,16 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "marketing-de-conteudo",
+      "nome": "Marketing de conteúdo",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
+      "slug": "marketing-digital",
+      "nome": "Marketing digital",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "marketing-pessoal",
       "nome": "Marketing pessoal",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -3444,6 +3484,11 @@
       "slug": "merge",
       "nome": "Merge",
       "disciplina": "programacao-front-end"
+    },
+    {
+      "slug": "meta-smart",
+      "nome": "Meta SMART",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "metadados-seo",
@@ -4061,6 +4106,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "pesquisa-de-mercado",
+      "nome": "Pesquisa de mercado",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "pesquisa-educacional",
       "nome": "Pesquisa educacional",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4091,6 +4141,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "pixel-de-conversao",
+      "nome": "Pixel de conversão",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "plagio",
       "nome": "Plágio",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4099,6 +4154,16 @@
       "slug": "planejamento-de-capacidade",
       "nome": "Planejamento de capacidade",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "planejamento-de-conteudo",
+      "nome": "Planejamento de conteúdo",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
+      "slug": "planejamento-de-marketing",
+      "nome": "Planejamento de marketing",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "planejamento-educacional",
@@ -4671,6 +4736,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "regra-de-negocio",
+      "nome": "Regra de negócio",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "regra-do-produto",
       "nome": "Regra do produto",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4781,6 +4851,16 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "requisito-funcional",
+      "nome": "Requisito funcional",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
+      "slug": "requisito-nao-funcional",
+      "nome": "Requisito não-funcional",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "reset-css",
       "nome": "Reset CSS",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -4844,6 +4924,11 @@
       "slug": "robots-txt",
       "nome": "robots.txt",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "roi",
+      "nome": "ROI",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "rotas-aninhadas",
@@ -4949,6 +5034,11 @@
       "slug": "seletores-css",
       "nome": "Seletores CSS",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "sem",
+      "nome": "SEM",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "sensibilidade",
@@ -5236,6 +5326,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "storytelling",
+      "nome": "Storytelling",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
       "slug": "streaming-web",
       "nome": "Streaming Web",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -5519,6 +5614,16 @@
       "slug": "tool-use",
       "nome": "Tool Use",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "trafego-organico",
+      "nome": "Tráfego orgânico",
+      "disciplina": "analise-e-projeto-de-sistemas"
+    },
+    {
+      "slug": "trafego-pago",
+      "nome": "Tráfego pago",
+      "disciplina": "analise-e-projeto-de-sistemas"
     },
     {
       "slug": "transacao-de-banco",

@@ -5,8 +5,9 @@ disciplina: programacao-front-end
 tipo: conceito
 aka: [conversion rate]
 status: rascunho
-fontes: []
-aulas: [18]
+fontes:
+  - "lake/analise-e-projeto-de-sistemas/AULA 29_ANÁLISE E PROJETO DE SISTEMAS.pptx"
+aulas: [18, 29]
 atualizado_em: 2026-09-24
 ---
 
@@ -27,8 +28,10 @@ Taxa de conversão é quantos, dos que viram, fizeram — o número que aparece 
 ## Onde aparece
 
 - Aula 18 — *Validação: o MVP passou ou reprovou?* `aulas/programacao-front-end/landing-page-mvp/18-validacao-passou-ou-reprovou/canonica.md`
-- Conceitos vizinhos: [[metrica-de-vaidade]], [[hipotese]]
+- Aula 29 — *Análise de Resultados* `aulas/analise-e-projeto-de-sistemas/marketing-digital/29-analise-de-resultados/canonica.md`
+- Conceitos vizinhos: [[metrica-de-vaidade]], [[hipotese]], [[ctr]], [[cpc]], [[roi]], [[analise-de-resultados]]
 
 ## Fontes
 
 - Conteúdo autoral da Aula 18 (modo_origem: tema), sem fonte externa direta — taxa de conversão como métrica acionável e o número escondido atrás do denominador.
+- Taxa de conversão como o segundo elo da cadeia CTR → conversão → CPC → ROI: slides SEED da Aula 29 de Análise e Projeto de Sistemas.

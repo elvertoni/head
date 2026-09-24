@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 25_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Abre o seu feed agora. Entre um vídeo e outro apareceu um tênis que você comentou ontem, um criador que você segue divulgando um curso, um anúncio de uma loja que você nunca procurou mas que parece saber exatamente o que você quer. Nada disso é coincidência. Você está dentro de uma máquina que custou décadas para ser construída e que tem um nome: **marketing digital**. A aula de hoje vira essa máquina do avesso — você vai sair dela entendendo, do outro lado da tela, como marcas decidem o que te mostrar, por que conseguem medir cada clique seu e o que isso tem a ver com os sistemas que você vai construir como profissional.
@@ -71,7 +71,7 @@ Dos três, a **mensurabilidade** é o que muda o jogo de verdade. Quando você c
 Quatro técnicas aparecem o tempo todo daqui pra frente. Duas delas são o tema das duas próximas aulas, então guarde os nomes.
 
 :::conceito SEO e SEM
-**SEO** (*Search Engine Optimization*) é otimizar seu conteúdo para aparecer **de graça** no topo dos resultados de busca — o chamado tráfego orgânico. **SEM** (*Search Engine Marketing*) é **pagar** para aparecer ali. Em resumo: SEO você conquista, SEM você compra. (Aulas 26 e 27 abrem cada um deles.)
+**SEO** (*Search Engine Optimization*) é otimizar seu conteúdo para aparecer **de graça** no topo dos resultados de busca — o chamado [[trafego-organico|tráfego orgânico]]. **SEM** (*Search Engine Marketing*) é **pagar** para aparecer ali. Em resumo: SEO você conquista, SEM você compra. (Aulas 26 e 27 abrem cada um deles.)
 :::
 
 :::conceito Marketing de conteúdo
@@ -147,9 +147,9 @@ Você está num curso técnico, não numa agência de publicidade — então por
 
 Hoje você descobriu que:
 
-- **Marketing digital** não é "estar na internet": é interagir direto com cada pessoa e **medir** cada resultado.
+- **[[marketing-digital|Marketing digital]]** não é "estar na internet": é interagir direto com cada pessoa e **medir** cada resultado.
 - O digital vence o tradicional por três superpoderes — **alcance com segmentação, interatividade e mensurabilidade** — e a mensurabilidade é a que manda em todas.
-- As técnicas centrais são **SEO, SEM, marketing de conteúdo e redes sociais**, e o público chega por **canais** numa jornada de descoberta até a compra.
+- As técnicas centrais são **[[seo|SEO]], [[sem|SEM]], [[marketing-de-conteudo|marketing de conteúdo]] e redes sociais**, e o público chega por **canais** numa jornada de descoberta até a compra.
 - Quem **desenvolve sistemas** precisa construir produtos *marketing-ready*: mensuráveis, achaveis e integrados a ferramentas de análise.
 
 **Próxima aula:** vimos que dá para aparecer na busca **de graça**. Mas como, exatamente? Na Aula 26 a gente abre o **tráfego orgânico** — atrair visitantes sem pagar por anúncio.

@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-23
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Você pediu comida pelo celular essa semana. Abriu o app, escolheu, pagou, chegou. Do lado de fora, três toques. Do lado de dentro, alguém teve que decidir: **e se o restaurante fechar depois que o pedido entrou? E se o cupom for só de primeira compra e o cliente já comprou? E se o entregador aceitar e sumir?** Cada uma dessas perguntas foi respondida por uma pessoa numa reunião, virou uma regra e virou código. Hoje você vai fazer o caminho inverso: pegar um app pronto e desmontar até achar as decisões escondidas nele. É exatamente isso que um analista de sistemas faz — e é isso que falta no TCC de vocês.
@@ -50,7 +50,7 @@ Uma **regra de negócio** é uma decisão da área de negócio que o sistema é 
 :::
 
 :::exemplo A regra que aparece só quando dá errado
-No app de transporte, você pede uma corrida e o motorista cancela. O app te devolve para a fila **na frente** de quem pediu depois de você. Isso não está escrito em lugar nenhum da interface — mas alguém decidiu, porque a alternativa (voltar pro fim da fila) fazia o usuário desinstalar o app. Regra de negócio quase sempre mora no caminho do erro, não no caminho feliz.
+No app de transporte, você pede uma corrida e o motorista cancela. O app te devolve para a fila **na frente** de quem pediu depois de você. Isso não está escrito em lugar nenhum da interface — mas alguém decidiu, porque a alternativa (voltar pro fim da fila) fazia o usuário desinstalar o app. **[[regra-de-negocio|Regra de negócio]]** quase sempre mora no caminho do erro, não no caminho feliz.
 :::
 
 ### Atores: quem usa não é só o usuário
@@ -61,7 +61,7 @@ Peça a um aluno para listar quem usa o iFood e ele diz: "o cliente". Falta gent
 **Ator** é qualquer papel que interage com o sistema — pessoa, setor ou até outro sistema. O que define o ator não é a pessoa, é o **papel**: a mesma pessoa pode ser cliente num momento e entregador em outro, e são dois atores diferentes porque querem coisas diferentes.
 :::
 
-No app de entrega existem, no mínimo: **cliente**, **restaurante**, **entregador**, **atendimento** (quem resolve o pedido que deu errado), **administrador** (quem cadastra taxa e comissão) — e o **sistema de pagamento**, que é outro sistema conversando com esse. Seis atores num app que "só entrega comida".
+No app de entrega existem, no mínimo: **cliente**, **restaurante**, **entregador**, **atendimento** (quem resolve o pedido que deu errado), **administrador** (quem cadastra taxa e comissão) — e o **sistema de pagamento**, que é outro sistema conversando com esse. Seis **[[ator|atores]]** num app que "só entrega comida".
 
 E aqui está o pulo do gato: **cada ator quer uma coisa diferente, e às vezes uma coisa contrária.** O cliente quer frete grátis. O entregador quer receber por entrega. O restaurante quer comissão baixa. A plataforma quer margem. Requisito nasce dessa briga, não de uma lista harmoniosa.
 
@@ -81,8 +81,8 @@ Agora separe o que você descobriu em duas caixas.
 
 | Requisito | Tipo | Por quê |
 |---|---|---|
-| Cliente acompanha o pedido no mapa | Funcional | Dá pra desenhar a tela |
-| O mapa atualiza a posição a cada 5 segundos | Não-funcional | É a qualidade do "acompanhar" |
+| Cliente acompanha o pedido no mapa | [[requisito-funcional|Funcional]] | Dá pra desenhar a tela |
+| O mapa atualiza a posição a cada 5 segundos | [[requisito-nao-funcional|Não-funcional]] | É a qualidade do "acompanhar" |
 | Cliente paga com Pix | Funcional | É uma ação |
 | O pagamento nunca guarda o número do cartão no aplicativo | Não-funcional | É segurança |
 | App funciona em celular antigo com internet ruim | Não-funcional | É desempenho e alcance |
@@ -192,9 +192,9 @@ A nota importa menos que a **conversa** que ela obriga. Quando alguém do grupo 
 
 Hoje você virou analista por 50 minutos:
 
-- Todo app pronto é uma **pilha de decisões** que alguém tomou; engenharia reversa é recuperá-las.
-- **Ator** é papel, não pessoa — e ator sem tela não existe no seu sistema.
-- **Funcional** é o que faz; **não-funcional** é o quão bem faz, e só vale com número.
+- Todo app pronto é uma **pilha de decisões** que alguém tomou; **[[engenharia-reversa-de-requisitos|engenharia reversa]]** é recuperá-las.
+- **[[ator|Ator]]** é papel, não pessoa — e ator sem tela não existe no seu sistema.
+- **[[requisito-funcional|Funcional]]** é o que faz; **[[requisito-nao-funcional|não-funcional]]** é o quão bem faz, e só vale com número.
 - A **Matriz GUT** não decide por você: ela obriga a defender a prioridade com argumento em vez de gosto pessoal.
 
 **Próxima aula:** com os requisitos na mão e priorizados, falta amarrar cada um a um passo a passo verificável. Vamos escrever **casos de uso** — o roteiro do que o ator faz, o que o sistema responde e o que acontece quando o caminho dá errado.

@@ -5,8 +5,9 @@ disciplina: programacao-front-end
 tipo: conceito
 aka: [vanity metric]
 status: rascunho
-fontes: []
-aulas: [18]
+fontes:
+  - "lake/analise-e-projeto-de-sistemas/AULA 29_ANÁLISE E PROJETO DE SISTEMAS.pptx"
+aulas: [18, 29]
 atualizado_em: 2026-09-24
 ---
 
@@ -28,8 +29,10 @@ O contraponto é a métrica acionável: uma proporção com denominador, que pod
 ## Onde aparece
 
 - Aula 18 — *Validação: o MVP passou ou reprovou?* `aulas/programacao-front-end/landing-page-mvp/18-validacao-passou-ou-reprovou/canonica.md`
-- Conceitos vizinhos: [[taxa-de-conversao]], [[hipotese]], [[mvp]]
+- Aula 29 — *Análise de Resultados* `aulas/analise-e-projeto-de-sistemas/marketing-digital/29-analise-de-resultados/canonica.md` — curtidas e seguidores como métrica de vaidade, em contraste com conversão e ROI (métrica de negócio).
+- Conceitos vizinhos: [[taxa-de-conversao]], [[hipotese]], [[mvp]], [[roi]], [[analise-de-resultados]]
 
 ## Fontes
 
 - Conteúdo autoral da Aula 18 (modo_origem: tema), sem fonte externa direta — métrica de vaidade vs. métrica acionável e leitura do teste de corredor.
+- Métrica de vaidade vs. métrica de negócio (curtidas vs. conversão/ROI): slides SEED da Aula 29 de Análise e Projeto de Sistemas.

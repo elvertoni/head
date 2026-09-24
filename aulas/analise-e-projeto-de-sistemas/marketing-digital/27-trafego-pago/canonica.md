@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 27_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Na aula passada você viu que o tráfego orgânico é poderoso, mas tem um defeito: ele é **lento**. E se você abriu a loja hoje e precisa vender essa semana? Esperar o Google confiar no seu site levaria meses que você não tem. É aí que entra o atalho — você abre a carteira e **compra** o lugar na frente das pessoas. Toda vez que um anúncio aparece no seu feed ou no topo de uma busca, alguém pagou para estar exatamente ali, na sua frente, naquele segundo. Hoje você entende como esse atalho funciona e, mais importante, quando vale a pena pegá-lo.
@@ -82,7 +82,7 @@ camadas:
 ```
 
 :::dica O papel de quem desenvolve
-Toda essa medição depende de um pedaço de código que **o desenvolvedor instala** no site: o *pixel* de conversão (Facebook Pixel, Google Tag). É ele que avisa a plataforma "esta pessoa que clicou no anúncio realmente comprou". Sem esse rastreamento bem implementado, a marca paga às cegas e não sabe qual anúncio deu lucro. Quem programa o site é quem torna a campanha **mensurável** — de novo, a mensurabilidade da Aula 25 dependendo de você.
+Toda essa medição depende de um pedaço de código que **o desenvolvedor instala** no site: o *[[pixel-de-conversao|pixel de conversão]]* (Facebook Pixel, Google Tag). É ele que avisa a plataforma "esta pessoa que clicou no anúncio realmente comprou". Sem esse rastreamento bem implementado, a marca paga às cegas e não sabe qual anúncio deu lucro. Quem programa o site é quem torna a campanha **mensurável** — de novo, a mensurabilidade da Aula 25 dependendo de você.
 
 :::
 
@@ -136,7 +136,7 @@ Cada dupla defende sua escolha de plataforma em 1 minuto. A turma debate: para u
 
 Hoje você descobriu que:
 
-- **Tráfego pago** é comprar a atenção do público com anúncios — rápido, mas para quando a verba acaba.
+- **[[trafego-pago|Tráfego pago]]** é comprar a atenção do público com anúncios — rápido, mas para quando a verba acaba.
 - Cada **plataforma** tem um forte: Google (busca ativa), Instagram/Facebook (descoberta), LinkedIn (B2B).
 - As vantagens são **alcance imediato, segmentação precisa e medição em tempo real** — que permite ajustar a campanha enquanto ela roda.
 - O **desenvolvedor** instala o rastreamento (pixel/tag) sem o qual a campanha paga é cega.

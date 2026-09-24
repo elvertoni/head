@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 29_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Você lembra do maior superpoder do marketing digital, lá da Aula 25? A **mensurabilidade**. Pois chegou a hora de usá-la de verdade. Imagine que você rodou uma campanha lindíssima: o post bombou, 10 mil curtidas, todo mundo comentando. Sucesso total, né? Talvez não. E se nenhuma dessas 10 mil pessoas comprou nada? Curtida não paga conta. Hoje você aprende a separar o que **parece** sucesso do que **é** sucesso — lendo os números que realmente importam.
@@ -63,7 +63,7 @@ camadas:
 ```
 
 :::importante O perigo das métricas de vaidade
-**Curtidas e seguidores são métricas de vaidade**: incham o ego, mas não provam resultado. **Conversão e ROI são métricas de negócio**: dizem se entrou dinheiro. Uma campanha com 10 mil curtidas e ROI negativo está **dando prejuízo**, por mais bonita que pareça. Aprenda a olhar primeiro para a métrica que paga a conta.
+**Curtidas e seguidores são [[metrica-de-vaidade|métricas de vaidade]]**: incham o ego, mas não provam resultado. **[[taxa-de-conversao|Conversão]] e [[roi|ROI]] são métricas de negócio**: dizem se entrou dinheiro. Uma campanha com 10 mil curtidas e ROI negativo está **dando prejuízo**, por mais bonita que pareça. Aprenda a olhar primeiro para a métrica que paga a conta.
 
 :::
 
@@ -136,8 +136,8 @@ Cada dupla anuncia o ROI que calculou. A turma confere: a campanha "mais popular
 
 Hoje você descobriu que:
 
-- **Análise de resultados** fecha o ciclo do marketing: diz o que funcionou, o que falhou e como melhorar.
-- As quatro métricas se encadeiam: **CTR** (chamou atenção?) → **conversão** (virou ação?) → **CPC** (custou quanto?) → **ROI** (deu lucro?).
+- **[[analise-de-resultados|Análise de resultados]]** fecha o ciclo do marketing: diz o que funcionou, o que falhou e como melhorar.
+- As quatro métricas se encadeiam: **[[ctr|CTR]]** (chamou atenção?) → **[[taxa-de-conversao|conversão]]** (virou ação?) → **[[cpc|CPC]]** (custou quanto?) → **[[roi|ROI]]** (deu lucro?).
 - **Métricas de vaidade** (curtidas) enganam; **métricas de negócio** (conversão, ROI) decidem.
 - Construir os **dashboards** e o rastreamento é trabalho técnico — a área de **dados** é uma das que mais cresce para quem desenvolve.
 

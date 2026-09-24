@@ -16,8 +16,8 @@ fontes:
   - lake/analise-e-projeto-de-sistemas/AULA 28_ANÁLISE E PROJETO DE SISTEMAS.pptx
 revisao: true
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-15
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 Imagine entrar num carro, ligar o motor e sair dirigindo sem saber para onde vai. Você gasta gasolina, anda muito, e no fim do dia não chegou a lugar nenhum. É exatamente isso que acontece com quem faz marketing sem planejamento: posta, anuncia, gasta tempo e dinheiro nos tráfegos orgânico e pago que você já conhece — mas sem rumo. Nas últimas aulas você aprendeu a **acelerar**. Hoje você aprende a **dirigir**: definir o destino, ler o mapa e traçar a rota. Esse é o planejamento de marketing.
@@ -54,7 +54,7 @@ As pessoas misturam as duas palavras o tempo todo, mas elas fazem trabalhos dife
 
 :::
 
-E como saber se uma meta é boa? Existe um critério famoso, o **SMART**: toda meta deve ser **E**specífica, **M**ensurável, **A**lcançável, **R**elevante e **T**emporal (com prazo).
+E como saber se uma meta é boa? Existe um critério famoso, o **[[meta-smart|SMART]]**: toda meta deve ser **E**specífica, **M**ensurável, **A**lcançável, **R**elevante e **T**emporal (com prazo).
 
 :::atencao Erro comum
 "Quero vender mais" não é meta — é desejo. Falta tudo do SMART: quanto? até quando? Compare: *"aumentar as vendas online em 20% nos próximos 3 meses"*. Essa você consegue medir e saber se bateu. Meta sem número e sem prazo é só uma frase bonita que ninguém cobra.
@@ -84,7 +84,7 @@ camadas:
 ```
 
 :::importante O fio que liga tudo
-A **pesquisa de mercado** evita o erro mais caro do marketing: gastar com base em chute. Você não decide o conteúdo pelo que **acha** que o público quer — você descobre o que ele **realmente** procura, e só então planeja. Decisão baseada em dado, não em opinião.
+A **[[pesquisa-de-mercado|pesquisa de mercado]]** evita o erro mais caro do marketing: gastar com base em chute. Você não decide o conteúdo pelo que **acha** que o público quer — você descobre o que ele **realmente** procura, e só então planeja. Decisão baseada em dado, não em opinião.
 
 :::
 
@@ -138,9 +138,9 @@ Cada dupla lê sua meta SMART. A turma audita: faltou número? faltou prazo? é 
 
 Hoje você descobriu que:
 
-- **Planejamento de marketing** é o mapa que faz orgânico e pago trabalharem para o mesmo destino.
-- **Objetivo** é a direção ampla; **meta** é o passo mensurável — e o critério **SMART** (específica, mensurável, alcançável, relevante, temporal) separa meta de desejo.
-- **Pesquisa de mercado** troca achismo por dado; **planejamento de conteúdo** organiza o que publicar e quando.
+- **[[planejamento-de-marketing|Planejamento de marketing]]** é o mapa que faz orgânico e pago trabalharem para o mesmo destino.
+- **Objetivo** é a direção ampla; **[[meta-smart|meta]]** é o passo mensurável — e o critério **SMART** (específica, mensurável, alcançável, relevante, temporal) separa meta de desejo.
+- **Pesquisa de mercado** troca achismo por dado; **[[planejamento-de-conteudo|planejamento de conteúdo]]** organiza o que publicar e quando.
 - Escrever metas SMART é a **mesma habilidade** de levantar bons requisitos de software.
 
 **Próxima aula:** você planejou e executou. Mas deu certo? Na Aula 29 a gente fecha o ciclo medindo tudo — **análise de resultados**: CTR, conversão, CPC e ROI.
