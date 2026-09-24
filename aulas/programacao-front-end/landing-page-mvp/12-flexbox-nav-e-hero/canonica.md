@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Sua página tem cor, tem tipografia decente e continua com um problema óbvio: **tudo está empilhado**. O nome do produto em cima, o menu embaixo dele, cada link numa linha, o botão do hero jogado à esquerda. Nenhum site que você usa é assim, e o motivo é que o HTML, sozinho, só sabe empilhar — ele coloca uma caixa embaixo da outra e pronto. Colocar coisas **lado a lado**, com espaço parelho entre elas e alinhadas de verdade, é um trabalho que já foi um dos mais penosos da profissão. Hoje é uma propriedade só. Hoje o seu topo passa a parecer o topo de um site.
@@ -41,7 +41,7 @@ A página das aulas 10 e 11, com a estrutura semântica e o `estilo.css` ligado.
 
 ### Quem manda é o elemento de fora
 
-O primeiro e maior tropeço com Flexbox é achar que ele se aplica na coisa que você quer mover. Não é. Ele se aplica no **pai** — no elemento que contém as coisas.
+O primeiro e maior tropeço com [[flexbox|Flexbox]] é achar que ele se aplica na coisa que você quer mover. Não é. Ele se aplica no **pai** — no elemento que contém as coisas.
 
 :::conceito Container e itens
 Quando você escreve `display: flex` num elemento, ele vira **container flex** e passa a mandar em como seus **filhos diretos** se organizam. Os filhos, chamados de **itens**, não precisam de nenhuma propriedade especial: eles se comportam diferente porque **o pai mudou**, não porque eles mudaram.
@@ -111,7 +111,7 @@ Antes do Flexbox, alinhar coisas na web era feito com propriedades pensadas para
 :::
 
 :::dica Flex é para uma dimensão
-No mercado, a regra de bolso é essa: **Flexbox para uma direção** — uma barra, uma fila de botões, um item com conteúdo dos dois lados — e **Grid para duas**, quando você precisa de linhas e colunas ao mesmo tempo. Não são rivais; times usam os dois no mesmo arquivo, o tempo todo. É por isso que a próxima aula é sobre Grid: seus três cards de benefício são um caso de duas dimensões, e Flex faria aquilo com mais esforço e menos controle.
+No mercado, a regra de bolso é essa: **[[flexbox|Flexbox]] para uma direção** — uma barra, uma fila de botões, um item com conteúdo dos dois lados — e **[[css-grid|Grid]] para duas**, quando você precisa de linhas e colunas ao mesmo tempo. Não são rivais; times usam os dois no mesmo arquivo, o tempo todo. É por isso que a próxima aula é sobre Grid: seus três cards de benefício são um caso de duas dimensões, e Flex faria aquilo com mais esforço e menos controle.
 :::
 
 ## Prática
@@ -217,7 +217,7 @@ O que ficou de hoje:
 - **`justify-content` age ao longo da fila; `align-items` age na direção perpendicular.** Guarde os papéis, não as direções — `flex-direction: column` inverte tudo.
 - **`space-between`** monta barra de navegação do mundo inteiro em uma linha.
 - **`gap`** substitui margens contadas na mão e não sobra espaço nas pontas.
-- **Sem altura não há centralização vertical.** É o falso bug mais comum do Flexbox.
+- **Sem altura não há centralização vertical.** É o falso bug mais comum do [[flexbox|Flexbox]].
 
 **Próxima aula:** o topo e o hero estão resolvidos, mas os três benefícios continuam empilhados um debaixo do outro, como uma lista. Eles precisam virar **três cards lado a lado** — e é aí que Flexbox deixa de ser a ferramenta certa. Entra o **Grid**, com um truque que faz os cards se reorganizarem sozinhos em telas estreitas, sem uma linha de código extra.
 

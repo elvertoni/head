@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Abre agora, no celular, os três últimos sites que tentaram te vender alguma coisa — um tênis, um curso, um jogo. Ignora as cores e as fotos e olha só a forma. Você vai ver a mesma coisa nos três: uma frase enorme no topo com um botão embaixo, depois um trecho contando por que aquilo presta, depois uma prova de que não é conversa, e no fim o mesmo botão de novo. Não é falta de criatividade. É que essa ordem responde, na sequência certa, às cinco perguntas que você faz sem perceber quando abre um link. Hoje vocês montam esse esqueleto com o texto do próprio projeto — e saem daqui com o endereço no ar.
@@ -41,7 +41,7 @@ Traga o **briefing** da aula 08 e o **kit de copy** da aula 09. Sem eles você v
 
 ### O esqueleto que se repete em todo site que vende
 
-Na aula 09 vocês viram as cinco perguntas que o visitante faz em ordem: *que coisa é essa? isso é para mim? o que eu ganho? por que acreditar? o que eu faço agora?* Uma landing page é literalmente essa lista virada de pé — cada pergunta vira uma faixa horizontal da página, na mesma sequência.
+Na aula 09 vocês viram as cinco perguntas que o visitante faz em ordem, a caminho da **[[proposta-de-valor|proposta de valor]]**: *que coisa é essa? isso é para mim? o que eu ganho? por que acreditar? o que eu faço agora?* Uma landing page é literalmente essa lista virada de pé — cada pergunta vira uma faixa horizontal da página, na mesma sequência.
 
 | Faixa | Responde | O que vai dentro |
 |---|---|---|
@@ -221,8 +221,8 @@ Publicar cedo é hábito profissional, não pressa de escola. Times de produto c
 O que ficou de hoje:
 
 - Toda landing page tem o mesmo esqueleto — **topo, hero, benefícios, prova, chamada final** — porque ele responde às cinco perguntas do visitante na ordem em que elas aparecem.
-- **A dobra é o único pedaço garantido.** Se só uma frase for lida, ela precisa estar ali.
-- **Tag semântica é informação para quem não vê a tela**: leitor de tela, buscador e o próximo programador — que costuma ser você.
+- **A [[dobra]] é o único pedaço garantido.** Se só uma frase for lida, ela precisa estar ali.
+- **[[html-semantico|Tag semântica]] é informação para quem não vê a tela**: leitor de tela, buscador e o próximo programador — que costuma ser você.
 - **Um `<main>` e um `<h1>` por página.** Dizer que tudo é principal é não dizer nada.
 - Seu projeto tem **endereço público** desde hoje, feio e no ar.
 

@@ -7,8 +7,8 @@ aka: [keyboard focus]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/JavaScript e Aplicações Práticas/05 - Aula 5 - Imersão JavaScript - Coleções e Funções - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [15]
+atualizado_em: 2026-09-24
 ---
 
 Foco de teclado é a indicação de qual elemento interativo recebe entrada do teclado e comandos assistivos. Uma interface acessível mantém foco visível, ordem lógica e gerenciamento previsível ao mudar de estado.
@@ -30,6 +30,7 @@ Tab, Shift+Tab, Enter, Espaço e setas dependem do papel do controle. Modais, ro
 ## Onde aparece
 
 - JavaScript e Aplicações Práticas, Aula 5, páginas 2–5.
+- Aula 15 — *Movimento com propósito: o que leva o olho até o botão* `aulas/programacao-front-end/landing-page-mvp/15-movimento-com-proposito/canonica.md` — `:focus-visible` como substituto do `outline: none`, para quem navega por Tab não perder a noção de onde está.
 - Relaciona-se a [[acessibilidade]], [[arvore-de-acessibilidade]] e [[estados-de-interface]].
 
 ## Fontes

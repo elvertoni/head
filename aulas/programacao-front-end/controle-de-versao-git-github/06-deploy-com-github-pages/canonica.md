@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-07-29
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Até agora, seu Petfinder só existe pra quem abre o VSCode, baixa os arquivos ou recebe eles por WhatsApp. Hoje ele ganha um **link de verdade** — um endereço que qualquer pessoa, no celular dela, na casa dela, clica e vê seu projeto rodando, sem instalar nada e sem você mandar arquivo nenhum. É o primeiro momento em que "meu projeto de curso" vira "coisa que existe na internet".
@@ -136,13 +136,13 @@ Frameworks modernos (React, Vue, e outros que você vai encontrar depois do curs
 
 Hoje você viu que:
 
-- **GitHub Pages** publica arquivos estáticos (HTML/CSS/JS) direto do repositório, sem hospedagem paga.
+- **[[github-pages|GitHub Pages]]** publica arquivos estáticos (HTML/CSS/JS) direto do repositório, sem hospedagem paga.
 - Ativar é configuração pura de interface: Settings → Pages → Deploy from a branch → escolher `main`.
 - Todo `push` depois disso **atualiza o site sozinho**, em cerca de um minuto.
 - O erro mais comum é maiúscula/minúscula divergente no nome de arquivo — funciona local, quebra publicado, porque o servidor é Linux.
 - Projetos com etapa de build (React, Vue) precisam de **GitHub Actions** em vez de "Deploy from a branch".
 
-Com isso, fecha o módulo de Git e GitHub: você saiu de "arquivo salvo no meu computador" pra "histórico versionado, hospedado, revisado por Pull Request e publicado com link público" — o fluxo real usado por qualquer time profissional de front-end.
+Com isso, fecha o módulo de [[git|Git]] e [[github|GitHub]]: você saiu de "arquivo salvo no meu computador" pra "histórico versionado, hospedado, revisado por [[pull-request|Pull Request]] e publicado com link público" — o [[github-flow|fluxo real]] usado por qualquer time profissional de front-end.
 
 :::roteiro
 Guardar esse momento como o "grande final" do módulo — é a primeira vez que o trabalho do aluno vira algo clicável e mostrável pra família/amigos, e isso rende engajamento real. Fazer questão de que todo mundo mande o link do próprio GitHub Pages no grupo da turma ou mostre no celular do colega ao vivo. No erro de maiúscula/minúscula, vale reforçar bem que é um erro **invisível localmente** — ninguém vai ver o problema até publicar, o que é uma lição sobre confiar demais no "funcionou aqui". Se sobrar tempo, mostrar rapidamente (sem aprofundar) como seria a tela de configuração do GitHub Actions, só pra desmistificar — não é assunto da aula, é só o "próximo capítulo" que a turma vai encontrar fora do curso.

@@ -7,8 +7,8 @@ aka: [search engine optimization, otimização para mecanismos de busca]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Frameworks, Programação e Estratégias/28 - Aula 28 - Implantação da Aplicação e Otimização de Motores de Busca I - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [1]
+atualizado_em: 2026-09-24
 ---
 
 SEO reúne práticas técnicas e editoriais que ajudam mecanismos de busca a descobrir, interpretar e apresentar páginas relevantes.
@@ -29,6 +29,8 @@ HTML semântico, performance, links, dados estruturados, indexação e [[metadad
 ## Onde aparece
 
 - Aulas 28–29 — Implantação e SEO.
+- Aula 1 — *HTML semântico: por que `<div>` não conta a história toda* `aulas/programacao-front-end/fundamentos-html-css/01-html-semantico/canonica.md` — o crawler usa `<article>`, `<h1>` e `<main>` para separar conteúdo de menu e rodapé.
+- Relaciona-se a [[html-semantico]].
 
 ## Fontes
 

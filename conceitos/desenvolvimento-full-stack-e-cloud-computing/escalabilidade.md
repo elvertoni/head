@@ -7,11 +7,11 @@ aka: [scalability]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Estratégias de Cloud Computing/04 - Aula 4 - Modelos de Nuvem_ Público, Privado e Híbrido - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [7]
+atualizado_em: 2026-09-24
 ---
 
-Escalabilidade é a capacidade de aumentar ou reduzir recursos para acompanhar demanda, mantendo requisitos de desempenho e custo. Pode ocorrer verticalmente, aumentando uma máquina, ou horizontalmente, adicionando instâncias.
+Escalabilidade é a capacidade de aumentar ou reduzir recursos para acompanhar demanda, mantendo requisitos de desempenho e custo. Pode ocorrer verticalmente, aumentando uma máquina, ou horizontalmente, adicionando instâncias. A mesma ideia vale para um negócio: é escalável quando atende muito mais clientes sem aumentar o custo na mesma proporção — servir 10 ou 10.000 pessoas dá quase o mesmo trabalho.
 
 ## Em uma frase
 
@@ -30,7 +30,8 @@ Nuvem facilita provisionamento, mas a aplicação precisa tolerar distribuição
 ## Onde aparece
 
 - Aulas 4–6 — Modelos de Nuvem.
-- Conecta [[computacao-em-nuvem]], [[nuvem-publica]], [[alta-disponibilidade]] e [[arquitetura-de-nuvem]].
+- Aula 7 — *Startup não é empresa pequena* `aulas/programacao-front-end/landing-page-mvp/07-startup-nao-e-empresa-pequena/canonica.md` — escalabilidade como diferença entre crescer (custo proporcional) e escalar.
+- Conecta [[computacao-em-nuvem]], [[nuvem-publica]], [[alta-disponibilidade]], [[arquitetura-de-nuvem]] e [[startup]].
 
 ## Fontes
 

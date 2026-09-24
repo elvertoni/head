@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Vocês saíram da aula passada com uma frase. O instinto agora é abrir o VSCode e começar o aplicativo — e essa é exatamente a armadilha. Todo ano tem trio que faz isso: passa três meses programando com afinco, entrega em novembro um sistema que funciona, bonito de ver, e descobre na apresentação que ninguém queria aquilo. O trabalho estava certo; a pergunta é que nunca foi feita. A aula de hoje é sobre a pergunta que se faz **antes** de construir: qual é a menor coisa que eu consigo colocar de pé para descobrir se estou errado — em uma semana, e não em três meses?
@@ -74,7 +74,7 @@ A coluna da direita tem uma propriedade rara e desconfortável: se der 1 em 5, *
 
 ### Cinco jeitos de testar sem construir
 
-Escolhido o que se quer descobrir, escolhe-se a ferramenta. Estes são os cinco formatos clássicos, do mais braçal ao mais barato:
+Escolhido o que se quer descobrir, escolhe-se a ferramenta. Estes são os cinco formatos clássicos, do mais braçal ao mais barato — um deles é a [[prototipagem|prototipagem]] em telas clicáveis:
 
 | Tipo de MVP | Como funciona | Serve para descobrir |
 |---|---|---|
@@ -184,9 +184,9 @@ Duas regras de fechamento. **Uma ação só** — página que pede "cadastre-se,
 
 O que ficou de hoje:
 
-- **MVP é experimento, não produto reduzido.** O que ele entrega é aprendizado para você, não valor para o cliente.
+- **[[mvp|MVP]] é experimento, não produto reduzido.** O que ele entrega é aprendizado para você, não valor para o cliente.
 - **Se nenhum resultado te faria desistir, não é um MVP** — é uma demonstração que você montou para se convencer.
-- **Hipótese precisa de número, definido antes.** Sem proporção não existe reprovação, e critério escolhido depois é sempre generoso.
+- **[[hipotese|Hipótese]] precisa de número, definido antes.** Sem proporção não existe reprovação, e critério escolhido depois é sempre generoso.
 - Entre os cinco tipos, a **landing page** é a que responde mais rápido, obriga vocês a explicar o produto em cinco segundos e produz um **link** que roda sozinho no celular dos outros.
 
 **Próxima aula:** o briefing tem os campos preenchidos, mas ainda não tem o **texto**. E é o texto que decide se a página convence em cinco segundos ou se o visitante fecha a aba. Vamos escrever a headline, os benefícios e a chamada — a parte que trava mais gente que qualquer CSS.

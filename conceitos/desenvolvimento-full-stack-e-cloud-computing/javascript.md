@@ -7,8 +7,8 @@ aka: [JS, ECMAScript]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/Padrões Web - HTML e CSS/03 - Aula 3 - Algoritmos e Linguagem JavaScript - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [16]
+atualizado_em: 2026-09-24
 ---
 
 JavaScript é uma linguagem de programação usada para implementar comportamento em páginas web e também em ambientes fora do navegador. No navegador, ela pode ler e alterar a árvore HTML, reagir a eventos e coordenar dados e apresentação.
@@ -31,7 +31,8 @@ A lógica pode ser planejada com [[algoritmo]], [[fluxograma]] ou [[pseudocodigo
 
 - Aula 3 — Algoritmos e Linguagem JavaScript, na trilha Padrões Web — HTML e CSS.
 - Aulas 4–10 da trilha tratam variáveis, entrada e saída, DOM, decisões e laços.
-- Conecta [[algoritmo]], [[variaveis-em-javascript]], [[manipulacao-do-dom]], [[estruturas-condicionais]], [[lacos-de-repeticao]], [[arrays-em-javascript]] e [[funcoes-em-javascript]].
+- Aula 16 — *JavaScript na conta certa: três comportamentos, vinte linhas* `aulas/programacao-front-end/landing-page-mvp/16-os-tres-javascripts/canonica.md` — JavaScript como camada de comportamento: o conteúdo essencial da página precisa sobreviver se o script falhar.
+- Conecta [[algoritmo]], [[variaveis-em-javascript]], [[manipulacao-do-dom]], [[estruturas-condicionais]], [[lacos-de-repeticao]], [[arrays-em-javascript]], [[funcoes-em-javascript]] e [[classlist]].
 
 ## Fontes
 

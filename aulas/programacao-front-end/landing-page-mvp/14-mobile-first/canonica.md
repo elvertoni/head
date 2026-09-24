@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Pensa em como o teste da aula 17 vai acontecer de verdade. Você vai chegar em alguém no corredor, entregar **o seu celular** com a página aberta, e essa pessoa vai ter dez segundos. Não vai ser num monitor de 24 polegadas com a janela maximizada — que é exatamente onde vocês vêm construindo tudo até agora. É bem provável que a sua headline de 44 pixels esteja ocupando quatro linhas na tela pequena, que o menu esteja espremido e que a página deslize para os lados quando a pessoa encostar o dedo. Hoje a gente conserta isso, e o teste é feito no aparelho de cada um.
@@ -76,7 +76,7 @@ camadas:
     conteudo: "Sem essa linha, o celular acha que tem 980 pixels de largura — e uma regra escrita para telas de até 600 pixels simplesmente nunca é acionada. O CSS responsivo está correto e não é aplicado, o que produz o tipo de erro em que a pessoa procura defeito no lugar errado por horas."
 ```
 
-### Media query: escrever pequeno e acrescentar
+### [[media-query|Media query]]: escrever pequeno e acrescentar
 
 :::conceito Media query e breakpoint
 Uma **media query** é um bloco de CSS que só vale quando uma condição sobre a tela é verdadeira. O **breakpoint** é a largura escolhida como fronteira. Em mobile-first, a condição usada é `min-width`: as regras valem **a partir** daquela largura, ou seja, para telas maiores.
@@ -116,7 +116,7 @@ img {
 Uma foto de 1200 pixels de largura numa tela de 360 força a página inteira a ter 1200 pixels. `max-width: 100%` a obriga a nunca passar da largura do container, e `height: auto` mantém a proporção em vez de achatá-la.
 
 :::atencao A página que desliza para os lados
-O sintoma é inconfundível: no celular, a pessoa arrasta o dedo e a página inteira anda para a esquerda, revelando uma faixa vazia. Passa uma impressão de descuido antes de qualquer texto ser lido. A causa é sempre a mesma — **algum elemento é mais largo que a tela** —, e as três origens mais comuns são imagem sem `max-width`, um bloco com largura fixa em pixels, e largura em porcentagem somada a `padding`. Esta última é a mais traiçoeira: `width: 100%` mais `padding: 24px` dá 100% **mais** 48 pixels, porque por padrão o padding é somado por fora da largura. A correção que resolve os três casos de uma vez, e que praticamente todo projeto profissional adota na primeira linha do CSS, é `* { box-sizing: border-box; }` — com ela, `padding` e `border` passam a ser contados **dentro** da largura declarada. Diagnóstico: estreite a janela até aparecer a barra horizontal e vá escondendo blocos até ela sumir; o último que você escondeu é o culpado.
+O sintoma é inconfundível: no celular, a pessoa arrasta o dedo e a página inteira anda para a esquerda, revelando uma faixa vazia. Passa uma impressão de descuido antes de qualquer texto ser lido. A causa é sempre a mesma — **algum elemento é mais largo que a tela** —, e as três origens mais comuns são imagem sem `max-width`, um bloco com largura fixa em pixels, e largura em porcentagem somada a `padding`. Esta última é a mais traiçoeira: `width: 100%` mais `padding: 24px` dá 100% **mais** 48 pixels, porque por padrão o padding é somado por fora da largura. A correção que resolve os três casos de uma vez, e que praticamente todo projeto profissional adota na primeira linha do CSS, é `* { box-sizing: border-box; }` — parte do [[box-model|box model]] do CSS — com ela, `padding` e `border` passam a ser contados **dentro** da largura declarada. Diagnóstico: estreite a janela até aparecer a barra horizontal e vá escondendo blocos até ela sumir; o último que você escondeu é o culpado.
 :::
 
 :::curiosidade A mentira que ficou
@@ -233,7 +233,7 @@ header {
 O que ficou de hoje:
 
 - **O celular é onde a página vai ser julgada** — inclusive no teste da aula 17.
-- **Mobile-first é escrever para a tela pequena e acrescentar** com `min-width`, porque adicionar é mais fácil que desfazer.
+- **[[mobile-first|Mobile-first]] é escrever para a tela pequena e acrescentar** com `min-width`, porque adicionar é mais fácil que desfazer.
 - **Sem a meta viewport, o CSS responsivo não é aplicado** — o celular finge ser largo e as regras não disparam.
 - **`max-width` em vez de `width`, `rem` em vez de pixel fixo, `max-width: 100%` em toda imagem.**
 - **`box-sizing: border-box` na primeira linha** evita a maior parte das rolagens horizontais.

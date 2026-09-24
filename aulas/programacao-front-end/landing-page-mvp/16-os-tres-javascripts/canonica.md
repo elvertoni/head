@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Sua página está bonita, responsiva e reage ao toque — e ainda é uma folha de papel. Ela não **faz** nada. Hoje entra o JavaScript, e vai entrar em dose pequena de propósito: três comportamentos, cerca de vinte linhas no total, escolhidos porque resolvem problemas que vocês já têm nessa página específica. Um deles, inclusive, vamos descobrir que não precisa de JavaScript nenhum — e essa vai ser a lição mais valiosa da aula, porque saber quando **não** usar a ferramenta é o que separa quem programa de quem só sabe a sintaxe.
@@ -51,7 +51,7 @@ Para o projeto de vocês isso é concreto: o teste da aula 17 vai acontecer no c
 
 ### Achar o elemento, e deixar um recado
 
-Todo JavaScript de interface faz duas coisas antes de qualquer outra: encontra um elemento e diz o que fazer quando algo acontecer com ele.
+Toda [[manipulacao-do-dom|manipulação do DOM]] de interface faz duas coisas antes de qualquer outra: encontra um elemento e diz o que fazer quando algo acontecer com ele.
 
 ![Linha do tempo horizontal dividida em dois territórios. No trecho inicial, marcado como leitura do arquivo, o navegador percorre as linhas do script de cima a baixo, e no ponto da linha que registra o ouvinte aparece um envelope guardado, com a indicação de que a função não foi executada. Logo depois, a linha do tempo entra num trecho longo e vazio, rotulado como espera. Mais adiante, um toque de dedo marca o evento, o envelope guardado é aberto e só então a função aparece em execução. Abaixo, uma ramificação mostra o caso em que o script é lido antes de o elemento existir — a busca volta vazia.](img/o-recado-que-fica-esperando.png)
 
@@ -236,10 +236,10 @@ Detalhe que importa: `navigator.clipboard` só funciona em página servida por c
 
 O que ficou de hoje:
 
-- **JavaScript é a camada de comportamento.** O conteúdo essencial precisa sobreviver se o script falhar.
-- **`querySelector` usa a linguagem do CSS**; quem sabe seletor já sabe procurar elemento.
+- **[[javascript|JavaScript]] é a camada de comportamento.** O conteúdo essencial precisa sobreviver se o script falhar.
+- **`querySelector` usa a linguagem do CSS**; quem sabe seletor já sabe procurar elemento — é [[manipulacao-do-dom|manipulação do DOM]].
 - **`addEventListener` não executa nada** — deixa um recado que só o evento aciona.
-- **`classList.toggle`** abre e fecha em uma linha: o JavaScript decide o **estado**, o CSS decide a **aparência do estado**.
+- **[[classlist|`classList.toggle`]]** abre e fecha em uma linha: o JavaScript decide o **estado**, o CSS decide a **aparência do estado**.
 - **`scroll-behavior: smooth`** mostra que às vezes a melhor solução é não escrever script.
 - **`<script>` como última linha antes de `</body>`** — é a causa número um do primeiro erro de todo mundo.
 

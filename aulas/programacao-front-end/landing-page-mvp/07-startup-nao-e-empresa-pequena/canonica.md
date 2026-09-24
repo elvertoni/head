@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Duas empresas abriram em Curitiba na mesma semana. A primeira é uma barbearia: dois cadeirões, dois barbeiros, agenda cheia até sábado. A segunda são duas pessoas no quarto de uma delas, escrevendo código de um aplicativo que ninguém ainda usou. Pergunta séria: qual das duas é uma **startup**? A resposta mais comum da turma é "a segunda, porque é de tecnologia" — e ela está errada pelo motivo errado. Tem barbearia que é startup e tem app que nunca vai ser. O que separa as duas não é o setor, não é o tamanho e não é a idade da empresa. É uma pergunta só, e ela é o assunto da aula de hoje.
@@ -83,7 +83,7 @@ A parte final da definição é a que a turma costuma pular na leitura: **em con
 
 Quando alguém abre uma pizzaria, boa parte das respostas já existe no mundo. Sabe-se que gente come pizza, quanto custa uma pizza, quantas cabem no forno por hora. O risco é de execução: o dono pode errar o ponto da massa ou escolher um ponto ruim. Mas a pergunta "existe alguém querendo isso?" já está respondida há décadas.
 
-Uma startup vive antes dessa resposta. Ela não sabe se o problema existe do jeito que ela imagina, não sabe se alguém pagaria, não sabe se dá para entregar. Ela não está executando um plano: está **testando um palpite**. E é por isso que o resto do trimestre vai girar em torno de uma palavra só — *validar*. Não é firula de empreendedorismo. É a única maneira de trabalhar quando você admite, com honestidade, que ainda não sabe.
+Uma startup vive antes dessa resposta. Ela não sabe se o problema existe do jeito que ela imagina, não sabe se alguém pagaria, não sabe se dá para entregar. Ela não está executando um plano: está **testando um palpite**. E é por isso que o resto do trimestre vai girar em torno de uma palavra só — *[[validacao-de-mercado|validar]]*. Não é firula de empreendedorismo. É a única maneira de trabalhar quando você admite, com honestidade, que ainda não sabe.
 
 :::curiosidade Quase nenhuma nasceu do jeito que terminou
 O Instagram começou como Burbn, um aplicativo de *check-in* em lugares, cheio de funções — e as pessoas só usavam a parte das fotos. Os criadores apagaram o resto. O Slack, hoje usado por milhões de empresas, era a ferramenta interna de bate-papo de um estúdio que fazia um jogo online; o jogo não emplacou e foi desligado, e o que sobrou — o bate-papo que a própria equipe usava — virou o produto. Isso não é sorte: é o que acontece quando você testa cedo e aceita o que o teste responde, em vez de defender a ideia original.
@@ -190,12 +190,12 @@ PROVA — como essa pessoa se vira hoje sem vocês: .....................
 
 O que ficou de hoje:
 
-- **Startup não é definida por idade, tamanho ou setor** — é definida por procurar um modelo **repetível e escalável**, e por fazer isso **sem saber ainda** se vai dar certo.
+- **[[startup|Startup]] não é definida por idade, tamanho ou setor** — é definida por procurar um modelo **repetível e [[escalabilidade|escalável]]**, e por fazer isso **sem saber ainda** se vai dar certo.
 - **Crescer é diferente de escalar**: crescer é gastar mais para faturar mais; escalar é faturar muito mais gastando quase igual.
 - Ser startup é um **estado temporário**: quem achou o modelo e passou a executar virou empresa.
 - **Dor real tem dono, tem obstáculo e tem gambiarra.** Se ninguém está se virando de um jeito ruim hoje, provavelmente ninguém se importa.
 
-**Próxima aula:** vocês têm uma frase e uma aposta — nada além disso. Antes de construir qualquer coisa, vem a pergunta que separa quem valida de quem só constrói: **qual é a menor coisa que eu posso colocar de pé para descobrir se estou certo?** É o **MVP** — e vocês vão descobrir que o mais barato de todos não tem uma linha de programação por trás, mas tem um endereço na internet.
+**Próxima aula:** vocês têm uma frase e uma aposta — nada além disso. Antes de construir qualquer coisa, vem a pergunta que separa quem valida de quem só constrói: **qual é a menor coisa que eu posso colocar de pé para descobrir se estou certo?** É o **[[mvp|MVP]]** — e vocês vão descobrir que o mais barato de todos não tem uma linha de programação por trás, mas tem um endereço na internet.
 
 :::roteiro
 Abrir com a barbearia e o app **sem dar a resposta** e colher os palpites no quadro em duas colunas — a turma quase toda vai votar no app "porque é tech". Guardar esse voto visível: a virada da aula é mostrar que a barbearia pode ser startup e o app pode não ser, e o impacto depende de o erro estar escrito ali.

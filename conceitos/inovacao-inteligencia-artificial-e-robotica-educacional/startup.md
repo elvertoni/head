@@ -7,8 +7,8 @@ aka: [empresa emergente, empresa de base tecnológica]
 status: rascunho
 fontes:
   - lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/10 - Aula 10 - Aplicações e Futuro - Apostila (Slides).pdf
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [7]
+atualizado_em: 2026-09-24
 ---
 
 Startup é uma empresa orientada a inovação que busca um modelo de negócio repetível e escalável sob alta incerteza, testando hipóteses com recursos limitados.
@@ -29,7 +29,8 @@ O núcleo não é ser pequena nem usar tecnologia, mas buscar validação e esca
 ## Onde aparece
 
 - Onda 1 — investigação dos PDFs primários do lote correspondente.
-- Conceitos vizinhos: [[inovacao]], [[prototipagem]], [[modelo-de-negocio]], [[carreira]].
+- Aula 7 — *Startup não é empresa pequena* `aulas/programacao-front-end/landing-page-mvp/07-startup-nao-e-empresa-pequena/canonica.md`
+- Conceitos vizinhos: [[inovacao]], [[prototipagem]], [[modelo-de-negocio]], [[carreira]], [[escalabilidade]] e [[mvp]].
 
 ## Fontes
 

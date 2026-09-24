@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-07-29
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Até agora, todo o histórico do seu projeto existe num lugar só: o SSD do seu notebook. Se ele quebrar, for roubado ou você simplesmente for trabalhar de outro computador na escola, todo aquele histórico de commits fica pra trás. Hoje seu repositório sai do seu computador e vai pra um servidor que qualquer colega, professor ou recrutador consegue acessar — e você aprende a trazer de volta um repositório que nem começou no seu computador.
@@ -45,7 +45,7 @@ Essa confusão é tão comum que vale resolver logo de cara: **Git** e **GitHub*
 **GitHub** é um serviço na nuvem que hospeda repositórios Git, dá uma interface visual pra eles e adiciona ferramentas de colaboração (Pull Requests, Issues, revisão de código). Ele **usa** o Git por baixo dos panos, mas não é o único jeito de usar Git — existem alternativas como GitLab e Bitbucket. Pense assim: Git é a linguagem; GitHub é um dos lugares onde essa linguagem é falada.
 :::
 
-Tudo o que você fez nas duas últimas aulas — `init`, `add`, `commit`, branches, merge — acontece **inteiramente no seu computador**, sem internet nenhuma. GitHub só entra quando você decide que aquele histórico deve existir em algum outro lugar também.
+Tudo o que você fez nas duas últimas aulas — `init`, `add`, `commit`, [[branch|branches]], [[merge]] — acontece **inteiramente no seu computador**, sem internet nenhuma. [[github|GitHub]] só entra quando você decide que aquele histórico deve existir em algum outro lugar também.
 
 ### Subindo um repositório local pela primeira vez
 
@@ -80,7 +80,7 @@ camadas:
     conteudo: "Depois da primeira conexão, os dois casos convergem: git push envia seus commits novos, git pull traz os commits que outra pessoa (ou você, de outro computador) enviou."
 ```
 
-### Autenticação: como o GitHub sabe que é você
+### [[autenticacao|Autenticação]]: como o GitHub sabe que é você
 
 Aqui está uma pegadinha real que vai te confundir se ninguém explicar antes: **o GitHub não aceita mais login com usuário e senha** em operações de linha de comando (`git push`, `git clone` de repositório privado) — essa porta foi fechada em 2021, por segurança. Você precisa de uma destas duas formas:
 
@@ -151,10 +151,10 @@ Em qualquer empresa, o primeiro passo de um dev novo no time é configurar auten
 
 Hoje você viu que:
 
-- **Git** roda local e não depende de internet; **GitHub** é um serviço que hospeda esses repositórios na nuvem, com interface e ferramentas de colaboração.
+- **[[git|Git]]** roda local e não depende de internet; **[[github|GitHub]]** é um serviço que hospeda esses repositórios na nuvem, com interface e ferramentas de colaboração.
 - Repositório que **nasceu local**: `git remote add origin` + `git push -u origin main`. Repositório que **já existe no GitHub**: `git clone`.
 - Depois da primeira conexão, o dia a dia é `git push` (enviar) e `git pull` (trazer o que outra pessoa enviou).
-- O GitHub não aceita mais senha em operações de linha de comando — a autenticação hoje é por **SSH** ou por uma ferramenta como o **GitHub CLI**.
+- O GitHub não aceita mais senha em operações de linha de comando — a [[autenticacao|autenticação]] hoje é por **SSH** ou por uma ferramenta como o **GitHub CLI**.
 
 **Próxima aula:** agora que seu código está no GitHub, como um colega **sugere** uma mudança no seu projeto sem simplesmente sobrescrever o que você fez? A próxima aula é sobre **Pull Requests** — o fluxo real que times profissionais usam pra revisar código antes dele entrar na `main`.
 

@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 3
-atualizado_em: 2026-09-21
+versao: 4
+atualizado_em: 2026-09-24
 ---
 
 Você já teve uma pasta com `projeto.html`, `projeto-2.html`, `projeto-final.html` e `projeto-final-agora-vai.html`? Cada arquivo é uma tentativa de responder a mesma pergunta: "qual dessas versões é a boa?" — e depois de duas semanas, nem quem escreveu lembra mais. O problema não é falta de organização sua. É que arquivo comum não foi feito pra guardar **história**. Existe uma ferramenta feita exatamente pra isso, e hoje você aprende a base dela.
@@ -112,7 +112,7 @@ Em qualquer projeto de front-end que usa Node (React, Vite, o que for), a pasta 
 
 **No terminal do VSCode, dentro de uma cópia da pasta do Petfinder (~15 min):**
 
-1. Rode `git init` e confira que apareceu a mensagem de repositório criado.
+1. Rode `git init` e confira que apareceu a mensagem de [[repositorio-git|repositório]] criado.
 2. Rode `git status` — repare que todos os arquivos aparecem como não rastreados.
 3. Crie um `.gitignore` com pelo menos uma linha (ex.: `*.log`).
 4. Rode `git add .` e depois `git status` de novo — veja a diferença: agora os arquivos aparecem em verde, prontos pra fotografia.
@@ -160,7 +160,7 @@ Em qualquer projeto de front-end que usa Node (React, Vite, o que for), a pasta 
 Hoje você viu que:
 
 - Cópias manuais de arquivo (`v1`, `v2`, `final`) não escalam e escondem risco de sobrescrever trabalho.
-- Um **repositório Git** guarda **commits** — fotografias completas do projeto, com data, autor e mensagem.
+- Um **[[repositorio-git|repositório Git]]** guarda **commits** — fotografias completas do projeto, com data, autor e mensagem.
 - O ciclo básico local é sempre `git init` → `git add` → `git commit` → `git log`.
 - `.gitignore` mantém arquivos indesejados (dependências, senhas, temporários) fora do histórico pra sempre.
 

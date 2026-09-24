@@ -16,8 +16,8 @@ modo_origem: material
 fontes: [fontes/FLEXBOX.pdf]
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-23
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Abre o código-fonte de um site qualquer — clique direito, "Ver código-fonte da página", ou `Ctrl+Shift+I` e aba Elements. Se o site for bem feito, você vai ver palavras como `<header>`, `<nav>`, `<main>`, `<footer>` antes mesmo de olhar uma linha de CSS. Isso não é estilo. É o site contando pra qualquer máquina que ler aquele HTML — navegador, leitor de tela, robô do Google — **o que cada pedaço da página significa**, não só onde ele fica na tela.
@@ -109,7 +109,7 @@ Um erro comum é achar que trocar `<div class="header">` por `<header class="hea
 
 A parte que não aparece pra quem enxerga é onde a semântica prova o valor dela.
 
-Um aluno com deficiência visual navega a web com um **leitor de tela** — um programa que lê a página em voz alta. Leitores de tela têm um atalho pra pular direto pros "landmarks" (marcos) da página: pula pro `<nav>`, pula pro `<main>`, pula pro `<footer>`. Numa página feita só de `<div>`, esse atalho **não existe** — o leitor de tela lê tudo em sequência, do topo ao fim, sem conseguir pular pra "onde está o conteúdo principal". A pessoa fica presa ouvindo o menu inteiro toda vez que abre uma página nova do mesmo site.
+Um aluno com deficiência visual navega a web com um **leitor de tela** — um programa que lê a página em voz alta, uma das formas mais concretas de [[acessibilidade]] na web. Leitores de tela têm um atalho pra pular direto pros "landmarks" (marcos) da página: pula pro `<nav>`, pula pro `<main>`, pula pro `<footer>`. Numa página feita só de `<div>`, esse atalho **não existe** — o leitor de tela lê tudo em sequência, do topo ao fim, sem conseguir pular pra "onde está o conteúdo principal". A pessoa fica presa ouvindo o menu inteiro toda vez que abre uma página nova do mesmo site.
 
 ```diagrama-progressivo
 titulo: Como o leitor de tela navega uma página
@@ -122,7 +122,7 @@ camadas:
     conteudo: "A mesma pessoa que levava 30 segundos ouvindo o menu inteiro agora pula pro artigo em 2 segundos — sem o site mudar de aparência nem uma linha de CSS."
 ```
 
-O Google funciona parecido: o robô que indexa seu site (o *crawler*) usa `<article>`, `<h1>` e `<main>` pra entender qual é o conteúdo de verdade da página, separado de menu e rodapé. Um site em div-soup entrega tudo no mesmo nível de importância pro robô; um site semântico diz "isto aqui é o que importa".
+O Google funciona parecido: o robô que indexa seu site (o *crawler*) usa `<article>`, `<h1>` e `<main>` pra entender qual é o conteúdo de verdade da página, separado de menu e rodapé — é a base de [[seo|SEO]] técnico. Um site em div-soup entrega tudo no mesmo nível de importância pro robô; um site semântico diz "isto aqui é o que importa".
 
 :::importante O ponto-chave
 Visual idêntico **não** significa código idêntico. Duas páginas podem parecer gêmeas na tela e serem completamente diferentes pra quem não enxerga a tela — seja uma pessoa com deficiência visual, seja um robô de busca. Semântica é uma camada de informação que só existe se você escrever a tag certa; nenhum CSS "espertinho" compensa a falta dela.
@@ -184,7 +184,7 @@ Pegue o exercício de layout que você já fez com `display: flex` (header em ci
 Hoje você viu que:
 
 - `<div>` não tem significado nenhum sozinha — todo "nome" que ela carrega vem do `class`, que só o CSS entende.
-- Tags semânticas (`header`, `nav`, `main`, `article`, `aside`, `footer`, `section`) dão significado real, lido por navegador, leitor de tela e buscador.
+- [[html-semantico|Tags semânticas]] (`header`, `nav`, `main`, `article`, `aside`, `footer`, `section`) dão significado real, lido por navegador, leitor de tela e buscador.
 - Trocar `<div>` por tag semântica **não muda o visual nem quebra o CSS** — ambos continuam se comportando como elemento de bloco.
 - Isso importa de verdade pra quem usa leitor de tela (navegação por atalho) e pra SEO (o robô entende o que é conteúdo principal).
 

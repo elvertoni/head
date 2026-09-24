@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Sua página está no ar desde a aula passada, e ela está horrível. Tudo Times New Roman, tudo preto no branco, links azuis sublinhados, texto atravessando a tela de ponta a ponta. Não é falta de talento: é o navegador aplicando os padrões dele porque você ainda não disse nada. E aqui vem a parte que surpreende — a distância entre isso e algo que **parece um produto de verdade** não é um mês de CSS. São umas quinze linhas, e a maior parte delas você escreve uma vez só, num lugar só. Hoje é a aula em que o projeto muda de categoria.
@@ -223,8 +223,8 @@ Duas linhas aí fazem mais pela aparência do que qualquer cor: `line-height: 1.
 O que ficou de hoje:
 
 - **Quatro cores, cada uma com um cargo.** Destaque só destaca se for raro — de preferência, só no botão.
-- **Cinco tamanhos de letra, e só eles.** Importância diferente pede tamanho visivelmente diferente; importância igual pede tamanho idêntico.
-- **`:root` é onde a marca mora.** Uma linha muda a página inteira, sem atingir o que não devia.
+- **Cinco tamanhos de letra, e só eles.** É a [[escala-tipografica|escala tipográfica]]: importância diferente pede tamanho visivelmente diferente; importância igual pede tamanho idêntico.
+- **`:root` é onde a marca mora.** Uma [[variavel-css|variável CSS]] muda a página inteira, sem atingir o que não devia.
 - **`font-family` é uma lista**, porque fonte da internet falha — e sem plano B a página vira Times New Roman.
 - **Contraste é legibilidade**, não estética. O teste é o celular no sol.
 

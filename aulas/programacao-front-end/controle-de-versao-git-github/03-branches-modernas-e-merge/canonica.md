@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-07-29
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Imagina que você está com o Petfinder funcionando perfeitamente, entregável amanhã, e bate aquela vontade de testar um modo escuro novo. Se você mexer direto nos arquivos de sempre, sua única versão estável fica **exposta** ao risco de o experimento dar errado. Hoje você aprende como criar uma linha do tempo paralela pra testar qualquer loucura — sem tocar num pixel da versão que já funciona.
@@ -41,7 +41,7 @@ Você precisa ter feito a Aula 1 — Controle de versão: Git local — e ter um
 
 No fim da aula passada, seu histórico era uma linha reta: um commit atrás do outro. Isso é ótimo enquanto você só adiciona coisa que **já sabe** que vai funcionar. Mas todo projeto real chega numa hora em que você quer **experimentar** — um layout novo, uma função arriscada — sem comprometer a versão que já está pronta pra entregar.
 
-A solução do Git pra isso não é copiar a pasta pra testar em outro lugar. É criar uma **branch**.
+A solução do [[git|Git]] pra isso não é copiar a pasta pra testar em outro lugar. É criar uma **[[branch|branch]]**.
 
 ### Branch: um ponteiro que se move, não uma cópia da pasta
 
@@ -65,7 +65,7 @@ Em qualquer equipe, cada funcionalidade nova nasce numa branch com nome descriti
 
 ### Merge: juntando duas linhas de história
 
-Depois que o experimento em `modo-escuro` está bom, você quer trazer esse trabalho de volta pra `main`. Isso é um **merge**: pegar os commits de uma branch e incorporá-los em outra.
+Depois que o experimento em `modo-escuro` está bom, você quer trazer esse trabalho de volta pra `main`. Isso é um **[[merge|merge]]**: pegar os commits de uma branch e incorporá-los em outra.
 
 ```bash
 git switch main            # vá para a branch que vai RECEBER as mudanças
@@ -82,7 +82,7 @@ camadas:
   - rotulo: Alguém mexeu em main também
     conteudo: "Se main ganhou commits novos enquanto você trabalhava em modo-escuro, o Git precisa costurar as duas histórias. Ele cria um commit especial, o merge commit, que tem DOIS pais — um de cada branch — marcando o ponto exato onde as linhas se juntaram."
   - rotulo: E se as duas mexeram no mesmo lugar?
-    conteudo: "Se as duas branches mudaram a MESMA linha do mesmo arquivo de jeitos diferentes, o Git não sabe qual versão manter sozinho. Isso é o conflito de merge — o próximo assunto desta aula."
+    conteudo: "Se as duas branches mudaram a MESMA linha do mesmo arquivo de jeitos diferentes, o Git não sabe qual versão manter sozinho. Isso é o [[conflito-de-merge|conflito de merge]] — o próximo assunto desta aula."
 ```
 
 ### Quando o Git não consegue decidir sozinho: o conflito
@@ -160,10 +160,10 @@ O erro mais comum ao ver um conflito pela primeira vez é entrar em pânico e sa
 
 Hoje você viu que:
 
-- Uma **branch** é um rótulo móvel, não uma cópia de arquivos — criar uma é praticamente instantâneo.
+- Uma **[[branch|branch]]** é um rótulo móvel, não uma cópia de arquivos — criar uma é praticamente instantâneo.
 - `git switch -c` cria e já troca pra branch nova; `git switch nome` troca pra uma que já existe.
-- **Merge** junta duas linhas de história: sem divergência vira *fast-forward*; com divergência vira um *merge commit* com dois pais.
-- **Conflito** não é erro — é o Git pedindo uma decisão humana quando duas branches mudam a mesma linha de jeitos diferentes.
+- **[[merge|Merge]]** junta duas linhas de história: sem divergência vira *fast-forward*; com divergência vira um *merge commit* com dois pais.
+- **[[conflito-de-merge|Conflito]]** não é erro — é o Git pedindo uma decisão humana quando duas branches mudam a mesma linha de jeitos diferentes.
 
 **Próxima aula:** até agora, tudo isso viveu só no seu computador. A próxima aula leva esse repositório pro **GitHub** — como colocar seu código na nuvem e trazer o de outra pessoa pro seu computador.
 

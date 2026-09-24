@@ -7,8 +7,8 @@ aka: [media queries, consulta de mídia CSS]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/JavaScript e Aplicações Práticas/09 - Aula 9 - Projeto Mão na Massa - CSS - Resumo (Aula em PDF).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [14]
+atualizado_em: 2026-09-24
 ---
 
 Media query é uma condição CSS que aplica regras conforme características do ambiente de apresentação, como largura da janela, orientação ou preferência de contraste. Ela permite adaptar um mesmo documento a diferentes dispositivos e contextos.
@@ -19,7 +19,7 @@ Media queries condicionam estilos às características do ambiente de visualiza�
 
 ## O que precisa saber
 
-Media queries fazem parte do [[css3]] e apoiam layouts responsivos junto com unidades flexíveis e componentes de [[bootstrap]]. Os pontos de quebra devem nascer do conteúdo e dos problemas observados, não de uma lista fixa de aparelhos. A estrutura do [[html5]] continua a mesma enquanto a apresentação muda.
+Media queries fazem parte do [[css3]] e apoiam layouts responsivos junto com unidades flexíveis e componentes de [[bootstrap]]. Os pontos de quebra (**breakpoints**) devem nascer do conteúdo e dos problemas observados, não de uma lista fixa de aparelhos. A estrutura do [[html5]] continua a mesma enquanto a apresentação muda. Em [[mobile-first|mobile-first]], a condição usada é `min-width`: a regra vale a partir daquela largura, para telas maiores — o caminho inverso de escrever para o monitor e depois encolher com `max-width`.
 
 ## Erros comuns
 
@@ -30,7 +30,8 @@ Media queries fazem parte do [[css3]] e apoiam layouts responsivos junto com uni
 ## Onde aparece
 
 - Aula 9 — Projeto Mão na Massa — CSS, na trilha JavaScript e Aplicações Práticas.
-- Conecta [[css3]], [[bootstrap]] e responsividade web.
+- Aula 14 — *Mobile-first: o MVP no celular de quem vai validar* `aulas/programacao-front-end/landing-page-mvp/14-mobile-first/canonica.md`
+- Conecta [[css3]], [[bootstrap]], [[mobile-first]] e responsividade web.
 
 ## Fontes
 

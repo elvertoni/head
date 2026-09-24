@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Na aula 08 vocês escreveram um número em um papel. Alguma coisa como "pelo menos 3 de cada 5". Naquele momento era só uma linha de formulário, meio chata de preencher. Hoje esse número volta com um poder desagradável: ele é a única coisa que impede vocês de olhar para cinco respostas e concluir, com toda a sinceridade do mundo, que deu certo. Porque é isso que a gente faz, e é involuntário — a gente lê o resultado procurando confirmação. A aula de hoje é sobre ler o que aconteceu de verdade, inclusive quando o que aconteceu foi a sua ideia levar um não.
@@ -33,7 +33,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-A landing page publicada, as cinco respostas do teste de corredor coletadas na aula 17, e o briefing da aula 08 com o número da hipótese. Sem o número original, a aula de hoje não tem contra o que comparar — e o trio que "não anotou" vai descobrir hoje por que isso importa.
+A landing page publicada, as cinco respostas do teste de corredor coletadas na aula 17, e o briefing da aula 08 com o número da [[hipotese|hipótese]]. Sem o número original, a aula de hoje não tem contra o que comparar — e o trio que "não anotou" vai descobrir hoje por que isso importa.
 
 ## Desenvolvimento
 
@@ -99,7 +99,7 @@ Essas são as três saídas, e a palavra do meio é a que costuma ser mal usada.
 **Perseverar** é seguir com a aposta e aumentar a dificuldade do próximo teste. **Pivotar** é mudar **uma** peça — o público, ou a solução, ou o problema — mantendo o resto e o aprendizado. Pivô não é recomeçar do zero, não é trocar de assunto e definitivamente não é ter outra ideia porque a primeira deu trabalho: é uma correção de rota apoiada em uma informação nova. **Encerrar** é reconhecer, depois de mais de uma rodada, que a dor não sustenta o projeto.
 
 :::dica O que isso vale fora daqui
-Esse trio de decisões é literalmente o que uma equipe de produto faz toda semana, e a taxa que vocês calcularam tem nome no mercado: **taxa de conversão** — quantos, dos que viram, fizeram. É o número que aparece em toda reunião de produto e em todo relatório de marketing. E vale para o TCC do ano que vem: chegar na banca dizendo "testamos com cinco pessoas, três não entenderam, reescrevemos e na segunda rodada quatro entenderam" é uma resposta que muda o nível da defesa — porque mostra método, e método é o que separa projeto de palpite.
+Esse trio de decisões é literalmente o que uma equipe de produto faz toda semana, e a taxa que vocês calcularam tem nome no mercado: **[[taxa-de-conversao|taxa de conversão]]** — quantos, dos que viram, fizeram. É o número que aparece em toda reunião de produto e em todo relatório de marketing. E vale para o TCC do ano que vem: chegar na banca dizendo "testamos com cinco pessoas, três não entenderam, reescrevemos e na segunda rodada quatro entenderam" é uma resposta que muda o nível da defesa — porque mostra método, e método é o que separa projeto de palpite.
 :::
 
 :::curiosidade O número que engana com a verdade
@@ -178,13 +178,13 @@ Duas regras: o item 1 é **copiado**, não reescrito; e o item 5 precisa citar o
 
 O que ficou de hoje:
 
-- **Métrica de vaidade sobe sempre e não decide nada.** Métrica acionável é proporção, tem denominador e pode dar má notícia.
+- **[[metrica-de-vaidade|Métrica de vaidade]] sobe sempre e não decide nada.** [[taxa-de-conversao|Métrica acionável]] é proporção, tem denominador e pode dar má notícia.
 - **O critério vale para a rodada em que foi definido.** Mudou depois de ver o placar, não testou nada.
 - **Quem não entendeu não tem opinião sobre a ideia.** Separe os dois montes antes de concluir qualquer coisa.
 - As saídas são três: **perseverar, pivotar ou encerrar** — e pivotar é mudar uma peça mantendo o aprendizado, não recomeçar do zero.
 - **Reprovar cedo é resultado bom.** Custou uma aula descobrir o que teria custado um semestre.
 
-**Para as próximas aulas:** com este relatório na mão, vocês têm o que quase nenhum projeto de escola tem — evidência. O pitch deixa de ser "achamos que seria útil" e passa a ser "testamos, deu isso, decidimos assim". É essa frase que a banca lembra.
+**Para as próximas aulas:** com este relatório na mão, vocês têm o que quase nenhum projeto de escola tem — [[validacao-de-mercado|evidência]]. O pitch deixa de ser "achamos que seria útil" e passa a ser "testamos, deu isso, decidimos assim". É essa frase que a banca lembra.
 
 :::roteiro
 Comece cobrando o papel do briefing com o número. Trio que não tem vive hoje a lição na pele — deixe viver, sem resgatar, e nomeie em voz alta o que aconteceu: sem critério anterior, qualquer resultado vira sucesso. Vale mais que dez minutos de explicação.

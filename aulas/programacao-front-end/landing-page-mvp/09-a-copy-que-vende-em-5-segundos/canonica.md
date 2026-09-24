@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Lembra da última vez que você abriu um link que alguém mandou no grupo, olhou por um segundo e voltou? Você não leu nada. Não deu chance nenhuma. E não foi má vontade: é assim que todo mundo se comporta, você comigo e eu com você. A landing page que vocês vão publicar vai ser aberta exatamente desse jeito — no celular, no meio de outra coisa, por alguém que não pediu para ver. O tempo que ela tem para provar que merece existir é mais ou menos o tempo de uma frase. A aula de hoje é sobre escrever essa frase, e sobre as poucas que vêm depois dela.
@@ -33,7 +33,7 @@ Ao final desta aula, você será capaz de:
 
 ## Pré-requisitos
 
-O briefing da Aula 08 preenchido, com a hipótese e o número. Hoje não se decide mais **o que** o produto é — hoje se escreve **como** ele se explica.
+O briefing da Aula 08 preenchido, com a [[hipotese|hipótese]] e o número. Hoje não se decide mais **o que** o produto é — hoje se escreve **como** ele se explica.
 
 ## Desenvolvimento
 
@@ -178,12 +178,12 @@ Três checagens antes de entregar, feitas pelo trio do lado e não por vocês:
 O que ficou de hoje:
 
 - O visitante faz **cinco perguntas em ordem** — que coisa é essa, é para mim, o que eu ganho, por que acreditar, o que faço agora. Falhou uma, as outras não são feitas.
-- **Headline sem adjetivo**, validada pelo **teste do logo coberto**: se serve para outro produto, está vazia.
+- **Headline sem adjetivo** comprime a **[[proposta-de-valor]]** numa frase, validada pelo **teste do logo coberto**: se serve para outro produto, está vazia.
 - **Benefício é o que sobra para a pessoa**, não o que o sistema faz. Funcionalidade que não passa no "e daí?" fica de fora.
 - **O cliente é o herói.** Se "nós" aparece mais que "você", a página está falando sozinha.
 - **Uma ação só.** Três botões equivalem a nenhum.
 
-**Próxima aula:** esse papel vira conteúdo de verdade dentro do HTML — as cinco perguntas viram as cinco seções da página, na mesma ordem, e o projeto ganha um endereço público já no fim da aula.
+**Próxima aula:** esse papel vira conteúdo de verdade dentro do HTML — as cinco perguntas viram as cinco seções da página, na mesma ordem, respeitando a **[[dobra]]**, e o projeto ganha um endereço público já no fim da aula.
 
 **E lá na frente:** a página publicada vai ser aberta por cinco pessoas de verdade, por dez segundos cada. Aí a gente descobre se este texto funcionou — e o que fazer com a resposta, inclusive quando ela for "não".
 

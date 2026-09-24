@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Mundo Digital, Cultura Maker e Inovação/09 - Aula 9 - Design Thinking - Resumo (Aula em PDF).pdf"
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Mundo Digital, Cultura Maker e Inovação/09 - Aula 9 - Design Thinking - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [8]
+atualizado_em: 2026-09-24
 ---
 
 Prototipagem é a criação rápida de uma representação suficientemente concreta de uma solução para comunicar uma ideia, investigar uma hipótese e receber feedback. Um protótipo pode ser um desenho, mockup, storyboard, maquete, vídeo, encenação ou aplicativo simplificado; sua fidelidade deve acompanhar a pergunta que se quer testar.
@@ -34,7 +34,8 @@ No [[design-thinking]], prototipar faz a ponte entre ideação e implementação
 ## Onde aparece
 
 - Aula 9 — Design Thinking, no lote de fontes do Módulo I.
-- Conecta [[design-thinking]], [[cultura-maker]], [[fabricacao-digital]], [[fab-lab]] e [[aprendizagem-experiencial]].
+- Aula 8 — *MVP: a menor coisa que ensina alguma coisa* `aulas/programacao-front-end/landing-page-mvp/08-mvp-a-menor-coisa-que-ensina/canonica.md` — protótipo (telas clicáveis que parecem o app, mas nada funciona) como um dos cinco tipos de MVP.
+- Conecta [[design-thinking]], [[cultura-maker]], [[fabricacao-digital]], [[fab-lab]], [[aprendizagem-experiencial]] e [[mvp]].
 
 ## Fontes
 

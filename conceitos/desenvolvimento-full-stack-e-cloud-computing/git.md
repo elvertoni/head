@@ -7,8 +7,8 @@ aka: [sistema Git]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Cultura DevOps e Integração Contínua/07 - Aula 7 - Controle de Versão - Apostila (Slides).pdf"
-aulas: [2]
-atualizado_em: 2026-09-21
+aulas: [2, 3, 4, 5, 6]
+atualizado_em: 2026-09-24
 ---
 
 Git é um sistema distribuído de controle de versão que registra snapshots de arquivos e permite ramificar, integrar e compartilhar históricos. Seu modelo local favorece trabalho offline e colaboração por repositórios remotos.
@@ -30,8 +30,12 @@ Git implementa [[controle-de-versao]]; branches, commits e merges precisam de co
 ## Onde aparece
 
 - Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/02-controle-de-versao-git-local/canonica.md` (ordem 2).
+- Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/03-branches-modernas-e-merge/canonica.md` (ordem 3) — branches, merge e conflito.
+- Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/04-github-do-local-ao-remoto/canonica.md` (ordem 4) — remoto, `push`, `clone` e autenticação.
+- Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/05-pull-request-e-revisao-de-codigo/canonica.md` (ordem 5) — Pull Request e Conventional Commits.
+- Canônica do portal: `aulas/programacao-front-end/controle-de-versao-git-github/06-deploy-com-github-pages/canonica.md` (ordem 6) — publicação com GitHub Pages.
 - Aulas 7–9 — Controle de Versão.
-- É uma ferramenta de [[controle-de-versao]] usada em [[devops]].
+- É uma ferramenta de [[controle-de-versao]] usada em [[devops]]. Relaciona-se a [[repositorio-git]], [[branch]], [[merge]], [[conflito-de-merge]], [[github]], [[pull-request]] e [[github-pages]].
 
 ## Fontes
 

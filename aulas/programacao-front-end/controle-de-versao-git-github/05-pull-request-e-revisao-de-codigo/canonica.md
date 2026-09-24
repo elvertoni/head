@@ -16,11 +16,11 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-07-29
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
-Imagina receber essa mensagem de um colega de equipe: "ah, mudei um pouco o seu código direto na `main`, dá uma olhada depois". Você sente um aperto no estômago, certo? Porque ele pulou a etapa mais importante: **te dar a chance de ver a mudança antes dela virar parte definitiva do projeto**. É exatamente esse aperto que o Pull Request existe pra eliminar — e é o fluxo que praticamente todo time profissional usa, sem exceção.
+Imagina receber essa mensagem de um colega de equipe: "ah, mudei um pouco o seu código direto na `main`, dá uma olhada depois". Você sente um aperto no estômago, certo? Porque ele pulou a etapa mais importante: **te dar a chance de ver a mudança antes dela virar parte definitiva do projeto**. É exatamente esse aperto que o Pull Request existe pra eliminar — e é o [[github-flow|fluxo]] que praticamente todo time profissional usa, sem exceção.
 
 ## Objetivos
 
@@ -39,7 +39,7 @@ Você precisa ter feito a Aula 3 — conectar repositório ao GitHub, `push`, `c
 
 ### Por que não fazer merge direto na main
 
-Você já sabe criar uma branch, commitar nela e dar merge na `main` sozinho — tecnicamente, nada te impede de fazer isso sem pedir satisfação a ninguém. O problema não é técnico, é de **processo**: se qualquer pessoa pode jogar código direto na `main` sem ninguém mais ver antes, a branch estável do projeto vira uma aposta. Um erro de digitação, uma lógica errada, um `console.log` esquecido — tudo isso entra sem ninguém ter tido a chance de dizer "espera, olha isso aqui".
+Você já sabe criar uma [[branch]] no [[git|Git]], commitar nela e dar [[merge]] na `main` sozinho — tecnicamente, nada te impede de fazer isso sem pedir satisfação a ninguém. O problema não é técnico, é de **processo**: se qualquer pessoa pode jogar código direto na `main` sem ninguém mais ver antes, a branch estável do projeto vira uma aposta. Um erro de digitação, uma lógica errada, um `console.log` esquecido — tudo isso entra sem ninguém ter tido a chance de dizer "espera, olha isso aqui".
 
 ### O que é um Pull Request, de verdade
 
@@ -169,7 +169,7 @@ IA revisando código não elimina a revisão humana — ela **adianta** parte do
 
 Hoje você viu que:
 
-- **Pull Request** cria um espaço de revisão e conversa antes de trazer commits de uma branch pra `main` — não é só um merge com nome bonito.
+- **[[pull-request|Pull Request]]** cria um espaço de revisão e conversa antes de trazer commits de uma branch pra `main` — não é só um merge com nome bonito.
 - Abrir um bom PR exige título e descrição claros: o quê mudou e **por quê**.
 - **Conventional Commits** (`feat:`, `fix:`, `docs:`, `chore:`...) transforma o histórico numa história legível, não numa lista de "ajustes".
 - Revisão de código pega problema antes dele virar permanente — e hoje a IA (Copilot) já participa disso, adiantando trabalho, sem substituir a decisão humana final.

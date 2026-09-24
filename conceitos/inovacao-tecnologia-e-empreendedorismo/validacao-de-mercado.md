@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_07_resumo_e_transcricao.pdf
   - lake/inteligencia-artificial/elite-wiki/_transcricoes/Encontro_Elite_08_resumo_e_transcricao.pdf
-aulas: []
-atualizado_em: 2026-09-21
+aulas: [7, 17, 18]
+atualizado_em: 2026-09-24
 ---
 
 Validação de mercado é investigar com pessoas e operações reais se existe uma dor relevante, quem a sente, como resolve hoje e se pagaria por uma mudança. A evidência vem de conversas, observação e testes de oferta, não apenas de uma suposição sobre o cliente.
@@ -32,7 +32,10 @@ Comece por um nicho em que exista acesso e conhecimento suficiente para conversa
 ## Onde aparece
 
 - Encontros Elite #07–#08, na escolha de nicho, descoberta de dores e diagnóstico.
-- Conceitos vizinhos: [[diagnostico-operacional]], [[projeto-piloto]], [[servico-gerenciado]]
+- Aula 7 — *Startup não é empresa pequena* `aulas/programacao-front-end/landing-page-mvp/07-startup-nao-e-empresa-pequena/canonica.md` — validar como palavra-chave do restante do trimestre.
+- Aula 17 — *Publicar de verdade e encarar gente* `aulas/programacao-front-end/landing-page-mvp/17-publicar-e-encarar-gente/canonica.md` — teste de corredor com cinco pessoas de fora da equipe.
+- Aula 18 — *Validação: o MVP passou ou reprovou?* `aulas/programacao-front-end/landing-page-mvp/18-validacao-passou-ou-reprovou/canonica.md` — leitura do resultado e decisão entre perseverar, pivotar ou encerrar.
+- Conceitos vizinhos: [[diagnostico-operacional]], [[projeto-piloto]], [[servico-gerenciado]], [[mvp]], [[hipotese]] e [[teste-dos-cinco-segundos]]
 
 ## Fontes
 

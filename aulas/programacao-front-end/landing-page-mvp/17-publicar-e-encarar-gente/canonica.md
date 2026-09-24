@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Hoje ninguém constrói nada. Hoje a página sai da sala pela primeira vez e vai para a mão de gente que não sabe do que se trata, não conhece vocês e não tem paciência nenhuma. Vocês vão entregar o celular para cinco pessoas, dar dez segundos, tirar da frente delas e fazer duas perguntas. E vai doer um pouco — porque quem passou sete aulas dentro do projeto perdeu, sem perceber, a capacidade de olhar para ele com olhos de estranho. É exatamente essa capacidade que a gente aluga de cinco pessoas hoje. Antes disso, meia hora tirando os defeitos que só aparecem depois de publicado.
@@ -101,7 +101,7 @@ HTML, CSS (Flexbox e Grid) e JavaScript, publicado no GitHub Pages.
 Nome, Nome e Nome.
 ```
 
-### O teste de cinco segundos, sem estragar o resultado
+### O [[teste-dos-cinco-segundos|teste de cinco segundos]], sem estragar o resultado
 
 :::conceito Teste dos cinco segundos
 Um método real de avaliação de interface: mostra-se a página por poucos segundos, retira-se da vista e pergunta-se o que a pessoa entendeu. Ele mede a única coisa que a landing precisa acertar — se a mensagem passa **na primeira olhada**, que é a única que a maioria dos visitantes dá.
@@ -208,7 +208,7 @@ O que ficou do projeto inteiro:
 - Vocês têm um **endereço público** que abre no celular de qualquer pessoa, construído por vocês do zero em oito aulas.
 - Ele está **estruturado com semântica**, tem **identidade visual** definida em um lugar só, **layout que se adapta** a qualquer tela, **movimento com propósito** e o **JavaScript necessário** — nem uma linha a mais.
 - Vocês rodaram uma **lista de verificação de publicação**, que é o mesmo tipo de disciplina que se pratica no trabalho.
-- E, o mais raro: vocês têm **cinco frases ditas por estranhos** sobre o que a sua página comunica. Não é achismo, é evidência.
+- E, o mais raro: vocês têm **cinco frases ditas por estranhos** sobre o que a sua página comunica. Não é achismo, é [[validacao-de-mercado|evidência]].
 
 **Na próxima aula:** esses cinco resultados encontram o número que vocês escreveram na aula 08. Aí se descobre se a hipótese passou ou reprovou — e, mais importante, o que fazer com a resposta. As duas saem valendo.
 

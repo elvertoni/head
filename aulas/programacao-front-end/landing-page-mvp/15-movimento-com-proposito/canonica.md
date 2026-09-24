@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Passa o mouse por cima do seu botão. Não acontece nada. O cursor vira uma mãozinha e só — nenhum sinal de que aquilo ali é a coisa mais importante da página, nenhuma resposta ao seu gesto. Agora repara em qualquer aplicativo que você usa: tudo reage. O botão escurece um pouco, o card sobe um milímetro, o menu desliza em vez de aparecer do nada. Não é enfeite, e é aqui que mora a confusão desta aula — a maior parte da animação que existe na web é ruído, e um pouquinho dela é o que faz o produto parecer vivo. Hoje a gente aprende a diferença, e aplica só a parte que serve.
@@ -107,7 +107,7 @@ camadas:
 ```
 
 :::atencao A borda feia que não deve ser apagada
-Quando um elemento recebe foco, o navegador desenha um contorno em volta dele. Muita gente acha aquilo feio e resolve com uma linha: `outline: none`. É provavelmente a alteração mais destrutiva que se faz em CSS por motivo estético. Quem navega por teclado — por deficiência motora, por preferência, ou porque o mouse quebrou — perde completamente a noção de onde está na página: a tecla Tab continua avançando, e nada na tela indica para onde. Diagnóstico: aperte Tab várias vezes na sua página e olhe a tela. Se você não consegue apontar com o dedo onde está o foco, a sua página está quebrada para essas pessoas. E a solução nunca é apagar — é **substituir** por um destaque melhor, usando `:focus-visible`, que aplica o realce só quando a navegação é por teclado, sem sujar o clique de mouse.
+Quando um elemento recebe **[[foco-de-teclado|foco]]**, o navegador desenha um contorno em volta dele. Muita gente acha aquilo feio e resolve com uma linha: `outline: none`. É provavelmente a alteração mais destrutiva que se faz em CSS por motivo estético. Quem navega por teclado — por deficiência motora, por preferência, ou porque o mouse quebrou — perde completamente a noção de onde está na página: a tecla Tab continua avançando, e nada na tela indica para onde. Diagnóstico: aperte Tab várias vezes na sua página e olhe a tela. Se você não consegue apontar com o dedo onde está o foco, a sua página está quebrada para essas pessoas. E a solução nunca é apagar — é **substituir** por um destaque melhor, usando `:focus-visible`, que aplica o realce só quando a navegação é por teclado, sem sujar o clique de mouse.
 :::
 
 ```css
@@ -118,7 +118,7 @@ a.botao:focus-visible {
 ```
 
 :::curiosidade Movimento que passa mal
-Nos ajustes de acessibilidade de qualquer celular existe uma opção chamada "reduzir movimento". Ela não é firula: para algumas pessoas, animação de tela — sobretudo deslocamento amplo e paralaxe — provoca sintomas físicos reais, como enjoo, tontura e dor de cabeça, ligados ao mesmo mecanismo do enjoo de carro. O CSS consegue **ler** essa preferência do sistema, e uma página bem feita a respeita. É um caso raro e bonito: uma coisa que custa quatro linhas e literalmente evita que alguém passe mal usando o seu site.
+Nos ajustes de [[acessibilidade]] de qualquer celular existe uma opção chamada "reduzir movimento". Ela não é firula: para algumas pessoas, animação de tela — sobretudo deslocamento amplo e paralaxe — provoca sintomas físicos reais, como enjoo, tontura e dor de cabeça, ligados ao mesmo mecanismo do enjoo de carro. O CSS consegue **ler** essa preferência do sistema, e uma página bem feita a respeita. É um caso raro e bonito: uma coisa que custa quatro linhas e literalmente evita que alguém passe mal usando o seu site.
 :::
 
 ```css
@@ -253,7 +253,7 @@ O que ficou de hoje:
 - **Entre 150 e 300 milissegundos**: sente-se a resposta sem esperar por ela.
 - **`transition` se declara no estado normal** e nomeia o que anima; `transition: all` custa caro.
 - **`transform` move sem empurrar o layout** — margem e posição fazem a página tremer.
-- **No toque não existe hover.** O botão se anuncia em repouso; o foco existe para quem usa teclado e nunca se apaga.
+- **No toque não existe hover.** O botão se anuncia em repouso; o [[foco-de-teclado|foco]] existe para quem usa teclado e nunca se apaga.
 - **`prefers-reduced-motion`**: quatro linhas que evitam que alguém passe mal na sua página.
 
 **Próxima aula:** o primeiro JavaScript do projeto — e vai ser pouco de propósito. Três funcionalidades, cerca de vinte e cinco linhas no total, todas resolvendo problemas que vocês já têm: o menu que não cabe no celular, o botão que está longe demais depois de rolar, e o jeito de passar o link para as cinco pessoas do teste da aula 17.

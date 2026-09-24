@@ -7,8 +7,8 @@ aka: [merge conflict]
 status: rascunho
 fontes:
   - "lake/programacao-front-end/Git--para--iniciantes.pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [3]
+atualizado_em: 2026-09-24
 ---
 
 Conflito de merge ocorre quando o Git não consegue combinar automaticamente alterações concorrentes porque elas afetam a mesma região ou possuem histórico incompatível. A ferramenta marca o conflito; a decisão correta depende da intenção do código e deve ser validada antes do commit.
@@ -30,7 +30,8 @@ Resolver conflito envolve ler os dois lados, consultar o contexto, editar o resu
 ## Onde aparece
 
 - `Git--para--iniciantes.pdf`, páginas 36–37.
-- Relaciona-se a [[git]], [[controle-de-versao]], [[gitflow]] e [[github-flow]].
+- Aula 3 — *Branches: testando uma ideia arriscada sem bagunçar o que já funciona* `aulas/programacao-front-end/controle-de-versao-git-github/03-branches-modernas-e-merge/canonica.md` — marcadores `<<<<<<<`/`=======`/`>>>>>>>` e resolução manual.
+- Relaciona-se a [[git]], [[controle-de-versao]], [[gitflow]], [[github-flow]], [[branch]] e [[merge]].
 
 ## Fontes
 

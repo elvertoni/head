@@ -7,8 +7,8 @@ aka: [fluxo baseado em pull request]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Cultura DevOps e Integração Contínua/09 - Aula 9 - Controle de Versão III - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [5, 6]
+atualizado_em: 2026-09-24
 ---
 
 GitHub Flow é um fluxo leve de desenvolvimento baseado em branch curta, pull request, revisão, integração na branch principal e implantação frequente. Ele reduz cerimônia e favorece entrega contínua, desde que a branch principal permaneça protegida e implantável.
@@ -30,7 +30,9 @@ Uma mudança nasce em branch, passa por revisão e automação e só então entr
 ## Onde aparece
 
 - Cultura DevOps e Integração Contínua, Aula 9, página 5.
-- Relaciona-se a [[git]], [[controle-de-versao]], [[integracao-continua]] e [[gitflow]].
+- Aula 5 — *Pull Request: como propor uma mudança sem simplesmente sobrescrever o código de alguém* `aulas/programacao-front-end/controle-de-versao-git-github/05-pull-request-e-revisao-de-codigo/canonica.md`
+- Aula 6 — *GitHub Pages: transformando seu repositório num site que qualquer pessoa acessa* `aulas/programacao-front-end/controle-de-versao-git-github/06-deploy-com-github-pages/canonica.md`
+- Conecta [[git]], [[controle-de-versao]], [[integracao-continua]], [[gitflow]], [[github]], [[pull-request]] e [[github-pages]].
 
 ## Fontes
 

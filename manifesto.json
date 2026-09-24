@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-09-23",
+  "atualizado_em": "2026-09-24",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -826,6 +826,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "branch",
+      "nome": "Branch",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "broker",
       "nome": "Broker",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -1089,6 +1094,11 @@
       "slug": "classificacao-e-regressao",
       "nome": "Classificação e Regressão",
       "disciplina": "inteligencia-artificial"
+    },
+    {
+      "slug": "classlist",
+      "nome": "classList.toggle",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "clientes-ethereum",
@@ -1766,6 +1776,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "dobra",
+      "nome": "A dobra",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "docker",
       "nome": "Docker",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -2044,6 +2059,11 @@
       "slug": "erro-customizado-solidity",
       "nome": "Erro customizado Solidity",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "escala-tipografica",
+      "nome": "Escala tipográfica",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "escalabilidade",
@@ -2621,9 +2641,19 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "github",
+      "nome": "GitHub",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "github-flow",
       "nome": "GitHub Flow",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "github-pages",
+      "nome": "GitHub Pages",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "governanca-por-token",
@@ -2704,6 +2734,11 @@
       "slug": "hierarquia-de-memoria",
       "nome": "Hierarquia de memória",
       "disciplina": "introducao-a-computacao"
+    },
+    {
+      "slug": "hipotese",
+      "nome": "Hipótese",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "hipotese-de-aprendizado",
@@ -3406,6 +3441,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "merge",
+      "nome": "Merge",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "metadados-seo",
       "nome": "Metadados SEO",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -3439,6 +3479,11 @@
       "slug": "metodos-http",
       "nome": "Métodos HTTP",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "metrica-de-vaidade",
+      "nome": "Métrica de vaidade",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "microcontrolador",
@@ -3484,6 +3529,11 @@
       "slug": "minimax",
       "nome": "Minimax",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "mobile-first",
+      "nome": "Mobile-first",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "mock-server",
@@ -3639,6 +3689,11 @@
       "slug": "mvc",
       "nome": "MVC",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "mvp",
+      "nome": "MVP",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "mysql",
@@ -4336,6 +4391,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "proposta-de-valor",
+      "nome": "Proposta de valor",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "propriedades-de-algoritmos-de-busca",
       "nome": "Propriedades de algoritmos de busca",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -4414,6 +4474,11 @@
       "slug": "psicomotricidade",
       "nome": "Psicomotricidade",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "pull-request",
+      "nome": "Pull Request (PR)",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "pulsao-de-vida-e-pulsao-de-morte",
@@ -4689,6 +4754,11 @@
       "slug": "replication-controller-kubernetes",
       "nome": "Replication Controller do Kubernetes",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "repositorio-git",
+      "nome": "Repositório (repo)",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "representacao-de-conjuntos",
@@ -5271,6 +5341,11 @@
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
     },
     {
+      "slug": "taxa-de-conversao",
+      "nome": "Taxa de conversão",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "tco",
       "nome": "Custo total de propriedade",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
@@ -5334,6 +5409,11 @@
       "slug": "teste-de-turing",
       "nome": "Teste de Turing",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
+    },
+    {
+      "slug": "teste-dos-cinco-segundos",
+      "nome": "Teste dos cinco segundos",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "testes-de-integracao",
@@ -5496,6 +5576,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "unidade-fr",
+      "nome": "A unidade fr",
+      "disciplina": "programacao-front-end"
+    },
+    {
       "slug": "unificacao",
       "nome": "Unificação",
       "disciplina": "inovacao-inteligencia-artificial-e-robotica-educacional"
@@ -5589,6 +5674,11 @@
       "slug": "variavel-contadora",
       "nome": "Variável contadora",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "variavel-css",
+      "nome": "Variável CSS (custom property)",
+      "disciplina": "programacao-front-end"
     },
     {
       "slug": "variavel-de-estado-solidity",

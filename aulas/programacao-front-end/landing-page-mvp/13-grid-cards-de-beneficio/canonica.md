@@ -17,8 +17,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-21
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 Os três benefícios do kit de copy estão na página como uma lista: um embaixo do outro, cada um com seu titulozinho e seu parágrafo. Funciona, e não convence. Em toda landing page do mundo esses três aparecem **lado a lado**, em caixinhas iguais — porque três coisas em paralelo comunicam "escolha entre alternativas equivalentes", enquanto três coisas empilhadas comunicam "leia isso tudo". É a mesma informação dizendo coisas diferentes só pela forma. Hoje vocês montam esses cards, e de quebra levam um truque que faz eles se reorganizarem sozinhos no celular — sem escrever uma linha a mais para isso.
@@ -41,7 +41,7 @@ A página das aulas 10 a 12, com Flexbox aplicado no topo e no hero. Hoje o assu
 
 ### Uma dimensão, duas dimensões
 
-Flexbox resolveu o topo porque o topo é uma **fila**: coisas numa direção só, com sobra de espaço para distribuir. É exatamente o que ele faz melhor.
+[[flexbox|Flexbox]] resolveu o topo porque o topo é uma **fila**: coisas numa direção só, com sobra de espaço para distribuir. É exatamente o que ele faz melhor.
 
 Os cards são outro problema. Você não quer só três coisas em fila — quer três coisas de **largura igual**, **altura igual** e **espaço igual**, formando uma grade que se comporta bem quando a tela muda. Isso são duas dimensões, e para duas dimensões existe uma ferramenta feita sob medida.
 
@@ -122,7 +122,7 @@ Grade de cards é a estrutura mais reaproveitada da web: produto de loja virtual
 :::
 
 :::curiosidade Uma unidade que só nasceu em 2017
-Boa parte da web que você usa foi construída antes de o Grid existir nos navegadores, com propriedades desviadas da função original — `float`, criada para texto contornar imagem, virou a base de layouts inteiros durante quinze anos, com uma coleção de truques para consertar os efeitos colaterais. O Grid foi o primeiro sistema desenhado do zero para pensar em duas dimensões, e trouxe junto a unidade `fr`, que não existe em nenhuma outra parte do CSS. Você está aprendendo direto na ferramenta certa, sem passar pela era das gambiarras.
+Boa parte da web que você usa foi construída antes de o Grid existir nos navegadores, com propriedades desviadas da função original — `float`, criada para texto contornar imagem, virou a base de layouts inteiros durante quinze anos, com uma coleção de truques para consertar os efeitos colaterais. O Grid foi o primeiro sistema desenhado do zero para pensar em duas dimensões, e trouxe junto a **[[unidade-fr|unidade `fr`]]**, que não existe em nenhuma outra parte do CSS. Você está aprendendo direto na ferramenta certa, sem passar pela era das gambiarras.
 :::
 
 ## Prática
@@ -223,7 +223,7 @@ Boa parte da web que você usa foi construída antes de o Grid existir nos naveg
 
 O que ficou de hoje:
 
-- **Uma direção pede Flex; duas direções pedem Grid.** Não são rivais, e convivem na mesma página.
+- **Uma direção pede [[flexbox|Flex]]; duas direções pedem [[css-grid|Grid]].** Não são rivais, e convivem na mesma página.
 - **`fr` reparte o espaço que sobrou** depois do `gap` — por isso não estoura como a porcentagem.
 - **`repeat(auto-fit, minmax(250px, 1fr))`** entrega reorganização automática sem nenhuma media query, e é uma das linhas mais reaproveitáveis do CSS.
 - **Card é padrão, não tag**: respiro por dentro, separação do fundo, cantos arredondados e sombra discreta.

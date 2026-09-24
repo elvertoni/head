@@ -7,8 +7,8 @@ aka: [CSS Grid Layout]
 status: rascunho
 fontes:
   - "lake/programacao-front-end/Front_End_Facina.pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [12, 13]
+atualizado_em: 2026-09-24
 ---
 
 CSS Grid é um modelo de layout bidimensional que organiza elementos em linhas, colunas e áreas nomeadas. Ele permite definir a estrutura geral de uma interface e distribuir espaço nos dois eixos, enquanto [[flexbox]] costuma organizar relações lineares dentro de cada região.
@@ -30,7 +30,9 @@ O container define trilhas e áreas; os itens podem ocupar células explícitas 
 ## Onde aparece
 
 - `Front_End_Facina.pdf`, páginas 44–49.
-- Relaciona-se a [[flexbox]], [[css3]], [[media-query]] e [[estrutura-de-documento-html]].
+- Aula 12 — *Flexbox: alinhar de verdade o topo e o hero* `aulas/programacao-front-end/landing-page-mvp/12-flexbox-nav-e-hero/canonica.md` — comparação Flexbox × Grid pelo número de dimensões do layout.
+- Aula 13 — *Grid: os três benefícios viram cards* `aulas/programacao-front-end/landing-page-mvp/13-grid-cards-de-beneficio/canonica.md` — `grid-template-columns`, a unidade `fr` e `repeat(auto-fit, minmax(...))`.
+- Relaciona-se a [[flexbox]], [[css3]], [[media-query]], [[estrutura-de-documento-html]] e [[unidade-fr]].
 
 ## Fontes
 
