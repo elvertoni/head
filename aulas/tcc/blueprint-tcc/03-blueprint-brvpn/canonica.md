@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 3
 slug: blueprint-brvpn
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-18
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · BrVPN
@@ -45,6 +45,8 @@ Objetivos especificos: configurar servidor WireGuard em Ubuntu Server; criptogra
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz.
+
 [MIGRADO DOS 'OBJETIVOS ESPECIFICOS' - converter para requisitos funcionais no formato 'O sistema deve...']
 - **RF01** — O sistema deve estabelecer tunel VPN entre cliente e servidor via WireGuard.
 - **RF02** — O sistema deve criptografar o trafego de ponta a ponta (ChaCha20-Poly1305).
@@ -54,14 +56,14 @@ Objetivos especificos: configurar servidor WireGuard em Ubuntu Server; criptogra
 
 ## Requisitos Não Funcionais
 
-Modelo de seguranca / atributos de qualidade:
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo formam o modelo de [[seguranca-da-informacao|segurança]] / atributos de qualidade:
 - **Zero logs**: nenhum dado de navegacao e armazenado no servidor.
 - **Chaves geradas localmente**: a chave privada nunca sai do dispositivo.
 - **Perfect Forward Secrecy**: handshake renovado a cada 3 minutos.
 - **Codigo aberto**: qualquer pessoa pode auditar a configuracao.
 - **Baixa latencia**: minimizar o ping para usuarios brasileiros.
 
-Pilha criptografica: ChaCha20-Poly1305 (dados), Curve25519 (troca de chaves ECDH), BLAKE2s (hash/autenticacao).
+Pilha [[criptografia|criptografica]]: ChaCha20-Poly1305 (dados), Curve25519 (troca de chaves ECDH), BLAKE2s ([[hashing|hash]]/autenticacao).
 
 ## Arquitetura e Tecnologias
 

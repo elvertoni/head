@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 1
 slug: blueprint-a-n-n-beauty
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · A.N.N Beauty
@@ -47,6 +47,8 @@ Complementarmente, a plataforma oferecerá uma aba social inspirada no Instagram
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - RF01 — O sistema deve permitir que usuários assistam a vídeos tutoriais de maquiagem.
 - RF02 — O sistema deve exibir os produtos de maquiagem utilizados em cada tutorial, com links diretos para compra.
 - RF03 — O sistema deve possibilitar a compra de produtos através de um carrinho de compras e processo de checkout.
@@ -57,21 +59,23 @@ Complementarmente, a plataforma oferecerá uma aba social inspirada no Instagram
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
 - **RNF01 — Usabilidade**: a interface deve ser intuitiva e de fácil navegação, garantindo que usuários de diferentes níveis de familiaridade com tecnologia possam utilizá-la sem dificuldades. O tempo de aprendizado das funcionalidades principais deve ser mínimo.
 - **RNF02 — Desempenho**: o sistema deve carregar páginas e vídeos em no máximo 3 segundos, mesmo em horários de pico, e o checkout deve ser concluído em menos de 5 segundos para garantir uma experiência de compra fluida.
-- **RNF03 — Segurança**: o sistema deve proteger os dados pessoais e financeiros dos usuários através de criptografia (SSL/TLS) e seguir as melhores práticas de prevenção de acessos não autorizados e vazamento de informações. As transações de pagamento devem ser PCI DSS compliant.
-- **RNF04 — Disponibilidade**: o sistema deve estar disponível 99,9% do tempo, minimizando interrupções e garantindo acesso contínuo.
-- **RNF05 — Escalabilidade**: a arquitetura deve suportar aumento significativo no número de usuários e no volume de dados (vídeos, produtos, posts) sem degradação perceptível do desempenho.
+- **RNF03 — [[seguranca-da-informacao|Segurança]]**: o sistema deve proteger os dados pessoais e financeiros dos usuários através de criptografia (SSL/TLS) e seguir as melhores práticas de prevenção de acessos não autorizados e vazamento de informações. As transações de pagamento devem ser PCI DSS compliant.
+- **RNF04 — [[alta-disponibilidade|Disponibilidade]]**: o sistema deve estar disponível 99,9% do tempo, minimizando interrupções e garantindo acesso contínuo.
+- **RNF05 — [[escalabilidade|Escalabilidade]]**: a arquitetura deve suportar aumento significativo no número de usuários e no volume de dados (vídeos, produtos, posts) sem degradação perceptível do desempenho.
 
 ## Arquitetura e Tecnologias
 
-Padrão arquitetural: Microsserviços (com API Gateway).
+Padrão arquitetural: [[arquitetura-de-microservicos|Microsserviços]] (com API Gateway).
 
 Linguagem: HTML, JavaScript e CSS.
 
-Banco de dados: SQLite — justificativa: leveza, simplicidade e facilidade de integração, especialmente em projetos acadêmicos; diferente de MySQL ou PostgreSQL, não necessita de um servidor separado para funcionar.
+Banco de dados: [[banco-de-dados-relacional|SQLite]] — justificativa: leveza, simplicidade e facilidade de integração, especialmente em projetos acadêmicos; diferente de MySQL ou PostgreSQL, não necessita de um servidor separado para funcionar.
 
-Front-end / Interface: React.js com Next.js — justificativa: React.js permite interfaces dinâmicas e reativas, essenciais para a experiência de e-commerce e feed social. Next.js adiciona Server-Side Rendering (SSR) e geração de sites estáticos, melhorando o SEO (crucial para descoberta de produtos e tutoriais) e o desempenho inicial, além de simplificar o roteamento e a gestão de APIs.
+Front-end / Interface: React.js com Next.js — justificativa: React.js permite interfaces dinâmicas e reativas, essenciais para a experiência de e-commerce e feed social. Next.js adiciona [[ssr|Server-Side Rendering (SSR)]] e geração de sites estáticos, melhorando o [[seo|SEO]] (crucial para descoberta de produtos e tutoriais) e o desempenho inicial, além de simplificar o roteamento e a gestão de APIs.
 
 Hospedagem / Deploy: GitHub e Google Drive — GitHub para hospedagem e versionamento eficiente do código, permitindo controle de versões e acompanhamento de todas as alterações.
 

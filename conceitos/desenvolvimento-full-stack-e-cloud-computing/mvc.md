@@ -7,8 +7,8 @@ aka: [Model-View-Controller]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Projeto Front - End e Desenvolvimento Web/03 - Aula 3 - Introdução ao Front - End III - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [2, 5, 9]
+atualizado_em: 2026-09-24
 ---
 
 MVC organiza uma aplicação em modelo de dados e regras, visão de apresentação e controlador que coordena entradas e fluxo.
@@ -29,6 +29,9 @@ As responsabilidades podem aparecer em arquiteturas modernas com nomes diferente
 ## Onde aparece
 
 - Aula 3 — Introdução ao Front-End III.
+- Aula 2 — *Blueprint · Alexandria* `aulas/tcc/blueprint-tcc/02-blueprint-alexandria/canonica.md` — padrão arquitetural MVC (Model-View-Controller).
+- Aula 5 — *Blueprint · Gold Fit* `aulas/tcc/blueprint-tcc/05-blueprint-gold-fit/canonica.md` — padrão MVC + REST API.
+- Aula 9 — *Blueprint · ResumeTech* `aulas/tcc/blueprint-tcc/09-blueprint-resumetech/canonica.md` — padrão MVC para separar lógica, interface e dados.
 
 ## Fontes
 

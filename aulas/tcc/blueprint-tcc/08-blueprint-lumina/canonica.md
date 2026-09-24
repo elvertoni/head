@@ -10,13 +10,13 @@ trilha: blueprint-tcc
 ordem: 8
 slug: blueprint-lumina
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · Lumina
 
-Aplicativo web mobile-first · Camila Sara Stauffer Rodrigues, Maíra de Andrade Ribeiro e Suzanna Heliza Goncalves de Freitas
+Aplicativo web [[mobile-first]] · Camila Sara Stauffer Rodrigues, Maíra de Andrade Ribeiro e Suzanna Heliza Goncalves de Freitas
 
 ## Objetivos
 
@@ -49,28 +49,32 @@ Lumina é um aplicativo web mobile-first que centraliza a rotina de estudos em u
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - RF01 — O sistema deve permitir cadastro e autenticação de usuários com e-mail e senha via Firebase Authentication.
 - RF02 — O sistema deve exibir e controlar um timer de foco (estilo Pomodoro) com opção de iniciar, pausar, resetar e personalizar a duração.
 - RF03 — O sistema deve salvar o estado do timer (tempo configurado, ativo/pausado) de forma persistente entre sessões.
 - RF04 — O sistema deve exibir uma agenda semanal interativa, permitindo adicionar dias, adicionar tarefas por dia, marcar tarefas como concluídas e excluí-las.
 - RF05 — O sistema deve exibir uma lista curada de videoaulas filtráveis por matéria (Matemática, Português, História, Física, Química, Biologia, Foco), redirecionando o usuário ao vídeo no YouTube ao clicar.
-- RF06 — O sistema deve permitir a personalização de um mascote (Lumini) com itens de rosto, cabelo, roupa (top) e calça, gerenciados por uma loja de itens.
+- RF06 — O sistema deve permitir a [[gamificacao|personalização de um mascote]] (Lumini) com itens de rosto, cabelo, roupa (top) e calça, gerenciados por uma loja de itens.
 - RF07 — O sistema deve permitir a criação e entrada em salas de estudo em grupo com código único, sincronizando o estado do timer entre os participantes em tempo real.
 - RF08 — O sistema deve exibir um perfil do usuário com informações cadastradas (nome, escola) e opções de configuração de conta.
 - RF09 — O sistema deve redirecionar o usuário para o dashboard automaticamente após login, e para a tela de login se não autenticado.
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
 - RNF01 — A interface deve ser responsiva e otimizada para telas mobile (max-width: 448px), funcionando corretamente em navegadores modernos sem instalação adicional.
 - RNF02 — O tempo de carregamento inicial da aplicação deve ser inferior a 3 segundos em conexões padrão (4G/Wi-Fi).
 - RNF03 — Os dados do usuário (autenticação, sessão, preferências) devem ser protegidos via Firebase Authentication, com acesso restrito por usuário autenticado.
 - RNF04 — O sistema deve funcionar de forma fluida com animações a 60fps, utilizando aceleração por hardware sempre que possível.
-- RNF05 — A interface deve ser visualmente acessível, com contraste adequado e fontes legíveis, seguindo as diretrizes mínimas de usabilidade mobile.
-- RNF06 — O estado do timer e da agenda deve ser persistido entre recarregamentos de página (localStorage / Firebase Realtime Database).
+- RNF05 — A interface deve ser visualmente [[acessibilidade|acessível, com contraste adequado e fontes legíveis]], seguindo as diretrizes mínimas de usabilidade mobile.
+- RNF06 — O estado do timer e da agenda deve ser persistido entre recarregamentos de página ([[armazenamento-local-do-navegador|localStorage]] / Firebase Realtime Database).
 
 ## Arquitetura e Tecnologias
 
-Padrão arquitetural: SPA (Single Page Application) com arquitetura cliente-servidor via BaaS (Backend as a Service).
+Padrão arquitetural: [[single-page-application|SPA (Single Page Application)]] com [[arquitetura-cliente-servidor|arquitetura cliente-servidor]] via [[baas|BaaS (Backend as a Service)]].
 
 | Camada | Tecnologia | Justificativa |
 |---|---|---|
@@ -79,9 +83,9 @@ Padrão arquitetural: SPA (Single Page Application) com arquitetura cliente-serv
 | Animações | Framer Motion (motion/react) | Animações declarativas e performáticas nativas do React, essenciais para a experiência gamificada |
 | Roteamento | React Router DOM v7 | Roteamento declarativo e rotas aninhadas, padrão do ecossistema React |
 | Build/Dev | Vite 6 | Servidor de desenvolvimento ultrarrápido com HMR (Hot Module Replacement) instantâneo |
-| Autenticação | Firebase Authentication | Autenticação segura gerenciada, sem necessidade de back-end próprio, suporte nativo a e-mail/senha |
-| Banco de dados | Firebase Realtime Database | Sincronização em tempo real nativa, essencial para as salas de estudo colaborativo; sem custo para o volume do projeto |
-| Persistência local | localStorage | Persistência leve de preferências (timer, customização) sem dependência de rede |
+| [[autenticacao|Autenticação]] | Firebase Authentication | Autenticação segura gerenciada, sem necessidade de back-end próprio, suporte nativo a e-mail/senha |
+| Banco de dados | [[banco-de-dados-nao-relacional|Firebase Realtime Database]] | Sincronização em tempo real nativa, essencial para as salas de estudo colaborativo; sem custo para o volume do projeto |
+| Persistência local | [[armazenamento-local-do-navegador|localStorage]] | Persistência leve de preferências (timer, customização) sem dependência de rede |
 | Ícones | Lucide React | Biblioteca de ícones SVG leve, consistente e com API React nativa |
 
 ## Fluxo Principal do Usuário

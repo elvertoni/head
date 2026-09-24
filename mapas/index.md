@@ -17,6 +17,7 @@ gerado_por: tools/gerar_mapas.py
 - [[mapas/analise-e-projeto-de-sistemas|Análise e Projeto de Sistemas]] — 21 conceitos, 0 vivos
 - [[mapas/programacao-front-end|Programação Front-End]] — 18 conceitos, 0 vivos
 - [[mapas/inovacao-tecnologia-e-empreendedorismo|Inovação, Tecnologia e Empreendedorismo]] — 8 conceitos, 0 vivos
+- [[mapas/tcc|TCC]] — 2 conceitos, 0 vivos
 
 ## Vistas (Bases)
 

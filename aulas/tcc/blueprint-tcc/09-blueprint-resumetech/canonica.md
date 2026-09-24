@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 9
 slug: blueprint-resumetech
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · ResumeTech
@@ -40,7 +40,7 @@ A proposta é o desenvolvimento de uma plataforma web que facilita a criação d
 
 ## Requisitos Funcionais
 
-O sistema deve: permitir que o usuário cadastre suas informações pessoais, como nome, contato e endereço.
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz. O sistema deve: permitir que o usuário cadastre suas informações pessoais, como nome, contato e endereço.
 Inserir sua formação acadêmica.
 Registrar experiências profissionais.
 Adicionar cursos, habilidades e competências.
@@ -50,18 +50,20 @@ O usuário pode baixar o currículo em formato PDF.
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso.
+
 Qualidade: O sistema vai ter um interface simples, intuitiva e fácil de usar, garantindo que qualquer usuário consiga criar seu currículo sem dificuldades.
 Segurança: O sistema vai gerar o currículo de forma rápida, mesmo com várias informações inseridas, sem travamentos, ou demora excessiva.
-Disponibilidade: O sistema vai estar disponível para uso na maior parte do tempo, permitindo que os usuários acessem e criem seus currículos sempre que precisarem.
+[[alta-disponibilidade|Disponibilidade]]: O sistema vai estar disponível para uso na maior parte do tempo, permitindo que os usuários acessem e criem seus currículos sempre que precisarem.
 
 ## Arquitetura e Tecnologias
 
 Linguagem: Será utilizado Node.js com Express.js, pois permite a criação de uma aplicação web leve, rápida e escalável, além disso, é muito usado no mercado, o que facilita manutenção e integração com outras tecnologias.
-Banco de Dados: Será utilizado MongoDB, por ser um banco de dados NoSQL flexível, ideal para armazenar dados de usuários e currículos de forma estruturada e sem necessidade de tabelas fixas, facilitando futuras alterações no sistema.
+Banco de Dados: Será utilizado [[banco-de-dados-nao-relacional|MongoDB]], por ser um banco de dados NoSQL flexível, ideal para armazenar dados de usuários e currículos de forma estruturada e sem necessidade de tabelas fixas, facilitando futuras alterações no sistema.
 Front-end: Será utilizado HTML, CSS e JavaScript, possivelmente com React, pois permite criar uma interface moderna, responsiva e fácil de usar, garantindo uma boa experiência para o usuário.
 Hospedagem: Será utilizada uma plataforma como Vercel ou Render, pois oferecem facilidade de deploy, integração com projetos web e permitem que o sistema fique acessível online de forma simples.
 Outras ferramentas: Vai ser utilizadas ferramentas como Git e GitHub para controle de versão, além de bibliotecas para geração de PDF do currículo, garantindo funcionalidade prática no sistema
-Padrão de arquitetura: Será adotado o padrão MVC (Model-View-Controller), pois ajuda a organizar melhor o sistema separando lógica, interface e dados, facilitando a manutenção e escalabilidade do projeto.
+Padrão de arquitetura: Será adotado o padrão [[mvc|MVC (Model-View-Controller)]], pois ajuda a organizar melhor o sistema separando lógica, interface e dados, facilitando a manutenção e escalabilidade do projeto.
 
 ## Fluxo Principal do Usuário
 

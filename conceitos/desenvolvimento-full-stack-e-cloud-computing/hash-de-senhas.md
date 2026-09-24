@@ -7,8 +7,8 @@ aka: [password hashing]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Frameworks e Aplicações/30 - Aula 30 - Mecanismo de Segurança_ Cors, Autenticação e Autorização III - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [4, 5]
+atualizado_em: 2026-09-24
 ---
 
 Hash de senhas transforma uma senha em um valor de verificação usando um algoritmo adaptativo e salt, como bcrypt, para que o sistema não precise armazenar a senha original. O custo configurável dificulta tentativas em massa; isso é diferente de um hash rápido usado para integridade ou identificação.
@@ -30,6 +30,8 @@ Cada senha deve receber salt único e custo adequado ao ambiente. No login, o si
 ## Onde aparece
 
 - Frameworks e Aplicações, Aula 30, páginas 2–5.
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md` — RNF03, senhas protegidas no banco com hashing seguro (bcrypt).
+- Aula 5 — *Blueprint · Gold Fit* `aulas/tcc/blueprint-tcc/05-blueprint-gold-fit/canonica.md` — RNF03, senhas armazenadas com hash bcrypt.
 - Relaciona-se a [[hashing]], [[autenticacao]], [[seguranca-da-informacao]] e [[autorizacao]].
 
 ## Fontes

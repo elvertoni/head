@@ -7,8 +7,8 @@ aka: [Object-Relational Mapping, mapeamento objeto-relacional]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Arquitetura e Programação/24 - Aula 24 - Acesso ao Banco de Dados SQL II - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [4]
+atualizado_em: 2026-09-24
 ---
 
 ORM é uma técnica e camada de software que mapeia objetos da aplicação para tabelas, linhas e relações de um banco relacional. Ela reduz SQL repetitivo, mas não elimina a necessidade de entender o banco.
@@ -30,6 +30,7 @@ Modelos, associações, consultas, transações e migrações compõem o mapeame
 ## Onde aparece
 
 - Arquitetura e Programação, Aula 24, páginas 1–2.
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md` — Django com ORM integrado, para agilidade e segurança sem SQL repetitivo.
 - Relaciona-se a [[sequelize]], [[banco-de-dados-relacional]] e [[modelagem-de-dados]].
 
 ## Fontes

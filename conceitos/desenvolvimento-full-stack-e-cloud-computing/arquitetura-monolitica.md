@@ -7,8 +7,8 @@ aka: [monólito]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Aplicações em Cloud Computing/14 - Aula 14 - Aplicações - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [4]
+atualizado_em: 2026-09-24
 ---
 
 Arquitetura monolítica empacota grande parte da aplicação em uma unidade de implantação e operação.
@@ -29,6 +29,7 @@ Um monólito pode ser bem modular e não é sinônimo de código desorganizado. 
 ## Onde aparece
 
 - Aulas 14–16 — Aplicações.
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md` — Monolito MTV (Model-Template-View), escolhido para reduzir complexidade de deploy e manutenção frente a microsserviços.
 
 ## Fontes
 

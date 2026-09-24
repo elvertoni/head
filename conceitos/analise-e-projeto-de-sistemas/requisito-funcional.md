@@ -6,7 +6,7 @@ tipo: conceito
 aka: [functional requirement, RF]
 status: rascunho
 fontes: []
-aulas: [31]
+aulas: [1, 2, 3, 4, 5, 6, 7, 8, 9, 31]
 atualizado_em: 2026-09-24
 ---
 
@@ -27,6 +27,15 @@ Requisito funcional é o par do [[requisito-nao-funcional|requisito não-funcion
 ## Onde aparece
 
 - Aula 31 — *Engenharia reversa — desmonte o app que você usa todo dia* `aulas/analise-e-projeto-de-sistemas/analise-de-requisitos/31-engenharia-reversa-de-app/canonica.md`
+- Aula 1 — *Blueprint · A.N.N Beauty* `aulas/tcc/blueprint-tcc/01-blueprint-a-n-n-beauty/canonica.md`
+- Aula 2 — *Blueprint · Alexandria* `aulas/tcc/blueprint-tcc/02-blueprint-alexandria/canonica.md`
+- Aula 3 — *Blueprint · BrVPN* `aulas/tcc/blueprint-tcc/03-blueprint-brvpn/canonica.md`
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md`
+- Aula 5 — *Blueprint · Gold Fit* `aulas/tcc/blueprint-tcc/05-blueprint-gold-fit/canonica.md`
+- Aula 6 — *Blueprint · HealthSync* `aulas/tcc/blueprint-tcc/06-blueprint-healthsync/canonica.md`
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md`
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md`
+- Aula 9 — *Blueprint · ResumeTech* `aulas/tcc/blueprint-tcc/09-blueprint-resumetech/canonica.md`
 - Conceitos vizinhos: [[requisito-nao-funcional]], [[engenharia-reversa-de-requisitos]]
 
 ## Fontes

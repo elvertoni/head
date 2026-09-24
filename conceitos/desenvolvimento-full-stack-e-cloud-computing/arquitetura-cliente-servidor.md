@@ -7,8 +7,8 @@ aka: [client-server architecture]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Projeto Front - End e Desenvolvimento Web/02 - Aula 2 - Introdução ao Front - End II - Apostila (Slides).pdf"
-aulas: [1]
-atualizado_em: 2026-09-21
+aulas: [1, 7, 8]
+atualizado_em: 2026-09-24
 ---
 
 Arquitetura cliente-servidor separa consumidores que solicitam recursos de servidores que processam requisições, aplicam regras e devolvem respostas.
@@ -29,6 +29,8 @@ Navegador, frontend e [[backend]] podem ocupar papéis distintos sobre [[http]] 
 ## Onde aparece
 
 - Aula canônica 1 — `aulas/programacao-no-desenvolvimento-de-sistemas/arquitetura-e-fluxo-de-sistemas/01-o-que-acontece-quando-voce-aperta-enter/canonica.md`.
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md` — cliente-servidor com Backend as a Service (BaaS).
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — arquitetura cliente-servidor via BaaS.
 
 - Aulas 2–4 — Introdução ao Front-End e React.
 

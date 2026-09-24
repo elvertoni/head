@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Mundo Digital, Cultura Maker e Inovação/03 - Aula 3 - Gamificação Aplicada no Processo de Engajamento - Resumo (Aula em PDF).pdf"
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Mundo Digital, Cultura Maker e Inovação/03 - Aula 3 - Gamificação Aplicada no Processo de Engajamento - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [2, 7, 8]
+atualizado_em: 2026-09-24
 ---
 
 Gamificação é o uso intencional de elementos, mecânicas e lógicas de [[jogos]] em contextos que não são jogos, como educação, trabalho, marketing e exercício. A finalidade é desenhar uma experiência com propósito, feedback e condições de participação que favoreçam engajamento ou resolução de problemas.
@@ -34,6 +34,9 @@ Em educação, gamificação pode apoiar [[aprendizagem]] e [[metodologias-ativa
 ## Onde aparece
 
 - Aula 3 — Gamificação Aplicada no Processo de Engajamento, no lote de fontes do Módulo I.
+- Aula 2 — *Blueprint · Alexandria* `aulas/tcc/blueprint-tcc/02-blueprint-alexandria/canonica.md` — moedas virtuais ganhas por missões e anúncios, trocadas por capítulos especiais.
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md` — narrativa, XP, níveis e conquistas para sustentar hábitos de novos hobbies.
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — mascote customizável, loja de itens e progressão para engajar a rotina de estudos.
 - Depende de [[jogos]] e se conecta a [[aprendizagem]], [[metodologias-ativas]], [[cultura-digital]] e [[arquetipos-de-bartle]].
 
 ## Fontes

@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 6
 slug: blueprint-healthsync
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · HealthSync
@@ -40,7 +40,9 @@ O HealthSync é uma Single Page Application (SPA) responsiva desenvolvida para c
 
 ## Requisitos Funcionais
 
-- **RF01** — O sistema deve permitir o cadastro, a visualização, a edição e a exclusão (CRUD) de fichas de pacientes.
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
+- **RF01** — O sistema deve permitir o [[crud|cadastro, a visualização, a edição e a exclusão (CRUD)]] de fichas de pacientes.
 - **RF02** — O sistema deve permitir criar, reagendar e cancelar consultas médicas, definindo data, hora, médico e motivo.
 - **RF03** — O sistema deve permitir gerenciar o status das consultas (Agendado, Pendente, Atendido, Cancelado).
 - **RF04** — O sistema deve permitir o registro de evoluções clínicas contendo sintomas, diagnóstico, prescrição e observações.
@@ -50,9 +52,11 @@ O HealthSync é uma Single Page Application (SPA) responsiva desenvolvida para c
 
 ## Requisitos Não Funcionais
 
-- **RNF01** — O sistema deve rodar inteiramente no lado do cliente (Single Page Application), garantindo roteamento dinâmico sem recarga.
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
+- **RNF01** — O sistema deve rodar inteiramente no lado do cliente ([[single-page-application|Single Page Application]]), garantindo roteamento dinâmico sem recarga.
 - **RNF02** — O sistema deve se adaptar automaticamente a telas de computadores, tablets e smartphones (design responsivo).
-- **RNF03** — O sistema deve persistir as informações localmente no navegador via Web Storage API (LocalStorage), com dados estruturados em JSON.
+- **RNF03** — O sistema deve persistir as informações localmente no navegador via [[armazenamento-local-do-navegador|Web Storage API (LocalStorage)]], com dados estruturados em JSON.
 - **RNF04** — O sistema deve permitir a alternância de temas (Dark Mode / Light Mode) e persistir a escolha no armazenamento do usuário.
 
 ## Arquitetura e Tecnologias

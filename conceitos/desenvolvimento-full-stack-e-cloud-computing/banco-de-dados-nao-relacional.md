@@ -7,8 +7,8 @@ aka: [NoSQL]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo I - Padrões Web e Banco de Dados/Modelagem de Banco de Dados/03 - Aula 3 - Fundamentos de Banco de Dados III - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [2, 7, 8, 9]
+atualizado_em: 2026-09-24
 ---
 
 Banco de dados não relacional é uma família de modelos que não toma relações tabulares normalizadas como única forma de organização. Pode usar documentos, pares chave-valor, colunas largas ou grafos, escolhendo estruturas e consistência conforme o domínio e o padrão de acesso.
@@ -30,6 +30,10 @@ Não relacional não significa ausência de esquema, regras ou consistência. A 
 ## Onde aparece
 
 - Aula 3 — Fundamentos de Banco de Dados III.
+- Aula 2 — *Blueprint · Alexandria* `aulas/tcc/blueprint-tcc/02-blueprint-alexandria/canonica.md` — MongoDB para dados de usuários e obras.
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md` — Firestore (NoSQL), escolhido pela sincronização em tempo real.
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — Firebase Realtime Database para as salas de estudo colaborativo.
+- Aula 9 — *Blueprint · ResumeTech* `aulas/tcc/blueprint-tcc/09-blueprint-resumetech/canonica.md` — MongoDB, escolhido por flexibilidade sem tabelas fixas.
 - Contrasta com [[banco-de-dados-relacional]] e conecta [[modelagem-de-dados]].
 
 ## Fontes

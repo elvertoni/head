@@ -7,8 +7,8 @@ aka: [Create Read Update Delete]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Frameworks e Aplicações/20 - Aula 20 - Desenvolvimento de Funcionalidades Crud - Create e List - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [6]
+atualizado_em: 2026-09-24
 ---
 
 CRUD é o conjunto de operações Create, Read, Update e Delete usado para criar, consultar, alterar e remover recursos ou dados. Ele é uma lente de comportamento de uma aplicação, não uma arquitetura completa: cada operação ainda precisa de contrato, validação, autorização, persistência e tratamento de falhas.
@@ -30,6 +30,7 @@ Em uma API, as operações podem ser expostas por [[metodos-http]] e [[api-rest]
 ## Onde aparece
 
 - Frameworks e Aplicações, Aula 20, páginas 1–4.
+- Aula 6 — *Blueprint · HealthSync* `aulas/tcc/blueprint-tcc/06-blueprint-healthsync/canonica.md` — cadastro, visualização, edição e exclusão (CRUD) de fichas de pacientes.
 - Relaciona-se a [[data-access-object]], [[sequelize]], [[api-rest]] e [[metodos-http]].
 
 ## Fontes

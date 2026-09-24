@@ -7,8 +7,8 @@ aka: [microservices architecture]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Aplicações em Cloud Computing/15 - Aula 15 - Aplicações II - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [1]
+atualizado_em: 2026-09-24
 ---
 
 Arquitetura de microsserviços organiza uma aplicação em serviços relativamente autônomos, comunicados por contratos e implantados independentemente.
@@ -29,6 +29,7 @@ Autonomia exige observabilidade, versionamento, tolerância a falhas e limites d
 ## Onde aparece
 
 - Aulas 14–16 — Aplicações.
+- Aula 1 — *Blueprint · A.N.N Beauty* `aulas/tcc/blueprint-tcc/01-blueprint-a-n-n-beauty/canonica.md` — padrão arquitetural de microsserviços com API Gateway.
 
 ## Fontes
 

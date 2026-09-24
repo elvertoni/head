@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 2
 slug: blueprint-alexandria
 status: aprovada
-versao: 2
-atualizado_em: 2026-08-18
+versao: 3
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · Alexandria
@@ -63,13 +63,15 @@ usuários.
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - RF01 — O sistema deve permitir que usuários criem e personalizem suas contas.
 - RF02 — O sistema deve permitir a leitura online de mangás, manhwas e webtoons.
 - RF03 — O sistema deve permitir que usuários publiquem obras autorizadas.
 - RF04 — O sistema deve possuir um sistema de comentários em capítulos e obras.
 - RF05 — O sistema deve possuir classificação indicativa para restringir conteúdos
 impróprios para menores de idade.
-- RF06 — O sistema deve permitir que usuários ganhem moedas virtuais ao assistir
+- RF06 — O sistema deve permitir que usuários ganhem [[gamificacao|moedas virtuais]] ao assistir
 anúncios ou completar missões.
 - RF07 — O sistema deve permitir desbloquear capítulos especiais utilizando moedas
 virtuais.
@@ -78,23 +80,25 @@ ofensivos.
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
 - RNF01 — O sistema deve possuir interface intuitiva e fácil de usar em dispositivos
 móveis.
 - RNF02 — O aplicativo deve carregar capítulos e imagens em até 3 segundos em
 conexões comuns de internet.
-- RNF03 — O sistema deve proteger os dados dos usuários por meio de autenticação
-segura e criptografia de senhas.
-- RNF04 — O aplicativo deve possuir disponibilidade mínima de 95% do tempo.
+- RNF03 — O sistema deve proteger os dados dos usuários por meio de [[autenticacao|autenticação segura]]
+e [[seguranca-da-informacao|criptografia de senhas]].
+- RNF04 — O aplicativo deve possuir [[alta-disponibilidade|disponibilidade]] mínima de 95% do tempo.
 - RNF05 — O sistema deve ser compatível com Android e navegadores web modernos.
 
 ## Arquitetura e Tecnologias
 
 Linguagem / Framework back-end: Node.js
-Banco de dados: MongoDB
+Banco de dados: [[banco-de-dados-nao-relacional|MongoDB]]
 Front-end / Interface: React Native
 Hospedagem / Deploy: Firebase
 Outras ferramentas: Figma e GitHub
-Padrão arquitetural (MVC, microsserviços, etc.): MVC (Model-View-Controller)
+Padrão arquitetural (MVC, microsserviços, etc.): [[mvc|MVC (Model-View-Controller)]]
 
 ## Fluxo Principal do Usuário
 

@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 4
 slug: blueprint-espaco-delas
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · Espaço Delas
@@ -40,6 +40,8 @@ Um sistema web responsivo (mobile-first) composto por um website institucional e
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - **RF01** — O sistema deve apresentar uma página inicial (Home) institucional com informações do studio, galeria e catálogo de serviços.
 - **RF02** — O sistema deve disponibilizar um fluxo de agendamento online em etapas (seleção de serviço, profissional, data, horário e coleta de dados).
 - **RF03** — O sistema deve permitir o cancelamento autônomo do agendamento pela cliente, via link com token único expirável enviado por e-mail.
@@ -50,19 +52,21 @@ Um sistema web responsivo (mobile-first) composto por um website institucional e
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
 - **RNF01** — O tempo de carregamento da página inicial institucional deve ser inferior a 2 segundos em conexões móveis (4G).
-- **RNF02** — A interface web deve ser totalmente responsiva (mobile-first), garantindo usabilidade a partir da resolução de 320px.
-- **RNF03** — As senhas das profissionais e da proprietária devem ser protegidas no banco com hashing seguro (bcrypt).
-- **RNF04** — O sistema deve usar transações atômicas com bloqueio no banco para evitar race conditions (dois agendamentos no mesmo slot).
+- **RNF02** — A interface web deve ser totalmente [[mobile-first|responsiva (mobile-first)]], garantindo usabilidade a partir da resolução de 320px.
+- **RNF03** — As senhas das profissionais e da proprietária devem ser protegidas no banco com [[hash-de-senhas|hashing seguro (bcrypt)]].
+- **RNF04** — O sistema deve usar [[transacao-de-banco|transações atômicas]] com bloqueio no banco para evitar race conditions (dois agendamentos no mesmo slot).
 
 ## Arquitetura e Tecnologias
 
-- **Linguagem / Framework back-end**: Python 3.12 + Django 5.x — justificativa: agilidade via ORM integrado, segurança robusta e painel administrativo nativo.
-- **Banco de dados**: PostgreSQL 16 (SQLite em ambiente local) — justificativa: suporte eficiente a consultas concorrentes, transações atômicas robustas e confiabilidade.
+- **Linguagem / Framework back-end**: Python 3.12 + Django 5.x — justificativa: agilidade via [[orm|ORM]] integrado, segurança robusta e painel administrativo nativo.
+- **Banco de dados**: [[banco-de-dados-relacional|PostgreSQL 16]] (SQLite em ambiente local) — justificativa: suporte eficiente a consultas concorrentes, transações atômicas robustas e confiabilidade.
 - **Front-end / Interface**: Django Template Language + TailwindCSS 3.x — justificativa: criação rápida de componentes elegantes e responsivos, sem a complexidade de uma SPA separada.
 - **Hospedagem / Deploy**: VPS Ubuntu ou Railway/Render — justificativa: deploy facilitado, suporte nativo a contêineres e integração com GitHub Actions para deploy contínuo.
 - **Outras ferramentas**: Celery + Redis + SMTP (SendGrid) — justificativa: execução assíncrona de tarefas e lembretes automáticos sem travar a requisição HTTP da usuária.
-- **Padrão arquitetural**: Monolito MTV (Model-Template-View) — justificativa: reduz a complexidade de deploy, rede e manutenção em comparação a microsserviços.
+- **Padrão arquitetural**: [[arquitetura-monolitica|Monolito MTV (Model-Template-View)]] — justificativa: reduz a complexidade de deploy, rede e manutenção em comparação a microsserviços.
 
 ## Fluxo Principal do Usuário
 

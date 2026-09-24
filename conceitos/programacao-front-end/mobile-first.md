@@ -6,7 +6,7 @@ tipo: conceito
 aka: [mobile first]
 status: rascunho
 fontes: []
-aulas: [14]
+aulas: [4, 8, 14]
 atualizado_em: 2026-09-24
 ---
 
@@ -28,6 +28,8 @@ Sem a meta tag `<meta name="viewport" content="width=device-width, initial-scale
 ## Onde aparece
 
 - Aula 14 — *Mobile-first: o MVP no celular de quem vai validar* `aulas/programacao-front-end/landing-page-mvp/14-mobile-first/canonica.md`
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md` — sistema web responsivo mobile-first, usável a partir de 320px.
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — aplicativo web mobile-first, otimizado para telas de até 448px.
 - Conceitos vizinhos: [[media-query]], [[box-model]]
 
 ## Fontes

@@ -7,8 +7,8 @@ aka: [cryptography]
 status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo II - Inteligência Artificial/Inteligência Artificial e Blockchain/19 - Aula 19 - Criptografia de Chave Pública - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [3]
+atualizado_em: 2026-09-24
 ---
 
 Criptografia é o conjunto de métodos que transforma informações para protegê-las contra acesso ou uso indevido, usando chaves e operações matemáticas. Na aplicação estudada, ela sustenta confidencialidade, autenticidade e integridade, mas esses objetivos dependem do esquema, da gestão das chaves e do contexto de uso.
@@ -30,6 +30,7 @@ A [[criptografia-de-chave-publica|criptografia de chave pública]] usa um par as
 ## Onde aparece
 
 - Aula 19 — Criptografia de Chave Pública, no Módulo II.
+- Aula 3 — *Blueprint · BrVPN* `aulas/tcc/blueprint-tcc/03-blueprint-brvpn/canonica.md` — pilha criptográfica de uma VPN própria: ChaCha20-Poly1305 para dados e Curve25519 (ECDH) para troca de chaves.
 - Conecta [[criptografia-de-chave-publica]], [[assinatura-digital]], [[hashing]] e [[integridade-de-dados]].
 
 ## Fontes

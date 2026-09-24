@@ -8,8 +8,8 @@ status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo II - Inteligência Artificial/Inteligência Artificial e Blockchain/22 - Aula 22 - Hashing, Integridade e Segurança das Transações no Blockchain - Apostila (Slides).pdf"
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo II - Inteligência Artificial/Inteligência Artificial e Blockchain/23 - Aula 23 - Hashing, Integridade e Segurança das Transações no Blockchain II - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [3]
+atualizado_em: 2026-09-24
 ---
 
 Hashing é o processo de aplicar uma função que transforma uma entrada de tamanho variável em uma saída de tamanho fixo, de modo determinístico e difícil de inverter. Em blockchain, o resumo ajuda a encadear blocos, detectar alterações e verificar integridade, mas não é uma forma de criptografia reversível.
@@ -31,6 +31,7 @@ Uma pequena alteração na entrada deve produzir uma saída diferente; a resist�
 ## Onde aparece
 
 - Aulas 22–23 — Hashing, Integridade e Segurança das Transações, no Módulo II.
+- Aula 3 — *Blueprint · BrVPN* `aulas/tcc/blueprint-tcc/03-blueprint-brvpn/canonica.md` — BLAKE2s na pilha criptográfica, para hash e autenticação do túnel WireGuard.
 - Conecta [[blockchain]], [[criptografia]], [[integridade-de-dados]], [[imutabilidade-de-registro]], [[colisao-criptografica]], [[sha-256]], [[md5]], [[nonce]], [[mineracao-de-criptomoedas]], [[bloco-de-blockchain]], [[arvore-de-merkle]] e [[raiz-de-merkle]].
 
 ## Fontes

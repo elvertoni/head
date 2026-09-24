@@ -34,6 +34,7 @@ Do lado do marketing, SEO é o contraponto gratuito do [[sem|SEM]]: SEO se conqu
 
 - Aulas 28–29 — Implantação e SEO.
 - Aula 1 — *HTML semântico: por que `<div>` não conta a história toda* `aulas/programacao-front-end/fundamentos-html-css/01-html-semantico/canonica.md` — o crawler usa `<article>`, `<h1>` e `<main>` para separar conteúdo de menu e rodapé.
+- Aula 1 — *Blueprint · A.N.N Beauty* `aulas/tcc/blueprint-tcc/01-blueprint-a-n-n-beauty/canonica.md` — Next.js com SSR para melhorar o SEO, crucial para a descoberta de produtos e tutoriais.
 - Aula 25 — *O que é Marketing Digital* `aulas/analise-e-projeto-de-sistemas/marketing-digital/25-o-que-e-marketing-digital/canonica.md` — contraste com SEM: conquistar vs. comprar o topo da busca.
 - Aula 26 — *Marketing e Tráfego Orgânico* `aulas/analise-e-projeto-de-sistemas/marketing-digital/26-trafego-organico/canonica.md` — SEO como a primeira das quatro alavancas do tráfego orgânico, incluindo o SEO técnico feito pelo desenvolvedor.
 - Relaciona-se a [[html-semantico]], [[sem]], [[trafego-organico]], [[marketing-digital]].

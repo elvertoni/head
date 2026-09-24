@@ -7,8 +7,8 @@ aka: [Lei Geral de Proteção de Dados, lei de dados]
 status: vivo
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Tecnologias Emergentes, Habilidades e Carreira/02 - Aula 2 - Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança - Resumo (Aula em PDF).pdf"
-aulas: [25]
-atualizado_em: 2026-07-31
+aulas: [7, 25]
+atualizado_em: 2026-09-24
 ---
 
 LGPD (Lei Geral de Proteção de Dados) é a lei brasileira, **já em vigor**, que protege os dados pessoais: exige consentimento e dá às pessoas direitos sobre como suas informações são coletadas e usadas. Vale para qualquer sistema, inclusive os de IA, que se alimentam de dados.
@@ -29,6 +29,7 @@ A IA é faminta por dados — inclusive os seus (fotos, mensagens, hábitos) —
 
 - Aula 25 — *Ética, Responsabilidade e IA no Brasil*
 - `aulas/inteligencia-artificial/fundamentos-de-ia/25-etica-responsabilidade-e-ia-no-brasil/canonica.md`
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md` — RNF03, conformidade com a LGPD na proteção de dados pessoais e evidências enviadas pelos usuários.
 - Pós-graduação — Aula 2, *Direito Autoral, Plágio, LGPD, NFT, Blockchain e Cibersegurança*
 - Conceitos vizinhos: [[marco-legal-da-ia]], [[ciberseguranca]], [[dados-pessoais]], [[seguranca-da-informacao]] e [[etica-em-ia]]
 

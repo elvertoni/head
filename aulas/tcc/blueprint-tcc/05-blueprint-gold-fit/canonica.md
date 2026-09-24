@@ -10,8 +10,8 @@ trilha: blueprint-tcc
 ordem: 5
 slug: blueprint-gold-fit
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · Gold Fit
@@ -43,6 +43,8 @@ O app é projetado para funcionar integralmente sem internet, garantindo usabili
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - **RF01** — O sistema deve permitir cadastro e autenticação via e-mail, Google ou Apple ID, com coleta de dados de perfil (peso, altura, nível e objetivo).
 - **RF02** — O sistema deve disponibilizar uma biblioteca com no mínimo 300 exercícios, com vídeo/animação de execução, músculos trabalhados e instruções de segurança.
 - **RF03** — O sistema deve permitir criar treinos personalizados por grupo muscular, divisão semanal (A/B, PPL, full body) e métodos avançados (superset, drop set, circuito).
@@ -56,21 +58,23 @@ O app é projetado para funcionar integralmente sem internet, garantindo usabili
 
 ## Requisitos Não Funcionais
 
-- **RNF01** — O sistema deve funcionar completamente offline, sincronizando com o servidor quando houver conexão (disponibilidade e modo offline).
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
+- **RNF01** — O sistema deve funcionar completamente offline, sincronizando com o servidor quando houver conexão ([[alta-disponibilidade|disponibilidade]] e modo offline).
 - **RNF02** — O sistema deve carregar as telas principais em no máximo 2 segundos em hardware intermediário (desempenho).
-- **RNF03** — O sistema deve armazenar senhas com hash bcrypt e dados sensíveis criptografados em repouso e em trânsito via HTTPS/TLS 1.3 (segurança).
+- **RNF03** — O sistema deve armazenar senhas com [[hash-de-senhas|hash bcrypt]] e dados sensíveis criptografados em repouso e em trânsito via HTTPS/TLS 1.3 ([[seguranca-da-informacao|segurança]]).
 - **RNF04** — A interface deve ser operável com uma mão durante o treino, com botões de ação de no mínimo 48dp de área de toque (usabilidade).
-- **RNF05** — O sistema deve suportar ao menos 10.000 usuários simultâneos sem degradação perceptível (escalabilidade).
+- **RNF05** — O sistema deve suportar ao menos 10.000 usuários simultâneos sem degradação perceptível ([[escalabilidade]]).
 
 ## Arquitetura e Tecnologias
 
 - **Front-end / Mobile**: React Native + Expo — justificativa: desenvolvimento multiplataforma (iOS e Android) com base de código única, reduzindo custo e prazo do TCC.
 - **Back-end**: Node.js + Express — justificativa: ecossistema JavaScript unificado com o front-end, alta performance em I/O e ampla comunidade.
-- **Banco de dados**: PostgreSQL — justificativa: relacional robusto, suporta consultas complexas de histórico/séries e é gratuito para deploy em nuvem.
+- **Banco de dados**: [[banco-de-dados-relacional|PostgreSQL]] — justificativa: relacional robusto, suporta consultas complexas de histórico/séries e é gratuito para deploy em nuvem.
 - **Offline / Sync**: SQLite (local) + Sync API — justificativa: armazenamento local nativo para modo offline e sincronização incremental ao reconectar.
 - **Hospedagem**: Railway / Render — justificativa: plataformas de deploy gratuitas/low-cost ideais para o escopo de TCC, com suporte a Node.js e PostgreSQL.
-- **Autenticação**: Firebase Auth — justificativa: login social (Google/Apple) pronto, segurança gerenciada e SDK para React Native.
-- **Padrão arquitetural**: MVC + REST API — justificativa: separação clara de responsabilidades e API REST que facilita integração com wearables e escalabilidade futura.
+- **[[autenticacao|Autenticação]]**: Firebase Auth — justificativa: login social (Google/Apple) pronto, segurança gerenciada e SDK para React Native.
+- **Padrão arquitetural**: [[mvc|MVC]] + [[api-rest|REST API]] — justificativa: separação clara de responsabilidades e API REST que facilita integração com wearables e escalabilidade futura.
 
 ## Fluxo Principal do Usuário
 
@@ -87,6 +91,6 @@ O app é projetado para funcionar integralmente sem internet, garantindo usabili
 
 O escopo do Gold Fit foi dimensionado para ser viável dentro do prazo de um TCC semestral desenvolvido em grupo. O projeto usa tecnologias amplamente documentadas (React Native, Node.js, PostgreSQL), com grande disponibilidade de tutoriais, bibliotecas prontas e comunidade ativa, reduzindo o risco técnico.
 
-O desenvolvimento em grupo permite divisão de responsabilidades — front-end mobile, back-end/API e banco podem evoluir em paralelo. Funcionalidades mais complexas, como integração com wearables e personalização via IA, foram classificadas como incrementais: o MVP entregável no prazo cobre cadastro, biblioteca de exercícios, registro de treinos, histórico e gráficos de evolução.
+O desenvolvimento em grupo permite divisão de responsabilidades — front-end mobile, back-end/API e banco podem evoluir em paralelo. Funcionalidades mais complexas, como integração com wearables e personalização via IA, foram classificadas como incrementais: o [[mvp|MVP]] entregável no prazo cobre cadastro, biblioteca de exercícios, registro de treinos, histórico e gráficos de evolução.
 
 O modo offline é suportado por SQLite, tecnologia madura e de integração direta com React Native, sem infraestrutura adicional. O deploy em plataformas gratuitas (Railway/Render) elimina custo operacional durante o desenvolvimento. A equipe avalia o projeto como tecnicamente viável e com escopo compatível com o prazo.

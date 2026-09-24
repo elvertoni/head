@@ -7,8 +7,8 @@ aka: [transação de banco de dados]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Arquitetura e Programação/28 - Aula 28 - Consumindo Dados de um Banco de Dados Relacional III - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-08-01
+aulas: [4]
+atualizado_em: 2026-09-24
 ---
 
 Transação de banco é uma unidade lógica de operações que deve ser confirmada ou desfeita de acordo com suas garantias de consistência. Ela coordena mudanças relacionadas em um banco relacional.
@@ -30,6 +30,7 @@ COMMIT confirma e ROLLBACK desfaz o trabalho conforme o mecanismo do banco. [[ac
 ## Onde aparece
 
 - Arquitetura e Programação, Aula 28, páginas 2–5.
+- Aula 4 — *Blueprint · Espaço Delas* `aulas/tcc/blueprint-tcc/04-blueprint-espaco-delas/canonica.md` — transações atômicas com bloqueio no banco para evitar race conditions (dois agendamentos no mesmo horário).
 - Relaciona-se a [[acid]], [[nivel-de-isolamento]], [[sequelize]] e [[dtl]].
 
 ## Fontes

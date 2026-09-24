@@ -7,7 +7,7 @@ aka: [acesso inclusivo]
 status: rascunho
 fontes:
   - "lake/Inovacao-Inteligencia-Artificial-e-Robotica-Educacional/Módulo I - Cultura Maker e Educação/Psicologia e Teorias da Aprendizagem e suas Implicações Educacionais/05 - Aula 5 - Processos de Ensino - aprendizagem e os Desafios de Implementar uma Prática Pedagógica não Excludente - Apostila (Slides).pdf"
-aulas: [1, 15, 31]
+aulas: [1, 8, 15, 31]
 atualizado_em: 2026-09-24
 ---
 
@@ -32,6 +32,7 @@ Na [[educacao-inclusiva]], acessibilidade envolve linguagem, materiais, ambiente
 - Aula canônica 31 — `aulas/analise-e-projeto-de-sistemas/analise-de-requisitos/31-engenharia-reversa-de-app/canonica.md`.
 - Aula 1 — *HTML semântico: por que `<div>` não conta a história toda* `aulas/programacao-front-end/fundamentos-html-css/01-html-semantico/canonica.md` — leitor de tela e navegação por landmarks (`header`, `nav`, `main`).
 - Aula 15 — *Movimento com propósito: o que leva o olho até o botão* `aulas/programacao-front-end/landing-page-mvp/15-movimento-com-proposito/canonica.md` — foco de teclado visível e `prefers-reduced-motion`.
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — RNF05, contraste adequado e fontes legíveis seguindo diretrizes mínimas de usabilidade mobile.
 
 - Aula 5 — Processos de Ensino-Aprendizagem e prática pedagógica não excludente.
 - Conecta [[educacao-inclusiva]], [[tecnologia-assistiva]], [[pratica-pedagogica-inclusiva]], [[html-semantico]] e [[foco-de-teclado]].

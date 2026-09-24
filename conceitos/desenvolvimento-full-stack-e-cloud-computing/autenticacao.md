@@ -7,7 +7,7 @@ aka: [authentication]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Frameworks e Aplicações/28 - Aula 28 - Mecanismo de Segurança_ Cors, Autenticação e Autorização - Apostila (Slides).pdf"
-aulas: [4]
+aulas: [2, 4, 5, 8]
 atualizado_em: 2026-09-24
 ---
 
@@ -31,6 +31,9 @@ Credenciais, sessões, tokens e fatores precisam ser protegidos e revogados quan
 
 - Aulas 28–31 — Segurança, CORS, Autenticação e Autorização.
 - Aula 4 — *GitHub: tirando seu repositório do seu notebook e colocando na nuvem* `aulas/programacao-front-end/controle-de-versao-git-github/04-github-do-local-ao-remoto/canonica.md` — desde 2021 o GitHub exige SSH ou GitHub CLI em vez de usuário/senha em operações de linha de comando.
+- Aula 2 — *Blueprint · Alexandria* `aulas/tcc/blueprint-tcc/02-blueprint-alexandria/canonica.md` — RNF03, proteção de dados por autenticação segura.
+- Aula 5 — *Blueprint · Gold Fit* `aulas/tcc/blueprint-tcc/05-blueprint-gold-fit/canonica.md` — cadastro via e-mail, Google ou Apple ID com Firebase Auth.
+- Aula 8 — *Blueprint · Lumina* `aulas/tcc/blueprint-tcc/08-blueprint-lumina/canonica.md` — Firebase Authentication, login gerenciado sem back-end próprio.
 - Conecta [[gerenciamento-de-sessao]], [[cookies]], autorização, JWT, [[api]] e [[github]].
 
 ## Fontes

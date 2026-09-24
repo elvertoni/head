@@ -10,13 +10,13 @@ trilha: blueprint-tcc
 ordem: 7
 slug: blueprint-hobbyquest
 status: aprovada
-versao: 1
-atualizado_em: 2026-06-30
+versao: 2
+atualizado_em: 2026-09-24
 ---
 
 # Blueprint · HobbyQuest
 
-Aplicativo mobile gamificado (Android/iOS) · Maysa Rogaleski Rodrigues, Raquel Heloize Kutz de Bastos e Victor Gabriel Silvestre Melo
+Aplicativo mobile [[gamificacao|gamificado]] (Android/iOS) · Maysa Rogaleski Rodrigues, Raquel Heloize Kutz de Bastos e Victor Gabriel Silvestre Melo
 
 ## Objetivos
 
@@ -47,6 +47,8 @@ O objetivo é converter o tempo "livre" em aprendizado produtivo, ajudando o usu
 
 ## Requisitos Funcionais
 
+Os [[requisito-funcional|requisitos funcionais]] abaixo descrevem o que o sistema faz:
+
 - RF01 — O sistema deve permitir que o usuário realize login e mantenha a persistência dos dados e do progresso individual.
 - RF02 — O sistema deve apresentar um tutorial animado para introduzir a mecânica do jogo e os personagens/hobbies disponíveis.
 - RF03 — O sistema deve propor desafios práticos personalizados para a evolução do nível de proficiência em cada hobby.
@@ -60,19 +62,21 @@ O objetivo é converter o tempo "livre" em aprendizado produtivo, ajudando o usu
 
 ## Requisitos Não Funcionais
 
+Os [[requisito-nao-funcional|requisitos não funcionais]] abaixo descrevem a qualidade com que o sistema faz isso:
+
 - **RNF01 — Desempenho**: o sistema deve apresentar tempos de resposta inferiores a 3 segundos para a maioria das interações do usuário, garantindo uma experiência fluida e sem atrasos perceptíveis.
 - **RNF02 — Usabilidade**: a interface deve ser intuitiva e de fácil aprendizado, permitindo que usuários com diferentes níveis de familiaridade com aplicativos gamificados naveguem e interajam sem dificuldades.
-- **RNF03 — Segurança**: o sistema deve implementar protocolos de segurança robustos para proteger os dados pessoais dos usuários e as evidências enviadas (fotos/textos), garantindo conformidade com a LGPD e prevenindo acessos não autorizados.
-- **RNF04 — Disponibilidade**: o sistema deve estar disponível durante o período de testes e apresentação, com funcionamento estável.
-- **RNF05 — Escalabilidade**: o sistema deve suportar múltiplos usuários simultâneos em ambiente de teste.
+- **RNF03 — [[seguranca-da-informacao|Segurança]]**: o sistema deve implementar protocolos de segurança robustos para proteger os dados pessoais dos usuários e as evidências enviadas (fotos/textos), garantindo conformidade com a [[lgpd|LGPD]] e prevenindo acessos não autorizados.
+- **RNF04 — [[alta-disponibilidade|Disponibilidade]]**: o sistema deve estar disponível durante o período de testes e apresentação, com funcionamento estável.
+- **RNF05 — [[escalabilidade|Escalabilidade]]**: o sistema deve suportar múltiplos usuários simultâneos em ambiente de teste.
 
 ## Arquitetura e Tecnologias
 
-Padrão arquitetural: Cliente-Servidor com Backend as a Service (BaaS) — o frontend (aplicativo mobile) atua como cliente, interagindo diretamente com os serviços do Firebase (BaaS) para autenticação, banco de dados, armazenamento e funções de backend, simplificando o desenvolvimento e a manutenção da infraestrutura.
+Padrão arquitetural: [[arquitetura-cliente-servidor|Cliente-Servidor]] com [[baas|Backend as a Service (BaaS)]] — o frontend (aplicativo mobile) atua como cliente, interagindo diretamente com os serviços do Firebase (BaaS) para autenticação, banco de dados, armazenamento e funções de backend, simplificando o desenvolvimento e a manutenção da infraestrutura.
 
 Linguagem / Framework back-end: Firebase Cloud Functions — permite executar código de backend sem gerenciar servidores, ideal para lógica de notificações e validações automáticas, com integração nativa aos demais serviços Firebase.
 
-Banco de dados: Firestore (NoSQL) — banco escalável e flexível, adequado para armazenar dados de progresso, níveis e pontos, com sincronização em tempo real e fácil integração com o frontend mobile.
+Banco de dados: [[banco-de-dados-nao-relacional|Firestore (NoSQL)]] — banco escalável e flexível, adequado para armazenar dados de progresso, níveis e pontos, com sincronização em tempo real e fácil integração com o frontend mobile.
 
 Front-end / Interface: Flutter ou React Native — desenvolvimento de apps móveis nativos para iOS e Android a partir de uma única base de código, garantindo interface intuitiva, animações fluidas e feedback visual constante, essenciais para a experiência gamificada.
 
@@ -96,7 +100,7 @@ O fluxo principal segue um caminho gamificado, da autenticação à conclusão d
 
 O projeto HobbyQuest, embora ambicioso em sua proposta de gamificação e narrativa, é considerado viável dentro do prazo de um TCC, pelos seguintes aspectos:
 
-Foco em MVP: o tempo disponível exige concentrar esforços na criação de um Produto Mínimo Viável. A estratégia prioriza as funcionalidades essenciais que sustentam a proposta central — gamificação do aprendizado por meio de desafios práticos, progressão por níveis e feedback ao usuário. Funcionalidades mais complexas (interações sociais avançadas, personalização aprofundada da narrativa) ficam como expansões futuras.
+Foco em [[mvp|MVP]]: o tempo disponível exige concentrar esforços na criação de um Produto Mínimo Viável. A estratégia prioriza as funcionalidades essenciais que sustentam a proposta central — gamificação do aprendizado por meio de desafios práticos, progressão por níveis e feedback ao usuário. Funcionalidades mais complexas (interações sociais avançadas, personalização aprofundada da narrativa) ficam como expansões futuras.
 
 Equipe e divisão de trabalho: com três integrantes, o projeto pode ser gerenciado com eficiência dividindo responsabilidades entre desenvolvimento, design e estruturação de conteúdo. Flutter/React Native no frontend permitem desenvolvimento multiplataforma com base de código única, otimizando o tempo, e o Firebase como BaaS reduz a necessidade de gerenciar infraestrutura, banco de dados e autenticação.
 

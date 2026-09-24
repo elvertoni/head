@@ -7,8 +7,8 @@ aka: [SSR, renderização no servidor]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo II - Desenvolvimento Full Stack/Frameworks, Programação e Estratégias/10 - Aula 10 - Modos de Renderização SSG, SSR, ISR e CSR I - Apostila (Slides).pdf"
-aulas: []
-atualizado_em: 2026-07-31
+aulas: [1]
+atualizado_em: 2026-09-24
 ---
 
 Server-side rendering gera HTML no servidor para uma requisição ou conjunto de dados antes de enviá-lo ao cliente. A estratégia pode melhorar tempo até conteúdo e SEO, mas adiciona custo, dependência de dados e complexidade de cache.
@@ -30,6 +30,7 @@ SSR é uma estratégia do [[nextjs]], diferente de [[ssg]], [[isr]] e renderiza�
 ## Onde aparece
 
 - Aulas 10–12 — Modos de Renderização SSG, SSR, ISR e CSR.
+- Aula 1 — *Blueprint · A.N.N Beauty* `aulas/tcc/blueprint-tcc/01-blueprint-a-n-n-beauty/canonica.md` — Next.js com SSR para melhorar SEO e desempenho inicial do e-commerce.
 - Conecta [[nextjs]], [[ssg]], [[isr]] e React.
 
 ## Fontes

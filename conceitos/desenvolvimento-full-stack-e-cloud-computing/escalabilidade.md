@@ -7,7 +7,7 @@ aka: [scalability]
 status: rascunho
 fontes:
   - "lake/desenvolvimento-full-stack-e-cloud-computing/Módulo III - Cloud Computing/Estratégias de Cloud Computing/04 - Aula 4 - Modelos de Nuvem_ Público, Privado e Híbrido - Apostila (Slides).pdf"
-aulas: [7]
+aulas: [1, 5, 7]
 atualizado_em: 2026-09-24
 ---
 
@@ -31,6 +31,9 @@ Nuvem facilita provisionamento, mas a aplicação precisa tolerar distribuição
 
 - Aulas 4–6 — Modelos de Nuvem.
 - Aula 7 — *Startup não é empresa pequena* `aulas/programacao-front-end/landing-page-mvp/07-startup-nao-e-empresa-pequena/canonica.md` — escalabilidade como diferença entre crescer (custo proporcional) e escalar.
+- Aula 1 — *Blueprint · A.N.N Beauty* `aulas/tcc/blueprint-tcc/01-blueprint-a-n-n-beauty/canonica.md` — RNF05, arquitetura deve suportar aumento de usuários e dados sem degradar desempenho.
+- Aula 5 — *Blueprint · Gold Fit* `aulas/tcc/blueprint-tcc/05-blueprint-gold-fit/canonica.md` — RNF05, suportar ao menos 10.000 usuários simultâneos.
+- Aula 7 — *Blueprint · HobbyQuest* `aulas/tcc/blueprint-tcc/07-blueprint-hobbyquest/canonica.md` — RNF05, suportar múltiplos usuários simultâneos em ambiente de teste.
 - Conecta [[computacao-em-nuvem]], [[nuvem-publica]], [[alta-disponibilidade]], [[arquitetura-de-nuvem]] e [[startup]].
 
 ## Fontes

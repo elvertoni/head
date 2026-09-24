@@ -516,6 +516,11 @@
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
     },
     {
+      "slug": "armazenamento-local-do-navegador",
+      "nome": "Armazenamento local do navegador",
+      "disciplina": "tcc"
+    },
+    {
       "slug": "armazenamento-secundario",
       "nome": "Armazenamento secundário",
       "disciplina": "introducao-a-computacao"
@@ -749,6 +754,11 @@
       "slug": "azure",
       "nome": "Azure",
       "disciplina": "desenvolvimento-full-stack-e-cloud-computing"
+    },
+    {
+      "slug": "baas",
+      "nome": "Backend as a Service",
+      "disciplina": "tcc"
     },
     {
       "slug": "backend",
