@@ -34,41 +34,20 @@ as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
 várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
 vez de ser re-extraído a cada material.
 
-### Estado atual do vault (2026-08-21)
+### Estado atual do vault
 
-O vault já contém as disciplinas do curso, mas nem todas estão no mesmo estágio.
-O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash. No
-estado validado em 2026-08-21 (`gerar_manifesto.py --check` sem divergências), há
-**89 aulas aprovadas importáveis**, distribuídas assim:
+O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash:
+`python tools/gerar_manifesto.py --check` diz quantas aulas aprovadas existem, e
+`python tools/lint_wiki.py` mostra a cobertura do grafo de conceitos. O retrato
+por disciplina/trilha vive num lugar só — a seção "Current vault state" do
+`CLAUDE.md`.
 
-| Disciplina | Trilha | Aulas aprovadas |
-|---|---|---|
-| `inteligencia-artificial` (extra) | `fundamentos-de-ia` | 25 |
-| `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | 16 |
-| `programacao-front-end` | `landing-page-mvp` | 12 |
-| `analise-e-metodos-para-sistemas` | `metodologias-ageis` | 11 |
-| `tcc` | `blueprint-tcc` | 9 |
-| `analise-e-projeto-de-sistemas` | `marketing-digital` | 6 |
-| `programacao-front-end` | `controle-de-versao-git-github` | 5 |
-| `analise-e-projeto-de-sistemas` | `analise-de-requisitos` | 1 |
-| `programacao-front-end` | `fundamentos-html-css` | 1 |
-| `programacao-no-desenvolvimento-de-sistemas` | `arquitetura-e-fluxo-de-sistemas` | 1 |
-| `introducao-a-computacao` | `nivelamento-e-retomada` | 2 |
+- Presença de fonte bruta no `lake/` não é aula pronta; HTMLs/blueprints de apoio
+  sem `canonica.md` aprovada não são aulas importáveis.
+- A maioria dos nós de `conceitos/` está `status: rascunho` — presença de página
+  não implica conceito vivo.
 
-- Grafo de conceitos: ~1.028 nós não obsoletos em `conceitos/`, concentrados em
-  `desenvolvimento-full-stack-e-cloud-computing` (~466), `inovacao-inteligencia-
-  artificial-e-robotica-educacional` (~523) e `inteligencia-artificial` (37).
-  A maioria está `status: rascunho` — presença de página não implica conceito vivo.
-- `inovacao-tecnologia-e-empreendedorismo`: disciplina declarada no manifesto,
-  sem trilha nem aula publicada ainda.
-- `aulas/programacao-front-end/projeto petfinder` e
-  `aulas/programacao-no-desenvolvimento-de-sistemas/blueprint-tcc`: contêm HTMLs/
-  blueprints de apoio; sem `canonica.md` aprovada, não são aulas importáveis.
-- As demais disciplinas podem ter material no `lake/` mesmo sem aulas canônicas
-  publicadas. Não confundir presença de fonte bruta com aula pronta.
-
-As 89 aulas canônicas possuem `imagens.md`, o briefing visual da aula; 69 têm
-`capa.png`. `capa.png` é um ativo complementar versionável quando existir;
+Toda aula canônica tem `imagens.md`, o briefing visual da aula. `capa.png` é um ativo complementar versionável quando existir;
 nenhum dos dois substitui a `canonica.md` nem cria uma aula importável no portal.
 
 Esta seção é um retrato — **o manifesto e o `--check` é que mandam**. Ao tocar em
@@ -213,13 +192,14 @@ auditoria das 54 imagens já aprovadas do acervo; a regra `R3` do XML cataloga 1
 defeitos que já foram publicados de verdade e precisa ser percorrida item a item
 antes de aceitar qualquer arte.
 
-**A geração acontece no navegador (ChatGPT web), não dentro do agente.** O papel
-do agente é montar o prompt v5 pronto pra colar e depois auditar o PNG que voltar.
+O agente monta o prompt v6 resolvido e delega a geração ao Codex CLI (padrão);
+o Projeto do ChatGPT no navegador é o caminho alternativo. Nos dois casos o agente
+audita o PNG que voltar — detalhes na skill `gerar-imagem-aula`.
 
-O modelo generativo entrega **somente a arte-base**: PNG paisagem 16:9 na maior
-resolução disponível, com os dois cantos superiores escuros e vazios. Nunca
-anexar a logo ao modelo, desenhar/aplicar marca, escrever a identificação do curso
-ou normalizar para 1600×900. Logo, curso e canvas canônico são aplicados depois
+O modelo generativo entrega **somente a arte-base**, na proporção do perfil
+(`capa` 3:2, `infografico` 16:9), com os dois cantos superiores escuros e vazios.
+Nunca anexar a logo ao modelo, desenhar/aplicar marca, escrever a identificação
+do curso ou normalizar o canvas. Logo, curso e canvas canônico são aplicados depois
 pela action determinística do Photoshop. As capas/infográficos continuam sendo
 ativos complementares; não entram no `manifesto.json` e não substituem a
 `canonica.md`.

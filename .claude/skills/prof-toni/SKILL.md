@@ -31,7 +31,7 @@ A spec descreve o *método*. Esta seção descreve *como trabalhar com o Toni*.
 ### Onde salvar (o acervo)
 Cada aula vive em `aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`, conforme `spec/00-PROTOCOLO.md §8`.
 
-- `disciplina` e `trilha`: slugs minúsculos (`programacao`, `banco-de-dados`, `caderno-de-estudos`).
+- `disciplina` e `trilha`: slugs minúsculos já registrados em `manifesto.json` → `disciplinas[]` (ex.: `programacao-front-end` / `landing-page-mvp`). Disciplina nova exige semear a entrada curada no manifesto e o rótulo em `tools/gerar_manifesto.py`.
 - `NN`: ordem na trilha, dois dígitos (`01`, `02`...).
 - Antes de criar, **liste o que já existe** na trilha-alvo para não duplicar nem repetir número de ordem.
 - Material de origem (PDF/PPT/docx da SEED) vai em `fontes/` ao lado da `canonica.md`, imutável.
@@ -70,7 +70,7 @@ Para cada brief:
 - **alt** — texto alternativo (acessibilidade + fallback quando o renderer não suporta imagem).
 - **prompt** — deixe **vazio ou como esboço de uma linha**. O prompt final é montado pela skill `gerar-imagem-aula` a partir do `prompt.xml` v6, que carrega paleta semântica, gramática visual e o catálogo de 12 defeitos conhecidos. Prompt escrito à mão aqui produz peça fora do design system.
 
-Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula` (Modo A) para obter o prompt colável, gerar no ChatGPT do navegador, salvar, e voltar no Modo B para validação. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
+Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula`, que gera (Codex) e audita o PNG. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
 
 Estado real dos renderers (verificado no código do portal): **nenhum dos dois entrega imagem de conteúdo ao aluno hoje.** O `import_acervo.py` copia só a capa da aula, e `img/` não tem rota no ProfessorDash — o `<img>` fica quebrado; o standalone (`aula-estatica`) sequer tem componente pra isso. Por isso o `alt` carrega a informação de verdade (regra em `spec/01-CANONICA.md` §4.1) e o brief continua existindo: ele é o ativo que fica pronto pra quando o portal servir `img/`.
 

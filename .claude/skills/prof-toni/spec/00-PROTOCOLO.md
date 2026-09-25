@@ -129,21 +129,18 @@ A SEED é **ponto de partida, não contrato**. Procedimento de ingestão:
 Estrutura do repositório:
 
 ```
-prof-toni/
-├── README.md
-├── spec/
-│   ├── 00-PROTOCOLO.md          # este arquivo — ponto de entrada
-│   ├── 01-CANONICA.md           # formato da Aula Canônica
-│   ├── 02-RUBRICA.md            # auditoria + checklist de entrega
-│   └── EXEMPLO-canonica.md      # padrão calibrador de qualidade
-└── aulas/{disciplina}/{trilha}/{NN-slug}/
-    ├── canonica.md      # a aula de verdade — único arquivo editável
-    ├── fontes/          # material original (SEED, PDF, links) — imutável
-    └── saidas/          # derivados gerados — descartáveis, regeneráveis
+.claude/skills/prof-toni/spec/   # esta spec
+aulas/{disciplina}/{trilha}/{NN-slug}/
+├── canonica.md      # a aula de verdade — único arquivo editável
+├── imagens.md       # brief de imagem (sempre gerado)
+├── capa.png         # arte da capa, quando existir
+├── img/             # figuras de miolo referenciadas no corpo
+├── fontes/          # material original (SEED, PDF, links) — imutável
+└── saidas/          # derivados gerados — descartáveis, regeneráveis
 ```
 
-- `disciplina`: slug minúsculo (`programacao`, `banco-de-dados`, `ia`…).
-- `trilha`: a sequência didática a que a aula pertence (`caderno-de-estudos`, `engenharia-de-intencao`…).
+- `disciplina`: slug minúsculo já registrado em `manifesto.json` → `disciplinas[]` (`programacao-front-end`, `inteligencia-artificial`…).
+- `trilha`: a sequência didática a que a aula pertence (`landing-page-mvp`, `fundamentos-de-ia`…).
 - `NN`: número de ordem na trilha, dois dígitos.
 - O front-matter YAML da `canonica.md` (schema em `spec/01-CANONICA.md`) carrega os metadados que tornam o acervo consultável: `titulo`, `disciplina`, `serie`, `trilha`, `ordem`, `modo_origem`, `fontes`, `status`, `versao`, `atualizado_em`.
 - Commits: uma aula por commit, mensagem `aula({disciplina}): {NN-slug} — {ação}`.

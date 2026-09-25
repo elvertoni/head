@@ -96,6 +96,8 @@ Use a **Tabela A — ProfessorDash → Componente** abaixo (cobre todos os `:::t
 | `:::questao` | Componente "Questão de fixação" (BLOCOS.md §21) | — | — |
 | `:::codigo` ou ` ``` ` | `.code-shell` com syntax highlight manual | — | — |
 | `:::demo` ou bloco HTML real | `.demo-wrap` | — | — |
+| ````quiz` | "Questão de fixação" (BLOCOS.md §21), uma por pergunta; a alternativa `correta: true` vai no gabarito | — | — |
+| ````diagrama-progressivo` | `<ol>` na section: cada camada vira `<li>` com `rotulo` em `<strong>` e `conteudo` em `<p>` — o `<ol>` numera, o `rotulo` não | — | — |
 
 Texto comum entre callouts vira `<p>` direto na section. Sub-tópicos viram `<h3>`.
 
@@ -148,7 +150,7 @@ Checklist obrigatório:
 - [ ] Todos os `<` e `>` dentro de `<pre><code>` escapados como `&lt;` e `&gt;`
 - [ ] Cada `id="sec-N"` nas sections bate com um `href="#sec-N"` no sumário
 - [ ] Última section tem a classe `section-close`
-- [ ] Apenas um `</main>` (o template histórico tinha um duplicado — confira)
+- [ ] Apenas um `</main>`
 - [ ] `<title>` no formato: `Aula NN · Tema curto · Prof Toni Coimbra`
 - [ ] Topbar disciplina preenchida (substitui `[EDIT-DISCIPLINA]`)
 - [ ] Nenhum comentário `<!-- [EDIT...] -->` restante no body

@@ -1,7 +1,7 @@
 ---
 titulo: Por que o computador só entende 0 e 1?
 tema: Representação de dados (sistema binário)
-disciplina: Fundamentos de Computação
+disciplina: introducao-a-computacao
 serie: 1ª
 prerequisitos: [Saber contar no sistema decimal]
 objetivos:
@@ -9,7 +9,15 @@ objetivos:
   - Relacionar o 0 e o 1 a um estado físico real (ligado/desligado)
   - Converter números pequenos entre decimal e binário
   - Reconhecer que texto, imagem e som também viram sequências de bits
+trilha: exemplo-calibrador
+ordem: 1
+slug: exemplo-por-que-o-computador-so-entende-0-e-1
+modo_origem: tema
+fontes: []
 revisao: false
+status: rascunho
+versao: 1
+atualizado_em: 2026-06-11
 ---
 
 Pega o celular que está no seu bolso. Dentro dele há **bilhões** de peças minúsculas, e cada uma sabe fazer só uma coisa: estar **ligada** ou **desligada**. Nenhuma delas entende a letra "A", a cor azul ou uma música. Mesmo assim, o aparelho faz tudo isso. A aula de hoje responde a um mistério que está na base de *toda* a computação: como um monte de interruptores que só sabem "liga/desliga" consegue representar o mundo inteiro?
