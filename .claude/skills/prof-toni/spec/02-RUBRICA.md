@@ -68,7 +68,7 @@ Rodar antes de entregar toda Canônica. Veredito binário: falhou um item → co
 - [ ] **YAML dos interativos parseia**: todo texto com `: ` ou aspas iniciais está entre aspas duplas (`spec/01-CANONICA.md` §6). YAML quebrado vira bloco cru na tela do aluno.
 - [ ] **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
 - [ ] **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (`spec/01-CANONICA.md` §4.2) — o slug não tem acento.
-- [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (§4.1) — nenhum renderer serve `img/` hoje.
+- [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (§4.1) — a apostila standalone não exibe imagem de conteúdo.
 - [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v6.
 - [ ] **Quiz com exatamente uma `correta: true`** — o portal marca como certa toda alternativa com `correta`.
 - [ ] `:::roteiro` não contém conteúdo essencial ao aluno.

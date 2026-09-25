@@ -72,7 +72,7 @@ Para cada brief:
 
 Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula`, que gera (Codex) e audita o PNG. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
 
-Estado real dos renderers (verificado no código do portal): **nenhum dos dois entrega imagem de conteúdo ao aluno hoje.** O `import_acervo.py` copia só a capa da aula, e `img/` não tem rota no ProfessorDash — o `<img>` fica quebrado; o standalone (`aula-estatica`) sequer tem componente pra isso. Por isso o `alt` carrega a informação de verdade (regra em `spec/01-CANONICA.md` §4.1) e o brief continua existindo: ele é o ativo que fica pronto pra quando o portal servir `img/`.
+Arquivo em `img/` só chega ao aluno se a canônica o referenciar como `![alt](img/arquivo.png)`; sem referência, é importado e nunca exibido. O standalone (`aula-estatica`) não tem componente de imagem de conteúdo, então o `alt` continua carregando a informação (regra em `spec/01-CANONICA.md` §4.1).
 
 **Capa é o caso que funciona.** Salve como `capa.png` na pasta da aula (ou aponte no frontmatter `imagem:`) — essa o importador copia e o portal exibe no card e no topo da aula.
 

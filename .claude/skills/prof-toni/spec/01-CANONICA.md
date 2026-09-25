@@ -107,18 +107,16 @@ Achatamento, se necessário, é problema do **adaptador** — nunca de quem escr
 Imagem de conteúdo entra como Markdown puro: `![alt](img/nome.png)`, com o
 arquivo em `img/` ao lado da `canonica.md`.
 
-O detalhe que muda como você escreve: **o ProfessorDash não serve esses
-arquivos.** O importador copia apenas a capa da aula; o `img/` fica no repo do
-acervo, sem rota no portal, e o `<img>` renderiza quebrado. O standalone
-(`aula-estatica`) também não tem componente de imagem de conteúdo. Ou seja: hoje
-a imagem chega ao aluno pelo `alt`, não pelo pixel.
+O arquivo só chega ao aluno se a canônica o referenciar assim; um arquivo em
+`img/` sem referência é importado e nunca exibido. O standalone (`aula-estatica`)
+não tem componente de imagem de conteúdo — ali a imagem chega pelo `alt`, não
+pelo pixel.
 
 Consequência prática: escreva o `alt` como **descrição autossuficiente do que a
 imagem ensina**, não como rótulo ("diagrama do fluxo"). E nunca deixe um passo
 do raciocínio existir só dentro da imagem — se sumir o arquivo, a aula tem que
-continuar ensinando. Enquanto o portal não servir `img/`, prefira resolver o
-visual com `diagrama-progressivo`, tabela ou fence de código, que atravessam
-inteiros para os dois renderers.
+continuar ensinando. Quando o visual couber em `diagrama-progressivo`, tabela
+ou fence de código, prefira-os: atravessam inteiros para os dois renderers.
 
 ### 4.2 Wikilinks de conceito — sempre com rótulo
 
