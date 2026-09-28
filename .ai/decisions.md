@@ -39,8 +39,8 @@
 - **Data:** 2026-08-23 (inferida)
 - **Status:** Aceita
 - **Contexto:** O portal ficou 13 aulas e 14 capas defasado sem erro nenhum, porque o reimport não foi feito (commit `f910e52`).
-- **Decisão:** Publicar = `gerar_manifesto.py` → push do acervo → deploy do portal → reimport com `--force`.
-- **Alternativas descartadas:** <!-- TODO: confirmar -->
+- **Decisão:** Publicar = `gerar_manifesto.py` → push do acervo → deploy do portal → reimport com `--force`. Confirmada pelo Toni em 2026-09-28.
+- **Alternativas descartadas:** — (nenhuma considerada)
 - **Consequências:** O reimport é passo explícito do fluxo (invariante 6 do `AGENTS.md`).
 
 ## #010 — Geração de imagem delegada ao Codex CLI
@@ -80,8 +80,8 @@
 - **Status:** Aceita
 - **Contexto:** O workspace "Toni's Brain" precisava listar as aulas sem virar segunda fonte de verdade (commit `97cb97e`).
 - **Decisão:** `sync_notion.py` espelha só metadados + link do ProfessorDash na base `Aulas`, com chave `Caminho`. O Notion nunca é entrada. A escrita é opt-in (`--apply`).
-- **Alternativas descartadas:** <!-- TODO: confirmar -->
-- **Consequências:** Toda mudança de aula nasce no repo; o Notion é regenerável.
+- **Alternativas descartadas:** Notion como lugar regular de autoria de aulas. Usar o Notion para uma aula é só pontual, quando o Toni quer algo bem rápido — não é regra (confirmado pelo Toni em 2026-09-28).
+- **Consequências:** Toda mudança de aula nasce no repo; o Notion é regenerável. Uma aula feita pontualmente no Notion não é fonte de verdade nem aparece no portal enquanto não virar `canonica.md`.
 
 ## #005 — Nunca rebaixar a canônica para o formato do repo legado
 - **Data:** 2026-06-14 (inferida — data da memória legada `acervo-legado-regerar-do-zero.md`)
