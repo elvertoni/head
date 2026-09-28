@@ -19,7 +19,7 @@ metadata:
 
 Procedimento para o Quíron operar o acervo de aulas do Prof. Toni com segurança.
 O repositório é clonado na VPS (ex.: `~/projetos/PROF-TONI`). **Sempre opere de
-dentro da raiz do repo** — lá o `AGENTS.md`/`CLAUDE.md` do projeto já é carregado.
+dentro da raiz do repo** — lá o `AGENTS.md`/`CLAUDE.md` do projeto já é carregado (o schema da wiki está em `docs/schema-wiki.md`).
 
 ## Quando usar
 

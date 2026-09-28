@@ -2,8 +2,8 @@
 """Gerador do manifesto.json — contrato de import do ProfessorDash.
 
 Varre `aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md`, extrai o frontmatter
-e emite `manifesto.json` no schema EXATO que o portal espera (ver AGENTS.md
-"Contrato de import do portal"):
+e emite `manifesto.json` no schema EXATO que o portal espera (ver docs/schema-wiki.md
+§5.1 "Contrato de import do portal"):
 
   disciplinas[]: { slug, label, serie, status, trilhas: [ {slug, label} ], ... }
   lessons[]:     { disciplina, trilha, ordem, slug, titulo, status: "aprovada", ... }

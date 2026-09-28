@@ -53,7 +53,7 @@ Regras do frontmatter:
 ### Contrato de import do portal (INVIOLÁVEL)
 
 O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. A geração
-SEMPRE produz saída compatível com este contrato (detalhe completo em `AGENTS.md`
+SEMPRE produz saída compatível com este contrato (detalhe completo em `docs/schema-wiki.md`
 §5.1):
 
 - **Mínimo obrigatório no frontmatter:** `titulo`, `disciplina`, `trilha`, `ordem`,

@@ -2,7 +2,7 @@
 """Sincroniza o índice de aulas canônicas para a base "Aulas" do Notion.
 
 Espelho SOMENTE-LEITURA do acervo: a fonte de verdade continua sendo
-`canonica.md` (invariante 1 do CLAUDE.md). O Notion nunca escreve de volta —
+`canonica.md` (invariante 1 do AGENTS.md). O Notion nunca escreve de volta —
 este script é one-way, repo -> Notion.
 
 O que sobe: uma linha por aula aprovada, com metadados + link que abre a aula no

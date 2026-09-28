@@ -21,7 +21,7 @@ Cada Canônica é a fonte única de onde se derivam todos os formatos (apostila 
 
 O **ProfessorDash** importa as aulas lendo `manifesto.json` + `aulas/**/canonica.md`.
 Toda geração/edição **tem** que sair compatível com o contrato, senão a aula não
-aparece no portal. A especificação completa e inviolável está em **[`AGENTS.md` §5.1](AGENTS.md)**
+aparece no portal. A especificação completa e inviolável está em **[`docs/schema-wiki.md` §5.1](docs/schema-wiki.md)**
 (também replicada na skill `prof-toni`). Resumo operacional:
 
 - Frontmatter mínimo de cada `canonica.md`: `titulo, disciplina, trilha, ordem, slug, status: aprovada, versao, atualizado_em`.
@@ -52,7 +52,7 @@ python tools/gerar_indice.py --write      # regenera index.md preservando resumo
 
 Detalhes de promoção, proveniência, stubs e registro de consultas estão em
 [`docs/manutencao-wiki.md`](docs/manutencao-wiki.md) e no schema de
-[`AGENTS.md`](AGENTS.md).
+[`docs/schema-wiki.md`](docs/schema-wiki.md).
 
 ## Onde vivem as aulas
 

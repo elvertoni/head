@@ -1,303 +1,107 @@
-# AGENTS.md — Schema do Segundo Cérebro PROF-TONI
-
-> **O que é este arquivo.** A *camada-schema* do segundo cérebro, no modelo
-> [llm-wiki do Karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f):
-> um documento de governança que diz a qualquer LLM (Claude Code é o mantenedor
-> principal) **como** ler as fontes, **o que** escrever na wiki e **como** mantê-la
-> saudável. O humano (Toni) cura fontes e dirige; o LLM faz a manutenção:
-> sintetizar, cruzar referências e bookkeeping.
->
-> Leitura obrigatória antes de qualquer operação de `ingest`, `query` ou `lint`.
-
----
-
-## 1. As quatro camadas
-
-O acervo é um pipeline. Cada camada tem dono e regra de escrita distintos.
-
-| # | Camada | Pasta | Dono / escreve | Versionada? |
-|---|---|---|---|---|
-| 1 | **Fontes** (raw, imutável) | `lake/{disciplina}/` | Humano coloca; LLM **lê, nunca edita** | ❌ binários e elite-wiki gitignored |
-| 2 | **Conceitos** (wiki sintetizada) | `conceitos/{disciplina}/` | **LLM mantém** (este schema) | ✅ sim |
-| 3 | **Aulas** (warehouse canônico) | `aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` | LLM via skill `prof-toni` | ✅ sim |
-| 4 | **Saídas** (derivadas) | `**/saidas/` | Renderers (skill `aula-estatica`, ProfessorDash) | ❌ regeneráveis |
-
-Mapeamento Karpathy → aqui:
-- *Raw Sources* = camada 1 (`lake/`).
-- *The Wiki* = camadas 2 **e** 3. Conceitos são os nós atômicos reusáveis; Aulas
-  são páginas de síntese pedagógica que **consomem** conceitos.
-- *The Schema* = este arquivo (`AGENTS.md`).
-
-**Diferença central vs. um lake→warehouse puro:** a camada 2 (`conceitos/`) é um
-**grafo de nós atômicos** (`[[rag]]`, `[[chunking]]`, `[[acoplamento]]`) que cruza
-as 7 disciplinas. Uma Aula referencia conceitos; um conceito pode aparecer em
-várias aulas e várias disciplinas. Isso é o que faz o conhecimento **compor** em
-vez de ser re-extraído a cada material.
-
-### Estado atual do vault
-
-O manifesto é a fonte de verdade para o estado importável pelo ProfessorDash:
-`python tools/gerar_manifesto.py --check` diz quantas aulas aprovadas existem, e
-`python tools/lint_wiki.py` mostra a cobertura do grafo de conceitos. O retrato
-por disciplina/trilha vive num lugar só — a seção "Current vault state" do
-`CLAUDE.md`.
-
-- Presença de fonte bruta no `lake/` não é aula pronta; HTMLs/blueprints de apoio
-  sem `canonica.md` aprovada não são aulas importáveis.
-- A maioria dos nós de `conceitos/` está `status: rascunho` — presença de página
-  não implica conceito vivo.
-
-Toda aula canônica tem `imagens.md`, o briefing visual da aula. `capa.png` é um ativo complementar versionável quando existir;
-nenhum dos dois substitui a `canonica.md` nem cria uma aula importável no portal.
-
-Esta seção é um retrato — **o manifesto e o `--check` é que mandam**. Ao tocar em
-qualquer pasta do acervo, revalide antes de confiar nos números acima.
-
-Ao iniciar qualquer tarefa, rode leitura rápida de estado:
-`python tools/gerar_manifesto.py --check` para contrato do portal e `git status --short`
-para não misturar trabalho humano não versionado com mudanças do agente.
-
----
-
-## 2. Página de conceito — formato
-
-Arquivo: `conceitos/{disciplina}/{slug}.md`. Um conceito = um arquivo. Atômico.
-
-> **Wikilinks resolvem por nome de arquivo no Obsidian.** Por isso `slug` é único
-> em todo o vault. Namespace por pasta (`{disciplina}/`) organiza visualmente, mas
-> `[[rag]]` resolve de qualquer disciplina.
-
-### Frontmatter (obrigatório e completo)
-
-```yaml
----
-conceito: RAG                                  # nome humano
-slug: rag                                       # = nome do arquivo, único no vault
-disciplina: inteligencia-artificial             # disciplina-dona (origem)
-tipo: conceito                                  # conceito | entidade | sintese
-aka: [retrieval-augmented generation]           # apelidos p/ busca/merge; [] se nenhum
-status: vivo                                    # vivo | rascunho | obsoleto
-fontes:                                          # caminhos lake/ ou URLs que sustentam o conceito
-  - lake/inteligencia-artificial/elite-wiki/arquitetura/blueprint-sistema-rag-para-suporte-a-alunos.md
-aulas: [16, 17]                                 # ordens de aula que usam o conceito (na trilha)
-atualizado_em: 2026-06-15
----
-```
-
-### Anatomia (ordem fixa)
-
-1. **Frontmatter** — acima.
-2. **Definição** — 1 parágrafo, primeiro, denso. O que é, em voz própria. Sem heading.
-3. **`## Em uma frase`** — a versão de 1 linha que cabe num slide. (boa p/ query/RAG futuro)
-4. **`## O que precisa saber`** — corpo: como funciona, partes, quando usar. Liga
-   conceitos vizinhos com `[[wikilinks]]` no fluxo do texto, não numa lista solta.
-5. **`## Erros comuns`** — armadilhas reais e diagnosticáveis (alimenta `:::atencao` das aulas).
-6. **`## Onde aparece`** — backlinks: aulas e outros conceitos que dependem deste.
-7. **`## Fontes`** — proveniência: de qual material do `lake/` veio cada afirmação.
-
-Restrições:
-- Voz própria. **Nunca** colar trechos longos da fonte — reescrever.
-- Sem `#` H1 no corpo (título vem do frontmatter).
-- Um conceito não vira aula nem ao contrário: conceito é o tijolo, aula é a parede.
-- `tipo: entidade` para pessoas/orgs/produtos (ex: `[[karpathy]]`, `[[claude-code]]`);
-  `tipo: sintese` para páginas que respondem uma pergunta cruzando vários conceitos.
-
----
-
-## 3. Convenção de links
-
-- `[[slug]]` — link para conceito. Use o slug exato do arquivo.
-- `[[slug|texto exibido]]` — quando a frase pede outra forma.
-- Linkar **liberalmente**. Um `[[slug]]` cujo arquivo ainda não existe é um *stub
-  intencional* — marca dívida, vira tarefa de `ingest`, não é erro.
-- Aulas (`canonica.md`) **também** linkam conceitos com `[[slug]]`. É assim que o
-  `lint` cruza aula↔conceito e mantém a seção `## Onde aparece` correta.
-
----
-
-## 4. Arquivos de controle da wiki
-
-### `conceitos/index.md` — catálogo
-Uma linha por conceito, agrupado por disciplina. Formato:
-`- [[slug]] — resumo de uma linha · status · aulas [16,17]`
-Regenerável por completo a partir dos frontmatters (operação `regenerar-index`).
-
-### `conceitos/log.md` — diário append-only
-Registro cronológico, prefixo parseável. **Nunca reescrever linhas antigas.**
-```
-## [2026-06-15] ingest | blueprint-sistema-rag (elite-wiki) → [[rag]], [[chunking]], [[embeddings]]
-## [2026-06-15] lint | 2 órfãos, 1 link morto [[vector-store]] → criado stub
-## [2026-06-16] query | "RAG vs fine-tuning" → resposta promovida a [[rag-vs-fine-tuning]] (sintese)
-```
-
----
-
-## 4.1 Ferramentas operacionais
-
-### `tools/gerar_manifesto.py`
-Gerador/validador oficial do `manifesto.json`. Usa somente stdlib. Sempre rodar
-após criar, aprovar ou editar aula canônica.
-
-```powershell
-python tools/gerar_manifesto.py --check  # valida sem escrever
-python tools/gerar_manifesto.py          # valida e reescreve manifesto.json
-```
-
-### `tools/transcrever/`
-Entrada de áudio/vídeo para o lake. Transcreve localmente com `faster-whisper` e
-salva Markdown bruto em `lake/{disciplina}/{fonte}/`.
-
-```powershell
-cd tools\transcrever
-.\transcrever.ps1 "C:\videos\aula.mp4" --disciplina inteligencia-artificial --fonte ia-coders --titulo "MCP na prática"
-```
-
-Saída de transcrição é **fonte bruta** (`status: bruto`); não editar para virar
-aula. A curadoria acontece depois, via `prof-toni`, gerando `canonica.md`.
-
-### `tools/extrair_rco.py`
-Entrada das aulas RCO (SEED-PR) para o lake. Lê `lake/AULAS_RCO-*/AULAS_RCO/{SIGLA}/{N}TRI/{aula}/`
-(slides `.pptx` + `ATIVIDADE`/`PRÁTICA` `.docx`), une os zips do Drive e grava
-`lake/{disciplina}/rco/{n}tri/{aula}.md` com `tipo: rco-seed` e `status: bruto`.
-Determinístico, stdlib, reexecutável (`--check`). Siglas: AMS, APS, IAC, ITE, PDS, PFE.
-
-### `tools/triar_rco.py` + `tools/jev.py`
-Triagem das aulas RCO extraídas com o Jev (TypeSafe; `$TYPESAFE_API_KEY`). Uma
-chamada por aula responde se alguma aula aprovada já cobre o conteúdo, a natureza
-e a densidade conceitual; saída em `docs/rco-triagem.md`. É **triagem**: marca ⚠
-o que tem confiança baixa e nunca cria, promove ou edita conceito ou aula.
-
-### `tools/gerar_mapas.py`
-Gera os MOCs do Obsidian em `mapas/` a partir de `fontes` dos conceitos
-(módulo → matéria → aula nas pós) e `mapas/index.md`, página de entrada do vault.
-Derivado como o `index.md`: nunca editar à mão. As vistas `mapas/*.base`
-(Obsidian Bases) são escritas à mão.
-
-### `tools/notion-wiki/`
-Scripts de apoio para puxar/reorganizar material vindo do Notion. Tratar a saída
-como fonte ou insumo intermediário: antes de publicar, ela precisa passar pelas
-mesmas regras de `lake/`, conceitos e aulas canônicas.
-
-### `tools/imagen-generator/`
-Pacote do fluxo visual v6 (`prompt.xml`, logo oficial para a etapa externa e guia
-de uso). **Não é uma ferramenta CLI.** Antes de gerar, regenerar ou editar capa,
-infográfico ou imagem de conteúdo, ler `.claude/skills/gerar-imagem-aula/SKILL.md`
-e o `prompt.xml` integralmente.
-
-O v6 tem **dois perfis** e escolher um é o passo 0: `capa` (3:2, densa, 4–10
-blocos com micro-parágrafo, subtítulo e faixa de rodapé — é o `capa.png` que o
-portal exibe) e `infografico` (16:9, enxuto, 2–5 blocos só com rótulos — vai em
-`img/` e explica um conceito no miolo). As regras de densidade vieram da
-auditoria das 54 imagens já aprovadas do acervo; a regra `R3` do XML cataloga 12
-defeitos que já foram publicados de verdade e precisa ser percorrida item a item
-antes de aceitar qualquer arte.
-
-O agente monta o prompt v6 resolvido e delega a geração ao Codex CLI (padrão);
-o Projeto do ChatGPT no navegador é o caminho alternativo. Nos dois casos o agente
-audita o PNG que voltar — detalhes na skill `gerar-imagem-aula`.
-
-O modelo generativo entrega **somente a arte-base**, na proporção do perfil
-(`capa` 3:2, `infografico` 16:9), com os dois cantos superiores escuros e vazios.
-Nunca anexar a logo ao modelo, desenhar/aplicar marca, escrever a identificação
-do curso ou normalizar o canvas. Logo, curso e canvas canônico são aplicados depois
-pela action determinística do Photoshop. As capas/infográficos continuam sendo
-ativos complementares; não entram no `manifesto.json` e não substituem a
-`canonica.md`.
-
----
-
-## 5. Workflows — ingest · query · lint
-
-### `ingest` — material novo entra
-1. Ler a fonte no `lake/` (nunca editá-la). Se a fonte veio de transcrição ou
-   Notion, validar metadados mínimos: disciplina, origem/fonte, título e data.
-2. Extrair conceitos/entidades. Para cada um: criar ou **atualizar** a página em
-   `conceitos/{disciplina}/`. Atualizar é o caso comum — checar se já existe (por
-   `slug` ou `aka`) antes de criar duplicata.
-3. Cruzar referências: adicionar `[[wikilinks]]` nos vizinhos; atualizar `## Onde aparece`.
-4. Atualizar `index.md` e anexar linha em `log.md`.
-5. Tipicamente toca 5–15 arquivos numa ingestão. Normal.
-
-### `query` — pergunta do humano
-1. Buscar nas páginas de conceito relevantes (não no lake bruto).
-2. Sintetizar resposta **com citações** (`[[slug]]` + fonte).
-3. Se a resposta tem valor durável, **promovê-la** a página `tipo: sintese` e logar.
-
-### `lint` — saúde periódica (substitui auditoria manual)
-Varre `conceitos/` e `aulas/` e reporta (uma linha por achado):
-- **Link morto** — `[[slug]]` sem arquivo correspondente.
-- **Órfão** — página sem nenhum inlink (ninguém aponta pra ela).
-- **Backlink faltando** — aula cita `[[slug]]` mas o conceito não lista a aula em `## Onde aparece` (ou vice-versa).
-- **Stale** — `atualizado_em` antigo e a `fonte` mudou depois.
-- **Contradição** — duas páginas afirmam coisas incompatíveis sobre o mesmo conceito.
-- **Duplicata** — duas páginas mesmo conceito (checar `aka`, inclusive entre idiomas).
-- **Frontmatter incompleto** — campo obrigatório faltando.
-Saída do lint nunca aplica correção sozinha em conteúdo — propõe; Toni aprova merge/obsolescência.
-
----
-
-## 5.1 Contrato de import do portal (INVIOLÁVEL)
-
-O **ProfessorDash 2.0** importa as aulas deste vault baixando o tarball do repo e
-lendo `manifesto.json` + `aulas/**/canonica.md` (management command `import_acervo`).
-A geração **SEMPRE** produz saída compatível com este contrato. Quebrar qualquer
-item abaixo = aula não aparece no portal.
-
-**1. `manifesto.json` na raiz contém:**
-- `disciplinas[]`: objetos `{ "slug", "label", "serie", "status", "trilhas": [ { "slug", "label" } ] }`.
-- `lessons[]`: objetos `{ "disciplina", "trilha", "ordem", "slug", "titulo", "status": "aprovada" }`.
-- `conceitos[]`: objetos `{ "slug", "nome", "disciplina" }` — todo nó não obsoleto
-  de `conceitos/`. É por aí que o portal troca `[[slug]]` pelo nome de exibição
-  correto; o slug não tem acento e derivar dele mostraria "aprendizado de maquina"
-  para o aluno. Nas aulas, **prefira `[[slug|rótulo]]`** — o mapa é a rede de
-  segurança para o link sem rótulo.
-- O portal **só importa** lessons com `status: "aprovada"`. Toda aula a publicar
-  **precisa** ter entrada em `lessons[]`. Aula sem entrada no manifesto **não importa**.
-
-**2. Caminho do arquivo:** `aulas/{disciplina-slug}/{trilha-slug}/{NN}-{slug}/canonica.md`
-- `NN` = `ordem` com 2 dígitos (ordem 7 → `07-…`).
-- `{slug}` idêntico ao `slug` do manifesto. disciplina/trilha/ordem/slug do caminho
-  **têm** que casar com o manifesto.
-
-**3. Frontmatter YAML do `canonica.md` — mínimo obrigatório:**
-`titulo`, `disciplina`, `trilha`, `ordem`, `slug`, `status: aprovada`,
-`versao` (int/string) e `atualizado_em` (data ISO `YYYY-MM-DD`).
-- **REGRA CRÍTICA DE ATUALIZAÇÃO:** a cada edição de conteúdo de uma aula já
-  publicada, **incrementar `versao`** (ou avançar `atualizado_em`). O portal só
-  re-importa/atualiza uma aula existente se `versao` **ou** `atualizado_em` mudou;
-  sem mudança ele **pula**. Esquecer de bumpar = edição não aparece no portal.
-  O frontmatter é a fonte de verdade desses dois campos.
-
-**4. Regenerar sempre:** ao adicionar/aprovar/editar aula, **regerar o `manifesto.json`**
-rodando `python tools/gerar_manifesto.py` para `lessons[]` e `disciplinas[]` ficarem
-em sincronia com os arquivos `canonica.md`. O gerador é a única fonte do manifesto —
-nunca editar `manifesto.json` à mão.
-
-> **Validação:** `python tools/gerar_manifesto.py --check` valida sem escrever
-> (exit ≠ 0 se houver divergência). Reporta: aula `aprovada` com caminho/frontmatter
-> inconsistente, `{NN}-{slug}` que não casa com ordem/slug, frontmatter sem campo
-> obrigatório (incl. `versao`/`atualizado_em`/`slug`) e slugs duplicados.
-
-**5. Artefatos fora do contrato:** HTMLs, blueprints, renders e arquivos em
-`**/saidas/` podem ser úteis para aluno ou TCC, mas **não entram no portal** sem
-`aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md` + entrada gerada no manifesto.
-Não adicionar esses artefatos manualmente a `lessons[]`.
-
----
-
-## 6. Relação com a skill `prof-toni`
-
-`prof-toni` governa a camada 3 (aulas canônicas) — ver `.claude/skills/prof-toni/spec/`.
-Este AGENTS.md governa a camada 2 (conceitos) e o pipeline inteiro. Quando uma
-aula é gerada, ela deve linkar os conceitos que usa; quando um conceito muda, o
-`lint` aponta as aulas afetadas. As duas specs são complementares, não concorrentes.
-
----
-
-## 7. Navegação humana (Obsidian)
-
-O vault abre no Obsidian. O grafo de `[[wikilinks]]` é navegável visualmente
-(Graph View) e consultável no celular. O plugin comunitário *Karpathy LLM Wiki*
-pode rodar `ingest/query/lint` pelo GUI, mas o **motor canônico é o Claude Code**
-seguindo este schema — mais dirigível e dentro do versionamento git. O plugin é
-opcional, para navegação/consulta, não fonte de verdade.
+# PROF-TONI — Acervo de Conhecimento do Prof. Toni Coimbra
+
+Segundo cérebro (vault Obsidian) e acervo de aulas do Curso Técnico em Desenvolvimento de Sistemas (SEED-PR,
+alunos de 14 a 18 anos, aulas de 50 min). Pipeline lake → wiki de conceitos → aulas canônicas → saídas; as aulas
+aprovadas são importadas pelo portal ProfessorDash. Status: em produção (89 aulas aprovadas em 2026-09-28).
+
+**Stack:** Markdown + frontmatter YAML (vault Obsidian), Python 3 só com stdlib em `tools/`, faster-whisper
+(`tools/transcrever/`, venv própria via uv), API do Notion, Jev/TypeSafe. Sem CI.
+**Repositório:** https://github.com/elvertoni/head (**público**, branch `main`)  |  **Ambiente de produção:**
+ProfessorDash (repo próprio, Django) importa `manifesto.json` + `aulas/**/canonica.md` do tarball do GitHub.
+
+Arquitetura, estado do vault, comportamento do gerador do manifesto e integrações: `.ai/context.md`.
+Schema da wiki (formato de conceito, links, arquivos de controle, workflows `ingest`/`query`/`lint` e o contrato
+do portal completo em §5.1): `docs/schema-wiki.md` — **leitura obrigatória antes de qualquer `ingest`, `query`
+ou `lint`**.
+
+## Protocolo obrigatório de início de sessão
+Antes de qualquer alteração:
+1. Leia `.ai/context.md`, `.ai/decisions.md` e `.ai/handoff.md`.
+2. Rode `git status` e `git log --oneline -10`.
+3. Responda com um resumo de no máximo 5 linhas: objetivo do projeto, estado atual,
+   tarefa em andamento e próximo passo sugerido.
+4. Aguarde minha confirmação antes de alterar código.
+
+## Checkpoints durante o trabalho
+O limite de tokens pode chegar sem aviso. Após cada marco (tarefa concluída,
+decisão tomada, bug entendido, antes de uma mudança grande), atualize em
+`.ai/handoff.md` apenas as seções "Em andamento" e "Próximos passos" — 3 a 5
+linhas, sem reescrever o arquivo inteiro e sem pedir confirmação.
+
+## Protocolo obrigatório de encerramento / troca
+Quando eu disser "handoff", "vou trocar", "encerrar sessão" ou similar,
+execute as instruções de `.ai/prompts/handoff.md`.
+
+## Regras de memória
+- Decisão técnica relevante tomada na sessão → registrar em `.ai/decisions.md`.
+- Mudança de arquitetura, dependência nova ou módulo novo → atualizar `.ai/context.md`.
+- Nunca apagar entradas de `decisions.md`; decisões revogadas são marcadas como "Substituída por #N".
+- `.ai/handoff.md` e `.ai/sessions/` são **local-only** (gitignored): o repo é público.
+- O ai-memory (MCP) complementa, não substitui estes arquivos: guarda só conhecimento revisado e útil entre
+  projetos. Não duplicar nele o handoff nem as decisões (ver decisão #013).
+- `conceitos/log.md` é o diário da wiki (append-only), não o log de decisões do projeto.
+
+## Invariantes do acervo (contrato do portal — INVIOLÁVEL)
+1. **A canônica é a fonte única de verdade.** HTML, PDF e import do portal derivam de `canonica.md`; nunca
+   editar uma saída — corrigir a canônica e regerar.
+2. **Regerar o manifesto** com `python tools/gerar_manifesto.py` após adicionar, aprovar ou editar aula, ou
+   mudar frontmatter. Nunca editar `manifesto.json` à mão.
+3. **Bump de versão:** toda edição em aula `status: aprovada` incrementa `versao` ou avança `atualizado_em`;
+   sem isso o portal pula a aula.
+4. **O lake é imutável:** nenhum agente edita `lake/` nem `aulas/**/fontes/`; só lê.
+5. **Frontmatter e caminho do contrato:** `titulo`, `disciplina`, `trilha`, `ordem`, `slug`, `status`,
+   `versao`, `atualizado_em`; caminho `aulas/{disciplina}/{trilha}/{NN}-{slug}/canonica.md` com `NN` = `ordem`
+   em 2 dígitos, casando com o manifesto. O portal só importa `status: aprovada`.
+6. **Publicar são quatro passos, nesta ordem:** `gerar_manifesto.py` → push do acervo → deploy do portal →
+   reimport com `--force` (botão "Importar do GitHub" em `/catalogo/` ou `import_acervo --force` no
+   container). Pular o passo 4 deixa o portal defasado sem erro nenhum.
+
+## Convenções do projeto
+- Conteúdo, docs, comentários e commits em português (pt-BR); identificadores das tools também em pt-BR.
+- Commits: Conventional Commits em pt-BR com os escopos do acervo — `aula(<disciplina>)`,
+  `imagem(<disciplina>)`, `design(...)`, `feat(wiki)`, `feat(tools)`, `fix(...)`, `docs(...)`, `chore(...)`.
+  Direto na `main`, sem fluxo de PR.
+- Git sempre por SSH com a conta `elvertoni` (`git@github.com:elvertoni/...`); nunca HTTPS.
+- Pasta de aula: `canonica.md`, `imagens.md` (sempre gerado), `capa.png`, `img/` (figuras do corpo, só
+  aparecem se referenciadas como `![alt](img/arquivo.png)`) e `fontes/` (imutável).
+- **Nunca renumerar** aula já importada: `NN`/`ordem` faz parte da chave do portal e gera duplicata.
+- O corpo da canônica usa catálogo **fechado** de blocos (6 callouts, `:::roteiro`, ` ```quiz `,
+  ` ```diagrama-progressivo `) — `.claude/skills/prof-toni/spec/01-CANONICA.md` §5–§7. Interativos são YAML
+  real; cada pergunta de quiz tem exatamente uma `correta: true`; `rotulo` de diagrama sem número próprio.
+- Aula nova só pela skill `prof-toni` (plano → OK do Toni → rubrica 7/7 de `spec/02-RUBRICA.md`), uma por vez.
+  Imagens só pela skill `gerar-imagem-aula`; apostila HTML standalone pela `aula-estatica`.
+- Ingestão não é publicação: fonte no `lake/` pode alimentar conceitos sem virar aula. Aula nasce só de decisão
+  pedagógica explícita.
+- Wiki: `slug` único em todo o vault; atualizar conceito existente (por `slug`/`aka`) antes de criar duplicata;
+  nas aulas, preferir `[[slug|rótulo]]`.
+- Tools continuam stdlib-only (sem PyYAML). Rodar os testes antes de commitar mudança em `tools/`.
+- Antes de editar qualquer `mapas/*.base`, ler a skill `obsidian-bases` (plugin kepano em `.claude/settings.json`).
+- `hermes/skills/` são skills do agente Quíron (Hermes, na VPS), não do Claude Code — ver `hermes/README.md`.
+- Ao tocar no acervo, rode também `python tools/gerar_manifesto.py --check` e `git status --short` para não
+  misturar trabalho humano não versionado com mudanças do agente.
+
+## Comandos úteis
+- Subir ambiente: não há servidor — a raiz é o vault do Obsidian (`mapas/index.md` é a página de entrada).
+  Venv do transcritor numa máquina nova: `cd tools\transcrever; uv venv --python 3.12; uv pip install -r requirements.txt`
+- Testes: `python -m unittest discover -s tests -v` (um módulo: `python -m unittest tests.test_wiki -v`)
+- Manifesto (no lugar de migrações): `python tools/gerar_manifesto.py --check` · `python tools/gerar_manifesto.py`
+- Wiki: `python tools/lint_wiki.py` (`--format json`, `--fail-on error`) · `python tools/gerar_indice.py --check|--write`
+  · `python tools/gerar_mapas.py [--check]`
+- RCO (SEED): `python tools/extrair_rco.py [--sigla AMS] [--check]` · `python tools/triar_rco.py` (precisa de
+  `$env:TYPESAFE_API_KEY`)
+- Notion (repo → Notion, precisa de `$env:NOTION_TOKEN`): `python tools/sync_notion.py` (só plano) · `--check` ·
+  `--apply` · `--apply --prune`. Entrada do Notion para o lake: `python tools/notion-wiki/puxar_notion.py`
+- Transcrever áudio/vídeo para o lake: `.\tools\transcrever\transcrever.ps1 "C:\videos\aula.mp4" --disciplina <slug> --fonte <fonte> --titulo "<título>"`
+
+## Não fazer
+- Não editar `lake/`, `aulas/**/fontes/` nem saídas geradas (`**/saidas/`, apostilas `.html`).
+- Não editar à mão arquivos derivados: `manifesto.json`, `conceitos/index.md`, `mapas/*.md` (exceção única: o
+  seed de disciplina nova no manifesto — ver `.ai/context.md`).
+- Não reescrever linhas antigas de `conceitos/log.md`.
+- Não aplicar sozinho correção de conteúdo apontada pelo lint: fusão e obsolescência exigem aprovação do Toni.
+- Não republicar trecho literal de `lake/**/elite-wiki/` (curso pago de terceiro, local-only).
+- Não rebaixar a canônica para o formato do repo legado `elvertoni/ProfToniCoimbra`.
+- Não tratar o material das duas pós-graduações no `lake/` como fonte de aula sem pedido explícito.
+- Não anexar a logo ao modelo de imagem: logo, curso e canvas são aplicados depois pela action do Photoshop.
+- Não commitar segredos (`NOTION_TOKEN`, `TYPESAFE_API_KEY`, tokens de painel), `.env`, `.ai/handoff.md` nem
+  `.ai/sessions/`.

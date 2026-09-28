@@ -22,7 +22,7 @@ metadata:
 Procedimento para o Quíron ingerir material novo e **curar** o segundo cérebro do
 Toni com segurança. O repositório é clonado na VPS (ex.: `~/projetos/PROF-TONI`).
 **Sempre opere de dentro da raiz do repo** — lá o `AGENTS.md`/`CLAUDE.md` do projeto
-já carrega o schema completo. **Leia `AGENTS.md` §5 antes de qualquer ingest.**
+é carregado. O schema da wiki vive em `docs/schema-wiki.md`. **Leia `docs/schema-wiki.md` §5 antes de qualquer ingest.**
 
 Distinta da skill `operar-acervo` (que opera o warehouse: manifesto, render, ops de
 aula). Esta governa a **entrada** (lake) e a **camada 2** (grafo de conceitos).
@@ -69,7 +69,7 @@ cd ~/projetos/PROF-TONI && git pull
 git status --short          # não misturar trabalho humano não versionado
 ```
 
-Leia `AGENTS.md` §2 (formato do conceito) e §5 (workflows) antes de escrever.
+Leia `docs/schema-wiki.md` §2 (formato do conceito) e §5 (workflows) antes de escrever.
 
 ## Passo 1 — receber o material (intake)
 
@@ -118,12 +118,12 @@ edite esse arquivo depois para "virar aula"; a curadoria é no passo 3.
 
 ## Passo 3 — curar o grafo de conceitos (o "aprender")
 
-Este é o coração do ingest (`AGENTS.md` §5). Para o material:
+Este é o coração do ingest (`docs/schema-wiki.md` §5). Para o material:
 
 1. **Extrair** conceitos e entidades relevantes.
 2. Para cada um: **checar se já existe** (`slug`/`aka`) em `conceitos/`. Se existe,
    **atualizar** (enriquecer corpo, adicionar fonte, avançar `atualizado_em`). Se
-   não, **criar** `conceitos/{disciplina}/{slug}.md` no formato de `AGENTS.md` §2:
+   não, **criar** `conceitos/{disciplina}/{slug}.md` no formato de `docs/schema-wiki.md` §2:
    - Frontmatter completo: `conceito, slug, disciplina, tipo (conceito|entidade|
      sintese), aka, status (vivo|rascunho|obsoleto), fontes, aulas, atualizado_em`.
    - Anatomia fixa: Definição (1 parágrafo denso) → `## Em uma frase` →
@@ -149,7 +149,7 @@ rubrica como gate). Não burlar. Depois, regenerar manifesto (skill `operar-acer
 Varrer `conceitos/` e reportar uma linha por achado (NÃO corrigir sozinho — propor):
 link morto (`[[slug]]` sem arquivo), órfão (sem inlink), backlink faltando, stale,
 contradição, duplicata (checar `aka`), frontmatter incompleto. Toni aprova merge/
-obsolescência. Detalhe em `AGENTS.md` §5 `lint`.
+obsolescência. Detalhe em `docs/schema-wiki.md` §5 `lint`.
 
 ## Checklist de saída
 

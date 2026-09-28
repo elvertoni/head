@@ -60,3 +60,7 @@ lake/**/*.jpg
 lake/**/*.jpeg
 lake/**/*.webp
 lake/**/*.gif
+
+# Memória portável: estado de sessão é local-only (repo público — .ai/decisions.md #014)
+.ai/handoff.md
+.ai/sessions/
