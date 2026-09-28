@@ -72,7 +72,7 @@
 - **Status:** Aceita
 - **Contexto:** Slugs não têm acento, então o portal mostraria "aprendizado de maquina" ao derivar o nome do slug (commit `38da690`).
 - **Decisão:** `manifesto.json` leva `conceitos[]` com `{slug, nome, disciplina}` de todo nó não obsoleto. Nas aulas, preferir `[[slug|rótulo]]`; o mapa é a rede de segurança.
-- **Alternativas descartadas:** <!-- TODO: confirmar -->
+- **Alternativas descartadas:** O portal derivar o nome do slug (sem acento; mostraria "aprendizado de maquina" ao aluno).
 - **Consequências:** O contrato do portal (§5.1 do schema) inclui `conceitos[]`.
 
 ## #006 — Notion como projeção de mão única do índice de aulas
@@ -84,7 +84,7 @@
 - **Consequências:** Toda mudança de aula nasce no repo; o Notion é regenerável.
 
 ## #005 — Nunca rebaixar a canônica para o formato do repo legado
-- **Data:** <!-- TODO: confirmar --> (registrada no ai-memory antes de 2026-07-29)
+- **Data:** 2026-06-14 (inferida — data da memória legada `acervo-legado-regerar-do-zero.md`)
 - **Status:** Aceita
 - **Contexto:** O repo `elvertoni/ProfToniCoimbra` tem ~70 aulas no formato antigo do ProfessorDash, sem callouts, quiz, diagrama nem roteiro.
 - **Decisão:** O repo legado é só referência histórica da grade de disciplinas. As aulas seguem a skill `prof-toni`; nunca retrofitar para o frontmatter mínimo antigo. Em conflito entre "compatível com o antigo" e "melhor para o aluno", ganha o aluno.
@@ -96,7 +96,7 @@
 - **Status:** Aceita
 - **Contexto:** O ProfessorDash importa pelo `manifesto.json`; edição manual divergia dos arquivos (commit `a7eb0b7`).
 - **Decisão:** `tools/gerar_manifesto.py` é a única fonte do manifesto, deriva a identidade do caminho e valida com `--check`. As tools usam só stdlib (parser YAML mínimo em `wiki_core.py`, sem PyYAML).
-- **Alternativas descartadas:** <!-- TODO: confirmar -->
+- **Alternativas descartadas:** Manifesto mantido à mão, como no commit `71f6e21` (inferida).
 - **Consequências:** Contrato de import inviolável (§5.1 do schema). As tools rodam em qualquer Python sem instalar nada.
 
 ## #003 — Wiki de conceitos no modelo llm-wiki do Karpathy

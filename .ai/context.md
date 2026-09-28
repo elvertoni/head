@@ -165,7 +165,4 @@ pequeno; `lint_wiki.py` mostra cobertura e backlinks faltando.
 - A triagem RCO (`docs/rco-triagem.md`) é auxílio de ordenação: pares errados voltaram com confiança de 0,88 a
   0,96. Equivalência abaixo de 0,7 vem marcada com ⚠.
 - `lake/**/elite-wiki/` não vem no clone; recriar com `python tools/notion-wiki/puxar_notion.py`.
-- Exports de conversa do Codex (`codex-session-*.md`, cerca de 9,7 MB) ficam na raiz, gitignored.
-- A memória antiga do ai-memory (`_rules/git-ssh-duas-contas.md`) diz que o repo é privado; o `gh` informa
-  **público** em 2026-09-28.
 - Memória legada congelada em `~/.claude/projects/C--PROJETOS-PROF-TONI/memory/` (só histórico).
