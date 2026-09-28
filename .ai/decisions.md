@@ -118,7 +118,7 @@
 ## #001 — Arquitetura lake → warehouse com a canônica como fonte única
 - **Data:** 2026-06-14 (inferida)
 - **Status:** Aceita
-- **Contexto:** As aulas precisavam sair em vários formatos (portal, apostila HTML, PDF) sem divergir (commits `a066e59`, `71f6e21`).
-- **Decisão:** `lake/` guarda o bruto imutável; `aulas/.../canonica.md` é a fonte única; `**/saidas/` é derivado e não versionado.
-- **Alternativas descartadas:** <!-- TODO: confirmar -->
-- **Consequências:** Erro de conteúdo se corrige na canônica e a saída é regerada; nunca se edita o `.html`.
+- **Contexto:** As aulas precisavam sair em vários formatos (portal, apostila HTML, PDF) sem divergir (commits `a066e59`, `71f6e21`). Também era preciso um lugar de ingestão inicial: o conhecimento de um material tem que continuar no vault mesmo que o original seja apagado depois (motivo confirmado pelo Toni em 2026-09-28).
+- **Decisão:** `lake/` é o ponto de entrada e guarda o bruto imutável; o conhecimento extraído vive em `conceitos/` e `aulas/.../canonica.md`, que é a fonte única da aula; `**/saidas/` é derivado e não versionado.
+- **Alternativas descartadas:** Trabalhar direto sobre os arquivos originais, sem etapa de ingestão — o conhecimento ficaria preso ao original e se perderia junto com ele.
+- **Consequências:** Erro de conteúdo se corrige na canônica e a saída é regerada; nunca se edita o `.html`. Perder o bruto não apaga o conhecimento: os avisos `source-missing` do lint (fonte que não está nesta máquina) são esperados e não significam conteúdo perdido; a lacuna de proveniência só precisa ficar explícita.
