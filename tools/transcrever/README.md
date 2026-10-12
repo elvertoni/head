@@ -12,6 +12,13 @@ uv venv --python 3.12
 uv pip install -r requirements.txt
 ```
 
+No WSL (Linux) o venv fica fora do repo, no disco do próprio WSL, porque em `/mnt/d` ele é lento:
+
+```bash
+uv venv --python 3.12 ~/.venvs/prof-toni-transcrever
+uv pip install --python ~/.venvs/prof-toni-transcrever/bin/python -r tools/transcrever/requirements.txt
+```
+
 Roda na **GPU NVIDIA** (RTX 3050 detectada, `float16`). Sem GPU, cai automático pra CPU (`int8`, mais lento). Não precisa instalar ffmpeg — o decode de vídeo vem embutido (PyAV).
 
 ## Uso
@@ -22,6 +29,13 @@ Roda na **GPU NVIDIA** (RTX 3050 detectada, `float16`). Sem GPU, cai automático
 
 # com título legível e marcação de tempo
 .\transcrever.ps1 "C:\videos\aula-mcp.mp4" --disciplina inteligencia-artificial --fonte ia-coders --titulo "MCP na prática" --timestamps
+```
+
+No WSL o wrapper é o `transcrever.sh`, com as mesmas opções (ele aponta o `LD_LIBRARY_PATH` para o cuBLAS e o
+cuDNN do venv; sem isso a GPU não carrega):
+
+```bash
+tools/transcrever/transcrever.sh /mnt/c/videos/aula-mcp.mp4 --disciplina inteligencia-artificial --fonte ia-coders
 ```
 
 Saída: `lake/inteligencia-artificial/ia-coders/mcp-na-pratica.md` (frontmatter + transcrição, `status: bruto`).

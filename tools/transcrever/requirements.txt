@@ -1,4 +1,6 @@
 faster-whisper>=1.1.0
+# av 19 removeu o metadata_errors que o faster-whisper 1.2 ainda passa ao abrir o audio.
+av<19
 # DLLs CUDA p/ rodar na GPU NVIDIA no Windows (cuBLAS + cuDNN 9).
 # Inofensivos se cair no fallback CPU.
 nvidia-cublas-cu12

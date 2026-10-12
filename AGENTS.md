@@ -83,6 +83,7 @@ execute as instruções de `.ai/prompts/handoff.md`.
 ## Comandos úteis
 - Subir ambiente: não há servidor — a raiz é o vault do Obsidian (`mapas/index.md` é a página de entrada).
   Venv do transcritor numa máquina nova: `cd tools\transcrever; uv venv --python 3.12; uv pip install -r requirements.txt`
+  (no WSL o venv fica em `~/.venvs/prof-toni-transcrever` e o wrapper é o `transcrever.sh`; ver `tools/transcrever/README.md`)
 - Testes: `python -m unittest discover -s tests -v` (um módulo: `python -m unittest tests.test_wiki -v`)
 - Manifesto (no lugar de migrações): `python tools/gerar_manifesto.py --check` · `python tools/gerar_manifesto.py`
 - Wiki: `python tools/lint_wiki.py` (`--format json`, `--fail-on error`) · `python tools/gerar_indice.py --check|--write`
