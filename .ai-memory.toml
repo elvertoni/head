@@ -1,0 +1,4 @@
+# Mantém o histórico deste repositório no ai-memory sob o nome antigo.
+# Sem isto, o nome viria do remoto do git e seria "elvertoni-head".
+workspace = "default"
+project = "PROF-TONI"
