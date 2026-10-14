@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-doc="gabarito">
+<head>
+<meta charset="utf-8">
+<title>Gabarito · Formulário passo a passo · Prof Toni Coimbra</title>
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-soft:#475569;
+  --line:#c7cedb;
+  --line-soft:#e2e8f0;
+  --blue:#023E8A;
+  --cyan:#00B4D8;
+  --wash:#f4f7fb;
+  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
+body{font-size:9.2pt;line-height:1.32;}
+
+@page{ size:A4; margin:11mm 12mm 10mm 12mm; }
+
+.page{
+  width:186mm;
+  margin:0 auto;
+  padding:0;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+
+/* ---------- cabeçalho ---------- */
+.head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:6px;
+}
+.head .who{font-size:8pt;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;}
+.head h1{margin:1px 0 0;font-size:15pt;letter-spacing:-.01em;}
+.head h1 span{color:var(--blue);}
+.head .tag{font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;}
+.runhead{
+  display:flex;justify-content:space-between;font-size:7.6pt;color:var(--ink-soft);
+  border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:6px;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+
+/* ---------- identificação ---------- */
+.ident{
+  display:grid;grid-template-columns:1fr 30mm 26mm 20mm;gap:0;
+  border:1px solid var(--line);margin-bottom:6px;
+}
+.ident div{padding:5px 6px 12px;border-right:1px solid var(--line);font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+.ident div:last-child{border-right:0;background:var(--wash);}
+
+/* ---------- blocos ---------- */
+.instr{
+  border-left:3px solid var(--cyan);background:var(--wash);
+  padding:5px 8px;font-size:8.5pt;margin-bottom:6px;
+}
+.instr p{margin:0 0 2px;}
+.instr p:last-child{margin:0;}
+h2.ex{
+  font-size:10pt;margin:0 0 3px;padding:1px 0 2px;
+  border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+h2.ex .pts{font-size:7.6pt;font-weight:600;color:var(--ink-soft);font-family:var(--mono);}
+h2.ex b{color:var(--blue);}
+.mono,code{font-family:var(--mono);font-size:8.4pt;}
+code{background:var(--wash);padding:0 2px;border-radius:2px;white-space:nowrap;}
+pre{
+  font-family:var(--mono);font-size:8.1pt;line-height:1.36;
+  background:var(--wash);border:1px solid var(--line-soft);
+  border-radius:3px;padding:5px 7px;margin:0;white-space:pre-wrap;
+}
+.rule{border-bottom:1px dotted #94a3b8;height:14px;margin:0 0 2px;}
+table{width:100%;border-collapse:collapse;font-size:8.4pt;margin:0;}
+th,td{border:1px solid var(--line);padding:3px 5px;text-align:left;vertical-align:top;}
+th{background:var(--wash);font-size:7.6pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
+td.fill{height:18px;}
+.cap{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px;}
+.small{font-size:8.2pt;color:var(--ink-soft);}
+.foot{
+  margin-top:6px;border-top:1px solid var(--line);padding-top:4px;
+  font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;
+}
+
+/* ---------- passos ---------- */
+.passo{margin:0 0 6px;break-inside:avoid;}
+.pc{display:grid;grid-template-columns:99mm 1fr;gap:4mm;align-items:start;}
+.nota{font-size:8.3pt;}
+.nota p{margin:0 0 3px;}
+.chk{list-style:none;margin:3px 0 0;padding:0;font-size:8.4pt;}
+.chk li{padding-left:15px;text-indent:-15px;margin:2px 0;font-weight:600;}
+.chk li::before{content:"☐ ";font-weight:400;font-size:10pt;line-height:1;}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:5mm;align-items:start;}
+.cols2 pre{margin-bottom:3px;}
+.aviso{
+  border:1px solid var(--line);border-radius:3px;padding:5px 8px;
+  font-size:8.5pt;margin:0 0 6px;
+}
+.q{margin:5px 0 2px;}
+.q .n{font-weight:700;color:var(--blue);}
+.box{border:1px solid var(--line);border-radius:3px;padding:5px 8px;font-size:8.4pt;}
+.box p{margin:0 0 3px;}
+.box p:last-child{margin:0;}
+
+/* ---------- miniatura do resultado ---------- */
+.mock{border:1px solid var(--line);border-radius:3px;background:#eef1f4;padding:2mm 9mm 3mm;margin-bottom:4px;}
+.mock .t{font-weight:700;font-size:9.5pt;margin:0 0 1.2mm;}
+.mock .card{background:#fff;border:1px solid #d9dee3;border-radius:4px;padding:.8mm 2.5mm 2.5mm;}
+.mock .l{font-size:6.4pt;font-weight:700;margin:1.2mm 0 .4mm;}
+.mock .f{border:1px solid #7b8794;border-radius:2px;height:3.9mm;font-size:6pt;line-height:1;color:#7b8794;padding:.7mm 1.2mm;}
+.mock .f.ta{height:6.5mm;}
+.mock .b{margin-top:2mm;background:#2f6f4e;color:#fff;text-align:center;border-radius:2px;font-size:6.6pt;font-weight:700;padding:1.1mm;}
+
+/* ---------- gabarito ---------- */
+.warn{border-left:3px solid #f59e0b;background:#fff7ed;padding:5px 8px;font-size:8.5pt;margin-bottom:7px;}
+h2.g{font-size:10pt;margin:8px 0 3px;padding-bottom:2px;border-bottom:1px solid var(--line);color:var(--blue);}
+h2.g:first-child{margin-top:0;}
+.r{margin:0 0 4px;font-size:8.8pt;}
+.r .n{font-weight:700;color:var(--blue);}
+.pt{font-size:8.2pt;color:var(--ink-soft);}
+.cod{font-size:7.9pt;line-height:1.33;}
+.cols-cod{display:grid;grid-template-columns:104mm 1fr;gap:4mm;align-items:start;}
+.cols-cod .cod{font-size:7.6pt;white-space:pre;overflow:hidden;}
+ul.l{margin:2px 0 4px;padding-left:14px;font-size:8.8pt;}
+ul.l li{margin:1.5px 0;}
+td,th{font-size:8.4pt;}
+</style>
+</head>
+<body>
+
+<!-- ============================ PÁGINA 1 · CÓDIGO FINAL ============================ -->
+<section class="page">
+  <div class="head">
+    <div>
+      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Programação Front-End</div>
+      <h1>Gabarito e guia — <span>Formulário</span> passo a passo</h1>
+    </div>
+    <div class="tag">Prof. Toni Coimbra<br>2ª série · feita no computador<br>Total: 3,0 pontos + 0,3 de bônus</div>
+  </div>
+
+  <div class="warn"><b>Folha do professor.</b> Não distribuir junto com a atividade. Abaixo, os dois arquivos como ficam ao fim do passo 10. São 77 linhas para digitar: a frente (HTML) já entrega um formulário que funciona, então dá para parar ali e fazer o verso em outra aula. O tempo é estimativa, a folha ainda não foi aplicada em sala.</div>
+
+  <div class="cols-cod">
+    <div>
+      <h2 class="ex"><span><b>index.html</b> · passos 1 a 6</span><span class="pts">1,2</span></h2>
+<pre class="cod">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Lista de espera&lt;/title&gt;
+  &lt;link rel="stylesheet" href="estilo.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Entre na lista de espera&lt;/h1&gt;
+  &lt;form&gt;
+    &lt;label for="nome"&gt;Seu nome&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;
+
+    &lt;label for="email"&gt;Seu e-mail&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"
+           placeholder="voce@exemplo.com" required&gt;
+
+    &lt;label for="perfil"&gt;Você é&lt;/label&gt;
+    &lt;select id="perfil" name="perfil" required&gt;
+      &lt;option value=""&gt;Escolha uma opção&lt;/option&gt;
+      &lt;option value="estudante"&gt;Estudante&lt;/option&gt;
+      &lt;option value="professor"&gt;Professor(a)&lt;/option&gt;
+      &lt;option value="outro"&gt;Outro&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;label for="dor"&gt;Sua maior dificuldade hoje&lt;/label&gt;
+    &lt;textarea id="dor" name="dor" rows="4"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Quero entrar na lista&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <p class="small" style="margin:5px 0 0">O formulário não tem <code>action</code>: ao enviar, o navegador recarrega a própria página e põe os dados na barra de endereço. Nada é guardado. É o que a pergunta 1 faz o aluno ver, e é um bom gancho para a conversa “e na landing de verdade, para onde isso vai?”.</p>
+    </div>
+    <div>
+      <h2 class="ex"><span><b>estilo.css</b> · passos 7 a 10</span><span class="pts">0,9</span></h2>
+<pre class="cod">body {
+  max-width: 420px;
+  margin: 32px auto;
+  padding: 0 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #eef1f4;
+  color: #1f2933;
+}
+
+form {
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #d9dee3;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #7b8794;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid #2f6f4e;
+  outline-offset: 2px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #2f6f4e;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #245a3f;
+}</pre>
+    </div>
+  </div>
+
+  <div class="foot"><span>Gabarito · Formulário passo a passo · Prof. Toni Coimbra</span><span>Página 1 de 2</span></div>
+</section>
+
+<!-- ============================ PÁGINA 2 · CORREÇÃO ============================ -->
+<section class="page">
+  <div class="runhead"><span>Gabarito — Formulário passo a passo</span><span>Folha do professor</span></div>
+
+  <div class="cols2">
+    <div>
+      <h2 class="g">Perguntas a caneta (0,9 · 0,3 cada)</h2>
+
+      <p class="r"><span class="n">1.</span> O texto começa assim (os valores mudam conforme o que o aluno digitou):</p>
+<pre class="cod">?nome=Ana&amp;email=ana%40exemplo.com&amp;perfil=estudante
+&amp;dor=Fila+da+cantina</pre>
+      <p class="r">As palavras antes de cada <code>=</code> vêm do atributo <b><code>name</code></b> de cada campo. <span class="pt">0,15 pelo trecho copiado + 0,15 por citar <code>name</code>. Quem responder <code>id</code> errou: os dois têm o mesmo valor na folha, mas quem vai para o endereço é o <code>name</code>. Curiosidades que aparecem: o <code>@</code> vira <code>%40</code> e o espaço vira <code>+</code>.</span></p>
+
+      <p class="r"><span class="n">2.</span> O navegador <b>não enviou</b> e mostrou um aviso no campo. No Chrome: “Inclua um "@" no endereço de e-mail”. Quem causou foi o <b><code>type="email"</code></b>. <span class="pt">0,15 pelo que aconteceu + 0,15 pela causa. Se responder <code>required</code>, dar só metade da causa: o <code>required</code> barra campo vazio, não e-mail mal escrito.</span></p>
+
+      <p class="r"><span class="n">3.</span> Os campos de nome, e-mail e texto longo ficaram <b>mais largos</b> e encostaram na borda direita do cartão. A lista e o botão não mudaram, então tudo ficou desalinhado. Motivo: sem <code>border-box</code>, os 100% valem só para o conteúdo, e o <code>padding</code> (10 + 10) e a borda (1 + 1) são somados por fora: 22px a mais. <span class="pt">0,15 pela observação + 0,15 pela explicação com as próprias palavras (“o padding passou a contar por fora”). A lista e o botão não mudam porque o navegador já calcula a largura deles com a borda incluída.</span></p>
+
+      <h2 class="g">Vistos no computador (2,1)</h2>
+      <ul class="l">
+        <li><b>HTML · 1,2.</b> Os quatro campos e o botão aparecem, e enviar vazio é barrado. Tirar 0,15 por item: rótulo que não leva ao campo (<code>for</code> diferente do <code>id</code>), campo sem <code>name</code>, <code>required</code> faltando, lista sem a opção vazia.</li>
+        <li><b>CSS · 0,9.</b> Conferido na tela: 0,3 pelo cartão centralizado (7), 0,3 pelos campos em linhas próprias e alinhados (8), 0,3 pelo contorno ao apertar Tab e pelo botão verde que escurece (9 e 10).</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="g">Desafio (bônus de até 0,3)</h2>
+
+      <p class="r"><span class="n">A.</span> Entre o e-mail e a lista. O tipo é <code>tel</code>: no celular abre o teclado numérico, mas não valida o formato sozinho.</p>
+<pre class="cod">&lt;label for="telefone"&gt;Seu telefone&lt;/label&gt;
+&lt;input type="tel" id="telefone" name="telefone"&gt;</pre>
+
+      <p class="r" style="margin-top:5px"><span class="n">B.</span> No HTML, antes do botão:</p>
+<pre class="cod">&lt;label&gt;
+  &lt;input type="checkbox" name="novidades"&gt;
+  Quero receber novidades
+&lt;/label&gt;</pre>
+      <p class="r" style="margin-top:3px">A regra <code>input { width: 100% }</code> do passo 8 também vale para a caixa: ela ocupa a linha inteira e empurra o texto para baixo. Conserto, no fim do <code>estilo.css</code>:</p>
+<pre class="cod">input[type="checkbox"] {
+  width: auto;
+}</pre>
+      <p class="r pt" style="margin-top:3px">Aceitar também o conserto com uma classe na caixa.</p>
+
+      <p class="r" style="margin-top:5px"><span class="n">C.</span> O <code>&lt;form&gt;</code> inteiro vai para dentro da <code>&lt;section id="comecar"&gt;</code> da landing. Do CSS, levar os blocos <code>form</code>, <code>label</code>, <code>input, select, textarea</code>, <code>:focus</code> e <code>button</code>. <b>Não levar o <code>body</code></b>: a landing já tem o dela, e o <code>max-width: 420px</code> estreitaria a página toda. Esse limite passa para o <code>form</code>. No lugar de <code>#2f6f4e</code>, usar <code>var(--cor-destaque)</code>.</p>
+
+      <h2 class="g">Travou? Sintoma e causa mais provável</h2>
+      <table>
+        <tr><th style="width:45%">O que o aluno vê</th><th>Onde olhar</th></tr>
+        <tr><td>Nenhum CSS funciona</td><td>Nome do arquivo (<code>estilo.css.txt</code>, <code>Estilo.css</code>), <code>href</code> diferente, arquivos em pastas separadas ou faltou salvar.</td></tr>
+        <tr><td>Um bloco do CSS é ignorado</td><td>Faltou <code>}</code> ou <code>;</code> no bloco de cima.</td></tr>
+        <tr><td>Clicar no rótulo não leva ao campo</td><td><code>for</code> e <code>id</code> escritos de formas diferentes.</td></tr>
+        <tr><td>O resto da página foi parar dentro do campo de texto</td><td>Faltou o <code>&lt;/textarea&gt;</code>.</td></tr>
+        <tr><td>Enviar vazio não é barrado</td><td>Faltou <code>required</code>, ou o botão ficou fora do <code>&lt;form&gt;</code>.</td></tr>
+        <tr><td>Falta um campo depois do <code>?</code></td><td>Aquele campo está sem <code>name</code>.</td></tr>
+        <tr><td>Acentos trocados (Ã©, Ã§)</td><td>Faltou o <code>&lt;meta charset="UTF-8"&gt;</code>.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="foot"><span>Gabarito · Formulário passo a passo · Prof. Toni Coimbra</span><span>Página 2 de 2</span></div>
+</section>
+
+</body>
+</html>

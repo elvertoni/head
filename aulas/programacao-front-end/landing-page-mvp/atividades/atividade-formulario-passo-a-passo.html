@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-doc="atividade">
+<head>
+<meta charset="utf-8">
+<title>Atividade · Formulário passo a passo · Prof Toni Coimbra</title>
+<style>
+:root{
+  --ink:#0f172a;
+  --ink-soft:#475569;
+  --line:#c7cedb;
+  --line-soft:#e2e8f0;
+  --blue:#023E8A;
+  --cyan:#00B4D8;
+  --wash:#f4f7fb;
+  --font: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, "Courier New", monospace;
+}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:var(--font);}
+body{font-size:9.2pt;line-height:1.32;}
+
+@page{ size:A4; margin:11mm 12mm 10mm 12mm; }
+
+.page{
+  width:186mm;
+  margin:0 auto;
+  padding:0;
+  page-break-after:always;
+  break-after:page;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+
+/* ---------- cabeçalho ---------- */
+.head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-bottom:2px solid var(--blue);padding-bottom:4px;margin-bottom:6px;
+}
+.head .who{font-size:8pt;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;}
+.head h1{margin:1px 0 0;font-size:15pt;letter-spacing:-.01em;}
+.head h1 span{color:var(--blue);}
+.head .tag{font-size:7.6pt;text-align:right;color:var(--ink-soft);line-height:1.3;}
+.runhead{
+  display:flex;justify-content:space-between;font-size:7.6pt;color:var(--ink-soft);
+  border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:6px;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+
+/* ---------- identificação ---------- */
+.ident{
+  display:grid;grid-template-columns:1fr 30mm 26mm 20mm;gap:0;
+  border:1px solid var(--line);margin-bottom:6px;
+}
+.ident div{padding:5px 6px 12px;border-right:1px solid var(--line);font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+.ident div:last-child{border-right:0;background:var(--wash);}
+
+/* ---------- blocos ---------- */
+.instr{
+  border-left:3px solid var(--cyan);background:var(--wash);
+  padding:5px 8px;font-size:8.5pt;margin-bottom:6px;
+}
+.instr p{margin:0 0 2px;}
+.instr p:last-child{margin:0;}
+h2.ex{
+  font-size:10pt;margin:0 0 3px;padding:1px 0 2px;
+  border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+h2.ex .pts{font-size:7.6pt;font-weight:600;color:var(--ink-soft);font-family:var(--mono);}
+h2.ex b{color:var(--blue);}
+.mono,code{font-family:var(--mono);font-size:8.4pt;}
+code{background:var(--wash);padding:0 2px;border-radius:2px;white-space:nowrap;}
+pre{
+  font-family:var(--mono);font-size:8.1pt;line-height:1.36;
+  background:var(--wash);border:1px solid var(--line-soft);
+  border-radius:3px;padding:5px 7px;margin:0;white-space:pre-wrap;
+}
+.rule{border-bottom:1px dotted #94a3b8;height:14px;margin:0 0 2px;}
+table{width:100%;border-collapse:collapse;font-size:8.4pt;margin:0;}
+th,td{border:1px solid var(--line);padding:3px 5px;text-align:left;vertical-align:top;}
+th{background:var(--wash);font-size:7.6pt;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft);}
+td.fill{height:18px;}
+.cap{font-size:7.6pt;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin:0 0 3px;}
+.small{font-size:8.2pt;color:var(--ink-soft);}
+.foot{
+  margin-top:6px;border-top:1px solid var(--line);padding-top:4px;
+  font-size:7.4pt;color:var(--ink-soft);display:flex;justify-content:space-between;
+}
+
+/* ---------- passos ---------- */
+.passo{margin:0 0 6px;break-inside:avoid;}
+.pc{display:grid;grid-template-columns:99mm 1fr;gap:4mm;align-items:start;}
+.nota{font-size:8.3pt;}
+.nota p{margin:0 0 3px;}
+.chk{list-style:none;margin:3px 0 0;padding:0;font-size:8.4pt;}
+.chk li{padding-left:15px;text-indent:-15px;margin:2px 0;font-weight:600;}
+.chk li::before{content:"☐ ";font-weight:400;font-size:10pt;line-height:1;}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:5mm;align-items:start;}
+.cols2 pre{margin-bottom:3px;}
+.aviso{
+  border:1px solid var(--line);border-radius:3px;padding:5px 8px;
+  font-size:8.5pt;margin:0 0 6px;
+}
+.q{margin:5px 0 2px;}
+.q .n{font-weight:700;color:var(--blue);}
+.box{border:1px solid var(--line);border-radius:3px;padding:5px 8px;font-size:8.4pt;}
+.box p{margin:0 0 3px;}
+.box p:last-child{margin:0;}
+
+/* ---------- miniatura do resultado ---------- */
+.mock{border:1px solid var(--line);border-radius:3px;background:#eef1f4;padding:2mm 9mm 3mm;margin-bottom:4px;}
+.mock .t{font-weight:700;font-size:9.5pt;margin:0 0 1.2mm;}
+.mock .card{background:#fff;border:1px solid #d9dee3;border-radius:4px;padding:.8mm 2.5mm 2.5mm;}
+.mock .l{font-size:6.4pt;font-weight:700;margin:1.2mm 0 .4mm;}
+.mock .f{border:1px solid #7b8794;border-radius:2px;height:3.9mm;font-size:6pt;line-height:1;color:#7b8794;padding:.7mm 1.2mm;}
+.mock .f.ta{height:6.5mm;}
+.mock .b{margin-top:2mm;background:#2f6f4e;color:#fff;text-align:center;border-radius:2px;font-size:6.6pt;font-weight:700;padding:1.1mm;}
+</style>
+</head>
+<body>
+
+<!-- ============================ PÁGINA 1 · HTML ============================ -->
+<section class="page">
+  <div class="head">
+    <div>
+      <div class="who">Curso Técnico em Desenvolvimento de Sistemas · Programação Front-End</div>
+      <h1>Passo a passo — <span>Formulário</span> em HTML e CSS</h1>
+    </div>
+    <div class="tag">Prof. Toni Coimbra<br>2ª série · feita no computador<br>Valor: 3,0 pontos</div>
+  </div>
+
+  <div class="ident">
+    <div>Nome (ou nomes da dupla)</div>
+    <div>Turma</div>
+    <div>Data</div>
+    <div>Nota</div>
+  </div>
+
+  <div class="instr">
+    <p><b>O que você vai fazer.</b> Construir do zero o formulário de lista de espera da figura. Na <b>frente</b> está o HTML; no <b>verso</b>, o CSS.</p>
+    <p><b>Como fazer.</b> Digite o código, sem copiar e colar. A cada passo: salve (<b>Ctrl+S</b>), atualize o navegador (<b>F5</b>) e só marque a caixa ☐ quando vir o resultado na tela. Travou? Compare com a folha letra por letra antes de chamar o professor.</p>
+    <p><b>Antes de começar.</b> Crie a pasta <code>formulario</code> e, dentro dela, dois arquivos vazios: <code>index.html</code> e <code>estilo.css</code>. Abra o <code>index.html</code> no editor e no navegador.</p>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 1.</b> O esqueleto da página</span><span class="pts">index.html</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="1">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Lista de espera&lt;/title&gt;
+  &lt;link rel="stylesheet" href="estilo.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Entre na lista de espera&lt;/h1&gt;
+  &lt;form&gt;
+    &lt;!-- os campos dos passos 2 a 6 entram aqui --&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <div class="nota">
+        <p class="cap">Como vai ficar no final</p>
+        <div class="mock" aria-hidden="true">
+          <p class="t">Entre na lista de espera</p>
+          <div class="card">
+            <div class="l">Seu nome</div><div class="f"></div>
+            <div class="l">Seu e-mail</div><div class="f">voce@exemplo.com</div>
+            <div class="l">Você é</div><div class="f">Escolha uma opção ▾</div>
+            <div class="l">Sua maior dificuldade hoje</div><div class="f ta"></div>
+            <div class="b">Quero entrar na lista</div>
+          </div>
+        </div>
+        <ul class="chk"><li>O título aparece na tela e a aba se chama “Lista de espera”.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 2.</b> O primeiro campo: nome</span><span class="pts">index.html · dentro do &lt;form&gt;</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="2">    &lt;label for="nome"&gt;Seu nome&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;</pre>
+      <div class="nota">
+        <p><code>&lt;label&gt;</code> é o rótulo, <code>&lt;input&gt;</code> é o campo. O <code>for</code> de um tem de ser <b>igual</b> ao <code>id</code> do outro: é o que liga os dois. <code>required</code> = obrigatório.</p>
+        <ul class="chk"><li>Clico em “Seu nome” e o cursor entra no campo.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 3.</b> O e-mail</span><span class="pts">logo abaixo do passo 2</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="3">    &lt;label for="email"&gt;Seu e-mail&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"
+           placeholder="voce@exemplo.com" required&gt;</pre>
+      <div class="nota">
+        <p>Com <code>type="email"</code> o navegador confere sozinho se o texto tem cara de e-mail. O <code>placeholder</code> é o exemplo em cinza, que some quando a pessoa digita.</p>
+        <ul class="chk"><li>O exemplo em cinza aparece dentro do campo.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 4.</b> A lista de escolha</span><span class="pts">logo abaixo do passo 3</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="4">    &lt;label for="perfil"&gt;Você é&lt;/label&gt;
+    &lt;select id="perfil" name="perfil" required&gt;
+      &lt;option value=""&gt;Escolha uma opção&lt;/option&gt;
+      &lt;option value="estudante"&gt;Estudante&lt;/option&gt;
+      &lt;option value="professor"&gt;Professor(a)&lt;/option&gt;
+      &lt;option value="outro"&gt;Outro&lt;/option&gt;
+    &lt;/select&gt;</pre>
+      <div class="nota">
+        <p><code>&lt;select&gt;</code> é a lista e cada <code>&lt;option&gt;</code> é uma linha dela. O texto entre as tags é o que a pessoa lê; o <code>value</code> é o que o sistema recebe. A primeira opção tem <code>value</code> vazio de propósito: quem não escolher nada é barrado pelo <code>required</code>.</p>
+        <ul class="chk"><li>A lista abre e mostra as três opções.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 5.</b> O campo de texto longo</span><span class="pts">logo abaixo do passo 4</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="5">    &lt;label for="dor"&gt;Sua maior dificuldade hoje&lt;/label&gt;
+    &lt;textarea id="dor" name="dor" rows="4"&gt;&lt;/textarea&gt;</pre>
+      <div class="nota">
+        <p><code>&lt;textarea&gt;</code> é para respostas de várias linhas. Tem tag de fechamento e <b>nada</b> entre as duas, nem espaço.</p>
+        <ul class="chk"><li>Consigo escrever mais de uma linha no campo.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="passo">
+    <h2 class="ex"><span><b>Passo 6.</b> O botão de enviar</span><span class="pts">último item antes do &lt;/form&gt;</span></h2>
+    <div class="pc">
+<pre data-arq="index.html" data-passo="6">    &lt;button type="submit"&gt;Quero entrar na lista&lt;/button&gt;</pre>
+      <div class="nota">
+        <p>Dentro do <code>&lt;form&gt;</code>, o botão <code>type="submit"</code> é quem envia.</p>
+        <ul class="chk"><li>Clico no botão com tudo vazio e o navegador reclama.</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="aviso"><b>Tudo grudado na mesma linha? Está certo.</b> O HTML só diz <b>o que</b> cada coisa é. A aparência é trabalho do CSS, no verso.</div>
+
+  <div class="foot"><span>Atividade · Formulário passo a passo · Prof. Toni Coimbra</span><span>Página 1 de 2 · vire a folha</span></div>
+</section>
+
+<!-- ============================ PÁGINA 2 · CSS ============================ -->
+<section class="page">
+  <div class="runhead"><span>Passo a passo — Formulário em HTML e CSS · verso</span><span>Nome: ______________________________________  Turma: _________</span></div>
+
+  <div class="instr">
+    <p><b>Agora o CSS.</b> Tudo desta página vai no <code>estilo.css</code>, um bloco embaixo do outro. Mesmo ritmo: salvar, atualizar, conferir, marcar.</p>
+  </div>
+
+  <div class="cols2">
+    <div>
+      <div class="passo">
+        <h2 class="ex"><span><b>Passo 7.</b> A página e a caixa</span><span class="pts">estilo.css</span></h2>
+<pre data-arq="estilo.css" data-passo="7">body {
+  max-width: 420px;
+  margin: 32px auto;
+  padding: 0 16px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #eef1f4;
+  color: #1f2933;
+}
+
+form {
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #d9dee3;
+  border-radius: 8px;
+}</pre>
+        <div class="nota">
+          <p><code>max-width</code> limita a largura e <code>margin: 32px auto</code> centraliza. Com fundo, borda e cantos arredondados, o <code>form</code> vira um cartão.</p>
+          <ul class="chk"><li>O formulário virou um cartão branco no meio da tela.</li></ul>
+        </div>
+      </div>
+
+      <div class="passo">
+        <h2 class="ex"><span><b>Passo 8.</b> Rótulos e campos</span><span class="pts">estilo.css</span></h2>
+<pre data-arq="estilo.css" data-passo="8">label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #7b8794;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+}</pre>
+        <div class="nota">
+          <p><code>display: block</code> põe cada rótulo na própria linha. <code>font: inherit</code> manda o campo usar a fonte da página, o que ele não faz sozinho. Com <code>box-sizing: border-box</code>, os 100% já incluem <code>padding</code> e borda.</p>
+          <ul class="chk"><li>Cada campo ocupa a largura toda, um embaixo do outro.</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="passo">
+        <h2 class="ex"><span><b>Passo 9.</b> Onde estou digitando?</span><span class="pts">estilo.css</span></h2>
+<pre data-arq="estilo.css" data-passo="9">input:focus, select:focus, textarea:focus {
+  outline: 3px solid #2f6f4e;
+  outline-offset: 2px;
+}</pre>
+        <div class="nota">
+          <p><code>:focus</code> é o estado do campo que está ativo. Quem usa só o teclado depende desse contorno para saber onde está.</p>
+          <ul class="chk"><li>Aperto <b>Tab</b> e o contorno verde passa de campo em campo.</li></ul>
+        </div>
+      </div>
+
+      <div class="passo">
+        <h2 class="ex"><span><b>Passo 10.</b> O botão</span><span class="pts">estilo.css</span></h2>
+<pre data-arq="estilo.css" data-passo="10">button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #2f6f4e;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #245a3f;
+}</pre>
+        <div class="nota">
+          <p><code>:hover</code> é o estado de quando o mouse está em cima. <code>cursor: pointer</code> troca a seta pela mãozinha.</p>
+          <ul class="chk"><li>O botão ficou verde e escurece quando passo o mouse.</li></ul>
+        </div>
+      </div>
+
+      <div class="box">
+        <p><b>Desafio (bônus de até 0,3).</b> Escolha <b>um</b> e mostre ao professor.</p>
+        <p><b>A.</b> Ponha um campo de telefone entre o e-mail e a lista. Descubra qual é o <code>type</code> certo.</p>
+        <p><b>B.</b> Ponha, antes do botão, uma caixa de marcar “Quero receber novidades”. Ela fica sozinha no meio da linha: descubra por quê e conserte no CSS.</p>
+        <p><b>C.</b> Seu trio já tem a landing? Leve o formulário para a <code>&lt;section id="comecar"&gt;</code> e use a cor de destaque do produto.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="ex" style="margin-top:8px"><span><b>Responda a caneta.</b> As três respostas estão na tela do seu navegador</span><span class="pts">0,9</span></h2>
+
+  <p class="q"><span class="n">1.</span> Preencha os quatro campos e clique no botão. Olhe a barra de endereço: depois de <code>index.html</code> apareceu um <code>?</code> seguido de um texto. Copie o começo desse texto. De qual atributo do HTML vêm as palavras que ficam antes de cada <code>=</code>?</p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <p class="q"><span class="n">2.</span> No campo de e-mail, digite só <code>ana</code> e clique no botão. O que o navegador fez? Qual pedaço do seu código causou isso?</p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <p class="q"><span class="n">3.</span> No <code>estilo.css</code>, apague a linha <code>box-sizing: border-box;</code>, salve e atualize o navegador. O que mudou nos campos? Por quê? <span class="small">(Depois escreva a linha de volta.)</span></p>
+  <div class="rule"></div><div class="rule"></div>
+
+  <table style="margin-top:7px">
+    <tr><th>HTML funcionando (passos 1 a 6) · 1,2</th><th>CSS aplicado (passos 7 a 10) · 0,9</th><th>Perguntas · 0,9</th><th>Desafio · até 0,3</th></tr>
+    <tr><td class="fill"></td><td class="fill"></td><td class="fill"></td><td class="fill"></td></tr>
+  </table>
+
+  <div class="foot"><span>Atividade · Formulário passo a passo · Prof. Toni Coimbra</span><span>Página 2 de 2</span></div>
+</section>
+
+</body>
+</html>
