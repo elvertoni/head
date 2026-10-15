@@ -12,7 +12,7 @@ prof-toni ──cria──► canonica.md ──veste──► aula-estatica ─
 | Skill | O que faz | Entrada → Saída |
 |---|---|---|
 | **`prof-toni`** | Gera a **Aula Canônica**: o conteúdo pedagógico no padrão (protocolo + rubrica). É onde mora a inteligência. | tema / material / SEED → `canonica.md` |
-| **`aula-estatica`** | Transforma a Canônica numa **apostila HTML standalone** no visual de aulas.tonicoimbra.com (dark/light, A4, offline). | `canonica.md` → `aula.html` |
+| **`aula-estatica`** | Transforma a Canônica numa **apostila HTML standalone** no design system **Volta Atelier** do ProfessorDash (marca TC, Archivo + JetBrains Mono, claro/escuro, quiz interativo, A4, fontes embutidas). Também migra apostilas antigas (v2). | `canonica.md` → `aula.html` |
 | **`gerar-imagem-aula`** | Declara o perfil (`capa` 3:2 ou `infografico` 16:9), monta o prompt v6 pronto pra colar no ChatGPT do navegador e depois audita o PNG contra 12 defeitos conhecidos. **Não gera imagem** — a geração é no navegador. | `canonica.md` + `imagens.md` → prompt colável → (navegador) → arte-base PNG validada |
 
 São independentes de propósito: você pode gerar a Canônica hoje e vesti-la semana que vem, sem regerar conteúdo. E a Canônica também alimenta o ProfessorDash — a apostila é só uma das saídas possíveis.

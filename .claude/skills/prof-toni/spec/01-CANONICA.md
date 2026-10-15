@@ -109,8 +109,8 @@ arquivo em `img/` ao lado da `canonica.md`.
 
 O arquivo só chega ao aluno se a canônica o referenciar assim; um arquivo em
 `img/` sem referência é importado e nunca exibido. O standalone (`aula-estatica`)
-não tem componente de imagem de conteúdo — ali a imagem chega pelo `alt`, não
-pelo pixel.
+mostra a figura (`.lesson-figure`) quando a pasta `img/` acompanha o `.html`;
+quando não acompanha, a imagem chega pelo `alt`, não pelo pixel.
 
 Consequência prática: escreva o `alt` como **descrição autossuficiente do que a
 imagem ensina**, não como rótulo ("diagrama do fluxo"). E nunca deixe um passo

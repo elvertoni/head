@@ -1,529 +1,359 @@
-# BLOCOS — Snippets prontos por componente
+# BLOCOS — snippets prontos (v3 · Volta Atelier)
 
-Versão: **2.0** — Adicionado BLOCO 21 (Questão de fixação) e BLOCO 22 (Mini-exemplo de calibração). Marks revisados.
+Copie o bloco e troque só o conteúdo. Os nomes de classe são os mesmos do leitor de aulas do
+ProfessorDash (`static/css/app.css`) sempre que o portal tem o componente — assim a apostila e o
+site são a mesma peça vestida de dois jeitos. Nada de `style=""` inline, exceto dentro de `.demo-body`.
 
-Copie o bloco correspondente e substitua apenas o conteúdo interno.
-Nunca altere nomes de classes. Nunca adicione `style=""` inline exceto onde explicitamente indicado.
+Sumário: 1 capa · 2 sumário · 3 seção · 4 divisor de parte · 5 fechamento · 6 callouts ·
+7 código · 8 tabela · 9 passos · 10 exercícios · 11 checklist · 12 chips · 13 demo ·
+14 figura · 15 citação · 16 roteiro do professor · 17 capa ilustrada · 18 gráfico SVG
 
 ---
 
-## BLOCO 1 — Hero completo
+## 1 — Capa (`.lesson-header`)
 
 ```html
-<section class="hero">
-  <div class="hero-gradient" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="eyebrow">
-      <span class="eyebrow-line"></span>
-      Aula 00 · Tema curto da aula
-    </div>
-    <h1 class="hero-title">
-      Título com <span class="accent">palavra-chave</span> em destaque
-    </h1>
-    <p class="hero-lead">
-      Parágrafo de abertura em 1–3 frases que situa o aluno no contexto da aula.
-    </p>
-    <dl class="meta-grid">
-      <div class="meta-card"><dt>Disciplina</dt><dd>Programação Web</dd></div>
-      <div class="meta-card"><dt>Nível</dt><dd>Ensino Técnico</dd></div>
-      <div class="meta-card"><dt>Duração</dt><dd>50 minutos</dd></div>
-      <div class="meta-card"><dt>Entrega</dt><dd>1 atividade prática</dd></div>
-    </dl>
-  </div>
-</section>
+<header class="lesson-header" id="topo">
+  <p class="eyebrow">Aula 03 · Programação Front-End</p>
+  <ul class="chips">
+    <li class="chip">Programação Front-End</li>
+    <li class="chip chip--signal">2ª série</li>
+  </ul>
+  <h1>Formulários que <em>não recarregam</em></h1>
+  <p class="dek">Uma a três frases que situam o aluno: o que ele vai conseguir fazer no fim.</p>
+  <dl class="meta">
+    <div><dt>Disciplina</dt><dd>Programação Front-End</dd></div>
+    <div><dt>Série</dt><dd>2ª série</dd></div>
+    <div><dt>Duração</dt><dd>50 minutos</dd></div>
+    <div><dt>Entrega</dt><dd>1 atividade prática</dd></div>
+  </dl>
+</header>
 ```
 
----
+- `<em>` no título = palavra-chave em `--signal` (vermelho). **Um só** por página, no conceito
+  central da aula (nunca em "Aula", "Introdução", "Parte").
+- `chip--signal` destaca **um** chip (trilha ou série). Os demais são `chip` simples.
+- `meta` aceita de 2 a 5 itens.
 
-## BLOCO 2 — Sumário (7 itens)
+## 2 — Sumário (`.toc`)
 
 ```html
-<nav class="sumario" id="sumario" aria-label="Sumário da aula">
-  <p class="sumario-title">Nesta aula</p>
-  <ol class="sumario-list">
-    <li><a href="#sec-1"><span class="sumario-num">01</span><span>Título da seção 1</span></a></li>
-    <li><a href="#sec-2"><span class="sumario-num">02</span><span>Título da seção 2</span></a></li>
-    <li><a href="#sec-3"><span class="sumario-num">03</span><span>Título da seção 3</span></a></li>
-    <li><a href="#sec-4"><span class="sumario-num">04</span><span>Título da seção 4</span></a></li>
-    <li><a href="#sec-5"><span class="sumario-num">05</span><span>Título da seção 5</span></a></li>
-    <li><a href="#sec-6"><span class="sumario-num">06</span><span>Título da seção 6</span></a></li>
-    <li><a href="#sec-7"><span class="sumario-num">07</span><span>Fechamento</span></a></li>
+<nav class="toc" id="sumario" aria-label="Sumário">
+  <p class="eyebrow">Nesta aula</p>
+  <ol class="toc-list">
+    <li><a href="#sec-1"><span class="toc-num">01</span><span>O problema</span></a></li>
+    <li><a href="#sec-2"><span class="toc-num">02</span><span>Passo a passo</span></a></li>
+    <li><a href="#sec-3"><span class="toc-num">03</span><span>Fechamento</span></a></li>
   </ol>
 </nav>
 ```
 
----
+Cada `href="#sec-N"` precisa de uma `<section id="sec-N">`, na mesma ordem (o `build.py` confere).
 
-## BLOCO 3 — Section padrão
+## 3 — Seção
 
 ```html
-<section class="section" id="sec-N">
-  <header class="section-head">
-    <span class="section-index">Seção 0N</span>
-    <h2>Título da seção</h2>
+<section class="section" id="sec-1">
+  <header class="section-heading">
+    <p class="eyebrow">Seção 01</p>
+    <h2>O problema</h2>
   </header>
 
-  <p>Parágrafo de abertura com <strong>termos importantes</strong> e <code>termos técnicos</code>.</p>
+  <p>Texto corrido com <strong>destaque</strong> e <code>código inline</code>.</p>
 
-  <h3>Subseção opcional</h3>
-  <p>Conteúdo da subseção.</p>
+  <h3>Subtópico</h3>
+  <p>...</p>
 
+  <h4>Detalhe dentro do subtópico</h4>
+  <p>...</p>
 </section>
 ```
 
----
+Hierarquia: `h2` (título da seção, Archivo) → `h3` (subtópico, mono 700) → `h4` (detalhe).
+Parágrafos, listas, `h3` e `h4` ficam presos na medida de leitura (`--measure`); tabelas e código
+usam a largura toda — igual ao `.prose` do portal.
 
-## BLOCO 4 — Section fechamento (sempre a última)
+## 4 — Divisor de parte (só em material longo)
+
+Quando uma seção tem partes grandes (as habilidades de uma apostila de revisão, os capítulos de
+um módulo), abra cada parte com o divisor. Os subtópicos dentro dela descem para `h4`.
 
 ```html
-<section class="section section-close" id="sec-N">
-  <header class="section-head">
-    <span class="section-index">Fechamento</span>
+<header class="part-head">
+  <p class="eyebrow">HE-DSI-05</p>
+  <h3>Comandos, operadores e tipos de dados</h3>
+</header>
+<h4>5.1 · O que é um algoritmo</h4>
+```
+
+## 5 — Fechamento (sempre a última seção)
+
+```html
+<section class="section section--close" id="sec-3">
+  <header class="section-heading">
+    <p class="eyebrow">Fechamento</p>
     <h2>O que levamos desta aula</h2>
   </header>
-
   <ul class="checklist">
     <li>Ponto principal 1.</li>
     <li>Ponto principal 2.</li>
-    <li>Ponto principal 3.</li>
-    <li>Na próxima aula vamos <strong>tópico da próxima aula</strong>.</li>
+    <li>Na próxima aula: <strong>tópico seguinte</strong>.</li>
   </ul>
-
-  <p class="footer-note">
-    Material produzido pelo Prof. Toni Coimbra · <span class="mono">aulas.tonicoimbra.com</span>
-  </p>
+  <p class="footer-note">Material produzido pelo Prof. Toni Coimbra · aulas.tonicoimbra.com</p>
 </section>
 ```
 
----
+## 6 — Callouts (anatomia do portal: `.ic` + `.ct` + rótulo `<b>`)
 
-## BLOCO 5 — Callout verde (objetivo / entrega / definição positiva)
-
-Mapeia: `:::objetivo`, `:::entrega`, `:::resultado`
+O ícone vem do CSS (máscara Lucide): a `<div class="ic">` fica **vazia**. O rótulo segue o padrão
+do portal, **"Tipo · Título"** (só "Tipo" se não houver título). Sem listas dentro do callout:
+quebre com `<p>` ou `<br>`.
 
 ```html
-<aside class="callout c-primary">
-  <div class="callout-mark" aria-hidden="true">✓</div>
-  <div class="callout-body">
-    <p class="callout-title">Entrega da aula</p>
-    <p class="callout-text">Descrição clara do que o aluno vai produzir ou aprender.</p>
+<aside class="callout conceito">
+  <div class="ic" aria-hidden="true"></div>
+  <div class="ct">
+    <b>Conceito · Variável</b>
+    <p>Um espaço na memória, com nome, que guarda um valor que pode mudar.</p>
   </div>
 </aside>
 ```
 
-Outros marks válidos: `★` `▲` `↑`
+| Classe | Cor | Ícone | Use para | Vem de (`:::tipo`) |
+|---|---|---|---|---|
+| `conceito` | info (azul-céu) | lâmpada | definição, ideia central | `conceito`, `definicao` |
+| `atencao` | amber | triângulo | erro comum, cuidado (Sintoma / Solução) | `atencao`, `aviso`, `erro` |
+| `dica` | emerald | brilho | atalho, boa prática | `dica` |
+| `exemplo` | info / título neutro | livro | exemplo curto ilustrativo | `exemplo` |
+| `importante` | amber / título neutro | estrela | destaque, desafio, conteúdo extra | `importante`, `desafio`, `extra` |
+| `curiosidade` | neutro | bússola | contexto histórico, curiosidade | `curiosidade` |
+| `objetivo` ¹ | emerald | alvo | objetivo, entrega, resultado esperado | `objetivo`, `entrega`, `resultado` |
+| `erro` ¹ | signal (vermelho) | círculo-x | erro crítico (raro) | `erro-critico` |
 
----
+¹ Extensões da apostila: o portal mostra objetivos num bloco próprio e não tem erro crítico.
 
-## BLOCO 6 — Callout roxo (desafio / importante / extra)
-
-Mapeia: `:::desafio`, `:::importante`, `:::extra`
+Padrão do erro comum:
 
 ```html
-<aside class="callout c-secondary">
-  <div class="callout-mark" aria-hidden="true">+</div>
-  <div class="callout-body">
-    <p class="callout-title">Desafio da aula</p>
-    <p class="callout-text">Descrição do desafio. Indique o tempo estimado ao final.</p>
+<aside class="callout atencao">
+  <div class="ic" aria-hidden="true"></div>
+  <div class="ct">
+    <b>Atenção · A página recarrega e some tudo</b>
+    <p><strong>Sintoma:</strong> você clica em Salvar e a página pisca.<br>
+    <strong>Solução:</strong> faltou o <code>preventDefault()</code>.</p>
   </div>
 </aside>
 ```
 
-Outros marks válidos: `★` `◆`
-
----
-
-## BLOCO 7 — Callout ciano (conceito / dica / informação / curiosidade / exemplo)
-
-Mapeia: `:::conceito`, `:::definicao`, `:::dica`, `:::curiosidade`, `:::exemplo`
+## 7 — Código
 
 ```html
-<aside class="callout c-tertiary">
-  <div class="callout-mark" aria-hidden="true">i</div>
-  <div class="callout-body">
-    <p class="callout-title">Nome do conceito</p>
-    <p class="callout-text">Definição ou dica clara e direta.</p>
-  </div>
-</aside>
+<pre data-lang="python"><code>def media(n1, n2):
+    return (n1 + n2) / 2      # devolve um valor
+
+if media(8, 6) &gt;= 7:
+    print("aprovado")</code></pre>
 ```
 
-Outros marks válidos: `?` `✦`
+- `data-lang` vira o rótulo do bloco; o botão **Copiar** é criado pelo JS sozinho.
+- **Escape obrigatório**: dentro de `<pre><code>`, todo `<` vira `&lt;` e todo `>` vira `&gt;`.
+- Destaque de sintaxe é **opcional**. Se usar, só estas classes: `tok-k` (palavra-chave/tag),
+  `tok-a` (atributo/propriedade), `tok-s` (string), `tok-n` (número), `tok-c` (comentário).
+  Na dúvida, não use: bloco sem destaque é melhor que bloco quebrado.
+- Valores de `data-lang`: `html`, `css`, `javascript`, `python`, `java`, `sql`, `bash`, `json`,
+  `portugol`, `txt`, `árvore`.
 
----
-
-## BLOCO 8 — Callout amarelo (erro comum / atenção)
-
-Mapeia: `:::atencao`, `:::aviso`, `:::erro` (não crítico)
+## 8 — Tabela
 
 ```html
-<aside class="callout c-warning">
-  <div class="callout-mark" aria-hidden="true">!</div>
-  <div class="callout-body">
-    <p class="callout-title">Título do erro ou alerta</p>
-    <p class="callout-text"><strong>Sintoma:</strong> o que o aluno vê quando erra.<br><strong>Solução:</strong> o que fazer para corrigir.</p>
-  </div>
-</aside>
+<table>
+  <caption>Tipos primitivos</caption>
+  <thead>
+    <tr><th>Tipo</th><th>Guarda</th><th>Exemplo</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>inteiro</td><td>números sem vírgula</td><td>idade</td></tr>
+    <tr><td>real</td><td>números com vírgula</td><td>preço</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="3">Observação curta que vale para a tabela toda.</td></tr>
+  </tfoot>
+</table>
 ```
 
----
+`<caption>` é o rótulo da tabela (mono, caixa-alta). Tabela larga rola sozinha na horizontal.
 
-## BLOCO 9 — Callout vermelho (erro crítico — use com parcimônia)
-
-Mapeia: `:::erro-critico`
+## 9 — Passos (diagrama progressivo do portal)
 
 ```html
-<aside class="callout c-error">
-  <div class="callout-mark" aria-hidden="true">✗</div>
-  <div class="callout-body">
-    <p class="callout-title">Título do erro crítico</p>
-    <p class="callout-text">Descrição do problema grave e como resolver.</p>
-  </div>
-</aside>
+<ol class="lesson-steps">
+  <li><span class="lesson-step-index">1</span><div><strong>Buscar</strong><p>A UC traz a instrução da memória.</p></div></li>
+  <li><span class="lesson-step-index">2</span><div><strong>Decodificar</strong><p>A UC descobre o que a instrução pede.</p></div></li>
+  <li><span class="lesson-step-index">3</span><div><strong>Executar</strong><p>A ULA faz a operação.</p></div></li>
+</ol>
 ```
 
----
+Mapeia `diagrama-progressivo`: cada camada vira um `<li>`, `rotulo` em `<strong>`, `conteudo` em `<p>`.
+Para listas comuns numeradas, use `<ol>` simples.
 
-## BLOCO 10 — Code-shell HTML (com highlight manual)
+## 10 — Exercícios / quiz (com gabarito comentado)
+
+Um bloco `.lesson-quiz` reúne as questões de uma seção (ou do tema inteiro). Na tela, o aluno
+clica numa alternativa, vê na hora se acertou e o gabarito comentado abre sozinho; no fim, aparece
+o placar. Sem JavaScript ou no PDF, as alternativas viram lista e o gabarito sai aberto.
 
 ```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">html</span>
-  </header>
-<pre><code><span class="tag">&lt;form</span> <span class="attr">id</span>=<span class="str">"meu-form"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="str">"nome"</span><span class="tag">&gt;</span>Nome:<span class="tag">&lt;/label&gt;</span>
-  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"text"</span> <span class="attr">id</span>=<span class="str">"nome"</span> <span class="attr">required</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="str">"submit"</span><span class="tag">&gt;</span>Enviar<span class="tag">&lt;/button&gt;</span>
-<span class="tag">&lt;/form&gt;</span></code></pre>
-</div>
+<section class="lesson-quiz">
+  <div class="lesson-quiz-head"><strong>Exercícios</strong><span>2 questões</span></div>
+  <ol class="lesson-quiz-list">
+    <li class="lesson-quiz-question" data-correct="b">
+      <p><strong>Questão 1.</strong> Qual é o valor de <code>17 mod 5</code>?</p>
+      <div class="quiz-options">
+        <button type="button" class="quiz-option"><span class="quiz-option-letter">a</span><span class="quiz-option-text">3</span><span class="quiz-option-icon" aria-hidden="true"></span></button>
+        <button type="button" class="quiz-option"><span class="quiz-option-letter">b</span><span class="quiz-option-text">2</span><span class="quiz-option-icon" aria-hidden="true"></span></button>
+        <button type="button" class="quiz-option"><span class="quiz-option-letter">c</span><span class="quiz-option-text">3,4</span><span class="quiz-option-icon" aria-hidden="true"></span></button>
+        <button type="button" class="quiz-option"><span class="quiz-option-letter">d</span><span class="quiz-option-text">0</span><span class="quiz-option-icon" aria-hidden="true"></span></button>
+      </div>
+      <p class="quiz-feedback" hidden></p>
+      <details class="quiz-answer"><summary>Gabarito comentado</summary><p><strong>Resposta: b)</strong> 17 ÷ 5 dá quociente 3 e resto 2. <code>mod</code> devolve o resto. A alternativa a) é o <code>div</code>.</p></details>
+    </li>
+    <!-- próxima questão: outro <li class="lesson-quiz-question" data-correct="..."> -->
+  </ol>
+  <p class="quiz-result" hidden></p>
+</section>
 ```
 
----
+- `data-correct` = letra da correta (minúscula). Ela **não** aparece marcada nas alternativas.
+- Dê `id="qN"` a cada questão quando houver um gabarito rápido: ele linka `<a href="#q12">12-c</a>`.
+- O JS acrescenta sozinho o botão **Refazer** no cabeçalho do bloco e o `aria-live` do feedback.
+- O comentário explica por que a correta está certa **e** por que as outras estão erradas.
+- Código no enunciado: coloque o `<pre>` entre o `<p>` do enunciado e as `.quiz-options`.
+- Questão aberta (sem alternativas): omita `data-correct`, `.quiz-options` e `.quiz-feedback`; deixe
+  só o enunciado e o `<details class="quiz-answer">` com a resposta esperada.
 
-## BLOCO 10-FB — Code-shell HTML (fallback sem highlight)
+Mapeia `:::questao` e o bloco ```` ```quiz ```` (uma pergunta por `<li>`; `correta: true` → `data-correct`).
 
-Use este formato sempre que houver dúvida sobre a aplicação dos `<span>` de highlight. **Mantém o escape de `<`/`>`**, apenas omite os spans coloridos.
-
-```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">html</span>
-  </header>
-<pre><code>&lt;form id="meu-form"&gt;
-  &lt;label for="nome"&gt;Nome:&lt;/label&gt;
-  &lt;input type="text" id="nome" required&gt;
-  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-</div>
-```
-
----
-
-## BLOCO 11 — Code-shell CSS
-
-```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">css</span>
-  </header>
-<pre><code><span class="tag">body</span> {
-  <span class="prop">background</span>: <span class="str">#f1f5f9</span>;
-  <span class="prop">font-family</span>: Arial, sans-serif;
-  <span class="prop">font-size</span>: <span class="num">16px</span>;
-}</code></pre>
-</div>
-```
-
----
-
-## BLOCO 12 — Code-shell JavaScript
-
-```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">javascript</span>
-  </header>
-<pre><code><span class="tag">const</span> btn = document.querySelector(<span class="str">'#meu-form'</span>);
-btn.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(e) {
-  e.preventDefault();
-  <span class="com">// lógica aqui</span>
-});</code></pre>
-</div>
-```
-
----
-
-## BLOCO 13 — Code-shell Bash / Terminal
-
-```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">bash</span>
-  </header>
-<pre><code>npm init -y
-npm install express cors sqlite3
-node server.js</code></pre>
-</div>
-```
-
----
-
-## BLOCO 14 — Code-shell Árvore de pastas
-
-```html
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">árvore</span>
-  </header>
-<pre><code>projeto/
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
-└── backend/
-    └── server.js</code></pre>
-</div>
-```
-
----
-
-## BLOCO 15 — Demo-wrap com formulário
-
-```html
-<div class="demo-wrap">
-  <div class="demo-label">Renderizado no navegador</div>
-  <div class="demo-body">
-    <div style="background:#fff;padding:20px;border-radius:8px;font-family:Arial,sans-serif;color:#0f172a">
-      <form onsubmit="event.preventDefault()" style="display:flex;flex-direction:column;gap:10px">
-        <label style="font-size:.9rem;color:#334155">
-          Nome:
-          <input type="text" style="display:block;margin-top:4px;padding:8px;border:1px solid #cbd5e1;border-radius:6px;width:100%">
-        </label>
-        <button type="submit" style="padding:10px;background:#2563eb;color:white;border:none;border-radius:6px;cursor:pointer">
-          Enviar
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-```
-
----
-
-## BLOCO 16 — Demo-wrap com tabela
-
-```html
-<div class="demo-wrap">
-  <div class="demo-label">Renderizado no navegador</div>
-  <div class="demo-body">
-    <table class="demo">
-      <thead>
-        <tr><th>Coluna A</th><th>Coluna B</th><th>Coluna C</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Dado 1</td><td>Dado 2</td><td>Dado 3</td></tr>
-        <tr><td>Dado 4</td><td>Dado 5</td><td>Dado 6</td></tr>
-      </tbody>
-      <tfoot>
-        <tr><td colspan="3">Rodapé da tabela</td></tr>
-      </tfoot>
-    </table>
-  </div>
-</div>
-```
-
----
-
-## BLOCO 17 — Roteiro do professor
-
-Mapeia: `:::roteiro`
-
-```html
-<aside class="roteiro">
-  <header class="roteiro-head">
-    <span class="roteiro-chip">Roteiro do professor</span>
-  </header>
-  <p>Texto em primeira pessoa para o professor. Imperativo direto: "Mostre no projetor...", "Peça que os alunos...", "Reserve X minutos para...".</p>
-  <p>Segundo parágrafo se necessário — dicas de ritmo, turmas heterogêneas, sugestões de extensão.</p>
-</aside>
-```
-
-Regra: sempre **último bloco antes do fechamento** de uma section, nunca no meio do conteúdo principal.
-
----
-
-## BLOCO 18 — Checklist
-
-Mapeia: `:::resumo` (dentro de `.section-close`)
+## 11 — Checklist
 
 ```html
 <ul class="checklist">
-  <li>Primeiro item verificável.</li>
-  <li>Segundo item com <strong>negrito</strong> e <code>código</code>.</li>
-  <li>Terceiro item.</li>
+  <li>Item verificável com <strong>destaque</strong>.</li>
+  <li>Outro item.</li>
 </ul>
 ```
 
----
+Check esmeralda (no Volta Atelier, verde = conclusão). Mapeia `:::resumo`.
 
-## BLOCO 19 — Tags (pílulas de vocabulário)
+**Checklist de estudo** (`class="checklist todo"`): caixas vazias que o aluno marca, salvas no
+navegador. Use no fechamento quando a lista é "o que você precisa saber fazer"; o check já
+preenchido do `.checklist` comum passa a ideia de que está tudo feito. Ponha um link para a seção
+de cada item (`<strong><a href="#sec-3">Tema III</a>:</strong> ...`).
 
-Mapeia: `:::vocabulario`
+## 12 — Chips de vocabulário
 
 ```html
-<ul class="tags">
-  <li>&lt;table&gt;</li>
-  <li>&lt;thead&gt;</li>
-  <li>colspan</li>
-  <li>fetch()</li>
-  <li>async/await</li>
+<ul class="chips">
+  <li class="chip">&lt;form&gt;</li>
+  <li class="chip">preventDefault()</li>
+  <li class="chip">FormData</li>
 </ul>
 ```
 
-Escape `<` e `>` em tags HTML: `&lt;table&gt;`
+Mapeia `:::vocabulario`. Escape `<` e `>` de tags HTML.
 
----
+No máximo **8 chips** juntos. Em material longo, coloque o vocabulário no **fim** do tema, antes
+dos exercícios (`<h4>Vocabulário do tema</h4>` + uma frase), e não antes do primeiro parágrafo:
+um muro de chips na abertura é ruído; no fim, vira revisão.
 
-## BLOCO 20 — Atividade avaliativa (lista ordenada + entrega)
+## 13 — Demonstração (HTML real renderizado)
 
 ```html
-<ol>
-  <li>Instrução 1 da atividade.</li>
-  <li>Instrução 2 com <strong>destaque</strong> e <code>código</code>.</li>
-  <li>Instrução 3.</li>
-</ol>
-
-<aside class="callout c-primary">
-  <div class="callout-mark" aria-hidden="true">↑</div>
-  <div class="callout-body">
-    <p class="callout-title">Entrega</p>
-    <p class="callout-text">Enviar o arquivo <strong>index.html</strong> pelo Classroom até a data definida pelo professor.</p>
+<div class="demo">
+  <p class="demo-label">Renderizado no navegador</p>
+  <div class="demo-body">
+    <form onsubmit="event.preventDefault()">
+      <label>Nome <input type="text"></label>
+      <button type="submit">Enviar</button>
+    </form>
   </div>
+</div>
+```
+
+O `.demo-body` tem fundo branco e fonte de navegador padrão de propósito: mostra como o código do
+aluno fica de verdade. É o único lugar onde `style=""` inline é aceito.
+
+## 14 — Figura
+
+```html
+<figure class="lesson-figure">
+  <div class="lesson-figure-frame"><img class="lesson-figure-img" src="img/ciclo-de-instrucao.png" alt="Descrição completa do que a imagem ensina"></div>
+  <figcaption class="lesson-figure-caption">Legenda curta.</figcaption>
+</figure>
+```
+
+O `src` é relativo: a pasta `img/` precisa ir junto do `.html`. O `alt` carrega a informação toda
+(se a imagem faltar, o aluno ainda aprende).
+
+## 15 — Citação
+
+```html
+<blockquote><p>Programas devem ser escritos para pessoas lerem.</p></blockquote>
+```
+
+## 16 — Roteiro do professor (some no PDF)
+
+```html
+<aside class="roteiro">
+  <p class="roteiro-label">Roteiro do professor</p>
+  <p>Instruções em imperativo: "Mostre no projetor...", "Reserve 10 minutos para...".</p>
 </aside>
 ```
 
----
+Sempre o **último bloco** da seção. Em material que vai só para o aluno (apostila de estudo, PDF
+para a turma), **omita** — o aluno não precisa ler instruções dirigidas ao professor.
 
-## BLOCO 21 — Questão de fixação (NOVO)
+## 17 — Capa ilustrada (imagem de capa, perfil "capa" 3:2)
 
-Mapeia: `:::questao` do ProfessorDash. Estrutura completa: enunciado + (opcional) trecho de código + alternativas marcadas + callout de resposta comentada.
-
-### Versão sem código
+Logo depois do `</header>` da capa, antes do sumário. A imagem vem da skill
+`gerar-imagem-aula` (perfil `capa`), salva em `img/capa.png` ao lado do `.html`.
 
 ```html
-<h3>Questão de fixação</h3>
-<p><strong>Pergunta principal aqui em uma única frase clara?</strong></p>
+<figure class="lesson-cover">
+  <img src="img/capa.png" alt="Descrição completa do que a capa mostra: título e os blocos com seus rótulos.">
+</figure>
+```
 
-<ol type="a">
-  <li>Texto da alternativa A.</li>
-  <li>Texto da alternativa B. <strong>(correta)</strong></li>
-  <li>Texto da alternativa C.</li>
-  <li>Texto da alternativa D.</li>
-</ol>
+## 18 — Gráfico ou diagrama SVG (texto real, cores do tema)
 
-<aside class="callout c-tertiary">
-  <div class="callout-mark" aria-hidden="true">i</div>
-  <div class="callout-body">
-    <p class="callout-title">Resposta comentada</p>
-    <p class="callout-text">Explicação do porquê B é a resposta correta, com referência ao conceito da aula. Em seguida, breve justificativa de por que A, C e D estão erradas.</p>
+Para tudo que tem **número, palavra exata ou dado**: gráfico estatístico, máscara de rede bit a
+bit, pirâmide com valores, diagrama de conjuntos. Nunca peça isso ao gerador de imagem: ele erra
+dígito e ortografia. SVG escrito à mão sai exato, leve, nítido em qualquer zoom e muda sozinho
+entre claro e escuro, porque as cores vêm de **classes ligadas aos tokens**:
+
+```html
+<figure class="chart">
+  <div class="chart-frame">
+    <svg viewBox="0 0 760 240" role="img" aria-labelledby="g1-t">
+      <title id="g1-t">Descrição completa para leitor de tela: o que o gráfico mostra e a conclusão.</title>
+      <line x1="60" y1="172" x2="700" y2="172" class="k-line" stroke-width="2"/>
+      <circle cx="140" cy="150" r="7" class="f-volt"/>
+      <line x1="140" y1="64" x2="140" y2="164" class="k-emerald" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <text x="132" y="58" text-anchor="end" class="t t-emerald" font-weight="700">mediana = 5</text>
+    </svg>
   </div>
-</aside>
+  <figcaption>Legenda de uma linha com a conclusão.</figcaption>
+</figure>
 ```
 
-### Versão com código
+| Classe | Uso |
+|---|---|
+| `f-signal` `f-emerald` `f-amber` `f-volt` `f-info` | preenchimento sólido semântico |
+| `f-tint-signal` … `f-tint-amber` | preenchimento tingido (fundo de barra/caixa) |
+| `f-base` `f-panel` `f-none` | superfícies e sem preenchimento |
+| `k-signal` `k-emerald` `k-amber` `k-volt` `k-info` `k-line` `k-fg` | contorno (`stroke`) |
+| `t` `t-m` `t-l` `t-d` `t-on` | texto: normal, secundário, rótulo mono caixa-alta, display Archivo, branco sobre cor |
+| `t-signal` `t-emerald` `t-amber` `t-volt` `t-info` | texto colorido com contraste AA nos dois temas |
 
-```html
-<h3>Questão de fixação</h3>
-<p>Antes de responder, considere o código abaixo (atenção à <strong>ORDEM</strong> das linhas):</p>
-
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">javascript</span>
-  </header>
-<pre><code><!-- código aqui, escapado --></code></pre>
-</div>
-
-<p>O usuário preenche e clica em Salvar. <strong>O que acontece, na ordem real?</strong></p>
-
-<ol type="a">
-  <li>Alternativa A.</li>
-  <li>Alternativa B. <strong>(correta)</strong></li>
-  <li>Alternativa C.</li>
-  <li>Alternativa D.</li>
-</ol>
-
-<aside class="callout c-tertiary">
-  <div class="callout-mark" aria-hidden="true">i</div>
-  <div class="callout-body">
-    <p class="callout-title">Resposta comentada</p>
-    <p class="callout-text">Explicação completa do raciocínio.</p>
-  </div>
-</aside>
-```
-
-Convenções obrigatórias:
-- `<ol type="a">` gera "a)", "b)", "c)", "d)" automaticamente
-- Marque a correta com `<strong>(correta)</strong>` no final do `<li>` (a fonte ProfessorDash usa `*`)
-- A explicação vai em `callout c-tertiary` com mark `i` e título "Resposta comentada"
-- Não use mark "?" para questão — é callout informativo, não pergunta sem resposta
-
----
-
-## BLOCO 22 — Mini-exemplo de calibração
-
-Quando precisar mostrar um pareamento "código antes → resultado depois" curto em uma section. Útil em aulas que comparam abordagens.
-
-```html
-<h3>Antes</h3>
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">javascript</span>
-  </header>
-<pre><code>form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(e) {
-  <span class="com">// sem preventDefault</span>
-  console.log(<span class="str">'enviou'</span>);
-});</code></pre>
-</div>
-
-<p><strong>Comportamento:</strong> a página recarrega antes do log aparecer.</p>
-
-<h3>Depois</h3>
-<div class="code-shell">
-  <header class="code-top">
-    <span class="dot dot-red"></span>
-    <span class="dot dot-yellow"></span>
-    <span class="dot dot-green"></span>
-    <span class="code-lang">javascript</span>
-  </header>
-<pre><code>form.addEventListener(<span class="str">'submit'</span>, <span class="tag">function</span>(e) {
-  e.preventDefault();
-  console.log(<span class="str">'enviou'</span>);
-});</code></pre>
-</div>
-
-<p><strong>Comportamento:</strong> o log aparece, a página fica intacta.</p>
-```
+Regras: `viewBox` com largura 760 (a moldura rola na horizontal no celular, mínimo 520 px);
+fonte 13–17 px; `<title>` sempre; cor com o mesmo significado do resto da apostila (signal =
+destaque/rede, esmeralda = certo/não volátil, âmbar = atenção/volátil, volt = dados neutros).

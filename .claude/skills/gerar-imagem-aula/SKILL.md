@@ -1,12 +1,18 @@
 ---
 name: gerar-imagem-aula
-description: Produz e valida as artes-base das aulas do acervo PROF-TONI, do brief até o PNG auditado. Use sempre que o pedido tocar em imagem de aula — gerar capa.png, gerar infográfico de miolo, refazer ou editar uma arte, executar propostas de imagens.md, auditar um PNG que voltou do ChatGPT, ajustar o Projeto do navegador ou mexer em tools/imagen-generator — mesmo que o Toni não use as palavras "skill", "prompt" ou "imagem". Escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), monta o prompt v6 "The Digital Atelier", delega a geração ao Codex (que gera aqui mesmo, sem navegador) ou entrega o prompt pronto pra colar, e audita o resultado contra os 12 defeitos conhecidos do acervo. Branding — logo, curso, canvas — é aplicado depois no Photoshop, nunca aqui.
+description: Produz e valida as artes-base das aulas e apostilas do acervo PROF-TONI, do brief até o PNG auditado, no design system Volta Atelier (o mesmo do ProfessorDash). Use sempre que o pedido tocar em imagem de aula ou de apostila — gerar capa.png, gerar infográfico de miolo, ilustrar ou enriquecer uma apostila com imagens, refazer ou editar uma arte, executar propostas de imagens.md, auditar um PNG que voltou do Codex ou do ChatGPT, ajustar o Projeto do navegador ou mexer em tools/imagen-generator — mesmo que o Toni não use as palavras "skill", "prompt" ou "imagem". Decide antes o que é imagem gerada e o que deve ser SVG com texto real (gráficos, tabelas, números), escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), monta o prompt v7 com scripts/montar_prompt.py, gera pelo Codex CLI aqui mesmo e audita o resultado contra os 13 defeitos conhecidos. Branding — logo, curso, canvas — é aplicado depois no Photoshop, nunca aqui.
 ---
 
 # gerar-imagem-aula
 
 A skill leva a arte-base do brief até o PNG auditado. Ela **gera**: o Codex CLI
 tem ferramenta nativa de imagem e produz aqui mesmo, sem navegador.
+
+O visual é o **Volta Atelier** (prompt v7): grafite neutro quase preto, cor
+chapada, filetes finos, título em grotesca pesada com a palavra-chave em
+vermelho signal `#FB3732`, rótulos em mono. É o mesmo design system do
+ProfessorDash e da skill `aula-estatica` — imagem, portal e apostila precisam
+parecer o mesmo produto.
 
 O trabalho que agrega valor não é apertar o botão de gerar — é a análise
 pedagógica que vira prompt e a auditoria que impede peça defeituosa de entrar no
@@ -21,9 +27,10 @@ Dois caminhos de geração, na ordem de preferência:
 ## Fontes obrigatórias
 
 1. Ler integralmente `tools/imagen-generator/prompt.xml`.
-2. Confirmar `versao="6.0"` e `modo="arte_base_para_branding_externo"`. Não
-   casou? Interromper e reportar a divergência antes de gerar qualquer coisa.
-3. Ler a `canonica.md` e o `imagens.md` da aula-alvo.
+2. Confirmar `versao="7.0"` e `modo="arte_base_para_branding_externo"`. Não
+   casou? Interromper e reportar a divergência antes de gerar qualquer coisa
+   (o `montar_prompt.py` também confere e se recusa a montar).
+3. Ler a `canonica.md` e o `imagens.md` da aula-alvo (ou o trecho da apostila).
 
 O XML é a fonte de verdade visual; o brief define o conceito específico. Se os
 dois conflitarem, o XML ganha na forma e o brief ganha no conteúdo.
@@ -31,6 +38,20 @@ dois conflitarem, o XML ganha na forma e o brief ganha no conteúdo.
 `logo-prof-toni-coimbra-horizontal.png` nunca entra na entrada de um modelo
 generativo, em nenhum dos dois caminhos. Dar a marca ao modelo é convite para
 ele redesenhá-la.
+
+## Passo zero: isso deve ser imagem gerada?
+
+Nem todo visual é trabalho do gerador. Antes de qualquer brief, separe:
+
+| vai para o gerador (raster) | vai para SVG/HTML com texto real (`aula-estatica`) |
+|---|---|
+| arquitetura, fluxo, ciclo, comparação visual, cena de hardware, capa | gráfico de dados, tabela, tabela-verdade, cálculo (sub-rede, conversão), código, diagrama cujo valor está em números ou palavras exatos |
+
+O motivo é o D2: o modelo erra dígito e ortografia, e numa peça de dados o
+aluno aprende o erro. SVG desenhado com os tokens do design system sai exato,
+leve, nítido em qualquer zoom e acompanha o tema claro/escuro da apostila. É o
+mesmo princípio do Impeccable: nunca rasterizar texto ou dado que precisa ser
+verdadeiro.
 
 ## Os dois perfis
 
@@ -85,10 +106,11 @@ do que já existe lá:
 |---|---|
 | caminho canônico vazio | grava direto em `capa.png` ou `img/{slug}.png` |
 | já existe arte no caminho | grava como `{stem}.proposta.png` ao lado |
+| peça para apostila (`aula-estatica`) | `img/{slug}.png` ao lado do `.html` da apostila; o `build.py` da `aula-estatica` embute a imagem no arquivo final |
 
 `{stem}.proposta.png` é sempre o mesmo nome — a proposta seguinte sobrescreve a
-anterior. Nunca sufixar com a versão do prompt: `v6` identifica o sistema, não a
-tentativa, e `capa-v6 (2).png` é o beco sem saída que essa regra existe pra
+anterior. Nunca sufixar com a versão do prompt: `v7` identifica o sistema, não a
+tentativa, e `capa-v7 (2).png` é o beco sem saída que essa regra existe pra
 evitar.
 
 Substituir arte que já está no acervo é decisão do Toni, nunca da rodada. Ao
@@ -105,12 +127,18 @@ Photoshop.
    (**D8**) por erro de pareamento entre brief e aula.
 3. Análise pedagógica exigida pelo XML: conceito mais difícil, erro comum a
    evitar, relação visual que precisa ficar evidente, mensagem de três segundos.
-4. Montar o `<prompt_arte_base>` **do perfil correto** com todos os
-   `[insert …]` resolvidos. Nenhuma seção sai — `RESERVED EMPTY ZONES`,
-   `COLOR SYSTEM`, `TYPOGRAPHY`, `LAYOUT` e `AVOID` vão inteiras. São elas que
-   seguram os defeitos, e são as primeiras que a tentação de encurtar ataca.
-5. Gravar o prompt montado num `.txt` no scratchpad e delegar ao Codex conforme
-   `references/delegar-ao-codex.md`, de forma síncrona.
+4. Escrever o **brief em JSON** (campos no topo de `scripts/montar_prompt.py`)
+   e montar o prompt com ele:
+   ```bash
+   python .claude/skills/gerar-imagem-aula/scripts/montar_prompt.py brief.json prompt.txt
+   ```
+   O script pega o `<prompt_arte_base>` do perfil certo direto do XML, preenche
+   todas as lacunas e recusa a montagem se faltar campo, sobrar `[insert …]`,
+   passar do limite de blocos do perfil ou a palavra-chave não estar no título.
+   Nenhuma seção sai — `RESERVED EMPTY ZONES`, `COLOR SYSTEM`, `TYPOGRAPHY`,
+   `LAYOUT` e `AVOID` vão inteiras, e é por isso que não se monta à mão.
+5. Gerar pelo Codex conforme `references/delegar-ao-codex.md` (chamada direta
+   `codex exec`, ~1,5 min por peça; várias peças podem rodar em paralelo).
 6. Auditar o PNG (Modo 3). Sem exceção — o relato de quem gerou cobre existência
    e medida, nunca conteúdo.
 7. Aprovado → copiar pro acervo e registrar. Reprovado → nova rodada.
@@ -148,7 +176,7 @@ lê o que espera ver; D2 e D4 escapam por isso, não por falta de checklist. Se 
 peça reprovar duas vezes no mesmo defeito, vale pedir ao Toni uma auditoria de
 terceiro — alguém que receba só o PNG e a tabela abaixo, nunca o prompt.
 
-A lista canônica dos 12 defeitos é a regra `R3` do `prompt.xml`; a tabela aqui é
+A lista canônica dos 13 defeitos é a regra `R3` do `prompt.xml`; a tabela aqui é
 a mesma lista com os casos reais anexados. Divergiu entre as duas? O XML manda,
 e a divergência se reporta. Defeito novo que chegar ao acervo entra nos dois
 lugares: a regra no XML, o caso aqui.
@@ -158,7 +186,7 @@ lugares: a regra no XML, o caso aqui.
 | D1 | texto de placeholder impresso na arte | aula 10 de IA: "ESPAÇO RESERVADO PARA LOGO" |
 | D2 | palavra inventada em português | "nulhado" (aula 08), "madruagda" (aula 06), "rosolveu" e "flex-contáiner" (HTML semântico) |
 | D3 | peça sem título | aula 31 de arquitetura, aula 06 de IA |
-| D4 | fundo claro/branco | aulas 05 e 06 de IA, as duas de tráfego orgânico, duas tentativas de HTML semântico |
+| D4 | fundo claro, branco, navy ou azulado | aulas 05 e 06 de IA, as duas de tráfego orgânico, duas tentativas de HTML semântico |
 | D5 | texto/objeto cortado pela borda | "AM" solto na aula 25 |
 | D6 | faixa superior vazia demais | aulas 04 e 09 de IA |
 | D7 | ornamento dentro de zona reservada | aula 33, nivelamento 01 |
@@ -167,6 +195,7 @@ lugares: a regra no XML, o caso aqui.
 | D10 | comparação com um lado só rotulado | — |
 | D11 | logo real de terceiro desenhada | logos de SO na aula 35 |
 | D12 | perfil trocado ou fundido | HTML semântico: capa + infográfico no mesmo quadro |
+| D13 | linguagem fora do Volta Atelier: degradê, glow, vidro, neon, paleta antiga, ícone em quadrado sólido saturado ("ícone de app"), excesso de cor | 1ª rodada v7 da apostila de revisão: os 8 infográficos saíram com quadrados de ícone sólidos multicoloridos; a crítica do Impeccable apontou como cor decorativa |
 
 Além da tabela, checar sempre:
 
@@ -178,6 +207,14 @@ Além da tabela, checar sempre:
   action do Photoshop;
 - **cada palavra renderizada** — existe em português, escrita certa. D2 é o
   defeito que mais passa batido porque a peça está bonita.
+- **cada rótulo no elemento certo** — o modelo duplica ou troca rótulos quando
+  o brief agrupa duas coisas num bloco (caso real, v7: teclado e monitor saíram
+  os dois como "ENTRADA E SAÍDA"). Um bloco do brief = um elemento visual.
+- **numeração só onde há sequência** — badges 1..N num diagrama de arquitetura
+  inventam uma ordem que não existe. Se não é processo, o brief diz "do NOT
+  use numbered badges".
+- **D13** — nada de degradê, brilho, vidro ou ciano/violeta como cor principal;
+  o modelo tende a voltar ao visual "tech" antigo.
 
 Reprovado → apontar o defeito **pelo id**, reforçar no prompt exatamente a seção
 que falhou (não o prompt inteiro) e regerar. Não entregar peça reprovada com

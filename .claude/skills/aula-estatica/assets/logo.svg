@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 128">
+  <!-- Ligadura TC: o T passa atrás do C; o vão de 8 unidades é recortado
+       por máscara para ficar transparente sobre qualquer fundo. O T segue o
+       esquema de cor do sistema — osso no escuro, tinta no claro. -->
+  <style>
+    .tc-t { fill: #f4f3f0; }
+    @media (prefers-color-scheme: light) { .tc-t { fill: #141414; } }
+  </style>
+  <defs>
+    <mask id="tc-fenda" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="128">
+      <rect width="200" height="128" fill="#fff"/>
+      <path d="M189.37 48A50 50 0 1 0 189.37 80L159.34 80A22 26 0 1 1 159.34 48Z"
+            fill="#000" stroke="#000" stroke-width="16" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <path class="tc-t" d="M8 14H150V44H78V114H46V44H20Z" mask="url(#tc-fenda)"/>
+  <path d="M189.37 48A50 50 0 1 0 189.37 80L159.34 80A22 26 0 1 1 159.34 48Z" fill="#fb3732"/>
+</svg>

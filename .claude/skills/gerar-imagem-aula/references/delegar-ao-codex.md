@@ -1,7 +1,7 @@
 # Delegar a geração ao Codex
 
 O Codex CLI tem ferramenta nativa de imagem. Verificado em 29/07/2026: a partir
-do prompt v6 já montado, o `image_gen` nativo entregou um infográfico em
+do prompt v6 já montado (o mesmo vale para a v7), o `image_gen` nativo entregou um infográfico em
 1672×941. O arquivo 1664×936 existente no acervo veio depois de um crop
 (`Rectangle(4,2,1664,936)`), não é resolução nativa. Na Images API, os tamanhos
 16:9 válidos são `1536x864` e `2048x1152`.
@@ -35,8 +35,8 @@ recebeu:
 
 | entrada | resultado |
 |---|---|
-| prompt v6 já preenchido, em inglês, seção por seção | aprovado de primeira |
-| "execute integralmente o XML v6" + `canonica.md` + `imagens.md` | duas peças reprovadas: fundo branco (D4), cantos superiores ocupados (R1), capa e infográfico fundidos num quadro só (D12), "rosolveu" e "flex-contáiner" (D2) |
+| prompt já preenchido (v6), em inglês, seção por seção | aprovado de primeira |
+| "execute integralmente o XML" (v6) + `canonica.md` + `imagens.md` | duas peças reprovadas: fundo branco (D4), cantos superiores ocupados (R1), capa e infográfico fundidos num quadro só (D12), "rosolveu" e "flex-contáiner" (D2) |
 
 A leitura: pedir que o modelo *interprete* o design system deixa a camada de
 estilo por conta dele, e ele cai no default editorial claro. Entregar o prompt
@@ -50,9 +50,25 @@ conteúdo.
 
 ## Contrato da delegação
 
-Grave o prompt montado em um `.txt` no scratchpad e chame o subagente
-`codex:codex-rescue` de forma **síncrona** (`run_in_background: false`) — o PNG
-precisa estar em disco antes de você auditar.
+Grave o prompt montado (pelo `scripts/montar_prompt.py`) num `.txt` no
+scratchpad e chame o Codex **direto pela linha de comando** — validado em
+15/10/2026 no WSL (codex-cli 0.162.1, login ChatGPT): ~1,5 min por peça,
+infográfico em 1672×941.
+
+```bash
+codex exec --skip-git-repo-check --approve-for-me --ephemeral \
+  -C {SCRATCHPAD} -o {SCRATCHPAD}/{slug}.last.txt "$(cat pedido.txt)"
+```
+
+- `--approve-for-me` dá ao Codex o sandbox de escrita no diretório `-C` com
+  aprovação automática; não combine com `-s/--sandbox` (o CLI recusa).
+- `-C` precisa ser o scratchpad: é ali que o PNG pode ser gravado.
+- `-o` grava a última mensagem (o relato com dimensões e bytes).
+- Várias peças podem rodar em paralelo (`xargs -P 4` funcionou sem erro de cota).
+
+O subagente `codex:codex-rescue` continua válido como alternativa, sempre de
+forma **síncrona** (`run_in_background: false`) — o PNG precisa estar em disco
+antes da auditoria.
 
 A saída de cada rodada deve ficar sempre no scratchpad da sessão, nunca em
 `aulas/`: `{scratchpad}/imagem-aula/{slug-da-aula}--{perfil}--r{n}.png`. A
@@ -100,7 +116,7 @@ Três cláusulas carregam peso e não devem ser cortadas:
   barata antes de você abrir o arquivo.
 - **proteção do acervo.** O pedido precisa conter literalmente a linha
   `Não leia, não altere e não grave nada dentro de aulas/ nesta tarefa.`. A
-  versão v6 identifica o sistema de prompt, não a tentativa; por isso o nome
+  versão (v7) identifica o sistema de prompt, não a tentativa; por isso o nome
   usa `r{n}` no scratchpad e nunca um sufixo de versão no PNG.
 
 ## Depois que o PNG voltar

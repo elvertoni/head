@@ -1,220 +1,136 @@
 ---
 name: aula-estatica
-description: Transforma conteúdo de aula (markdown com sintaxe :::tipo do ProfessorDash, texto colado, descrição oral ou outra apostila) em um arquivo HTML standalone único seguindo o design system visual de aulas.tonicoimbra.com. Use SEMPRE que o usuário pedir "aplica skill aula-estatica", "transforma essa aula em apostila HTML", "apostila HTML para distribuir", "gera versão estática da Aula NN", "aula em arquivo único", "converte para o padrão tonicoimbra" ou "salvar PDF da aula". Use também sempre que o usuário enviar um arquivo .md de aula sem outra instrução clara — assuma que ele quer a versão estática. Distinta de skills que enviam conteúdo para ProfessorDash: esta produz UM .html para download e distribuição offline. O resultado tem CSS, JS e SVG embutidos, abre com duplo clique no navegador, alterna entre dark/light e exporta PDF via window.print() com layout A4.
+description: Transforma conteúdo de aula (canonica.md do acervo, markdown com sintaxe :::tipo do ProfessorDash, texto colado, descrição oral ou outra apostila) em UM arquivo HTML standalone no design system Volta Atelier do ProfessorDash (aulas.tonicoimbra.com / prof.tonicoimbra.com) — marca TC, Archivo + JetBrains Mono, tema claro/escuro, exercícios interativos com gabarito comentado, PDF A4 e fontes embutidas para abrir offline. Use SEMPRE que o Toni pedir "aplica a skill aula-estatica", "transforma essa aula em apostila HTML", "apostila para distribuir aos alunos", "versão estática da Aula NN", "aula em arquivo único", "salvar PDF da aula", "converte para o padrão tonicoimbra/ProfessorDash", "monta uma apostila de revisão", ou quando enviar um .md de aula sem outra instrução. Use também para ATUALIZAR apostilas antigas (logo C ciano, gradientes, Geist) para o visual novo. Não é para publicar no portal (isso é o import do ProfessorDash).
 ---
 
-# Skill: Apostila HTML Estática — Prof Toni Coimbra
+# aula-estatica — apostila HTML no Volta Atelier
 
-## O que esta skill faz
+Gera **um único `.html`** que abre com duplo clique, funciona offline, alterna claro/escuro,
+tem exercícios clicáveis com gabarito comentado e imprime em A4 pelo botão "Salvar PDF".
+O visual é o mesmo do leitor de aulas do ProfessorDash: a apostila e o portal são a mesma
+aula vestida de dois jeitos.
 
-Transforma qualquer conteúdo de aula em uma **apostila HTML standalone** seguindo o design system visual de `aulas.tonicoimbra.com`. O resultado é um único arquivo `.html` que:
+## Arquivos
 
-- Abre com duplo clique no navegador, sem servidor, sem instalação
-- Funciona offline após o primeiro carregamento das fontes Google
-- Tem botão de alternar entre modo escuro e claro (com memória em `localStorage`)
-- Tem botão "Salvar PDF" que usa `window.print()` com layout A4 e o roteiro do professor oculto
-- É visualmente idêntico independente de qual IA o gerou
-
-Esta skill foi projetada para ser usada com **qualquer LLM**: Claude, ChatGPT, Gemini, Hermes, Mistral. Todos os valores são explícitos no design system — a IA não precisa adivinhar nada.
-
----
-
-## Arquivos desta skill
-
-| Arquivo | Propósito |
+| Arquivo | Quando ler |
 |---|---|
-| `SKILL.md` (este arquivo) | Frontmatter, gatilhos, fluxo, regras invioláveis |
-| `DESIGN_SYSTEM.md` | Tokens, cores, escalas, componentes, mapeamentos, exemplo antes/depois |
-| `BLOCOS.md` | Catálogo de snippets HTML prontos copiáveis por componente |
-| `template.html` | Template standalone aprovado — ponto de partida obrigatório |
+| `template.html` | **Sempre.** Ponto de partida obrigatório: CSS, JS e marca prontos. |
+| `BLOCOS.md` | **Sempre**, antes de escrever o corpo. Snippets de cada componente. |
+| `DESIGN_SYSTEM.md` | Quando o conteúdo pedir algo que os blocos não cobrem, ou para entender o porquê de uma regra. |
+| `scripts/build.py` | No fim: embute as fontes e roda o checklist. |
+| `scripts/migrar_v2.py` | Para converter apostila antiga (v2) para o v3. |
+| `exemplo-aula-01-formularios.html` | Referência de saída pronta (aula curta). |
 
----
+## Fluxo
 
-## Gatilhos — quando usar esta skill
+### 1. Entender a entrada
+Pode vir de uma `canonica.md` do acervo (`aulas/{disciplina}/{trilha}/{NN-slug}/`), markdown
+com `:::tipo`, texto solto, PDF ou uma apostila antiga. Se for **apostila v2** (tem
+`class="apostila-shell"`, logo C ciano, gradientes), pule para "Migrar apostila antiga".
 
-Use quando o usuário pedir:
+### 2. Copiar o `template.html` e preencher
+Preencha **só** os marcadores `<!-- [EDIT...] -->` (e apague-os). Não reescreva CSS, JS ou SVG da
+marca: é isso que garante que qualquer IA produza o mesmo visual. Ajuste pontual vai numa regra
+nova no fim do `<style>`.
 
-- "aplica skill aula-estatica em [conteúdo]"
-- "transforma essa aula em apostila HTML"
-- "gera versão estática da Aula X"
-- "apostila HTML para distribuir para os alunos"
-- "aula em arquivo único / standalone"
-- "converte esse conteúdo para o padrão tonicoimbra"
-- "salvar PDF da aula"
-- Quando o usuário envia um arquivo `.md` de aula sem outra instrução clara
+Estrutura: cabeçalho fixo → capa (`.lesson-header`) → sumário (`.toc`) → seções
+(`.section` com `id="sec-N"`) → fechamento (`.section.section--close`) → rodapé.
+Aula de 50 min: 4 a 8 seções. Material longo (apostila, módulo): pode passar disso, use o
+**divisor de parte** (BLOCOS §4) e `<body data-print="capitulos">`.
 
-**Não use** para conteúdo que vai para o ProfessorDash (que tem renderizador próprio de Markdown com sintaxe `:::tipo`).
+### 3. Mapear o conteúdo nos componentes
 
----
+| Na entrada | Componente v3 (BLOCOS.md) |
+|---|---|
+| `:::conceito`, `:::definicao` | `callout conceito` |
+| `:::atencao`, `:::aviso`, `:::erro` | `callout atencao` (com **Sintoma:** / **Solução:**) |
+| `:::dica` | `callout dica` |
+| `:::exemplo` | `callout exemplo` |
+| `:::importante`, `:::desafio`, `:::extra` | `callout importante` |
+| `:::curiosidade` | `callout curiosidade` |
+| `:::objetivo`, `:::entrega`, `:::resultado` | `callout objetivo` |
+| `:::erro-critico` | `callout erro` (raro) |
+| `:::questao`, bloco ```` ```quiz ```` | `.lesson-quiz` (uma pergunta por `<li>`) |
+| ```` ```diagrama-progressivo ```` | `.lesson-steps` |
+| `:::resumo` | `.checklist` no fechamento |
+| `:::vocabulario` | `.chips` |
+| `:::roteiro` | `.roteiro` (último bloco da seção; **omita** em material só do aluno) |
+| bloco de código | `<pre data-lang="..."><code>` |
+| tabela | `<table>` com `<caption>` |
+| HTML para mostrar renderizado | `.demo` |
+| `![alt](img/x.png)` | `.lesson-figure` |
+| gráfico de dados, cálculo, diagrama com números | `.chart` com SVG (BLOCOS §18), nunca imagem gerada |
+| capa ilustrada | `.lesson-cover` (BLOCOS §17) |
+| texto corrido / subtítulos | `<p>` / `<h3>` / `<h4>` |
 
-## Fluxo obrigatório
+O rótulo do callout segue o portal: **"Tipo · Título"** (ex.: `Atenção · Loop infinito`).
 
-### Passo 1 — Receber o conteúdo
+### 3b. Enriquecer com visuais (quando pedido)
+Separe primeiro o **meio** de cada visual — é o que decide se ele ensina ou confunde:
+- **ilustração conceitual** (arquitetura, fluxo, ciclo, comparação, capa) → skill
+  `gerar-imagem-aula` (prompt v7 Volta Atelier, gerado pelo Codex e auditado); o PNG aprovado vai
+  para `img/{slug}.png` ao lado do `.html` e entra como `.lesson-figure` ou `.lesson-cover`;
+- **qualquer coisa com número ou palavra exata** (gráfico, tabela, sub-rede, estatística) →
+  SVG escrito aqui (BLOCOS §18), com texto real e as classes de token.
+Um visual por conceito difícil, ao lado do parágrafo que ele explica; o `alt`/`<title>` descreve
+a informação inteira (sem a imagem, o aluno ainda aprende). O `build.py` embute tudo no arquivo
+final, convertendo PNG para WebP.
 
-O conteúdo pode vir de qualquer fonte:
-- Texto colado diretamente na conversa
-- Arquivo Markdown com sintaxe `:::tipo` do ProfessorDash
-- Markdown comum sem callouts
-- Descrição oral do que a aula deve conter
-- Outra apostila para ser reformatada
+### 4. Título da capa
+Escolha **uma** palavra ou expressão curta do título para o `<em>` (fica em vermelho signal):
+o conceito central da aula (`formulários`, `JOIN`, `polimorfismo`), nunca "Aula", "Parte",
+"Introdução".
 
-### Passo 2 — Abrir o `template.html`
+### 5. Voz
+A skill cuida do visual, não do tom. Preserve a voz do Toni: segunda pessoa ("você"),
+analogias concretas, exemplos do dia a dia dos alunos, humor. Não "corporativize" o texto,
+não corte exemplos, não acrescente disclaimers. Texto longo demais para uma seção vira duas
+seções, nunca um corte.
 
-O `template.html` já contém:
-- CSS completo embutido em `<style>`
-- JavaScript embutido em `<script>` (toggle de tema + ano dinâmico)
-- SVG do logo oficial inline (duas cores: ciano `#00B4D8` e azul `#023E8A`)
+### 6. Código
+Dentro de `<pre><code>`, `<` vira `&lt;` e `>` vira `&gt;`, sempre. Destaque de sintaxe
+(`tok-k/a/s/n/c`) é opcional; na dúvida, deixe sem.
 
-**Não reescreva o CSS, JS ou SVG.** Use o template como está e preencha apenas o conteúdo marcado com `<!-- [EDIT-*] -->` ou `<!-- [EDIT] -->`. Remova esses comentários após preencher.
-
-### Passo 3 — Mapear o conteúdo nos componentes
-
-Use a **Tabela A — ProfessorDash → Componente** abaixo (cobre todos os `:::tipo`) e os snippets do `BLOCOS.md`. Quando o conteúdo vier sem callouts (markdown puro), use a **Tabela B — Tipo de conteúdo → Componente** em `DESIGN_SYSTEM.md` seção 9.
-
-#### Tabela A — Mapeamento ProfessorDash → Componente HTML
-
-| Sintaxe no markdown | Componente HTML | Mark | Cor |
-|---|---|---|---|
-| `:::objetivo` | `callout c-primary` | `✓` | verde |
-| `:::entrega` | `callout c-primary` | `↑` | verde |
-| `:::resultado` | `callout c-primary` | `★` | verde |
-| `:::conceito` | `callout c-tertiary` | `i` | ciano |
-| `:::definicao` | `callout c-tertiary` | `i` | ciano |
-| `:::dica` | `callout c-tertiary` | `i` | ciano |
-| `:::curiosidade` | `callout c-tertiary` | `✦` | ciano |
-| `:::exemplo` | `callout c-tertiary` | `i` | ciano |
-| `:::atencao` | `callout c-warning` | `!` | amarelo |
-| `:::aviso` | `callout c-warning` | `!` | amarelo |
-| `:::erro` (não crítico) | `callout c-warning` | `!` | amarelo |
-| `:::erro-critico` | `callout c-error` | `✗` | vermelho |
-| `:::importante` | `callout c-secondary` | `+` | roxo |
-| `:::desafio` | `callout c-secondary` | `★` | roxo |
-| `:::extra` | `callout c-secondary` | `+` | roxo |
-| `:::roteiro` | `.roteiro` (oculto na impressão) | — | ciano dashed |
-| `:::resumo` | `.checklist` dentro de `.section.section-close` | — | — |
-| `:::vocabulario` | `.tags` (pílulas) | — | — |
-| `:::questao` | Componente "Questão de fixação" (BLOCOS.md §21) | — | — |
-| `:::codigo` ou ` ``` ` | `.code-shell` com syntax highlight manual | — | — |
-| `:::demo` ou bloco HTML real | `.demo-wrap` | — | — |
-| ````quiz` | "Questão de fixação" (BLOCOS.md §21), uma por pergunta; a alternativa `correta: true` vai no gabarito | — | — |
-| ````diagrama-progressivo` | `<ol>` na section: cada camada vira `<li>` com `rotulo` em `<strong>` e `conteudo` em `<p>` — o `<ol>` numera, o `rotulo` não | — | — |
-
-Texto comum entre callouts vira `<p>` direto na section. Sub-tópicos viram `<h3>`.
-
-### Passo 4 — Definir o accent do título
-
-Escolha **uma palavra** do título para receber o gradient ciano→roxo (`<span class="accent">`). Deve ser o conceito central da aula, não palavras genéricas.
-
-Exemplos corretos: `HTML`, `CSS`, `JavaScript`, `CRUD`, `Node.js`, `semântico`, `formulários`, `tabelas`
-Exemplos errados: `Aula`, `Parte`, `Introdução`, `Conteúdo`
-
-### Passo 5 — Syntax highlighting em code-shells
-
-O highlighting manual com `<span>` (documentado no DESIGN_SYSTEM §5.6) é o ideal, mas é frágil. **Fallback aceitável: se houver qualquer dúvida sobre escape ou classes, omita os spans de highlight.** Um code-shell sem spans renderiza com cor neutra mas íntegro — melhor que um code-shell quebrado.
-
-A regra de escape é inegociável: dentro de `<pre><code>`, todo `<` vira `&lt;` e todo `>` vira `&gt;`, **com ou sem highlight**.
-
-```html
-<!-- Forma ideal (com highlight) -->
-<pre><code><span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="str">"text"</span><span class="tag">&gt;</span></code></pre>
-
-<!-- Forma de fallback (sem highlight, mas escapada) -->
-<pre><code>&lt;input type="text"&gt;</code></pre>
+### 7. Finalizar com o script
+```bash
+python scripts/build.py rascunho.html aula-NN-tema-curto.html
 ```
+Ele troca o Google Fonts pelas fontes embutidas (offline de verdade), embute as imagens de
+`img/` (PNG → WebP com ffmpeg, quando houver) e roda o checklist:
+um `<h1>`, nenhum `[EDIT`, sumário ↔ seções, fechamento por último, código escapado, tipos de
+callout válidos, `data-correct` existente nas alternativas, gabarito em toda questão, tags
+balanceadas, nenhuma classe do v2, toda imagem com `alt` e arquivo existente. Corrija o que ele apontar e rode de novo.
+Sem Python disponível, entregue o arquivo do template preenchido: ele funciona com as fontes
+do Google Fonts (só precisa de internet na primeira abertura).
 
-Nunca deixe `<` ou `>` literais dentro de `<pre><code>`.
+Nome do arquivo: kebab-case sem acento, `aula-NN-tema-curto.html`.
 
-### Passo 6 — Voz e tom
+### 8. Entregar
+Salve ao lado da canônica (ou onde o Toni pedir) e diga em poucas linhas: onde está, como usar
+(duplo clique · botão Salvar PDF · pode hospedar em qualquer servidor estático) e o que foi
+adaptado ou omitido (ex.: roteiro removido por ser material do aluno).
 
-Esta skill controla o visual, **não** o tom. Preserve a voz do autor:
+## Migrar apostila antiga (v2 → v3)
 
-- Mantenha a segunda pessoa ("você", "preencha", "olhe")
-- Mantenha analogias, gírias técnicas e exemplos concretos
-- Não "polir" para um tom corporativo neutro
-- Não cortar humor, ironia ou referências culturais
-- Não adicionar disclaimers tipo "consulte um especialista" — não é a voz do material
-- Resista a "melhorar" parágrafos: faça apenas pequenos ajustes para encaixar no componente (ex: remover marcadores `**bold**` redundantes quando já há `<strong>`)
-
-Se o conteúdo de origem for muito longo para uma seção, divida em duas sections — não corte texto.
-
-### Passo 7 — Validar antes de entregar
-
-Checklist obrigatório:
-
-- [ ] Um único `<h1>` na página (dentro de `.hero-title`)
-- [ ] Um único `<span class="accent">` na página
-- [ ] CSS embutido em `<style>` (sem `<link rel="stylesheet">` para arquivo local)
-- [ ] JS embutido em `<script>` (sem `<script src="">` para arquivo local)
-- [ ] SVG do logo inline (sem `<img src="favicon.svg">`)
-- [ ] Fontes via Google Fonts CDN (único link externo permitido)
-- [ ] Todos os `<` e `>` dentro de `<pre><code>` escapados como `&lt;` e `&gt;`
-- [ ] Cada `id="sec-N"` nas sections bate com um `href="#sec-N"` no sumário
-- [ ] Última section tem a classe `section-close`
-- [ ] Apenas um `</main>`
-- [ ] `<title>` no formato: `Aula NN · Tema curto · Prof Toni Coimbra`
-- [ ] Topbar disciplina preenchida (substitui `[EDIT-DISCIPLINA]`)
-- [ ] Nenhum comentário `<!-- [EDIT...] -->` restante no body
-- [ ] Arquivo nomeado em kebab-case sem acento: `aula-NN-tema-curto.html`
-
-### Passo 8 — Entregar
-
-Salve o arquivo e apresente ao usuário. Informe as três formas de uso:
-1. **Abrir direto** — duplo clique no arquivo
-2. **PDF** — botão "Salvar PDF" na topbar
-3. **Hospedar** — GitHub Pages, Netlify Drop, Cloudflare Pages ou qualquer servidor estático
-
----
-
-## Regras invioláveis
-
-1. **Nunca reescreva o CSS do design system.** Se precisar de um ajuste pequeno, adicione uma regra ao final do `<style>`, nunca edite as regras existentes.
-
-2. **Nunca use `<h1>` fora do `.hero-title`.** Seções usam `<h2>`. Subseções usam `<h3>`.
-
-3. **Nunca coloque mais de um `<span class="accent">` por página.**
-
-4. **Nunca invente componentes novos.** Use apenas os documentados em `BLOCOS.md`. Conteúdo sem componente correspondente vira `<p>` simples.
-
-5. **Código dentro de `<pre><code>` é sempre escapado** (`<` → `&lt;`, `>` → `&gt;`), com ou sem highlight.
-
-6. **O `.roteiro` é sempre o último bloco antes do fechamento** de uma seção — nunca no meio do conteúdo principal.
-
-7. **A última section sempre tem `class="section section-close"`** com checklist de fechamento e `.footer-note`.
-
-8. **Preserve a voz do autor.** Não polir, não normalizar tom, não cortar humor ou exemplos concretos.
-
-9. **Não toque no SVG do logo.** As duas cores `#00B4D8` e `#023E8A` são fixas no SVG por decisão de marca; o CSS não deve sobrescrever via `fill: currentColor`.
-
-10. **Comentários HTML nunca contêm `-->` literais.** O parser HTML fecha o comentário no PRIMEIRO `-->` que encontra — não há aninhamento. Se precisar mencionar um comentário-marcador dentro de outro comentário (ex: "substitua os marcadores `[EDIT]`"), reescreva sem usar `<!-- -->` literais. Erro típico: escrever `<!-- Substitua <!-- [EDIT] --> pelo conteúdo -->` faz o comentário fechar cedo e o texto restante vira HTML visível no topo da página.
-
----
-
-## Estrutura canônica de uma aula
-
+```bash
+python scripts/migrar_v2.py antiga.html migrada.html [--capitulos]
+python scripts/build.py migrada.html final.html
 ```
-topbar
-└── hero (h1, eyebrow, lead, meta-grid)
-└── sumário (nav com 4–8 itens)
-└── section id="sec-1" (objetivo/definição)
-└── section id="sec-2" (conceito ou pré-requisitos)
-└── section id="sec-3" (passo a passo / prática)
-└── section id="sec-4" (checkpoint)
-└── section id="sec-5" (erros comuns)
-└── section id="sec-6" (desafio + roteiro)
-└── section.section-close id="sec-7" (fechamento com checklist)
-footer
-```
+O conteúdo e a voz ficam intactos; muda só a roupa: callouts, código, tabelas, questões
+(que viram quiz interativo), roteiros e chips. Confira o resultado no navegador, porque
+estruturas fora do padrão v2 passam sem tradução e o `build.py` aponta o que sobrou.
 
-Número de seções: mínimo 4, máximo 8. Ajuste conforme o volume.
+## Uso com outras IAs (ChatGPT, Gemini, Codex...)
+Entregue `template.html`, `BLOCOS.md` e `DESIGN_SYSTEM.md` como contexto e instrua:
+"Preencha o template seguindo o BLOCOS.md; não reescreva CSS, JS nem o SVG da marca." O
+`build.py` pode ser rodado depois por quem tiver Python.
 
----
-
-## Nota para uso em ChatGPT, Gemini, Hermes ou outros LLMs
-
-Ao usar esta skill em um LLM que não é o Claude:
-
-1. Forneça `DESIGN_SYSTEM.md` e `BLOCOS.md` como arquivos de contexto ou cole o conteúdo no prompt de sistema.
-2. Forneça o `template.html` e instrua a IA a **preencher o template**, não gerar HTML do zero.
-3. Instrua: *"Não reescreva o CSS ou JavaScript do template. Preencha apenas as seções marcadas com `<!-- [EDIT...] -->` e remova esses comentários após o preenchimento."*
-4. Se o LLM não conseguir produzir syntax highlighting manual confiável nos code-shells, instrua-o a usar o fallback (sem `<span>`, só escape de `<`/`>`).
-5. O resultado deve ser um único arquivo HTML que, aberto no navegador, seja visualmente coerente com o exemplo de referência.
+## Regras que não mudam
+1. Partir do `template.html`; não reconstruir o visual de memória.
+2. Só componentes do `BLOCOS.md`; o que não tiver componente vira `<p>`.
+3. Um `<h1>` e um `<em>` de destaque na capa.
+4. Código escapado em `<pre><code>`.
+5. Última seção com `section--close`, checklist e `.footer-note`.
+6. Marca TC exatamente como no template.
+7. Nada de degradê decorativo, glassmorphism ou barra lateral colorida.
+8. Comentário HTML nunca dentro de outro (o primeiro `-->` fecha tudo e o resto vaza para a página).

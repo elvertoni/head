@@ -1,0 +1,70 @@
+COMO USAR — PROMPT DE IMAGENS v7 (VOLTA ATELIER)
+
+O QUE MUDOU DA V6 PARA A V7
+---------------------------
+O portal e as apostilas agora usam o design system Volta Atelier. A v7 troca
+só a camada visual; perfis, densidade, zonas reservadas e defeitos continuam.
+
+  ANTES (v6)                          AGORA (v7)
+  fundo navy #050810                  grafite neutro #141414
+  ciano #06B6D4 como cor âncora       vermelho signal #FB3732 como cor âncora
+  violeta = camada avançada           azul volt #3B49E4 = camada de apoio
+  degradê, brilho, vidro              banidos (defeito D13): cor chapada + filete
+  sans geométrica (Geist)             grotesca pesada (Archivo) + mono nos rótulos
+  marca C ciano + seta azul           ligadura TC (T osso, C vermelho)
+
+ATENÇÃO: a action do Photoshop ainda estampa a logo antiga (C ciano). Ela
+precisa ser atualizada para a ligadura TC antes de brandar peças v7.
+
+Os DOIS PERFIS continuam:
+
+  CAPA          3:2 (1536x1024) · 4 a 10 blocos · micro-parágrafos ·
+                subtítulo obrigatório · faixa de rodapé obrigatória.
+
+  INFOGRAFICO   16:9 · 2 a 5 blocos · só rótulos curtos · sem subtítulo ·
+                sem faixa de rodapé.
+
+NOVO: gráfico de dados, tabela, cálculo e código NÃO são imagem gerada. O
+modelo erra números e palavras. Essas peças são desenhadas em SVG pela skill
+aula-estatica, com texto real.
+
+
+CAMINHO PADRÃO (CLAUDE CODE + CODEX, SEM NAVEGADOR)
+---------------------------------------------------
+Peça ao Claude Code: "aplica gerar-imagem-aula na Aula NN" (ou "ilustra a
+apostila"). Ele escreve o brief, monta o prompt com
+.claude/skills/gerar-imagem-aula/scripts/montar_prompt.py, gera pelo Codex e
+audita a peça antes de gravar no acervo.
+
+
+CAMINHO DO NAVEGADOR (CHATGPT)
+------------------------------
+Forneça ao Projeto: o prompt.xml v7 (nos arquivos do Projeto), a aula
+(canonica.md), o brief (imagens.md) e o perfil. NÃO anexe a logo.
+
+Solicite:
+"Execute integralmente o XML v7 no perfil CAPA (ou INFOGRAFICO) e gere a
+arte-base final. Não pare no prompt. Mantenha os dois cantos superiores
+escuros, vazios e reservados."
+
+
+ANTES DE ACEITAR A IMAGEM
+-------------------------
+Confira os 13 defeitos da regra R3 do XML:
+
+  D1  texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO")
+  D2  palavra inventada em português ("nulhado", "madruagda")
+  D3  peça sem título
+  D4  fundo claro, branco, navy ou azulado
+  D5  texto ou objeto cortado pela borda
+  D6  faixa superior vazia grande
+  D7  ornamento, grade ou filete dentro de uma zona reservada
+  D8  conteúdo da aula errada — confira o título da aula-alvo!
+  D9  wireframe cinza sem ícone, cor ou título
+  D10 comparação com só um lado rotulado
+  D11 logo real de terceiro desenhada (Windows, Linux, Android...)
+  D12 perfil trocado
+  D13 degradê, brilho, vidro, neon ou paleta antiga (ciano, violeta, navy)
+
+Qualquer um deles: peça a regeneração citando o defeito. Não aceite com
+ressalva.

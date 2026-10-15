@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   PROMPT OFICIAL DE IMAGENS DE AULA · Prof. Toni Coimbra
-  Design System: "The Digital Atelier"
-  Versão: 6.0 · Modo: GERAR APENAS A ARTE-BASE (branding aplicado externamente)
+  Design System: "Volta Atelier" (o mesmo do ProfessorDash desde o commit 0d976de)
+  Versão: 7.0 · Modo: GERAR APENAS A ARTE-BASE (branding aplicado externamente)
 
-  O QUE MUDA NA v6 (e por quê)
-  ----------------------------
-  A v5 descrevia um cartaz-conceito enxuto (≤5 blocos, ≤6 rótulos, sem
-  parágrafo). Auditoria visual das 54 imagens já aprovadas do acervo mostrou
-  que o padrão real da casa é OUTRO e é mais denso: mediana de ~7 blocos,
-  micro-parágrafos de 1–3 linhas por bloco, subtítulo sob o título e faixa de
-  síntese no rodapé. Seguir a v5 produzia peças pobres perto do acervo.
+  O QUE MUDA NA v7 (e por quê)
+  ============================
+  O portal e as apostilas trocaram o "The Digital Atelier" (navy, ciano âncora,
+  degradê esmeralda→violeta, brilho, vidro) pelo "Volta Atelier": brutalismo
+  editorial refinado, grafite quase preto, tipografia de estúdio e UMA cor de
+  acento, o vermelho signal. Imagem v6 ao lado do portal v3 parecia de outro
+  produto. A v7 mantém tudo o que a v6 provou na prática — os dois perfis, a
+  densidade, as zonas reservadas e o catálogo de defeitos — e troca só a camada
+  visual: paleta, acabamento, tipografia e o que conta como destaque.
 
-  A v6 resolve isso separando DOIS PERFIS, porque as duas peças existem e têm
-  funções diferentes:
-    · perfil "capa"        — 3:2, densa, vende a aula inteira no card do portal;
-    · perfil "infografico" — 16:9, enxuta, ensina UM conceito no miolo da aula.
-  Escolher o perfil é o passo 0 e não é opcional.
+  Resumo da troca:
+    · fundo navy #050810            → grafite neutro #141414 / #0D0D0D
+    · ciano #06B6D4 como âncora     → vermelho signal #FB3732 como âncora
+    · violeta = camada avançada     → azul volt #3B49E4 = camada avançada
+    · degradê, glow, vidro          → banidos (D13); cor chapada + filete de 1 px
+    · sans geométrica (Geist)       → grotesca pesada (Archivo) + mono (JetBrains Mono)
+    · marca C ciano + seta azul     → ligadura TC (T osso, C vermelho signal)
 
-  Mantido da v5: a logo e a identificação do curso NÃO são desenhadas pelo
-  modelo. São estampadas depois por uma action determinística no Photoshop.
-  Por isso os dois cantos superiores continuam sendo zona reservada e vazia.
+  Mantido: a logo e a identificação do curso NÃO são desenhadas pelo modelo.
+  São estampadas depois por uma action determinística no Photoshop. Por isso os
+  dois cantos superiores continuam sendo zona reservada e vazia.
 
   ARQUIVOS QUE DEVEM SER FORNECIDOS EM CADA USO:
-  1) este XML (já fica nos arquivos do Projeto, não precisa reanexar);
-  2) a aula completa (canonica.md);
+  1) este XML;
+  2) a aula completa (canonica.md) ou o trecho da apostila;
   3) o brief da imagem (imagens.md).
   A logo NÃO deve ser anexada: dar o arquivo ao modelo é convite para ele
   redesenhar a marca. As cores canônicas já estão aqui.
 -->
 <prompt_infografico
-    versao="6.0"
+    versao="7.0"
     autor="Prof. Toni Coimbra"
     curso="Técnico em Desenvolvimento de Sistemas"
-    design_system="The Digital Atelier"
+    design_system="Volta Atelier"
     modo="arte_base_para_branding_externo"
-    base_empirica="auditoria de 54 imagens aprovadas do acervo, 2026-07-29">
+    base_empirica="auditoria de 54 imagens aprovadas do acervo (2026-07-29) + DESIGN.md do ProfessorDash (2026-09-10)">
 
   <!-- ================================================================
        OBJETIVO DE EXECUÇÃO
@@ -58,7 +62,7 @@
     <item n="1">Manter os dois cantos superiores escuros, calmos e VAZIOS.</item>
     <item n="2">Ensinar com clareza: a peça precisa ensinar algo verificável.</item>
     <item n="3">Cumprir a densidade do PERFIL escolhido — nem pobre, nem carregada.</item>
-    <item n="4">Preservar o design system e a legibilidade em celular.</item>
+    <item n="4">Preservar o design system Volta Atelier e a legibilidade em celular.</item>
     <item n="5">Português impecável. Zero palavra inventada.</item>
   </ordem_de_prioridade>
 
@@ -78,14 +82,14 @@
     <perfil id="capa">
       <funcao>
         Peça de abertura. Aparece no card do curso e no topo da aula no
-        portal. Precisa dar ao aluno um mapa da aula inteira em ~10 segundos
-        e continuar útil como material de revisão.
+        portal, ou na capa de uma apostila. Precisa dar ao aluno um mapa do
+        conteúdo inteiro em ~10 segundos e continuar útil como revisão.
       </funcao>
       <formato>3:2 paisagem — alvo 1536×1024</formato>
       <blocos_de_conteudo>de 4 a 10 (mediana observada no acervo: 7)</blocos_de_conteudo>
       <texto_por_bloco>
         micro-parágrafo de 1 a 3 linhas, sempre precedido de um rótulo curto
-        em caixa-alta colorida. Texto corrido é ESPERADO aqui.
+        em caixa-alta monoespaçada colorida. Texto corrido é ESPERADO aqui.
       </texto_por_bloco>
       <estrutura_recorrente>
         Escolha uma das quatro que o acervo consolidou:
@@ -95,16 +99,16 @@
         (d) núcleo central com blocos radiais ao redor + faixa de rodapé.
       </estrutura_recorrente>
       <obrigatorio>
-        título em caixa-alta · subtítulo de 1 a 2 linhas · faixa de síntese no
-        rodapé · ícone em todo bloco · ocupação do miolo entre 70% e 90% da
-        altura útil.
+        título · subtítulo de 1 a 2 linhas · faixa de síntese no rodapé ·
+        ícone em todo bloco · ocupação do miolo entre 70% e 90% da altura útil.
       </obrigatorio>
     </perfil>
 
     <perfil id="infografico">
       <funcao>
         Peça de miolo. Entra ao lado do parágrafo que explica o conceito mais
-        difícil da aula. Ensina UMA coisa e some do caminho.
+        difícil da aula (no portal ou numa apostila). Ensina UMA coisa e some
+        do caminho.
       </funcao>
       <formato>16:9 paisagem — maior resolução nativa disponível</formato>
       <blocos_de_conteudo>de 2 a 5</blocos_de_conteudo>
@@ -118,9 +122,9 @@
         hierarquia em camadas · antes/depois.
       </estrutura_recorrente>
       <obrigatorio>
-        título curto de uma linha · ícone ou cor distinta em todo bloco · pelo
-        menos um destaque com o gradiente assinatura · ocupação do miolo entre
-        60% e 80% da altura útil.
+        título curto de uma linha · ícone ou cor semântica em todo bloco · pelo
+        menos um destaque em vermelho signal (badge numerado, seta principal ou
+        palavra do título) · ocupação do miolo entre 60% e 80% da altura útil.
       </obrigatorio>
       <proibido_neste_perfil>
         subtítulo descritivo · faixa de síntese no rodapé · micro-parágrafo ·
@@ -131,19 +135,32 @@
   </perfis>
 
   <!-- ================================================================
+       O QUE NÃO É IMAGEM GERADA (escolha do meio)
+       ================================================================ -->
+  <escolha_do_meio peso="alto">
+    Imagem gerada é para o que a ilustração explica melhor que o texto:
+    arquitetura, fluxo, ciclo, comparação visual, cena de hardware. NÃO gere
+    imagem para gráfico de dados, tabela, tabela-verdade, cálculo, código
+    extenso ou qualquer peça cujo valor esteja em números e palavras exatos:
+    o modelo erra dígito e ortografia (D2), e o aluno aprende o erro. Essas
+    peças são desenhadas em SVG/HTML pela ferramenta de renderização
+    (skill aula-estatica), com texto real e cores do design system.
+  </escolha_do_meio>
+
+  <!-- ================================================================
        BRANDING É EXTERNO — O MODELO NÃO O APLICA
        ================================================================ -->
   <branding_externo>
     <responsabilidade>
-      A logo horizontal oficial (símbolo C+seta ciano/azul + wordmark
-      "Prof. Toni Coimbra") e a identificação do curso são aplicadas por uma
-      action do Photoshop sobre a arte-base entregue. O modelo NÃO participa
-      dessa etapa.
+      A marca oficial — a ligadura TC — e a identificação do curso são
+      aplicadas por uma action do Photoshop sobre a arte-base entregue. O
+      modelo NÃO participa dessa etapa.
     </responsabilidade>
     <referencia_de_marca observacao="apenas para harmonizar cores, NÃO para desenhar">
-      Símbolo C ciano · seta azul · wordmark em cinza-claro #ECE8E7.
-      Estas cores existem aqui só para que o gradiente e os destaques da arte
-      conversem com a marca. Em hipótese alguma o modelo deve renderizar a logo.
+      Ligadura TC: o T em osso #F4F3F0, o C em vermelho signal #FB3732, sobre
+      grafite. Estas cores existem aqui só para que a arte converse com a
+      marca. Em hipótese alguma o modelo deve renderizar a logo, as letras TC
+      como símbolo, ou qualquer monograma.
     </referencia_de_marca>
   </branding_externo>
 
@@ -155,13 +172,13 @@
     <titulo>Cantos superiores reservados para branding externo</titulo>
 
     <zona id="LOGO" canto="superior_esquerdo">
-      <estado_exigido>escuro, calmo, plano e VAZIO</estado_exigido>
+      <estado_exigido>grafite escuro, calmo, plano e VAZIO</estado_exigido>
       <largura_aprox>~20% da largura, no topo</largura_aprox>
       <altura_aprox>~12% da altura, no topo</altura_aprox>
       <proibido_dentro>
-        logo, monograma, símbolo, wordmark, nome, texto, ícone, seta, brilho,
-        gradiente forte, moldura decorativa, trilha de circuito, diagrama ou
-        qualquer detalhe.
+        logo, monograma, símbolo, wordmark, nome, texto, ícone, seta, filete,
+        grade, moldura decorativa, trilha de circuito, diagrama ou qualquer
+        detalhe.
       </proibido_dentro>
     </zona>
 
@@ -185,15 +202,16 @@
     </erro_observado>
 
     <erro_observado gravidade="media">
-      Moldura decorativa, trilha de circuito e "canto chanfrado" também
-      contam como ocupação. Três capas do acervo têm ornamento nos cantos que
-      colidiria com a logo.
+      Moldura decorativa, trilha de circuito, "canto chanfrado" e — na v7 —
+      linhas de grade ou de registro que atravessam o canto também contam como
+      ocupação. As linhas da composição começam fora das zonas.
     </erro_observado>
 
     <motivo>
       Essas duas áreas recebem, no Photoshop, o smart object da logo e o bloco
       tipográfico do curso em coordenada fixa. Se houver qualquer elemento sob
-      elas, o branding fica ilegível ou desalinhado.
+      elas, o branding fica ilegível ou desalinhado. Quando a peça vai para
+      uma apostila sem branding, os cantos vazios funcionam como respiro.
     </motivo>
 
     <criterio_de_conclusao>
@@ -219,7 +237,8 @@
     <item n="2">Identifique o erro comum que a imagem deve evitar.</item>
     <item n="3">Defina a relação visual que precisa ficar evidente.</item>
     <item n="4">Defina o que o aluno deve compreender em até 3 segundos.</item>
-    <item n="5">Justifique por que uma imagem explica melhor do que só texto.</item>
+    <item n="5">Justifique por que uma imagem explica melhor do que só texto — e
+      por que ela não deveria ser um SVG com texto real (ver escolha_do_meio).</item>
     <item n="6">
       Confira que o conteúdo planejado corresponde ao TEMA DA AULA-ALVO.
       Três capas do acervo saíram com o conteúdo da aula seguinte por erro de
@@ -233,118 +252,144 @@
   </analise_obrigatoria>
 
   <!-- ================================================================
-       DESIGN SYSTEM (compartilhado pelos dois perfis)
+       DESIGN SYSTEM — VOLTA ATELIER (compartilhado pelos dois perfis)
        ================================================================ -->
   <design_system>
 
     <principios>
-      <p nome="No-Line">
-        Separe áreas por contraste de superfície e espaço; evite bordas pesadas.
+      <p nome="Brutalismo editorial refinado">
+        Alto contraste, cor chapada, tipografia de estúdio. A peça parece uma
+        página de revista técnica bem diagramada, não um pôster de tecnologia.
       </p>
-      <p nome="Tonal Layering">
-        Profundidade por camadas de fundo escuro azulado, não por bordas.
+      <p nome="Linhas de registro">
+        Áreas se separam por filetes finos de 1 px e por espaço, sobre uma
+        grade clara. Profundidade por camadas de grafite (base → painel →
+        painel elevado), nunca por sombra colorida ou brilho.
       </p>
-      <p nome="Cor com Significado">
-        Cada cor carrega sentido fixo (ver mapa semântico). Cor decorativa
-        aleatória confunde o aluno.
+      <p nome="Um acento só">
+        O vermelho signal é a única cor de acento livre; as outras cores
+        existem para significar algo (ver mapa semântico). Se tudo é vermelho,
+        nada é.
       </p>
-      <p nome="Densidade Honesta">
+      <p nome="Densidade honesta">
         A peça mostra o que a aula tem. Capa esparsa mente sobre o conteúdo;
         infográfico lotado deixa de ensinar.
       </p>
-      <p nome="Negative Space">
+      <p nome="Espaço negativo">
         Respiro AO REDOR dos blocos. Nunca meia tela vazia.
       </p>
     </principios>
 
     <estilo_fixo>
-      Infográfico vetorial editorial semi-flat sobre fundo escuro azulado,
-      composição arquitetural, formas geométricas limpas, cartões de superfície
-      elevada com cantos arredondados, bordas quase invisíveis, glow sutil e
-      colorido nos elementos de destaque, ícones lineares consistentes,
-      hierarquia visual forte, acabamento de produto educacional premium,
-      contemporâneo e jovem sem parecer infantil.
+      Infográfico editorial vetorial chapado (flat) sobre fundo grafite quase
+      preto, composição em grade, painéis retangulares com cantos levemente
+      arredondados (8 a 12 px) e filetes finos de 1 px, alto contraste,
+      tipografia grotesca pesada nos títulos e monoespaçada nos rótulos,
+      badges numerados quadrados em vermelho signal, etiquetas em formato de
+      pílula, ícones lineares finos e consistentes, setas retas e limpas.
+      Textura de papel/grão muito sutil é permitida no fundo. Acabamento de
+      estúdio de design, contemporâneo e jovem sem parecer infantil.
+      Sem degradê, sem brilho (glow), sem vidro (glassmorphism), sem neon,
+      sem 3D plástico.
     </estilo_fixo>
 
-    <paleta observacao="derivada das 54 imagens aprovadas">
+    <paleta observacao="tokens do DESIGN.md do ProfessorDash">
       <fundos>
-        base preta azulada #050810 · navy profundo #0A1220 ·
-        superfície de cartão #111A2B · superfície elevada #1A2438
-        (o acervo NÃO usa preto neutro puro nem cinza; o fundo puxa para navy)
+        base grafite #141414 · poço/rodapé #0D0D0D · painel #1C1C1E ·
+        painel elevado #232326 · filete rgba(255,255,255,.11) ≈ #2E2E31 ·
+        filete forte rgba(255,255,255,.20) ≈ #474749
+        (preto NEUTRO: nada de navy, azulado ou marrom no fundo)
       </fundos>
       <texto>
-        principal #ECE8E7 · secundário #B0ADB5 · suave #84808C
+        principal osso #F4F3F0 · secundário #8E8E95 · discreto #5C5C63
       </texto>
       <semantica_de_cor peso="alto">
-        <cor nome="ciano/azul" hex="#06B6D4 · #3B82F6">
-          conceito principal, fio condutor, destaque do título. Presente em
-          54/54 imagens do acervo — é a cor âncora da marca.
+        <cor nome="vermelho signal" hex="#FB3732">
+          conceito principal, fio condutor, palavra-chave do título, seta
+          principal, badge numerado. É a cor âncora: aparece em toda peça,
+          com parcimônia.
         </cor>
-        <cor nome="verde" hex="#10B981">
-          acerto, boa prática, entrada de dados, estado saudável.
+        <cor nome="esmeralda" hex="#10B981">
+          acerto, boa prática, entrada de dados, conclusão, estado saudável.
         </cor>
-        <cor nome="âmbar/laranja" hex="#F59E0B">
-          atenção, etapa final, saída, "cuidado aqui".
+        <cor nome="âmbar" hex="#FFA31A">
+          atenção, cuidado, etapa final, saída.
         </cor>
-        <cor nome="violeta/roxo" hex="#8B5CF6">
-          camada avançada, processamento interno, abstração.
+        <cor nome="azul volt" hex="#3B49E4">
+          camada de apoio, processamento interno, abstração, camada avançada.
         </cor>
-        <cor nome="vermelho" hex="#EF4444">
-          erro, mito, antipadrão, o que NÃO fazer. Use com parcimônia.
+        <cor nome="azul-céu" hex="#38BDF8">
+          definição, informação neutra, dado. Uso pontual.
+        </cor>
+        <cor nome="erro / antipadrão" hex="#FB3732 + ✗">
+          o mesmo vermelho, SEMPRE com um marcador ✗ e o rótulo do erro
+          (ERRADO, EVITE, MITO), sobre painel acinzentado. É o ✗ que distingue
+          o erro do conceito principal.
         </cor>
       </semantica_de_cor>
-      <gradiente_assinatura>
-        ciano → azul no título; esmeralda → violeta → ciano em setas
-        principais, ciclos, nós e pequenos destaques.
-      </gradiente_assinatura>
       <regra_de_uso>
-        Cores nunca são decorativas. Se um bloco é verde, ele significa
-        "certo/entrada"; se é vermelho, significa "erro". Não pinte blocos de
-        cores diferentes só para variar.
+        Cores nunca são decorativas. Um bloco esmeralda significa
+        "certo/entrada"; âmbar significa "atenção/saída". Não pinte blocos de
+        cores diferentes só para variar: blocos sem significado especial ficam
+        em painel grafite com rótulo osso.
       </regra_de_uso>
     </paleta>
 
     <tipografia>
-      <familia uso="titulos">geométrica sans-serif pesada (Geist, Inter ou equivalente)</familia>
-      <familia uso="codigo">monoespaçada (Geist Mono ou equivalente)</familia>
+      <familia uso="titulos">grotesca sans-serif pesada e compacta (Archivo ExtraBold/Black ou equivalente), espaçamento entre letras levemente apertado</familia>
+      <familia uso="rotulos_e_codigo">monoespaçada (JetBrains Mono ou equivalente), caixa-alta com espaçamento aberto nos rótulos</familia>
       <regras>
-        Português do Brasil, ortografia impecável. Título sempre em caixa-alta.
-        Rótulo de bloco em caixa-alta colorida. Micro-parágrafo em caixa mista.
-        Nada de texto abaixo de ~14px equivalente — se não dá para ler no
-        celular, não entra.
+        Português do Brasil, ortografia impecável. Título em grotesca pesada,
+        com a palavra-chave em vermelho signal e o resto em osso. Rótulo de
+        bloco em mono, caixa-alta, colorido conforme a semântica. Micro-
+        parágrafo em caixa mista. Nada de texto abaixo de ~14px equivalente —
+        se não dá para ler no celular, não entra.
       </regras>
     </tipografia>
 
-    <gramatica_visual peso="alto" observacao="padrões presentes na maioria do acervo">
+    <gramatica_visual peso="alto">
       <elemento nome="titulo">
-        Caixa-alta, 1 a 3 linhas, centralizado no topo. Parte do título em
-        ciano/azul ou gradiente ciano→azul, o resto em branco. Nunca ausente:
-        duas capas do acervo saíram sem título e ficaram órfãs.
+        1 a 3 linhas, no topo central ou alinhado à esquerda logo abaixo da
+        zona reservada da logo, sem invadi-la. Palavra-chave em vermelho
+        signal, resto em osso. Nunca ausente: duas capas do acervo saíram sem
+        título e ficaram órfãs.
+      </elemento>
+      <elemento nome="eyebrow" opcional="sim">
+        Linha curta em mono caixa-alta vermelha acima do título, seguida de um
+        filete de 24 px (ex.: "TEMA V · BANCO DE DADOS"). Só se couber fora das
+        zonas reservadas.
       </elemento>
       <elemento nome="subtitulo" perfil="capa">
-        1 a 2 linhas logo abaixo do título, explicando a promessa da aula.
-        Pode ter 1 ou 2 palavras-chave coloridas dentro da frase.
+        1 a 2 linhas logo abaixo do título, em cinza #8E8E95, explicando a
+        promessa da aula.
       </elemento>
       <elemento nome="rotulo_de_bloco">
-        Caixa-alta curta, na cor semântica do bloco, acima do micro-parágrafo.
+        Mono caixa-alta curta, na cor semântica do bloco, acima do
+        micro-parágrafo.
       </elemento>
       <elemento nome="icone">
-        Ícone linear fino dentro de círculo ou quadrado arredondado colorido,
-        um por bloco, todos da mesma família. Nenhum bloco fica sem ícone.
+        Ícone linear fino (estilo Lucide) desenhado na cor do bloco, dentro de
+        um quadrado grafite com filete de 1 px na mesma cor (no máximo um
+        tingido de 15%). Nunca o quadrado sólido e saturado de "ícone de app".
+        Um por bloco, todos da mesma família. Nenhum bloco fica sem ícone.
       </elemento>
       <elemento nome="badge_numerado">
-        Em sequências, numere as etapas com círculos coloridos 1..N. Padrão
-        mais recorrente do acervo para processos.
+        Em sequências, numere as etapas com quadrados arredondados em vermelho
+        signal com número branco 1..N.
+      </elemento>
+      <elemento nome="filetes">
+        Filetes de 1 px organizam colunas e linhas; uma linha de destaque
+        vermelha curta pode marcar o início de uma seção.
       </elemento>
       <elemento nome="faixa_de_sintese" perfil="capa">
-        Banda full-width no rodapé, fechando a peça. Rótulos já usados:
-        "EM RESUMO", "RESUMO", "IDEIA CENTRAL", "IDEIA-CHAVE", "ERRO COMUM",
-        "LEMBRE-SE", "REGRA DE OURO". Escolha um e mantenha o padrão.
+        Banda full-width no rodapé, em painel #0D0D0D com filete superior,
+        fechando a peça. Rótulos já usados: "EM RESUMO", "IDEIA CENTRAL",
+        "ERRO COMUM", "LEMBRE-SE", "REGRA DE OURO". Escolha um.
       </elemento>
       <elemento nome="render_realista" limite="pontual">
         Um único elemento fotorrealista ou semi-3D é permitido quando o tema
-        pede (hardware, cena de equipe, mapa). Aparece em ~15 das 54 imagens
-        e sempre como UM elemento, nunca como estilo geral da peça.
+        pede (hardware, cena de equipe). Sempre UM elemento, em tons neutros,
+        nunca como estilo geral da peça.
       </elemento>
     </gramatica_visual>
 
@@ -354,13 +399,14 @@
         topo esquerdo = ZONA RESERVADA vazia (logo aplicada no Photoshop);
         topo direito = ZONA RESERVADA vazia (curso aplicado no Photoshop);
         faixa superior central = título e subtítulo;
-        miolo = ponto focal e blocos;
+        miolo = ponto focal e blocos sobre grade;
         rodapé = faixa de síntese (apenas no perfil capa).
       </ancoras>
       <layout>
         Um único ponto focal dominante, fluxo preferencial da esquerda para a
-        direita, ícones da mesma família, leitura clara em notebook e celular,
-        nada importante junto às bordas nem nos cantos superiores.
+        direita, alinhamento rigoroso em grade, ícones da mesma família,
+        leitura clara em notebook e celular, nada importante junto às bordas
+        nem nos cantos superiores.
       </layout>
       <nota_de_canvas>
         A geração entrega tamanhos nativos próximos do alvo, não exatamente
@@ -373,26 +419,28 @@
 
     <linguagem_por_tipo>
       <tipo nome="comparacao">
-        Dois campos com divisor sutil. Ambos os lados com rótulo próprio e peso
-        visual equivalente. Modelo incorreto em vermelho/neutro; recomendado em
-        verde/ciano.
+        Dois campos separados por filete. Ambos os lados com rótulo próprio e
+        peso visual equivalente. Lado incorreto em painel acinzentado com ✗
+        vermelho; lado recomendado com ✓ esmeralda.
       </tipo>
       <tipo nome="ciclo">
-        3 a 5 etapas, setas claras, sentido inequívoco, badges numerados.
+        3 a 5 etapas, setas retas e claras, sentido inequívoco, badges
+        numerados em vermelho signal.
       </tipo>
       <tipo nome="arquitetura">
-        Componentes em camadas com conexões e dependências legíveis.
+        Componentes em camadas empilhadas sobre grade, conexões em filetes e
+        setas, dependências legíveis.
       </tipo>
       <tipo nome="fluxo">
         Setas consistentes, sem cruzamentos, início e fim claros.
       </tipo>
       <tipo nome="linha_do_tempo">
-        Marcos alternados sobre eixo horizontal, com ano/época rotulados.
+        Marcos sobre eixo horizontal de filete, com ano/época em mono.
       </tipo>
       <tipo nome="codigo">
         Terminal, código, banco, rede, API, servidor e cliente somente quando
-        semanticamente necessários. Código exibido precisa ser sintaticamente
-        plausível.
+        semanticamente necessários. Código exibido é curto (até 3 linhas),
+        sintaticamente plausível e em mono.
       </tipo>
     </linguagem_por_tipo>
 
@@ -411,48 +459,52 @@
     <proibido>
       Lorem ipsum, caracteres aleatórios, legendas inventadas, marca-d'água,
       assinatura, texto ilegível, texto cortado pela borda e — crítico —
-      PALAVRA INVENTADA. O acervo tem duas ocorrências reais: "nulhado" no
-      lugar de "nublado" e "madruagda" no lugar de "madrugada". Releia cada
-      palavra da arte antes de entregar.
+      PALAVRA INVENTADA. O acervo tem ocorrências reais: "nulhado" no lugar de
+      "nublado", "madruagda" no lugar de "madrugada", "rosolveu",
+      "flex-contáiner". Releia cada palavra da arte antes de entregar.
     </proibido>
   </regra>
 
   <!-- ================================================================
-       DEFEITOS CONHECIDOS — catálogo empírico, cada um já aconteceu
+       DEFEITOS CONHECIDOS — catálogo empírico
        ================================================================ -->
   <regra id="R3-DEFEITOS-CONHECIDOS" peso="critico">
     <instrucao>
-      Cada item abaixo foi observado em pelo menos uma imagem já publicada do
-      acervo. Antes de entregar, verifique um por um. Qualquer ocorrência =
+      D1 a D12 foram observados em imagens já publicadas do acervo; D13 é o
+      defeito típico da troca para a v7 (o modelo volta ao estilo "tech" com
+      brilho). Antes de entregar, verifique um por um. Qualquer ocorrência =
       regenerar, não entregar.
     </instrucao>
     <defeito id="D1">Texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO").</defeito>
     <defeito id="D2">Palavra inventada ou letra embaralhada em português.</defeito>
     <defeito id="D3">Peça sem título.</defeito>
-    <defeito id="D4">Fundo claro/branco — o acervo é escuro azulado, sempre.</defeito>
+    <defeito id="D4">Fundo claro, branco ou colorido (navy, azulado, roxo) — o fundo v7 é grafite neutro quase preto.</defeito>
     <defeito id="D5">Texto ou objeto cortado pela borda do quadro.</defeito>
     <defeito id="D6">Faixa superior vazia grande (mais de ~15% da altura sem nada além das zonas reservadas).</defeito>
-    <defeito id="D7">Ornamento decorativo dentro de uma zona reservada.</defeito>
+    <defeito id="D7">Ornamento, grade ou filete dentro de uma zona reservada.</defeito>
     <defeito id="D8">Conteúdo que não corresponde ao tema da aula-alvo.</defeito>
-    <defeito id="D9">Diagrama esparso de retângulos cinzas sem ícone, cor ou rótulo (aparência de wireframe).</defeito>
+    <defeito id="D9">Diagrama esparso de retângulos cinzas sem ícone, cor ou rótulo (aparência de wireframe). Atenção redobrada: o estilo chapado da v7 facilita esse erro.</defeito>
     <defeito id="D10">Comparação com apenas um lado rotulado.</defeito>
-    <defeito id="D11">Logo real de terceiro desenhada (Windows, Linux, Android, marcas em geral) — o modelo erra o desenho e cria risco de marca. Use ícone genérico.</defeito>
+    <defeito id="D11">Logo real de terceiro desenhada (Windows, Linux, Android, marcas em geral). Use ícone genérico.</defeito>
     <defeito id="D12">Perfil trocado: capa esparsa em 16:9 ou infográfico com parágrafos em 3:2.</defeito>
+    <defeito id="D13">Linguagem visual fora do Volta Atelier: degradê, brilho/glow, vidro, neon, sombra colorida, paleta antiga (ciano como âncora, violeta, navy), quadrados de ícone sólidos e saturados no estilo "ícone de app", grandes áreas de cor saturada, mais de três cores de acento na peça.</defeito>
   </regra>
 
   <proibicoes_gerais>
     estilo infantil · mascotes fofos · banco de imagens corporativo ·
     pessoas fotorrealistas genéricas de stock · 3D plástico como estilo geral ·
-    cyberpunk exagerado · neon excessivo · fundo branco · bordas pretas grossas ·
+    cyberpunk · neon · degradê · brilho/glow · glassmorphism · sombra colorida ·
+    fundo branco, claro, navy ou azulado · bordas pretas grossas ·
     composição carregada · detalhes minúsculos · texto ilegível ·
     erros de português · palavras inventadas · letras aleatórias ·
     marcas d'água · assinaturas inventadas · logos inventadas ·
     logos reais de terceiros · qualquer logo ou wordmark · qualquer monograma ·
-    "Prof. Toni Coimbra" desenhado · "ProfessorDash" · símbolo de marca ·
-    identificação de curso · "TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS" ·
-    selo de idade · "14 a 18 anos" · qualquer faixa etária ·
+    as letras "TC" como símbolo · "Prof. Toni Coimbra" desenhado ·
+    "ProfessorDash" · identificação de curso ·
+    "TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS" · selo de idade · "14 a 18 anos" ·
     qualquer elemento nos cantos superiores · texto de placeholder ·
-    wireframe de baixa fidelidade · metade do quadro vazia
+    wireframe de baixa fidelidade · metade do quadro vazia ·
+    gráfico de dados com números inventados
   </proibicoes_gerais>
 
   <!-- ================================================================
@@ -461,12 +513,13 @@
   <variaveis_da_aula>
     <perfil>{{CAPA|INFOGRAFICO}}</perfil>
     <titulo_da_aula>{{TÍTULO_EXATO_DA_AULA_ALVO}}</titulo_da_aula>
-    <titulo_da_imagem>{{TÍTULO_CURTO_EM_CAIXA_ALTA}}</titulo_da_imagem>
+    <titulo_da_imagem>{{TÍTULO_CURTO}}</titulo_da_imagem>
+    <palavra_chave_em_signal>{{PALAVRA_DO_TÍTULO_EM_VERMELHO}}</palavra_chave_em_signal>
     <subtitulo perfil="capa">{{PROMESSA_DA_AULA_EM_1_OU_2_LINHAS}}</subtitulo>
     <conceito_central>{{CONCEITO_A_ENSINAR}}</conceito_central>
     <tipo_de_visual>{{COMPARAÇÃO|CICLO|FLUXO|ARQUITETURA|PROCESSO|LINHA_DO_TEMPO}}</tipo_de_visual>
     <mensagem_3s>{{O_QUE_ENTENDER_IMEDIATAMENTE}}</mensagem_3s>
-    <blocos>{{LISTA_DE_BLOCOS_COM_RÓTULO_E_MICRO_TEXTO}}</blocos>
+    <blocos>{{LISTA_DE_BLOCOS_COM_RÓTULO_COR_E_MICRO_TEXTO}}</blocos>
     <faixa_de_sintese perfil="capa">{{RÓTULO + FRASE_DE_FECHAMENTO}}</faixa_de_sintese>
   </variaveis_da_aula>
 
@@ -481,7 +534,8 @@
     </etapa>
 
     <etapa n="1" nome="analisar">
-      Execute a análise pedagógica obrigatória e escolha um único tipo visual.
+      Execute a análise pedagógica obrigatória, confirme que a peça não
+      deveria ser SVG (escolha_do_meio) e escolha um único tipo visual.
     </etapa>
 
     <etapa n="2" nome="planejar">
@@ -496,14 +550,13 @@
 
     <etapa n="4" nome="validar_visual">
       Percorra o checklist_final inteiro e a regra R3 item por item.
-      Leia cada palavra renderizada em voz alta mentalmente: existe em
-      português? está escrita certo?
+      Leia cada palavra renderizada: existe em português? está escrita certo?
     </etapa>
 
     <etapa n="4b" nome="rejeitar_e_regenerar">
       Qualquer item de R3 presente, ou qualquer check reprovado, significa
       REGENERAR. Reforce no prompt exatamente o que falhou e gere de novo.
-      Repita até passar. Não entregue peça reprovada com ressalva.
+      Não entregue peça reprovada com ressalva.
     </etapa>
 
     <etapa n="5" nome="entregar">
@@ -529,37 +582,39 @@ COMPOSITION STRUCTURE:
 [choose one: (a) two side columns + dominant central element + footer band; (b) three columns under a title band + footer band; (c) horizontal flow of 4-7 numbered steps + double footer band; (d) central hub with radial blocks around it + footer band]
 
 CONTENT BLOCKS (4 to 10 blocks, 7 is ideal):
-[for each block: an ALL-CAPS colored label + a 1-3 line micro-paragraph in Brazilian Portuguese + a thin-line icon]
+[for each block: an ALL-CAPS monospaced label in its semantic color + a 1-3 line micro-paragraph in Brazilian Portuguese + a thin-line icon]
 
 TITLE AND SUBTITLE:
-Large ALL-CAPS title at the upper center, 1-3 lines, with part of it in cyan/blue or a cyan-to-blue gradient and the rest in white. Directly below it, a 1-2 line subtitle stating the lesson's promise, optionally with one or two keywords colored.
+[insert title]. Set the title in a heavy, compact grotesque sans-serif (like Archivo Black), 1-3 lines, tight letter spacing, at the upper center below the reserved corners. The keyword "[insert keyword]" is in signal red #FB3732; the rest of the title is in bone white #F4F3F0. Directly below it, the 1-2 line subtitle in gray #8E8E95: "[insert subtitle]".
 
 FOOTER SYNTHESIS BAND (required):
-A full-width band closing the piece, labeled with one of: "EM RESUMO", "IDEIA CENTRAL", "ERRO COMUM", "LEMBRE-SE", "REGRA DE OURO", followed by one closing sentence.
+A full-width band closing the piece, on #0D0D0D with a 1px top rule, labeled in red monospaced caps "[insert footer label: EM RESUMO, IDEIA CENTRAL, ERRO COMUM, LEMBRE-SE or REGRA DE OURO]", followed by this closing sentence in bone white: "[insert footer sentence]".
 
 RESERVED EMPTY ZONES (critical):
-Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier are stamped there later in Photoshop, outside this image. Do NOT draw any logo, monogram, brand name, wordmark, symbol, course text, badge, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
+Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier are stamped there later in Photoshop, outside this image. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, symbol, course text, badge, grid line, rule, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
 
-STYLE:
-Editorial semi-flat vector infographic on a dark blue-black background, architectural composition, clean geometric forms, rounded elevated cards, nearly invisible borders, subtle colored glow on highlights, consistent thin-line icons inside colored circles or rounded squares, strong visual hierarchy, premium educational product finish, contemporary and youthful without being childish.
+STYLE — "Volta Atelier", refined editorial brutalism:
+Flat editorial vector infographic on a neutral near-black graphite background (#141414), laid out on a strict grid. Rectangular panels (#1C1C1E and #232326) with small 8-12px corner radius and crisp 1px hairline borders (#2E2E31). High contrast, solid flat colors only. Thin-line icons (Lucide style) drawn in the block's color inside a dark graphite tile (#232326) with a 1px border in that color; at most a faint 15% tint. NEVER solid, saturated, filled "app icon" squares. Numbered steps use red rounded-square badges with white numbers. Pill-shaped tags. Straight, clean arrows. A very subtle paper grain on the background is allowed. Design-studio finish, contemporary and youthful without being childish. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
 
 COLOR SYSTEM (colors carry fixed meaning — never decorative):
-Background: blue-black #050810 and deep navy #0A1220; card surfaces #111A2B and #1A2438. Main text #ECE8E7, secondary #B0ADB5.
-Cyan/blue #06B6D4 and #3B82F6 = the main concept and the through-line (anchor color, always present).
-Green #10B981 = correct, good practice, input.
-Amber/orange #F59E0B = attention, final step, output.
-Violet #8B5CF6 = advanced layer, internal processing.
-Red #EF4444 = error, myth, antipattern — use sparingly.
-Signature gradient cyan-to-blue on the title; emerald-violet-cyan on primary arrows, cycles and nodes.
+Background graphite #141414, deep band #0D0D0D, panels #1C1C1E and #232326, hairlines #2E2E31. Main text bone white #F4F3F0, secondary gray #8E8E95.
+Signal red #FB3732 = the main concept and the through-line: title keyword, primary arrow, numbered badges (anchor color, always present, used sparingly).
+Emerald #10B981 = correct, good practice, input, done.
+Amber #FFA31A = attention, final step, output.
+Volt blue #3B49E4 = support layer, internal processing, abstraction.
+Sky blue #38BDF8 = definition or neutral data, sparingly.
+Errors/antipatterns = a grayed panel with a red ✗ mark and a label such as "ERRADO" or "EVITE".
+Blocks with no special meaning stay graphite with bone-white text.
+Color budget: signal red plus at most TWO other semantic colors in the whole piece; most panels stay graphite. Large areas of saturated color are not allowed — color lives in thin borders, icons, labels, badges and arrows.
 
 TYPOGRAPHY:
-Heavy geometric sans-serif. ALL-CAPS title and ALL-CAPS colored block labels. Micro-paragraphs in mixed case. Flawless Brazilian Portuguese — every rendered word must be a real, correctly spelled word. Nothing smaller than roughly 14px equivalent.
+Heavy compact grotesque sans-serif (Archivo Black style) ONLY for the title; every other piece of text — labels, micro-paragraphs, subtitle, footer — in a monospaced typeface (JetBrains Mono style), labels in ALL-CAPS with open letter spacing. Flawless Brazilian Portuguese — every rendered word must be a real, correctly spelled word. Nothing smaller than roughly 14px equivalent.
 
 LAYOUT:
-3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins, one dominant focal point, core content occupying 70-90% of the usable height, readable on laptop and mobile, both top corners kept clean and empty.
+3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins, one dominant focal point, strict grid alignment, core content occupying 70-90% of the usable height, readable on laptop and mobile, both top corners kept clean and empty.
 
 AVOID:
-childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, excessive neon, cyberpunk, white or light background, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a large empty band across the top beyond the reserved corners, sparse flat-gray wireframe boxes.
+navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, cyberpunk, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a large empty band across the top beyond the reserved corners, sparse flat-gray wireframe boxes, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
@@ -584,34 +639,34 @@ CONTENT BLOCKS (2 to 5 only):
 [for each block: a short label of up to 4 words + a thin-line icon + its semantic color]
 
 TITLE:
-One short line at the upper center. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
+"[insert title]" — one short line at the upper center, below the reserved corners, in a heavy compact grotesque sans-serif (like Archivo Black). The word "[insert keyword]" is in signal red #FB3732, the rest in bone white #F4F3F0. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
 
 RESERVED EMPTY ZONES (critical):
-Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier are stamped there later in Photoshop, outside this image. Do NOT draw any logo, monogram, brand name, wordmark, symbol, course text, badge, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
+Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier may be stamped there later, outside this image. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, symbol, course text, badge, grid line, rule, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
 
-STYLE:
-Editorial semi-flat vector infographic on a dark blue-black background, clean geometric forms, rounded elevated cards, nearly invisible borders, subtle colored glow, consistent thin-line icons, generous breathing room AROUND the blocks, strong visual hierarchy, premium educational finish.
+STYLE — "Volta Atelier", refined editorial brutalism:
+Flat editorial vector infographic on a neutral near-black graphite background (#141414), strict grid alignment, rectangular panels (#1C1C1E, #232326) with small 8-12px radius and crisp 1px hairline borders (#2E2E31), solid flat colors, high contrast, consistent thin-line icons (Lucide style) drawn in the block's color inside dark graphite tiles with a 1px colored border (NEVER solid, saturated, filled "app icon" squares), red rounded-square numbered badges, straight clean arrows, generous breathing room AROUND the blocks. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
 
 MANDATORY MINIMUM ELEMENTS (a sparse gray wireframe is a FAILED output, not minimalism):
-- A short title rendered in the upper-center area.
-- A thin-line icon, accent color or distinct fill on every single block — never a flat gray rectangle with no icon, no color and no label.
-- At least one panel or node with a visible glass-like finish and at least one highlight using the signature gradient.
-- In side-by-side comparisons, BOTH sides must carry their own label and equivalent visual weight.
+- A short title rendered in the upper-center area, with its keyword in signal red.
+- A thin-line icon and a semantic accent color on every single block — never a flat gray rectangle with no icon, no color and no label.
+- At least one signal-red highlight: the primary arrow, a numbered badge or the title keyword.
+- In side-by-side comparisons, BOTH sides must carry their own label and equivalent visual weight; the wrong side is grayed with a red ✗, the right side has an emerald ✓.
 - The core content must occupy 60-80% of the usable vertical height — never half the canvas left empty.
 
 COLOR SYSTEM (colors carry fixed meaning — never decorative):
-Background: blue-black #050810 and deep navy #0A1220; card surfaces #111A2B and #1A2438. Main text #ECE8E7, secondary #B0ADB5.
-Cyan/blue #06B6D4 and #3B82F6 = the main concept. Green #10B981 = correct/input. Amber #F59E0B = attention/output. Violet #8B5CF6 = advanced layer. Red #EF4444 = error/antipattern, sparingly.
-Signature gradient emerald-violet-cyan on primary arrows, cycles, nodes or small highlights.
+Background graphite #141414; panels #1C1C1E and #232326; hairlines #2E2E31. Main text bone white #F4F3F0, secondary gray #8E8E95.
+Signal red #FB3732 = the main concept and through-line. Emerald #10B981 = correct/input/done. Amber #FFA31A = attention/output. Volt blue #3B49E4 = support layer/internal processing. Sky blue #38BDF8 = definition/neutral data, sparingly. Errors = grayed panel + red ✗.
+Color budget: signal red plus at most TWO other semantic colors in the whole piece; most panels stay graphite. Large areas of saturated color are not allowed — color lives in thin borders, icons, labels, badges and arrows.
 
 TYPOGRAPHY:
-At most eight short Brazilian Portuguese labels, each up to four words. No paragraphs, no captions, no explanatory sentences. Flawless spelling — every rendered word must be a real, correctly spelled Portuguese word.
+At most eight short Brazilian Portuguese labels, each up to four words, in a monospaced typeface (JetBrains Mono style), ALL-CAPS with open letter spacing; the heavy grotesque is used ONLY for the title. No paragraphs, no captions, no explanatory sentences. Flawless spelling — every rendered word must be a real, correctly spelled Portuguese word.
 
 LAYOUT:
 16:9 landscape, highest available resolution, 8% safe margins, one dominant focal point, at most five main visual groups, readable on laptop and mobile, both top corners kept clean and empty.
 
 AVOID:
-childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, excessive neon, cyberpunk, white or light background, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a comparison where only one side has a label.
+navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, cyberpunk, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a comparison where only one side has a label, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
@@ -623,11 +678,11 @@ childish style, cute mascots, generic corporate stock illustration, photorealist
       <check>[ ] O canto superior esquerdo está escuro e VAZIO?</check>
       <check>[ ] O canto superior direito está escuro e VAZIO?</check>
       <check>[ ] Não há caixa tracejada nem a palavra "reservado" desenhada?</check>
-      <check>[ ] Não há ornamento/circuito/moldura dentro das zonas?</check>
+      <check>[ ] Não há ornamento, grade, filete ou circuito dentro das zonas?</check>
     </grupo>
 
     <grupo nome="marca">
-      <check>[ ] Nenhuma logo, wordmark ou monograma foi desenhado?</check>
+      <check>[ ] Nenhuma logo, wordmark, monograma ou "TC" foi desenhado?</check>
       <check>[ ] Nenhuma logo real de terceiro (Windows, Linux, Android...)?</check>
       <check>[ ] Nenhuma identificação de curso foi escrita?</check>
       <check>[ ] "ProfessorDash" não aparece em lugar nenhum?</check>
@@ -638,7 +693,7 @@ childish style, cute mascots, generic corporate stock illustration, photorealist
       <check>[ ] TODA palavra renderizada existe em português e está escrita certo?</check>
       <check>[ ] Nenhum texto está cortado pela borda?</check>
       <check>[ ] Nenhum texto de placeholder sobrou na arte?</check>
-      <check>[ ] Há um título visível em caixa-alta?</check>
+      <check>[ ] Há um título visível, com a palavra-chave em vermelho signal?</check>
     </grupo>
 
     <grupo nome="perfil capa">
@@ -656,16 +711,20 @@ childish style, cute mascots, generic corporate stock illustration, photorealist
       <check>[ ] O miolo ocupa 60–80% da altura útil?</check>
     </grupo>
 
-    <grupo nome="design system">
-      <check>[ ] O fundo é escuro azulado (navy), nunca claro nem cinza neutro?</check>
+    <grupo nome="design system Volta Atelier">
+      <check>[ ] O fundo é grafite neutro quase preto (nem claro, nem navy, nem azulado)?</check>
+      <check>[ ] Cor chapada, sem degradê, brilho, vidro, neon ou sombra colorida?</check>
+      <check>[ ] Painéis com filete fino e alinhamento em grade?</check>
       <check>[ ] Cada bloco tem ícone linear e cor com significado?</check>
-      <check>[ ] O ciano/azul aparece como cor âncora?</check>
+      <check>[ ] O vermelho signal aparece como âncora, com parcimônia?</check>
+      <check>[ ] Erros aparecem com ✗ e rótulo, distintos do conceito principal?</check>
       <check>[ ] Em comparações, os dois lados têm rótulo e peso equivalentes?</check>
-      <check>[ ] Elemento fotorrealista/3D, se houver, é UM só e é temático?</check>
+      <check>[ ] Elemento fotorrealista/3D, se houver, é UM só, temático e neutro?</check>
     </grupo>
 
     <grupo nome="conteúdo">
       <check>[ ] O conteúdo corresponde ao tema da AULA-ALVO (e não ao da aula vizinha)?</check>
+      <check>[ ] A peça não deveria ser um SVG com texto real (dados, tabela, cálculo)?</check>
       <check>[ ] A entrega é a IMAGEM (arte-base), e não apenas um prompt?</check>
     </grupo>
 

@@ -10,7 +10,7 @@ visual que o modelo lê.
 
 Não anexar:
 
-- `LEIA-ME_PROMPT_INFOGRAFICOS_v6.txt` — é manual para o Toni, não para o
+- `LEIA-ME_PROMPT_INFOGRAFICOS_v7.txt` — é manual para o Toni, não para o
   modelo; nos arquivos do Projeto ele compete com o XML;
 - `logo-prof-toni-coimbra-horizontal.png` — dar a marca ao modelo generativo é
   convite para ele redesenhá-la. A logo entra só no Photoshop.
@@ -26,7 +26,7 @@ Fixar paleta e zonas reservadas na instrução é o seguro barato contra isso.
 # INSTRUÇÕES OBRIGATÓRIAS PARA GERAÇÃO DAS ARTES
 
 Siga integralmente o arquivo XML anexado a este projeto: prompt.xml,
-versão 6.0, modo arte_base_para_branding_externo.
+versão 7.0, modo arte_base_para_branding_externo.
 
 A cada solicitação serão enviados: canonica.md, imagens.md, o PERFIL desejado
 e o título exato da aula-alvo.
@@ -53,15 +53,20 @@ inteira, cada um com até 4 palavras. Proibido: subtítulo, faixa de rodapé,
 parágrafo, microparágrafo, texto explicativo. Miolo ocupando 60% a 80% da
 altura útil.
 
-## FUNDO E PALETA (não negociável)
-O fundo é SEMPRE escuro azulado: preto-azulado #050810 e navy profundo #0A1220.
-Superfícies de cartão #111A2B e #1A2438. Texto principal #ECE8E7.
-Ciano/azul #06B6D4 e #3B82F6 é a cor âncora e aparece sempre.
-Fundo branco, claro, cinza neutro ou pastel é o defeito D4 e reprova a peça
-inteira — nem uma faixa, nem um painel, nem metade do quadro.
-Cor nunca é decorativa: verde #10B981 = certo/entrada, âmbar #F59E0B =
-atenção/saída, violeta #8B5CF6 = camada avançada, vermelho #EF4444 =
-erro/antipadrão, com parcimônia.
+## FUNDO E PALETA — VOLTA ATELIER (não negociável)
+O fundo é SEMPRE grafite neutro quase preto: #141414, com faixas #0D0D0D.
+Painéis #1C1C1E e #232326, filetes de 1 px #2E2E31. Texto principal osso
+#F4F3F0, secundário #8E8E95.
+O vermelho signal #FB3732 é a cor âncora: palavra-chave do título, seta
+principal, badges numerados. Aparece sempre, com parcimônia.
+Fundo branco, claro, navy, azulado ou colorido é o defeito D4 e reprova a peça.
+Degradê, brilho (glow), vidro, neon e sombra colorida são o defeito D13.
+Cor nunca é decorativa: esmeralda #10B981 = certo/entrada/conclusão, âmbar
+#FFA31A = atenção/saída, azul volt #3B49E4 = camada de apoio/processamento,
+azul-céu #38BDF8 = definição (pontual). Erro/antipadrão = painel acinzentado
+com ✗ vermelho e rótulo (ERRADO, EVITE).
+Estilo: brutalismo editorial refinado — cor chapada, grade, filetes finos,
+título em grotesca pesada (tipo Archivo Black), rótulos em mono caixa-alta.
 
 ## CANTOS SUPERIORES RESERVADOS
 Mantenha os dois cantos superiores escuros, calmos e completamente vazios: sem
@@ -71,13 +76,13 @@ contorno, marcação, nem escreva "reservado" ou qualquer indicação de onde o
 branding será aplicado. O título não pode invadir esses cantos.
 
 ## ARTE-BASE PARA BRANDING EXTERNO
-Gere APENAS a arte-base. Não desenhe logotipo, wordmark, monograma, o nome
+Gere APENAS a arte-base. Não desenhe logotipo, wordmark, monograma, as letras TC, o nome
 "Prof. Toni Coimbra", identificação de curso, assinatura ou faixa etária.
 Esses elementos são aplicados depois no Photoshop.
 
 ## VERIFICAÇÃO FINAL OBRIGATÓRIA
 Antes de entregar: percorra o checklist_final inteiro, verifique a regra R3
-item por item nos 12 defeitos, confirme o perfil sem mistura, confirme os dois
+item por item nos 13 defeitos, confirme o perfil sem mistura, confirme os dois
 cantos vazios, confirme ausência de branding e leia cada palavra renderizada
 conferindo se existe em português e está escrita certo.
 Qualquer ocorrência: REGENERE. Não entregue imagem com ressalva ou aviso.
@@ -94,7 +99,7 @@ confirmação sem a imagem. A tarefa só termina quando o PNG for entregue.
 PERFIL: {CAPA|INFOGRAFICO}
 AULA: {título exato da aula-alvo}
 
-Execute integralmente o XML v6 no perfil acima e gere a arte-base final.
+Execute integralmente o XML v7 no perfil acima e gere a arte-base final.
 Não pare no prompt. Mantenha os dois cantos superiores escuros, vazios e
 reservados.
 ```
