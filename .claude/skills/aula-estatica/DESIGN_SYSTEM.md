@@ -67,6 +67,10 @@ Regras:
 - Escala: capa `clamp(36px, 5.4vw, 64px)` · seção `clamp(28px, 3.6vw, 44px)` · parte `clamp(22px, 2.4vw, 30px)`
   · `h3` 1.16em · `h4` 1.04em · rótulos 11–12 px em caixa-alta com `letter-spacing` .1–.16em.
 - Títulos Archivo com `letter-spacing: -.03em` e `line-height` ~1; mono nunca tem tracking negativo.
+- **Texto proporcional (opcional):** `<body data-texto="proporcional">` põe parágrafos, listas e
+  células em Archivo 400; código, rótulos, títulos de parte, sumário e botões seguem em mono. Use em
+  material longo de leitura (apostila de revisão), onde a mono cansa. Glifos que faltam na Archivo
+  (→, ≤, ↔) caem para a JetBrains Mono. O arquivo embutido da Archivo é variável (100–900).
 - **Fontes:** o template carrega pelo Google Fonts; o `scripts/build.py` troca por cópias embutidas
   (`assets/fonts/*.woff2`, as mesmas que o portal hospeda), e o arquivo passa a abrir 100% offline.
 
@@ -101,6 +105,7 @@ Snippets em `BLOCOS.md`. Resumo de intenção:
 | Passos | `.lesson-steps` | índice quadrado em signal |
 | Exercícios | `.lesson-quiz`, `.quiz-option` | alternativas clicáveis, feedback, gabarito comentado |
 | Checklist | (verde = conclusão) | check esmeralda |
+| Resumo do tema | (extensão) | ficha por habilidade: código e título à esquerda, pontos-chave à direita |
 | Roteiro | (extensão) | tracejado volt, some no PDF |
 | Capa ilustrada | `.lesson-hero` | imagem 3:2 da `gerar-imagem-aula`, borda fina, raio 18 |
 | Gráfico SVG | (extensão) | moldura de painel; cores por classe de token, texto real, troca de tema sozinho |

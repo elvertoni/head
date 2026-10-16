@@ -10,7 +10,7 @@
   <!-- FONTES:INICIO · scripts/build.py troca este bloco pelas fontes embutidas (arquivo 100% offline) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- FONTES:FIM -->
   <script>
     (function () {
@@ -694,6 +694,25 @@ body[data-layout='amplo'] .tema-nav a { padding-block: 10px; }
     body[data-layout='amplo'] .answer-key td a { min-width: 0; padding: 2px 4px; }
     body[data-layout='amplo'] .section--close .footer-note { break-before: avoid; }
     body[data-layout='amplo'] .site-footer { display: none; }
+}
+/* ── Resumo do tema (ficha de revisão por habilidade) ────────────────── */
+.resumo { max-width: min(100%, calc(var(--measure) + 14rem)); margin: var(--space-5) 0 var(--space-8); border-top: 1px solid var(--border-strong); }
+.resumo-item { display: grid; grid-template-columns: minmax(150px, 13rem) minmax(0, 1fr); gap: var(--space-2) var(--space-5); padding: var(--space-4) 0; border-bottom: 1px solid var(--border); }
+.resumo dt a { color: var(--accent-text); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; text-decoration: none; }
+.resumo dt a:hover { text-decoration: underline; }
+.resumo dt span { display: block; margin-top: 4px; color: var(--fg); font-family: var(--font-display); font-weight: 800; font-size: 17px; line-height: 1.25; letter-spacing: -.01em; }
+.resumo dd { margin: 0; }
+.section .resumo dd ul { max-width: none; margin: 0; padding-left: 1.1em; }
+.section .resumo dd li + li { margin-top: 8px; }
+@media screen and (max-width: 720px) { .resumo-item { grid-template-columns: 1fr; } }
+@media print { .resumo-item { break-inside: avoid; } .resumo dt a { color: var(--fg); } }
+/* ── Texto proporcional (opt-in: body data-texto="proporcional") ───────
+   Parágrafos, listas e células em Archivo 400; código, rótulos, títulos
+   de parte, sumário e botões continuam em JetBrains Mono. Glifos que
+   faltam na Archivo (→, ≤, ↔) caem para a mono. */
+body[data-texto='proporcional'] { --font-text: 'Archivo', 'JetBrains Mono', system-ui, sans-serif; }
+body[data-texto='proporcional'] :is(p, li, dd, td, blockquote, figcaption, .quiz-option-text):not(.eyebrow, .chip, .toc li, .tema-nav li, .meta dd, .resumo dt) {
+    font-family: var(--font-text); word-spacing: normal;
 }
 /* ── Impressão de treino (botão "PDF sem respostas") ───────────────────
    Esconde gabaritos comentados, soluções e marcações das questões já

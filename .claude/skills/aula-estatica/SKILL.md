@@ -36,7 +36,8 @@ nova no fim do `<style>`.
 Estrutura: cabeçalho fixo → capa (`.lesson-header`) → sumário (`.toc`) → seções
 (`.section` com `id="sec-N"`) → fechamento (`.section.section--close`) → rodapé.
 Aula de 50 min: 4 a 8 seções. Material longo (apostila, módulo): pode passar disso, use o
-**divisor de parte** (BLOCOS §4) e `<body data-print="capitulos">`.
+**divisor de parte** (BLOCOS §4) e `<body data-print="capitulos">`. Apostila de revisão: feche
+cada tema com o **resumo** (BLOCOS §19) e considere `data-layout="amplo"` e `data-texto="proporcional"`.
 
 ### 3. Mapear o conteúdo nos componentes
 

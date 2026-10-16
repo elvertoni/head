@@ -6,7 +6,8 @@ site são a mesma peça vestida de dois jeitos. Nada de `style=""` inline, excet
 
 Sumário: 1 capa · 2 sumário · 3 seção · 4 divisor de parte · 5 fechamento · 6 callouts ·
 7 código · 8 tabela · 9 passos · 10 exercícios · 11 checklist · 12 chips · 13 demo ·
-14 figura · 15 citação · 16 roteiro do professor · 17 capa ilustrada · 18 gráfico SVG
+14 figura · 15 citação · 16 roteiro do professor · 17 capa ilustrada · 18 gráfico SVG ·
+19 resumo do tema
 
 ---
 
@@ -357,3 +358,31 @@ entre claro e escuro, porque as cores vêm de **classes ligadas aos tokens**:
 Regras: `viewBox` com largura 760 (a moldura rola na horizontal no celular, mínimo 520 px);
 fonte 13–17 px; `<title>` sempre; cor com o mesmo significado do resto da apostila (signal =
 destaque/rede, esmeralda = certo/não volátil, âmbar = atenção/volátil, volt = dados neutros).
+
+## 19 — Resumo do tema (ficha de revisão)
+
+Em material longo (apostila de revisão), feche a explicação de cada tema com uma ficha, logo
+antes dos exercícios. Uma linha por habilidade; o código leva de volta à explicação. Pontos
+curtos, com o número, a regra ou a fórmula que cai na prova, sem conteúdo novo.
+
+```html
+<header class="part-head" id="resumo-tema-1">
+  <p class="eyebrow">Resumo</p>
+  <h3>O essencial do Tema I</h3>
+</header>
+<p>A ficha do tema, para revisar antes dos exercícios e na véspera da prova. Clique no código da habilidade para voltar à explicação.</p>
+<dl class="resumo">
+  <div class="resumo-item">
+    <dt><a href="#he-dsi-02">HE-DSI-02</a><span>Sistemas de numeração</span></dt>
+    <dd><ul>
+      <li>Binário → decimal: some as potências onde há 1.</li>
+      <li>Com n bits cabem 2<sup>n</sup> valores, de 0 a 2<sup>n</sup> − 1.</li>
+    </ul></dd>
+  </div>
+</dl>
+```
+
+O `id` no `.part-head` põe o resumo na lista "Tópicos desta seção". No celular a ficha vira uma
+coluna; no PDF cada linha não quebra entre páginas e continua no PDF sem respostas. Junto com os
+resumos, a seção de abertura pode trazer um **roteiro de estudo**: tabela tema → sessões de
+50 min → onde pôr atenção, e um callout `dica` com o plano para 3 semanas, 1 semana e véspera.

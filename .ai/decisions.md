@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #017 — Texto proporcional opcional e resumo por tema nas apostilas standalone
+- **Data:** 2026-10-16
+- **Status:** Aceita para a apostila de revisão DS, a pedido do Toni (pontos da revisão do Codex).
+- **Contexto:** A apostila DS tem cerca de 43 mil palavras em mono; faltavam um roteiro de estudo, uma revisão de véspera e uma versão impressa sem respostas.
+- **Decisão:** O template `aula-estatica` ganha `body[data-texto="proporcional"]` (Archivo 400 no texto corrido; código, rótulos e títulos de parte seguem em JetBrains Mono), o bloco `.resumo` (BLOCOS §19) e o botão "PDF sem respostas" (`data-print-mode="treino"`). A Archivo embutida passa a ser declarada de 400 a 900 (o arquivo já é variável).
+- **Consequências:** Outras apostilas continuam em mono, a menos que ativem o atributo. A apostila DS ganhou roteiro de 18 sessões, oito resumos e o PDF completo caiu de 202 para 194 páginas (182 no PDF sem respostas).
+
 ## #016 — Leitura ampla opcional nas apostilas standalone
 - **Data:** 2026-10-16
 - **Status:** Aceita para a apostila de revisão DS, a pedido do Toni.

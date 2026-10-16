@@ -45,7 +45,7 @@ def embed_fonts(html):
 
     block = ('<!-- FONTES: embutidas por scripts/build.py (Archivo + JetBrains Mono, self-host como no portal) -->\n'
              '  <style>\n'
-             f"  {face('Archivo', 'archivo-latin.woff2', '600 900')}\n"
+             f"  {face('Archivo', 'archivo-latin.woff2', '400 900')}\n"
              f"  {face('JetBrains Mono', 'jetbrains-mono-latin.woff2', '400 700')}\n"
              '  </style>')
     return html[:a] + block + html[b:], True
