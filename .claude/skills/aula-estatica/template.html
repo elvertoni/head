@@ -210,11 +210,11 @@ img { max-width: 100%; height: auto; }
     background: linear-gradient(90deg, var(--signal), var(--line-2) 24%, transparent 72%);
 }
 .eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
+    display: block;
     color: var(--accent-text); font: 600 11px/1.4 var(--font-body);
     letter-spacing: .16em; text-transform: uppercase;
 }
-.eyebrow::after { content: ""; width: 24px; height: 1px; background: currentColor; }
+.eyebrow::after { content: ""; display: inline-block; vertical-align: middle; width: 24px; height: 1px; margin-left: 10px; background: currentColor; }
 .chips, .section .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 var(--space-4); padding: 0; list-style: none; max-width: none; }
 .chip + .chip { margin-top: 0 !important; }
 .chip {
@@ -224,6 +224,7 @@ img { max-width: 100%; height: auto; }
     font: 500 12px/1 var(--font-body); letter-spacing: .02em;
 }
 .chip--signal { background: var(--signal); border-color: var(--signal); color: #fff; }
+.section .chips .chip { border-color: transparent; background: var(--surface-overlay); border-radius: var(--radius-xs); }
 .lesson-header h1 {
     max-width: 18ch;
     font-family: var(--font-display); font-weight: 800;
@@ -308,7 +309,7 @@ pre code { padding: 0; color: inherit; background: none; border: 0; font-size: 1
 pre, code, kbd { font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'calt' 0; }
 .code-copy {
     position: absolute; top: 6px; right: 8px;
-    padding: 4px 10px; border: 1px solid rgba(255, 255, 255, .20); border-radius: var(--radius-pill);
+    min-height: 32px; padding: 6px 12px; border: 1px solid rgba(255, 255, 255, .20); border-radius: var(--radius-pill);
     background: transparent; color: #c9c8cc; font: 500 11px/1.4 var(--font-body); letter-spacing: .06em; cursor: pointer;
 }
 .code-copy:hover { color: #141414; background: #f4f3f0; border-color: #f4f3f0; }
@@ -434,12 +435,15 @@ blockquote p { margin: 0; }
 .quiz-option.is-wrong { border-color: var(--signal); background: color-mix(in srgb, var(--signal) 8%, var(--surface-base)); }
 .quiz-option.is-wrong .quiz-option-letter { background: var(--signal); color: #fff; }
 .quiz-option.is-wrong .quiz-option-icon::after { content: '✗'; color: var(--signal); }
-.quiz-option.is-dimmed { opacity: .72; }
+.quiz-option.is-dimmed { border-style: dashed; }
 .quiz-option.is-dimmed .quiz-option-text { color: var(--fg-muted); }
 .quiz-feedback { margin: var(--space-2) 0 0 !important; font-size: .9em; font-weight: 700; }
 .quiz-feedback.ok { color: var(--emerald-deep); }
 .quiz-feedback.no { color: var(--accent-text); }
-.quiz-answer { margin-top: var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-base); }
+.quiz-answer { margin-top: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-base); }
+.quiz-answer:not([open]) { border-style: dashed; background: transparent; }
+.quiz-review { margin-top: var(--space-2) !important; font-size: .88em; }
+.quiz-review a { color: var(--accent-text); }
 .quiz-answer > summary {
     display: flex; align-items: center; gap: 8px; padding: 10px 14px; cursor: pointer; list-style: none;
     color: var(--fg-muted); font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
@@ -450,7 +454,10 @@ blockquote p { margin: 0; }
 .quiz-answer > summary:hover { color: var(--fg); }
 .quiz-answer > :not(summary) { margin: 0; padding: 0 14px 12px; }
 .quiz-answer p { font-size: .94em; line-height: 1.7; }
-.quiz-result { margin-top: var(--space-5); padding: var(--space-3) var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); font-weight: 700; text-align: center; }
+.lesson-quiz .quiz-result { margin: var(--space-5) 0 0; max-width: none; padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); font-weight: 700; text-align: center; }
+.quiz-result .quiz-wrong { display: block; margin-top: var(--space-2); font-weight: 500; }
+.quiz-result .quiz-wrong a { color: inherit; text-decoration: underline; margin: 0 2px; }
+.quiz-result .btn { margin-top: var(--space-3); }
 .quiz-result.good { color: var(--emerald-deep); border-color: var(--emerald); background: var(--tint-success); }
 .quiz-result.mid  { color: var(--amber-deep); border-color: var(--amber); background: var(--tint-warning); }
 
@@ -463,6 +470,28 @@ blockquote p { margin: 0; }
 .checklist.todo li.done::before { background: var(--emerald); border-color: var(--emerald); -webkit-mask: var(--i-check) center / 90% no-repeat; mask: var(--i-check) center / 90% no-repeat; }
 .checklist.todo li.done { color: var(--fg-muted); }
 .checklist.todo li:focus-visible { outline: 2px solid var(--signal); outline-offset: 4px; border-radius: 4px; }
+
+/* Tópicos da seção (gerado pelo JS a partir dos divisores de parte e dos h4) */
+.tema-nav { max-width: var(--measure); margin: 0 0 var(--space-6); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface-raised); }
+.tema-nav > summary { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; list-style: none; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--fg-muted); }
+.tema-nav > summary::-webkit-details-marker { display: none; }
+.tema-nav > summary::before { content: '+'; display: inline-grid; place-items: center; width: 18px; height: 18px; border: 1px solid var(--border-strong); border-radius: var(--radius-pill); font-size: 13px; line-height: 1; }
+.tema-nav[open] > summary::before { content: '–'; }
+.tema-nav ol { margin: 0 !important; padding: 0 16px 14px 16px !important; list-style: none; max-width: none !important; }
+.tema-nav li { margin: 0 !important; }
+.tema-nav a { display: block; padding: 6px 0; color: var(--fg); text-decoration: none; font-size: .9em; line-height: 1.4; }
+.tema-nav a:hover { color: var(--accent-text); }
+.tema-nav .lv-part { margin-top: 8px !important; }
+.tema-nav .lv-part > a { font-weight: 700; }
+.tema-nav .lv-part > a span { display: block; color: var(--accent-text); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; }
+.tema-nav .lv-topic > a { padding-left: 14px; color: var(--fg-muted); }
+.tema-nav .lv-topic > a:hover { color: var(--fg); }
+.where-link { color: inherit; text-decoration: none; }
+.where-link:hover { color: var(--fg); text-decoration: underline; }
+
+/* Gabarito rápido: alvos de toque e sem quebra no hífen */
+.answer-key td a { display: inline-block; min-width: 44px; padding: 8px 6px; white-space: nowrap; text-align: center; color: var(--fg); }
+.answer-key td a:hover { color: var(--accent-text); }
 
 /* ── Demonstração (HTML real renderizado) ────────────────────────────── */
 .demo { max-width: 100%; margin: var(--space-4) 0 var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
@@ -487,7 +516,7 @@ blockquote p { margin: 0; }
 /* ── Gráfico / diagrama SVG com texto real (tokens do tema, nunca imagem gerada) */
 .chart { margin: var(--space-5) 0 var(--space-6); max-width: 100%; }
 .chart-frame { padding: var(--space-4) var(--space-4) var(--space-3); border: 1px solid var(--border); border-radius: var(--radius-md); background-color: var(--surface-raised); --scroll-cover: var(--surface-raised); overflow-x: auto; }
-.chart-hint { display: none; margin: 6px 0 0; color: var(--fg-subtle); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.chart-hint, .table-hint { display: none; margin: 6px 0 0; color: var(--fg-subtle); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .chart svg { display: block; width: 100%; min-width: 600px; max-width: 920px; height: auto; margin: 0 auto; font-family: var(--font-body); }
 .chart figcaption { margin-top: var(--space-2); color: var(--fg-muted); font-size: .86em; max-width: var(--measure); }
 .chart .t { fill: var(--fg); font-size: 15px; }
@@ -527,10 +556,13 @@ blockquote p { margin: 0; }
 
 /* ── Responsivo ───────────────────────────────────────────────────────── */
 @media (max-width: 720px) {
-    .chart-hint { display: block; }
+    .chart-hint, .table-hint { display: block; }
     .site-header { gap: var(--space-3); padding-inline: 16px; }
     .toolbar { gap: 6px; }
-    .brand-text small { display: none; }
+    .brand-text strong { display: none; }
+    .brand-text small { max-width: 40vw; }
+    th, td { min-width: 150px; }
+    tbody td:first-child { position: sticky; left: 0; z-index: 1; background: var(--surface-raised); }
     .btn { padding: var(--space-2) var(--space-3); }
     .btn .label-long { display: none; }
     .btn .label-short { display: inline; }
@@ -538,10 +570,8 @@ blockquote p { margin: 0; }
     .callout { grid-template-columns: 1fr; }
     .callout .ic { width: 2em; height: 2em; }
     .lesson-quiz { padding: var(--space-4); }
-    th, td { min-width: 96px; }
 }
 @media (max-width: 480px) {
-    .brand-text { display: none; }
     .btn { min-height: 38px; padding: 6px 12px; }
 }
 
@@ -574,7 +604,8 @@ blockquote p { margin: 0; }
     .lesson-cover img, .lesson-figure-img { max-height: 120mm; width: auto; max-width: 100%; margin: 0 auto; }
     pre { border-color: #d9d9de; white-space: pre-wrap; }
     pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
-    .quiz-reset, .chart-hint, .figure-hint { display: none !important; }
+    .quiz-reset, .chart-hint, .figure-hint, .table-hint, .tema-nav { display: none !important; }
+    tbody td:first-child { position: static; }
     pre[data-lang]::before { color: #52525b; }
     .tok-k, .tok-a, .tok-s, .tok-n { color: inherit; }
     .quiz-option { border-color: #d9d9de; padding: 6px 10px; }
@@ -610,7 +641,7 @@ blockquote p { margin: 0; }
       </span>
     </a>
     <nav class="toolbar" aria-label="Ações da apostila">
-      <a class="btn" href="#sumario" aria-label="Sumário"><span class="label-long">Sumário</span><span class="label-short">≡</span></a>
+      <a class="btn" href="#sumario" aria-label="Sumário"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg><span class="label-long">Sumário</span></a>
       <button class="btn" id="theme-toggle" type="button" aria-label="Alternar tema claro e escuro">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <span class="label-long" id="theme-label">Tema escuro</span>
@@ -724,7 +755,7 @@ blockquote p { margin: 0; }
   document.querySelectorAll('.lesson-quiz').forEach(function (quiz) {
     var questions = quiz.querySelectorAll('.lesson-quiz-question[data-correct]');
     var result = quiz.querySelector('.quiz-result');
-    var answered = 0, right = 0;
+    var answered = 0, right = 0, wrong = [], reset = null;
     if (result) result.setAttribute('role', 'status');
     function letterOf(o) { return o.querySelector('.quiz-option-letter').textContent.trim().toLowerCase(); }
     questions.forEach(function (q) {
@@ -745,23 +776,36 @@ blockquote p { margin: 0; }
           if (feedback) {
             feedback.hidden = false;
             feedback.className = 'quiz-feedback ' + (ok ? 'ok' : 'no');
+            feedback.textContent = '';
             feedback.textContent = ok ? 'Certo! Leia o comentário para fixar.' : 'Não foi dessa vez. Resposta correta: ' + correct + ').';
           }
           if (answer) answer.open = true;
-          answered += 1; if (ok) right += 1;
+          answered += 1; if (ok) right += 1; else wrong.push(q);
           if (result && answered === questions.length) {
             var pct = right / questions.length;
             result.hidden = false;
             result.className = 'quiz-result ' + (pct >= 0.7 ? 'good' : 'mid');
-            result.textContent = 'Você acertou ' + right + ' de ' + questions.length + '.' +
-              (pct >= 0.7 ? ' Bom trabalho.' : ' Releia os tópicos das questões que errou e clique em Refazer.');
+            result.textContent = 'Você acertou ' + right + ' de ' + questions.length + '.' + (pct >= 0.7 ? ' Bom trabalho.' : '');
+            if (wrong.length) {
+              var w = document.createElement('span'); w.className = 'quiz-wrong'; w.textContent = 'Revise: ';
+              wrong.forEach(function (wq, k) {
+                var n = (wq.querySelector('p strong') || {}).textContent || ('questão ' + (k + 1));
+                var a = document.createElement('a'); a.href = '#' + (wq.id || ''); a.textContent = n.replace(/[^0-9]/g, '') || n;
+                if (!wq.id) a.addEventListener('click', function (e) { e.preventDefault(); wq.scrollIntoView({ behavior: 'smooth' }); });
+                w.appendChild(a); if (k < wrong.length - 1) w.appendChild(document.createTextNode(','));
+              });
+              result.appendChild(w);
+            }
+            var again = document.createElement('button'); again.type = 'button'; again.className = 'btn'; again.textContent = 'Refazer exercícios';
+            again.addEventListener('click', function () { if (reset) reset.click(); });
+            result.appendChild(again);
           }
         });
       });
     });
     var head = quiz.querySelector('.lesson-quiz-head');
     if (head && questions.length) {
-      var reset = document.createElement('button');
+      reset = document.createElement('button');
       reset.type = 'button'; reset.className = 'btn quiz-reset'; reset.textContent = 'Refazer';
       reset.addEventListener('click', function () {
         questions.forEach(function (q) {
@@ -770,12 +814,51 @@ blockquote p { margin: 0; }
           var a = q.querySelector('.quiz-answer'); if (a) a.open = false;
         });
         if (result) { result.hidden = true; result.textContent = ''; }
-        answered = 0; right = 0;
+        answered = 0; right = 0; wrong = [];
         quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       head.appendChild(reset);
     }
   });
+
+  // Tópicos de cada seção: ids nos títulos + lista recolhível logo abaixo do título da seção
+  function slug(t) { return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
+  var used = {};
+  function uid(base) { var id = base, n = 2; while (used[id] || document.getElementById(id)) { id = base + '-' + n++; } used[id] = 1; return id; }
+  document.querySelectorAll('.section').forEach(function (sec) {
+    var items = [];
+    sec.querySelectorAll('.part-head, .section > h4').forEach(function (h) {
+      var isPart = h.classList.contains('part-head');
+      var title = isPart ? h.querySelector('h3') : h;
+      if (!title) return;
+      if (!h.id) h.id = uid((sec.id || 's') + '-' + slug(title.textContent));
+      var eb = isPart ? h.querySelector('.eyebrow') : null;
+      items.push({ id: h.id, text: title.textContent.trim(), eyebrow: eb ? eb.textContent.trim() : '', part: isPart });
+    });
+    if (items.length < 4) return;
+    var nav = document.createElement('details'); nav.className = 'tema-nav'; nav.id = (sec.id || 's') + '-topicos';
+    var sum = document.createElement('summary'); sum.textContent = 'Tópicos desta seção (' + items.length + ')'; nav.appendChild(sum);
+    var ol = document.createElement('ol');
+    items.forEach(function (it) {
+      var li = document.createElement('li'); li.className = it.part ? 'lv-part' : 'lv-topic';
+      var a = document.createElement('a'); a.href = '#' + it.id;
+      if (it.eyebrow) { var sp = document.createElement('span'); sp.textContent = it.eyebrow; a.appendChild(sp); }
+      a.appendChild(document.createTextNode(it.text)); li.appendChild(a); ol.appendChild(li);
+    });
+    nav.appendChild(ol);
+    var head = sec.querySelector('.section-heading');
+    if (head) head.parentNode.insertBefore(nav, head.nextSibling);
+  });
+
+  // Tabela larga no celular: avisa que dá para arrastar
+  if (window.matchMedia && window.matchMedia('(max-width: 720px)').matches) {
+    document.querySelectorAll('.section table').forEach(function (t) {
+      if (t.scrollWidth > t.clientWidth + 4) {
+        var h = document.createElement('p'); h.className = 'table-hint'; h.setAttribute('aria-hidden', 'true'); h.textContent = '← arraste a tabela para os lados →';
+        t.parentNode.insertBefore(h, t.nextSibling);
+      }
+    });
+  }
 
   // Gráfico largo no celular: avisa que dá para arrastar
   document.querySelectorAll('.chart-frame').forEach(function (f) {
@@ -792,7 +875,8 @@ blockquote p { margin: 0; }
       frame.setAttribute('aria-label', 'Ampliar figura');
       var hint = document.createElement('p');
       hint.className = 'figure-hint'; hint.setAttribute('aria-hidden', 'true'); hint.textContent = 'Toque na figura para ampliar';
-      frame.parentNode.insertBefore(hint, frame.nextSibling);
+      var cap = frame.parentNode.querySelector('figcaption');
+      frame.parentNode.insertBefore(hint, cap ? cap.nextSibling : frame.nextSibling);
       function toggle() {
         var z = frame.classList.toggle('is-zoomed');
         hint.textContent = z ? 'Arraste para os lados · toque de novo para voltar' : 'Toque na figura para ampliar';
@@ -821,19 +905,21 @@ blockquote p { margin: 0; }
     });
   });
 
-  // Cabeçalho mostra em que seção o aluno está
+  // Cabeçalho mostra em que seção o aluno está (e leva aos tópicos dela)
   var where = document.querySelector('.brand-text small');
   var original = where ? where.textContent : '';
   if (where && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
-        var eb = en.target.querySelector('.section-heading .eyebrow');
-        var h2 = en.target.querySelector('.section-heading h2');
-        where.textContent = eb && h2 ? eb.textContent.trim() + ' · ' + h2.textContent.trim() : original;
+        var sec = en.target;
+        var eb = sec.querySelector('.section-heading .eyebrow');
+        var h2 = sec.querySelector('.section-heading h2');
+        if (!sec.classList.contains('section') || !eb || !h2) { where.textContent = original; return; }
+        where.textContent = eb.textContent.trim() + ' · ' + h2.textContent.trim();
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('.section').forEach(function (sec) { io.observe(sec); });
+    document.querySelectorAll('.lesson-header, .toc, .section').forEach(function (sec) { io.observe(sec); });
   }
 
   // Na impressão, o gabarito comentado sai aberto
