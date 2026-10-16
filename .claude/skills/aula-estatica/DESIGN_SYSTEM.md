@@ -90,7 +90,7 @@ Snippets em `BLOCOS.md`. Resumo de intenção:
 
 | Componente | Origem no portal | Ideia |
 |---|---|---|
-| Cabeçalho fixo | `.site-header` + `.brand` + `.btn` | marca TC, Sumário, tema, Salvar PDF |
+| Cabeçalho fixo | `.site-header` + `.brand` + `.btn` | marca TC, Sumário, tema, PDF sem respostas, Salvar PDF |
 | Capa | `.lesson-header`, `.chip`, `h1 em` | eyebrow, chips, título com palavra-chave em signal, dek, meta |
 | Sumário | registro de linhas | lista numerada em mono, 2–3 colunas |
 | Seção | `.section-heading` + `.prose` | eyebrow + h2 Archivo; texto na medida |
@@ -121,7 +121,10 @@ escuras emolduradas, do mesmo jeito que os blocos de código.
 4b. **Orientação:** o cabeçalho mostra a seção em que o aluno está; tabelas e gráficos largos
    ganham sombra nas bordas quando há mais conteúdo para rolar.
 4c. **Checklist de estudo** (`.checklist.todo`) marca e lembra no navegador.
-5. **Impressão:** antes de imprimir, abre todos os `<details>` (o gabarito sai no PDF).
+5. **Impressão:** antes de imprimir, abre todos os `<details>` (o gabarito sai no PDF). O botão
+   **PDF sem respostas** imprime a versão de treino (`body[data-print-mode="treino"]`): some o
+   gabarito comentado, a solução das atividades e as marcações de quem já respondeu; o gabarito
+   rápido do fechamento continua.
 
 Movimento é curto e funcional (hover de pílula com wipe, deslize de 2 px na alternativa), e
 `prefers-reduced-motion` desliga tudo.

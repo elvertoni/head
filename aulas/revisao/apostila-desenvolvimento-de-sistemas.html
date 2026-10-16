@@ -695,6 +695,17 @@ body[data-layout='amplo'] .tema-nav a { padding-block: 10px; }
     body[data-layout='amplo'] .section--close .footer-note { break-before: avoid; }
     body[data-layout='amplo'] .site-footer { display: none; }
 }
+/* ── Impressão de treino (botão "PDF sem respostas") ───────────────────
+   Esconde gabaritos comentados, soluções e marcações das questões já
+   respondidas. O gabarito rápido do fechamento continua, para conferir. */
+@media print {
+    body[data-print-mode='treino'] .quiz-answer,
+    body[data-print-mode='treino'] .quiz-feedback { display: none !important; }
+    body[data-print-mode='treino'] .quiz-option { border: 1.5px solid #d9d9de; border-style: solid; background: #fff; }
+    body[data-print-mode='treino'] .quiz-option .quiz-option-letter { background: var(--surface-raised); color: var(--fg-muted); }
+    body[data-print-mode='treino'] .quiz-option .quiz-option-text { color: var(--fg); }
+    body[data-print-mode='treino'] .quiz-option .quiz-option-icon::after { content: none; }
+}
   </style>
 </head>
 <!-- data-print="capitulos": cada seção começa numa página nova no PDF (use em apostilas longas; remova em aulas curtas). -->
@@ -726,6 +737,10 @@ body[data-layout='amplo'] .tema-nav a { padding-block: 10px; }
       <button class="btn" id="theme-toggle" type="button" aria-label="Alternar tema claro e escuro">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
         <span class="label-long" id="theme-label">Tema escuro</span>
+      </button>
+      <button class="btn" id="print-treino" type="button" aria-label="Salvar PDF sem respostas, para treinar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M9 15h6"/></svg>
+        <span class="label-long">PDF sem respostas</span>
       </button>
       <button class="btn btn-primary" type="button" onclick="window.print()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
@@ -6282,6 +6297,14 @@ color: rgba(255, 136, 0, 0.5);</code></pre>
     document.querySelectorAll('details:not([open])').forEach(function (d) { d.open = true; opened.push(d); });
   });
   window.addEventListener('afterprint', function () { opened.forEach(function (d) { d.open = false; }); opened = []; });
+
+  // PDF de treino: imprime sem gabaritos comentados nem soluções
+  var treino = document.getElementById('print-treino');
+  if (treino) treino.addEventListener('click', function () {
+    document.body.dataset.printMode = 'treino';
+    window.print();
+  });
+  window.addEventListener('afterprint', function () { delete document.body.dataset.printMode; });
 })();
   </script>
 </body>
