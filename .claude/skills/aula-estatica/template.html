@@ -305,6 +305,7 @@ pre[data-lang]::before {
     color: #8e8e95; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
 }
 pre code { padding: 0; color: inherit; background: none; border: 0; font-size: 1em; white-space: pre; }
+pre, pre code { word-spacing: normal; letter-spacing: normal; }   /* diagramas em texto dependem de colunas exatas */
 /* Sem ligaduras em código: o aluno precisa ver <= e != como vai digitar, não ≤ e ≠ */
 pre, code, kbd { font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'calt' 0; }
 .code-copy {
@@ -453,6 +454,9 @@ blockquote p { margin: 0; }
 .quiz-answer[open] > summary::before { content: '–'; }
 .quiz-answer > summary:hover { color: var(--fg); }
 .quiz-answer > :not(summary) { margin: 0; padding: 0 14px 12px; }
+.quiz-answer > pre { margin: 0 14px 12px; padding: var(--space-5) var(--space-5) var(--space-4); }
+.quiz-answer > pre[data-lang] { padding-top: calc(var(--space-5) + 18px); }
+.lesson-quiz-question, .quiz-answer { min-width: 0; }   /* código largo rola dentro do bloco, não estica a lista */
 .quiz-answer p { font-size: .94em; line-height: 1.7; }
 .lesson-quiz .quiz-result { margin: var(--space-5) 0 0; max-width: none; padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); font-weight: 700; text-align: center; }
 .quiz-result .quiz-wrong { display: block; margin-top: var(--space-2); font-weight: 500; }

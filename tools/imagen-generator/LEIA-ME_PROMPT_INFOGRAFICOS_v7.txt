@@ -13,8 +13,11 @@ só a camada visual; perfis, densidade, zonas reservadas e defeitos continuam.
   sans geométrica (Geist)             grotesca pesada (Archivo) + mono nos rótulos
   marca C ciano + seta azul           ligadura TC (T osso, C vermelho)
 
-ATENÇÃO: a action do Photoshop ainda estampa a logo antiga (C ciano). Ela
-precisa ser atualizada para a ligadura TC antes de brandar peças v7.
+LOGO: logo-prof-toni-coimbra-horizontal.png já é a ligadura TC (texto osso,
+para fundo escuro, 2048x293, fundo transparente); a versão para fundo claro é
+logo-prof-toni-coimbra-horizontal-fundo-claro.png. Se a action do Photoshop
+tiver a logo antiga embutida (smart object), reaponte o "Inserir incorporado"
+para este arquivo e salve a action de novo.
 
 Os DOIS PERFIS continuam:
 
