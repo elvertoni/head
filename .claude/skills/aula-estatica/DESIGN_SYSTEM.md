@@ -77,6 +77,11 @@ Regras:
 - **Profundidade por borda**, não por sombra: superfícies se separam por `--line` e por
   `--panel` sobre `--ink`. A única sombra é o brilho do botão primário.
 - Página: coluna de até 1120 px; texto preso na medida; tabelas, código e demos usam a largura toda.
+- **Leitura ampla (opcional):** `<body data-layout="amplo">` alinha texto, títulos, callouts,
+  exercícios e tabelas na largura disponível, com casca de até 1200 px. Use quando o Toni pedir
+  melhor aproveitamento horizontal. Mantém Archivo + JetBrains Mono, margens fluidas e tabelas
+  roláveis no celular; no A4, usa toda a largura útil e permite que questões longas continuem na
+  página seguinte sem separar as alternativas. Pode combinar com `data-print="capitulos"`.
 - Seções separadas por **linhas de registro** (borda de 1 px), não por cartões.
 
 ## 5. Componentes

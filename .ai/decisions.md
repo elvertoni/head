@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #016 — Leitura ampla opcional nas apostilas standalone
+- **Data:** 2026-10-16
+- **Status:** Aceita para a apostila de revisão DS, a pedido do Toni.
+- **Contexto:** A página tinha 1120 px disponíveis no desktop, mas os parágrafos usavam apenas 682 px e os exercícios tinham outra largura.
+- **Decisão:** O template `aula-estatica` oferece `body[data-layout="amplo"]`: texto e componentes alinhados na largura disponível, com limite de 1200 px, adaptação ao celular e regras de impressão A4. Aplicado à apostila DS por regeneração do CSS a partir do template, preservando conteúdo e JavaScript.
+- **Consequências:** Outras apostilas só usam a largura ampla quando ativada explicitamente. Mantidas as fontes Archivo e JetBrains Mono. A revisão DS continua standalone; cópia anterior, regenerador e evidências visuais ficam em `scratch/revisao-visual/` (local-only).
+
 ## #015 — Schema da wiki sai do `AGENTS.md` para `docs/schema-wiki.md`
 - **Data:** 2026-09-28
 - **Status:** Aceita

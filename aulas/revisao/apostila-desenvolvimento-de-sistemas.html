@@ -618,10 +618,87 @@ blockquote p { margin: 0; }
     .site-footer { background: #fff; }
     a[href]::after { content: none; }
 }
+/* ── Leitura ampla (opt-in: body data-layout="amplo") ──────────────────
+   Texto e componentes compartilham a largura da página. O limite da casca
+   evita linhas ilimitadas em monitores grandes; no celular, tudo reflui. */
+body[data-layout='amplo'] {
+    --shell: 1200px;
+    --gutter: clamp(16px, 3vw, 48px);
+    --measure: 100%;
+    line-height: 1.75;
+}
+body[data-layout='amplo'] .lesson-header h1 {
+    max-width: 100%; font-size: clamp(32px, 4.4vw, 60px); line-height: 1.08;
+}
+body[data-layout='amplo'] .dek,
+body[data-layout='amplo'] .section-heading h2,
+body[data-layout='amplo'] .callout,
+body[data-layout='amplo'] .lesson-steps,
+body[data-layout='amplo'] .lesson-quiz { max-width: 100%; }
+body[data-layout='amplo'] .section-heading h2 { line-height: 1.12; }
+body[data-layout='amplo'] .section { padding-top: var(--space-8); }
+body[data-layout='amplo'] .part-head { margin-top: var(--space-8); }
+body[data-layout='amplo'] .section > p,
+body[data-layout='amplo'] .section > ul,
+body[data-layout='amplo'] .section > ol { margin-bottom: 20px; }
+body[data-layout='amplo'] :is(p, li, h1, h2, h3, h4, dd) { overflow-wrap: anywhere; }
+body[data-layout='amplo'] pre { overflow-wrap: normal; }
+body[data-layout='amplo'] .chip { max-width: 100%; white-space: normal; line-height: 1.4; }
+body[data-layout='amplo'] .brand { flex: 1; }
+body[data-layout='amplo'] .toolbar { flex-shrink: 0; }
+body[data-layout='amplo'] .btn { min-height: 44px; }
+body[data-layout='amplo'] .tema-nav > summary { min-height: 48px; letter-spacing: .06em; }
+body[data-layout='amplo'] .tema-nav a { padding-block: 10px; }
+
+@media screen and (min-width: 1025px) {
+    body[data-layout='amplo'] table { display: table; width: 100%; }
+    body[data-layout='amplo'] th,
+    body[data-layout='amplo'] td { min-width: 0; }
+}
+@media screen and (max-width: 1024px) {
+    body[data-layout='amplo'] table { width: 100%; }
+}
+@media screen and (max-width: 720px) {
+    body[data-layout='amplo'] { line-height: 1.7; }
+    body[data-layout='amplo'] .site-header { padding-inline: 12px; gap: 8px; }
+    body[data-layout='amplo'] .brand-text small { max-width: 100%; }
+    body[data-layout='amplo'] .lesson-header { padding-top: 16px; padding-bottom: 32px; }
+    body[data-layout='amplo'] .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    body[data-layout='amplo'] .meta div { padding-right: 0; }
+    body[data-layout='amplo'] .meta dd { font-size: 16px; }
+    body[data-layout='amplo'] .callout { padding: 16px; }
+    body[data-layout='amplo'] table { width: 100%; }
+    body[data-layout='amplo'] th,
+    body[data-layout='amplo'] td { min-width: 128px; }
+    body[data-layout='amplo'] pre { padding-inline: 16px; }
+    body[data-layout='amplo'] .quiz-option { padding: 12px 10px; gap: 8px; }
+}
+@media print {
+    body[data-layout='amplo'] { font-size: 10.5pt; line-height: 1.55; }
+    body[data-layout='amplo'] .lesson-header h1 { font-size: 30pt; }
+    body[data-layout='amplo'] .section-heading h2 { font-size: 22pt; }
+    body[data-layout='amplo'] .section { padding-top: 20px; }
+    body[data-layout='amplo'] .part-head { margin-top: 28px; }
+    body[data-layout='amplo'] .callout {
+        grid-template-columns: 2.2em minmax(0, 1fr); padding: 12px 16px;
+    }
+    body[data-layout='amplo'] table { display: table; width: 100%; }
+    body[data-layout='amplo'] th,
+    body[data-layout='amplo'] td { min-width: 0; }
+    body[data-layout='amplo'] .lesson-quiz { padding: 16px; }
+    body[data-layout='amplo'] .lesson-quiz-question { break-inside: auto; }
+    body[data-layout='amplo'] .quiz-options,
+    body[data-layout='amplo'] .quiz-option { break-inside: avoid; }
+    body[data-layout='amplo'] .lesson-quiz-question > p { break-after: avoid; }
+    body[data-layout='amplo'] .quiz-answer > summary { break-after: avoid; }
+    body[data-layout='amplo'] .answer-key td a { min-width: 0; padding: 2px 4px; }
+    body[data-layout='amplo'] .section--close .footer-note { break-before: avoid; }
+    body[data-layout='amplo'] .site-footer { display: none; }
+}
   </style>
 </head>
 <!-- data-print="capitulos": cada seção começa numa página nova no PDF (use em apostilas longas; remova em aulas curtas). -->
-<body data-print="capitulos">
+<body data-print="capitulos" data-layout="amplo">
   <a class="sr-only skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="scroll-progress" aria-hidden="true"><i></i></div>
 
