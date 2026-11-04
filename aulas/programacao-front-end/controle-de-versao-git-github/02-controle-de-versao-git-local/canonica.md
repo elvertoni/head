@@ -1,5 +1,5 @@
 ---
-titulo: "Controle de versão: por que <code>projeto-final-VERSAO-2-agora-vai.html</code> não escala"
+titulo: "Controle de versão: por que projeto-final-VERSAO-2-agora-vai.html não escala"
 tema: Controle de versão com Git (local)
 disciplina: programacao-front-end
 serie: 3ª
@@ -16,8 +16,8 @@ modo_origem: tema
 fontes: []
 revisao: false
 status: aprovada
-versao: 4
-atualizado_em: 2026-09-24
+versao: 5
+atualizado_em: 2026-11-04
 ---
 
 Você já teve uma pasta com `projeto.html`, `projeto-2.html`, `projeto-final.html` e `projeto-final-agora-vai.html`? Cada arquivo é uma tentativa de responder a mesma pergunta: "qual dessas versões é a boa?" — e depois de duas semanas, nem quem escreveu lembra mais. O problema não é falta de organização sua. É que arquivo comum não foi feito pra guardar **história**. Existe uma ferramenta feita exatamente pra isso, e hoje você aprende a base dela.
