@@ -17,7 +17,7 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/seed-87-95/93-analise-das-entrevistas.pptx
 revisao: true
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-11-04
 ---
 
@@ -56,6 +56,8 @@ Quando a interpretação é anotada como se fosse a fala, a equipe passa a "lemb
 :::
 
 Repare na ordem: primeiro agrupar, depois nomear. Se a equipe cria as categorias antes ("cadastro", "login", "notificação") e sai encaixando as falas, ela só encontra o que já esperava. Deixando os grupos surgirem das próprias falas, aparecem temas que ninguém tinha previsto.
+
+![Três quadros lado a lado. No primeiro, post-its em branco espalhados sem ordem (falas soltas). No segundo, os mesmos post-its reunidos em três montes, ainda sem nome (agrupadas). No terceiro, cada monte recebeu um título: disponibilidade, reserva e devolução (grupos nomeados). Embaixo, a regra: nomear primeiro está errado; agrupar primeiro está certo.](img/diagrama-de-afinidade.png)
 
 ### Do padrão ao insight
 

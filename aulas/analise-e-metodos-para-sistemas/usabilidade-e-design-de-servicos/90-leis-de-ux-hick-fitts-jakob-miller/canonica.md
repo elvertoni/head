@@ -17,7 +17,7 @@ fontes:
   - lake/analise-e-metodos-para-sistemas/seed-87-95/89-leis-de-usabilidade.pptx
 revisao: true
 status: aprovada
-versao: 1
+versao: 2
 atualizado_em: 2026-11-04
 ---
 
@@ -55,6 +55,8 @@ O tempo para atingir um alvo (com o dedo ou o mouse) depende da **distância** a
 :::
 
 No celular, o "cursor" é um dedo, que é largo e impreciso. Por isso as próprias fabricantes recomendam um tamanho mínimo de área de toque: cerca de **44 pontos** nas diretrizes da Apple e **48 dp** nas do Material Design, do Google (mais ou menos a ponta de um dedo). E o lugar também conta: segurando o celular com uma mão, o polegar alcança com conforto a parte de baixo da tela, e é por isso que tantos apps puseram a navegação principal ali.
+
+![Celular segurado com a mão direita, com a tela dividida em três faixas de alcance do polegar: o topo marcado como difícil, o meio como alcançável com esforço e a parte de baixo como fácil, onde fica a barra de navegação. Ao lado, uma comparação: navegação no topo, marcada como errada, e navegação na base, marcada como certa.](img/zona-do-polegar.png)
 
 :::atencao Erro comum: Fitts a favor do erro
 Fitts vale para os dois lados. Se o botão **Enviar** é grande e fácil de acertar, ótimo. Mas se o **Excluir**, logo do lado, também é grande e fácil de acertar, você acabou de facilitar o acidente. Em ação perigosa, o certo é **afastar** e às vezes até reduzir o destaque, junto com a prevenção de erros que você viu na heurística 5.

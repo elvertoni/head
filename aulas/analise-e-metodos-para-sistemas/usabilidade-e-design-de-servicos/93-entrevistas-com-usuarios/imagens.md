@@ -6,7 +6,7 @@
 
 - **perfil:** capa
 - **arquivo:** `capa.png`
-- **estado:** a gerar
+- **estado:** gerada e aprovada em 2026-11-04 (Codex, v8, r1 — 1536×1024, sem defeito). Canônica.
 - **objetivo:** Dar o mapa da aula num olhar: os cinco passos do planejamento (objetivo, público, tópicos, roteiro, registro), o contraste entre pergunta fechada ou indutora e pergunta aberta sobre o passado, e o ciclo pergunte, escute, aprofunde.
 - **alt:** Duas pessoas conversando frente a frente, uma com caderno de anotações. Acima, um balão com uma pergunta indutora riscada ("Nosso sistema é ruim, né?") e outro com uma pergunta aberta destacada ("Conta como foi a última vez..."). Ao lado, uma trilha de cinco passos (objetivo, público, tópicos, roteiro, registro) e um ciclo de três setas com pergunte, escute e aprofunde.
 - **prompt:** (esboço) cena de entrevista com contraste entre pergunta indutora e aberta, trilha de planejamento e ciclo pergunte-escute-aprofunde.

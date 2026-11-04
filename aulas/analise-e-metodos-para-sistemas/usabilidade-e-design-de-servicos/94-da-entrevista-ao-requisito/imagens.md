@@ -15,8 +15,8 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/diagrama-de-afinidade.png`
-- **estado:** a gerar
+- **estado:** gerada e aprovada em 2026-11-04 (Codex, v8, r1 — 1672×941, sem defeito). Canônica. Referenciada no corpo da aula desde 2026-11-04.
 - **secao:** Desenvolvimento › Agrupar para enxergar
 - **objetivo:** Ensinar o conceito mais difícil da aula, a ordem do diagrama de afinidade: primeiro os post-its soltos, depois os grupos que surgem das próprias falas e só no fim o nome de cada grupo. É um processo espacial em três momentos que o texto descreve, mas a figura mostra de uma vez. Só vira referência no corpo depois de gerada e auditada.
-- **alt:** Três quadros lado a lado. No primeiro, doze post-its espalhados sem ordem. No segundo, os mesmos post-its reunidos em três montes, ainda sem nome. No terceiro, cada monte recebeu um cartão de título: disponibilidade, reserva confiável e controle de devolução.
+- **alt:** Três quadros lado a lado. No primeiro, post-its em branco espalhados sem ordem (falas soltas). No segundo, os mesmos post-its reunidos em três montes, ainda sem nome (agrupadas). No terceiro, cada monte recebeu um título: disponibilidade, reserva e devolução (grupos nomeados). Embaixo, a regra: nomear primeiro está errado; agrupar primeiro está certo.
 - **prompt:** (esboço) três momentos do diagrama de afinidade, de post-its soltos a grupos nomeados.
