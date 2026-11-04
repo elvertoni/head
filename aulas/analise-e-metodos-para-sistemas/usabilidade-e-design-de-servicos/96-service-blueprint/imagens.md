@@ -15,7 +15,7 @@
 
 - **perfil:** infografico
 - **arquivo:** `img/camadas-e-linhas-do-blueprint.png`
-- **estado:** a gerar
+- **estado:** não publicado — decisão do Toni em 2026-11-04. Três rodadas reprovadas na auditoria (r1: camadas numeradas e sem Evidências; r2: quatro cores de acento; r3: painéis em azul saturado, D13). A aula segue sem infográfico: camadas e linhas já são ensinadas pelo `diagrama-progressivo`, pela lista das três linhas e pela tabela do blueprint.
 - **secao:** Desenvolvimento › Cinco camadas e três linhas
 - **objetivo:** Ensinar o conceito mais difícil da aula: onde cada uma das três linhas passa entre as cinco camadas e o que significa uma seta que cruza cada linha (ponto de contato, passagem para os bastidores, dependência de sistema). É relação espacial em camadas, que a lista do texto descreve mas a figura mostra de uma vez. Só vira referência no corpo depois de gerada e auditada.
 - **alt:** Corte vertical de uma única etapa do blueprint com as cinco camadas empilhadas. Entre ações do usuário e frontstage passa a linha de interação; entre frontstage e backstage, a linha de visibilidade; entre backstage e suporte, a linha de interação interna. Uma seta desce da ação do usuário até o suporte, cruzando as três linhas, com um rótulo curto em cada cruzamento: ponto de contato, bastidores e integração.
