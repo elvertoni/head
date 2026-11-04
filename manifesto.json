@@ -6046,7 +6046,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 1,
+      "ordem": 87,
       "slug": "usabilidade-e-heuristicas-de-nielsen",
       "titulo": "Usabilidade e as heurísticas de Nielsen (1 a 5)",
       "status": "aprovada"
@@ -6054,7 +6054,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 2,
+      "ordem": 88,
       "slug": "heuristicas-de-nielsen-6-a-10",
       "titulo": "Heurísticas de Nielsen (6 a 10) e a boa mensagem de erro",
       "status": "aprovada"
@@ -6062,7 +6062,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 3,
+      "ordem": 89,
       "slug": "avaliacao-heuristica-na-pratica",
       "titulo": "Avaliação heurística na prática",
       "status": "aprovada"
@@ -6070,7 +6070,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 4,
+      "ordem": 90,
       "slug": "leis-de-ux-hick-fitts-jakob-miller",
       "titulo": "Leis de UX: Hick, Fitts, Jakob e Miller",
       "status": "aprovada"
@@ -6078,7 +6078,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 5,
+      "ordem": 91,
       "slug": "design-de-servicos-a-tela-nao-e-o-servico",
       "titulo": "Design de Serviços: a tela não é o serviço",
       "status": "aprovada"
@@ -6086,7 +6086,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 6,
+      "ordem": 92,
       "slug": "jornada-pontos-de-contato-frontstage-backstage",
       "titulo": "Jornada do usuário, pontos de contato, frontstage e backstage",
       "status": "aprovada"
@@ -6094,7 +6094,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 7,
+      "ordem": 93,
       "slug": "entrevistas-com-usuarios",
       "titulo": "Entrevistas com usuários: perguntar para descobrir",
       "status": "aprovada"
@@ -6102,7 +6102,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 8,
+      "ordem": 94,
       "slug": "da-entrevista-ao-requisito",
       "titulo": "Da entrevista ao requisito: analisando o que os usuários disseram",
       "status": "aprovada"
@@ -6110,7 +6110,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 9,
+      "ordem": 95,
       "slug": "lean-canvas-a-ideia-como-hipotese",
       "titulo": "Lean Canvas: a ideia como hipótese",
       "status": "aprovada"
@@ -6118,7 +6118,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 10,
+      "ordem": 96,
       "slug": "service-blueprint",
       "titulo": "Service Blueprint: a planta do serviço",
       "status": "aprovada"
@@ -6126,7 +6126,7 @@
     {
       "disciplina": "analise-e-metodos-para-sistemas",
       "trilha": "usabilidade-e-design-de-servicos",
-      "ordem": 11,
+      "ordem": 97,
       "slug": "projeto-filazero",
       "titulo": "Projeto FilaZero: do Canvas ao Blueprint e aos requisitos",
       "status": "aprovada"

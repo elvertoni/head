@@ -10,9 +10,23 @@
 - **Decisão:** Pastas, `ordem` e manifesto passam a 19–38 (mesmos slugs); as 67 referências internas "aula NN" das canônicas foram deslocadas em +18; as referências ao RCO (78–97) ficaram intactas. `versao` +1 em todas.
 - **Consequência (exceção consciente ao "nunca renumerar"):** as aulas 1–20 já tinham sido importadas. O import não remove órfãs e a chave inclui `ordem`, então o reimport cria as 19–38 e mantém as 1–20 antigas: o Toni precisa apagá-las no admin do portal (conferir antes se alguma foi publicada para turma). Os adaptadores locais `scratch/javascript-aula-01..20` geram as aulas 19..38.
 
+## #038 — Aulas de JavaScript renumeradas para 19–38, depois das outras trilhas de front-end
+- **Data:** 2026-11-04
+- **Status:** Aceita; pedido do Toni ("a numeração não bate; organizar para ficarem no final"). Substitui a numeração própria 1–20 da #035.
+- **Contexto:** Na disciplina `programacao-front-end`, as aulas 1 (HTML semântico), 2–6 (Git) e 7–18 (Landing Page) já ocupavam a sequência; a trilha JavaScript recomeçava em 1 e o catálogo mostrava números repetidos.
+- **Decisão:** Pastas, `ordem` e manifesto passam a 19–38 (mesmos slugs); as 67 referências internas "aula NN" das canônicas foram deslocadas em +18; as referências ao RCO (78–97) ficaram intactas. `versao` +1 em todas.
+- **Consequência (exceção consciente ao "nunca renumerar"):** as aulas 1–20 já tinham sido importadas. O import não remove órfãs e a chave inclui `ordem`, então o reimport cria as 19–38 e mantém as 1–20 antigas: o Toni precisa apagá-las no admin do portal (conferir antes se alguma foi publicada para turma). Os adaptadores locais `scratch/javascript-aula-01..20` geram as aulas 19..38.
+
+## #038 — Trilha de Usabilidade e Design de Serviços numerada 87–97, na sequência SEED
+- **Data:** 2026-11-04
+- **Status:** Aceita; pedido do Toni ("observe a numeração das aulas pra não ficarem repetidas e bagunçadas"). Substitui a numeração 01–11 de #037.
+- **Contexto:** Em AMS, a trilha `metodologias-ageis` usa os números da sequência SEED (33–41, 53, 54). Com 01–11, as aulas de UX (conteúdo do 3º trimestre) apareciam antes do Scrum na disciplina.
+- **Decisão:** Renumerar para 87–97 (01→87 … 11→97), alinhado ao início dos decks SEED 87–95 e deixando 55–86 livres para as aulas futuras do 2º e 3º trimestre. Renumeração feita **antes do primeiro import** no portal (confirmado pelo Toni), então não gera duplicata. Pastas movidas com `git mv`; referências internas entre as aulas atualizadas; menções aos decks SEED preservadas.
+- **Convenção para AMS daqui em diante:** `ordem` acompanha o número da aula SEED de origem, para a disciplina se ordenar sem colisão entre trilhas.
+
 ## #037 — Trilha "Usabilidade e Design de Serviços" redistribuindo as aulas SEED 87–95
 - **Data:** 2026-11-04
-- **Status:** Aceita; plano de 11 aulas aprovado pelo Toni. Canônicas produzidas em três lotes autorizados (01–04, 05–08, 09–11), todas `rascunho` v1 até a aprovação.
+- **Status:** Aceita; plano de 11 aulas aprovado pelo Toni. Canônicas produzidas em três lotes autorizados, aprovadas em 2026-11-04. **A numeração própria 01–11 foi substituída por #038 (87–97).**
 - **Decisão:** Abrir `analise-e-metodos-para-sistemas/usabilidade-e-design-de-servicos`, com numeração própria (01–11), sem seguir os números RCO, porque os 9 decks foram redistribuídos em 11 aulas: as 10 heurísticas viraram 2 aulas de 5 mais um laboratório de avaliação heurística (87–88 → 01–03); 89 → 04; 90/91, que se repetiam, viraram conceito de serviço (05) e jornada/frontstage/backstage (06); 92 → 07; 93 → 08; 94/95 viraram uma aula por ferramenta (09 Lean Canvas, 10 Service Blueprint) mais o projeto integrador FilaZero (11). O rótulo foi registrado em `LABELS_TRILHA`.
 - **Fontes:** os PPTX e o docx da SEED ficam em `lake/analise-e-metodos-para-sistemas/seed-87-95/` (binários gitignored, como os decks 34–55 da mesma disciplina), não em `fontes/` das aulas.
 - **Correções da origem registradas nas canônicas (`revisao: true`):** comentário da Q1 do docx 87 ("heurísticas não tratam de estética"; a heurística 8 trata); "Erro 504 — operação inválida" no deck 88 (504 é Gateway Timeout); resposta "Lei de Hick" colada no desafio do deck 90; princípios do Design de Serviços atualizados da edição de 2011 (5) para a de 2018 (6).
