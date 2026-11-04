@@ -2,7 +2,7 @@
 
 Segundo cérebro (vault Obsidian) e acervo de aulas do Curso Técnico em Desenvolvimento de Sistemas (SEED-PR,
 alunos de 14 a 18 anos, aulas de 50 min). Pipeline lake → wiki de conceitos → aulas canônicas → saídas; as aulas
-aprovadas são importadas pelo portal ProfessorDash. Status: em produção (109 aulas aprovadas em 2026-11-04).
+aprovadas são importadas pelo portal ProfessorDash. Status: em produção (120 aulas aprovadas em 2026-11-04).
 
 **Stack:** Markdown + frontmatter YAML (vault Obsidian), Python 3 só com stdlib em `tools/`, faster-whisper
 (`tools/transcrever/`, venv própria via uv), API do Notion, Jev/TypeSafe. Sem CI.

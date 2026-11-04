@@ -128,13 +128,13 @@ Validadores: `gerar_manifesto.py --check`, `lint_wiki.py` e `sync_notion.py --ch
 
 ## Estado atual do vault
 Snapshot de 2026-09-21, com a trilha JavaScript acrescentada em 2026-11-04; `gerar_manifesto.py --check`
-confirmou **109 aulas aprovadas, 0 divergências** em 2026-11-04. O manifesto e o `--check` mandam — revalidar antes de confiar nos números.
+confirmou **120 aulas aprovadas, 0 divergências** em 2026-11-04. O manifesto e o `--check` mandam — revalidar antes de confiar nos números.
 
 | Disciplina | Trilha | Estado |
 |---|---|---|
 | `inteligencia-artificial` | `fundamentos-de-ia` | aulas 1–25 aprovadas (25) + grafo de 37 conceitos |
 | `introducao-a-computacao` | `arquitetura-computadores-e-sistemas-operacionais` | aulas 23–38 aprovadas (16) |
-| `programacao-front-end` | `javascript-na-pratica` | aulas 1–20 aprovadas (20) — da retomada de HTML/CSS à lista de tarefas com filtros; plano em `docs/plano-apostila-javascript.md` |
+| `programacao-front-end` | `javascript-na-pratica` | aulas 19–38 aprovadas (20) — da retomada de HTML/CSS à lista de tarefas com filtros; plano em `docs/plano-apostila-javascript.md` |
 | `programacao-front-end` | `landing-page-mvp` | aulas 7–18 aprovadas (12) — startup/MVP até publicar e validar; 12 infográficos em `img/` |
 | `analise-e-metodos-para-sistemas` | `metodologias-ageis` | aulas 33–41 + 53–54 aprovadas (11) (Scrum/agilidade, Kanban) |
 | `tcc` | `blueprint-tcc` | aulas 1–9 aprovadas (9) |

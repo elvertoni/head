@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #038 — Aulas de JavaScript renumeradas para 19–38, depois das outras trilhas de front-end
+- **Data:** 2026-11-04
+- **Status:** Aceita; pedido do Toni ("a numeração não bate; organizar para ficarem no final"). Substitui a numeração própria 1–20 da #035.
+- **Contexto:** Na disciplina `programacao-front-end`, as aulas 1 (HTML semântico), 2–6 (Git) e 7–18 (Landing Page) já ocupavam a sequência; a trilha JavaScript recomeçava em 1 e o catálogo mostrava números repetidos.
+- **Decisão:** Pastas, `ordem` e manifesto passam a 19–38 (mesmos slugs); as 67 referências internas "aula NN" das canônicas foram deslocadas em +18; as referências ao RCO (78–97) ficaram intactas. `versao` +1 em todas.
+- **Consequência (exceção consciente ao "nunca renumerar"):** as aulas 1–20 já tinham sido importadas. O import não remove órfãs e a chave inclui `ordem`, então o reimport cria as 19–38 e mantém as 1–20 antigas: o Toni precisa apagá-las no admin do portal (conferir antes se alguma foi publicada para turma). Os adaptadores locais `scratch/javascript-aula-01..20` geram as aulas 19..38.
+
 ## #037 — Trilha "Usabilidade e Design de Serviços" redistribuindo as aulas SEED 87–95
 - **Data:** 2026-11-04
 - **Status:** Aceita; plano de 11 aulas aprovado pelo Toni. Canônicas produzidas em três lotes autorizados (01–04, 05–08, 09–11), todas `rascunho` v1 até a aprovação.
@@ -20,7 +27,7 @@
 ## #035 — Trilha JavaScript na prática com retomada preparatória
 - **Data:** 2026-11-03
 - **Status:** Aceita; sequência de 20 encontros aprovada pelo Toni. As 20 aulas foram produzidas em lotes autorizados (2026-11-03/04), passaram por rubrica independente com correções (v2 nas aulas 12, 16, 17 e 18) e foram aprovadas para publicação em 2026-11-04.
-- **Decisão:** Abrir `programacao-front-end/javascript-na-pratica`, com numeração própria (1–20), preservando as identidades das aulas existentes; registrar o rótulo em `LABELS_TRILHA`. A chave do portal inclui a trilha (`disciplina, trilha, ordem, slug`), então as ordens 1–18 das outras trilhas de front-end não colidem.
+- **Decisão:** Abrir `programacao-front-end/javascript-na-pratica`, com numeração própria (1–20; **substituída por #038**: 19–38), preservando as identidades das aulas existentes; registrar o rótulo em `LABELS_TRILHA`. A chave do portal inclui a trilha (`disciplina, trilha, ordem, slug`), então as ordens 1–18 das outras trilhas de front-end não colidem.
 - **Produção:** Canônica como fonte única; apostila offline derivada pela skill `aula-estatica`, em `saidas/`. Plano e sequência em `docs/plano-apostila-javascript.md`.
 
 ## #017 — Texto proporcional opcional e resumo por tema nas apostilas standalone

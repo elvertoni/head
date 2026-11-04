@@ -6326,7 +6326,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 1,
+      "ordem": 19,
       "slug": "retomada-html-css-lista-estudos",
       "titulo": "Meus estudos — retomando HTML e CSS",
       "status": "aprovada"
@@ -6334,7 +6334,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 2,
+      "ordem": 20,
       "slug": "primeiro-javascript-no-console",
       "titulo": "Primeiro JavaScript — uma mensagem no console",
       "status": "aprovada"
@@ -6342,7 +6342,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 3,
+      "ordem": 21,
       "slug": "variaveis-let-const-nos-estudos",
       "titulo": "Guardando informações com let e const",
       "status": "aprovada"
@@ -6350,7 +6350,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 4,
+      "ordem": 22,
       "slug": "textos-numeros-booleanos-nos-estudos",
       "titulo": "Textos, números e booleanos nos estudos",
       "status": "aprovada"
@@ -6358,7 +6358,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 5,
+      "ordem": 23,
       "slug": "calculos-conversoes-minutos-estudo",
       "titulo": "Calculando seus minutos de estudo",
       "status": "aprovada"
@@ -6366,7 +6366,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 6,
+      "ordem": 24,
       "slug": "comparando-minutos-e-meta",
       "titulo": "Comparando seus minutos com a meta",
       "status": "aprovada"
@@ -6374,7 +6374,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 7,
+      "ordem": 25,
       "slug": "decisoes-if-else-meta-estudos",
       "titulo": "Escolhendo mensagens com if e else",
       "status": "aprovada"
@@ -6382,7 +6382,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 8,
+      "ordem": 26,
       "slug": "condicoes-else-if-e-ou",
       "titulo": "Mais caminhos e condições com else if, E e OU",
       "status": "aprovada"
@@ -6390,7 +6390,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 9,
+      "ordem": 27,
       "slug": "funcoes-organizando-acoes-estudo",
       "titulo": "Organizando ações com funções",
       "status": "aprovada"
@@ -6398,7 +6398,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 10,
+      "ordem": 28,
       "slug": "dom-alterando-mensagem-estudos",
       "titulo": "Mudando uma mensagem da página com JavaScript",
       "status": "aprovada"
@@ -6406,7 +6406,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 11,
+      "ordem": 29,
       "slug": "eventos-clique-botao-lembrete",
       "titulo": "Um botão que mostra seu lembrete",
       "status": "aprovada"
@@ -6414,7 +6414,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 12,
+      "ordem": 30,
       "slug": "lendo-campo-tarefa",
       "titulo": "Lendo a tarefa que você digitou",
       "status": "aprovada"
@@ -6422,7 +6422,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 13,
+      "ordem": 31,
       "slug": "formulario-validando-tarefa",
       "titulo": "Enviando uma tarefa pelo formulário",
       "status": "aprovada"
@@ -6430,7 +6430,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 14,
+      "ordem": 32,
       "slug": "criando-itens-lista-tarefas",
       "titulo": "Criando tarefas na lista da página",
       "status": "aprovada"
@@ -6438,7 +6438,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 15,
+      "ordem": 33,
       "slug": "arrays-guardando-tarefas",
       "titulo": "Guardando várias tarefas em um array",
       "status": "aprovada"
@@ -6446,7 +6446,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 16,
+      "ordem": 34,
       "slug": "for-percorrendo-tarefas",
       "titulo": "Percorrendo as tarefas com for",
       "status": "aprovada"
@@ -6454,7 +6454,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 17,
+      "ordem": 35,
       "slug": "foreach-montando-lista",
       "titulo": "Montando a lista a partir dos dados com forEach",
       "status": "aprovada"
@@ -6462,7 +6462,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 18,
+      "ordem": 36,
       "slug": "classes-tarefas-concluidas",
       "titulo": "Marcando tarefas concluídas com classes CSS",
       "status": "aprovada"
@@ -6470,7 +6470,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 19,
+      "ordem": 37,
       "slug": "filtrando-tarefas-estudo",
       "titulo": "Filtrando as tarefas que aparecem",
       "status": "aprovada"
@@ -6478,7 +6478,7 @@
     {
       "disciplina": "programacao-front-end",
       "trilha": "javascript-na-pratica",
-      "ordem": 20,
+      "ordem": 38,
       "slug": "revisao-projeto-lista-estudos",
       "titulo": "Revisando e testando sua lista de estudos",
       "status": "aprovada"
