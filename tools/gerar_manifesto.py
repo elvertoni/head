@@ -68,6 +68,7 @@ LABELS_TRILHA = {
     "controle-de-versao-git-github": "Controle de Versão com Git e GitHub",
     "fundamentos-html-css": "Fundamentos de HTML e CSS",
     "landing-page-mvp": "Landing Page e MVP",
+    "javascript-na-pratica": "JavaScript na Prática",
     "analise-de-requisitos": "Análise de Requisitos",
     "arquitetura-e-fluxo-de-sistemas": "Arquitetura e Fluxo de Sistemas",
 }

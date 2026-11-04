@@ -2,7 +2,7 @@
   "version": 1,
   "vault": "PROF-TONI",
   "descricao": "Indice do acervo de conhecimento do Prof. Toni Coimbra. Segundo cerebro: lake (bruto) -> curadoria (skill prof-toni + rubrica) -> warehouse (Canonicas impecaveis) -> saidas (standalone HTML / ProfessorDash).",
-  "atualizado_em": "2026-09-24",
+  "atualizado_em": "2026-11-04",
   "arquitetura": {
     "lake": "lake/{disciplina}",
     "warehouse": "aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md",
@@ -78,7 +78,7 @@
       "status": "planejada",
       "lake": "lake/programacao-front-end",
       "warehouse": "aulas/programacao-front-end",
-      "total_aulas": 18,
+      "total_aulas": 38,
       "trilhas": [
         {
           "slug": "controle-de-versao-git-github",
@@ -87,6 +87,10 @@
         {
           "slug": "fundamentos-html-css",
           "label": "Fundamentos de HTML e CSS"
+        },
+        {
+          "slug": "javascript-na-pratica",
+          "label": "JavaScript na Prática"
         },
         {
           "slug": "landing-page-mvp",
@@ -6225,6 +6229,166 @@
       "ordem": 1,
       "slug": "html-semantico",
       "titulo": "HTML semântico: por que <div> não conta a história toda",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 1,
+      "slug": "retomada-html-css-lista-estudos",
+      "titulo": "Meus estudos — retomando HTML e CSS",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 2,
+      "slug": "primeiro-javascript-no-console",
+      "titulo": "Primeiro JavaScript — uma mensagem no console",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 3,
+      "slug": "variaveis-let-const-nos-estudos",
+      "titulo": "Guardando informações com let e const",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 4,
+      "slug": "textos-numeros-booleanos-nos-estudos",
+      "titulo": "Textos, números e booleanos nos estudos",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 5,
+      "slug": "calculos-conversoes-minutos-estudo",
+      "titulo": "Calculando seus minutos de estudo",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 6,
+      "slug": "comparando-minutos-e-meta",
+      "titulo": "Comparando seus minutos com a meta",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 7,
+      "slug": "decisoes-if-else-meta-estudos",
+      "titulo": "Escolhendo mensagens com if e else",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 8,
+      "slug": "condicoes-else-if-e-ou",
+      "titulo": "Mais caminhos e condições com else if, E e OU",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 9,
+      "slug": "funcoes-organizando-acoes-estudo",
+      "titulo": "Organizando ações com funções",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 10,
+      "slug": "dom-alterando-mensagem-estudos",
+      "titulo": "Mudando uma mensagem da página com JavaScript",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 11,
+      "slug": "eventos-clique-botao-lembrete",
+      "titulo": "Um botão que mostra seu lembrete",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 12,
+      "slug": "lendo-campo-tarefa",
+      "titulo": "Lendo a tarefa que você digitou",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 13,
+      "slug": "formulario-validando-tarefa",
+      "titulo": "Enviando uma tarefa pelo formulário",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 14,
+      "slug": "criando-itens-lista-tarefas",
+      "titulo": "Criando tarefas na lista da página",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 15,
+      "slug": "arrays-guardando-tarefas",
+      "titulo": "Guardando várias tarefas em um array",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 16,
+      "slug": "for-percorrendo-tarefas",
+      "titulo": "Percorrendo as tarefas com for",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 17,
+      "slug": "foreach-montando-lista",
+      "titulo": "Montando a lista a partir dos dados com forEach",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 18,
+      "slug": "classes-tarefas-concluidas",
+      "titulo": "Marcando tarefas concluídas com classes CSS",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 19,
+      "slug": "filtrando-tarefas-estudo",
+      "titulo": "Filtrando as tarefas que aparecem",
+      "status": "aprovada"
+    },
+    {
+      "disciplina": "programacao-front-end",
+      "trilha": "javascript-na-pratica",
+      "ordem": 20,
+      "slug": "revisao-projeto-lista-estudos",
+      "titulo": "Revisando e testando sua lista de estudos",
       "status": "aprovada"
     },
     {

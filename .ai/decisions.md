@@ -3,6 +3,12 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #035 — Trilha JavaScript na prática com retomada preparatória
+- **Data:** 2026-11-03
+- **Status:** Aceita; sequência de 20 encontros aprovada pelo Toni. As 20 aulas foram produzidas em lotes autorizados (2026-11-03/04), passaram por rubrica independente com correções (v2 nas aulas 12, 16, 17 e 18) e foram aprovadas para publicação em 2026-11-04.
+- **Decisão:** Abrir `programacao-front-end/javascript-na-pratica`, com numeração própria (1–20), preservando as identidades das aulas existentes; registrar o rótulo em `LABELS_TRILHA`. A chave do portal inclui a trilha (`disciplina, trilha, ordem, slug`), então as ordens 1–18 das outras trilhas de front-end não colidem.
+- **Produção:** Canônica como fonte única; apostila offline derivada pela skill `aula-estatica`, em `saidas/`. Plano e sequência em `docs/plano-apostila-javascript.md`.
+
 ## #017 — Texto proporcional opcional e resumo por tema nas apostilas standalone
 - **Data:** 2026-10-16
 - **Status:** Aceita para a apostila de revisão DS, a pedido do Toni (pontos da revisão do Codex).
