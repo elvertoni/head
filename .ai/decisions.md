@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #037 — Trilha "Usabilidade e Design de Serviços" redistribuindo as aulas SEED 87–95
+- **Data:** 2026-11-04
+- **Status:** Aceita; plano de 11 aulas aprovado pelo Toni. Canônicas produzidas em três lotes autorizados (01–04, 05–08, 09–11), todas `rascunho` v1 até a aprovação.
+- **Decisão:** Abrir `analise-e-metodos-para-sistemas/usabilidade-e-design-de-servicos`, com numeração própria (01–11), sem seguir os números RCO, porque os 9 decks foram redistribuídos em 11 aulas: as 10 heurísticas viraram 2 aulas de 5 mais um laboratório de avaliação heurística (87–88 → 01–03); 89 → 04; 90/91, que se repetiam, viraram conceito de serviço (05) e jornada/frontstage/backstage (06); 92 → 07; 93 → 08; 94/95 viraram uma aula por ferramenta (09 Lean Canvas, 10 Service Blueprint) mais o projeto integrador FilaZero (11). O rótulo foi registrado em `LABELS_TRILHA`.
+- **Fontes:** os PPTX e o docx da SEED ficam em `lake/analise-e-metodos-para-sistemas/seed-87-95/` (binários gitignored, como os decks 34–55 da mesma disciplina), não em `fontes/` das aulas.
+- **Correções da origem registradas nas canônicas (`revisao: true`):** comentário da Q1 do docx 87 ("heurísticas não tratam de estética"; a heurística 8 trata); "Erro 504 — operação inválida" no deck 88 (504 é Gateway Timeout); resposta "Lei de Hick" colada no desafio do deck 90; princípios do Design de Serviços atualizados da edição de 2011 (5) para a de 2018 (6).
+
 ## #036 — Imagens de aula saem finais, sem marca (prompt v8); action do Photoshop descontinuada
 - **Data:** 2026-11-04
 - **Status:** Aceita. O Toni informou que a action do Photoshop não existe mais e delegou a decisão ao ASTRA (Codex `gpt-6-astra`), que escolheu a opção B. Substitui a parte de branding externo de #008 e a reserva de cantos do prompt v6/v7.

@@ -62,6 +62,7 @@ LABELS_TRILHA = {
     "arquitetura-computadores-e-sistemas-operacionais":
         "Arquitetura de Computadores e Sistemas Operacionais",
     "metodologias-ageis": "Metodologias Ágeis",
+    "usabilidade-e-design-de-servicos": "Usabilidade e Design de Serviços",
     "marketing-digital": "Marketing Digital",
     "blueprint-tcc": "Blueprints de TCC",
     "fundamentos-de-ia": "Fundamentos de IA",
