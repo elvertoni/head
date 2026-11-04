@@ -69,9 +69,11 @@ Rodar antes de entregar toda Canônica. Veredito binário: falhou um item → co
 - [ ] **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
 - [ ] **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (`spec/01-CANONICA.md` §4.2) — o slug não tem acento.
 - [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (§4.1) — a apostila standalone não exibe imagem de conteúdo.
-- [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v6.
+- [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v8 (peça final, sem marca).
 - [ ] **Quiz com exatamente uma `correta: true`** — o portal marca como certa toda alternativa com `correta`.
 - [ ] `:::roteiro` não contém conteúdo essencial ao aluno.
+- [ ] **`:::atencao` com sintoma verificado**: em aula prática com código, o erro descrito foi reproduzido (navegador/console) e o sintoma e a mensagem citados batem com o que acontece de fato. Sintoma imaginado reprova a dimensão 5 (caso real: `forEach(fn())` descrito como "só uma tarefa chega", quando o real é um item vazio e um `TypeError`).
+- [ ] **Interativo onde o processo pede**: se a aula acompanha um processo passo a passo (laço, ciclo de evento, fluxo de dados) e o texto o descreve num parágrafo denso, troque por `diagrama-progressivo`. Em sequência de várias aulas, não repita o mesmo molde de blocos por inércia.
 - [ ] Volume cabe em 50 min (≤5 conceitos novos, ≤4 elementos por seção).
 - [ ] Nos modos SEED/Material: achados da origem refletidos como marcação inline; `revisao: true` se houve correção.
 

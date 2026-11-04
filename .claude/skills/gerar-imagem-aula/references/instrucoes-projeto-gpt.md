@@ -10,23 +10,23 @@ visual que o modelo lê.
 
 Não anexar:
 
-- `LEIA-ME_PROMPT_INFOGRAFICOS_v7.txt` — é manual para o Toni, não para o
+- `LEIA-ME_PROMPT_INFOGRAFICOS_v8.txt` — é manual para o Toni, não para o
   modelo; nos arquivos do Projeto ele compete com o XML;
 - `logo-prof-toni-coimbra-horizontal.png` — dar a marca ao modelo generativo é
-  convite para ele redesenhá-la. A logo entra só no Photoshop.
+  convite para ele redesenhá-la. A peça é final e não leva marca (v8).
 
 ## Instrução de configuração do Projeto
 
 Este texto vive no campo de instruções do Projeto, não numa mensagem. Ele
 repete de propósito o que já está no XML: em 29/07/2026 duas artes saíram com
-fundo branco e cantos ocupados, sinal de que o modelo não abriu o XML anexado.
-Fixar paleta e zonas reservadas na instrução é o seguro barato contra isso.
+fundo branco, sinal de que o modelo não abriu o XML anexado. Fixar paleta,
+margem e ausência de marca na instrução é o seguro barato contra isso.
 
 ```
 # INSTRUÇÕES OBRIGATÓRIAS PARA GERAÇÃO DAS ARTES
 
 Siga integralmente o arquivo XML anexado a este projeto: prompt.xml,
-versão 7.0, modo arte_base_para_branding_externo.
+versão 8.0, modo arte_final_sem_branding.
 
 A cada solicitação serão enviados: canonica.md, imagens.md, o PERFIL desejado
 e o título exato da aula-alvo.
@@ -68,22 +68,21 @@ com ✗ vermelho e rótulo (ERRADO, EVITE).
 Estilo: brutalismo editorial refinado — cor chapada, grade, filetes finos,
 título em grotesca pesada (tipo Archivo Black), rótulos em mono caixa-alta.
 
-## CANTOS SUPERIORES RESERVADOS
-Mantenha os dois cantos superiores escuros, calmos e completamente vazios: sem
-texto, ícone, ornamento, moldura, trilha de circuito ou qualquer elemento. A
-zona reservada é a AUSÊNCIA de conteúdo. Nunca desenhe caixa tracejada,
-contorno, marcação, nem escreva "reservado" ou qualquer indicação de onde o
-branding será aplicado. O título não pode invadir esses cantos.
+## MARGEM E TOPO
+Margem segura de 8% em todas as bordas. O título fica no topo, usando a
+largura útil, sem faixa vazia acima e sem deixar os cantos superiores vazios
+como se fossem reservados. Nunca desenhe caixa tracejada ou vazia nem escreva
+"reservado", "logo aqui" ou qualquer placeholder.
 
-## ARTE-BASE PARA BRANDING EXTERNO
-Gere APENAS a arte-base. Não desenhe logotipo, wordmark, monograma, as letras TC, o nome
-"Prof. Toni Coimbra", identificação de curso, assinatura ou faixa etária.
-Esses elementos são aplicados depois no Photoshop.
+## PEÇA FINAL, SEM MARCA
+A imagem é publicada exatamente como sair, sem edição posterior. Não desenhe
+logotipo, wordmark, monograma, as letras TC, o nome "Prof. Toni Coimbra",
+identificação de curso, assinatura ou faixa etária.
 
 ## VERIFICAÇÃO FINAL OBRIGATÓRIA
 Antes de entregar: percorra o checklist_final inteiro, verifique a regra R3
 item por item nos 13 defeitos, confirme o perfil sem mistura, confirme os dois
-cantos vazios, confirme ausência de branding e leia cada palavra renderizada
+margem segura e o título no topo, confirme ausência de marca e leia cada palavra renderizada
 conferindo se existe em português e está escrita certo.
 Qualquer ocorrência: REGENERE. Não entregue imagem com ressalva ou aviso.
 
@@ -99,9 +98,8 @@ confirmação sem a imagem. A tarefa só termina quando o PNG for entregue.
 PERFIL: {CAPA|INFOGRAFICO}
 AULA: {título exato da aula-alvo}
 
-Execute integralmente o XML v7 no perfil acima e gere a arte-base final.
-Não pare no prompt. Mantenha os dois cantos superiores escuros, vazios e
-reservados.
+Execute integralmente o XML v8 no perfil acima e gere a peça final.
+Não pare no prompt. Sem marca, sem placeholder e com o título no topo.
 ```
 
 Anexar `canonica.md` e `imagens.md` junto.

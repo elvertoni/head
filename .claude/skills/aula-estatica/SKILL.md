@@ -69,7 +69,7 @@ O rótulo do callout segue o portal: **"Tipo · Título"** (ex.: `Atenção · L
 ### 3b. Enriquecer com visuais (quando pedido)
 Separe primeiro o **meio** de cada visual — é o que decide se ele ensina ou confunde:
 - **ilustração conceitual** (arquitetura, fluxo, ciclo, comparação, capa) → skill
-  `gerar-imagem-aula` (prompt v7 Volta Atelier, gerado pelo Codex e auditado); o PNG aprovado vai
+  `gerar-imagem-aula` (prompt v8 Volta Atelier, peça final sem marca, gerada pelo Codex e auditada); o PNG aprovado vai
   para `img/{slug}.png` ao lado do `.html` e entra como `.lesson-figure` ou `.lesson-cover`;
 - **qualquer coisa com número ou palavra exata** (gráfico, tabela, sub-rede, estatística) →
   SVG escrito aqui (BLOCOS §18), com texto real e as classes de token.

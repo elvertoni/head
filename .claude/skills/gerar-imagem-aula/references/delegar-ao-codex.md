@@ -1,7 +1,7 @@
 # Delegar a geração ao Codex
 
 O Codex CLI tem ferramenta nativa de imagem. Verificado em 29/07/2026: a partir
-do prompt v6 já montado (o mesmo vale para a v7), o `image_gen` nativo entregou um infográfico em
+do prompt v6 já montado (o mesmo vale para a v7 e a v8), o `image_gen` nativo entregou um infográfico em
 1672×941. O arquivo 1664×936 existente no acervo veio depois de um crop
 (`Rectangle(4,2,1664,936)`), não é resolução nativa. Na Images API, os tamanhos
 16:9 válidos são `1536x864` e `2048x1152`.
@@ -36,7 +36,7 @@ recebeu:
 | entrada | resultado |
 |---|---|
 | prompt já preenchido (v6), em inglês, seção por seção | aprovado de primeira |
-| "execute integralmente o XML" (v6) + `canonica.md` + `imagens.md` | duas peças reprovadas: fundo branco (D4), cantos superiores ocupados (R1), capa e infográfico fundidos num quadro só (D12), "rosolveu" e "flex-contáiner" (D2) |
+| "execute integralmente o XML" (v6) + `canonica.md` + `imagens.md` | duas peças reprovadas: fundo branco (D4), cantos superiores ocupados (R1 da época, quando os cantos eram reservados), capa e infográfico fundidos num quadro só (D12), "rosolveu" e "flex-contáiner" (D2) |
 
 A leitura: pedir que o modelo *interprete* o design system deixa a camada de
 estilo por conta dele, e ele cai no default editorial claro. Entregar o prompt
@@ -116,7 +116,7 @@ Três cláusulas carregam peso e não devem ser cortadas:
   barata antes de você abrir o arquivo.
 - **proteção do acervo.** O pedido precisa conter literalmente a linha
   `Não leia, não altere e não grave nada dentro de aulas/ nesta tarefa.`. A
-  versão (v7) identifica o sistema de prompt, não a tentativa; por isso o nome
+  versão (v8) identifica o sistema de prompt, não a tentativa; por isso o nome
   usa `r{n}` no scratchpad e nunca um sufixo de versão no PNG.
 
 ## Depois que o PNG voltar

@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #036 — Imagens de aula saem finais, sem marca (prompt v8); action do Photoshop descontinuada
+- **Data:** 2026-11-04
+- **Status:** Aceita. O Toni informou que a action do Photoshop não existe mais e delegou a decisão ao ASTRA (Codex `gpt-6-astra`), que escolheu a opção B. Substitui a parte de branding externo de #008 e a reserva de cantos do prompt v6/v7.
+- **Decisão:** `tools/imagen-generator/prompt.xml` v8, modo `arte_final_sem_branding`. O PNG auditado vai direto para `capa.png`/`img/`, sem normalização de canvas. As zonas reservadas (R1) dão lugar à margem segura de 8% e ao título usando o topo inteiro. Continua proibido o modelo desenhar logo, "TC", nome ou curso, porque o portal e a apostila exibem a marca ao redor da imagem. D7 foi aposentado (o id não é reaproveitado); D6 passa a cobrir também cantos deixados vazios.
+- **Evidência:** o importador do ProfessorDash salva os bytes da capa e o card a exibe como está, sem sobrepor marca; as capas aprovadas de `landing-page-mvp` não têm logo aplicada.
+- **Consequências:** `montar_prompt.py` exige v8; skills `gerar-imagem-aula`, `aula-estatica` e `prof-toni`, LEIA-ME (renomeado para v8), `schema-wiki.md` e `AGENTS.md` foram atualizados. Os `imagens.md` de aulas já aprovadas ficam como registro histórico. A rubrica ganhou dois itens: sintoma de `:::atencao` verificado e `diagrama-progressivo` onde o processo pede.
+
 ## #035 — Trilha JavaScript na prática com retomada preparatória
 - **Data:** 2026-11-03
 - **Status:** Aceita; sequência de 20 encontros aprovada pelo Toni. As 20 aulas foram produzidas em lotes autorizados (2026-11-03/04), passaram por rubrica independente com correções (v2 nas aulas 12, 16, 17 e 18) e foram aprovadas para publicação em 2026-11-04.
@@ -81,7 +88,7 @@
 
 ## #008 — Prompt de imagem v6 com dois perfis; geração fora do agente
 - **Data:** 2026-07-29
-- **Status:** Aceita quanto aos perfis; o local de geração foi substituído por #010
+- **Status:** Aceita quanto aos perfis; o local de geração foi substituído por #010; o branding externo pelo Photoshop foi substituído por #036
 - **Contexto:** A auditoria das 54 imagens aprovadas mostrou que o prompt v5 estava calibrado abaixo do acervo, e a ferramenta de imagem do Claude Code saía pior que o ChatGPT (commit `c12bac6`).
 - **Decisão:** `tools/imagen-generator/prompt.xml` v6 tem dois perfis — `capa` (3:2, 4–10 blocos com micro-parágrafo, subtítulo e faixa de rodapé) e `infografico` (16:9, 2–5 blocos só com rótulos). Declarar o perfil é o passo 0. Paleta com fundo navy quase preto e ciano como âncora. `imagens.md` traz um brief de `capa` e no máximo um de `infografico`, sem prompt escrito à mão. O branding é aplicado depois pelo Photoshop.
 - **Alternativas descartadas:** Fundir os dois formatos num spec só; manter a geração no Claude Code; proibir render 3D (aparece em ~15 das 54 aprovadas).

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Confere proporcao e resolucao de uma arte-base contra o perfil declarado.
+"""Confere proporcao e resolucao de uma imagem de aula (peca final, v8) contra o perfil declarado.
 
 Uso:
     python inspecionar_png.py capa <caminho.png> [<caminho.png> ...]

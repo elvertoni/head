@@ -1,4 +1,11 @@
-COMO USAR — PROMPT DE IMAGENS v7 (VOLTA ATELIER)
+COMO USAR — PROMPT DE IMAGENS v8 (VOLTA ATELIER)
+
+O QUE MUDOU DA V7 PARA A V8 (2026-11-04, decisão #036)
+------------------------------------------------------
+A action do Photoshop foi descontinuada. A imagem gerada é a peça FINAL e vai
+direto para capa.png ou img/. Os cantos superiores deixaram de ser reservados:
+o título usa o topo inteiro, dentro da margem segura de 8%. Continua proibido
+o modelo desenhar logo, "TC", nome ou curso. D7 foi aposentado.
 
 O QUE MUDOU DA V6 PARA A V7
 ---------------------------
@@ -13,11 +20,10 @@ só a camada visual; perfis, densidade, zonas reservadas e defeitos continuam.
   sans geométrica (Geist)             grotesca pesada (Archivo) + mono nos rótulos
   marca C ciano + seta azul           ligadura TC (T osso, C vermelho)
 
-LOGO: logo-prof-toni-coimbra-horizontal.png já é a ligadura TC (texto osso,
+LOGO: logo-prof-toni-coimbra-horizontal.png é a ligadura TC (texto osso,
 para fundo escuro, 2048x293, fundo transparente); a versão para fundo claro é
-logo-prof-toni-coimbra-horizontal-fundo-claro.png. Se a action do Photoshop
-tiver a logo antiga embutida (smart object), reaponte o "Inserir incorporado"
-para este arquivo e salve a action de novo.
+logo-prof-toni-coimbra-horizontal-fundo-claro.png. Ficam como arquivos de
+marca para outros usos; nunca entram no modelo de imagem.
 
 Os DOIS PERFIS continuam:
 
@@ -42,26 +48,25 @@ audita a peça antes de gravar no acervo.
 
 CAMINHO DO NAVEGADOR (CHATGPT)
 ------------------------------
-Forneça ao Projeto: o prompt.xml v7 (nos arquivos do Projeto), a aula
+Forneça ao Projeto: o prompt.xml v8 (nos arquivos do Projeto), a aula
 (canonica.md), o brief (imagens.md) e o perfil. NÃO anexe a logo.
 
 Solicite:
-"Execute integralmente o XML v7 no perfil CAPA (ou INFOGRAFICO) e gere a
-arte-base final. Não pare no prompt. Mantenha os dois cantos superiores
-escuros, vazios e reservados."
+"Execute integralmente o XML v8 no perfil CAPA (ou INFOGRAFICO) e gere a
+peça final. Não pare no prompt. Sem marca, sem placeholder e com o título
+no topo."
 
 
 ANTES DE ACEITAR A IMAGEM
 -------------------------
-Confira os 13 defeitos da regra R3 do XML:
+Confira os defeitos da regra R3 do XML (D7 aposentado na v8):
 
   D1  texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO")
   D2  palavra inventada em português ("nulhado", "madruagda")
   D3  peça sem título
   D4  fundo claro, branco, navy ou azulado
   D5  texto ou objeto cortado pela borda
-  D6  faixa superior vazia grande
-  D7  ornamento, grade ou filete dentro de uma zona reservada
+  D6  faixa superior vazia grande ou cantos deixados vazios
   D8  conteúdo da aula errada — confira o título da aula-alvo!
   D9  wireframe cinza sem ícone, cor ou título
   D10 comparação com só um lado rotulado

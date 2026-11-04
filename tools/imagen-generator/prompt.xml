@@ -2,7 +2,17 @@
 <!--
   PROMPT OFICIAL DE IMAGENS DE AULA · Prof. Toni Coimbra
   Design System: "Volta Atelier" (o mesmo do ProfessorDash desde o commit 0d976de)
-  Versão: 7.0 · Modo: GERAR APENAS A ARTE-BASE (branding aplicado externamente)
+  Versão: 8.0 · Modo: GERAR A PEÇA FINAL, SEM MARCA
+
+  O QUE MUDA NA v8 (2026-11-04, decisão #036)
+  ===========================================
+  A action do Photoshop que estampava logo, curso e canvas foi descontinuada.
+  A imagem gerada passa a ser a peça FINAL: o PNG auditado vai direto para
+  capa.png ou img/. Por isso os cantos superiores deixam de ser zonas
+  reservadas — o título e a composição usam a largura útil inteira, dentro da
+  margem segura de 8%. Continua proibido desenhar logo, monograma, "TC",
+  nome ou curso: o portal e a apostila já exibem a marca ao redor da imagem.
+  D7 (ornamento em zona reservada) foi aposentado; D1 e D6 seguem valendo.
 
   O QUE MUDA NA v7 (e por quê)
   ============================
@@ -22,9 +32,8 @@
     · sans geométrica (Geist)       → grotesca pesada (Archivo) + mono (JetBrains Mono)
     · marca C ciano + seta azul     → ligadura TC (T osso, C vermelho signal)
 
-  Mantido: a logo e a identificação do curso NÃO são desenhadas pelo modelo.
-  São estampadas depois por uma action determinística no Photoshop. Por isso os
-  dois cantos superiores continuam sendo zona reservada e vazia.
+  Na v7 a logo e o curso eram estampados por uma action do Photoshop sobre
+  cantos reservados. Na v8 não há etapa posterior (ver acima).
 
   ARQUIVOS QUE DEVEM SER FORNECIDOS EM CADA USO:
   1) este XML;
@@ -34,36 +43,36 @@
   redesenhar a marca. As cores canônicas já estão aqui.
 -->
 <prompt_infografico
-    versao="7.0"
+    versao="8.0"
     autor="Prof. Toni Coimbra"
     curso="Técnico em Desenvolvimento de Sistemas"
     design_system="Volta Atelier"
-    modo="arte_base_para_branding_externo"
+    modo="arte_final_sem_branding"
     base_empirica="auditoria de 54 imagens aprovadas do acervo (2026-07-29) + DESIGN.md do ProfessorDash (2026-09-10)">
 
   <!-- ================================================================
        OBJETIVO DE EXECUÇÃO
        ================================================================ -->
   <objetivo prioridade="maxima">
-    Analise a aula, escolha o PERFIL, planeje a peça e GERE a ARTE-BASE final
-    em PNG, seguindo integralmente este design system.
+    Analise a aula, escolha o PERFIL, planeje a peça e GERE a peça FINAL em
+    PNG, seguindo integralmente este design system.
 
-    A arte-base NÃO contém logo, nome, wordmark, monograma nem identificação
-    de curso: esses elementos são aplicados depois, fora do modelo, por uma
-    action determinística no Photoshop.
+    A peça NÃO contém logo, nome, wordmark, monograma nem identificação de
+    curso: o portal e a apostila que a exibem já carregam a marca. Não há
+    nenhuma etapa posterior de edição — o que sair daqui é publicado.
 
     NÃO pare após escrever um prompt em inglês.
     NÃO entregue apenas uma descrição.
     NÃO desenhe a logo nem o curso.
-    NÃO ocupe os cantos superiores: eles são zonas reservadas.
+    NÃO deixe caixa vazia, marcador ou texto de placeholder no lugar de marca.
   </objetivo>
 
   <ordem_de_prioridade>
-    <item n="1">Manter os dois cantos superiores escuros, calmos e VAZIOS.</item>
-    <item n="2">Ensinar com clareza: a peça precisa ensinar algo verificável.</item>
+    <item n="1">Ensinar com clareza: a peça precisa ensinar algo verificável.</item>
+    <item n="2">Português impecável. Zero palavra inventada — a peça é publicada como sai.</item>
     <item n="3">Cumprir a densidade do PERFIL escolhido — nem pobre, nem carregada.</item>
     <item n="4">Preservar o design system Volta Atelier e a legibilidade em celular.</item>
-    <item n="5">Português impecável. Zero palavra inventada.</item>
+    <item n="5">Nenhuma marca, logo ou identificação de curso desenhada.</item>
   </ordem_de_prioridade>
 
   <!-- ================================================================
@@ -73,8 +82,8 @@
 
     <instrucao>
       Antes de qualquer coisa, declare qual perfil está sendo produzido. Os
-      dois compartilham paleta, tipografia, gramática visual e zonas
-      reservadas — e divergem em formato, densidade e volume de texto.
+      dois compartilham paleta, tipografia, gramática visual e margem segura
+      — e divergem em formato, densidade e volume de texto.
       Nunca misture os dois: capa densa em 16:9 fica apertada, infográfico
       enxuto em 3:2 fica vazio.
     </instrucao>
@@ -148,13 +157,13 @@
   </escolha_do_meio>
 
   <!-- ================================================================
-       BRANDING É EXTERNO — O MODELO NÃO O APLICA
+       SEM MARCA NA PEÇA — O MODELO NÃO A DESENHA
        ================================================================ -->
-  <branding_externo>
+  <sem_branding>
     <responsabilidade>
-      A marca oficial — a ligadura TC — e a identificação do curso são
-      aplicadas por uma action do Photoshop sobre a arte-base entregue. O
-      modelo NÃO participa dessa etapa.
+      A marca oficial — a ligadura TC — e a identificação do curso aparecem
+      no portal e na apostila, ao redor da imagem. A peça não as repete e o
+      modelo nunca as desenha. Desde a v8 não existe action de Photoshop.
     </responsabilidade>
     <referencia_de_marca observacao="apenas para harmonizar cores, NÃO para desenhar">
       Ligadura TC: o T em osso #F4F3F0, o C em vermelho signal #FB3732, sobre
@@ -162,61 +171,36 @@
       marca. Em hipótese alguma o modelo deve renderizar a logo, as letras TC
       como símbolo, ou qualquer monograma.
     </referencia_de_marca>
-  </branding_externo>
+  </sem_branding>
 
   <!-- ================================================================
-       ZONAS RESERVADAS (mantê-las vazias é regra crítica)
+       MARGEM SEGURA E TOPO (v8 — substitui as zonas reservadas da v7)
        ================================================================ -->
-  <regra id="R1-ZONAS-RESERVADAS" peso="critico" prioridade="absoluta">
+  <regra id="R1-MARGEM-E-TOPO" peso="critico" prioridade="absoluta">
 
-    <titulo>Cantos superiores reservados para branding externo</titulo>
+    <titulo>Margem segura de 8% e topo ocupado pelo título</titulo>
 
-    <zona id="LOGO" canto="superior_esquerdo">
-      <estado_exigido>grafite escuro, calmo, plano e VAZIO</estado_exigido>
-      <largura_aprox>~20% da largura, no topo</largura_aprox>
-      <altura_aprox>~12% da altura, no topo</altura_aprox>
-      <proibido_dentro>
-        logo, monograma, símbolo, wordmark, nome, texto, ícone, seta, filete,
-        grade, moldura decorativa, trilha de circuito, diagrama ou qualquer
-        detalhe.
-      </proibido_dentro>
-    </zona>
+    <margem>
+      Nada importante a menos de ~8% de qualquer borda. Texto e objetos
+      inteiros dentro do quadro (ver D5).
+    </margem>
 
-    <zona id="CURSO" canto="superior_direito">
-      <estado_exigido>organizado, calmo e VAZIO</estado_exigido>
-      <largura_aprox>~22% da largura, no topo</largura_aprox>
-      <altura_aprox>~14% da altura, no topo</altura_aprox>
-      <proibido_dentro>
-        texto de curso, "TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS", selo, ícone
-        de código, faixa etária, rótulo de bloco, moldura decorativa ou
-        qualquer elemento.
-      </proibido_dentro>
-    </zona>
+    <topo>
+      O título (e, na capa, o subtítulo) ocupa a faixa superior dentro da
+      margem segura, alinhado ao centro ou à esquerda, podendo usar a largura
+      útil inteira. Não deixe os cantos superiores como áreas vazias
+      reservadas nem uma faixa vazia acima do título (D6).
+    </topo>
 
     <erro_observado gravidade="alta">
-      Não escreva a palavra "reservado" nem desenhe uma caixa tracejada
-      indicando a zona. Uma capa do acervo saiu com os textos "ESPAÇO
-      RESERVADO PARA LOGO" e "ESPAÇO RESERVADO PARA CURSO" impressos na arte
-      final. A zona reservada é AUSÊNCIA de conteúdo, nunca um marcador
-      desenhado.
+      Nunca escreva "reservado", "logo aqui" ou similar, e nunca desenhe caixa
+      tracejada ou retângulo vazio no lugar de uma marca. Uma capa do acervo
+      saiu com "ESPAÇO RESERVADO PARA LOGO" impresso na arte (D1).
     </erro_observado>
-
-    <erro_observado gravidade="media">
-      Moldura decorativa, trilha de circuito, "canto chanfrado" e — na v7 —
-      linhas de grade ou de registro que atravessam o canto também contam como
-      ocupação. As linhas da composição começam fora das zonas.
-    </erro_observado>
-
-    <motivo>
-      Essas duas áreas recebem, no Photoshop, o smart object da logo e o bloco
-      tipográfico do curso em coordenada fixa. Se houver qualquer elemento sob
-      elas, o branding fica ilegível ou desalinhado. Quando a peça vai para
-      uma apostila sem branding, os cantos vazios funcionam como respiro.
-    </motivo>
 
     <criterio_de_conclusao>
-      A arte-base só está correta se os dois cantos superiores estiverem
-      visivelmente limpos e escuros.
+      A peça só está correta se o título estiver no topo, dentro da margem
+      segura, sem faixa vazia acima e sem nenhum marcador de marca.
     </criterio_de_conclusao>
 
   </regra>
@@ -349,15 +333,15 @@
 
     <gramatica_visual peso="alto">
       <elemento nome="titulo">
-        1 a 3 linhas, no topo central ou alinhado à esquerda logo abaixo da
-        zona reservada da logo, sem invadi-la. Palavra-chave em vermelho
+        1 a 3 linhas, no topo, centralizado ou alinhado à esquerda, dentro da
+        margem segura. Palavra-chave em vermelho
         signal, resto em osso. Nunca ausente: duas capas do acervo saíram sem
         título e ficaram órfãs.
       </elemento>
       <elemento nome="eyebrow" opcional="sim">
         Linha curta em mono caixa-alta vermelha acima do título, seguida de um
-        filete de 24 px (ex.: "TEMA V · BANCO DE DADOS"). Só se couber fora das
-        zonas reservadas.
+        filete de 24 px (ex.: "TEMA V · BANCO DE DADOS"). Só se couber sem
+        empurrar o miolo para baixo.
       </elemento>
       <elemento nome="subtitulo" perfil="capa">
         1 a 2 linhas logo abaixo do título, em cinza #8E8E95, explicando a
@@ -396,24 +380,21 @@
     <composicao>
       <area_segura>8%</area_segura>
       <ancoras>
-        topo esquerdo = ZONA RESERVADA vazia (logo aplicada no Photoshop);
-        topo direito = ZONA RESERVADA vazia (curso aplicado no Photoshop);
-        faixa superior central = título e subtítulo;
+        faixa superior = título e subtítulo, na largura útil, sem faixa
+        vazia acima;
         miolo = ponto focal e blocos sobre grade;
         rodapé = faixa de síntese (apenas no perfil capa).
       </ancoras>
       <layout>
         Um único ponto focal dominante, fluxo preferencial da esquerda para a
         direita, alinhamento rigoroso em grade, ícones da mesma família,
-        leitura clara em notebook e celular, nada importante junto às bordas
-        nem nos cantos superiores.
+        leitura clara em notebook e celular, nada importante junto às bordas.
       </layout>
       <nota_de_canvas>
         A geração entrega tamanhos nativos próximos do alvo, não exatamente
-        1536×1024 ou 1600×900. A normalização para o canvas canônico é feita na
-        primeira etapa da action do Photoshop. O modelo só precisa entregar a
-        proporção certa do perfil, cantos superiores limpos e a maior resolução
-        possível.
+        1536×1024 ou 1600×900. Não há normalização posterior: o PNG auditado
+        vai direto para capa.png ou img/. O modelo entrega a proporção certa
+        do perfil e a maior resolução possível.
       </nota_de_canvas>
     </composicao>
 
@@ -452,8 +433,8 @@
   <regra id="R2-TEXTO" peso="alto">
     <obrigatorio>
       Português do Brasil correto. Todo texto renderizado precisa ser uma
-      palavra real e verificável. Título e rótulos ficam no miolo e na faixa
-      superior central — NUNCA nos cantos superiores reservados.
+      palavra real e verificável. Título e rótulos ficam dentro da margem
+      segura de 8%.
       Volume de texto conforme o PERFIL declarado.
     </obrigatorio>
     <proibido>
@@ -472,7 +453,8 @@
     <instrucao>
       D1 a D12 foram observados em imagens já publicadas do acervo; D13 é o
       defeito típico da troca para a v7 (o modelo volta ao estilo "tech" com
-      brilho). Antes de entregar, verifique um por um. Qualquer ocorrência =
+      brilho). D7 foi aposentado na v8, junto com as zonas reservadas; o id
+      não é reaproveitado. Antes de entregar, verifique um por um. Qualquer ocorrência =
       regenerar, não entregar.
     </instrucao>
     <defeito id="D1">Texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO").</defeito>
@@ -480,8 +462,8 @@
     <defeito id="D3">Peça sem título.</defeito>
     <defeito id="D4">Fundo claro, branco ou colorido (navy, azulado, roxo) — o fundo v7 é grafite neutro quase preto.</defeito>
     <defeito id="D5">Texto ou objeto cortado pela borda do quadro.</defeito>
-    <defeito id="D6">Faixa superior vazia grande (mais de ~15% da altura sem nada além das zonas reservadas).</defeito>
-    <defeito id="D7">Ornamento, grade ou filete dentro de uma zona reservada.</defeito>
+    <defeito id="D6">Faixa superior vazia grande (mais de ~15% da altura sem conteúdo acima do título), inclusive cantos superiores deixados vazios como se fossem reservados.</defeito>
+    <defeito id="D7" status="aposentado na v8">Ornamento, grade ou filete dentro de uma zona reservada. Não se aplica desde a v8: não há mais zonas reservadas.</defeito>
     <defeito id="D8">Conteúdo que não corresponde ao tema da aula-alvo.</defeito>
     <defeito id="D9">Diagrama esparso de retângulos cinzas sem ícone, cor ou rótulo (aparência de wireframe). Atenção redobrada: o estilo chapado da v7 facilita esse erro.</defeito>
     <defeito id="D10">Comparação com apenas um lado rotulado.</defeito>
@@ -502,7 +484,7 @@
     as letras "TC" como símbolo · "Prof. Toni Coimbra" desenhado ·
     "ProfessorDash" · identificação de curso ·
     "TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS" · selo de idade · "14 a 18 anos" ·
-    qualquer elemento nos cantos superiores · texto de placeholder ·
+    caixa vazia ou tracejada no lugar de marca · texto de placeholder ·
     wireframe de baixa fidelidade · metade do quadro vazia ·
     gráfico de dados com números inventados
   </proibicoes_gerais>
@@ -530,7 +512,7 @@
 
     <etapa n="0" nome="declarar_perfil">
       Declare capa ou infografico e confirme o título exato da aula-alvo.
-      A logo NÃO é esperada aqui (é aplicada no Photoshop).
+      A logo NÃO é desenhada: a marca já está no portal e na apostila.
     </etapa>
 
     <etapa n="1" nome="analisar">
@@ -540,12 +522,11 @@
 
     <etapa n="2" nome="planejar">
       Defina hierarquia, ponto focal, blocos com rótulo e micro-texto, setas,
-      cores semânticas e áreas seguras. Reserve explicitamente os dois cantos
-      superiores como superfícies escuras e vazias.
+      cores semânticas e a margem segura de 8%, com o título ocupando o topo.
     </etapa>
 
-    <etapa n="3" nome="gerar_arte_base">
-      Gere a arte-base completa na proporção do perfil declarado.
+    <etapa n="3" nome="gerar_peca_final">
+      Gere a peça final completa na proporção do perfil declarado.
     </etapa>
 
     <etapa n="4" nome="validar_visual">
@@ -560,14 +541,14 @@
     </etapa>
 
     <etapa n="5" nome="entregar">
-      Entregue a ARTE-BASE final em PNG, na proporção do perfil e na maior
+      Entregue a peça FINAL em PNG, na proporção do perfil e na maior
       resolução possível. Não pare no prompt em inglês.
     </etapa>
 
   </pipeline_obrigatorio>
 
   <!-- ================================================================
-       PROMPT PARA A ARTE-BASE — PERFIL "CAPA" (3:2, densa)
+       PROMPT DA PEÇA FINAL — PERFIL "CAPA" (3:2, densa)
        ================================================================ -->
   <prompt_arte_base perfil="capa"><![CDATA[
 Create a dense, editorial educational infographic COVER for a lesson in a Brazilian Technical Software Development program (students aged 14-18).
@@ -585,13 +566,13 @@ CONTENT BLOCKS (4 to 10 blocks, 7 is ideal):
 [for each block: an ALL-CAPS monospaced label in its semantic color + a 1-3 line micro-paragraph in Brazilian Portuguese + a thin-line icon]
 
 TITLE AND SUBTITLE:
-[insert title]. Set the title in a heavy, compact grotesque sans-serif (like Archivo Black), 1-3 lines, tight letter spacing, at the upper center below the reserved corners. The keyword "[insert keyword]" is in signal red #FB3732; the rest of the title is in bone white #F4F3F0. Directly below it, the 1-2 line subtitle in gray #8E8E95: "[insert subtitle]".
+[insert title]. Set the title in a heavy, compact grotesque sans-serif (like Archivo Black), 1-3 lines, tight letter spacing, at the top of the piece inside the 8% safe margin (centered or left-aligned, using the full usable width). The keyword "[insert keyword]" is in signal red #FB3732; the rest of the title is in bone white #F4F3F0. Directly below it, the 1-2 line subtitle in gray #8E8E95: "[insert subtitle]".
 
 FOOTER SYNTHESIS BAND (required):
 A full-width band closing the piece, on #0D0D0D with a 1px top rule, labeled in red monospaced caps "[insert footer label: EM RESUMO, IDEIA CENTRAL, ERRO COMUM, LEMBRE-SE or REGRA DE OURO]", followed by this closing sentence in bone white: "[insert footer sentence]".
 
-RESERVED EMPTY ZONES (critical):
-Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier are stamped there later in Photoshop, outside this image. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, symbol, course text, badge, grid line, rule, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
+NO BRANDING — THIS IS THE FINAL IMAGE (critical):
+This picture is published exactly as generated; nothing is added later. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, course text, badge or age range anywhere. Do NOT leave empty reserved corners, empty boxes or dashed frames for a logo, and never write placeholder text such as "reserved space" or "logo here". The title and the composition use the full usable width of the top area.
 
 STYLE — "Volta Atelier", refined editorial brutalism:
 Flat editorial vector infographic on a neutral near-black graphite background (#141414), laid out on a strict grid. Rectangular panels (#1C1C1E and #232326) with small 8-12px corner radius and crisp 1px hairline borders (#2E2E31). High contrast, solid flat colors only. Thin-line icons (Lucide style) drawn in the block's color inside a dark graphite tile (#232326) with a 1px border in that color; at most a faint 15% tint. NEVER solid, saturated, filled "app icon" squares. Numbered steps use red rounded-square badges with white numbers. Pill-shaped tags. Straight, clean arrows. A very subtle paper grain on the background is allowed. Design-studio finish, contemporary and youthful without being childish. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
@@ -611,14 +592,14 @@ TYPOGRAPHY:
 Heavy compact grotesque sans-serif (Archivo Black style) ONLY for the title; every other piece of text — labels, micro-paragraphs, subtitle, footer — in a monospaced typeface (JetBrains Mono style), labels in ALL-CAPS with open letter spacing. Flawless Brazilian Portuguese — every rendered word must be a real, correctly spelled word. Nothing smaller than roughly 14px equivalent.
 
 LAYOUT:
-3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins, one dominant focal point, strict grid alignment, core content occupying 70-90% of the usable height, readable on laptop and mobile, both top corners kept clean and empty.
+3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins, one dominant focal point, strict grid alignment, core content occupying 70-90% of the usable height, readable on laptop and mobile, no empty band or empty corners across the top.
 
 AVOID:
-navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, cyberpunk, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a large empty band across the top beyond the reserved corners, sparse flat-gray wireframe boxes, data charts with invented numbers.
+navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, cyberpunk, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a large empty band across the top, sparse flat-gray wireframe boxes, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
-       PROMPT PARA A ARTE-BASE — PERFIL "INFOGRAFICO" (16:9, enxuto)
+       PROMPT DA PEÇA FINAL — PERFIL "INFOGRAFICO" (16:9, enxuto)
        ================================================================ -->
   <prompt_arte_base perfil="infografico"><![CDATA[
 Create a focused educational infographic that teaches ONE difficult concept, to be placed inside the body of a lesson for Brazilian Technical Software Development students (aged 14-18).
@@ -639,16 +620,16 @@ CONTENT BLOCKS (2 to 5 only):
 [for each block: a short label of up to 4 words + a thin-line icon + its semantic color]
 
 TITLE:
-"[insert title]" — one short line at the upper center, below the reserved corners, in a heavy compact grotesque sans-serif (like Archivo Black). The word "[insert keyword]" is in signal red #FB3732, the rest in bone white #F4F3F0. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
+"[insert title]" — one short line at the top, inside the 8% safe margin, in a heavy compact grotesque sans-serif (like Archivo Black). The word "[insert keyword]" is in signal red #FB3732, the rest in bone white #F4F3F0. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
 
-RESERVED EMPTY ZONES (critical):
-Keep the upper-LEFT corner (about 20% width x 12% height) and the upper-RIGHT corner (about 22% width x 14% height) dark, calm and COMPLETELY EMPTY. A logo and a course identifier may be stamped there later, outside this image. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, symbol, course text, badge, grid line, rule, decorative frame, circuit trace or ANY element in those two corners. Never draw a dashed box or write the words "reserved space" — the zone is the ABSENCE of content, not a marker.
+NO BRANDING — THIS IS THE FINAL IMAGE (critical):
+This picture is published exactly as generated; nothing is added later. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, course text, badge or age range anywhere. Do NOT leave empty reserved corners, empty boxes or dashed frames for a logo, and never write placeholder text such as "reserved space" or "logo here".
 
 STYLE — "Volta Atelier", refined editorial brutalism:
 Flat editorial vector infographic on a neutral near-black graphite background (#141414), strict grid alignment, rectangular panels (#1C1C1E, #232326) with small 8-12px radius and crisp 1px hairline borders (#2E2E31), solid flat colors, high contrast, consistent thin-line icons (Lucide style) drawn in the block's color inside dark graphite tiles with a 1px colored border (NEVER solid, saturated, filled "app icon" squares), red rounded-square numbered badges, straight clean arrows, generous breathing room AROUND the blocks. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
 
 MANDATORY MINIMUM ELEMENTS (a sparse gray wireframe is a FAILED output, not minimalism):
-- A short title rendered in the upper-center area, with its keyword in signal red.
+- A short title rendered at the top, inside the safe margin, with its keyword in signal red.
 - A thin-line icon and a semantic accent color on every single block — never a flat gray rectangle with no icon, no color and no label.
 - At least one signal-red highlight: the primary arrow, a numbered badge or the title keyword.
 - In side-by-side comparisons, BOTH sides must carry their own label and equivalent visual weight; the wrong side is grayed with a red ✗, the right side has an emerald ✓.
@@ -663,10 +644,10 @@ TYPOGRAPHY:
 At most eight short Brazilian Portuguese labels, each up to four words, in a monospaced typeface (JetBrains Mono style), ALL-CAPS with open letter spacing; the heavy grotesque is used ONLY for the title. No paragraphs, no captions, no explanatory sentences. Flawless spelling — every rendered word must be a real, correctly spelled Portuguese word.
 
 LAYOUT:
-16:9 landscape, highest available resolution, 8% safe margins, one dominant focal point, at most five main visual groups, readable on laptop and mobile, both top corners kept clean and empty.
+16:9 landscape, highest available resolution, 8% safe margins, one dominant focal point, at most five main visual groups, readable on laptop and mobile, no empty band or empty corners across the top.
 
 AVOID:
-navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, cyberpunk, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, anything inside the top corners, text or objects cut off by the frame edge, a comparison where only one side has a label, data charts with invented numbers.
+navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, cyberpunk, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a comparison where only one side has a label, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
@@ -674,11 +655,10 @@ navy, blue-black or tinted backgrounds, white or light background, gradients, gl
        ================================================================ -->
   <checklist_final>
 
-    <grupo nome="zonas reservadas">
-      <check>[ ] O canto superior esquerdo está escuro e VAZIO?</check>
-      <check>[ ] O canto superior direito está escuro e VAZIO?</check>
-      <check>[ ] Não há caixa tracejada nem a palavra "reservado" desenhada?</check>
-      <check>[ ] Não há ornamento, grade, filete ou circuito dentro das zonas?</check>
+    <grupo nome="margem e topo">
+      <check>[ ] Nada importante encosta nas bordas (margem segura de 8%)?</check>
+      <check>[ ] O título está no topo, sem faixa vazia acima nem cantos deixados vazios?</check>
+      <check>[ ] Não há caixa vazia, tracejada nem a palavra "reservado" ou "logo" desenhada?</check>
     </grupo>
 
     <grupo nome="marca">
@@ -725,7 +705,7 @@ navy, blue-black or tinted backgrounds, white or light background, gradients, gl
     <grupo nome="conteúdo">
       <check>[ ] O conteúdo corresponde ao tema da AULA-ALVO (e não ao da aula vizinha)?</check>
       <check>[ ] A peça não deveria ser um SVG com texto real (dados, tabela, cálculo)?</check>
-      <check>[ ] A entrega é a IMAGEM (arte-base), e não apenas um prompt?</check>
+      <check>[ ] A entrega é a IMAGEM final, e não apenas um prompt?</check>
     </grupo>
 
   </checklist_final>
@@ -735,22 +715,21 @@ navy, blue-black or tinted backgrounds, white or light background, gradients, gl
        ================================================================ -->
   <formato_da_resposta>
     <saida_principal>
-      A ARTE-BASE final em PNG, na proporção do perfil declarado, cantos
-      superiores limpos, sem logo e sem curso.
+      A peça FINAL em PNG, na proporção do perfil declarado, sem logo e sem
+      curso, pronta para capa.png ou img/.
     </saida_principal>
     <saida_textual>
       Após a imagem, informe somente:
       1. perfil (capa ou infografico) e nome do arquivo;
       2. conceito central;
       3. mensagem em 3 segundos;
-      4. alt text em português (já considerando que logo e curso serão
-         adicionados depois);
-      5. confirmação objetiva: "Arte-base entregue com cantos superiores
-         reservados e limpos."
+      4. alt text em português, descrevendo só o conteúdo;
+      5. confirmação objetiva: "Peça final entregue, sem marca e dentro da
+         margem segura."
     </saida_textual>
     <proibicao>
       Não responder somente com o prompt em inglês. Não encerrar antes de gerar
-      e entregar a arte-base. Não entregar peça reprovada no checklist com
+      e entregar a peça final. Não entregar peça reprovada no checklist com
       ressalva textual — regenerar é obrigatório.
     </proibicao>
   </formato_da_resposta>

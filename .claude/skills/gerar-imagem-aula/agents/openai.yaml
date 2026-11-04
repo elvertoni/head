@@ -1,4 +1,4 @@
 interface:
   display_name: "Gerar imagem de aula"
-  short_description: "Monta o prompt v6, gera a arte-base e audita o PNG contra os 12 defeitos"
-  default_prompt: "Use $gerar-imagem-aula para escolher a imagem principal desta aula, gerar a arte-base no perfil correto e auditar o resultado."
+  short_description: "Monta o prompt v8, gera a peça final sem marca e audita o PNG contra os defeitos conhecidos"
+  default_prompt: "Use $gerar-imagem-aula para escolher a imagem principal desta aula, gerar a peça final no perfil correto e auditar o resultado."

@@ -110,7 +110,7 @@ Snippets em `BLOCOS.md`. Resumo de intenção:
 | Capa ilustrada | `.lesson-hero` | imagem 3:2 da `gerar-imagem-aula`, borda fina, raio 18 |
 | Gráfico SVG | (extensão) | moldura de painel; cores por classe de token, texto real, troca de tema sozinho |
 
-**Imagem gerada × SVG.** Ilustração conceitual vem da skill `gerar-imagem-aula` (prompt v7, mesmo
+**Imagem gerada × SVG.** Ilustração conceitual vem da skill `gerar-imagem-aula` (prompt v8, mesmo
 Volta Atelier: grafite, cor chapada, signal como âncora). Dado, número e palavra exata são SVG.
 As imagens geradas são sempre escuras (grafite) — no tema claro elas aparecem como placas
 escuras emolduradas, do mesmo jeito que os blocos de código.

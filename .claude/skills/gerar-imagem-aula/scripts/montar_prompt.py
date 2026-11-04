@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monta o prompt de arte-base a partir do prompt.xml (v7) e de um brief em JSON.
+"""Monta o prompt da peça final a partir do prompt.xml (v8) e de um brief em JSON.
 
 Uso:
     python .claude/skills/gerar-imagem-aula/scripts/montar_prompt.py brief.json saida.txt
@@ -58,7 +58,7 @@ def falhar(msg):
 
 def modelo(perfil):
     raiz = ET.parse(XML).getroot()
-    if raiz.get('versao') != '7.0' or raiz.get('modo') != 'arte_base_para_branding_externo':
+    if raiz.get('versao') != '8.0' or raiz.get('modo') != 'arte_final_sem_branding':
         falhar(f'prompt.xml fora do esperado (versao={raiz.get("versao")}, modo={raiz.get("modo")}). Reporte antes de gerar.')
     for p in raiz.findall('prompt_arte_base'):
         if p.get('perfil') == perfil:

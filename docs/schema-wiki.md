@@ -195,15 +195,15 @@ auditoria das 54 imagens já aprovadas do acervo; a regra `R3` do XML cataloga 1
 defeitos que já foram publicados de verdade e precisa ser percorrida item a item
 antes de aceitar qualquer arte.
 
-O agente monta o prompt v6 resolvido e delega a geração ao Codex CLI (padrão);
+O agente monta o prompt v8 resolvido e delega a geração ao Codex CLI (padrão);
 o Projeto do ChatGPT no navegador é o caminho alternativo. Nos dois casos o agente
 audita o PNG que voltar — detalhes na skill `gerar-imagem-aula`.
 
-O modelo generativo entrega **somente a arte-base**, na proporção do perfil
-(`capa` 3:2, `infografico` 16:9), com os dois cantos superiores escuros e vazios.
-Nunca anexar a logo ao modelo, desenhar/aplicar marca, escrever a identificação
-do curso ou normalizar o canvas. Logo, curso e canvas canônico são aplicados depois
-pela action determinística do Photoshop. As capas/infográficos continuam sendo
+O modelo generativo entrega a **peça final**, na proporção do perfil (`capa` 3:2,
+`infografico` 16:9), sem marca e dentro da margem segura de 8%; o PNG auditado vai
+direto para `capa.png` ou `img/`. Nunca anexar a logo ao modelo, desenhar/aplicar
+marca ou escrever a identificação do curso — a marca aparece no portal e na apostila
+ao redor da imagem. A action do Photoshop foi descontinuada (decisão #036). As capas/infográficos continuam sendo
 ativos complementares; não entram no `manifesto.json` e não substituem a
 `canonica.md`.
 

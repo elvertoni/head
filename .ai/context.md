@@ -76,7 +76,7 @@ vazia no git costuma ter PDFs só locais — conferir o disco antes de concluir 
 - **Codex CLI** — gera as imagens de aula: o agente monta o prompt v6 resolvido, delega à ferramenta nativa de
   imagem do Codex e audita o PNG (verificado em 2026-07-29). O Projeto do ChatGPT no navegador é o caminho
   alternativo. Ler `.claude/skills/gerar-imagem-aula/SKILL.md` antes.
-- **Photoshop** — action determinística aplica logo, identificação do curso e canvas canônico sobre a arte-base.
+- **Imagens de aula** — prompt v8: a peça gerada pelo Codex é final e sem marca; a action do Photoshop foi descontinuada (decisão #036).
 - **Quíron (Hermes Agent na VPS)** — opera o acervo a partir de um clone na VPS com as skills de `hermes/`.
 - **ai-memory (MCP local)** — memória semântica complementar (decisão #001).
 - **Obsidian** — a raiz é o vault; o plugin kepano `obsidian` (obsidian-bases, obsidian-markdown, json-canvas,
