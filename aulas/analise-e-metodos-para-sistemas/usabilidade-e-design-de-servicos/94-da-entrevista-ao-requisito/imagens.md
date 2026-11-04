@@ -6,7 +6,7 @@
 
 - **perfil:** capa
 - **arquivo:** `capa.png`
-- **estado:** a gerar
+- **estado:** gerada e aprovada em 2026-11-04 (Codex, v8, r2 — 1536×1024, sem defeito; a r1 reprovou). Canônica.
 - **objetivo:** Dar o mapa da aula num olhar: falas soltas em post-its sendo agrupadas por afinidade, as colunas fala e interpretação separadas, e o funil fala, problema, necessidade, insight e requisito terminando num cartão de backlog.
 - **alt:** Parede com post-its de falas de usuários, à esquerda espalhados e no centro reunidos em três grupos com nome. À direita, um funil em cinco etapas (fala, problema, necessidade, insight, requisito) que termina num cartão escrito "O sistema deve...". No topo, duas colunas separadas, fala e interpretação.
 - **prompt:** (esboço) post-its se agrupando por afinidade e funil da fala ao requisito terminando num cartão de backlog.

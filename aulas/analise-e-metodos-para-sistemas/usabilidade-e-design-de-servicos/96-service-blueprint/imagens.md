@@ -6,7 +6,7 @@
 
 - **perfil:** capa
 - **arquivo:** `capa.png`
-- **estado:** a gerar
+- **estado:** gerada e aprovada em 2026-11-04 (Codex, v8, r2 — 1536×1024, sem defeito; a r1 reprovou). Canônica.
 - **objetivo:** Dar o mapa da aula num olhar: a grade do blueprint com as etapas do usuário em colunas, as cinco camadas em faixas horizontais, as três linhas tracejadas entre elas e os marcadores de ponto de falha e de espera.
 - **alt:** Grade em faixas horizontais com cinco camadas, de cima para baixo: evidências, ações do usuário, frontstage, backstage e processos de suporte. Três linhas tracejadas separam as camadas, rotuladas linha de interação, linha de visibilidade e linha de interação interna. Quatro colunas de etapas (agendar, receber lembrete, chegar, ser atendido) atravessam as faixas, com setas verticais ligando as camadas e dois marcadores, F de falha e W de espera, em células dos bastidores.
 - **prompt:** (esboço) blueprint em grade com cinco camadas, três linhas tracejadas, quatro etapas e marcadores F e W.
