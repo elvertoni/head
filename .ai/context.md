@@ -55,6 +55,11 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tests/` | `unittest` stdlib (36 testes em 2026-09-28) |
 | `docs/` | `schema-wiki.md` (schema da wiki), manutenção da wiki, backlog de proveniência, triagem RCO |
 | `.claude/skills/` | `prof-toni`, `aula-estatica`, `gerar-imagem-aula` |
+| `aulas/robotica/automacao_zap_esp32/firmware/` | Protótipo C++/Arduino ESP32, configuração Wi-Fi local, WSS e preparador Python stdlib; não é aula canônica |
+| `aulas/robotica/trena_digital_arduino/` | Protótipo de altura com Uno R3 para a feira; testes de HC-SR04, scanner I²C e OLED com U8g2 2.36.19/buffer paginado e título TRENA DIGITAL 1A. Controlador do OLED em validação; não é aula canônica |
+| `aulas/robotica/campainha_esp32/` | Sinal escolar publicado em `sinal.tonicoimbra.com`, separado por turma; firmware RTC/NVS gravado em 2026-10-21 no ESP32 COM6/MAC 4c:c3:82:ed:44:18, Wi-Fi S24+ e MQTT confirmados; acesso local/remoto WSS; ver decisão #023 e README |
+| `aulas/robotica/automacao_zap_esp32/infra/painel/` | Painel Node-RED/FlowFuse com Volta Atelier do portfólio, temas claro/escuro com preferência local, fontes/marca incorporadas e publicação visual parcial por API |
+| `aulas/robotica/automacao_zap_esp32/infra/mensagens/` | Caixa de mensagens do WhatsApp (laboratório): webhook global da Evolution Go → SQLite + mídias em disco → painel `/mensagens/` só para o professor; stdlib, testes `test_app.py` |
 | `hermes/skills/prof-toni/` | Skills do Quíron (`operar-acervo`, `alimentar-cerebro`), implantadas na VPS por `git pull` + cópia |
 
 Gitignored por decisão: `**/saidas/`, `aulas/**/atividades/*.pdf` (o `.html` é a fonte editável),
@@ -78,6 +83,8 @@ vazia no git costuma ter PDFs só locais — conferir o disco antes de concluir 
   alternativo. Ler `.claude/skills/gerar-imagem-aula/SKILL.md` antes.
 - **Imagens de aula** — prompt v8: a peça gerada pelo Codex é final e sem marca; a action do Photoshop foi descontinuada (decisão #036).
 - **Quíron (Hermes Agent na VPS)** — opera o acervo a partir de um clone na VPS com as skills de `hermes/`.
+- **Automação ESP32/WhatsApp (2026-10-20)** — protótipo em `aulas/robotica/automacao_zap_esp32/`, fora do fluxo de aulas canônicas. Compose independente do EasyPanel na VPS `vmi2626506`, `/opt/automacao-zap-esp32`: Mosquitto 2.1.2, Node-RED 5.0.8/FlowFuse Dashboard 1.33.0, Nginx e túnel Cloudflare dedicado. Painel em `https://automacao.tonicoimbra.com/dashboard/inicio` e MQTT/WSS em `/mqtt` (443); broker direto 8883/TLS com CA própria preservado. Configuração/scripts stdlib em `infra/`, interface/regras/testes JS em `infra/painel/`; senhas, credenciais Cloudflare e contexto persistente fora do Git. Editor só na VPS/SSH. Firmware Arduino em `firmware/`, gravado no DevKit COM6 (core 3.3.12; WiFiManager/WebSockets/MQTTPubSubClient), com portal Wi-Fi protegido `Toni-ESP32-01` em 192.168.4.1 e configuração também pelo IP local (HTTP Digest; decisão #024). Firmware wifi-2 separa o portal das tentativas de reconexão, preservando NVS; segredos de compilação fora do repo. Ver READMEs e decisões #018–#022; firmware online com estados confirmados por MQTT, painel com Volta Atelier do portfólio e publicação visual parcial. Ponte WhatsApp na Evolution Go (decisão #033).
+- **Ponte WhatsApp / Evolution Go (2026-10-27)** — `evoapicloud/evolution-go` 0.7.2 + Postgres próprio no Compose `/opt/automacao-zap-esp32` (Manager/API em `https://evolution.tonicoimbra.com` com login do painel, só `toni`; `127.0.0.1:8090` na VPS; webhook interno `painel:1880/zap/webhook`). Licença gratuita ativada pelo Toni. Segredos em `segredos/evolution.env`/`postgres.env` e `painel/segredos/zap.json` (fora do Git); preparo por `painel/preparar_zap.py`. A Evolution 2.3.7 (`evolution-teste` no EasyPanel), o Manager customizado e o MinIO foram todos removidos. Ver decisão #033 e `infra/painel/README.md`.
 - **ai-memory (MCP local)** — memória semântica complementar (decisão #001).
 - **Obsidian** — a raiz é o vault; o plugin kepano `obsidian` (obsidian-bases, obsidian-markdown, json-canvas,
   obsidian-cli, defuddle) está habilitado no escopo do projeto em `.claude/settings.json`.
