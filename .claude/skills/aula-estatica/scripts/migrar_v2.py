@@ -173,7 +173,13 @@ def convert_questions(s):
         answer_body = m.group('body').strip()
         label = f'Resposta: {correct})' if correct else 'Resposta'
         answer_body = re.sub(r'^<p>', f'<p><strong>{label}</strong> ', answer_body, count=1)
-        item = (f'  <li class="lesson-quiz-question" data-correct="{correct or "a"}">\n'
+        if not correct:
+            # Sem "(correta)" nem "Resposta: x)" não há como saber o gabarito: fica sem
+            # data-correct, e o build.py aponta a questão para revisão humana. Nunca chutar.
+            print(f'  ! questão sem gabarito identificado (revise no resultado): '
+                  f'{re.sub(r"<[^>]+>", "", statement)[:60].strip()}')
+        correct_attr = f' data-correct="{correct}"' if correct else ''
+        item = (f'  <li class="lesson-quiz-question"{correct_attr}>\n'
                 f'    {statement.strip()}\n'
                 f'    <div class="quiz-options">\n{options}\n    </div>\n'
                 f'    <p class="quiz-feedback" hidden></p>\n'

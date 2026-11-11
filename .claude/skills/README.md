@@ -33,7 +33,7 @@ cp -r prof-toni aula-estatica gerar-imagem-aula ~/.claude/skills/
 
 # OU por projeto — junto da pasta do acervo (recomendado)
 mkdir -p .claude/skills
-cp -r prof-toni aula-estatica .claude/skills/
+cp -r prof-toni aula-estatica gerar-imagem-aula .claude/skills/
 ```
 
 Rode o Claude Code **dentro da pasta do seu acervo** para os caminhos

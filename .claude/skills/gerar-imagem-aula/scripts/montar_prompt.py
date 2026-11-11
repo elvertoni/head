@@ -26,10 +26,13 @@ Brief (JSON):
   "faixa_frase": "frase de fechamento (capa)",
   "blocos": [
     {"rotulo": "CPU", "icone": "processor chip", "cor": "signal", "texto": "micro-parágrafo (só capa)",
-     "detalhe": "opcional: relação visual em inglês"}
+     "detalhe": "opcional: relação visual em inglês",
+     "rotulos_extras": ["opcional: rótulos curtos adicionais dentro do bloco (só infografico; contam no teto de 8)"]}
   ]
 }
 Cores aceitas: signal, esmeralda, ambar, volt, ceu, neutro, erro.
+Limites: capa 4–10 blocos; infografico 2–5 blocos, rótulos de até 4 palavras e no máximo
+8 rótulos na peça (blocos + rotulos_extras). "icone" ausente vira "thin-line icon matching the label".
 """
 import json
 import re

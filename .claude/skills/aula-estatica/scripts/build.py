@@ -137,11 +137,11 @@ def check(html, base_dir=None):
 
     for q in re.finditer(r'<li class="lesson-quiz-question"([^>]*)>(.*?)</li>\s*(?=<li class="lesson-quiz-question"|</ol>)', body, re.S):
         attrs, inner = q.group(1), q.group(2)
-        m = re.search(r'data-correct="([a-e])"', attrs)
-        letters = re.findall(r'<span class="quiz-option-letter">([a-e])</span>', inner)
+        m = re.search(r'data-correct="([a-h])"', attrs)
+        letters = re.findall(r'<span class="quiz-option-letter">([a-h])</span>', inner)
         title = re.sub(r'<[^>]+>', '', inner)[:50].strip()
         if letters and not m:
-            problems.append(f'Questão com alternativas mas sem data-correct (a–e): "{title}"')
+            problems.append(f'Questão com alternativas mas sem data-correct (a–h): "{title}"')
         elif m and m.group(1) not in letters:
             problems.append(f'data-correct="{m.group(1)}" não existe entre as alternativas: "{title}"')
         if 'class="quiz-answer"' not in inner:

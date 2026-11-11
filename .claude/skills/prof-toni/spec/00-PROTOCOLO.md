@@ -1,6 +1,6 @@
 # PROF-TONI — Protocolo de Geração de Aulas
 
-> **Versão:** 1.0 · **Status:** rascunho para revisão
+> **Versão:** 1.1 · **Status:** em produção (120 aulas aprovadas; contrato do portal em `docs/schema-wiki.md` §5.1)
 > **Audiência deste documento:** você, um agente de IA (Claude, GPT, Gemini, GLM ou qualquer outro modelo minimamente capaz) instruído a criar, revisar ou adaptar aulas para o professor Toni Coimbra. Este arquivo é o seu ponto de entrada obrigatório. Leia-o por inteiro antes de qualquer ação.
 
 ---
@@ -30,7 +30,7 @@ A unidade fundamental do acervo é a **Aula Canônica**: um documento Markdown r
 | Curso | Técnico em Desenvolvimento de Sistemas — SEED-PR, Curitiba |
 | Alunos | 14–18 anos · séries 1ª/2ª/3ª |
 | Duração da aula | **50 minutos** |
-| Disciplinas | Engenharia de Software, Análise de Sistemas, Programação, Banco de Dados, Redes, IA, Front-End |
+| Disciplinas (slug → rótulo) | `introducao-a-computacao` Introdução à Computação · `programacao-front-end` Programação Front-End · `programacao-no-desenvolvimento-de-sistemas` Programação no Desenvolvimento de Sistemas · `analise-e-metodos-para-sistemas` Análise e Métodos para Sistemas · `analise-e-projeto-de-sistemas` Análise e Projeto de Sistemas · `inteligencia-artificial` Inteligência Artificial · `inovacao-tecnologia-e-empreendedorismo` Inovação, Tecnologia e Empreendedorismo · `tcc` TCC. A lista viva é `manifesto.json` → `disciplinas[]`; sem acesso a ele, use só estes slugs e pergunte ao Toni antes de inventar outro |
 | Idioma | Português brasileiro, sempre |
 | Ambiente de código dos alunos | **VSCode na máquina local** — nunca presuma execução em browser |
 
@@ -83,10 +83,10 @@ Apresente, de forma enxuta:
 
 ### Etapa 5 — Adaptação (somente quando pedida)
 - Adaptar é operação separada e pode acontecer dias depois, sem regerar conteúdo.
-- **O repo não conhece renderers.** A formatação é responsabilidade da ferramenta que renderiza: a skill `aula-estatica` para apostila HTML standalone, a documentação do ProfessorDash (`FORMATO_AULAS.md`) para o site, e qualquer ferramenta futura traz seu próprio adaptador. Todas leem a mesma Canônica.
+- **O repo não conhece renderers.** A formatação é responsabilidade da ferramenta que renderiza: a skill `aula-estatica` para apostila HTML standalone, o import do ProfessorDash para o site (contrato em `docs/schema-wiki.md` §5.1; o parser vive no repo do portal), e qualquer ferramenta futura traz seu próprio adaptador. Todas leem a mesma Canônica.
 - Recurso da Canônica que o formato de destino não suporta → **degradar com marcação explícita + relatório de lacuna**. Nunca empobrecer em silêncio.
 - O bloco `roteiro` (cola do professor) **nunca** vai para materiais distribuídos a alunos.
-- O resultado vai em `saidas/` da aula, com a `versao` da Canônica registrada.
+- O resultado vai em `saidas/` da aula. Saída gerada antes de um bump de `versao` está vencida: regenere, nunca edite.
 
 ## 6. Os três modos de entrada
 

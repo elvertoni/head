@@ -1,6 +1,6 @@
 # 01-CANONICA — Formato da Aula Canônica
 
-> **Versão:** 1.0 · **Herda de:** METODO.md v1.1 §5 (validado em uso real)
+> **Versão:** 1.1 · **Status:** em produção (120 aulas aprovadas importadas pelo ProfessorDash)
 > Leia este arquivo antes de gerar ou editar qualquer `canonica.md`. A calibração de qualidade vem de `spec/EXEMPLO-canonica.md` — leitura obrigatória antes da primeira geração de cada sessão.
 
 ---
@@ -34,7 +34,7 @@ slug: manifesto-agil-e-os-4-valores     # = slug da pasta {NN-slug} e do manifes
 modo_origem: tema                       # seed | material | tema
 fontes: []                              # caminhos em fontes/ ou URLs; [] no Modo Tema
 revisao: false                          # true quando nasceu de origem COM correções aplicadas
-status: rascunho                        # rascunho | aprovada | publicada
+status: rascunho                        # rascunho | aprovada (não existe outro valor)
 versao: 1
 atualizado_em: 2026-06-11
 
@@ -47,7 +47,9 @@ Regras do frontmatter:
 - **Obrigatório e completo** — aula sem frontmatter íntegro reprova no checklist.
 - `disciplina` e `trilha` são slugs minúsculos idênticos aos das pastas (`aulas/{disciplina}/{trilha}/`).
 - `slug` é idêntico ao `{slug}` da pasta `{NN-slug}` e ao `slug` do manifesto. `ordem` = `NN` da pasta.
-- `status` só vira `aprovada` por ação explícita do Toni; `publicada` quando alguma saída foi gerada e distribuída.
+- `status` só vira `aprovada` por ação explícita do Toni. **Só existem `rascunho` e `aprovada`**: o
+  `gerar_manifesto.py` e o portal ignoram qualquer outro valor (`publicada`, `revisao`…), e uma aula aprovada
+  que receba outro status some do portal no próximo import, sem aviso. Saída distribuída não muda o status.
 - Toda edição de conteúdo incrementa `versao` e atualiza `atualizado_em`. Saídas em `saidas/` geradas com `versao` anterior são consideradas vencidas.
 
 ### Contrato de import do portal (INVIOLÁVEL)
@@ -201,12 +203,17 @@ Regras: exatamente 1 alternativa com `correta: true` — o portal marca como cer
 certas na tela. Quiz onde nenhuma alternativa tem `correta` degrada para lista
 estática, sem interação.
 
-Sobre o `feedback`: hoje **nenhum renderer o exibe**. O ProfessorDash mostra só
-"✓ Correto!" / "✗ Incorreta — veja a resposta destacada". Continue escrevendo o
-campo: ele é conhecimento pedagógico legítimo da Canônica (que é mais rica que
-qualquer saída) e o dia em que o portal renderizar explicação, ela já existe em
-67 aulas. Só não conte com ele para ensinar algo que o aluno **precisa** ler —
-isso vai no corpo da aula.
+Sobre o `feedback`: é obrigatório e explica **por que** a correta está certa (e, se
+couber, por que a mais tentadora está errada). Onde ele aparece hoje:
+
+- ProfessorDash, modo interativo (JS ligado): mostra só "✓ Correto!" / "✗ Incorreta —
+  veja a resposta destacada"; o `feedback` fica no `<details>` "Ver resposta" da lista
+  estática, que é o que o aluno vê sem JS, na impressão e antes do quiz inicializar
+  (decisão #039).
+- Apostila (`aula-estatica`): vira o "Gabarito comentado" de cada questão.
+
+Não conte com ele para ensinar algo que o aluno **precisa** ler — isso vai no corpo
+da aula.
 
 ### 6.2 `diagrama-progressivo` — controla carga cognitiva por camadas
 

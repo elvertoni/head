@@ -47,14 +47,14 @@ O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. Regra i
 - **Sempre que adicionar/aprovar/editar aula, regere o manifesto:** `python tools/gerar_manifesto.py` (valide com `--check`). Nunca editar `manifesto.json` à mão.
 
 ### Entrega
-- Salve a `canonica.md` no caminho correto do acervo e mostre o arquivo ao Toni (`present_files` ou caminho, conforme o ambiente).
+- Salve a `canonica.md` no caminho correto do acervo e informe o caminho ao Toni.
 - **Editar uma aula existente = nova versão**: incremente `versao`, atualize `atualizado_em`. Nunca sobrescreva silenciosamente o histórico conceitual.
 - Esta skill termina na Canônica. Se o Toni pedir o site ou a apostila, isso é outra ferramenta (ProfessorDash / skill `aula-estatica`) lendo este mesmo arquivo.
 
 ### Imagens — brief por aula (padrão obrigatório)
 Toda aula gerada acompanha um **brief de imagem**: o arquivo `imagens.md` na pasta da aula, neutro de plataforma. Isso **não cria bloco novo na Canônica** — imagem entra no corpo como Markdown `![alt](img/nome.png)`, sempre com justificativa pedagógica (vale o teste anti-decoração; sem justificativa, sai).
 
-**Duas peças por aula, no máximo — e com perfil declarado.** O acervo tem dois formatos visuais distintos, definidos em `tools/imagen-generator/prompt.xml` (v7, design system Volta Atelier):
+**Duas peças por aula, no máximo — e com perfil declarado.** O acervo tem dois formatos visuais distintos, definidos em `tools/imagen-generator/prompt.xml` (v8, design system Volta Atelier, peça final sem marca):
 
 | perfil | arquivo | função | proporção | densidade |
 |---|---|---|---|---|

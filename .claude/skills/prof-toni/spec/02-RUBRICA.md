@@ -1,6 +1,6 @@
 # 02-RUBRICA — Auditoria Técnico-Pedagógica
 
-> **Versão:** 1.0 · **Herda de:** METODO.md v1.1 §6 + §10.1 (validado em uso real)
+> **Versão:** 1.1 · **Status:** em produção (gate de todas as aulas aprovadas do acervo)
 > Leia este arquivo antes de auditar qualquer Canônica (Etapa 4 do pipeline). A rubrica é o que transforma "aula gerada" em "aula auditada". Critérios **verificáveis** (sinal de falha claro), não impressões. A rubrica é o auditor independente do gerador.
 
 ---
@@ -68,7 +68,7 @@ Rodar antes de entregar toda Canônica. Veredito binário: falhou um item → co
 - [ ] **YAML dos interativos parseia**: todo texto com `: ` ou aspas iniciais está entre aspas duplas (`spec/01-CANONICA.md` §6). YAML quebrado vira bloco cru na tela do aluno.
 - [ ] **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
 - [ ] **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (`spec/01-CANONICA.md` §4.2) — o slug não tem acento.
-- [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (§4.1) — a apostila standalone não exibe imagem de conteúdo.
+- [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (`spec/01-CANONICA.md` §4.1) — a apostila só exibe a figura quando a pasta `img/` acompanha o `.html` (ou o `build.py` a embute); sem o arquivo, o aluno recebe o `alt`.
 - [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v8 (peça final, sem marca).
 - [ ] **Quiz com exatamente uma `correta: true`** — o portal marca como certa toda alternativa com `correta`.
 - [ ] `:::roteiro` não contém conteúdo essencial ao aluno.

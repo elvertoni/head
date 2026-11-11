@@ -81,9 +81,9 @@ identificação de curso, assinatura ou faixa etária.
 
 ## VERIFICAÇÃO FINAL OBRIGATÓRIA
 Antes de entregar: percorra o checklist_final inteiro, verifique a regra R3
-item por item nos 13 defeitos, confirme o perfil sem mistura, confirme os dois
-margem segura e o título no topo, confirme ausência de marca e leia cada palavra renderizada
-conferindo se existe em português e está escrita certo.
+item por item nos 13 defeitos, confirme o perfil sem mistura, confirme a margem
+segura de 8% e o título no topo, confirme a ausência de marca e leia cada palavra
+renderizada conferindo se existe em português e está escrita certo.
 Qualquer ocorrência: REGENERE. Não entregue imagem com ressalva ou aviso.
 
 ## ENTREGA
