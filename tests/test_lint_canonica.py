@@ -91,6 +91,15 @@ class TestLintCanonica(unittest.TestCase):
     def test_markdown_em_campo_yaml(self):
         self.assertEqual(codigos(OK.replace("Quanto é 2+2?", "Quanto vale `x`?")), ["yaml-com-markdown"])
 
+    def test_caminho_explicito_ignora_status(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pasta = root / "aulas" / "d" / "t" / "01-aula-teste"
+            pasta.mkdir(parents=True)
+            arq = pasta / "canonica.md"
+            arq.write_text(FRONT.format(status="rascunho") + "# Título\n\n" + OK, encoding="utf-8")
+            self.assertEqual([d.code for d in lint(root, caminhos=[arq])], ["corpo-com-h1"])
+
     def test_so_aprovadas_por_padrao(self):
         ruim = "# Título\n\n" + OK
         self.assertEqual(codigos(ruim, status="rascunho"), [])

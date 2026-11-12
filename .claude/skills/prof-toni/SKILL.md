@@ -70,7 +70,7 @@ Para cada brief:
 - **alt** — texto alternativo (acessibilidade + fallback quando o renderer não suporta imagem).
 - **prompt** — deixe **vazio ou como esboço de uma linha**. O prompt final é montado pela skill `gerar-imagem-aula` a partir do `prompt.xml` v9 (Caderno Noturno), que carrega paleta semântica, gramática visual e o catálogo de 13 defeitos conhecidos. Gráfico de dados, tabela e cálculo não viram imagem gerada: são SVG na apostila. Prompt escrito à mão aqui produz peça fora do design system.
 
-Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula`, que gera (Codex) e audita o PNG. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
+Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula`, que gera (Codex) e audita o PNG. A peça aprovada vai para `aulas/.../img/` como o PNG auditado, no tamanho nativo do gerador (1–2 MB; não se recorta nem se recomprime, porque a peça é final). A apostila converte para WebP no `build.py`. Original de terceiros (foto, PDF) fica no `lake/`, fora do git.
 
 Arquivo em `img/` só chega ao aluno se a canônica o referenciar como `![alt](img/arquivo.png)`; sem referência, é importado e nunca exibido. O standalone (`aula-estatica`) mostra a figura quando a pasta `img/` vai junto do `.html`; sem ela, o `alt` carrega a informação — por isso ele continua sendo descrição completa (regra em `spec/01-CANONICA.md` §4.1).
 

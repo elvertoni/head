@@ -59,18 +59,25 @@ A detecção de desatualização depende do conhecimento do modelo. Com acesso a
 
 Rodar antes de entregar toda Canônica. Veredito binário: falhou um item → corrige e re-roda.
 
+Os itens mecânicos (marcados com ⚙) são conferidos por script, que não se cansa nem lê o que espera ver.
+Rode e zere a saída antes de olhar o resto:
+
+```bash
+python tools/lint_canonica.py aulas/{disciplina}/{trilha}/{NN-slug}/canonica.md
+```
+
 - [ ] Frontmatter completo conforme `spec/01-CANONICA.md` §2 (incl. campos de acervo: trilha, ordem, modo_origem, status, versao).
-- [ ] Anatomia na ordem fixa; **sem `#` no corpo**.
+- [ ] Anatomia na ordem fixa; ⚙ **sem `#` no corpo**; ⚙ `## Objetivos` e `## Prática` com esses nomes exatos (o layout do portal depende dos ids).
 - [ ] As **7 dimensões** da seção 2 passam.
 - [ ] Cada interativo passa no teste da seção 3 (não é decoração).
 - [ ] Quiz da Avaliação mede os `objetivos` do frontmatter.
-- [ ] Só os 6 callouts e 2 interativos oficiais; código é fence.
-- [ ] **YAML dos interativos parseia**: todo texto com `: ` ou aspas iniciais está entre aspas duplas (`spec/01-CANONICA.md` §6). YAML quebrado vira bloco cru na tela do aluno.
-- [ ] **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
-- [ ] **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (`spec/01-CANONICA.md` §4.2) — o slug não tem acento.
+- [ ] ⚙ Só os 6 callouts e 2 interativos oficiais, todos fechados; código é fence.
+- [ ] **YAML dos interativos parseia**: todo texto com `: ` ou aspas iniciais está entre aspas duplas (`spec/01-CANONICA.md` §6). YAML quebrado vira bloco cru na tela do aluno. ⚙ Campos de quiz e diagrama sem Markdown (o portal mostra os símbolos crus).
+- [ ] ⚙ **`rotulo` de `diagrama-progressivo` sem número** — o componente já numera.
+- [ ] ⚙ **Todo wikilink com rótulo**: `[[slug|rótulo]]`, nunca `[[slug]]` (`spec/01-CANONICA.md` §4.2) — o slug não tem acento.
 - [ ] **Imagem de conteúdo não é pré-requisito do entendimento**: o `alt` descreve o que a imagem ensina e o texto se sustenta sem ela (`spec/01-CANONICA.md` §4.1) — a apostila só exibe a figura quando a pasta `img/` acompanha o `.html` (ou o `build.py` a embute); sem o arquivo, o aluno recebe o `alt`.
-- [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v8 (peça final, sem marca).
-- [ ] **Quiz com exatamente uma `correta: true`** — o portal marca como certa toda alternativa com `correta`.
+- [ ] **`imagens.md` com perfil declarado**: um brief de `capa` + no máximo um de `infografico`, cada um com `perfil`, `objetivo` e `alt`. Sem propostas alternativas e sem prompt escrito à mão — o prompt final sai da skill `gerar-imagem-aula` sobre o `prompt.xml` v9 (peça final, sem marca).
+- [ ] ⚙ **Quiz com exatamente uma `correta: true`** — o portal marca como certa toda alternativa com `correta`.
 - [ ] `:::roteiro` não contém conteúdo essencial ao aluno.
 - [ ] **`:::atencao` com sintoma verificado**: em aula prática com código, o erro descrito foi reproduzido (navegador/console) e o sintoma e a mensagem citados batem com o que acontece de fato. Sintoma imaginado reprova a dimensão 5 (caso real: `forEach(fn())` descrito como "só uma tarefa chega", quando o real é um item vazio e um `TypeError`).
 - [ ] **Interativo onde o processo pede**: se a aula acompanha um processo passo a passo (laço, ciclo de evento, fluxo de dados) e o texto o descreve num parágrafo denso, troque por `diagrama-progressivo`. Em sequência de várias aulas, não repita o mesmo molde de blocos por inércia.

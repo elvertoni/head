@@ -20,7 +20,7 @@ São independentes de propósito: você pode gerar a Canônica hoje e vesti-la s
 ## Fluxo no dia a dia
 
 1. **Criar** — peça ao Claude Code: *"cria uma aula sobre X, série 3ª, trilha programacao"*. A `prof-toni` planeja, espera seu OK, gera e audita → salva `canonica.md`.
-2. **(Opcional) Imagem** — peça para aplicar `gerar-imagem-aula` ao `imagens.md`. Ela monta o prompt v8, gera pelo Codex, audita e grava a peça final em `capa.png` ou `img/`. Não há etapa de Photoshop.
+2. **(Opcional) Imagem** — peça para aplicar `gerar-imagem-aula` ao `imagens.md`. Ela monta o prompt v9 (Caderno Noturno), gera pelo Codex, audita e grava a peça final em `capa.png` ou `img/`. Não há etapa de Photoshop.
 3. **(Opcional) Vestir** — quando quiser distribuir offline/PDF: *"aplica a skill aula-estatica na canônica da Aula NN"* → sai um `.html` único em `saidas/` da aula.
 4. **Publicar** — a Canônica vai pro ProfessorDash pelos quatro passos do invariante 6 do `AGENTS.md` (`gerar_manifesto.py` → push → deploy do portal → reimport com `--force`); a apostila `.html` vai pro aluno baixar.
 

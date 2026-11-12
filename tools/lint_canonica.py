@@ -13,6 +13,7 @@ Uso:
     python tools/lint_canonica.py --format json
     python tools/lint_canonica.py --fail-on error
     python tools/lint_canonica.py --todas        # inclui aulas não aprovadas
+    python tools/lint_canonica.py aulas/x/y/01-z/canonica.md   # só essas aulas (qualquer status)
 
 Códigos:
     corpo-com-h1           error    `# ` no corpo (o título vem do frontmatter)
@@ -161,8 +162,12 @@ def lint_aula(root: Path, path: Path) -> List[Diagnostic]:
     return out
 
 
-def lint(root: Path, todas: bool = False) -> List[Diagnostic]:
+def lint(root: Path, todas: bool = False, caminhos: Optional[List[Path]] = None) -> List[Diagnostic]:
     diagnostics: List[Diagnostic] = []
+    if caminhos:
+        for path in caminhos:
+            diagnostics.extend(lint_aula(root, path.resolve()))
+        return diagnostics
     for path in lesson_paths(root):
         if not todas:
             fm = parse_frontmatter(path.read_text(encoding="utf-8-sig"))
@@ -178,9 +183,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--format", choices=("text", "json"), default="text")
     parser.add_argument("--fail-on", choices=("error", "warning", "info"), default="error")
     parser.add_argument("--todas", action="store_true", help="inclui aulas que não estão aprovadas")
+    parser.add_argument("caminhos", nargs="*", type=Path, help="canonica.md específicas (ignora o status)")
     args = parser.parse_args(argv)
 
-    diagnostics = lint(args.root, args.todas)
+    diagnostics = lint(args.root.resolve(), args.todas, args.caminhos)
     por_codigo = Counter(d.code for d in diagnostics)
     por_sev = Counter(d.severity for d in diagnostics)
     aulas = len({d.path for d in diagnostics})
