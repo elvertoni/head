@@ -1,7 +1,7 @@
 # Delegar a geração ao Codex
 
 O Codex CLI tem ferramenta nativa de imagem. Verificado em 29/07/2026: a partir
-do prompt v6 já montado (o mesmo vale para a v7 e a v8), o `image_gen` nativo entregou um infográfico em
+do prompt v6 já montado (o mesmo vale para a v7, a v8 e a v9, esta testada em quatro pilotos em 2026-11-12), o `image_gen` nativo entregou um infográfico em
 1672×941. O arquivo 1664×936 existente no acervo veio depois de um crop
 (`Rectangle(4,2,1664,936)`), não é resolução nativa. Na Images API, os tamanhos
 16:9 válidos são `1536x864` e `2048x1152`.
@@ -116,7 +116,7 @@ Três cláusulas carregam peso e não devem ser cortadas:
   barata antes de você abrir o arquivo.
 - **proteção do acervo.** O pedido precisa conter literalmente a linha
   `Não leia, não altere e não grave nada dentro de aulas/ nesta tarefa.`. A
-  versão (v8) identifica o sistema de prompt, não a tentativa; por isso o nome
+  versão (v9) identifica o sistema de prompt, não a tentativa; por isso o nome
   usa `r{n}` no scratchpad e nunca um sufixo de versão no PNG.
 
 ## Depois que o PNG voltar

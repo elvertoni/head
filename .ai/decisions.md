@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #043 — Prompt de imagem v9 (Caderno Noturno) vira o oficial
+- **Data:** 2026-11-12
+- **Status:** Aceita; pedido do Toni ("revise as skills, ainda tem referência ao Volta Atelier"), depois dos pilotos previstos na #042. Substitui a parte de paleta e tipografia da #036; o resto da #036 (peça final, sem marca, margem de 8%, canvas nativo) continua.
+- **Contexto:** Com o portal e a apostila no Caderno Noturno, as únicas referências ao Volta que restavam nas skills vinham do `prompt.xml` v8. Quatro pilotos (capas de HTML semântico, Introdução ao Scrum e Memória e armazenamento; infográfico "Mesma tela, dois códigos") reprovaram na r1 por numerar blocos soltos, inventar um bloco, usar o título longo da aula e escrever HTML em caixa-alta, e passaram na r2 depois que o próprio XML foi corrigido. O visual (fundo, âncora, coral só em erro) passou nas duas rodadas.
+- **Decisão:** `tools/imagen-generator/prompt.xml` passa a v9: fundo #0A0E1A, painéis #121D36/#1A2A4D, filete #2A3D66, âncora amarela #FFD43B (número do badge #1B1500), verde #5FD08D, um azul só #8DBCF5, coral #FF8A80 só em erro com ✗, âmbar aposentado (atenção = amarelo + ⚠), texto corrido em sans, mono só em rótulo. Badges numerados só na estrutura de sequência; o modelo renderiza exatamente os blocos do brief; o título renderizado é o título curto; código em minúsculas. `montar_prompt.py` exige `versao="9.0"` e mantém as chaves de cor do v8 (`signal`, `esmeralda`…) apontando para a paleta nova.
+- **Consequências:** Arte já publicada em v8 fica até o Toni pedir regeração (Q6 da #042); os quatro pilotos não substituíram nada. A margem lateral real do gerador é de 2–4% (igual às capas v8 aprovadas): a auditoria reprova só o que estiver cortado ou encostado na borda. LEIA-ME renomeado para v9.
+
 ## #042 — Skills de aula adotam o Caderno Noturno (DS v4) do ProfessorDash
 - **Data:** 2026-11-12
 - **Status:** Aceita; respostas do Toni às questões Q1–Q9 da revisão Fable 5.2 + validação ASTRA. Substitui a parte tipográfica de #017 (o texto corrido passa a Geist por padrão) e complementa #036 na paleta de imagem.

@@ -53,7 +53,7 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tools/sync_notion.py` | Espelha o índice de aulas na base "Aulas" do Notion (mão única repo → Notion) |
 | `tools/notion-wiki/` | Puxa páginas do Notion para o lake |
 | `tools/transcrever/` | Transcrição local (faster-whisper, GPU com fallback CPU) para o lake |
-| `tools/imagen-generator/` | **Não é script:** `prompt.xml` v8 (fonte de verdade visual) + logo + guia; v9 Caderno Noturno em piloto (decisão #042) |
+| `tools/imagen-generator/` | **Não é script:** `prompt.xml` v9 no Caderno Noturno (fonte de verdade visual, decisão #043) + logo + guia |
 | `tests/` | `unittest` stdlib (36 testes em 2026-09-28) |
 | `docs/` | `schema-wiki.md` (schema da wiki), manutenção da wiki, backlog de proveniência, triagem RCO |
 | `.claude/skills/` | `prof-toni`, `aula-estatica`, `gerar-imagem-aula` |
@@ -83,7 +83,7 @@ vazia no git costuma ter PDFs só locais — conferir o disco antes de concluir 
 - **Codex CLI** — gera as imagens de aula: o agente monta o prompt resolvido (`montar_prompt.py`), delega à ferramenta nativa de
   imagem do Codex e audita o PNG (verificado em 2026-07-29). O Projeto do ChatGPT no navegador é o caminho
   alternativo. Ler `.claude/skills/gerar-imagem-aula/SKILL.md` antes.
-- **Imagens de aula** — prompt v8: a peça gerada pelo Codex é final e sem marca; a action do Photoshop foi descontinuada (decisão #036).
+- **Imagens de aula** — prompt v9 (Caderno Noturno, decisão #043): azul-noite + âncora amarela, coral só em erro. Desde o v8 a peça gerada pelo Codex é final e sem marca (decisão #036). Arte já publicada em v8 (grafite/vermelho) fica até o Toni pedir regeração.
 - **Design system** — portal, apostila e (após o piloto) imagens seguem o **Caderno Noturno** (DS v4) do ProfessorDash: azul-noite + amarelo, aluno no claro, vermelho só para erro (decisão #042). A `aula-estatica` embute Archivo, Geist e JetBrains Mono (SIL OFL, `assets/fonts/OFL.txt`); o `build.py` recusa `<em>` no título e `.roteiro` fora de `--professor`.
 - **Exercícios de Python (2026-11-05)** — site estático fora deste repo: `elvertoni/exercicios-python` (público, `~/PROJETOS/PESSOAL/exercicios-python`), publicado em https://elvertoni.github.io/exercicios-python/ pelo GitHub Pages. Os 177 exercícios da lista Python Brasil/dunossauro, com Pyodide em Web Worker, progresso no `localStorage` e exportar/importar. Não é aula canônica nem entra no manifesto; integração futura com o login do ProfessorDash depende do parecer ASTRA (editor em origem separada, salvamento remoto).
 - **Quíron (Hermes Agent na VPS)** — opera o acervo a partir de um clone na VPS com as skills de `hermes/`.

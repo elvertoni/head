@@ -133,6 +133,15 @@ class TestMontarPrompt(unittest.TestCase):
             self.assertNotRegex(texto, r'\[(insert|choose one|for each block)')
             self.assertIn('Ciclo de instrução', texto)
 
+    def test_prompt_v9_no_caderno_noturno(self):
+        # Decisão #043: nada da paleta Volta (grafite + vermelho signal) no prompt montado.
+        for brief in (self.INFO, self.CAPA):
+            texto = montar.montar(brief)
+            self.assertIn('#0A0E1A', texto)
+            self.assertIn('#FFD43B', texto)
+            for antigo in ('#FB3732', '#141414', 'Volta Atelier', 'signal red', 'bone white'):
+                self.assertNotIn(antigo, texto)
+
     def test_recusa_brief_fora_do_perfil(self):
         ruim = dict(self.INFO, blocos=[dict(b, texto='parágrafo') for b in self.INFO['blocos']])
         with self.assertRaises(SystemExit):

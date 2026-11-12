@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Monta o prompt da peça final a partir do prompt.xml (v8) e de um brief em JSON.
+"""Monta o prompt da peça final a partir do prompt.xml (v9) e de um brief em JSON.
 
 Uso:
     python .claude/skills/gerar-imagem-aula/scripts/montar_prompt.py brief.json saida.txt
@@ -15,7 +15,7 @@ Brief (JSON):
   "perfil": "infografico",                 # ou "capa"
   "aula": "título exato da aula-alvo",
   "titulo": "título curto da imagem",
-  "palavra_chave": "palavra do título que fica em vermelho",
+  "palavra_chave": "palavra do título que fica em amarelo (âncora)",
   "conceito": "o único conceito (infografico)",
   "mensagem_3s": "o que entender em 3 segundos (infografico)",
   "composicao": "side-by-side comparison | 3-5 step cycle | input-to-output flow | layered hierarchy | before/after",
@@ -48,13 +48,14 @@ if not XML.is_file():
     XML = Path(__file__).resolve().parents[1] / 'references' / 'prompt.xml'
 
 CORES = {
-    'signal': 'signal red #FB3732 (main concept)',
-    'esmeralda': 'emerald #10B981 (correct / input / done)',
-    'ambar': 'amber #FFA31A (attention / output)',
-    'volt': 'volt blue #3B49E4 (support layer / internal processing)',
-    'ceu': 'sky blue #38BDF8 (definition / neutral data)',
-    'neutro': 'graphite panel with bone-white label (no special meaning)',
-    'erro': 'grayed panel with a red ✗ mark (error / antipattern)',
+    # Chaves mantidas do v8 para os briefs antigos continuarem válidos; o valor é a paleta v9.
+    'signal': 'yellow #FFD43B (main concept)',
+    'esmeralda': 'green #5FD08D (correct / input / done)',
+    'ambar': 'yellow #FFD43B with a ⚠ triangle (attention)',
+    'volt': 'light blue #8DBCF5 (support layer / internal processing)',
+    'ceu': 'light blue #8DBCF5 (definition / neutral data)',
+    'neutro': 'night-blue panel with near-white label (no special meaning)',
+    'erro': 'grayed blue panel with a coral #FF8A80 ✗ mark (error / antipattern)',
 }
 LIMITES = {'capa': (4, 10), 'infografico': (2, 5)}
 
@@ -65,7 +66,7 @@ def falhar(msg):
 
 def modelo(perfil):
     raiz = ET.parse(XML).getroot()
-    if raiz.get('versao') != '8.0' or raiz.get('modo') != 'arte_final_sem_branding':
+    if raiz.get('versao') != '9.0' or raiz.get('modo') != 'arte_final_sem_branding':
         falhar(f'prompt.xml fora do esperado (versao={raiz.get("versao")}, modo={raiz.get("modo")}). Reporte antes de gerar.')
     for p in raiz.findall('prompt_arte_base'):
         if p.get('perfil') == perfil:

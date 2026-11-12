@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   PROMPT OFICIAL DE IMAGENS DE AULA · Prof. Toni Coimbra
-  Design System: "Volta Atelier" (o mesmo do ProfessorDash desde o commit 0d976de)
-  Versão: 8.0 · Modo: GERAR A PEÇA FINAL, SEM MARCA
+  Design System: "Caderno Noturno" (DS v4 do ProfessorDash, commit 965e807)
+  Versão: 9.0 · Modo: GERAR A PEÇA FINAL, SEM MARCA
+
+  O QUE MUDA NA v9 (2026-11-12, decisão #042)
+  ===========================================
+  O portal e a apostila trocaram o Volta Atelier (grafite + vermelho signal)
+  pelo Caderno Noturno: azul-noite #0A0E1A na identidade, amarelo #FFD43B
+  como destaque e vermelho SÓ para erro. A capa aparece dentro da faixa
+  noturna #0A0E1A da aula; grafite e vermelho ali pareciam de outro produto.
+  A v9 troca só a camada visual; perfis, margem segura, densidade, catálogo
+  de defeitos e pipeline continuam os da v8.
+
+  Resumo da troca:
+    · fundo grafite #141414          → azul-noite #0A0E1A (painéis #121D36 / #1A2A4D)
+    · vermelho signal = âncora       → amarelo #FFD43B = âncora
+    · vermelho também era destaque   → coral #FF8A80 SÓ em erro, sempre com ✗
+    · âmbar = atenção                → aposentado (perto demais do amarelo): atenção = amarelo + ⚠
+    · volt + azul-céu                → um azul só, #8DBCF5 (apoio, processamento, definição)
+    · esmeralda #10B981              → verde #5FD08D
+    · micro-texto em mono            → texto corrido em sans moderna (Geist); mono só em rótulo
+    · D4 passa a reprovar grafite/preto neutro e fundo claro; D13 passa a
+      reprovar o vermelho como acento (paleta Volta)
 
   O QUE MUDA NA v8 (2026-11-04, decisão #036)
   ===========================================
@@ -43,12 +63,12 @@
   redesenhar a marca. As cores canônicas já estão aqui.
 -->
 <prompt_infografico
-    versao="8.0"
+    versao="9.0"
     autor="Prof. Toni Coimbra"
     curso="Técnico em Desenvolvimento de Sistemas"
-    design_system="Volta Atelier"
+    design_system="Caderno Noturno"
     modo="arte_final_sem_branding"
-    base_empirica="auditoria de 54 imagens aprovadas do acervo (2026-07-29) + DESIGN.md do ProfessorDash (2026-09-10)">
+    base_empirica="auditoria de 54 imagens aprovadas do acervo (2026-07-29) + DESIGN.md do ProfessorDash (Caderno Noturno, 2026-11-12)">
 
   <!-- ================================================================
        OBJETIVO DE EXECUÇÃO
@@ -71,7 +91,7 @@
     <item n="1">Ensinar com clareza: a peça precisa ensinar algo verificável.</item>
     <item n="2">Português impecável. Zero palavra inventada — a peça é publicada como sai.</item>
     <item n="3">Cumprir a densidade do PERFIL escolhido — nem pobre, nem carregada.</item>
-    <item n="4">Preservar o design system Volta Atelier e a legibilidade em celular.</item>
+    <item n="4">Preservar o design system Caderno Noturno e a legibilidade em celular.</item>
     <item n="5">Nenhuma marca, logo ou identificação de curso desenhada.</item>
   </ordem_de_prioridade>
 
@@ -132,7 +152,7 @@
       </estrutura_recorrente>
       <obrigatorio>
         título curto de uma linha · ícone ou cor semântica em todo bloco · pelo
-        menos um destaque em vermelho signal (badge numerado, seta principal ou
+        menos um destaque em amarelo (badge numerado, seta principal ou
         palavra do título) · ocupação do miolo entre 60% e 80% da altura útil.
       </obrigatorio>
       <proibido_neste_perfil>
@@ -161,13 +181,13 @@
        ================================================================ -->
   <sem_branding>
     <responsabilidade>
-      A marca oficial — a ligadura TC — e a identificação do curso aparecem
+      A marca oficial — o monograma TC — e a identificação do curso aparecem
       no portal e na apostila, ao redor da imagem. A peça não as repete e o
       modelo nunca as desenha. Desde a v8 não existe action de Photoshop.
     </responsabilidade>
     <referencia_de_marca observacao="apenas para harmonizar cores, NÃO para desenhar">
-      Ligadura TC: o T em osso #F4F3F0, o C em vermelho signal #FB3732, sobre
-      grafite. Estas cores existem aqui só para que a arte converse com a
+      Monograma TC: o T em papel #F1F0EC, o C em amarelo #FFD43B, sobre
+      azul-noite. Estas cores existem aqui só para que a arte converse com a
       marca. Em hipótese alguma o modelo deve renderizar a logo, as letras TC
       como símbolo, ou qualquer monograma.
     </referencia_de_marca>
@@ -236,24 +256,28 @@
   </analise_obrigatoria>
 
   <!-- ================================================================
-       DESIGN SYSTEM — VOLTA ATELIER (compartilhado pelos dois perfis)
+       DESIGN SYSTEM — CADERNO NOTURNO (compartilhado pelos dois perfis)
        ================================================================ -->
   <design_system>
 
     <principios>
-      <p nome="Brutalismo editorial refinado">
-        Alto contraste, cor chapada, tipografia de estúdio. A peça parece uma
-        página de revista técnica bem diagramada, não um pôster de tecnologia.
+      <p nome="Sóbrio e editorial">
+        Azul-noite profundo, cor chapada, tipografia de estúdio. A peça parece
+        uma página de caderno técnico bem diagramada, à noite: não é pôster de
+        tecnologia nem tela de jogo.
       </p>
-      <p nome="Linhas de registro">
-        Áreas se separam por filetes finos de 1 px e por espaço, sobre uma
-        grade clara. Profundidade por camadas de grafite (base → painel →
-        painel elevado), nunca por sombra colorida ou brilho.
+      <p nome="Camadas de noite">
+        Áreas se separam por painéis em tons de azul-noite (base → painel →
+        painel elevado), por filetes finos de 1 px e por espaço, sobre uma
+        grade clara. Nunca por sombra colorida ou brilho.
       </p>
-      <p nome="Um acento só">
-        O vermelho signal é a única cor de acento livre; as outras cores
-        existem para significar algo (ver mapa semântico). Se tudo é vermelho,
-        nada é.
+      <p nome="Um destaque só">
+        O amarelo é a única cor de destaque livre; as outras cores existem para
+        significar algo (ver mapa semântico). Se tudo é amarelo, nada é.
+      </p>
+      <p nome="Vermelho é erro">
+        Vermelho (coral) aparece SÓ em erro ou antipadrão, sempre com ✗ e
+        rótulo. Nunca como enfeite, título ou fio condutor.
       </p>
       <p nome="Densidade honesta">
         A peça mostra o que a aula tem. Capa esparsa mente sobre o conteúdo;
@@ -265,66 +289,65 @@
     </principios>
 
     <estilo_fixo>
-      Infográfico editorial vetorial chapado (flat) sobre fundo grafite quase
-      preto, composição em grade, painéis retangulares com cantos levemente
-      arredondados (8 a 12 px) e filetes finos de 1 px, alto contraste,
-      tipografia grotesca pesada nos títulos e monoespaçada nos rótulos,
-      badges numerados quadrados em vermelho signal, etiquetas em formato de
-      pílula, ícones lineares finos e consistentes, setas retas e limpas.
-      Textura de papel/grão muito sutil é permitida no fundo. Acabamento de
-      estúdio de design, contemporâneo e jovem sem parecer infantil.
-      Sem degradê, sem brilho (glow), sem vidro (glassmorphism), sem neon,
-      sem 3D plástico.
+      Infográfico editorial vetorial chapado (flat) sobre fundo azul-noite
+      profundo, composição em grade, painéis com cantos arredondados (10 a
+      16 px) em tons de azul-noite e filetes finos de 1 px, alto contraste,
+      tipografia grotesca pesada nos títulos, monoespaçada nos rótulos e sans
+      moderna no texto corrido, badges numerados circulares em amarelo,
+      etiquetas em formato de pílula, ícones lineares finos e consistentes,
+      setas retas e limpas. Acabamento de estúdio de design, contemporâneo e
+      jovem sem parecer infantil. Sem degradê, sem brilho (glow), sem vidro
+      (glassmorphism), sem neon, sem 3D plástico.
     </estilo_fixo>
 
-    <paleta observacao="tokens do DESIGN.md do ProfessorDash">
+    <paleta observacao="tokens de noite fixa do caderno.css do ProfessorDash">
       <fundos>
-        base grafite #141414 · poço/rodapé #0D0D0D · painel #1C1C1E ·
-        painel elevado #232326 · filete rgba(255,255,255,.11) ≈ #2E2E31 ·
-        filete forte rgba(255,255,255,.20) ≈ #474749
-        (preto NEUTRO: nada de navy, azulado ou marrom no fundo)
+        base azul-noite #0A0E1A · poço/rodapé #060913 · painel #121D36 ·
+        painel elevado #1A2A4D · filete #2A3D66
+        (azul-noite PROFUNDO, quase preto: nada de grafite neutro, preto puro,
+        azul médio, roxo ou fundo claro)
       </fundos>
       <texto>
-        principal osso #F4F3F0 · secundário #8E8E95 · discreto #5C5C63
+        principal #F8FAFC · secundário #A9B8D0
       </texto>
       <semantica_de_cor peso="alto">
-        <cor nome="vermelho signal" hex="#FB3732">
+        <cor nome="amarelo" hex="#FFD43B">
           conceito principal, fio condutor, palavra-chave do título, seta
-          principal, badge numerado. É a cor âncora: aparece em toda peça,
-          com parcimônia.
+          principal, badge numerado (número em tinta escura #1B1500). É a cor
+          âncora: aparece em toda peça, com parcimônia.
         </cor>
-        <cor nome="esmeralda" hex="#10B981">
+        <cor nome="verde" hex="#5FD08D">
           acerto, boa prática, entrada de dados, conclusão, estado saudável.
         </cor>
-        <cor nome="âmbar" hex="#FFA31A">
-          atenção, cuidado, etapa final, saída.
+        <cor nome="azul" hex="#8DBCF5">
+          camada de apoio, processamento interno, abstração, definição, dado
+          neutro, saída.
         </cor>
-        <cor nome="azul volt" hex="#3B49E4">
-          camada de apoio, processamento interno, abstração, camada avançada.
+        <cor nome="atenção" hex="#FFD43B + ⚠">
+          o próprio amarelo, SEMPRE com um triângulo ⚠ e o rótulo (ATENÇÃO,
+          CUIDADO). É o ⚠ que distingue a atenção do conceito principal.
         </cor>
-        <cor nome="azul-céu" hex="#38BDF8">
-          definição, informação neutra, dado. Uso pontual.
-        </cor>
-        <cor nome="erro / antipadrão" hex="#FB3732 + ✗">
-          o mesmo vermelho, SEMPRE com um marcador ✗ e o rótulo do erro
-          (ERRADO, EVITE, MITO), sobre painel acinzentado. É o ✗ que distingue
-          o erro do conceito principal.
+        <cor nome="erro / antipadrão" hex="#FF8A80 + ✗">
+          coral, SEMPRE com um marcador ✗ e o rótulo do erro (ERRADO, EVITE,
+          MITO), sobre painel acinzentado-azulado. Única aparição de vermelho
+          na peça.
         </cor>
       </semantica_de_cor>
       <regra_de_uso>
-        Cores nunca são decorativas. Um bloco esmeralda significa
-        "certo/entrada"; âmbar significa "atenção/saída". Não pinte blocos de
-        cores diferentes só para variar: blocos sem significado especial ficam
-        em painel grafite com rótulo osso.
+        Cores nunca são decorativas. Um bloco verde significa "certo/entrada";
+        azul significa "apoio/processamento". Não pinte blocos de cores
+        diferentes só para variar: blocos sem significado especial ficam em
+        painel azul-noite com rótulo claro.
       </regra_de_uso>
     </paleta>
 
     <tipografia>
       <familia uso="titulos">grotesca sans-serif pesada e compacta (Archivo ExtraBold/Black ou equivalente), espaçamento entre letras levemente apertado</familia>
       <familia uso="rotulos_e_codigo">monoespaçada (JetBrains Mono ou equivalente), caixa-alta com espaçamento aberto nos rótulos</familia>
+      <familia uso="texto_corrido">sans-serif moderna e limpa (Geist ou equivalente) no subtítulo, nos micro-parágrafos e na frase da faixa</familia>
       <regras>
         Português do Brasil, ortografia impecável. Título em grotesca pesada,
-        com a palavra-chave em vermelho signal e o resto em osso. Rótulo de
+        com a palavra-chave em amarelo e o resto em branco #F8FAFC. Rótulo de
         bloco em mono, caixa-alta, colorido conforme a semântica. Micro-
         parágrafo em caixa mista. Nada de texto abaixo de ~14px equivalente —
         se não dá para ler no celular, não entra.
@@ -334,17 +357,17 @@
     <gramatica_visual peso="alto">
       <elemento nome="titulo">
         1 a 3 linhas, no topo, centralizado ou alinhado à esquerda, dentro da
-        margem segura. Palavra-chave em vermelho
-        signal, resto em osso. Nunca ausente: duas capas do acervo saíram sem
+        margem segura. Palavra-chave em amarelo,
+        resto em branco. Nunca ausente: duas capas do acervo saíram sem
         título e ficaram órfãs.
       </elemento>
       <elemento nome="eyebrow" opcional="sim">
-        Linha curta em mono caixa-alta vermelha acima do título, seguida de um
-        filete de 24 px (ex.: "TEMA V · BANCO DE DADOS"). Só se couber sem
+        Linha curta em mono caixa-alta, cinza-azulado #A9B8D0, acima do título, sem
+        filete (ex.: "TEMA V · BANCO DE DADOS"). Só se couber sem
         empurrar o miolo para baixo.
       </elemento>
       <elemento nome="subtitulo" perfil="capa">
-        1 a 2 linhas logo abaixo do título, em cinza #8E8E95, explicando a
+        1 a 2 linhas logo abaixo do título, em #A9B8D0, em sans moderna, explicando a
         promessa da aula.
       </elemento>
       <elemento nome="rotulo_de_bloco">
@@ -353,20 +376,19 @@
       </elemento>
       <elemento nome="icone">
         Ícone linear fino (estilo Lucide) desenhado na cor do bloco, dentro de
-        um quadrado grafite com filete de 1 px na mesma cor (no máximo um
-        tingido de 15%). Nunca o quadrado sólido e saturado de "ícone de app".
+        um círculo azul-noite tingido a ~14% com a cor do bloco. Nunca o quadrado
+        sólido e saturado de "ícone de app".
         Um por bloco, todos da mesma família. Nenhum bloco fica sem ícone.
       </elemento>
       <elemento nome="badge_numerado">
-        Em sequências, numere as etapas com quadrados arredondados em vermelho
-        signal com número branco 1..N.
+        Em sequências, numere as etapas com círculos amarelos #FFD43B e número
+        em tinta escura #1B1500, 1..N.
       </elemento>
       <elemento nome="filetes">
-        Filetes de 1 px organizam colunas e linhas; uma linha de destaque
-        vermelha curta pode marcar o início de uma seção.
+        Filetes de 1 px (#2A3D66) organizam colunas e linhas.
       </elemento>
       <elemento nome="faixa_de_sintese" perfil="capa">
-        Banda full-width no rodapé, em painel #0D0D0D com filete superior,
+        Banda full-width no rodapé, em painel #060913 com filete superior,
         fechando a peça. Rótulos já usados: "EM RESUMO", "IDEIA CENTRAL",
         "ERRO COMUM", "LEMBRE-SE", "REGRA DE OURO". Escolha um.
       </elemento>
@@ -402,11 +424,11 @@
       <tipo nome="comparacao">
         Dois campos separados por filete. Ambos os lados com rótulo próprio e
         peso visual equivalente. Lado incorreto em painel acinzentado com ✗
-        vermelho; lado recomendado com ✓ esmeralda.
+        coral; lado recomendado com ✓ verde.
       </tipo>
       <tipo nome="ciclo">
         3 a 5 etapas, setas retas e claras, sentido inequívoco, badges
-        numerados em vermelho signal.
+        numerados amarelos.
       </tipo>
       <tipo nome="arquitetura">
         Componentes em camadas empilhadas sobre grade, conexões em filetes e
@@ -452,15 +474,15 @@
   <regra id="R3-DEFEITOS-CONHECIDOS" peso="critico">
     <instrucao>
       D1 a D12 foram observados em imagens já publicadas do acervo; D13 é o
-      defeito típico da troca para a v7 (o modelo volta ao estilo "tech" com
-      brilho). D7 foi aposentado na v8, junto com as zonas reservadas; o id
+      defeito típico de troca de design system (o modelo volta ao estilo
+      "tech" com brilho ou à paleta anterior). D7 foi aposentado na v8, junto com as zonas reservadas; o id
       não é reaproveitado. Antes de entregar, verifique um por um. Qualquer ocorrência =
       regenerar, não entregar.
     </instrucao>
     <defeito id="D1">Texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO").</defeito>
     <defeito id="D2">Palavra inventada ou letra embaralhada em português.</defeito>
     <defeito id="D3">Peça sem título.</defeito>
-    <defeito id="D4">Fundo claro, branco ou colorido (navy, azulado, roxo) — o fundo v7 é grafite neutro quase preto.</defeito>
+    <defeito id="D4">Fundo fora do azul-noite profundo: claro, branco, grafite ou preto neutro (o fundo da v8), azul médio, roxo ou marrom — o fundo v9 é azul-noite #0A0E1A.</defeito>
     <defeito id="D5">Texto ou objeto cortado pela borda do quadro.</defeito>
     <defeito id="D6">Faixa superior vazia grande (mais de ~15% da altura sem conteúdo acima do título), inclusive cantos superiores deixados vazios como se fossem reservados.</defeito>
     <defeito id="D7" status="aposentado na v8">Ornamento, grade ou filete dentro de uma zona reservada. Não se aplica desde a v8: não há mais zonas reservadas.</defeito>
@@ -469,14 +491,14 @@
     <defeito id="D10">Comparação com apenas um lado rotulado.</defeito>
     <defeito id="D11">Logo real de terceiro desenhada (Windows, Linux, Android, marcas em geral). Use ícone genérico.</defeito>
     <defeito id="D12">Perfil trocado: capa esparsa em 16:9 ou infográfico com parágrafos em 3:2.</defeito>
-    <defeito id="D13">Linguagem visual fora do Volta Atelier: degradê, brilho/glow, vidro, neon, sombra colorida, paleta antiga (ciano como âncora, violeta, navy), quadrados de ícone sólidos e saturados no estilo "ícone de app", grandes áreas de cor saturada, mais de três cores de acento na peça.</defeito>
+    <defeito id="D13">Linguagem visual fora do Caderno Noturno: degradê, brilho/glow, vidro, neon, sombra colorida, paletas antigas (vermelho como acento ou fio condutor, ciano como âncora, violeta), quadrados de ícone sólidos e saturados no estilo "ícone de app", grandes áreas de cor saturada, mais de três cores de acento na peça.</defeito>
   </regra>
 
   <proibicoes_gerais>
     estilo infantil · mascotes fofos · banco de imagens corporativo ·
     pessoas fotorrealistas genéricas de stock · 3D plástico como estilo geral ·
     cyberpunk · neon · degradê · brilho/glow · glassmorphism · sombra colorida ·
-    fundo branco, claro, navy ou azulado · bordas pretas grossas ·
+    fundo branco, claro, grafite ou preto neutro · vermelho fora de erro · bordas pretas grossas ·
     composição carregada · detalhes minúsculos · texto ilegível ·
     erros de português · palavras inventadas · letras aleatórias ·
     marcas d'água · assinaturas inventadas · logos inventadas ·
@@ -496,7 +518,7 @@
     <perfil>{{CAPA|INFOGRAFICO}}</perfil>
     <titulo_da_aula>{{TÍTULO_EXATO_DA_AULA_ALVO}}</titulo_da_aula>
     <titulo_da_imagem>{{TÍTULO_CURTO}}</titulo_da_imagem>
-    <palavra_chave_em_signal>{{PALAVRA_DO_TÍTULO_EM_VERMELHO}}</palavra_chave_em_signal>
+    <palavra_chave_em_destaque>{{PALAVRA_DO_TÍTULO_EM_AMARELO}}</palavra_chave_em_destaque>
     <subtitulo perfil="capa">{{PROMESSA_DA_AULA_EM_1_OU_2_LINHAS}}</subtitulo>
     <conceito_central>{{CONCEITO_A_ENSINAR}}</conceito_central>
     <tipo_de_visual>{{COMPARAÇÃO|CICLO|FLUXO|ARQUITETURA|PROCESSO|LINHA_DO_TEMPO}}</tipo_de_visual>
@@ -562,40 +584,39 @@ PEDAGOGICAL GOAL:
 COMPOSITION STRUCTURE:
 [choose one: (a) two side columns + dominant central element + footer band; (b) three columns under a title band + footer band; (c) horizontal flow of 4-7 numbered steps + double footer band; (d) central hub with radial blocks around it + footer band]
 
-CONTENT BLOCKS (4 to 10 blocks, 7 is ideal):
+CONTENT BLOCKS (4 to 10 blocks, 7 is ideal) — render EXACTLY the blocks listed below, with exactly these labels and texts; do not add, merge, rename or drop any block:
 [for each block: an ALL-CAPS monospaced label in its semantic color + a 1-3 line micro-paragraph in Brazilian Portuguese + a thin-line icon]
 
 TITLE AND SUBTITLE:
-[insert title]. Set the title in a heavy, compact grotesque sans-serif (like Archivo Black), 1-3 lines, tight letter spacing, at the top of the piece inside the 8% safe margin (centered or left-aligned, using the full usable width). The keyword "[insert keyword]" is in signal red #FB3732; the rest of the title is in bone white #F4F3F0. Directly below it, the 1-2 line subtitle in gray #8E8E95: "[insert subtitle]".
+The rendered title is exactly "[insert title]" (not the full lesson title). Set the title in a heavy, compact grotesque sans-serif (like Archivo Black), 1-3 lines, tight letter spacing, at the top of the piece inside the 8% safe margin (centered or left-aligned, using the full usable width). The keyword "[insert keyword]" is in yellow #FFD43B; the rest of the title is in near-white #F8FAFC. Directly below it, the 1-2 line subtitle in soft blue-gray #A9B8D0, set in a clean modern sans-serif (Geist style): "[insert subtitle]".
 
 FOOTER SYNTHESIS BAND (required):
-A full-width band closing the piece, on #0D0D0D with a 1px top rule, labeled in red monospaced caps "[insert footer label: EM RESUMO, IDEIA CENTRAL, ERRO COMUM, LEMBRE-SE or REGRA DE OURO]", followed by this closing sentence in bone white: "[insert footer sentence]".
+A full-width band closing the piece, on #060913 with a 1px top rule (#2A3D66), labeled in yellow monospaced caps "[insert footer label: EM RESUMO, IDEIA CENTRAL, ERRO COMUM, LEMBRE-SE or REGRA DE OURO]", followed by this closing sentence in near-white, clean modern sans-serif: "[insert footer sentence]".
 
 NO BRANDING — THIS IS THE FINAL IMAGE (critical):
 This picture is published exactly as generated; nothing is added later. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, course text, badge or age range anywhere. Do NOT leave empty reserved corners, empty boxes or dashed frames for a logo, and never write placeholder text such as "reserved space" or "logo here". The title and the composition use the full usable width of the top area.
 
-STYLE — "Volta Atelier", refined editorial brutalism:
-Flat editorial vector infographic on a neutral near-black graphite background (#141414), laid out on a strict grid. Rectangular panels (#1C1C1E and #232326) with small 8-12px corner radius and crisp 1px hairline borders (#2E2E31). High contrast, solid flat colors only. Thin-line icons (Lucide style) drawn in the block's color inside a dark graphite tile (#232326) with a 1px border in that color; at most a faint 15% tint. NEVER solid, saturated, filled "app icon" squares. Numbered steps use red rounded-square badges with white numbers. Pill-shaped tags. Straight, clean arrows. A very subtle paper grain on the background is allowed. Design-studio finish, contemporary and youthful without being childish. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
+STYLE — "Caderno Noturno" (night notebook), calm editorial:
+Flat editorial vector infographic on a deep night-blue background (#0A0E1A), laid out on a strict grid. Rounded panels in layered night blues (#121D36 and #1A2A4D) with a 10-16px corner radius and crisp 1px hairlines (#2A3D66). High contrast, solid flat colors only. Thin-line icons (Lucide style) drawn in the block's color inside a small night-blue circle tinted about 14% with that color — NEVER solid, saturated, filled "app icon" squares. Numbered badges (yellow #FFD43B circles with dark ink #1B1500 numbers) are used ONLY when the structure is a real sequence of steps (structure c); in structures a, b and d the blocks are NOT numbered — no digits, no badges. Pill-shaped tags. Straight, clean arrows. Design-studio finish, contemporary and youthful without being childish. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
 
 COLOR SYSTEM (colors carry fixed meaning — never decorative):
-Background graphite #141414, deep band #0D0D0D, panels #1C1C1E and #232326, hairlines #2E2E31. Main text bone white #F4F3F0, secondary gray #8E8E95.
-Signal red #FB3732 = the main concept and the through-line: title keyword, primary arrow, numbered badges (anchor color, always present, used sparingly).
-Emerald #10B981 = correct, good practice, input, done.
-Amber #FFA31A = attention, final step, output.
-Volt blue #3B49E4 = support layer, internal processing, abstraction.
-Sky blue #38BDF8 = definition or neutral data, sparingly.
-Errors/antipatterns = a grayed panel with a red ✗ mark and a label such as "ERRADO" or "EVITE".
-Blocks with no special meaning stay graphite with bone-white text.
-Color budget: signal red plus at most TWO other semantic colors in the whole piece; most panels stay graphite. Large areas of saturated color are not allowed — color lives in thin borders, icons, labels, badges and arrows.
+Background deep night blue #0A0E1A, deep band #060913, panels #121D36 and #1A2A4D, hairlines #2A3D66. Main text near-white #F8FAFC, secondary soft blue-gray #A9B8D0.
+Yellow #FFD43B = the main concept and the through-line: title keyword, primary arrow, numbered badges (anchor color, always present, used sparingly).
+Green #5FD08D = correct, good practice, input, done.
+Light blue #8DBCF5 = support layer, internal processing, abstraction, definition, neutral data, output.
+Attention = the yellow with a ⚠ triangle and a label such as "ATENÇÃO" or "CUIDADO".
+Errors/antipatterns = a grayed blue panel with a coral #FF8A80 ✗ mark and a label such as "ERRADO" or "EVITE". Red/coral appears ONLY for errors, never as decoration, title color or through-line.
+Blocks with no special meaning stay night-blue with near-white text.
+Color budget: yellow plus at most TWO other semantic colors in the whole piece; most panels stay night blue. Large areas of saturated color are not allowed — color lives in icons, labels, badges, arrows and thin accents.
 
 TYPOGRAPHY:
-Heavy compact grotesque sans-serif (Archivo Black style) ONLY for the title; every other piece of text — labels, micro-paragraphs, subtitle, footer — in a monospaced typeface (JetBrains Mono style), labels in ALL-CAPS with open letter spacing. Flawless Brazilian Portuguese — every rendered word must be a real, correctly spelled word. Nothing smaller than roughly 14px equivalent.
+Heavy compact grotesque sans-serif (Archivo Black style) ONLY for the title. Block labels and the footer label in a monospaced typeface (JetBrains Mono style), ALL-CAPS with open letter spacing. Subtitle, micro-paragraphs and the footer sentence in a clean modern sans-serif (Geist style), sentence case. Flawless Brazilian Portuguese — every rendered word must be a real, correctly spelled word. Nothing smaller than roughly 14px equivalent.
 
 LAYOUT:
-3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins, one dominant focal point, strict grid alignment, core content occupying 70-90% of the usable height, readable on laptop and mobile, no empty band or empty corners across the top.
+3:2 landscape, target 1536x1024, highest available resolution, 8% safe margins on ALL four sides: the title, every panel and the footer band stay at least ~120px away from the left and right edges and ~60px from the top and bottom — nothing touches or nearly touches the frame, one dominant focal point, strict grid alignment, core content occupying 70-90% of the usable height, readable on laptop and mobile, no empty band or empty corners across the top.
 
 AVOID:
-navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, cyberpunk, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a large empty band across the top, sparse flat-gray wireframe boxes, data charts with invented numbers.
+neutral graphite, gray or pure black backgrounds, medium or bright blue backgrounds, purple backgrounds, white or light background, red or coral used as an accent or decoration (red is only for errors), gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, the old red-on-graphite palette, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D as the overall style, cyberpunk, clutter, tiny unreadable details, thick black outlines, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos (Windows, Linux, Android or any brand), "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, "14 a 18 anos", any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a large empty band across the top, sparse flat-gray wireframe boxes, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
@@ -616,38 +637,39 @@ THREE-SECOND MESSAGE:
 COMPOSITION:
 [choose one: side-by-side comparison, 3-5 step cycle, input-to-output flow, layered hierarchy, before/after]
 
-CONTENT BLOCKS (2 to 5 only):
+CONTENT BLOCKS (2 to 5 only) — render EXACTLY the blocks and labels listed below; do not add, rename or drop any:
 [for each block: a short label of up to 4 words + a thin-line icon + its semantic color]
 
 TITLE:
-"[insert title]" — one short line at the top, inside the 8% safe margin, in a heavy compact grotesque sans-serif (like Archivo Black). The word "[insert keyword]" is in signal red #FB3732, the rest in bone white #F4F3F0. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
+"[insert title]" — one short line at the top, inside the 8% safe margin, in a heavy compact grotesque sans-serif (like Archivo Black). The word "[insert keyword]" is in yellow #FFD43B, the rest in near-white #F8FAFC. No descriptive subtitle, no footer band, no paragraphs anywhere — this is a body figure, not a cover.
 
 NO BRANDING — THIS IS THE FINAL IMAGE (critical):
 This picture is published exactly as generated; nothing is added later. Do NOT draw any logo, monogram, the letters TC, brand name, wordmark, course text, badge or age range anywhere. Do NOT leave empty reserved corners, empty boxes or dashed frames for a logo, and never write placeholder text such as "reserved space" or "logo here".
 
-STYLE — "Volta Atelier", refined editorial brutalism:
-Flat editorial vector infographic on a neutral near-black graphite background (#141414), strict grid alignment, rectangular panels (#1C1C1E, #232326) with small 8-12px radius and crisp 1px hairline borders (#2E2E31), solid flat colors, high contrast, consistent thin-line icons (Lucide style) drawn in the block's color inside dark graphite tiles with a 1px colored border (NEVER solid, saturated, filled "app icon" squares), red rounded-square numbered badges, straight clean arrows, generous breathing room AROUND the blocks. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
+STYLE — "Caderno Noturno" (night notebook), calm editorial:
+Flat editorial vector infographic on a deep night-blue background (#0A0E1A), strict grid alignment, rounded panels in layered night blues (#121D36, #1A2A4D) with a 10-16px radius and crisp 1px hairlines (#2A3D66), solid flat colors, high contrast, consistent thin-line icons (Lucide style) drawn in the block's color inside small night-blue circles tinted about 14% with that color (NEVER solid, saturated, filled "app icon" squares), yellow numbered circle badges with dark ink numbers, straight clean arrows, generous breathing room AROUND the blocks. NO gradients, NO glow, NO glassmorphism, NO neon, NO colored shadows, NO plastic 3D.
 
 MANDATORY MINIMUM ELEMENTS (a sparse gray wireframe is a FAILED output, not minimalism):
-- A short title rendered at the top, inside the safe margin, with its keyword in signal red.
-- A thin-line icon and a semantic accent color on every single block — never a flat gray rectangle with no icon, no color and no label.
-- At least one signal-red highlight: the primary arrow, a numbered badge or the title keyword.
-- In side-by-side comparisons, BOTH sides must carry their own label and equivalent visual weight; the wrong side is grayed with a red ✗, the right side has an emerald ✓.
+- A short title rendered at the top, inside the safe margin, with its keyword in yellow.
+- A thin-line icon and a semantic accent color on every single block — never a flat panel with no icon, no color and no label.
+- At least one yellow highlight: the primary arrow, a numbered badge or the title keyword. Yellow lives in thin accents, never as a large solid filled block.
+- Code shown in the image is written exactly as given, in lowercase HTML (never <DIV CLASS=...> in caps); labels in ALL-CAPS apply only to block labels, never to code.
+- In side-by-side comparisons, BOTH sides must carry their own label and equivalent visual weight; the wrong side is grayed with a coral ✗, the right side has a green ✓.
 - The core content must occupy 60-80% of the usable vertical height — never half the canvas left empty.
 
 COLOR SYSTEM (colors carry fixed meaning — never decorative):
-Background graphite #141414; panels #1C1C1E and #232326; hairlines #2E2E31. Main text bone white #F4F3F0, secondary gray #8E8E95.
-Signal red #FB3732 = the main concept and through-line. Emerald #10B981 = correct/input/done. Amber #FFA31A = attention/output. Volt blue #3B49E4 = support layer/internal processing. Sky blue #38BDF8 = definition/neutral data, sparingly. Errors = grayed panel + red ✗.
-Color budget: signal red plus at most TWO other semantic colors in the whole piece; most panels stay graphite. Large areas of saturated color are not allowed — color lives in thin borders, icons, labels, badges and arrows.
+Background deep night blue #0A0E1A; panels #121D36 and #1A2A4D; hairlines #2A3D66. Main text near-white #F8FAFC, secondary soft blue-gray #A9B8D0.
+Yellow #FFD43B = the main concept and through-line. Green #5FD08D = correct/input/done. Light blue #8DBCF5 = support layer/internal processing/definition/output. Attention = yellow with a ⚠ triangle. Errors = grayed blue panel + coral #FF8A80 ✗ — red/coral ONLY for errors.
+Color budget: yellow plus at most TWO other semantic colors in the whole piece; most panels stay night blue. Large areas of saturated color are not allowed — color lives in icons, labels, badges, arrows and thin accents.
 
 TYPOGRAPHY:
 At most eight short Brazilian Portuguese labels, each up to four words, in a monospaced typeface (JetBrains Mono style), ALL-CAPS with open letter spacing; the heavy grotesque is used ONLY for the title. No paragraphs, no captions, no explanatory sentences. Flawless spelling — every rendered word must be a real, correctly spelled Portuguese word.
 
 LAYOUT:
-16:9 landscape, highest available resolution, 8% safe margins, one dominant focal point, at most five main visual groups, readable on laptop and mobile, no empty band or empty corners across the top.
+16:9 landscape, highest available resolution, 8% safe margins on ALL four sides: the title and every panel stay at least ~130px away from the left and right edges — nothing touches or nearly touches the frame, one dominant focal point, at most five main visual groups, readable on laptop and mobile, no empty band or empty corners across the top.
 
 AVOID:
-navy, blue-black or tinted backgrounds, white or light background, gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, cyberpunk, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a comparison where only one side has a label, data charts with invented numbers.
+neutral graphite, gray or pure black backgrounds, medium or bright blue backgrounds, purple backgrounds, white or light background, red or coral used as an accent or decoration (red is only for errors), gradients, glow, glassmorphism, neon, colored shadows, cyan as the main color, violet, the old red-on-graphite palette, childish style, cute mascots, generic corporate stock illustration, photorealistic stock people, plastic 3D, cyberpunk, clutter, too many icons, tiny unreadable details, thick black outlines, paragraphs, footer summary bands, random letters, invented or misspelled Portuguese words, watermark, signature, any logo, any wordmark, any monogram, the letters TC as a symbol, real third-party logos, "Prof. Toni Coimbra", "ProfessorDash", course identifier text, age badge, any age range, placeholder text of any kind, empty reserved corners or empty logo boxes, text or objects cut off by the frame edge, a comparison where only one side has a label, data charts with invented numbers.
   ]]></prompt_arte_base>
 
   <!-- ================================================================
@@ -673,7 +695,7 @@ navy, blue-black or tinted backgrounds, white or light background, gradients, gl
       <check>[ ] TODA palavra renderizada existe em português e está escrita certo?</check>
       <check>[ ] Nenhum texto está cortado pela borda?</check>
       <check>[ ] Nenhum texto de placeholder sobrou na arte?</check>
-      <check>[ ] Há um título visível, com a palavra-chave em vermelho signal?</check>
+      <check>[ ] Há um título visível, com a palavra-chave em amarelo?</check>
     </grupo>
 
     <grupo nome="perfil capa">
@@ -691,13 +713,13 @@ navy, blue-black or tinted backgrounds, white or light background, gradients, gl
       <check>[ ] O miolo ocupa 60–80% da altura útil?</check>
     </grupo>
 
-    <grupo nome="design system Volta Atelier">
-      <check>[ ] O fundo é grafite neutro quase preto (nem claro, nem navy, nem azulado)?</check>
+    <grupo nome="design system Caderno Noturno">
+      <check>[ ] O fundo é azul-noite profundo (nem claro, nem grafite/preto neutro, nem azul médio)?</check>
       <check>[ ] Cor chapada, sem degradê, brilho, vidro, neon ou sombra colorida?</check>
       <check>[ ] Painéis com filete fino e alinhamento em grade?</check>
       <check>[ ] Cada bloco tem ícone linear e cor com significado?</check>
-      <check>[ ] O vermelho signal aparece como âncora, com parcimônia?</check>
-      <check>[ ] Erros aparecem com ✗ e rótulo, distintos do conceito principal?</check>
+      <check>[ ] O amarelo aparece como âncora, com parcimônia?</check>
+      <check>[ ] Vermelho só em erro, sempre com ✗ e rótulo?</check>
       <check>[ ] Em comparações, os dois lados têm rótulo e peso equivalentes?</check>
       <check>[ ] Elemento fotorrealista/3D, se houver, é UM só, temático e neutro?</check>
     </grupo>

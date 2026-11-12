@@ -105,6 +105,6 @@ execute as instruções de `.ai/prompts/handoff.md`.
 - Não republicar trecho literal de `lake/**/elite-wiki/` (curso pago de terceiro, local-only).
 - Não rebaixar a canônica para o formato do repo legado `elvertoni/ProfToniCoimbra`.
 - Não tratar o material das duas pós-graduações no `lake/` como fonte de aula sem pedido explícito.
-- Não anexar a logo ao modelo de imagem nem pedir que ele a desenhe: a imagem sai final e sem marca (prompt v8; a action do Photoshop foi descontinuada, decisão #036).
+- Não anexar a logo ao modelo de imagem nem pedir que ele a desenhe: a imagem sai final e sem marca (desde o prompt v8; a action do Photoshop foi descontinuada, decisão #036). O prompt atual é o v9, no Caderno Noturno (decisões #042 e #043).
 - Não commitar segredos (`NOTION_TOKEN`, `TYPESAFE_API_KEY`, tokens de painel), `.env`, `.ai/handoff.md` nem
   `.ai/sessions/`.

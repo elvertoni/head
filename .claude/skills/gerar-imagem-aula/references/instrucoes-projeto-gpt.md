@@ -10,10 +10,10 @@ visual que o modelo lê.
 
 Não anexar:
 
-- `LEIA-ME_PROMPT_INFOGRAFICOS_v8.txt` — é manual para o Toni, não para o
+- `LEIA-ME_PROMPT_INFOGRAFICOS_v9.txt` — é manual para o Toni, não para o
   modelo; nos arquivos do Projeto ele compete com o XML;
 - `logo-prof-toni-coimbra-horizontal.png` — dar a marca ao modelo generativo é
-  convite para ele redesenhá-la. A peça é final e não leva marca (v8).
+  convite para ele redesenhá-la. A peça é final e não leva marca.
 
 ## Instrução de configuração do Projeto
 
@@ -26,7 +26,7 @@ margem e ausência de marca na instrução é o seguro barato contra isso.
 # INSTRUÇÕES OBRIGATÓRIAS PARA GERAÇÃO DAS ARTES
 
 Siga integralmente o arquivo XML anexado a este projeto: prompt.xml,
-versão 8.0, modo arte_final_sem_branding.
+versão 9.0, modo arte_final_sem_branding.
 
 A cada solicitação serão enviados: canonica.md, imagens.md, o PERFIL desejado
 e o título exato da aula-alvo.
@@ -53,20 +53,24 @@ inteira, cada um com até 4 palavras. Proibido: subtítulo, faixa de rodapé,
 parágrafo, microparágrafo, texto explicativo. Miolo ocupando 60% a 80% da
 altura útil.
 
-## FUNDO E PALETA — VOLTA ATELIER (não negociável)
-O fundo é SEMPRE grafite neutro quase preto: #141414, com faixas #0D0D0D.
-Painéis #1C1C1E e #232326, filetes de 1 px #2E2E31. Texto principal osso
-#F4F3F0, secundário #8E8E95.
-O vermelho signal #FB3732 é a cor âncora: palavra-chave do título, seta
-principal, badges numerados. Aparece sempre, com parcimônia.
-Fundo branco, claro, navy, azulado ou colorido é o defeito D4 e reprova a peça.
-Degradê, brilho (glow), vidro, neon e sombra colorida são o defeito D13.
-Cor nunca é decorativa: esmeralda #10B981 = certo/entrada/conclusão, âmbar
-#FFA31A = atenção/saída, azul volt #3B49E4 = camada de apoio/processamento,
-azul-céu #38BDF8 = definição (pontual). Erro/antipadrão = painel acinzentado
-com ✗ vermelho e rótulo (ERRADO, EVITE).
-Estilo: brutalismo editorial refinado — cor chapada, grade, filetes finos,
-título em grotesca pesada (tipo Archivo Black), rótulos em mono caixa-alta.
+## FUNDO E PALETA — CADERNO NOTURNO (não negociável)
+O fundo é SEMPRE azul-noite profundo: #0A0E1A, com faixas #060913.
+Painéis #121D36 e #1A2A4D, filetes de 1 px #2A3D66. Texto principal
+#F8FAFC, secundário #A9B8D0.
+O amarelo #FFD43B é a cor âncora: palavra-chave do título, seta principal,
+badges numerados (número em tinta escura #1B1500). Aparece sempre, com
+parcimônia, e nunca como bloco sólido grande.
+Fundo claro, branco, grafite ou preto neutro, azul médio ou roxo é o defeito
+D4 e reprova a peça. Degradê, brilho (glow), vidro, neon, sombra colorida e
+vermelho usado como destaque são o defeito D13.
+Cor nunca é decorativa: verde #5FD08D = certo/entrada/conclusão, azul
+#8DBCF5 = apoio/processamento/definição/saída, atenção = amarelo com ⚠.
+Erro/antipadrão = painel acinzentado com ✗ coral #FF8A80 e rótulo (ERRADO,
+EVITE, MITO). Coral é a ÚNICA aparição de vermelho na peça.
+Estilo: sóbrio e editorial — cor chapada, grade, painéis arredondados, título
+em grotesca pesada (tipo Archivo Black), rótulos em mono caixa-alta, texto
+corrido em sans moderna (tipo Geist). Badges numerados SÓ quando os blocos
+são uma sequência de passos. Código sempre em minúsculas, como foi escrito.
 
 ## MARGEM E TOPO
 Margem segura de 8% em todas as bordas. O título fica no topo, usando a
@@ -98,7 +102,8 @@ confirmação sem a imagem. A tarefa só termina quando o PNG for entregue.
 PERFIL: {CAPA|INFOGRAFICO}
 AULA: {título exato da aula-alvo}
 
-Execute integralmente o XML v8 no perfil acima e gere a peça final.
+Execute integralmente o XML v9 no perfil acima e gere a peça final.
+Renderize exatamente os blocos do brief, sem inventar nem renomear.
 Não pare no prompt. Sem marca, sem placeholder e com o título no topo.
 ```
 

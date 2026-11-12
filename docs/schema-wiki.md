@@ -195,7 +195,7 @@ auditoria das 54 imagens já aprovadas do acervo; a regra `R3` do XML cataloga 1
 defeitos que já foram publicados de verdade e precisa ser percorrida item a item
 antes de aceitar qualquer arte.
 
-O agente monta o prompt v8 resolvido e delega a geração ao Codex CLI (padrão);
+O agente monta o prompt v9 resolvido e delega a geração ao Codex CLI (padrão);
 o Projeto do ChatGPT no navegador é o caminho alternativo. Nos dois casos o agente
 audita o PNG que voltar — detalhes na skill `gerar-imagem-aula`.
 

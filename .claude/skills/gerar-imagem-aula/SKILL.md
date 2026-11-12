@@ -1,6 +1,6 @@
 ---
 name: gerar-imagem-aula
-description: Produz e valida as imagens finais das aulas e apostilas do acervo PROF-TONI, do brief até o PNG auditado, no design system Volta Atelier (o mesmo do ProfessorDash). Use sempre que o pedido tocar em imagem de aula ou de apostila — gerar capa.png, gerar infográfico de miolo, ilustrar ou enriquecer uma apostila com imagens, refazer ou editar uma arte, executar propostas de imagens.md, auditar um PNG que voltou do Codex ou do ChatGPT, ajustar o Projeto do navegador ou mexer em tools/imagen-generator — mesmo que o Toni não use as palavras "skill", "prompt" ou "imagem". Decide antes o que é imagem gerada e o que deve ser SVG com texto real (gráficos, tabelas, números), escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), monta o prompt v8 com scripts/montar_prompt.py, gera pelo Codex CLI aqui mesmo e audita o resultado contra os 13 defeitos conhecidos. A peça sai final e sem marca: não há etapa de Photoshop (v8); o PNG auditado vai direto para o acervo.
+description: Produz e valida as imagens finais das aulas e apostilas do acervo PROF-TONI, do brief até o PNG auditado, no design system Caderno Noturno (o mesmo do ProfessorDash e das apostilas: azul-noite, destaque amarelo, vermelho só em erro). Use sempre que o pedido tocar em imagem de aula ou de apostila — gerar capa.png, gerar infográfico de miolo, ilustrar ou enriquecer uma apostila com imagens, refazer ou editar uma arte, executar propostas de imagens.md, auditar um PNG que voltou do Codex ou do ChatGPT, ajustar o Projeto do navegador ou mexer em tools/imagen-generator — mesmo que o Toni não use as palavras "skill", "prompt" ou "imagem". Decide antes o que é imagem gerada e o que deve ser SVG com texto real (gráficos, tabelas, números), escolhe o perfil (capa densa 3:2 ou infográfico enxuto 16:9), monta o prompt v9 com scripts/montar_prompt.py, gera pelo Codex CLI aqui mesmo e audita o resultado contra os 13 defeitos conhecidos. A peça sai final e sem marca; o PNG auditado vai direto para o acervo.
 ---
 
 # gerar-imagem-aula
@@ -8,11 +8,14 @@ description: Produz e valida as imagens finais das aulas e apostilas do acervo P
 A skill leva a peça final do brief até o PNG auditado. Ela **gera**: o Codex CLI
 tem ferramenta nativa de imagem e produz aqui mesmo, sem navegador.
 
-O visual é o **Volta Atelier** (prompt v8): grafite neutro quase preto, cor
-chapada, filetes finos, título em grotesca pesada com a palavra-chave em
-vermelho signal `#FB3732`, rótulos em mono. É o mesmo design system do
-ProfessorDash e da skill `aula-estatica` — imagem, portal e apostila precisam
-parecer o mesmo produto.
+O visual é o **Caderno Noturno** (prompt v9, decisão #043): fundo azul-noite
+`#0A0E1A`, painéis em camadas de azul, cor chapada, título em grotesca pesada
+com a palavra-chave em amarelo `#FFD43B`, rótulos em mono e texto corrido em
+sans. Vermelho (coral `#FF8A80`) só aparece em erro, sempre com ✗. É o mesmo
+design system do ProfessorDash e da skill `aula-estatica`: a capa aparece
+dentro da faixa noturna da aula no portal, e imagem, portal e apostila precisam
+parecer o mesmo produto. Arte já publicada em v8 (grafite e vermelho) continua
+no acervo até o Toni pedir para regerar.
 
 O trabalho que agrega valor não é apertar o botão de gerar — é a análise
 pedagógica que vira prompt e a auditoria que impede peça defeituosa de entrar no
@@ -28,7 +31,7 @@ Dois caminhos de geração, na ordem de preferência:
 
 1. Ler integralmente `tools/imagen-generator/prompt.xml` (no pacote do claude.ai, a cópia está em
    `references/prompt.xml`).
-2. Confirmar `versao="8.0"` e `modo="arte_final_sem_branding"`. Não
+2. Confirmar `versao="9.0"` e `modo="arte_final_sem_branding"`. Não
    casou? Interromper e reportar a divergência antes de gerar qualquer coisa
    (o `montar_prompt.py` também confere e se recusa a montar).
 3. Ler a `canonica.md` e o `imagens.md` da aula-alvo (ou o trecho da apostila).
@@ -110,8 +113,8 @@ do que já existe lá:
 | peça para apostila (`aula-estatica`) | `img/{slug}.png` ao lado do `.html` da apostila; o `build.py` da `aula-estatica` embute a imagem no arquivo final |
 
 `{stem}.proposta.png` é sempre o mesmo nome — a proposta seguinte sobrescreve a
-anterior. Nunca sufixar com a versão do prompt: `v8` identifica o sistema, não a
-tentativa, e `capa-v8 (2).png` é o beco sem saída que essa regra existe pra
+anterior. Nunca sufixar com a versão do prompt: `v9` identifica o sistema, não a
+tentativa, e `capa-v9 (2).png` é o beco sem saída que essa regra existe pra
 evitar.
 
 Substituir arte que já está no acervo é decisão do Toni, nunca da rodada. Ao
@@ -187,7 +190,7 @@ lugares: a regra no XML, o caso aqui.
 | D1 | texto de placeholder impresso na arte | aula 10 de IA: "ESPAÇO RESERVADO PARA LOGO" |
 | D2 | palavra inventada em português | "nulhado" (aula 08), "madruagda" (aula 06), "rosolveu" e "flex-contáiner" (HTML semântico) |
 | D3 | peça sem título | aula 31 de arquitetura, aula 06 de IA |
-| D4 | fundo claro, branco, navy ou azulado | aulas 05 e 06 de IA, as duas de tráfego orgânico, duas tentativas de HTML semântico |
+| D4 | fundo fora do azul-noite: claro, branco, grafite/preto neutro (o fundo do v8), azul médio, roxo | aulas 05 e 06 de IA, as duas de tráfego orgânico, duas tentativas de HTML semântico (fundo claro) |
 | D5 | texto/objeto cortado pela borda | "AM" solto na aula 25 |
 | D6 | faixa superior vazia demais | aulas 04 e 09 de IA |
 | D7 | *(aposentado na v8 — não há mais zona reservada)* ornamento dentro de zona reservada | aula 33, nivelamento 01 |
@@ -196,13 +199,16 @@ lugares: a regra no XML, o caso aqui.
 | D10 | comparação com um lado só rotulado | — |
 | D11 | logo real de terceiro desenhada | logos de SO na aula 35 |
 | D12 | perfil trocado ou fundido | HTML semântico: capa + infográfico no mesmo quadro |
-| D13 | linguagem fora do Volta Atelier: degradê, glow, vidro, neon, paleta antiga, ícone em quadrado sólido saturado ("ícone de app"), excesso de cor | 1ª rodada v7 da apostila de revisão: os 8 infográficos saíram com quadrados de ícone sólidos multicoloridos; a crítica do Impeccable apontou como cor decorativa |
+| D13 | linguagem fora do Caderno Noturno: degradê, glow, vidro, neon, paleta antiga (vermelho como destaque, ciano, violeta), ícone em quadrado sólido saturado ("ícone de app"), bloco amarelo sólido grande, excesso de cor | 1ª rodada v7 da apostila de revisão: os 8 infográficos saíram com quadrados de ícone sólidos multicoloridos; a crítica do Impeccable apontou como cor decorativa |
 
 Além da tabela, checar sempre:
 
-- **margem e topo** — nada importante a menos de 8% das bordas, título no topo
-  usando a largura útil, sem faixa vazia acima nem cantos deixados vazios como
-  se ainda fossem reservados (D6), e nenhuma caixa ou texto de placeholder (D1);
+- **margem e topo** — o alvo é 8% e o prompt pede isso com todas as letras,
+  mas o gerador entrega 2 a 4% nas laterais (igual nas capas v8 já aprovadas e
+  nos pilotos v9). O que reprova é texto ou objeto **cortado ou encostado** na
+  borda (D5). Título no topo usando a largura útil, sem faixa vazia acima nem
+  cantos deixados vazios como se fossem reservados (D6), e nenhuma caixa ou
+  texto de placeholder (D1);
 - **proporção** — `python .claude/skills/gerar-imagem-aula/scripts/inspecionar_png.py {perfil} {arquivo}`
   mede e compara com o alvo do perfil. Proporção errada se regenera; **não** se
   recorta, e **não** se normaliza para 1536×1024 nem 1600×900 — o tamanho
@@ -213,10 +219,19 @@ Além da tabela, checar sempre:
   o brief agrupa duas coisas num bloco (caso real, v7: teclado e monitor saíram
   os dois como "ENTRADA E SAÍDA"). Um bloco do brief = um elemento visual.
 - **numeração só onde há sequência** — badges 1..N num diagrama de arquitetura
-  inventam uma ordem que não existe. Se não é processo, o brief diz "do NOT
-  use numbered badges".
-- **D13** — nada de degradê, brilho, vidro ou ciano/violeta como cor principal;
-  o modelo tende a voltar ao visual "tech" antigo.
+  inventam uma ordem que não existe. O v9 já restringe badges à estrutura (c);
+  ainda assim confira, porque nos pilotos as quatro peças da r1 numeraram
+  blocos soltos.
+- **fidelidade ao brief** — exatamente os blocos, rótulos e textos pedidos. Nos
+  pilotos v9 o modelo inventou um bloco "ATENÇÃO" que não existia e trocou
+  "MITO" por "ERRADO"; o título renderizado tem de ser o título curto da peça,
+  não o título longo da aula.
+- **código** — trecho de código aparece exatamente como no brief e em
+  minúsculas (`<div class="nav">`, nunca `<DIV CLASS="NAV">`), com a estrutura
+  certa: no piloto, um `<header>` virou raiz de outro `<header>`, e isso ensina
+  errado.
+- **D13** — nada de degradê, brilho, vidro, vermelho como destaque, ciano ou
+  violeta; o modelo tende a voltar ao visual "tech" ou à paleta anterior.
 
 Reprovado → apontar o defeito **pelo id**, reforçar no prompt exatamente a seção
 que falhou (não o prompt inteiro) e regerar. Não entregar peça reprovada com
@@ -237,8 +252,8 @@ regrava a arte no próximo reimport. Já mexer na `canonica.md` — incluir a fi
 
 ## Limite de responsabilidade
 
-A skill termina na peça final aprovada, que é publicada como está (v8: a
-action do Photoshop foi descontinuada em 2026-11-04, decisão #036). Nunca
+A skill termina na peça final aprovada, que é publicada como está (desde o v8
+a action do Photoshop está descontinuada, decisão #036). Nunca
 desenhar ou aplicar logo, nome "Prof. Toni Coimbra", identificação "TÉCNICO EM
 DESENVOLVIMENTO DE SISTEMAS", smart object ou overlay: a marca já aparece no
 portal e na apostila ao redor da imagem.

@@ -54,7 +54,7 @@ O ProfessorDash importa lendo `manifesto.json` + `aulas/**/canonica.md`. Regra i
 ### Imagens — brief por aula (padrão obrigatório)
 Toda aula gerada acompanha um **brief de imagem**: o arquivo `imagens.md` na pasta da aula, neutro de plataforma. Isso **não cria bloco novo na Canônica** — imagem entra no corpo como Markdown `![alt](img/nome.png)`, sempre com justificativa pedagógica (vale o teste anti-decoração; sem justificativa, sai).
 
-**Duas peças por aula, no máximo — e com perfil declarado.** O acervo tem dois formatos visuais distintos, definidos em `tools/imagen-generator/prompt.xml` (v8, design system Volta Atelier, peça final sem marca):
+**Duas peças por aula, no máximo — e com perfil declarado.** O acervo tem dois formatos visuais distintos, definidos em `tools/imagen-generator/prompt.xml` (v9, design system Caderno Noturno, peça final sem marca):
 
 | perfil | arquivo | função | proporção | densidade |
 |---|---|---|---|---|
@@ -68,13 +68,13 @@ Para cada brief:
 - **secao** — onde entra na aula (ex.: "Desenvolvimento › Anatomia do Harness"). Só para `infografico`.
 - **objetivo** — o que o visual ensina (por que não é decoração).
 - **alt** — texto alternativo (acessibilidade + fallback quando o renderer não suporta imagem).
-- **prompt** — deixe **vazio ou como esboço de uma linha**. O prompt final é montado pela skill `gerar-imagem-aula` a partir do `prompt.xml` v8 (Volta Atelier), que carrega paleta semântica, gramática visual e o catálogo de 13 defeitos conhecidos. Gráfico de dados, tabela e cálculo não viram imagem gerada: são SVG na apostila. Prompt escrito à mão aqui produz peça fora do design system.
+- **prompt** — deixe **vazio ou como esboço de uma linha**. O prompt final é montado pela skill `gerar-imagem-aula` a partir do `prompt.xml` v9 (Caderno Noturno), que carrega paleta semântica, gramática visual e o catálogo de 13 defeitos conhecidos. Gráfico de dados, tabela e cálculo não viram imagem gerada: são SVG na apostila. Prompt escrito à mão aqui produz peça fora do design system.
 
 Fluxo: imagem que **já existe** → referencia direto no corpo. Imagem que **falta** → aplicar `gerar-imagem-aula`, que gera (Codex) e audita o PNG. As imagens finais de conteúdo vivem em `aulas/.../img/` em **versão web (≤500 KB)**; originais pesados ficam no `lake/` (fora do git).
 
 Arquivo em `img/` só chega ao aluno se a canônica o referenciar como `![alt](img/arquivo.png)`; sem referência, é importado e nunca exibido. O standalone (`aula-estatica`) mostra a figura quando a pasta `img/` vai junto do `.html`; sem ela, o `alt` carrega a informação — por isso ele continua sendo descrição completa (regra em `spec/01-CANONICA.md` §4.1).
 
-**Capa é o caso que funciona.** Salve como `capa.png` na pasta da aula (ou aponte no frontmatter `imagem:`) — essa o importador copia e o portal exibe no card e no topo da aula. Desde a v8 (decisão #036) a imagem gerada é a peça **final**, sem marca e sem etapa de Photoshop: o PNG auditado pela `gerar-imagem-aula` vai direto para `capa.png`. O import preenche a capa mesmo sem bump de `versao`.
+**Capa é o caso que funciona.** Salve como `capa.png` na pasta da aula (ou aponte no frontmatter `imagem:`) — essa o importador copia e o portal exibe no card e no topo da aula. Desde o v8 (decisão #036) a imagem gerada é a peça **final**, sem marca e sem etapa de Photoshop: o PNG auditado pela `gerar-imagem-aula` vai direto para `capa.png`. O import preenche a capa mesmo sem bump de `versao`.
 
 ## Limites desta skill
 

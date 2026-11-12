@@ -1,0 +1,92 @@
+COMO USAR — PROMPT DE IMAGENS v9 (CADERNO NOTURNO)
+
+O QUE MUDOU DA V8 PARA A V9 (2026-11-12, decisões #042 e #043)
+--------------------------------------------------------------
+O portal e as apostilas trocaram o Volta Atelier pelo Caderno Noturno. A capa
+aparece dentro da faixa noturna da aula, e grafite com vermelho ali parecia de
+outro produto. A v9 troca só a camada visual; perfis, densidade, margem,
+catálogo de defeitos e pipeline continuam os da v8. Testada em quatro pilotos
+(3 capas e 1 infográfico) antes de virar oficial.
+
+  ANTES (v8)                          AGORA (v9)
+  fundo grafite #141414               azul-noite #0A0E1A (painéis #121D36 / #1A2A4D)
+  vermelho signal #FB3732 = âncora    amarelo #FFD43B = âncora
+  vermelho também como destaque       coral #FF8A80 SÓ em erro, sempre com ✗
+  âmbar = atenção                     aposentado: atenção = amarelo com ⚠
+  azul volt + azul-céu                um azul só, #8DBCF5 (apoio, processamento, definição)
+  esmeralda #10B981                   verde #5FD08D
+  micro-texto em mono                 texto corrido em sans (tipo Geist); mono só nos rótulos
+  badge numerado em qualquer bloco    badge só quando os blocos são uma sequência de passos
+
+Arte já publicada em v8 continua no acervo: só é regerada quando o Toni pedir.
+
+O QUE A V8 JÁ TINHA MUDADO (2026-11-04, decisão #036)
+-----------------------------------------------------
+A action do Photoshop foi descontinuada. A imagem gerada é a peça FINAL e vai
+direto para capa.png ou img/. O título usa o topo inteiro, dentro da margem
+segura de 8%. É proibido o modelo desenhar logo, "TC", nome ou curso. D7 foi
+aposentado.
+
+LOGO: os dois PNG desta pasta (logo-prof-toni-coimbra-horizontal*.png) ainda
+trazem o C vermelho da paleta Volta. A marca atual tem o C sempre amarelo:
+.claude/skills/aula-estatica/assets/logo.svg (o mesmo do portal). Nenhum
+arquivo de marca entra no modelo de imagem.
+
+Os DOIS PERFIS:
+
+  CAPA          3:2 (1536x1024) · 4 a 10 blocos · micro-parágrafos ·
+                subtítulo obrigatório · faixa de rodapé obrigatória.
+
+  INFOGRAFICO   16:9 · 2 a 5 blocos · só rótulos curtos · sem subtítulo ·
+                sem faixa de rodapé.
+
+Gráfico de dados, tabela, cálculo e código NÃO são imagem gerada. O modelo
+erra números e palavras. Essas peças são desenhadas em SVG pela skill
+aula-estatica, com texto real.
+
+
+CAMINHO PADRÃO (CLAUDE CODE + CODEX, SEM NAVEGADOR)
+---------------------------------------------------
+Peça ao Claude Code: "aplica gerar-imagem-aula na Aula NN" (ou "ilustra a
+apostila"). Ele escreve o brief, monta o prompt com
+.claude/skills/gerar-imagem-aula/scripts/montar_prompt.py, gera pelo Codex e
+audita a peça antes de gravar no acervo.
+
+
+CAMINHO DO NAVEGADOR (CHATGPT)
+------------------------------
+Forneça ao Projeto: o prompt.xml v9 (nos arquivos do Projeto), a aula
+(canonica.md), o brief (imagens.md) e o perfil. NÃO anexe a logo. O texto da
+instrução do Projeto está em
+.claude/skills/gerar-imagem-aula/references/instrucoes-projeto-gpt.md.
+
+Solicite:
+"Execute integralmente o XML v9 no perfil CAPA (ou INFOGRAFICO) e gere a
+peça final. Não pare no prompt. Sem marca, sem placeholder e com o título
+no topo. Renderize exatamente os blocos do brief."
+
+
+ANTES DE ACEITAR A IMAGEM
+-------------------------
+Confira os defeitos da regra R3 do XML (D7 aposentado):
+
+  D1  texto de placeholder impresso na arte ("ESPAÇO RESERVADO PARA LOGO")
+  D2  palavra inventada em português ("nulhado", "madruagda")
+  D3  peça sem título
+  D4  fundo fora do azul-noite: claro, branco, grafite/preto neutro, azul médio
+  D5  texto ou objeto cortado pela borda
+  D6  faixa superior vazia grande ou cantos deixados vazios
+  D8  conteúdo da aula errada — confira o título da aula-alvo!
+  D9  wireframe sem ícone, cor ou título
+  D10 comparação com só um lado rotulado
+  D11 logo real de terceiro desenhada (Windows, Linux, Android...)
+  D12 perfil trocado
+  D13 degradê, brilho, vidro, neon ou paleta antiga (vermelho como destaque,
+      ciano, violeta), bloco amarelo sólido grande
+
+E também: bloco inventado ou renomeado, números em blocos que não são
+sequência, código em caixa-alta ou com estrutura errada.
+
+Qualquer um deles: peça a regeneração citando o defeito. Não aceite com
+ressalva. Margem lateral de 2 a 4% é o que o gerador entrega: só reprova se
+algo estiver cortado ou encostado na borda.

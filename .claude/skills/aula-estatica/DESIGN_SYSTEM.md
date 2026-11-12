@@ -113,9 +113,9 @@ Snippets em `BLOCOS.md`. Resumo de intenção:
 | Gráfico SVG | (extensão) | caixa; cores por classe de token, texto real, troca de tema sozinho |
 
 **Imagem gerada × SVG.** Ilustração conceitual vem da skill `gerar-imagem-aula`; dado, número e
-palavra exata são SVG. Enquanto o prompt de imagem não migrar para o v9 (decisão #042), as peças
-geradas continuam escuras (grafite); na faixa noturna e na caixa elas aparecem como placas
-emolduradas.
+palavra exata são SVG. Desde o prompt v9 (decisão #043) as peças geradas saem no mesmo azul-noite
+da faixa e do código, nos dois temas; arte antiga do v8 (grafite) aparece como placa escura
+emoldurada até ser regerada.
 
 ## 6. Comportamento (JS do template — não reescreva)
 
