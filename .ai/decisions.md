@@ -3,6 +3,27 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #042 — Skills de aula adotam o Caderno Noturno (DS v4) do ProfessorDash
+- **Data:** 2026-11-12
+- **Status:** Aceita; respostas do Toni às questões Q1–Q9 da revisão Fable 5.2 + validação ASTRA. Substitui a parte tipográfica de #017 (o texto corrido passa a Geist por padrão) e complementa #036 na paleta de imagem.
+- **Contexto:** O ProfessorDash trocou o Volta Atelier (DS v3) pelo Caderno Noturno em `965e807`; `aula-estatica`, `gerar-imagem-aula` e `prof-toni` continuavam descrevendo e produzindo Volta. A revisão achou 21 problemas (11 confirmados e 10 parciais pelo ASTRA) e mais 10 do ASTRA.
+- **Decisão:**
+  - Apostila segue o mesmo DS do portal, e o aluno escolhe claro ou escuro (botão mantido). Claro = leitura do aluno (papel `#f1f0ec`, folha branca, ação azul `#1747c7`); escuro = azul-noite com ação amarela `#ffd43b`. Vermelho só para erro.
+  - Geist embutida offline (arquivo do portal, OFL nos metadados; anexar a licença) no texto corrido; JetBrains Mono só em código, medidas e kickers; Archivo nos títulos.
+  - Sem destaque de palavra (`<em>`) no título, como o portal decidiu em D.16 (b).
+  - Prompt de imagem v9 em azul-noite `#0a0e1a` com âncora amarela, adotado só depois de peças-piloto aprovadas; mantém peça final, sem marca, margem de 8% e canvas nativo de #036.
+  - Capas e infográficos já gerados ficam como estão até o Toni pedir a regeração.
+  - Roteiro omitido na apostila do aluno por padrão; versão do professor só quando pedida explicitamente.
+  - Apostilas `.html` já existentes: inventário depois.
+  - A skill do vault é a fonte única; a `caderno-noturno` do claude.ai é derivada, para artifacts, com gatilhos distintos.
+- **Consequências:** A apostila migra num bloco coerente (tokens semânticos ação/erro/tinta sobre ação, fontes, marca, estrutura, impressão, `build.py` e docs). O prompt v9 é mudança separada. Mudar só o template não exige bump nas canônicas; apostilas são regeradas, nunca editadas.
+
+## #041 — Aula única também passa pelo gate de aprovação do plano
+- **Data:** 2026-11-12
+- **Status:** Aceita; pedido do Toni ("n1 sai"), a partir do achado N1 do ASTRA.
+- **Contexto:** `spec/00-PROTOCOLO.md` permitia, em aula única no Modo Tema, confirmar título e objetivos e gerar a canônica na mesma resposta, o que contrariava o `AGENTS.md` (plano → OK do Toni → geração).
+- **Decisão:** A exceção sai do protocolo e da `SKILL.md`. Toda aula, inclusive a única, espera o OK do plano antes da Etapa 3.
+
 ## #040 — Portal remove aulas órfãs no import (`--prune`); números repetidos eram renumerações antigas
 - **Data:** 2026-11-05
 - **Status:** Aceita; pedido do Toni ("me incomoda aparecer 2 aulas com o mesmo número e fora de sequência"; "implemente e faça você mesmo a correção").
