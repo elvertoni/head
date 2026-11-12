@@ -229,7 +229,11 @@ atualizar o **estado** da entrada correspondente em `imagens.md` e confirmar o
 caminho. Não criar entrada para proposta descartada. Não apagar nem sobrescrever
 arte que já está no acervo sem pedido explícito do Toni.
 
-Imagens não alteram `manifesto.json` e não exigem bump de `versao` na aula.
+Trocar **só o arquivo** de imagem (`capa.png` ou um PNG já referenciado em `img/`) não altera
+`manifesto.json` nem exige bump de `versao`: o import do portal compara o conteúdo (SHA-256) e
+regrava a arte no próximo reimport. Já mexer na `canonica.md` — incluir a figura no corpo, mudar o
+`alt`, a legenda ou o frontmatter (`imagem:`) — é edição de aula aprovada: bump de `versao` ou
+`atualizado_em`, `gerar_manifesto.py` e publicação em quatro passos (AGENTS.md).
 
 ## Limite de responsabilidade
 
