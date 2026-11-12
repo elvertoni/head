@@ -107,6 +107,20 @@ do Google Fonts (só precisa de internet na primeira abertura).
 
 Nome do arquivo: kebab-case sem acento, `aula-NN-tema-curto.html`.
 
+### 7b. Olhar o resultado
+O checklist confere estrutura, não aparência. Onde houver o comando `chromium` (no WSL do Toni há;
+é o Chromium headless do Playwright), tire duas capturas e um PDF e **olhe** antes de entregar:
+
+```bash
+chromium --headless=new --window-size=1366,2000 --screenshot=desktop.png file:///caminho/abs.html
+chromium --headless=new --window-size=390,2000 --screenshot=celular.png file:///caminho/abs.html
+chromium --headless=new --no-pdf-header-footer --print-to-pdf=apostila.pdf file:///caminho/abs.html
+```
+
+Para o tema escuro, capture uma cópia com `data-theme="dark"` no `<html>`. Sem navegador
+disponível, diga ao Toni que o visual não foi conferido; não abra o Chrome do Windows por conta
+própria (deixa processos e perfis temporários para trás).
+
 ### 8. Entregar
 Salve em `saidas/` da pasta da aula (derivado, não versionado — decisão #001), ou onde o Toni
 pedir. Saída nunca se edita: corrija a canônica e regere. Diga em poucas linhas: onde está, como usar
