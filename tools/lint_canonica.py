@@ -100,7 +100,10 @@ def _perguntas(corpo: List[Tuple[int, str]]) -> List[Tuple[int, List[str]]]:
 
 
 def lint_aula(root: Path, path: Path) -> List[Diagnostic]:
-    rel = relative_path(root, path)
+    try:
+        rel = relative_path(root, path)
+    except ValueError:  # aula fora do repo (rascunho, teste)
+        rel = path.as_posix()
     text = path.read_text(encoding="utf-8-sig")
     fm = parse_frontmatter(text)
     lines, primeira = body_lines(text, fm)
