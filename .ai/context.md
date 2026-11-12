@@ -51,7 +51,7 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tools/sync_notion.py` | Espelha o índice de aulas na base "Aulas" do Notion (mão única repo → Notion) |
 | `tools/notion-wiki/` | Puxa páginas do Notion para o lake |
 | `tools/transcrever/` | Transcrição local (faster-whisper, GPU com fallback CPU) para o lake |
-| `tools/imagen-generator/` | **Não é script:** `prompt.xml` v6 (fonte de verdade visual) + logo + guia |
+| `tools/imagen-generator/` | **Não é script:** `prompt.xml` v8 (fonte de verdade visual) + logo + guia; v9 Caderno Noturno em piloto (decisão #042) |
 | `tests/` | `unittest` stdlib (36 testes em 2026-09-28) |
 | `docs/` | `schema-wiki.md` (schema da wiki), manutenção da wiki, backlog de proveniência, triagem RCO |
 | `.claude/skills/` | `prof-toni`, `aula-estatica`, `gerar-imagem-aula` |
@@ -78,10 +78,12 @@ vazia no git costuma ter PDFs só locais — conferir o disco antes de concluir 
 - **Jev (TypeSafe)** — modelo de julgamento: devolve respostas tipadas `noul`, `choice` ou `score` com
   probabilidade e nunca gera texto. Usado na triagem em massa em que o código decide; lê só texto, é mais forte
   em inglês. A triagem das 516 aulas RCO custou cerca de US$ 0,07. Respostas ficam em cache em `scratch/jev-rco/`.
-- **Codex CLI** — gera as imagens de aula: o agente monta o prompt v6 resolvido, delega à ferramenta nativa de
+- **Codex CLI** — gera as imagens de aula: o agente monta o prompt resolvido (`montar_prompt.py`), delega à ferramenta nativa de
   imagem do Codex e audita o PNG (verificado em 2026-07-29). O Projeto do ChatGPT no navegador é o caminho
   alternativo. Ler `.claude/skills/gerar-imagem-aula/SKILL.md` antes.
 - **Imagens de aula** — prompt v8: a peça gerada pelo Codex é final e sem marca; a action do Photoshop foi descontinuada (decisão #036).
+- **Design system** — portal, apostila e (após o piloto) imagens seguem o **Caderno Noturno** (DS v4) do ProfessorDash: azul-noite + amarelo, aluno no claro, vermelho só para erro (decisão #042). A `aula-estatica` embute Archivo, Geist e JetBrains Mono (SIL OFL, `assets/fonts/OFL.txt`); o `build.py` recusa `<em>` no título e `.roteiro` fora de `--professor`.
+- **Exercícios de Python (2026-11-05)** — site estático fora deste repo: `elvertoni/exercicios-python` (público, `~/PROJETOS/PESSOAL/exercicios-python`), publicado em https://elvertoni.github.io/exercicios-python/ pelo GitHub Pages. Os 177 exercícios da lista Python Brasil/dunossauro, com Pyodide em Web Worker, progresso no `localStorage` e exportar/importar. Não é aula canônica nem entra no manifesto; integração futura com o login do ProfessorDash depende do parecer ASTRA (editor em origem separada, salvamento remoto).
 - **Quíron (Hermes Agent na VPS)** — opera o acervo a partir de um clone na VPS com as skills de `hermes/`.
 - **Automação ESP32/WhatsApp (2026-10-20)** — protótipo em `aulas/robotica/automacao_zap_esp32/`, fora do fluxo de aulas canônicas. Compose independente do EasyPanel na VPS `vmi2626506`, `/opt/automacao-zap-esp32`: Mosquitto 2.1.2, Node-RED 5.0.8/FlowFuse Dashboard 1.33.0, Nginx e túnel Cloudflare dedicado. Painel em `https://automacao.tonicoimbra.com/dashboard/inicio` e MQTT/WSS em `/mqtt` (443); broker direto 8883/TLS com CA própria preservado. Configuração/scripts stdlib em `infra/`, interface/regras/testes JS em `infra/painel/`; senhas, credenciais Cloudflare e contexto persistente fora do Git. Editor só na VPS/SSH. Firmware Arduino em `firmware/`, gravado no DevKit COM6 (core 3.3.12; WiFiManager/WebSockets/MQTTPubSubClient), com portal Wi-Fi protegido `Toni-ESP32-01` em 192.168.4.1 e configuração também pelo IP local (HTTP Digest; decisão #024). Firmware wifi-2 separa o portal das tentativas de reconexão, preservando NVS; segredos de compilação fora do repo. Ver READMEs e decisões #018–#022; firmware online com estados confirmados por MQTT, painel com Volta Atelier do portfólio e publicação visual parcial. Ponte WhatsApp na Evolution Go (decisão #033).
 - **Ponte WhatsApp / Evolution Go (2026-10-27)** — `evoapicloud/evolution-go` 0.7.2 + Postgres próprio no Compose `/opt/automacao-zap-esp32` (Manager/API em `https://evolution.tonicoimbra.com` com login do painel, só `toni`; `127.0.0.1:8090` na VPS; webhook interno `painel:1880/zap/webhook`). Licença gratuita ativada pelo Toni. Segredos em `segredos/evolution.env`/`postgres.env` e `painel/segredos/zap.json` (fora do Git); preparo por `painel/preparar_zap.py`. A Evolution 2.3.7 (`evolution-teste` no EasyPanel), o Manager customizado e o MinIO foram todos removidos. Ver decisão #033 e `infra/painel/README.md`.
@@ -107,7 +109,7 @@ Especificado em `.claude/skills/prof-toni/spec/01-CANONICA.md` §5–§7; bloco 
 para o aluno.
 - **Callouts (6):** `:::conceito`, `:::exemplo`, `:::importante`, `:::atencao`, `:::dica`, `:::curiosidade`;
   abertos como `:::tipo Título`, fechados com `:::`.
-- **`:::roteiro`:** direção de cena só do professor. A apostila sempre o omite — nunca pôr ali algo que o aluno
+- **`:::roteiro`:** direção de cena só do professor. A apostila do aluno o omite (versão do professor só a pedido) — nunca pôr ali algo que o aluno
   precise.
 - **Interativos (2):** ` ```quiz ` e ` ```diagrama-progressivo `. O corpo é YAML real: valor com `: ` ou que
   começa com aspas vai entre aspas duplas. Cada pergunta tem exatamente uma alternativa `correta: true` (duas
