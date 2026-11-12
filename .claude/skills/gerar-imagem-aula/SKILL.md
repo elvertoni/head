@@ -26,7 +26,8 @@ Dois caminhos de geração, na ordem de preferência:
 
 ## Fontes obrigatórias
 
-1. Ler integralmente `tools/imagen-generator/prompt.xml`.
+1. Ler integralmente `tools/imagen-generator/prompt.xml` (no pacote do claude.ai, a cópia está em
+   `references/prompt.xml`).
 2. Confirmar `versao="8.0"` e `modo="arte_final_sem_branding"`. Não
    casou? Interromper e reportar a divergência antes de gerar qualquer coisa
    (o `montar_prompt.py` também confere e se recusa a montar).

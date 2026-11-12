@@ -48,6 +48,7 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tools/wiki_core.py` | Parser stdlib do subconjunto YAML do vault; usado por `lint_wiki.py` e `gerar_indice.py` |
 | `tools/lint_wiki.py` · `tools/gerar_indice.py` · `tools/gerar_mapas.py` | Lint da wiki (somente leitura), catálogo e MOCs |
 | `tools/lint_canonica.py` | Lint do corpo das canônicas contra a spec e o parser do portal (somente leitura) |
+| `tools/empacotar_skills.py` | Gera `saidas/skills/*.zip` das skills de `.claude/skills/` para o claude.ai (valida o frontmatter; leva o `prompt.xml` para dentro da `gerar-imagem-aula`) |
 | `tools/extrair_rco.py` · `tools/triar_rco.py` · `tools/jev.py` | Intake das aulas RCO da SEED e triagem com o Jev |
 | `tools/sync_notion.py` | Espelha o índice de aulas na base "Aulas" do Notion (mão única repo → Notion) |
 | `tools/notion-wiki/` | Puxa páginas do Notion para o lake |

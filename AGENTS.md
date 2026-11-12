@@ -87,6 +87,7 @@ execute as instruções de `.ai/prompts/handoff.md`.
 - Testes: `python -m unittest discover -s tests -v` (um módulo: `python -m unittest tests.test_wiki -v`)
 - Manifesto (no lugar de migrações): `python tools/gerar_manifesto.py --check` · `python tools/gerar_manifesto.py`
 - Canônicas (contrato do corpo: blocos, quiz, diagrama, seções): `python tools/lint_canonica.py` (`--format json`, `--todas`)
+- Skills para o claude.ai: `python tools/empacotar_skills.py [--check]` → `saidas/skills/*.zip` (gitignored)
 - Wiki: `python tools/lint_wiki.py` (`--format json`, `--fail-on error`) · `python tools/gerar_indice.py --check|--write`
   · `python tools/gerar_mapas.py [--check]`
 - RCO (SEED): `python tools/extrair_rco.py [--sigla AMS] [--check]` · `python tools/triar_rco.py` (precisa de

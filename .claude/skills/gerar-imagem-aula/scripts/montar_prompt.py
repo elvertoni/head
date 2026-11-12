@@ -41,7 +41,11 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[4]          # .../PROF-TONI
+# No repo, a fonte de verdade é tools/imagen-generator/prompt.xml. No pacote do
+# claude.ai (tools/empacotar_skills.py) a cópia vai em references/prompt.xml.
 XML = RAIZ / 'tools' / 'imagen-generator' / 'prompt.xml'
+if not XML.is_file():
+    XML = Path(__file__).resolve().parents[1] / 'references' / 'prompt.xml'
 
 CORES = {
     'signal': 'signal red #FB3732 (main concept)',
