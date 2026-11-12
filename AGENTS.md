@@ -86,6 +86,7 @@ execute as instruções de `.ai/prompts/handoff.md`.
   (no WSL o venv fica em `~/.venvs/prof-toni-transcrever` e o wrapper é o `transcrever.sh`; ver `tools/transcrever/README.md`)
 - Testes: `python -m unittest discover -s tests -v` (um módulo: `python -m unittest tests.test_wiki -v`)
 - Manifesto (no lugar de migrações): `python tools/gerar_manifesto.py --check` · `python tools/gerar_manifesto.py`
+- Canônicas (contrato do corpo: blocos, quiz, diagrama, seções): `python tools/lint_canonica.py` (`--format json`, `--todas`)
 - Wiki: `python tools/lint_wiki.py` (`--format json`, `--fail-on error`) · `python tools/gerar_indice.py --check|--write`
   · `python tools/gerar_mapas.py [--check]`
 - RCO (SEED): `python tools/extrair_rco.py [--sigla AMS] [--check]` · `python tools/triar_rco.py` (precisa de

@@ -47,6 +47,7 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tools/gerar_manifesto.py` | Gera e valida o `manifesto.json` |
 | `tools/wiki_core.py` | Parser stdlib do subconjunto YAML do vault; usado por `lint_wiki.py` e `gerar_indice.py` |
 | `tools/lint_wiki.py` · `tools/gerar_indice.py` · `tools/gerar_mapas.py` | Lint da wiki (somente leitura), catálogo e MOCs |
+| `tools/lint_canonica.py` | Lint do corpo das canônicas contra a spec e o parser do portal (somente leitura) |
 | `tools/extrair_rco.py` · `tools/triar_rco.py` · `tools/jev.py` | Intake das aulas RCO da SEED e triagem com o Jev |
 | `tools/sync_notion.py` | Espelha o índice de aulas na base "Aulas" do Notion (mão única repo → Notion) |
 | `tools/notion-wiki/` | Puxa páginas do Notion para o lake |
@@ -132,7 +133,7 @@ para o aluno.
   disciplina ou trilha.
 - `sync_notion.py` importa `parse_frontmatter` do gerador: mudar esse parser afeta os dois.
 
-Validadores: `gerar_manifesto.py --check`, `lint_wiki.py` e `sync_notion.py --check`. Frescor de derivados:
+Validadores: `gerar_manifesto.py --check`, `lint_wiki.py`, `lint_canonica.py` e `sync_notion.py --check`. Frescor de derivados:
 `gerar_indice.py --check`, `gerar_mapas.py --check`, `extrair_rco.py --check`.
 
 ## Estado atual do vault
