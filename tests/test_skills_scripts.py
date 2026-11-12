@@ -1,7 +1,8 @@
 """Testes dos scripts das skills em .claude/skills (stdlib only).
 
 Cobre o que cada script promete no próprio docstring:
-- aula-estatica/scripts/build.py: checklist da apostila.
+- aula-estatica/scripts/build.py: checklist da apostila e fontes embutidas.
+- aula-estatica/template.html: tokens e marca do Caderno Noturno (decisão #042).
 - aula-estatica/scripts/migrar_v2.py: questão sem gabarito não ganha data-correct chutado.
 - gerar-imagem-aula/scripts/montar_prompt.py: monta os dois perfis sem lacuna e recusa brief ruim.
 - gerar-imagem-aula/scripts/inspecionar_png.py: mede proporção pelo header IHDR.
@@ -50,6 +51,45 @@ class TestBuild(unittest.TestCase):
         ok = html.replace('<li class="lesson-quiz-question">', '<li class="lesson-quiz-question" data-correct="f">')
         self.assertFalse(any('data-correct' in p for p in build.check(ok)))
 
+    def test_roteiro_so_na_versao_do_professor(self):
+        html = ('<body><h1>x</h1><nav class="toc"><a href="#sec-1">a</a></nav>'
+                '<section class="section section--close" id="sec-1">'
+                '<aside class="roteiro"><p>cola</p></aside></section></body>')
+        self.assertTrue(any('roteiro' in p for p in build.check(html)))
+        self.assertFalse(any('roteiro' in p for p in build.check(html, professor=True)))
+
+    def test_titulo_sem_em(self):
+        html = ('<body><h1>Formulários que <em>não recarregam</em></h1><nav class="toc"><a href="#sec-1">a</a></nav>'
+                '<section class="section section--close" id="sec-1"></section></body>')
+        self.assertTrue(any('<em>' in p for p in build.check(html)))
+        self.assertFalse(any('<em>' in p for p in build.check(html.replace('<em>', '').replace('</em>', ''))))
+
+    def test_fontes_embutidas_incluem_geist(self):
+        tpl = (SKILLS / 'aula-estatica' / 'template.html').read_text(encoding='utf-8')
+        html, ok = build.embed_fonts(tpl)
+        self.assertTrue(ok)
+        for familia in ('Archivo', 'Geist', 'JetBrains Mono'):
+            self.assertIn(f"font-family: '{familia}'", html)
+        self.assertNotIn('fonts.googleapis.com', html)
+
+
+class TestTemplateCadernoNoturno(unittest.TestCase):
+    """Decisão #042: a apostila segue o Caderno Noturno (DS v4) do portal."""
+    TPL = (SKILLS / 'aula-estatica' / 'template.html').read_text(encoding='utf-8')
+
+    def test_tokens_do_portal_nos_dois_temas(self):
+        for valor in ('#080c17', '#ffd43b', '#f1f0ec', '#1747c7', '#b93028', '#ff8a80'):
+            self.assertIn(valor, self.TPL)
+
+    def test_vermelho_do_volta_saiu(self):
+        self.assertNotIn('#fb3732', self.TPL.lower())
+        self.assertNotIn('tc-fenda', self.TPL)   # máscara do monograma antigo
+
+    def test_corpo_em_geist_e_codigo_em_mono(self):
+        self.assertIn("--font-body: 'Geist'", self.TPL)
+        self.assertIn("--font-mono: 'JetBrains Mono'", self.TPL)
+        self.assertIn('viewBox="0 0 403.93 226.77"', self.TPL)   # monograma novo
+
 
 class TestMigrarV2(unittest.TestCase):
     V2 = ('<p><strong>Questão 1.</strong> Quanto é 2+2?</p><ol type="a"><li>3</li><li>4{marca}</li></ol>'
@@ -60,6 +100,17 @@ class TestMigrarV2(unittest.TestCase):
         saida = migrar.convert_questions(self.V2.format(marca=''))
         self.assertIn('class="lesson-quiz-question">', saida)
         self.assertNotIn('data-correct', saida)
+
+    def test_faixa_da_aula_fora_do_main(self):
+        dados = {'title': 'Aula 9 · X', 'disciplina': 'D', 'eyebrow': 'Aula 09', 'h1': 'Título',
+                 'lead': 'Lead', 'meta': [('Disciplina', 'D')], 'footer': 'F', 'toc_title': 'Nesta aula',
+                 'toc': [('sec-1', '01', 'Fechamento')],
+                 'sections': [{'id': 'sec-1', 'close': True, 'index': '01', 'h2': 'Fim', 'content': '<p>ok</p>'}]}
+        html = migrar.render_v3(dados)
+        self.assertEqual(html.count('class="lesson-header"'), 1)
+        self.assertNotIn('[EDIT', html)
+        self.assertLess(html.index('class="lesson-header"'), html.index('<main class="shell"'))
+        self.assertEqual(build.check(html), [])
 
     def test_com_marca_correta(self):
         saida = migrar.convert_questions(self.V2.format(marca=' <strong>(correta)</strong>'))

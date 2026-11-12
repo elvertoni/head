@@ -4,11 +4,13 @@
 Uso:
     python scripts/build.py entrada.html saida.html
     python scripts/build.py entrada.html --check      # só valida, não grava
+    python scripts/build.py entrada.html saida.html --professor   # versão do professor (aceita roteiro)
 
 O que faz:
 1. Troca o bloco entre <!-- FONTES:INICIO --> e <!-- FONTES:FIM --> pelas fontes
-   Archivo e JetBrains Mono embutidas em base64 (o arquivo passa a abrir 100%
-   offline, como o portal, que também hospeda as próprias fontes).
+   Archivo, Geist e JetBrains Mono embutidas em base64 (o arquivo passa a abrir
+   100% offline, como o portal, que também hospeda as próprias fontes). As três
+   são SIL Open Font License 1.1 (assets/fonts/OFL.txt).
 2. Embute as imagens locais (<img src="img/...">) como data URI, convertendo PNG/JPG
    para WebP com ffmpeg quando ele existir (arquivo bem menor, mesma nitidez).
 3. Roda o checklist da skill e aponta cada problema com o motivo.
@@ -43,10 +45,12 @@ def embed_fonts(html):
         return (f"@font-face {{ font-family: '{family}'; font-style: normal; font-weight: {weight}; "
                 f"font-display: swap; src: url(data:font/woff2;base64,{data}) format('woff2'); }}")
 
-    block = ('<!-- FONTES: embutidas por scripts/build.py (Archivo + JetBrains Mono, self-host como no portal) -->\n'
+    block = ('<!-- FONTES: embutidas por scripts/build.py (Archivo, Geist e JetBrains Mono, self-host como no portal;'
+             ' todas SIL Open Font License 1.1) -->\n'
              '  <style>\n'
-             f"  {face('Archivo', 'archivo-latin.woff2', '400 900')}\n"
-             f"  {face('JetBrains Mono', 'jetbrains-mono-latin.woff2', '400 700')}\n"
+             f"  {face('Archivo', 'archivo-latin.woff2', '100 900')}\n"
+             f"  {face('Geist', 'geist-latin-variable.woff2', '100 900')}\n"
+             f"  {face('JetBrains Mono', 'jetbrains-mono-latin.woff2', '400 800')}\n"
              '  </style>')
     return html[:a] + block + html[b:], True
 
@@ -102,7 +106,7 @@ class TagBalance(HTMLParser):
             self.errors.append(f'</{tag}> na linha {self.getpos()[0]} não fecha nada aberto')
 
 
-def check(html, base_dir=None):
+def check(html, base_dir=None, professor=False):
     problems = []
     body = html[html.find('<body'):]
 
@@ -110,10 +114,15 @@ def check(html, base_dir=None):
         problems.append('Ainda há marcadores [EDIT...] no arquivo.')
     if body.count('<h1') != 1:
         problems.append(f'Deve haver exatamente um <h1> (achei {body.count("<h1")}).')
+    if re.search(r'<h1[^>]*>[^<]*(?:<(?!/h1)[^>]*>[^<]*)*<em>', body):
+        problems.append('Título (<h1>) com <em>: o v4 não destaca palavra no título (decisão #042). Tire o <em>.')
     if re.search(r'class="[^"]*\b(accent|c-primary|c-secondary|c-tertiary|c-warning|c-error|code-shell|demo-wrap|hero-title|apostila-shell)\b', body):
         problems.append('Há classes do template v2 (accent, c-*, code-shell, demo-wrap...). Use os componentes do BLOCOS.md v3.')
     if re.search(r'linear-gradient\([^)]*(#10b981|#8b5cf6|#06b6d4)', html):
-        problems.append('Degradê multicolorido do design antigo detectado: banido no Volta Atelier.')
+        problems.append('Degradê multicolorido do design antigo detectado: banido no design system.')
+    if not professor and 'class="roteiro"' in body:
+        problems.append('Há roteiro do professor (.roteiro): a apostila do aluno omite o roteiro. '
+                        'Para a versão do professor, rode com --professor.')
 
     ids = re.findall(r'<section class="section[^"]*" id="([^"]+)"', body)
     toc = re.search(r'<nav class="toc".*?</nav>', body, re.S)
@@ -174,7 +183,7 @@ def main(argv):
     src = Path(argv[1])
     html = src.read_text(encoding='utf-8')
     only_check = '--check' in argv
-    problems = check(html, src.parent)
+    problems = check(html, src.parent, professor='--professor' in argv)
     if not only_check:
         if len(argv) < 3 or argv[2].startswith('--'):
             print('Informe o arquivo de saída (ou use --check).')

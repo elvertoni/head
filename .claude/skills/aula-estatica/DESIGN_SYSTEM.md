@@ -1,92 +1,93 @@
-# Design System da apostila — v3 · Volta Atelier
+# Design System da apostila — v4 · Caderno Noturno
 
-Versão **3.0**. Fonte de verdade de origem: repositório do ProfessorDash
-(`DESIGN.md`, `design-system/volta-atelier.html`, `static/css/app.css`, `static/logo.svg`).
-Este documento traduz o Volta Atelier para o formato apostila (arquivo único, offline, A4).
-O CSS já está pronto no `template.html` — aqui fica o **porquê** de cada escolha, para que
+Versão **4.0** (decisão #042, 2026-11-12). Fonte de verdade de origem: repositório do ProfessorDash
+(`DESIGN.md` — o topo vale sobre o "Histórico Volta Atelier" —, `design-system/caderno-noturno.html`,
+`static/css/caderno.css`, `static/css/lesson.css`, `templates/partials/_brand.html`).
+Este documento traduz o Caderno Noturno para o formato apostila (arquivo único, offline, A4).
+O CSS já está pronto no `template.html`; aqui fica o **porquê** de cada escolha, para que
 qualquer IA mantenha a coerência quando o conteúdo pedir algo que o template não prevê.
 
 Sumário: 1 identidade · 2 cor · 3 tipografia · 4 espaço e forma · 5 componentes ·
-6 comportamento · 7 impressão · 8 acessibilidade · 9 o que mudou do v2 · 10 proibido
+6 comportamento · 7 impressão · 8 acessibilidade · 9 versões · 10 proibido
 
 ---
 
 ## 1. Identidade
 
-**Brutalismo editorial refinado.** Alto contraste, tipografia de estúdio, linhas de registro
-organizando a página em vez de caixas empilhadas. A apostila é uma bancada de leitura, não um
-slide decorado: o aluno está ali para entender e terminar a tarefa.
+**Sóbrio e editorial: azul-noite + amarelo na identidade, papel claro e folha branca na leitura.**
+O conteúdo começa logo depois da faixa da aula; a apostila é uma folha de estudo, não um slide.
 
-- **Marca:** ligadura **TC** (`assets/logo.svg`). O C é sempre `--signal` `#fb3732`; o T acompanha
-  o tema (osso no escuro, tinta no claro), com o vão recortado por máscara. Vai inline no cabeçalho
-  exatamente como está no template — não redesenhe, não recolora, não troque pelo logo antigo.
-- **Favicon:** o corte próprio de 16 px (`assets/favicon.svg`), embutido como data URI.
+- **Marca:** monograma **TC** desenhado pelo Toni (o corte do T acompanha a curva do C). Inline no
+  cabeçalho exatamente como está no template (paths de `_brand.html`): T em `currentColor`, C
+  **sempre** amarelo `#ffd43b`. Não redesenhe, não recolora. Arquivos: `assets/logo.svg` (fundo
+  escuro) e `assets/favicon.svg` (fundo `#0a0e1a`).
+- **Cabeçalho sempre noturno**, nos dois temas, com a marca, Sumário, tema, PDF sem respostas e
+  Salvar PDF (pílula amarela).
+- **Faixa noturna da aula** (`.lesson-header`): numeral amarelo grande, rótulo em mono, título
+  Archivo 800, lead, chips, metadados e a capa ilustrada ao lado.
 - **Assinatura:** "Prof. Toni Coimbra" em Archivo 800; rodapé `Material produzido pelo Prof. Toni
   Coimbra · aulas.tonicoimbra.com`.
-- **Tema padrão: claro.** No portal, aluno = claro e professor = escuro. A apostila é material de
-  aluno, então abre clara; o botão alterna e a escolha fica salva (`localStorage: apostila-theme`).
+- **Tema:** abre **claro** (no portal, aluno = claro); o aluno troca no botão e a escolha fica salva
+  (`localStorage: apostila-theme`). O escuro é o azul-noite com ação amarela.
 
 ## 2. Cor
 
-Tokens canônicos (iguais ao `app.css`). Cada cor tem **função**; não use cor como enfeite.
+Tokens iguais ao `caderno.css`. Cada cor tem **função**; não use cor como enfeite.
 
 | Token | Escuro (`:root`) | Claro (`[data-theme='light']`) | Função |
 |---|---|---|---|
-| `--ink` | `#141414` | `#f6f5f2` | fundo da página |
-| `--ink-deep` | `#0d0d0d` | `#eceae5` | rodapé, poços |
-| `--panel` | `#1c1c1e` | `#ffffff` | superfície de callout, quiz, passos |
-| `--panel-2` | `#232326` | `#faf9f7` | superfície elevada |
-| `--line` / `--line-2` | branco 11% / 20% | tinta 10% / 18% | divisores / bordas ativas |
-| `--bone` | `#f4f3f0` | `#141414` | texto principal |
-| `--muted` | `#8e8e95` | `#5c5c63` | texto secundário |
-| `--dim` | `#8d8d96` | `#6b6b72` | metadados |
-| `--signal` | `#fb3732` | `#fb3732` | **acento**: palavra-chave do título, eyebrow, hover, número de passo, erro |
-| `--signal-text` | `#ff5c57` | `#c81e1a` | signal quando é **texto** (contraste AA) |
-| `--amber` | `#ffa31a` | `#d97706` | atenção, importante |
-| `--emerald` | `#10b981` | `#059669` | conclusão: checklist, dica, objetivo, acerto no quiz |
-| `--volt` | `#3b49e4` | `#2563eb` | apoio: roteiro do professor |
-| info | `#38bdf8` | `#0284c7` | conceito, exemplo |
+| `--ink` | `#080c17` | `#f1f0ec` (papel) | fundo da página |
+| `--panel` | `#0f1729` | `#ffffff` (folha) | folha de leitura, fundo das alternativas |
+| `--panel-2` | `#17213a` | `#f5f4f0` | caixa: callout, quiz, diagrama, tabela |
+| `--line` / `--line-2` / `--line-ui` | `#1d2a4a` / `#2f4170` / `#47598a` | `#e2dfd8` / `#cfcbc2` / `#a9a59c` | divisor / borda / borda de controle |
+| `--bone` | `#eef2f8` | `#16181d` | texto principal |
+| `--muted` | `#a3b1c9` | `#555a64` | texto secundário, rótulos |
+| `--accent` (+ `--accent-ink`) | `#ffd43b` (tinta `#1b1500`) | `#1747c7` (tinta branca) | **ação**: botão primário, preenchimento de destaque em gráfico |
+| `--link` | `#8dbcf5` | `#1747c7` | link, número de passo, tom padrão de callout |
+| `--ok` | `#5fd08d` | `#1c7447` | conclusão: checklist, dica, objetivo, acerto |
+| `--warn` / `--warn-text` | `#f2bd4b` | `#b86e00` / `#8f5400` | atenção, importante |
+| `--danger` | `#ff8a80` | `#b93028` | **só erro**: alternativa errada, callout `erro` |
+| `--night*` | `#0a0e1a`, `#121d36`, `#1a2a4d`… | iguais | cabeçalho, faixa da aula, código, callout Exemplo |
+| `--hi` | `#ffd43b` | `#ffd43b` | marca, numeral da aula, régua de leitura, seleção |
 
 Regras:
 
-- **Signal com parcimônia.** Ele marca o que é central; se tudo é vermelho, nada é.
-- Texto em cor de acento usa a variante `-text`/`-deep` (contraste ≥ 4,5:1 no claro).
-- **Sem degradê como tema.** O único gradiente permitido é o filete fino da capa (signal → linha →
-  transparente), herdado do portal.
-- Blocos de código são **sempre escuros** (`--code-bg`), nos dois temas — como num editor.
+- **Vermelho é só erro.** Nada de vermelho como acento, título ou enfeite.
+- **Ação, erro e "texto sobre a ação" são tokens separados.** Texto sobre um preenchimento sólido usa
+  `--accent-ink` (escuro no tema escuro, branco no claro), nunca branco fixo.
+- Os nomes do v3 (`--signal`, `--emerald`, `--amber`, `--volt`, `--signal-text`…) continuam como
+  **aliases** dos tokens novos, para apostilas e gráficos já escritos.
+- **Sem degradê.** Cor chapada; superfícies se separam por cor de caixa, não por sombra.
+- Código é **sempre** janela noturna (`--night`), nos dois temas.
 
 ## 3. Tipografia
 
 | Papel | Família | Uso |
 |---|---|---|
-| Display | **Archivo** 800 | título da capa, `h2` de seção, título de parte, marca, valores da capa |
-| Corpo / mono | **JetBrains Mono** 400–700 | texto corrido, `h3`/`h4`, rótulos, código, chips, botões |
+| Display | **Archivo** 800 | título da faixa, `h2`, `h3`, título de parte, marca, numeral |
+| Texto e interface | **Geist** 400–650 | texto corrido, botões, rótulo de callout, alternativas |
+| Mono | **JetBrains Mono** 400–600 | só código, medidas e rótulos curtos (kickers, `caption`, número do passo) |
 
-- Corpo de leitura em mono, como no leitor do portal (D.15): `--reader-size` 16–18 px, `line-height` 1.8,
-  `word-spacing` .02em, medida `--measure: 62ch`. Leitura longa precisa respirar.
-- Escala: capa `clamp(36px, 5.4vw, 64px)` · seção `clamp(28px, 3.6vw, 44px)` · parte `clamp(22px, 2.4vw, 30px)`
-  · `h3` 1.16em · `h4` 1.04em · rótulos 11–12 px em caixa-alta com `letter-spacing` .1–.16em.
-- Títulos Archivo com `letter-spacing: -.03em` e `line-height` ~1; mono nunca tem tracking negativo.
-- **Texto proporcional (opcional):** `<body data-texto="proporcional">` põe parágrafos, listas e
-  células em Archivo 400; código, rótulos, títulos de parte, sumário e botões seguem em mono. Use em
-  material longo de leitura (apostila de revisão), onde a mono cansa. Glifos que faltam na Archivo
-  (→, ≤, ↔) caem para a JetBrains Mono. O arquivo embutido da Archivo é variável (100–900).
+- Leitura: Geist 17 px, `line-height` 1.75, medida `--measure: 42rem` (em rem, para valer igual com
+  fontes diferentes). No PDF, 10,5 pt.
+- Escala: faixa `clamp(30px, 3.6vw, 48px)` · seção `clamp(26px, 2.6vw, 36px)` · `h3` 20–24 px ·
+  kickers mono 12 px em caixa-alta, cor neutra.
+- `data-texto="proporcional"` (decisão #017) virou o padrão: o atributo ainda é aceito e não muda nada.
 - **Fontes:** o template carrega pelo Google Fonts; o `scripts/build.py` troca por cópias embutidas
-  (`assets/fonts/*.woff2`, as mesmas que o portal hospeda), e o arquivo passa a abrir 100% offline.
+  (`assets/fonts/*.woff2`, os mesmos arquivos que o portal hospeda), e o arquivo passa a abrir 100%
+  offline. As três são SIL OFL 1.1 (`assets/fonts/OFL.txt`).
 
 ## 4. Espaço e forma
 
 - Grade de 4 px: `--space-1..10` = 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64.
-- Raios: 4 (código inline) · 12 (callout, código, tabela) · 18 (quiz) · 999 (botões e chips: **pílula**).
-- **Profundidade por borda**, não por sombra: superfícies se separam por `--line` e por
-  `--panel` sobre `--ink`. A única sombra é o brilho do botão primário.
-- Página: coluna de até 1120 px; texto preso na medida; tabelas, código e demos usam a largura toda.
-- **Leitura ampla (opcional):** `<body data-layout="amplo">` alinha texto, títulos, callouts,
-  exercícios e tabelas na largura disponível, com casca de até 1200 px. Use quando o Toni pedir
-  melhor aproveitamento horizontal. Mantém Archivo + JetBrains Mono, margens fluidas e tabelas
-  roláveis no celular; no A4, usa toda a largura útil e permite que questões longas continuem na
-  página seguinte sem separar as alternativas. Pode combinar com `data-print="capitulos"`.
-- Seções separadas por **linhas de registro** (borda de 1 px), não por cartões.
+- Raios: 4 (código inline) · 6 (chip de vocabulário) · 10 (código, tabela, alternativa) · 16 (callout,
+  quiz, diagrama, folha) · 999 (botões e chips: **pílula**).
+- **Papel e folha:** a página é papel (`--ink`); o conteúdo fica numa folha (`--panel`) de até
+  1040 px, com cantos de 16 px a partir de 640 px. No celular a folha vai de ponta a ponta.
+- Texto preso na medida; tabelas, código, diagramas e gráficos usam a largura da folha.
+- Alvos de toque de **44 px** no mínimo (botões, sumário, gabarito, rodapé), como no portal (D.20).
+- **Leitura ampla (opcional):** `<body data-layout="amplo">` solta a medida e alarga a folha para
+  1200 px. Pode combinar com `data-print="capitulos"`.
 
 ## 5. Componentes
 
@@ -94,84 +95,81 @@ Snippets em `BLOCOS.md`. Resumo de intenção:
 
 | Componente | Origem no portal | Ideia |
 |---|---|---|
-| Cabeçalho fixo | `.site-header` + `.brand` + `.btn` | marca TC, Sumário, tema, PDF sem respostas, Salvar PDF |
-| Capa | `.lesson-header`, `.chip`, `h1 em` | eyebrow, chips, título com palavra-chave em signal, dek, meta |
-| Sumário | registro de linhas | lista numerada em mono, 2–3 colunas |
-| Seção | `.section-heading` + `.prose` | eyebrow + h2 Archivo; texto na medida |
-| Divisor de parte | (extensão) | filete grosso + eyebrow + h3 Archivo, para material longo |
-| Callout | `.callout .ic .ct` | ícone Lucide em quadrado tingido + rótulo "Tipo · Título" |
-| Código | `.prose pre` | painel escuro, rótulo da linguagem, botão Copiar |
-| Tabela | `.prose table` | cabeçalho mono caixa-alta, rolagem horizontal |
-| Passos | `.lesson-steps` | índice quadrado em signal |
+| Cabeçalho | `.site-header` (noturno) | marca TC, Sumário, tema, PDF sem respostas, Salvar PDF |
+| Faixa da aula | `.cn-cover` / `.cn-hero` | numeral amarelo, kicker, título, lead, chips, metadados, capa |
+| Sumário | registro de linhas | lista numerada, 2–3 colunas |
+| Seção | `.cn-prose h2` | kicker + `h2` Archivo; texto na medida |
+| Divisor de parte | (extensão) | filete grosso + kicker + `h3` Archivo, para material longo |
+| Callout | `.cn-prose .callout` | caixa sem borda, ícone Lucide em círculo tingido, rótulo Geist na cor do tom |
+| Exemplo | `.callout.exemplo` | caixa noturna nos dois temas |
+| Código | `.cn-code` | janela noturna, barra com a linguagem, botão Copiar |
+| Tabela | `.cn-prose table` | linhas finas, cabeçalho em caixa, rolagem horizontal |
+| Diagrama | `.lesson-diagram` | caixa com `figcaption` e etapas numeradas em círculo |
 | Exercícios | `.lesson-quiz`, `.quiz-option` | alternativas clicáveis, feedback, gabarito comentado |
-| Checklist | (verde = conclusão) | check esmeralda |
-| Resumo do tema | (extensão) | ficha por habilidade: código e título à esquerda, pontos-chave à direita |
-| Roteiro | (extensão) | tracejado volt, some no PDF |
-| Capa ilustrada | `.lesson-hero` | imagem 3:2 da `gerar-imagem-aula`, borda fina, raio 18 |
-| Gráfico SVG | (extensão) | moldura de painel; cores por classe de token, texto real, troca de tema sozinho |
+| Checklist | (verde = conclusão) | check verde |
+| Resumo do tema | (extensão) | ficha por habilidade |
+| Roteiro | (extensão) | tracejado azul; só na versão do professor |
+| Capa ilustrada | card da capa na faixa | imagem 3:2 da `gerar-imagem-aula`, ao lado do título |
+| Gráfico SVG | (extensão) | caixa; cores por classe de token, texto real, troca de tema sozinho |
 
-**Imagem gerada × SVG.** Ilustração conceitual vem da skill `gerar-imagem-aula` (prompt v8, mesmo
-Volta Atelier: grafite, cor chapada, signal como âncora). Dado, número e palavra exata são SVG.
-As imagens geradas são sempre escuras (grafite) — no tema claro elas aparecem como placas
-escuras emolduradas, do mesmo jeito que os blocos de código.
+**Imagem gerada × SVG.** Ilustração conceitual vem da skill `gerar-imagem-aula`; dado, número e
+palavra exata são SVG. Enquanto o prompt de imagem não migrar para o v9 (decisão #042), as peças
+geradas continuam escuras (grafite); na faixa noturna e na caixa elas aparecem como placas
+emolduradas.
 
 ## 6. Comportamento (JS do template — não reescreva)
 
 1. **Tema:** alterna `data-theme` claro/escuro e salva a escolha.
-2. **Régua de leitura:** barra de 2 px em signal no topo, via `requestAnimationFrame`.
+2. **Régua de leitura:** barra de 2 px amarela no topo, via `requestAnimationFrame`.
 3. **Copiar:** botão em cada `<pre><code>`.
 4. **Quiz:** clique → `is-correct` / `is-wrong` / `is-revealed` / `is-dimmed` (mesmas classes do
-   portal), feedback com `aria-live`, gabarito abre; placar com próximo passo quando todas forem
-   respondidas; botão **Refazer** zera o bloco (recuperar a resposta é a prática que fixa).
-4b. **Orientação:** o cabeçalho mostra a seção em que o aluno está; tabelas e gráficos largos
-   ganham sombra nas bordas quando há mais conteúdo para rolar.
-4c. **Checklist de estudo** (`.checklist.todo`) marca e lembra no navegador.
-5. **Impressão:** antes de imprimir, abre todos os `<details>` (o gabarito sai no PDF). O botão
-   **PDF sem respostas** imprime a versão de treino (`body[data-print-mode="treino"]`): some o
-   gabarito comentado, a solução das atividades e as marcações de quem já respondeu; o gabarito
-   rápido do fechamento continua.
+   portal), feedback com `aria-live`, gabarito abre; placar quando todas forem respondidas; botão
+   **Refazer** zera o bloco.
+5. **Orientação:** o cabeçalho mostra a seção em que o aluno está; seção longa ganha a lista
+   "Tópicos desta seção"; tabelas e gráficos largos ganham sombra nas bordas e aviso de arraste.
+6. **Checklist de estudo** (`.checklist.todo`) marca e lembra no navegador.
+7. **Impressão:** antes de imprimir, abre todos os `<details>` (o gabarito sai no PDF). O botão
+   **PDF sem respostas** imprime a versão de treino (`body[data-print-mode="treino"]`).
 
-Movimento é curto e funcional (hover de pílula com wipe, deslize de 2 px na alternativa), e
-`prefers-reduced-motion` desliga tudo.
+Movimento é curto e funcional; `prefers-reduced-motion` desliga tudo.
 
 ## 7. Impressão (A4)
 
-`@page A4, 14 mm`. No PDF a paleta é forçada para o claro de alto contraste; somem cabeçalho,
-régua, sumário, roteiro e botões Copiar; código vira fundo claro com quebra de linha; callouts,
-questões, tabelas e passos não quebram no meio. Para material longo, `<body data-print="capitulos">`
-faz cada seção começar em página nova.
+`@page A4, 14 mm`. No PDF a paleta vira papel branco e tinta escura; a "noite" vira cinza-papel
+(código, faixa e callout Exemplo não gastam toner). Somem cabeçalho, régua, sumário, roteiro e
+botões Copiar; a capa ilustrada desce para baixo do título; código quebra linha; caixas ganham
+borda fina; callouts, questões, tabelas e passos não quebram no meio. Para material longo,
+`<body data-print="capitulos">` faz cada seção começar em página nova.
 
 ## 8. Acessibilidade (piso, não enfeite)
 
-- Contraste AA em todos os pares texto/superfície (por isso existem as variantes `-text`/`-deep`).
-- Foco visível em signal em tudo que é clicável; link "Pular para o conteúdo" que aparece no foco.
-- Código inline em cor de texto (não signal): o vermelho fica reservado para o destaque e o erro.
+- Contraste AA em todos os pares texto/superfície (por isso `--warn-text`, `--ok-text` e `--accent-ink`).
+- Foco visível de 3 px (azul na folha, amarelo nas áreas noturnas); "Pular para o conteúdo" no foco.
+- Alvos de toque de 44 px no celular.
 - Ícones decorativos com `aria-hidden`; informação nunca só por cor (o quiz usa ✓/✗ e texto).
 - `lang="pt-BR"`, HTML semântico (`header`, `nav`, `main`, `section`, `aside`, `figure`).
 
-## 9. O que mudou do v2 para o v3
+## 9. Versões
 
-| v2 (aulas.tonicoimbra.com antigo) | v3 (Volta Atelier) |
-|---|---|
-| Logo C ciano `#00B4D8` + seta azul | Ligadura **TC** com C em `#fb3732` |
-| Geist / Geist Mono | **Archivo** (display) + **JetBrains Mono** (corpo) |
-| Abre escuro | Abre **claro** (material de aluno) |
-| Degradê verde→roxo→ciano, `.accent` com gradiente | Cor chapada; palavra-chave em `<em>` signal |
-| `callout c-primary/c-secondary/c-tertiary/c-warning/c-error` com marca de texto | `callout conceito/atencao/dica/exemplo/importante/curiosidade/objetivo/erro` com ícone Lucide |
-| `.code-shell` com bolinhas de janela | `<pre data-lang>` + botão Copiar |
-| `.demo-wrap` + `table.demo` | `<table>` com `<caption>`; `.demo` só para HTML renderizado |
-| Questão com "(correta)" marcada + callout de resposta | `.lesson-quiz` interativo + gabarito em `<details>` |
-| `.tags` | `.chips` / `.chip` |
-| `.section-close` | `.section--close` |
-| Google Fonts obrigatório | fontes embutidas pelo `build.py` (offline de verdade) |
+| | v2 (aulas.tonicoimbra.com antigo) | v3 (Volta Atelier) | v4 (Caderno Noturno) |
+|---|---|---|---|
+| Marca | logo C ciano `#00B4D8` | ligadura TC, C vermelho `#fb3732` | monograma TC do Toni, C amarelo `#ffd43b` |
+| Fontes | Geist / Geist Mono | Archivo + JetBrains Mono no corpo | Archivo + **Geist** no corpo + JetBrains Mono no código |
+| Cor | degradê verde→roxo→ciano | grafite + vermelho signal | azul-noite + amarelo; azul de ação no claro; vermelho só erro |
+| Título | `.accent` com gradiente | palavra-chave em `<em>` vermelho | sem palavra destacada |
+| Capa | — | cabeçalho claro + filete vermelho | faixa noturna com numeral e capa ao lado |
+| Callouts | `c-primary`… com marca de texto | ícone em quadrado, borda | ícone em círculo tingido, caixa sem borda, Exemplo noturno |
+| Botões | — | pílula com wipe vermelho | pílula chapada, sem wipe |
+| Questões | "(correta)" marcada | `.lesson-quiz` interativo | igual, no visual do portal |
 
-Apostilas antigas: `scripts/migrar_v2.py antiga.html nova.html` faz a tradução automática.
+Apostilas v2: `scripts/migrar_v2.py antiga.html nova.html` traduz direto para o v4. Apostilas v3
+continuam abrindo como estão; para atualizar, regere a partir da canônica (nunca edite a saída).
 
 ## 10. Proibido
 
-- Degradê multicolorido, glassmorphism, sombra colorida, neon aleatório.
-- Barra lateral colorida de 4 px em citação ou callout (o portal baniu).
-- Mais de uma palavra-chave `<em>` no título; signal espalhado em parágrafos.
+- Vermelho fora de erro; degradê, glassmorphism, sombra colorida, neon.
+- Barra lateral colorida em citação ou callout.
+- Palavra destacada (`<em>`) no título (o `build.py` acusa).
 - Componente inventado fora do `BLOCOS.md` (conteúdo sem componente vira `<p>`).
 - Reescrever o CSS do template (ajuste pontual vai **no fim** do `<style>`).
 - `<` ou `>` sem escapar dentro de `<pre><code>`.

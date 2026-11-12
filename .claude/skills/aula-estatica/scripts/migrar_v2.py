@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Migra uma apostila do template v2 (gradientes, Geist, logo C ciano) para o v3 Volta Atelier.
+"""Migra uma apostila do template v2 (logo C ciano, gradientes) para o template atual (v4 Caderno Noturno).
 
 Uso:
     python scripts/migrar_v2.py antiga.html nova.html [--capitulos] [--manter-tema-escuro]
@@ -7,6 +7,7 @@ Uso:
 Lê o conteúdo da apostila v2 (capa, sumário, seções, callouts, code-shells, tabelas,
 questões de fixação, roteiros), traduz cada componente para o equivalente do BLOCOS.md v3
 e encaixa tudo no template.html atual. O conteúdo e a voz não mudam: só a roupa.
+O destaque de palavra do título (span.accent) vira texto comum: o v4 não destaca palavra.
 
 Depois rode scripts/build.py no resultado para embutir as fontes e validar.
 """
@@ -232,7 +233,7 @@ def parse_v2(doc):
         'meta': re.findall(r'<div class="meta-card"><dt>(.*?)</dt><dd>(.*?)</dd></div>', doc, re.S),
         'footer': strip_comments(get(r'Apostila estática\s*·\s*(.*?)</span>')),
     }
-    data['h1'] = re.sub(r'<span class="accent">(.*?)</span>', r'<em>\1</em>', data['h1'], flags=re.S)
+    data['h1'] = re.sub(r'<span class="accent">(.*?)</span>', r'\1', data['h1'], flags=re.S)
     main = get(r'<main class="shell">(.*?)</main>')
     sections = []
     for m in re.finditer(r'<section class="section( section-close)?" id="([^"]+)">(.*?)</section>', main, re.S):
@@ -262,20 +263,25 @@ def render_v3(data, capitulos=False):
 
     disciplina_chip = next((dd for dt, dd in data['meta'] if 'disciplina' in dt.lower()), data['disciplina'])
     meta = '\n'.join(f'        <div><dt>{dt}</dt><dd>{dd}</dd></div>' for dt, dd in data['meta'])
-    chips = f'        <li class="chip">{disciplina_chip}</li>' if disciplina_chip else ''
-    header = f'''
-    <header class="lesson-header" id="topo">
-      <p class="eyebrow">{data["eyebrow"]}</p>
-      <ul class="chips">
+    chips = f'          <li class="chip">{disciplina_chip}</li>' if disciplina_chip else ''
+    header = f'''  <header class="lesson-header" id="topo">
+    <div class="lesson-header-inner">
+      <div class="lesson-header-copy">
+        <p class="eyebrow">{data["eyebrow"]}</p>
+        <h1>{data["h1"]}</h1>
+        <p class="dek">{data["lead"]}</p>
+        <ul class="chips">
 {chips}
-      </ul>
-      <h1>{data["h1"]}</h1>
-      <p class="dek">{data["lead"]}</p>
-      <dl class="meta">
+        </ul>
+        <dl class="meta">
 {meta}
-      </dl>
-    </header>
+        </dl>
+      </div>
+    </div>
+  </header>
 '''
+    # A faixa da aula fica fora do <main> (v4): troca a do template pela migrada.
+    head = re.sub(r'  <header class="lesson-header" id="topo">.*?\n  </header>\n', lambda _: header, head, count=1, flags=re.S)
     toc_items = '\n'.join(
         f'        <li><a href="#{sid}"><span class="toc-num">{num}</span><span>{label}</span></a></li>'
         for sid, num, label in data['toc'])
@@ -299,7 +305,7 @@ def render_v3(data, capitulos=False):
 {convert_body(sec["content"])}
     </section>
 ''')
-    return head + '<main class="shell" id="conteudo">\n' + header + toc + ''.join(blocks) + '\n  </main>' + tail
+    return head + '<main class="shell" id="conteudo">\n' + toc + ''.join(blocks) + '\n  </main>' + tail
 
 
 def main(argv):

@@ -12,7 +12,7 @@ prof-toni ──cria──► canonica.md ──veste──► aula-estatica ─
 | Skill | O que faz | Entrada → Saída |
 |---|---|---|
 | **`prof-toni`** | Gera a **Aula Canônica**: o conteúdo pedagógico no padrão (protocolo + rubrica). É onde mora a inteligência. | tema / material / SEED → `canonica.md` |
-| **`aula-estatica`** | Transforma a Canônica numa **apostila HTML standalone** no design system **Volta Atelier** do ProfessorDash (marca TC, Archivo + JetBrains Mono, claro/escuro, quiz interativo, A4, fontes embutidas). Também migra apostilas antigas (v2). | `canonica.md` → `aula.html` |
+| **`aula-estatica`** | Transforma a Canônica numa **apostila HTML standalone** no design system **Caderno Noturno** (DS v4) do ProfessorDash (monograma TC, Archivo + Geist + JetBrains Mono, claro/escuro à escolha do aluno, quiz interativo, A4, fontes embutidas). Também migra apostilas antigas (v2). | `canonica.md` → `aula.html` |
 | **`gerar-imagem-aula`** | Declara o perfil (`capa` 3:2 ou `infografico` 16:9), monta o prompt v8, gera pelo Codex CLI (o navegador é alternativa) e audita o PNG contra os defeitos conhecidos. A peça sai final, sem marca. | `canonica.md` + `imagens.md` → prompt montado → Codex → PNG final auditado |
 
 São independentes de propósito: você pode gerar a Canônica hoje e vesti-la semana que vem, sem regerar conteúdo. E a Canônica também alimenta o ProfessorDash — a apostila é só uma das saídas possíveis.
@@ -21,8 +21,8 @@ São independentes de propósito: você pode gerar a Canônica hoje e vesti-la s
 
 1. **Criar** — peça ao Claude Code: *"cria uma aula sobre X, série 3ª, trilha programacao"*. A `prof-toni` planeja, espera seu OK, gera e audita → salva `canonica.md`.
 2. **(Opcional) Imagem** — peça para aplicar `gerar-imagem-aula` ao `imagens.md`. Ela monta o prompt v8, gera pelo Codex, audita e grava a peça final em `capa.png` ou `img/`. Não há etapa de Photoshop.
-3. **(Opcional) Vestir** — quando quiser distribuir offline/PDF: *"aplica a skill aula-estatica na canônica da Aula NN"* → sai um `.html` único.
-4. **Publicar** — a Canônica vai pro ProfessorDash; a apostila `.html` vai pro aluno baixar. (No seu caso atual: publicar pelo ProfessorDash como já faz.)
+3. **(Opcional) Vestir** — quando quiser distribuir offline/PDF: *"aplica a skill aula-estatica na canônica da Aula NN"* → sai um `.html` único em `saidas/` da aula.
+4. **Publicar** — a Canônica vai pro ProfessorDash pelos quatro passos do invariante 6 do `AGENTS.md` (`gerar_manifesto.py` → push → deploy do portal → reimport com `--force`); a apostila `.html` vai pro aluno baixar.
 
 ## Instalação (Claude Code)
 

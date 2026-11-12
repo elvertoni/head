@@ -1,39 +1,48 @@
-# BLOCOS — snippets prontos (v3 · Volta Atelier)
+# BLOCOS — snippets prontos (v4 · Caderno Noturno)
 
 Copie o bloco e troque só o conteúdo. Os nomes de classe são os mesmos do leitor de aulas do
-ProfessorDash (`static/css/app.css`) sempre que o portal tem o componente — assim a apostila e o
-site são a mesma peça vestida de dois jeitos. Nada de `style=""` inline, exceto dentro de `.demo-body`.
+ProfessorDash (`catalog/parser.py` + `static/css/lesson.css`) sempre que o portal tem o componente —
+assim a apostila e o site são a mesma peça vestida de dois jeitos. Nada de `style=""` inline, exceto
+dentro de `.demo-body`.
 
-Sumário: 1 capa · 2 sumário · 3 seção · 4 divisor de parte · 5 fechamento · 6 callouts ·
+Sumário: 1 faixa da aula · 2 sumário · 3 seção · 4 divisor de parte · 5 fechamento · 6 callouts ·
 7 código · 8 tabela · 9 passos · 10 exercícios · 11 checklist · 12 chips · 13 demo ·
 14 figura · 15 citação · 16 roteiro do professor · 17 capa ilustrada · 18 gráfico SVG ·
 19 resumo do tema
 
 ---
 
-## 1 — Capa (`.lesson-header`)
+## 1 — Faixa da aula (`.lesson-header`, noturna nos dois temas)
+
+Fica **fora** do `<main>`, logo depois do cabeçalho do site (o template já traz no lugar certo).
 
 ```html
 <header class="lesson-header" id="topo">
-  <p class="eyebrow">Aula 03 · Programação Front-End</p>
-  <ul class="chips">
-    <li class="chip">Programação Front-End</li>
-    <li class="chip chip--signal">2ª série</li>
-  </ul>
-  <h1>Formulários que <em>não recarregam</em></h1>
-  <p class="dek">Uma a três frases que situam o aluno: o que ele vai conseguir fazer no fim.</p>
-  <dl class="meta">
-    <div><dt>Disciplina</dt><dd>Programação Front-End</dd></div>
-    <div><dt>Série</dt><dd>2ª série</dd></div>
-    <div><dt>Duração</dt><dd>50 minutos</dd></div>
-    <div><dt>Entrega</dt><dd>1 atividade prática</dd></div>
-  </dl>
+  <div class="lesson-header-inner">
+    <p class="lesson-num" aria-hidden="true">03</p>
+    <div class="lesson-header-copy">
+      <p class="eyebrow">Aula 03 · Programação Front-End</p>
+      <h1>Formulários que não recarregam</h1>
+      <p class="dek">Uma a três frases que situam o aluno: o que ele vai conseguir fazer no fim.</p>
+      <ul class="chips">
+        <li class="chip">Programação Front-End</li>
+        <li class="chip chip--signal">2ª série</li>
+      </ul>
+      <dl class="meta">
+        <div><dt>Série</dt><dd>2ª série</dd></div>
+        <div><dt>Duração</dt><dd>50 minutos</dd></div>
+        <div><dt>Entrega</dt><dd>1 atividade prática</dd></div>
+      </dl>
+    </div>
+    <figure class="lesson-cover"><img src="img/capa.png" alt="..."></figure>   <!-- opcional, §17 -->
+  </div>
 </header>
 ```
 
-- `<em>` no título = palavra-chave em `--signal` (vermelho). **Um só** por página, no conceito
-  central da aula (nunca em "Aula", "Introdução", "Parte").
-- `chip--signal` destaca **um** chip (trilha ou série). Os demais são `chip` simples.
+- `.lesson-num` é o numeral amarelo da aula (dois dígitos). Apostila sem número (revisão, módulo):
+  apague o parágrafo.
+- **Título sem `<em>`**: o v4 não destaca palavra (o `build.py` acusa).
+- `chip--signal` destaca **um** chip (trilha ou série) em amarelo. Os demais são `chip` simples.
 - `meta` aceita de 2 a 5 itens.
 
 ## 2 — Sumário (`.toc`)
@@ -70,9 +79,9 @@ Cada `href="#sec-N"` precisa de uma `<section id="sec-N">`, na mesma ordem (o `b
 </section>
 ```
 
-Hierarquia: `h2` (título da seção, Archivo) → `h3` (subtópico, mono 700) → `h4` (detalhe).
+Hierarquia: `h2` (título da seção, Archivo) → `h3` (subtópico, Archivo) → `h4` (detalhe, Geist 700).
 Parágrafos, listas, `h3` e `h4` ficam presos na medida de leitura (`--measure`); tabelas e código
-usam a largura toda — igual ao `.prose` do portal.
+usam a largura da folha — igual ao `.cn-prose` do portal.
 
 ## 4 — Divisor de parte (só em material longo)
 
@@ -107,8 +116,8 @@ um módulo), abra cada parte com o divisor. Os subtópicos dentro dela descem pa
 ## 6 — Callouts (anatomia do portal: `.ic` + `.ct` + rótulo `<b>`)
 
 O ícone vem do CSS (máscara Lucide): a `<div class="ic">` fica **vazia**. O rótulo segue o padrão
-do portal, **"Tipo · Título"** (só "Tipo" se não houver título). Sem listas dentro do callout:
-quebre com `<p>` ou `<br>`.
+do portal, **"Tipo · Título"** (só "Tipo" se não houver título). Listas (`<ul>`/`<ol>`), código e
+vários parágrafos podem ir dentro do `.ct`, como na canônica.
 
 ```html
 <aside class="callout conceito">
@@ -120,16 +129,16 @@ quebre com `<p>` ou `<br>`.
 </aside>
 ```
 
-| Classe | Cor | Ícone | Use para | Vem de (`:::tipo`) |
+| Classe | Tom | Ícone | Use para | Vem de (`:::tipo`) |
 |---|---|---|---|---|
-| `conceito` | info (azul-céu) | lâmpada | definição, ideia central | `conceito`, `definicao` |
-| `atencao` | amber | triângulo | erro comum, cuidado (Sintoma / Solução) | `atencao`, `aviso`, `erro` |
-| `dica` | emerald | brilho | atalho, boa prática | `dica` |
-| `exemplo` | info / título neutro | livro | exemplo curto ilustrativo | `exemplo` |
-| `importante` | amber / título neutro | estrela | destaque, desafio, conteúdo extra | `importante`, `desafio`, `extra` |
-| `curiosidade` | neutro | bússola | contexto histórico, curiosidade | `curiosidade` |
-| `objetivo` ¹ | emerald | alvo | objetivo, entrega, resultado esperado | `objetivo`, `entrega`, `resultado` |
-| `erro` ¹ | signal (vermelho) | círculo-x | erro crítico (raro) | `erro-critico` |
+| `conceito` | azul (link) | lâmpada | definição, ideia central | `conceito`, `definicao` |
+| `atencao` | âmbar, caixa tingida | triângulo | erro comum, cuidado (Sintoma / Solução) | `atencao`, `aviso`, `erro` |
+| `dica` | verde | brilho | atalho, boa prática | `dica` |
+| `exemplo` | azul, **caixa noturna** | livro | exemplo curto ilustrativo | `exemplo` |
+| `importante` | âmbar, caixa tingida | estrela | destaque, desafio, conteúdo extra | `importante`, `desafio`, `extra` |
+| `curiosidade` | azul (link) | bússola | contexto histórico, curiosidade | `curiosidade` |
+| `objetivo` ¹ | verde | alvo | objetivo, entrega, resultado esperado | `objetivo`, `entrega`, `resultado` |
+| `erro` ¹ | vermelho, caixa tingida | círculo-x | erro crítico (raro; vermelho é só erro) | `erro-critico` |
 
 ¹ Extensões da apostila: o portal mostra objetivos num bloco próprio e não tem erro crítico.
 
@@ -183,19 +192,25 @@ if media(8, 6) &gt;= 7:
 ```
 
 `<caption>` é o rótulo da tabela (mono, caixa-alta). Tabela larga rola sozinha na horizontal.
+O texto em cor de tom fica para callouts; dentro da tabela, tudo é cor de texto.
 
 ## 9 — Passos (diagrama progressivo do portal)
 
 ```html
-<ol class="lesson-steps">
-  <li><span class="lesson-step-index">1</span><div><strong>Buscar</strong><p>A UC traz a instrução da memória.</p></div></li>
-  <li><span class="lesson-step-index">2</span><div><strong>Decodificar</strong><p>A UC descobre o que a instrução pede.</p></div></li>
-  <li><span class="lesson-step-index">3</span><div><strong>Executar</strong><p>A ULA faz a operação.</p></div></li>
-</ol>
+<figure class="lesson-diagram lesson-diagram-progressive">
+  <figcaption>Ciclo de instrução</figcaption>
+  <ol class="lesson-steps">
+    <li><span class="lesson-step-index">1</span><div><strong>Buscar</strong><p>A UC traz a instrução da memória.</p></div></li>
+    <li><span class="lesson-step-index">2</span><div><strong>Decodificar</strong><p>A UC descobre o que a instrução pede.</p></div></li>
+    <li><span class="lesson-step-index">3</span><div><strong>Executar</strong><p>A ULA faz a operação.</p></div></li>
+  </ol>
+</figure>
 ```
 
-Mapeia `diagrama-progressivo`: cada camada vira um `<li>`, `rotulo` em `<strong>`, `conteudo` em `<p>`.
-Para listas comuns numeradas, use `<ol>` simples.
+Mapeia `diagrama-progressivo` exatamente como o portal (`catalog/parser.py`): `titulo` vai no
+`<figcaption>`, cada camada vira um `<li>`, `rotulo` em `<strong>` (sem número próprio) e
+`conteudo` em `<p>`. Todas as etapas aparecem de uma vez, como no portal. Sem `titulo`, o
+`<ol class="lesson-steps">` sozinho também funciona. Para listas comuns numeradas, use `<ol>` simples.
 
 ## 10 — Exercícios / quiz (com gabarito comentado)
 
@@ -243,7 +258,7 @@ Mapeia `:::questao` e o bloco ```` ```quiz ```` (uma pergunta por `<li>`; `corre
 </ul>
 ```
 
-Check esmeralda (no Volta Atelier, verde = conclusão). Mapeia `:::resumo`.
+Check verde (verde = conclusão). Mapeia `:::resumo`.
 
 **Checklist de estudo** (`class="checklist todo"`): caixas vazias que o aluno marca, salvas no
 navegador. Use no fechamento quando a lista é "o que você precisa saber fazer"; o check já
@@ -301,7 +316,7 @@ O `src` é relativo: a pasta `img/` precisa ir junto do `.html`. O `alt` carrega
 <blockquote><p>Programas devem ser escritos para pessoas lerem.</p></blockquote>
 ```
 
-## 16 — Roteiro do professor (some no PDF)
+## 16 — Roteiro do professor (só na versão do professor; some no PDF)
 
 ```html
 <aside class="roteiro">
@@ -310,13 +325,15 @@ O `src` é relativo: a pasta `img/` precisa ir junto do `.html`. O `alt` carrega
 </aside>
 ```
 
-Sempre o **último bloco** da seção. Em material que vai só para o aluno (apostila de estudo, PDF
-para a turma), **omita** — o aluno não precisa ler instruções dirigidas ao professor.
+Sempre o **último bloco** da seção. **Padrão: omitir.** A apostila do aluno não leva roteiro; o
+`build.py` acusa `.roteiro` a menos que rode com `--professor`. Inclua só quando o Toni pedir
+explicitamente a versão do professor.
 
 ## 17 — Capa ilustrada (imagem de capa, perfil "capa" 3:2)
 
-Logo depois do `</header>` da capa, antes do sumário. A imagem vem da skill
-`gerar-imagem-aula` (perfil `capa`), salva em `img/capa.png` ao lado do `.html`.
+**Dentro da faixa da aula**, como último filho de `.lesson-header-inner` (ao lado do título; no
+celular e no PDF ela desce para baixo do texto). A imagem vem da skill `gerar-imagem-aula`
+(perfil `capa`), salva em `img/capa.png` ao lado do `.html`.
 
 ```html
 <figure class="lesson-cover">
@@ -348,16 +365,18 @@ entre claro e escuro, porque as cores vêm de **classes ligadas aos tokens**:
 
 | Classe | Uso |
 |---|---|
-| `f-signal` `f-emerald` `f-amber` `f-volt` `f-info` | preenchimento sólido semântico |
-| `f-tint-signal` … `f-tint-amber` | preenchimento tingido (fundo de barra/caixa) |
+| `f-signal` `f-emerald` `f-amber` `f-volt` `f-info` `f-danger` | preenchimento sólido semântico |
+| `f-tint-signal` … `f-tint-amber`, `f-tint-danger` | preenchimento tingido (fundo de barra/caixa) |
 | `f-base` `f-panel` `f-none` | superfícies e sem preenchimento |
-| `k-signal` `k-emerald` `k-amber` `k-volt` `k-info` `k-line` `k-fg` | contorno (`stroke`) |
-| `t` `t-m` `t-l` `t-d` `t-on` | texto: normal, secundário, rótulo mono caixa-alta, display Archivo, branco sobre cor |
-| `t-signal` `t-emerald` `t-amber` `t-volt` `t-info` | texto colorido com contraste AA nos dois temas |
+| `k-signal` `k-emerald` `k-amber` `k-volt` `k-info` `k-danger` `k-line` `k-fg` | contorno (`stroke`) |
+| `t` `t-m` `t-l` `t-d` `t-on` | texto: normal, secundário, rótulo mono caixa-alta, display Archivo, texto sobre preenchimento sólido |
+| `t-signal` `t-emerald` `t-amber` `t-volt` `t-info` `t-danger` | texto colorido com contraste AA nos dois temas |
 
 Regras: `viewBox` com largura 760 (a moldura rola na horizontal no celular, mínimo 520 px);
-fonte 13–17 px; `<title>` sempre; cor com o mesmo significado do resto da apostila (signal =
-destaque/rede, esmeralda = certo/não volátil, âmbar = atenção/volátil, volt = dados neutros).
+fonte 13–17 px; `<title>` sempre; cor com o mesmo significado do resto da apostila: `signal` =
+**ação/destaque** (amarelo no escuro, azul no claro; o nome ficou do v3), esmeralda = certo/não
+volátil, âmbar = atenção/volátil, volt/info = dados neutros, `danger` = **só erro**. `t-on` usa a
+tinta de contraste do tema (escura no escuro, branca no claro): nunca escreva `fill="#fff"` à mão.
 
 ## 19 — Resumo do tema (ficha de revisão)
 
