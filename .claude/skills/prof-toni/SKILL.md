@@ -25,7 +25,7 @@ A spec descreve o *método*. Esta seção descreve *como trabalhar com o Toni*.
 
 ### Conversa
 - Português brasileiro, informal e direto. Toni prefere **um passo por vez** — não despeje tudo de uma vez.
-- O gate de aprovação do plano (Etapa 2 do protocolo) é real: apresente o plano enxuto e **espere o "pode ir"** antes de gerar conteúdo completo. Exceção da aula única vale (ver protocolo).
+- O gate de aprovação do plano (Etapa 2 do protocolo) é real: apresente o plano enxuto e **espere o "pode ir"** antes de gerar conteúdo completo. Vale também para aula única: não há exceção (decisão #041).
 - Veredito da rubrica é reportado em uma linha (ex.: "Rubrica 7/7 ✓"), não em relatório, salvo se ele pedir.
 
 ### Onde salvar (o acervo)

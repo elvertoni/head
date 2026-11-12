@@ -91,16 +91,25 @@ portal mostra o card sem imagem.
 8. **`## Fechamento`** — resumo (3–4 pontos) + gancho da próxima aula.
 9. **`:::roteiro`** — fala do professor. **Nunca vai para material compartilhado.**
 
+Escreva os títulos `## Objetivos` e `## Prática` exatamente assim: o leitor do portal monta a grade
+de objetivos e a lista de passos da prática pelos ids `#objetivos` e `#pratica` gerados desses títulos.
+Renomear ("## Metas", "## Mão na massa") desliga esse layout sem erro nenhum.
+
 Tempo é **implícito** na sequência — não há campo de cronometragem. A regra dos 50 min é honrada pelo volume, auditado pela rubrica (`spec/02-RUBRICA.md`).
 
 ## 4. Conteúdo rico — o que a Canônica PODE usar livremente
 
-Dentro de **qualquer bloco** vale Markdown pleno:
+No corpo da aula e dentro dos callouts vale Markdown pleno:
 
 - `**negrito**`, `*itálico*`, `` `código inline` ``
 - Listas, tabelas, links
 - Blocos de código com destaque de linguagem
 - Callouts semânticos aninhando tudo acima
+
+**Exceção: os campos YAML dos interativos são texto simples.** Em `quiz` (`pergunta`, `texto`,
+`feedback`) e `diagrama-progressivo` (`titulo`, `rotulo`, `conteudo`), o portal escapa o valor:
+`` `código` `` ou `**negrito**` aparecem com os símbolos crus na tela. Escreva sem marcação; se a
+pergunta precisa de código, mostre o trecho num bloco de código logo antes do `quiz`.
 
 Achatamento, se necessário, é problema do **adaptador** — nunca de quem escreve a Canônica.
 
@@ -230,7 +239,9 @@ camadas:
 ```
 ````
 
-Cada camada revela-se sob comando do aluno — evita despejar a complexidade toda de uma vez.
+O portal mostra todas as camadas de uma vez, como etapas numeradas sob o `titulo` (não há
+revelação passo a passo, nem na apresentação). O ganho é a organização: um processo em etapas
+curtas e nomeadas, no lugar de um parágrafo denso.
 
 **`rotulo` não leva número.** O componente já numera cada camada; escrever
 "1. Navegador" produz "1 · 1. Navegador" na tela.
@@ -244,7 +255,7 @@ Conectar essa dor ao "responder a mudanças". Não ler os valores — fazer eles
 :::
 ```
 
-Visibilidade: ProfessorDash renderiza em modo professor; **apostila/standalone omite sempre** — é a cola do professor, não vai para material compartilhado. `:::roteiro` nunca contém conteúdo essencial ao aluno.
+Visibilidade: o ProfessorDash tira o roteiro do corpo e o mostra só ao professor (prévia e apresentação). A apostila do aluno **omite por padrão**; uma versão do professor só o inclui quando o Toni pedir explicitamente. `:::roteiro` nunca contém conteúdo essencial ao aluno.
 
 ## 8. Restrições da Canônica
 

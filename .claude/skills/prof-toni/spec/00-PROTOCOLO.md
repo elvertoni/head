@@ -67,9 +67,7 @@ Apresente, de forma enxuta:
 - Se o nº de aulas não foi dado: proponha um e **justifique**.
 - Nos modos SEED/Material: o parecer de auditoria da origem.
 
-**⏸ Pare e peça aprovação. Não gere conteúdo completo ainda.**
-
-> **Exceção** — aula única em Modo Tema: confirme título + objetivos em uma linha e siga direto para a Etapa 3 na mesma resposta, salvo pedido em contrário.
+**⏸ Pare e peça aprovação. Não gere conteúdo completo ainda.** Vale também para aula única: não há exceção ao gate (decisão #041).
 
 ### Etapa 3 — Geração da Canônica
 - Gere **uma aula por vez**. Nunca adiante a próxima sem aprovação da atual.
@@ -85,7 +83,7 @@ Apresente, de forma enxuta:
 - Adaptar é operação separada e pode acontecer dias depois, sem regerar conteúdo.
 - **O repo não conhece renderers.** A formatação é responsabilidade da ferramenta que renderiza: a skill `aula-estatica` para apostila HTML standalone, o import do ProfessorDash para o site (contrato em `docs/schema-wiki.md` §5.1; o parser vive no repo do portal), e qualquer ferramenta futura traz seu próprio adaptador. Todas leem a mesma Canônica.
 - Recurso da Canônica que o formato de destino não suporta → **degradar com marcação explícita + relatório de lacuna**. Nunca empobrecer em silêncio.
-- O bloco `roteiro` (cola do professor) **nunca** vai para materiais distribuídos a alunos.
+- O bloco `roteiro` (cola do professor) **nunca** vai para materiais distribuídos a alunos. Saída do professor (por exemplo, apostila docente) só o inclui quando o Toni pedir explicitamente.
 - O resultado vai em `saidas/` da aula. Saída gerada antes de um bump de `versao` está vencida: regenere, nunca edite.
 
 ## 6. Os três modos de entrada
@@ -111,13 +109,13 @@ A SEED é **ponto de partida, não contrato**. Procedimento de ingestão:
 ### 6.3 Modo Tema — assunto + (opcional) nº de aulas
 
 1. Geração do zero a partir do conhecimento do agente. Máxima liberdade, máxima responsabilidade técnica: **verificar atualidade** do conteúdo (com busca, confirmar; sem busca, sinalizar suspeitas).
-2. Sem nº de aulas informado: para tema que cabe em 50 min, assumir aula única (vale a exceção do gate na Etapa 2); para tema maior, propor a divisão no plano.
+2. Sem nº de aulas informado: para tema que cabe em 50 min, assumir aula única (o plano de uma linha ainda passa pelo gate da Etapa 2); para tema maior, propor a divisão no plano.
 
 ## 7. Regras de ouro
 
 1. **Postura editorial padrão: reorganizador pedagógico.** O material de origem é insumo. Só adote fidelidade estrita ao autor se o Toni pedir explicitamente.
 2. **Carga cognitiva:** no máximo ~5 conceitos novos por aula; no máximo 4 elementos top-level por seção.
-3. **Catálogo de interativos é FECHADO em 2 blocos:** `quiz` (feedback imediato) e `diagrama-progressivo` (revelação por camadas). Não invente outros.
+3. **Catálogo de interativos é FECHADO em 2 blocos:** `quiz` (feedback imediato) e `diagrama-progressivo` (etapas numeradas). Não invente outros.
 4. **Teste anti-decoração:** um interativo só existe se, trocado por um parágrafo de texto, o aluno aprenderia *pior*. Caso contrário, remova.
 5. **Prática desplugada primeiro** quando a turma não tem base de código (ex.: 1ª série); o VSCode entra como extensão opcional.
 6. **Honestidade epistêmica:** sem acesso a busca, conteúdo possivelmente desatualizado é sinalizado como *suspeita a verificar*, nunca afirmado como fato. Com acesso a busca, verifique antes de afirmar.
