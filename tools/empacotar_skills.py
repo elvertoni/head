@@ -6,6 +6,8 @@ Uso:
     python tools/empacotar_skills.py --check       # só valida, não grava
     python tools/empacotar_skills.py --saida DIR   # outra pasta de saída
 
+Também empacota as skills só do claude.ai, de docs/skills-claudeai/.
+
 Cada .zip tem a pasta da skill na raiz ({skill}/SKILL.md, ...), que é o formato
 que o claude.ai aceita em "Capabilities > Skills > Upload". Antes de gravar,
 confere o que o claude.ai exige do frontmatter: `name` igual ao nome da pasta,
@@ -30,6 +32,8 @@ from typing import Dict, List, Optional
 
 RAIZ = Path(__file__).resolve().parent.parent
 SKILLS = RAIZ / '.claude' / 'skills'
+# Skills só do claude.ai (fora de .claude/skills/ para o Claude Code não carregar em dobro)
+SO_CLAUDEAI = RAIZ / 'docs' / 'skills-claudeai'
 
 # skill -> {caminho dentro do pacote: arquivo no repo}
 EXTRAS: Dict[str, Dict[str, Path]] = {
@@ -105,6 +109,8 @@ def empacotar(pasta: Path, destino: Path) -> Path:
 
 
 def skills(raiz_skills: Path) -> List[Path]:
+    if not raiz_skills.is_dir():
+        return []
     return sorted(p for p in raiz_skills.iterdir() if p.is_dir() and (p / 'SKILL.md').is_file())
 
 
@@ -114,7 +120,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument('--check', action='store_true', help='só valida, não grava')
     args = parser.parse_args(argv)
 
-    encontradas = skills(SKILLS)
+    encontradas = skills(SKILLS) + skills(SO_CLAUDEAI)
     problemas = [p for s in encontradas for p in validar(s)]
     if problemas:
         for p in problemas:

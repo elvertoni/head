@@ -54,9 +54,10 @@ a fonte bruta falta mas existe cache, manter a lacuna de proveniência explícit
 | `tools/notion-wiki/` | Puxa páginas do Notion para o lake |
 | `tools/transcrever/` | Transcrição local (faster-whisper, GPU com fallback CPU) para o lake |
 | `tools/imagen-generator/` | **Não é script:** `prompt.xml` v9 no Caderno Noturno (fonte de verdade visual, decisão #043) + logo + guia |
-| `tests/` | `unittest` stdlib (67 testes em 2026-11-15) |
+| `tests/` | `unittest` stdlib (69 testes em 2026-11-15) |
 | `docs/` | `schema-wiki.md` (schema da wiki), manutenção da wiki, backlog de proveniência, triagem RCO |
 | `.claude/skills/` | `prof-toni`, `aula-estatica`, `gerar-imagem-aula` |
+| `docs/skills-claudeai/` | Skills só do claude.ai (hoje `caderno-noturno`, derivada do DS do portal); fora de `.claude/skills/` para o Claude Code não carregar em dobro; o `empacotar_skills.py` empacota junto |
 | `aulas/robotica/` (**local-only**, gitignored pela #044; as linhas abaixo são mapa local) | Protótipos de robótica e cartazes, fora do fluxo de aulas; `automacao_zap_esp32/` é repo git próprio (`elvertoni/automatiza_zap`) |
 | `aulas/robotica/automacao_zap_esp32/firmware/` | Protótipo C++/Arduino ESP32, configuração Wi-Fi local, WSS e preparador Python stdlib; não é aula canônica |
 | `aulas/robotica/trena_digital_arduino/` | Protótipo de altura com Uno R3 para a feira; testes de HC-SR04, scanner I²C e OLED com U8g2 2.36.19/buffer paginado e título TRENA DIGITAL 1A. Controlador do OLED em validação; não é aula canônica |

@@ -19,8 +19,17 @@ def skill(raiz, nome, desc='Faz algo útil.', extra=None):
 
 class TestValidar(unittest.TestCase):
     def test_skills_do_repo_passam(self):
-        for s in emp.skills(emp.SKILLS):
+        for s in emp.skills(emp.SKILLS) + emp.skills(emp.SO_CLAUDEAI):
             self.assertEqual(emp.validar(s), [], s.name)
+
+    def test_skills_so_do_claudeai_entram_e_nao_colidem(self):
+        vault = {s.name for s in emp.skills(emp.SKILLS)}
+        claudeai = {s.name for s in emp.skills(emp.SO_CLAUDEAI)}
+        self.assertIn('caderno-noturno', claudeai)
+        self.assertFalse(vault & claudeai)
+
+    def test_pasta_inexistente_nao_quebra(self):
+        self.assertEqual(emp.skills(Path('/nao/existe')), [])
 
     def test_recusa_nome_divergente_descricao_longa_e_tags(self):
         with tempfile.TemporaryDirectory() as tmp:
