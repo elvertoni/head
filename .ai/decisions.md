@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #045 — Codex e o plugin "Professor Toni" do ChatGPT são o backup do Claude
+- **Data:** 2026-11-15
+- **Status:** Aceita; pedido do Toni ("caso o claude fique sem tokens posso recorrer ao chatgpt com a mesma qualidade").
+- **Contexto:** As skills de aula viviam só no Claude (vault e claude.ai). A conta do ChatGPT já tinha um plugin privado `professor-toni` (1.0.0, de 2026-11-12) com as três skills, mas parado no Volta Atelier/v8; o Codex no vault lia o `AGENTS.md`, mas não achava as skills do repo.
+- **Decisão:** (1) No vault, o backup é o Codex CLI: links locais `.agents/skills/* -> .claude/skills/*` (gitignored; comando em "Comandos úteis" do `AGENTS.md`). Testado em 2026-11-15: com a `prof-toni` do repo, o Codex parou no gate do plano (Etapa 2) sem gravar nada. (2) Fora do vault, o plugin `professor-toni` (plugin_id `plugins_6af617ef342081918755e02c823e1844`) é a cópia das mesmas skills para o ChatGPT, publicado em 1.1.0 (`pluginrel_6afa45450c148191b2c1d9c22c7ef6dc`) a partir dos mesmos pacotes do claude.ai. (3) A fonte continua sendo `.claude/skills/`; toda mudança de skill atualiza os zips do claude.ai e o plugin, nesta ordem.
+- **Consequências:** No Codex aparecem duas cópias (`prof-toni` do repo e `professor-toni:prof-toni` do plugin); no vault vale a do repo. O `update_plugin` pede aprovação: em `codex exec` só funciona com aprovação automática, então publicar o plugin é passo deliberado. O `empacotar_skills.py` passou a barrar `description` sem aspas com ": ", que o Codex acusou como YAML inválido.
+
 ## #044 — Pastas fora do fluxo ficam local-only; lint das canônicas corrige aos poucos
 - **Data:** 2026-11-15
 - **Status:** Aceita; o Toni delegou as três escolhas ao ASTRA (Codex `gpt-6-astra`, só leitura), que decidiu com evidência no disco.
