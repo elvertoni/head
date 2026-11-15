@@ -11,6 +11,10 @@ aulas/**/atividades/*.pdf
 /aulas/robotica/
 /aulas/introducao-a-computacao/feiradoconhecimento/
 
+# Links locais para o Codex achar as skills do vault (.agents/skills/* -> .claude/skills/*).
+# Fora do git: o repo usa core.symlinks=false. Recriar: ver "Comandos úteis" no AGENTS.md.
+/.agents/
+
 # Saídas de ferramenta — regeneráveis, local-only
 graphify-out/
 .playwright-mcp/

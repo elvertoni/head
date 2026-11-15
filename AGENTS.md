@@ -88,6 +88,11 @@ execute as instruções de `.ai/prompts/handoff.md`.
 - Manifesto (no lugar de migrações): `python tools/gerar_manifesto.py --check` · `python tools/gerar_manifesto.py`
 - Canônicas (contrato do corpo: blocos, quiz, diagrama, seções): `python tools/lint_canonica.py` (`--format json`, `--todas`)
 - Skills para o claude.ai: `python tools/empacotar_skills.py [--check]` → `saidas/skills/*.zip` (gitignored)
+- Codex como backup do Claude: rodar `codex` na raiz do vault (lê este AGENTS.md). As skills do vault chegam a ele
+  por links locais (gitignored); numa máquina nova:
+  `mkdir -p .agents/skills && for s in prof-toni aula-estatica gerar-imagem-aula; do ln -sfn ../../.claude/skills/$s .agents/skills/$s; done`.
+  O plugin `professor-toni` da conta do ChatGPT é a cópia das mesmas skills para o ChatGPT; no vault valem as do repo.
+  Depois de mudar uma skill, atualizar o plugin (Codex, skill `plugin-creator:update-plugin`) junto com os zips do claude.ai.
 - Wiki: `python tools/lint_wiki.py` (`--format json`, `--fail-on error`) · `python tools/gerar_indice.py --check|--write`
   · `python tools/gerar_mapas.py [--check]`
 - RCO (SEED): `python tools/extrair_rco.py [--sigla AMS] [--check]` · `python tools/triar_rco.py` (precisa de
