@@ -1,6 +1,6 @@
 ---
 name: prof-toni
-description: Cria e gerencia o acervo de aulas técnicas do Prof. Toni Coimbra (Curso Técnico em Desenvolvimento de Sistemas, SEED-PR, alunos 14–18, aula de 50 min). Gera uma AULA CANÔNICA rica (Markdown, fonte única de verdade) seguindo a spec em spec/, audita pela rubrica e salva no acervo local. Use SEMPRE que o Toni pedir para criar aula, planejar sequência didática, transformar um tema em aula(s), fatiar um material/PDF/livro/apostila em N aulas, ingerir slides+atividades da SEED-PR, ou revisar/atualizar conteúdo didático — mesmo que não diga as palavras "skill", "método" ou "canônica". Cobre os três modos de entrada: Tema, Material e SEED. NÃO renderiza saídas (site/apostila) — isso é trabalho de outras ferramentas que leem a Canônica.
+description: "Cria e gerencia o acervo de aulas técnicas do Prof. Toni Coimbra (Curso Técnico em Desenvolvimento de Sistemas, SEED-PR, alunos 14–18, aula de 50 min). Gera uma AULA CANÔNICA rica (Markdown, fonte única de verdade) seguindo a spec em spec/, audita pela rubrica e salva no acervo local. Use SEMPRE que o Toni pedir para criar aula, planejar sequência didática, transformar um tema em aula(s), fatiar um material/PDF/livro/apostila em N aulas, ingerir slides+atividades da SEED-PR, ou revisar/atualizar conteúdo didático — mesmo que não diga as palavras \"skill\", \"método\" ou \"canônica\". Cobre os três modos de entrada: Tema, Material e SEED. NÃO renderiza saídas (site/apostila) — isso é trabalho de outras ferramentas que leem a Canônica."
 license: Uso pessoal — Toni Coimbra
 ---
 

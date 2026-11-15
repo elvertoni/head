@@ -79,6 +79,9 @@ def validar(pasta: Path) -> List[str]:
         problemas.append(f'{pasta.name}: `description` com {len(desc)} caracteres (máximo 1024)')
     elif '<' in desc or '>' in desc:
         problemas.append(f'{pasta.name}: `description` não pode ter < ou >')
+    bruta = re.search(r'^description:[ \t]*(.*)$', skill_md.read_text(encoding='utf-8'), re.M)
+    if bruta and not bruta.group(1).startswith(('"', "'", '>', '|')) and (': ' in bruta.group(1) or ' #' in bruta.group(1)):
+        problemas.append(f'{pasta.name}: `description` sem aspas com ": " ou " #" é YAML inválido; ponha entre aspas')
     for destino, origem in EXTRAS.get(pasta.name, {}).items():
         if not origem.is_file():
             problemas.append(f'{pasta.name}: extra {destino} aponta para arquivo inexistente ({origem})')
