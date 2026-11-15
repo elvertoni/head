@@ -15,7 +15,7 @@ Versionadas aqui para distribuir via `git pull` em vez de `scp`.
 O Hermes carrega skills de `~/.hermes/skills/`. Após `git pull` do repo, copie:
 
 ```bash
-cd ~/projetos/PROF-TONI && git pull
+cd ~/projetos/head && git pull
 cp -r hermes/skills/prof-toni ~/.hermes/skills/
 ```
 

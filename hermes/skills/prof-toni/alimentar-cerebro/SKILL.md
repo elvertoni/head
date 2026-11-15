@@ -8,7 +8,7 @@ description: >
   regenerar index e logar. Use quando o Toni mandar material para o Quíron
   "aprender", ingerir, curar, indexar, ou enriquecer o cérebro/wiki/conceitos —
   mesmo sem virar aula.
-version: 1.0.0
+version: 1.1.0
 platforms: [linux, macos]
 metadata:
   hermes:
@@ -20,7 +20,7 @@ metadata:
 # Alimentar o cérebro PROF-TONI (workflow `ingest`)
 
 Procedimento para o Quíron ingerir material novo e **curar** o segundo cérebro do
-Toni com segurança. O repositório é clonado na VPS (ex.: `~/projetos/PROF-TONI`).
+Toni com segurança. O repositório está clonado na VPS em `~/projetos/head`.
 **Sempre opere de dentro da raiz do repo** — lá o `AGENTS.md`/`CLAUDE.md` do projeto
 é carregado. O schema da wiki vive em `docs/schema-wiki.md`. **Leia `docs/schema-wiki.md` §5 antes de qualquer ingest.**
 
@@ -58,14 +58,16 @@ aulas/       aula canônica (fonte única) — só via skill prof-toni
 5. **`conceitos/index.md` é regenerável** — pode reescrever inteiro a partir dos
    frontmatters.
 6. **Nada de auto-commit** — mostre o diff e proponha a mensagem; Toni alinha
-   PC/git/VPS por conta dele.
+   PC/git/VPS por conta dele. Igualmente, **nada de auto-correção**: auditar e
+   reportar achados é bem-vindo; aplicar correções só depois de aprovação explícita
+   do Toni ("aprovado", "aplica", "pode corrigir").
 7. **Checar duplicata antes de criar** conceito (por `slug` ou `aka`). Atualizar
    página existente é o caso comum, não criar nova.
 
 ## Passo 0 — estado antes de agir
 
 ```bash
-cd ~/projetos/PROF-TONI && git pull
+cd ~/projetos/head && git pull
 git status --short          # não misturar trabalho humano não versionado
 ```
 
@@ -116,6 +118,20 @@ data: <YYYY-MM-DD>
 Binários (PDF cru) ficam gitignored — o que entra no git é o `.md` extraído. Nunca
 edite esse arquivo depois para "virar aula"; a curadoria é no passo 3.
 
+**`fonte` ≠ `origem`:** `fonte` é a categoria curta (ex.: `elite-wiki`,
+`ia-coders`, `pycodebr`, `notion`); `origem` é o canal de transporte/proveniência
+(URL do Notion, link do YouTube, `telegram`, `pdf:nome.pdf`). Exemplo correto:
+`fonte: elite-wiki` + `origem: https://...notion.site/...` — o material É
+elite-wiki, o Notion foi só o meio de entrega.
+
+**Notion via `tools/notion-wiki/puxar_notion.py`:** a ferramenta gera frontmatter
+com `tipo: referencia-externa` e `page_id`. Como o arquivo é novo nesta mesma
+sessão, complete o frontmatter antes de dar o passo por concluído (só o bloco
+YAML, nunca o corpo): troque `tipo:` por `status: bruto` e acrescente
+`disciplina`, `fonte`, `origem` (URL completa) e `data`. Mantenha `page_id` como
+campo extra (serve para re-rastrear). Arquivo de `lake/` de sessão anterior não se
+toca.
+
 ## Passo 3 — curar o grafo de conceitos (o "aprender")
 
 Este é o coração do ingest (`docs/schema-wiki.md` §5). Para o material:
@@ -149,7 +165,11 @@ rubrica como gate). Não burlar. Depois, regenerar manifesto (skill `operar-acer
 Varrer `conceitos/` e reportar uma linha por achado (NÃO corrigir sozinho — propor):
 link morto (`[[slug]]` sem arquivo), órfão (sem inlink), backlink faltando, stale,
 contradição, duplicata (checar `aka`), frontmatter incompleto. Toni aprova merge/
-obsolescência. Detalhe em `docs/schema-wiki.md` §5 `lint`.
+obsolescência. Detalhe em `docs/schema-wiki.md` §5 `lint`; a varredura mecânica é
+`python3 tools/lint_wiki.py --format json`.
+
+Auditoria completa de uma ingestão (lake + conceitos + grafo + controle):
+`references/audit-protocol.md` (protocolo de 3 fases).
 
 ## Checklist de saída
 
@@ -157,6 +177,42 @@ obsolescência. Detalhe em `docs/schema-wiki.md` §5 `lint`.
 - [ ] Disciplina/fonte confirmadas com o Toni (não inventadas)
 - [ ] Conceitos criados/atualizados em voz própria, frontmatter completo, sem H1
 - [ ] `[[wikilinks]]` cruzados e `## Onde aparece` atualizado nos vizinhos
-- [ ] `conceitos/index.md` regenerado e linha anexada em `conceitos/log.md`
+- [ ] `conceitos/index.md` regenerado e linha **anexada** em `conceitos/log.md`
 - [ ] Nenhum arquivo de `lake/` existente foi editado/apagado
 - [ ] Diff revisado; commit proposto ao Toni (não auto-commitado)
+
+## Armadilhas conhecidas
+
+### 🔴 `log.md` substituído em vez de anexado (CRÍTICO)
+
+A invariante #4 diz "append-only", mas ferramentas de patch (`sed`, `replace`)
+induzem a **substituir** a última linha em vez de **anexar**. Isso destrói o
+registro histórico.
+
+**Sintoma:** `git diff -- conceitos/log.md` mostra `-` na última linha antiga e
+`+` na nova, em vez de só `+`.
+
+**Recuperação (antes de commitar):**
+
+```bash
+git checkout -- conceitos/log.md                       # volta ao último commit
+echo '## [YYYY-MM-DD] ingest | ...' >> conceitos/log.md  # ANEXA (>>, nunca >)
+```
+
+**Prevenção:** sempre `>>` para escrever em `log.md`, nunca `>` nem patch.
+Confira com `git diff -- conceitos/log.md` que só há linhas `+`.
+
+### 🔴 Backlinks unidirecionais
+
+Criar `[[wikilinks]]` no conceito novo para os vizinhos é o primeiro passo. O
+segundo, igualmente obrigatório, é **atualizar o `## Onde aparece` de cada
+conceito referenciado** com o backlink. Sem isso o grafo fica com arestas de mão
+única e o Obsidian não mostra a conexão reversa.
+
+### 🟡 Lake gitignored — arquivos não vão pro git
+
+`lake/**/elite-wiki/` é gitignored por design: o bruto fica só na máquina onde foi
+ingerido; o que viaja pro git é o `conceitos/` sintetizado. Se
+`git check-ignore <arquivo>` retornar exit 0, **não** force com `git add -f`.
+Commite só os conceitos; se a fonte for de fato versionável, o caminho certo é
+outro (`lake/{disciplina}/notion/`) — confirme com o Toni.

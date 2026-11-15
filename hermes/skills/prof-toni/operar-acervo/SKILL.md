@@ -18,7 +18,7 @@ metadata:
 # Operar o acervo PROF-TONI
 
 Procedimento para o Quíron operar o acervo de aulas do Prof. Toni com segurança.
-O repositório é clonado na VPS (ex.: `~/projetos/PROF-TONI`). **Sempre opere de
+O repositório está clonado na VPS em `~/projetos/head`. **Sempre opere de
 dentro da raiz do repo** — lá o `AGENTS.md`/`CLAUDE.md` do projeto já é carregado (o schema da wiki está em `docs/schema-wiki.md`).
 
 ## Quando usar
@@ -56,9 +56,9 @@ de aula tem `canonica.md`, `imagens.md` (briefing visual — regra do Toni) e `c
 ## Passo 0 — ler estado antes de agir
 
 ```bash
-cd ~/projetos/PROF-TONI && git pull
-python tools/gerar_manifesto.py --check    # valida manifesto vs aulas/
-git status --short                          # não misturar trabalho humano não versionado
+cd ~/projetos/head && git pull
+python3 tools/gerar_manifesto.py --check   # valida manifesto vs aulas/
+git status --short                         # não misturar trabalho humano não versionado
 ```
 
 Não inventar fato sobre o acervo — ler o repo, `spec/` e a frontmatter primeiro.
@@ -74,7 +74,7 @@ antes. Cobre 3 modos: Tema, Material, SEED.
 Conferir o corpo contra o catálogo fechado de blocos antes de aprovar:
 
 ```bash
-python tools/lint_canonica.py aulas/<disciplina>/<trilha>/<NN-slug>/canonica.md
+python3 tools/lint_canonica.py aulas/<disciplina>/<trilha>/<NN-slug>/canonica.md
 ```
 
 Depois de criar/aprovar aula: **regenerar o manifesto** (passo abaixo).
@@ -87,13 +87,13 @@ dark/light, A4-print). Saída vai em `saidas/` (não versionada, sempre regener�
 ## Regenerar o manifesto (após QUALQUER mudança de aula)
 
 ```bash
-python tools/gerar_manifesto.py
-python tools/gerar_manifesto.py --check    # confirmar 0 divergências
+python3 tools/gerar_manifesto.py
+python3 tools/gerar_manifesto.py --check   # confirmar 0 divergências
 ```
 
 ## Publicar no portal (quatro passos, nesta ordem)
 
-1. `python tools/gerar_manifesto.py`
+1. `python3 tools/gerar_manifesto.py`
 2. push do acervo (`git push origin main`, só se o Toni pediu o commit)
 3. deploy do ProfessorDash (automático pelo Easypanel quando o portal mudou)
 4. reimport com `--force` (botão "Importar do GitHub" em `/catalogo/` ou
@@ -105,7 +105,8 @@ Pular o passo 4 deixa o portal defasado sem erro nenhum.
 
 `conceitos/{disciplina}/{slug}.md`. Aulas referenciam via `[[slug]]`. Não reescrever
 `conceitos/log.md` (append-only). `conceitos/index.md` é regenerável. Ingerir
-material novo no cérebro é da skill `alimentar-cerebro`.
+material novo no cérebro é da skill `alimentar-cerebro`. Detalhes do
+`puxar_notion.py` (endpoint, IDs, limites): `references/notion-ingestion.md`.
 
 ## Segurança operacional
 
@@ -120,5 +121,5 @@ material novo no cérebro é da skill `alimentar-cerebro`.
 - [ ] `imagens.md` presente na aula
 - [ ] frontmatter completo (contrato do portal) e `NN` == `ordem`
 - [ ] `versao`/`atualizado_em` bumpados se a aula era aprovada
-- [ ] `python tools/gerar_manifesto.py --check` → 0 divergências
+- [ ] `python3 tools/gerar_manifesto.py --check` → 0 divergências
 - [ ] diff revisado; commit proposto ao Toni (não auto-commitado)
