@@ -55,12 +55,14 @@ print(":::qualquer")
 """
 
 
-def codigos(corpo, status="aprovada", todas=False):
+def codigos(corpo, status="aprovada", todas=False, disciplina="d", trilha="t"):
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
-        pasta = root / "aulas" / "d" / "t" / "01-aula-teste"
+        pasta = root / "aulas" / disciplina / trilha / "01-aula-teste"
         pasta.mkdir(parents=True)
-        (pasta / "canonica.md").write_text(FRONT.format(status=status) + corpo, encoding="utf-8")
+        front = FRONT.format(status=status).replace("disciplina: d\n", f"disciplina: {disciplina}\n")
+        front = front.replace("trilha: t\n", f"trilha: {trilha}\n")
+        (pasta / "canonica.md").write_text(front + corpo, encoding="utf-8")
         return sorted(d.code for d in lint(root, todas))
 
 
@@ -88,6 +90,16 @@ class TestLintCanonica(unittest.TestCase):
         self.assertEqual(codigos("# Título\n\n" + OK), ["corpo-com-h1"])
         self.assertEqual(codigos(OK.replace("## Prática", "## Mão na massa")), ["secao-ausente"])
 
+    def test_blueprint_de_tcc_dispensa_so_a_pratica(self):
+        sem_pratica = OK.replace("## Prática", "## Requisitos")
+        self.assertEqual(codigos(sem_pratica, disciplina="tcc", trilha="blueprint-tcc"), [])
+        sem_objetivos = OK.replace("## Objetivos", "## Visão geral")
+        self.assertEqual(codigos(sem_objetivos, disciplina="tcc", trilha="blueprint-tcc"), ["secao-ausente"])
+        self.assertEqual(codigos("# Título\n\n" + sem_pratica, disciplina="tcc", trilha="blueprint-tcc"), ["corpo-com-h1"])
+        # a isenção não vaza para outra trilha do TCC nem para outra disciplina
+        self.assertEqual(codigos(sem_pratica, disciplina="tcc", trilha="orientacao"), ["secao-ausente"])
+        self.assertEqual(codigos(sem_pratica, disciplina="d", trilha="blueprint-tcc"), ["secao-ausente"])
+
     def test_markdown_em_campo_yaml(self):
         self.assertEqual(codigos(OK.replace("Quanto é 2+2?", "Quanto vale `x`?")), ["yaml-com-markdown"])
 
@@ -99,6 +111,16 @@ class TestLintCanonica(unittest.TestCase):
             arq = pasta / "canonica.md"
             arq.write_text(FRONT.format(status="rascunho") + "# Título\n\n" + OK, encoding="utf-8")
             self.assertEqual([d.code for d in lint(root, caminhos=[arq])], ["corpo-com-h1"])
+
+    def test_caminho_de_pasta_varre_as_canonicas_dentro(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for n in ("01-a", "02-b"):
+                pasta = root / "aulas" / "d" / "t" / n
+                pasta.mkdir(parents=True)
+                (pasta / "canonica.md").write_text(FRONT.format(status="rascunho") + "# T\n\n" + OK, encoding="utf-8")
+            achados = lint(root, caminhos=[root / "aulas" / "d"])
+            self.assertEqual([d.code for d in achados], ["corpo-com-h1", "corpo-com-h1"])
 
     def test_so_aprovadas_por_padrao(self):
         ruim = "# Título\n\n" + OK

@@ -94,6 +94,9 @@ portal mostra o card sem imagem.
 Escreva os títulos `## Objetivos` e `## Prática` exatamente assim: o leitor do portal monta a grade
 de objetivos e a lista de passos da prática pelos ids `#objetivos` e `#pratica` gerados desses títulos.
 Renomear ("## Metas", "## Mão na massa") desliga esse layout sem erro nenhum.
+Exceção única: os blueprints de TCC (`disciplina: tcc`, `trilha: blueprint-tcc`) são documento de
+projeto, não aula, e dispensam `## Prática`; `## Objetivos` continua obrigatório e o corpo continua
+sem `# ` (decisão #044).
 
 Tempo é **implícito** na sequência — não há campo de cronometragem. A regra dos 50 min é honrada pelo volume, auditado pela rubrica (`spec/02-RUBRICA.md`).
 

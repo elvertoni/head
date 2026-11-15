@@ -22,7 +22,9 @@ Códigos:
     quiz-correta           error    pergunta sem exatamente uma `correta: true`
     quiz-sem-alternativas  error    pergunta sem alternativas
     diagrama-sem-camadas   error    diagrama-progressivo sem `camadas`
-    secao-ausente          warning  falta `## Objetivos` ou `## Prática` (o layout do portal depende dos ids)
+    secao-ausente          warning  falta `## Objetivos` ou `## Prática` (o layout do portal depende dos ids);
+                                    blueprints de TCC (disciplina `tcc`, trilha `blueprint-tcc`) são
+                                    documento de projeto e só precisam de `## Objetivos`
     rotulo-numerado        warning  `rotulo` de diagrama com número próprio ("1. Navegador")
     yaml-com-markdown      warning  Markdown em campo de quiz/diagrama (o portal mostra os símbolos crus)
     wikilink-sem-rotulo    info     `[[slug]]` sem `|rótulo` (a spec prefere `[[slug|rótulo]]`)
@@ -46,6 +48,8 @@ except ImportError:  # permite `python -m tools.lint_canonica`
 CALLOUTS = {"conceito", "exemplo", "importante", "atencao", "atenção", "dica", "curiosidade"}
 BLOCOS = CALLOUTS | {"roteiro"}
 SECOES_DE_LAYOUT = ("Objetivos", "Prática")
+# Documento de projeto, não aula: não há atividade a inventar (parecer ASTRA, decisão #044).
+SEM_PRATICA = {("tcc", "blueprint-tcc")}
 SEVERIDADE = {"error": 3, "warning": 2, "info": 1}
 
 ABRE_BLOCO = re.compile(r"^:::\s*([^\s:]+)")
@@ -137,7 +141,10 @@ def lint_aula(root: Path, path: Path) -> List[Diagnostic]:
     if aberto:
         issue("bloco-nao-fechado", "error", aberto[1], f"`:::{aberto[0]}` sem `:::` de fechamento")
 
+    isento = (str(fm.data.get("disciplina", "")), str(fm.data.get("trilha", ""))) in SEM_PRATICA
     for secao in SECOES_DE_LAYOUT:
+        if secao == "Prática" and isento:
+            continue
         if secao not in titulos:
             issue("secao-ausente", "warning", None, f"falta `## {secao}` (o leitor do portal monta o layout pelo id dessa seção)", secao)
 
@@ -169,7 +176,11 @@ def lint(root: Path, todas: bool = False, caminhos: Optional[List[Path]] = None)
     diagnostics: List[Diagnostic] = []
     if caminhos:
         for path in caminhos:
-            diagnostics.extend(lint_aula(root, path.resolve()))
+            path = path.resolve()
+            # diretório: todas as canonica.md dentro dele, de qualquer status
+            alvos = sorted(path.rglob("canonica.md")) if path.is_dir() else [path]
+            for alvo in alvos:
+                diagnostics.extend(lint_aula(root, alvo))
         return diagnostics
     for path in lesson_paths(root):
         if not todas:
@@ -186,7 +197,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--format", choices=("text", "json"), default="text")
     parser.add_argument("--fail-on", choices=("error", "warning", "info"), default="error")
     parser.add_argument("--todas", action="store_true", help="inclui aulas que não estão aprovadas")
-    parser.add_argument("caminhos", nargs="*", type=Path, help="canonica.md específicas (ignora o status)")
+    parser.add_argument("caminhos", nargs="*", type=Path, help="canonica.md ou pastas específicas (ignora o status)")
     args = parser.parse_args(argv)
 
     diagnostics = lint(args.root.resolve(), args.todas, args.caminhos)
