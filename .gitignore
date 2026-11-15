@@ -4,6 +4,13 @@
 # Atividades impressas: o .html é a fonte editável; o .pdf sai dele via print
 aulas/**/atividades/*.pdf
 
+# Projetos e materiais fora do fluxo de aulas canônicas — local-only (parecer ASTRA,
+# 2026-11-15). Robótica tem firmware com credenciais fixas e um repo git próprio
+# aninhado (automatiza_zap); a feira são apresentações e PDFs pesados. Ignorar não é
+# backup: a cópia dessas pastas depende do Backupeador (espelho de D:\ em E:\).
+/aulas/robotica/
+/aulas/introducao-a-computacao/feiradoconhecimento/
+
 # Saídas de ferramenta — regeneráveis, local-only
 graphify-out/
 .playwright-mcp/

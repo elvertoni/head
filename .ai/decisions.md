@@ -3,6 +3,17 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #044 — Pastas fora do fluxo ficam local-only; lint das canônicas corrige aos poucos
+- **Data:** 2026-11-15
+- **Status:** Aceita; o Toni delegou as três escolhas ao ASTRA (Codex `gpt-6-astra`, só leitura), que decidiu com evidência no disco.
+- **Contexto:** `aulas/robotica/` e `aulas/introducao-a-computacao/feiradoconhecimento/` estavam untracked havia semanas num repo público; o portfólio tinha `design-system/marca-vetor/` untracked; o `lint_canonica.py` apontava 271 achados em 67 aulas aprovadas.
+- **Decisão:**
+  - As duas pastas entram no `.gitignore` e ficam local-only. A robótica tem senhas fixas no firmware da campainha e um repo git próprio aninhado (`elvertoni/automatiza_zap`); se um dia for publicada, vai em repo próprio, depois de tirar credenciais e dados operacionais. Ignorar não é backup.
+  - A `marca-vetor/` do portfólio (export da ligadura anterior) foi arquivada em `D:\ARTES\TONI\marca-legado-ligadura\` e o caminho foi para o `.gitignore` do portfólio (`d4e757c`).
+  - Achados do lint não justificam republicar 67 aulas: o parser do portal já remove o número do `rotulo`, resolve `[[slug]]` sem rótulo pelo manifesto e rebaixa `# ` para `h2`. Cada aula é corrigida quando for tocada por outro motivo (tirar número do `rotulo`, pôr rótulo nos wikilinks, tirar `# `), com bump e publicação em quatro passos.
+  - Blueprints de TCC (`disciplina: tcc`, `trilha: blueprint-tcc`) são documento de projeto e dispensam `## Prática`; `## Objetivos` continua obrigatório e o `# ` sai quando o blueprint for revisado. Regra na spec (`01-CANONICA.md`) e no lint, com teste.
+- **Consequências:** O lint cai para 262 achados (182 `rotulo-numerado`, 71 `wikilink-sem-rotulo`, 9 `corpo-com-h1`) e vira dívida a pagar aos poucos, não bloqueio. As linhas da tabela de módulos do `context.md` sobre robótica continuam válidas como mapa local, marcadas como fora do git.
+
 ## #043 — Prompt de imagem v9 (Caderno Noturno) vira o oficial
 - **Data:** 2026-11-12
 - **Status:** Aceita; pedido do Toni ("revise as skills, ainda tem referência ao Volta Atelier"), depois dos pilotos previstos na #042. Substitui a parte de paleta e tipografia da #036; o resto da #036 (peça final, sem marca, margem de 8%, canvas nativo) continua.
