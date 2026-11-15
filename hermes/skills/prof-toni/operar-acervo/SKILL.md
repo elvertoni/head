@@ -6,7 +6,7 @@ description: >
   aulas respeitando as invariantes, e versionar com disciplina. Use quando o Toni
   pedir algo sobre aulas, acervo, manifesto, canônica, conceitos, ou os projetos
   PROF-TONI/ProfessorDash.
-version: 1.0.0
+version: 1.1.0
 platforms: [linux, macos]
 metadata:
   hermes:
@@ -49,6 +49,9 @@ de aula tem `canonica.md`, `imagens.md` (briefing visual — regra do Toni) e `c
 5. **Editar aula aprovada → bump** de `versao` ou avançar `atualizado_em`.
 6. **Contrato de frontmatter do portal:** `titulo, disciplina, trilha, ordem,
    slug, status, versao, atualizado_em` completos.
+7. **Nunca renumerar** aula já importada: `NN`/`ordem` faz parte da chave do
+   portal e gera duplicata.
+8. **`aulas/**/fontes/` é imutável**, como o `lake/`.
 
 ## Passo 0 — ler estado antes de agir
 
@@ -62,9 +65,17 @@ Não inventar fato sobre o acervo — ler o repo, `spec/` e a frontmatter primei
 
 ## Criar / planejar aula
 
-A criação de aula canônica **é da skill `prof-toni`** (segue `spec/`, com auditoria
-pela rubrica em `spec/02-RUBRICA.md` como gate de aprovação). **Não burlar** —
-ler `spec/00-PROTOCOLO.md` antes. Cobre 3 modos: Tema, Material, SEED.
+A criação de aula canônica **é da skill `prof-toni`** (segue
+`.claude/skills/prof-toni/spec/`, com auditoria pela rubrica 7/7 em
+`spec/02-RUBRICA.md` como gate de aprovação; plano → OK do Toni → aula, uma por
+vez, mesmo quando é aula única). **Não burlar** — ler `spec/00-PROTOCOLO.md`
+antes. Cobre 3 modos: Tema, Material, SEED.
+
+Conferir o corpo contra o catálogo fechado de blocos antes de aprovar:
+
+```bash
+python tools/lint_canonica.py aulas/<disciplina>/<trilha>/<NN-slug>/canonica.md
+```
 
 Depois de criar/aprovar aula: **regenerar o manifesto** (passo abaixo).
 
@@ -80,6 +91,16 @@ python tools/gerar_manifesto.py
 python tools/gerar_manifesto.py --check    # confirmar 0 divergências
 ```
 
+## Publicar no portal (quatro passos, nesta ordem)
+
+1. `python tools/gerar_manifesto.py`
+2. push do acervo (`git push origin main`, só se o Toni pediu o commit)
+3. deploy do ProfessorDash (automático pelo Easypanel quando o portal mudou)
+4. reimport com `--force` (botão "Importar do GitHub" em `/catalogo/` ou
+   `import_acervo --force` no container)
+
+Pular o passo 4 deixa o portal defasado sem erro nenhum.
+
 ## Conceitos (wiki)
 
 `conceitos/{disciplina}/{slug}.md`. Aulas referenciam via `[[slug]]`. Não reescrever
@@ -89,7 +110,8 @@ material novo no cérebro é da skill `alimentar-cerebro`.
 ## Segurança operacional
 
 - **Commit é decisão do Toni.** Mostrar diff e propor a mensagem; só commitar se
-  ele pedir. Branch antes se estiver na default (regra do repo).
+  ele pedir. Commit direto na `main`, sem branch nem PR (regra do repo), em
+  Conventional Commits pt-BR com os escopos do acervo (`aula(<disciplina>)` etc.).
 - Git remoto usa SSH dual-account → este repo usa a conta **elvertoni**.
 - Mudou aula aprovada sem bump de versão? Corrigir antes de regenerar manifesto.
 
