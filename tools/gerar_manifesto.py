@@ -18,11 +18,14 @@ Regras:
 Uso:
     python tools/gerar_manifesto.py          # valida + reescreve manifesto.json
     python tools/gerar_manifesto.py --check  # só valida, NÃO escreve (exit!=0 se divergência)
+    python tools/gerar_manifesto.py --raiz ~/PROJETOS/PESSOAL/estudo [--check]
+        # outra fonte com a mesma estrutura (ex.: o repo privado de estudo)
 
 Saída: lista de divergências em stderr; exit code 1 se houver divergência crítica.
 """
 from __future__ import annotations
 
+import argparse
 import datetime as _dt
 import json
 import re
@@ -284,8 +287,24 @@ def divergencias_do_manifesto(atual: dict, esperado: dict) -> list[str]:
     ]
 
 
-def main() -> int:
-    check = "--check" in sys.argv
+def usar_raiz(raiz: Path) -> None:
+    """Aponta o gerador para outra raiz com a mesma estrutura (aulas/ + manifesto.json)."""
+    global RAIZ, DIR_AULAS, MANIFESTO
+    RAIZ = raiz.expanduser().resolve()
+    DIR_AULAS = RAIZ / "aulas"
+    MANIFESTO = RAIZ / "manifesto.json"
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Gera ou confere o manifesto.json do acervo.")
+    parser.add_argument("--check", action="store_true", help="só valida, não escreve")
+    parser.add_argument("--raiz", type=Path, help="raiz de outra fonte (padrão: este repo)")
+    args = parser.parse_args(argv)  # argumento desconhecido (ex.: --hlep) aborta sem escrever nada
+    check = args.check
+    if args.raiz:
+        if not (args.raiz.expanduser() / "aulas").is_dir():
+            parser.error(f"--raiz sem pasta aulas/: {args.raiz}")
+        usar_raiz(args.raiz)
     aulas, divergencias = coletar()
 
     for d in divergencias:

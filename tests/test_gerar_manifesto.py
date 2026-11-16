@@ -32,5 +32,38 @@ class ManifestoComparisonTests(unittest.TestCase):
         self.assertEqual(len(divergencias_do_manifesto(actual, expected)), 1)
 
 
+class TestRaizEArgumentos(unittest.TestCase):
+    def test_argumento_desconhecido_aborta_sem_escrever(self):
+        from tools import gerar_manifesto as gm
+        with self.assertRaises(SystemExit):
+            gm.main(["--hlep"])
+
+    def test_raiz_externa_gera_manifesto_dela(self):
+        import json
+        import tempfile
+        from tools import gerar_manifesto as gm
+        originais = (gm.RAIZ, gm.DIR_AULAS, gm.MANIFESTO)
+        try:
+            with tempfile.TemporaryDirectory() as tmp:
+                raiz = Path(tmp)
+                pasta = raiz / "aulas" / "estudo" / "trilha-x" / "01-aula-a"
+                pasta.mkdir(parents=True)
+                (pasta / "canonica.md").write_text(
+                    "---\ntitulo: Aula A\ndisciplina: estudo\ntrilha: trilha-x\nordem: 1\n"
+                    "slug: aula-a\nstatus: aprovada\nversao: 1\natualizado_em: 2026-11-15\n---\n\nTexto.\n",
+                    encoding="utf-8",
+                )
+                (raiz / "manifesto.json").write_text(json.dumps({
+                    "disciplinas": [{"slug": "estudo", "label": "Estudo", "trilhas": []}],
+                }), encoding="utf-8")
+                self.assertEqual(gm.main(["--raiz", str(raiz)]), 0)
+                gerado = json.loads((raiz / "manifesto.json").read_text(encoding="utf-8"))
+                self.assertEqual([l["slug"] for l in gerado["lessons"]], ["aula-a"])
+                self.assertEqual(gerado["disciplinas"][0]["label"], "Estudo")
+                self.assertEqual(gm.main(["--raiz", str(raiz), "--check"]), 0)
+        finally:
+            gm.RAIZ, gm.DIR_AULAS, gm.MANIFESTO = originais
+
+
 if __name__ == "__main__":
     unittest.main()
