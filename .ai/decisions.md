@@ -3,6 +3,13 @@
 <!-- Entradas mais recentes no topo. Não apagar entradas antigas. -->
 <!-- Numeração cronológica. Entradas "(inferida)" foram reconstruídas do histórico git, do antigo CLAUDE.md e das páginas do ai-memory em 2026-09-28. -->
 
+## #046 — Estudo pessoal do Toni vai para turma privada, a partir de repo privado
+- **Data:** 2026-11-15
+- **Status:** Aceita; pedido do Toni (guia "PHP e Python para o eproc" numa turma "Estudo" só dele) e plano aprovado por ele; revisão ASTRA em duas passadas.
+- **Contexto:** O import do portal lê do `head`, que é público, e o catálogo mostrava toda aula aprovada a qualquer professor. O guia tem contexto profissional e dados pessoais do Toni.
+- **Decisão:** Conteúdo de estudo pessoal mora no repo privado `elvertoni/estudo` (mesmo formato do acervo; `gerar_manifesto.py --raiz`). No ProfessorDash (D.22, `56005a7`): `Disciplina.dono` (privada só para o dono, inclusive frente a outros admins/superusuários), `Turma.privada` (sem matrícula), import da fonte de estudo só pela conta `ESTUDO_DONO_EMAIL`, mídia privada só para o dono, admin isolado e conta dona protegida. Fluxo "publica na turma Estudo" registrado no `AGENTS.md`. A skill `prof-toni` é usada com adaptações de público adulto e fidelidade estrita (não mudam a spec das aulas da escola).
+- **Consequências:** Nada de estudo pessoal entra no `head`. A primeira trilha (`estudo/php-eproc`, 6 aulas, `35161ff` no repo privado) foi validada num ensaio de import; produção depende de `ESTUDO_GITHUB_REPO`, `ESTUDO_DONO_EMAIL` e leitura do token no repo privado. Quem tem acesso ao servidor ou ao banco contorna regras de aplicação (limite aceito).
+
 ## #045 — Codex e o plugin "Professor Toni" do ChatGPT são o backup do Claude
 - **Data:** 2026-11-15
 - **Status:** Aceita; pedido do Toni ("caso o claude fique sem tokens posso recorrer ao chatgpt com a mesma qualidade").

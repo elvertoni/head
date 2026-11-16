@@ -80,6 +80,23 @@ execute as instruções de `.ai/prompts/handoff.md`.
 - Ao tocar no acervo, rode também `python tools/gerar_manifesto.py --check` e `git status --short` para não
   misturar trabalho humano não versionado com mudanças do agente.
 
+## "Publica na turma Estudo" (estudo pessoal do Toni — privado)
+Quando o Toni disser "publica na turma Estudo" (ou mandar material de estudo próprio para o portal), o fluxo é
+sempre este, e o conteúdo **nunca** entra neste repo (ele é público):
+1. Fonte: repo **privado** `elvertoni/estudo` (local `~/PROJETOS/PESSOAL/estudo`), mesmo formato do acervo;
+   disciplina `estudo`, uma trilha por material (`aulas/estudo/{trilha}/{NN-slug}/`). Original em `fontes/`.
+2. Skill `prof-toni` (Modo Material ou Tema) com as adaptações já aprovadas para estudo pessoal: público
+   adulto e tom "você", profundidade técnica mantida, sessão de estudo em vez de 50 min, fidelidade estrita a
+   código/tabelas/erratas do material, exercícios de projeto **sem** soluções, sem `:::roteiro`, capa só se
+   pedida. Plano → OK do Toni → canônicas `status: rascunho`.
+3. Auditoria: rubrica adaptada + `python3 tools/lint_canonica.py --root ~/PROJETOS/PESSOAL/estudo` + render no
+   parser do portal; afirmação técnica nova é verificada rodando. Mostrar o resultado e esperar o OK.
+4. `status: aprovada` → `python3 tools/gerar_manifesto.py --raiz ~/PROJETOS/PESSOAL/estudo` (e `--check`) →
+   commit/push **no repo privado** (mostrar antes o que sobe).
+5. No portal (Toni): "Importar meu estudo" em `/catalogo/` → turma "Estudo" (**privada**) → "Sincronizar aulas".
+   A privacidade é do ProfessorDash (D.22 / decisão #046): `Disciplina.dono`, `Turma.privada`,
+   `ESTUDO_GITHUB_REPO` e `ESTUDO_DONO_EMAIL`.
+
 ## Comandos úteis
 - Subir ambiente: não há servidor — a raiz é o vault do Obsidian (`mapas/index.md` é a página de entrada).
   Venv do transcritor numa máquina nova: `cd tools\transcrever; uv venv --python 3.12; uv pip install -r requirements.txt`
